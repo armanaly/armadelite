@@ -1,0 +1,10 @@
+"use strict";
+class FormVehicule {
+    constructor(mileage_input, roulant) {
+        this.mileage_input = mileage_input;
+        this.roulant = roulant;
+    }
+}
+exports.FormVehicule = FormVehicule;
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZlaGljdWxlL2Zvcm1WZWhpY3VsZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUE7SUFDSSxZQUFtQixhQUFxQixFQUNyQixPQUFnQjtRQURoQixrQkFBYSxHQUFiLGFBQWEsQ0FBUTtRQUNyQixZQUFPLEdBQVAsT0FBTyxDQUFTO0lBQ25DLENBQUM7QUFDTCxDQUFDO0FBSlksb0JBQVksZUFJeEIsQ0FBQSIsImZpbGUiOiJ2ZWhpY3VsZS9mb3JtVmVoaWN1bGUuanMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY2xhc3MgRm9ybVZlaGljdWxlIHtcclxuICAgIGNvbnN0cnVjdG9yKHB1YmxpYyBtaWxlYWdlX2lucHV0OiBudW1iZXIsXHJcbiAgICAgICAgICAgICAgICBwdWJsaWMgcm91bGFudDogYm9vbGVhbikge1xyXG4gICAgfVxyXG59Il19

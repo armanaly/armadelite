@@ -1,0 +1,223 @@
+.panel-default {
+    table-border-color-light: green;
+}
+
+.panel-heading-custom {
+    color: cornsilk; background: #4CAF50;;
+    font-family: monospace;
+    text-align: center;
+}
+.panel-default > .panel-body-custom {
+    background:  #1E7FCB;
+}
+
+.panel-body {
+    border: dotted;
+    border-color: #4CAF50;
+}
+
+.btn-primary-custom{
+    color: black;
+    background-color: white;
+    border-color: limegreen;
+    margin-bottom: 5px;
+    font-family: monospace;
+}
+.btn-primary-custom:hover{
+    color: white;
+    background-color: #3A9D23;
+    border-color: yellowgreen;
+}
+.btn-info-custom{
+    color: darkgrey;
+    background-color: darkcyan;
+    border-color: darkcyan;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #e0f8e0;
+}
+.spacing {
+  margin-bottom: 20px;
+}
+ul.items {
+  text-align: center;
+  list-style-type: none;
+}
+ul.items li {
+  float:left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+ul.items li:nth-child(4+4n) {
+  clear:left;
+  float:left;
+}
+section {
+  margin-bottom: 20px;
+}
+
+.button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.buttonBlack {
+  background-color: black;
+    padding: 15px 32px;
+    border-radius: 50%;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+    border: 2px solid black;
+}
+
+.buttonBlack:hover {
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.buttonWhite {
+  background-color: #FFFFFF;
+    padding: 15px 32px;
+    border-radius: 50%;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
+.buttonWhite:hover {
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+}
+.buttonGrey {
+  background-color: #CECECE;
+    padding: 15px 32px;
+    border-radius: 50%;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
+.buttonGrey:hover {
+    border: 2px solid #CECECE;
+    border-radius: 10px;
+}
+
+
+.buttonRed {
+    background-color: #ED0000;
+    padding: 15px 32px;
+    border-radius: 50%;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
+.buttonRed:hover {
+    border: 2px solid #ED0000;
+    border-radius: 10px;
+}
+.buttonBrown {
+    background-color: #5B3C10;
+    padding: 15px 32px;
+    border-radius: 50%;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
+.buttonBrown:hover {
+    border: 2px solid #5B3C10;
+    border-radius: 10px;
+}
+.buttonBlue {
+    background-color: #0000FF;
+    padding: 15px 32px;
+    border-radius: 50%;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
+.buttonBlue:hover {
+    border: 2px solid #0000FF;
+    border-radius: 10px;
+}
+
+.buttonOrange {
+    background-color: #ED7F10;
+    padding: 15px 32px;
+    border-radius: 50%;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
+.buttonOrange:hover {
+    border: 2px solid #ED7F10;
+    border-radius: 10px;
+}
+
+.buttonYellow {
+    background-color: #FFFF00;
+    padding: 15px 32px;
+    border-radius: 50%;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
+.buttonYellow:hover {
+    border: 2px solid #FFFF00;
+    border-radius: 10px;
+}
+.buttonGreen {
+    background-color: #3A9D23;
+    padding: 15px 32px;
+    border-radius: 50%;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
+.buttonGreen:hover {
+    border: 2px solid #3A9D23;
+    border-radius: 10px;
+}
+.buttonPurple {
+    background-color: #A10684;
+    padding: 15px 32px;
+    border-radius: 50%;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
+.buttonPurple:hover {
+    border-radius: 10px;
+}
+.buttonArdoise {
+    background-color: #5A5E6B;
+    padding: 15px 32px;
+    border-radius: 50%;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+
+.buttonArdoise:hover {
+    border-radius: 10px;
+}
+
+progress {
+    display: block; /* default: inline-block */
+    width: 300px;
+    margin: 1em auto;
+    padding: 4px;
+    border: 0 none;
+    background: #444;
+    border-radius: 14px;
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5),
+    0px 1px 0px rgba(255,255,255,0.2);
+}
+progress::-moz-progress-bar {
+    background: #FFF;
+    border-radius: 12px;
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.4),
+    0 2px 5px 0px rgba(0,0,0,0.3);
+}
