@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e82b7e-2225-4c3a-a599-ccf4911817e3" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/demande.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/marque.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/step.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/vehicule.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/models/vehicule.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/routes/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/routes/demand.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/routes/load_image.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/routes/marques.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/routes/nodemailer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/routes/steps.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/routes/vehicules.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/vehicule1/IMG_1787.JPG" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tmp mongoDB.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mysaver.iws" />
@@ -42,8 +29,8 @@
       <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="42" column="65" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
+            <state relative-caret-position="266">
+              <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
               <folding>
                 <element signature="e#0#56#0" expanded="true" />
                 <marker date="1485102352303" expanded="true" signature="632:699" ph="..." />
@@ -99,6 +86,7 @@
         <option value="Anthony" />
       </list>
     </option>
+    <option name="ROOT_SYNC" value="SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -515,7 +503,7 @@
       <workItem from="1484988799718" duration="12609000" />
       <workItem from="1485076498355" duration="11586000" />
       <workItem from="1485157264376" duration="1212000" />
-      <workItem from="1485167013434" duration="384000" />
+      <workItem from="1485167013434" duration="1171000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout Sélection des équipements dans tableau">
       <created>1476008307314</created>
@@ -713,11 +701,18 @@
       <option name="project" value="LOCAL" />
       <updated>1485165926647</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Flask 0.0.1&#10;">
+      <created>1485167416969</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1485167416969</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="776878000" />
+    <option name="totallyTimeSpent" value="777665000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -732,7 +727,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18914647" sideWeight="0.4937304" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18914647" sideWeight="0.4937304" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46488294" sideWeight="0.39041096" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3550914" sideWeight="0.49367088" order="2" side_tool="false" content_ui="tabs" />
@@ -809,20 +804,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="94" column="29" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/typescriptCompiler/external/lib.es6.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="6621" column="4" selection-start-line="6621" selection-start-column="4" selection-end-line="6621" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/steps.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1180,10 +1161,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp mongoDB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="42" column="65" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
+        <state relative-caret-position="266">
+          <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
             <marker date="1485102352303" expanded="true" signature="632:699" ph="..." />
