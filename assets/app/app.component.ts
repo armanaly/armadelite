@@ -2,8 +2,8 @@ import {Component, Output, Inject} from '@angular/core';
 import {StepService} from "./Engine/step.service";
 import {CollectionService} from "./Engine/collection.service";
 import {FormService} from "./vehicule/form.service";
-//i                  mport {Mar     queService} from "./marque/marque.service";
-//i                                      mport      v {Mar     queService} from "./marque/marque.service";
+//i                   mport {Mar     queService} from "./marque/marque.service";
+//i                                           mport      v {Mar     queService} from "./marque/marque.service";
 //i                   ;,                                                 mport {Marque} from "./marque/marque";
 
 @Component({
@@ -25,11 +25,12 @@ export class AppComponent {
     listsData = [];
     tmp = [];
     ngOnInit() {
+        console.log('appComponent');
         this._stepService.getSteps()
             .subscribe(
                 stepReturn => {
 
-                    //      t     his.st   eps = stepReturn;
+                    //      t     his. st   eps = stepReturn;
 
 
 
@@ -40,9 +41,9 @@ export class AppComponent {
                     // this._stepService.step = this.tmp;
                     //
                     // // for ( let i = 0; i < stepReturn.json().length; i++) {
-                    // //     console.log(step   Return.json()[  i]);
+                    // //     console . log(step   Return.json()[  i]);
                     // //
-                    // //     console.log(this._stepService.step);
+                    // //     console.log(this._st  epService.step);
                     // // }
                     //
                     console.log(this._stepService.step[0]);
@@ -72,7 +73,7 @@ export class AppComponent {
 //var keyName = this._stepService.s        ep[0].configuration.form_value.name;
 //this._formService.arraySteps[0][keyName] =  this.route.snapshot.params.name;
 //this.labelPanel = this._stepService.step[this.indexStepObj].configuration.labelPanel;
-                },
+                } ,
                 error => console.log(error)
             );
     }

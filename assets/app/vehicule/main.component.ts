@@ -10,6 +10,7 @@ import {StepService} from "../Engine/step.service";
 import {CollectionService} from "../Engine/collection.service";
 import {forEach} from "../../../public/js/vendor/@angular/router/src/utils/collection";
 import {Observable} from "rxjs";
+import {MailService} from "../Engine/mail.service";
 @Component({
     selector: 'vehicule-detail',
     template: `
@@ -19,12 +20,18 @@ import {Observable} from "rxjs";
 <!--<p>Session ID: {{ current_step_id | async }}</p>-->
     <div class="row" align="center">
         
-            <div  class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/grid']"> Data grid </a></button></div>
-            <div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/step']"> Nouveau flow</a></button></div>
-            <div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/']"> Ajouter contact </a></button></div>
-            <div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/']"> Lister contacts </a></button></div>
+            <!--<div  class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/grid']"> Data grid </a></button></div>-->
+            <div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/step']"> NEW FORM</a></button></div>
+            <!--<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/']"> Ajouter contact </a></button></div>-->
+            <!--<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/']"> Lister contacts </a></button></div>-->
+            <div>
+            
+             <!--*ngFor="let valeurList of _formService"-->
+            </div>
     </div>
     <br>
+    
+    
     <div *ngIf="this.step_id != 1"><previous-page></previous-page></div>
     
    <div *ngFor="let objStep of this._stepService.step; let i = index" >
@@ -161,9 +168,8 @@ export class MainComponent implements OnInit {
     constructor(
         private route: ActivatedRoute, private _fb: FormBuilder,
         public _formService: FormService, public _stepService: StepService,
-        public _collectionService: CollectionService) {
-
-    }
+        public _collectionService: CollectionService, public _mailService: MailService)
+        {}
 
     // vehicules: Vehicule[];
     // confirm: boolean = false;
@@ -230,7 +236,7 @@ console.log(this._stepService.steps);
 
     goToStep(curStepId) {
         console.log("GO NEXT STEP : " + curStepId);
-
+        console.log(this._formService);;
         for (let i = 0; i < this._stepService.steps.length; i++) {
 
             if (this._stepService.steps[i].step_id == curStepId) {
@@ -325,19 +331,36 @@ console.log(this._stepService.steps);
 
 
     goToNextStep(x){
+        console.log(this._stepService);
+        console.log(this._formService);
         console.log("GO NEXT STEP");
-        console.log(this._stepService.steps);
+        console.log(this._stepService.steps.length);
+
+
         console.log(x);
         this.indexStepObj = x;
-        if (this.indexStepObj < 0 )
+        // IF A MAIL IS CONFIGURED IN STEP CONFIG
+        if (typeof this._stepService.steps[this.indexStepObj].configuration.mail_id != "undefined" && this.indexStepObj > -1)
         {
-            this.indexStepObj ++;
+            this._mailService.sendMail(this._stepService.steps[this.indexStepObj].configuration.mail_id)
+                .subscribe(
+                    mailState => {
+                        console.log(mailState);
+                    },
+                    error => console.log(error)
+                );
         }
+
+        // if (this.indexStepObj <= 0 )
+        // {
+            this.indexStepObj ++;
+//        }
         // while ( typeof this._stepService.step[this.indexStepObj] == 'undefined' ) {
         //      this.indexStepObj++;
         // }
         console.log("this.indexStepObj "+this.indexStepObj);
         console.log(this._stepService.steps[this.indexStepObj]);
+
 
         // TEMPORARY STEP_ID BECAUSE WE NEED TO WAIT FOR ASYNCHROUNOUS QUERY
         var tmpNewstepId = this._stepService.steps[this.indexStepObj].step_id;
@@ -347,89 +370,104 @@ console.log(this._stepService.steps);
 
         /* IF LIST BUTTON COMPONENT */
         console.log(this._stepService.steps[this.indexStepObj].type);
-        switch (this._stepService.steps[this.indexStepObj].type){
-            case 'click_selection':
 
-                /* IF DATA ARE STORED IN A COLLECTION IN CONFIG FILE */
-                if (typeof this._stepService.steps[this.indexStepObj].configuration.collection != 'undefined') {
-                    console.log("GET DATA FROM COLLECTION");
-                    var filterList = [];
-                    //for (var item of this._stepService.step) {
+        // if (this.indexStepObj > this._stepService.steps.length){
+        //     console.log('save form')
+        //     console.log(this._formService.arraySteps)
+        // }
+        // else {
+            switch (this._stepService.steps[this.indexStepObj].type) {
+                case 'click_selection':
+
+                    /* IF DATA ARE STORED IN A COLLECTION IN CONFIG FILE */
+                    if (typeof this._stepService.steps[this.indexStepObj].configuration.collection != 'undefined') {
+                        console.log("GET DATA FROM COLLECTION");
+                        var filterList = [];
+                        //for (var item of this._stepService.step) {
                         //if (this._stepService.step[this.indexStepObj].step_id == tmpNewstepId) {
-                            var collectionName = this._stepService.steps[this.indexStepObj].configuration.collection.name;
-                            console.log(this._stepService.steps[this.indexStepObj]);
-                            /*
-                             TODO TESTER SI FILTER EXISTE DANS COLLECTION
-                             */
-                            // STEP_ID OU SE TROUVE LE NOM DE LA VARIABLE DE LA VALEUR A FILTRER
-                            var valueToFilter = this._stepService.steps[this.indexStepObj].configuration.collection.filter[0].step_id;
-                            console.log(valueToFilter);
-                            console.log(this._stepService.steps[this.indexStepObj].configuration.collection.filter[0].step_id);
-                            console.log(this._formService);
+                        var collectionName = this._stepService.steps[this.indexStepObj].configuration.collection.name;
+                        console.log(this._stepService.steps[this.indexStepObj]);
+                        /*
+                         TODO TESTER SI FILTER EXISTE DANS COLLECTION
+                         */
+                        // STEP_ID OU SE TROUVE LE NOM DE LA VARIABLE DE LA VALEUR A FILTRER
+                        var valueToFilter = this._stepService.steps[this.indexStepObj].configuration.collection.filter[0].step_id;
+                        console.log(valueToFilter);
+                        console.log(this._stepService.steps[this.indexStepObj].configuration.collection.filter[0].step_id);
+                        console.log(this._formService);
 
-                            filterList = this._stepService.steps[this.indexStepObj].configuration.collection.filter;
-                       // }
+                        filterList = this._stepService.steps[this.indexStepObj].configuration.collection.filter;
+                        // }
                         // if (Number(item.step_id) == Number(this.previousStepId)) {
                         //     console.log(item.configuration);
                         //     var valueFilterList = item.configuration.form_value.name;
                         // }
 
-                    // SET NOM DE VARIABLE TO SAVE IN FORM SERVICE
-                    if (typeof this._stepService.steps[this.indexStepObj].configuration.collection.value != 'undefined') {
-                        var valueToKeep = this._stepService.steps[this.indexStepObj].configuration.collection.value;
+                        // SET NOM DE VARIABLE TO SAVE IN FORM SERVICE
+                        if (typeof this._stepService.steps[this.indexStepObj].configuration.collection.value != 'undefined') {
+                            var valueToKeep = this._stepService.steps[this.indexStepObj].configuration.collection.value;
+                        }
+                        else {
+                            valueToKeep = ''
+                        }
+                        //   this._collectionService.getDatas(collectionName).then(collectionDataReturn => this.lists.push(collectionDataReturn))
+                        console.log(this.tmp_id);
+                        this._collectionService.getDatas(collectionName, filterList, valueToKeep)
+                            .then(data => {
+                                    console.log(data);
+
+                                    this.lists.push(data);
+                                    this.datas.push({
+                                        "name": this._stepService.steps[this.indexStepObj].name,
+                                        "list": data
+                                    });
+                                    this.previousStepId = this.stepId;
+                                    // this.stepId = this._stepService.step[this.indexStepObj].step_id;
+                                    console.log(this.stepId);
+                                    console.log(this.lists);
+                                    console.log(this.datas);
+                                    this.stepId = tmpNewstepId;
+                                    console.log(this.stepId);
+                                },
+                                error => console.log(error)
+                            );
                     }
-                    else {
-                        valueToKeep = ''
+
+                    //IF DATA ARE STORED IN A LIST IN CONFIG FILE
+                    if (typeof this._stepService.steps[this.indexStepObj].configuration.list != 'undefined') {
+                        console.log("GET DATA FROM LIST");
+                        this.lists.push(this._stepService.steps[this.indexStepObj].configuration.list);
+                        this.datas.push({
+                            "name": this._stepService.steps[this.indexStepObj].name,
+                            "list": this._stepService.steps[this.indexStepObj].configuration.list
+                        });
+                        console.log(this.datas);
+                        this.stepId = tmpNewstepId;
                     }
-                    //   this._collectionService.getDatas(collectionName).then(collectionDataReturn => this.lists.push(collectionDataReturn))
-                    console.log(this.tmp_id);
-                    this._collectionService.getDatas(collectionName, filterList, valueToKeep)
-                                .then(data => {
-                                        console.log(data);
+                    break;
 
-                                        this.lists.push(data);
-                                        this.datas.push({"name": this._stepService.steps[this.indexStepObj].name , "list": data});
-                                        this.previousStepId = this.stepId;
-                                        // this.stepId = this._stepService.step[this.indexStepObj].step_id;
-                                        console.log(this.stepId);
-                                        console.log(this.lists);
-                                        console.log(this.datas);
-                                        this.stepId = tmpNewstepId;
-                                        console.log(this.stepId);
-                            },
-                            error => console.log(error)
-                        );
-                }
+                case 'image_selection':
+                    if (typeof this._stepService.steps[this.indexStepObj].configuration.list != 'undefined') {
+                        console.log("GET DATA FROM LIST");
+                        this.lists.push(this._stepService.steps[this.indexStepObj].configuration.list);
+                        this.datas.push({
+                            "name": this._stepService.steps[this.indexStepObj].name,
+                            "list": this._stepService.steps[this.indexStepObj].configuration.list
+                        });
+                        console.log(this.datas);
+                        this.stepId = tmpNewstepId;
+                    }
+                    break;
 
-                //IF DATA ARE STORED IN A LIST IN CONFIG FILE
-                if (typeof this._stepService.steps[this.indexStepObj].configuration.list != 'undefined') {
-                    console.log("GET DATA FROM LIST");
-                    this.lists.push(this._stepService.steps[this.indexStepObj].configuration.list);
-                    this.datas.push({"name": this._stepService.steps[this.indexStepObj].name , "list": this._stepService.steps[this.indexStepObj].configuration.list});
-                    console.log(this.datas);
-                    this.stepId = tmpNewstepId;
-                }
-                break;
-
-            case 'image_selection':
-                if (typeof this._stepService.steps[this.indexStepObj].configuration.list != 'undefined') {
-                    console.log("GET DATA FROM LIST");
-                    this.lists.push(this._stepService.steps[this.indexStepObj].configuration.list);
-                    this.datas.push({"name": this._stepService.steps[this.indexStepObj].name , "list": this._stepService.steps[this.indexStepObj].configuration.list});
-                    console.log(this.datas);
-                    this.stepId = tmpNewstepId;
-                }
-                break;
-
-            case 'field_panel':
+                case 'field_panel':
                     console.log('ici');
                     this.stepId = tmpNewstepId;
                     break;
 
                 default:
                     console.log('default');
-        }
-
+            }
+        // }
 
 
     }

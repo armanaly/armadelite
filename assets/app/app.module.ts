@@ -28,6 +28,7 @@ import {SaveButtonService} from "./components/saveButtonService";
 import {GridPanelComponent} from "./components/gridPanel.component";
 import {GridPanelService} from "./components/gridPanel.service";
 import {MenuComponent} from "./menu/menu.component";
+import {MailService} from "./Engine/mail.service";
 @NgModule({
     declarations: [
         AppComponent, MainComponent,
@@ -41,9 +42,9 @@ import {MenuComponent} from "./menu/menu.component";
 
     ],
     bootstrap: [AppComponent],
-    providers: [ FormService,
-                ProfileService, PhotosService, StepService,
-                CollectionService, SaveButtonService, GridPanelService]
+    providers: [ FormService, ProfileService, PhotosService,
+                 StepService, CollectionService, SaveButtonService,
+                MailService, GridPanelService]
 })
 export class AppModule {
     
