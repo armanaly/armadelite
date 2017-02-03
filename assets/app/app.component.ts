@@ -38,7 +38,7 @@ export class AppComponent {
                     console.log(stepReturn);
                     console.log(this._stepService.steps);
                     // this.tmp = stepReturn.json();
-                    // thi    s._stepService.step = this.tmp;
+                    // thi     s._stepService.step = this.tmp;
                     //
                     // //  for ( let i = 0; i < stepReturn.json().length; i++) {
                     // //     console . log(step   Return.json()[  i]);

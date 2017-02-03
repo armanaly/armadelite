@@ -11,16 +11,17 @@ import {Component, Input, Output, EventEmitter} from '@angular/core'
 
 // USE TO GO BACK TO PREVIOUS STEP IN DECISION WORKFLOW
 export class BackButtonComponent {
-    @Input() currentStep;
+    @Input() idxStepObj;
     @Input() stepId;
     @Output() change = new EventEmitter();
 
     onClick(){
-        this.stepId --;
-        while ( typeof this.currentStep[this.stepId] == 'undefined' ) {
-            this.stepId--;
-        }
-        this.change.emit({ newStepId: this.stepId});
+        console.log(this.stepId);
+        this.idxStepObj --;
+        // while ( typeof this.currentStep[idxStepObj] == 'undefined' ) {
+        //     this.stepId--;
+        // }
+        this.change.emit({ newIdxStepObj: this.idxStepObj});
     };
 
 }
