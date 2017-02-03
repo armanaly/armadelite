@@ -40,7 +40,7 @@ export class AppComponent {
                     // this.tmp = stepReturn.json();
                     // this._stepService.step = this.tmp;
                     //
-                    // // for ( let i = 0; i < stepReturn.json().length; i++) {
+                    // //  for ( let i = 0; i < stepReturn.json().length; i++) {
                     // //     console . log(step   Return.json()[  i]);
                     // //
                     // //     console.log(this._st  epService.step);

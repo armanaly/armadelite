@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="00e82b7e-2225-4c3a-a599-ccf4911817e3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/russianballet" afterPath="$PROJECT_DIR$/russianballet" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/global.ts" afterPath="$PROJECT_DIR$/assets/app/global.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.component.ts" afterPath="$PROJECT_DIR$/assets/app/app.component.ts" />
     </list>
     <ignored path="mysaver.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,15 +26,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="42" column="25" lean-forward="false" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+              <caret line="42" column="26" lean-forward="false" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
               <folding>
                 <element signature="e#0#56#0" expanded="true" />
-                <marker date="1486140635133" expanded="true" signature="638:711" ph="..." />
-                <marker date="1486140635133" expanded="true" signature="675:705" ph="..." />
+                <marker date="1486153620269" expanded="true" signature="638:711" ph="..." />
+                <marker date="1486153620269" expanded="true" signature="675:705" ph="..." />
               </folding>
             </state>
           </provider>
@@ -50,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="global.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="global.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/global.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+            <state relative-caret-position="85">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -210,11 +210,11 @@
         <option value="$PROJECT_DIR$/assets/app/app.routing.ts" />
         <option value="$PROJECT_DIR$/assets/app/app.module.ts" />
         <option value="$PROJECT_DIR$/assets/app/Engine/mail.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/app.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/vehicule/main.component.ts" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/assets/app/global.ts" />
+        <option value="$PROJECT_DIR$/assets/app/app.component.ts" />
       </list>
     </option>
   </component>
@@ -655,7 +655,7 @@
       <workItem from="1485262566460" duration="5750000" />
       <workItem from="1485334700726" duration="9156000" />
       <workItem from="1485417629157" duration="1447000" />
-      <workItem from="1486140855054" duration="1283000" />
+      <workItem from="1486140855054" duration="1612000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout Sélection des équipements dans tableau">
       <created>1476008307314</created>
@@ -871,7 +871,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="802958000" />
+    <option name="totallyTimeSpent" value="803287000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1204,18 +1204,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="42" column="25" lean-forward="false" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-            <marker date="1486140635133" expanded="true" signature="638:711" ph="..." />
-            <marker date="1486140635133" expanded="true" signature="675:705" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -1274,9 +1262,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/global.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="42" column="26" lean-forward="false" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+            <marker date="1486153620269" expanded="true" signature="638:711" ph="..." />
+            <marker date="1486153620269" expanded="true" signature="675:705" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
