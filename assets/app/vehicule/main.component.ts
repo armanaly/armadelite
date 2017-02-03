@@ -11,6 +11,7 @@ import {CollectionService} from "../Engine/collection.service";
 import {forEach} from "../../../public/js/vendor/@angular/router/src/utils/collection";
 import {Observable} from "rxjs";
 import {MailService} from "../Engine/mail.service";
+import {SaveService} from "../components/saveService";
 @Component({
     selector: 'vehicule-detail',
     template: `
@@ -24,17 +25,21 @@ import {MailService} from "../Engine/mail.service";
             <div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/step']"> NEW FORM</a></button></div>
             <!--<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/']"> Ajouter contact </a></button></div>-->
             <!--<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/']"> Lister contacts </a></button></div>-->
-            <div>
-            
-             <!--*ngFor="let valeurList of _formService"-->
-            </div>
+
     </div>
     <br>
     
     
-    <div *ngIf="this.step_id != 1"><previous-page></previous-page></div>
+    <div *ngIf="this.stepId != 1">
+        <previous-page 
+            [stepId] = "stepId"
+            [idxStepObj] =  "indexStepObj"
+            (change) = goPreviousStep($event) >
+        </previous-page>
+    </div>
+    <br>
     
-   <div *ngFor="let objStep of this._stepService.step; let i = index" >
+   <div *ngFor="let objStep of this._stepService.steps; let i = index" >
         <!-- IMAGE LIST BUTTON PANEL -->
         <div *ngIf="objStep.type == 'image_selection' ">
             <panel-btn-img
@@ -90,50 +95,12 @@ import {MailService} from "../Engine/mail.service";
 >
 
 </save-button>
-</div>
-<!--<div class="panel-body panel-body-custom" >-->
 
-
-<!--<div class="panel panel-default">-->
-
-
-
-
-<!--<div class="panel-heading-custom" align="center">-->
-    <!--<previous-page-->
-        <!--*ngIf="stepId != 10"-->
-        <!--[stepId]="this.stepId" -->
-        <!--[currentStep]="this.steps" -->
-        <!--(change)="goPreviousStep($event)">-->
-    <!--</previous-page>-->
- <!--</div>-->
-
-    <!---->
-<!--<div class="panel panel-default" *ngIf="stepId == 90">-->
-   <!--<div class="panel-heading panel-heading-custom" align="center">INDIQUEZ LE KILOMETRAGE DU VEHICULE </div>-->
-   <!--<div class="panel-body">-->
-   <!--<form [formGroup] = "my_form"   >-->
-        <!--<label for="mileage_input" align="center"></label>-->
-        <!--&lt;!&ndash;<input id="mileageInput" type="text" ngControl="mileageInput" #mileageInput="ngForm" class="form-control">&ndash;&gt;-->
-        <!--<input formControlName="mileage_input"-->
-               <!--name="mileage_input" type="number" #mileage_input-->
-               <!--id="mileage_input" class="form-control"-->
-               <!--required>-->
-        <!--<div *ngIf="missingMileage" class="alert alert-danger">Kilométrage est requis.</div>-->
-        <!--<button type="button"  (click)="onSubmitMileage(mileage_input)" class="btn btn-primary btn-primary-custom">SUIVANT</button>-->
-    <!--</form>-->
-    <!--</div>-->
-<!--</div>-->
-
-    <!---->
-    <!---->
+    <div *ngIf="formCompleted" class="alert alert-success" role="alert">
+        Your request has been sent, you should receive a email with the information you sent to us. We'll come back to you very soon
+    </div>
     
-<!--</div>-->
-<!--</div> -->
-
-<!--<nav>-->
-    <!--<div><a [routerLink]="['/state']"> VERS ETAPE 2 </a></div>-->
-<!--</nav>-->
+</div>
 `,
 
     styles: [` nav{    
@@ -150,6 +117,9 @@ export class MainComponent implements OnInit {
     //model = new FormVehicule(0, false);
     submitted = false;
 
+    //lists = [];
+    listsData = [];
+
 
     current_step_id: Observable<string>;
    //@Input() marque: Marque;
@@ -159,16 +129,17 @@ export class MainComponent implements OnInit {
     labelPanel = "";
     datas = [];
     lists = [];
-
-    public my_form = new FormGroup({
-        mileage_input: new FormControl()
-    });
+    formCompleted = false;
+    // public my_form = new FormGroup({
+    //     mileage_input: new FormControl()
+    // });
     //formVehicule: ControlGroup;
     //formService: FormService;
     constructor(
         private route: ActivatedRoute, private _fb: FormBuilder,
-        public _formService: FormService, public _stepService: StepService,
-        public _collectionService: CollectionService, public _mailService: MailService)
+        private _formService: FormService, private _stepService: StepService,
+        private _collectionService: CollectionService, private _mailService: MailService,
+        private _saveService: SaveService)
         {}
 
     // vehicules: Vehicule[];
@@ -181,10 +152,29 @@ export class MainComponent implements OnInit {
     steps: StepModel[];
     customCollectionData= [];
 
-    ngOnInit(): void {
-console.log('init main Component');
-console.log(this._stepService.steps);
+    ngOnInit(){
+        console.log('init main Component');
+        // IF FIRST STEP IS A COLLECTION
+        if (typeof this._stepService.steps[0].configuration.collection != 'undefined') {
+                    }
+
+        /*  IF FIRST STEP IS A LIST */
+        if (typeof this._stepService.steps[0].configuration.list != 'undefined') {
+            this.lists.push(this._stepService.steps[0].configuration.list);
+            this.listsData.push({
+                "name": this._stepService.steps[0].name,
+                "list": this._stepService.steps[0].configuration.list
+            });
+        }
+        console.log(this.listsData);
+        this._stepService.datas = this.listsData.slice();
+        // INITIATE FORM SERVICE TO KEEP ALL SELECTIONS MADE BY USER IN STEPS
+        //this._formService.init();
+
+
+    console.log(this._stepService.steps);
         var master_type = this._stepService.steps[0].master_type;
+
         this.current_step_id = this.route
             .queryParams
             .map(params => params['id'] || 'None'
@@ -211,12 +201,16 @@ console.log(this._stepService.steps);
         // cons ole.log(this._stepService.datas);
 
 
-        console.log(this.datas);
+        console.log(this.datas[0].name);
+        console.log(this._stepService.steps);
+        console.log(this.stepId);
       //  this.goToNextStep();
 }
 
     goPreviousStep($event){
-        this.indexStepObj = $event.newStepId;
+        this.indexStepObj = $event.newIdxStepObj;
+        console.log(this.indexStepObj);
+        this.goToStep(this._stepService.steps[this.indexStepObj].step_id);
         //this.labelPanel = this.steps[this.indexStepObj].labelPanel;
     }
 
@@ -307,6 +301,7 @@ console.log(this._stepService.steps);
                                 );
 
                         }
+                        // IF A LIST EXISTS IN STEP SERVICE
                         if (typeof this._stepService.steps[i].configuration.list != 'undefined') {
                             this.datas.push({"name": this._stepService.steps[i].name , "list": this._stepService.steps[i].configuration.list});
                             this.stepId = curStepId;
@@ -330,6 +325,7 @@ console.log(this._stepService.steps);
     }
 
 
+    // GO TO NEXT STEP ( x + 1)
     goToNextStep(x){
         console.log(this._stepService);
         console.log(this._formService);
@@ -342,17 +338,34 @@ console.log(this._stepService.steps);
         // IF A MAIL IS CONFIGURED IN STEP CONFIG
         if (typeof this._stepService.steps[this.indexStepObj].configuration.mail_id != "undefined" && this.indexStepObj > -1)
         {
-            this._mailService.sendMail(this._stepService.steps[this.indexStepObj].configuration.mail_id)
-                .subscribe(
-                    mailState => {
-                        console.log(mailState);
-                    },
-                    error => console.log(error)
-                );
+            // IF A MAIL IS CONFIGURED IN STEP CONFIG OR IF LAST STEP OF FORM
+            if (typeof this._stepService.steps[this.indexStepObj].configuration.mail_id != "undefined" )
+            {
+                this._mailService.sendMail(this._stepService.steps[this.indexStepObj].configuration.mail_id)
+                    .subscribe(
+                        mailState => {
+                            console.log(mailState);
+                        },
+                        error => console.log(error)
+                    );
+            }
         }
 
         // if (this.indexStepObj <= 0 )
         // {
+        // IF WE ARE ON THE LAST STEP OF THE FORM WE SAVE THE FORM IN DB, SEND AN EMAIL AND SHOW A MESSAGE TO THE USER
+        if (this.indexStepObj == this._stepService.steps.length - 1){
+            console.log('save form')
+            console.log(this._formService.arraySteps);
+            this._saveService.saveData(this._stepService.steps[this.indexStepObj].step_id)
+                .subscribe(
+                    data => {
+                        this.formCompleted = true;
+                        console.log(data) },
+                    error => console.log(error)
+                )
+        }
+        else {
             this.indexStepObj ++;
 //        }
         // while ( typeof this._stepService.step[this.indexStepObj] == 'undefined' ) {
@@ -371,11 +384,8 @@ console.log(this._stepService.steps);
         /* IF LIST BUTTON COMPONENT */
         console.log(this._stepService.steps[this.indexStepObj].type);
 
-        // if (this.indexStepObj > this._stepService.steps.length){
-        //     console.log('save form')
-        //     console.log(this._formService.arraySteps)
-        // }
-        // else {
+
+
             switch (this._stepService.steps[this.indexStepObj].type) {
                 case 'click_selection':
 
@@ -436,7 +446,9 @@ console.log(this._stepService.steps);
                     //IF DATA ARE STORED IN A LIST IN CONFIG FILE
                     if (typeof this._stepService.steps[this.indexStepObj].configuration.list != 'undefined') {
                         console.log("GET DATA FROM LIST");
-                        this.lists.push(this._stepService.steps[this.indexStepObj].configuration.list);
+                        console.log(this._stepService.steps[this.indexStepObj].configuration.list);
+                        console.log(this._stepService.steps[this.indexStepObj].name);
+                        //this.lists.push(this._stepService.steps[this.indexStepObj].configuration.list);
                         this.datas.push({
                             "name": this._stepService.steps[this.indexStepObj].name,
                             "list": this._stepService.steps[this.indexStepObj].configuration.list
@@ -467,7 +479,7 @@ console.log(this._stepService.steps);
                 default:
                     console.log('default');
             }
-        // }
+         }
 
 
     }
@@ -477,8 +489,10 @@ console.log(this._stepService.steps);
         console.log($event.valueName);
         console.log(this.indexStepObj);
         var tmpObj = {};
-        tmpObj[$event.valueName] = $event.valueSelected
-        this._formService.current_step_id = $event.stepId;
+        tmpObj[$event.valueName] = $event.valueSelected;
+        console.log(tmpObj);
+        this._formService.previous_step_id = this.stepId;
+        this._formService.arrayStepsIdx = $event.stepIdx;
         this._formService.arraySteps[this.indexStepObj] = tmpObj;
         console.log("event.stepIdx: " + $event.stepIdx)
         console.log(tmpObj);
@@ -494,6 +508,7 @@ console.log(this._stepService.steps);
         // console.log(this._formService.arraySteps);
         // console.log($event.valueName);
         this._formService.current_step_id = $event.stepId;
+        this._formService.previous_step_id = this.stepId;
         for (let j =0; j<this._formService.arraySteps.length; j++){
 
             //console.log(this._formService.arraySteps[j].keys);
