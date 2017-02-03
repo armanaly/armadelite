@@ -5,7 +5,7 @@ import { Observable } from "rxjs/Observable";
 import {FormService} from "../vehicule/form.service";
 
 @Injectable()
-export class SaveButtonService {
+export class SaveService {
 
     constructor (private _http: Http, private _formService: FormService) {}
 

@@ -24,7 +24,7 @@ import {CollectionService} from "./Engine/collection.service";
 import {PanelBtnComponent} from "./components/panelBtnImg";
 import {FieldPanelComponent} from "./components/fieldPanel";
 import {SaveButtonComponent} from "./components/saveButton";
-import {SaveButtonService} from "./components/saveButtonService";
+import {SaveService} from "./components/saveService";
 import {GridPanelComponent} from "./components/gridPanel.component";
 import {GridPanelService} from "./components/gridPanel.service";
 import {MenuComponent} from "./menu/menu.component";
@@ -43,7 +43,7 @@ import {MailService} from "./Engine/mail.service";
     ],
     bootstrap: [AppComponent],
     providers: [ FormService, ProfileService, PhotosService,
-                 StepService, CollectionService, SaveButtonService,
+                 StepService, CollectionService, SaveService,
                 MailService, GridPanelService]
 })
 export class AppModule {

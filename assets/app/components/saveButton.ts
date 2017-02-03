@@ -1,6 +1,6 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core'
 import {FormService} from "../vehicule/form.service";
-import {SaveButtonService} from "./saveButtonService";
+import {SaveService} from "./saveService";
 
 @Component({
     selector: 'save-button',
@@ -10,12 +10,12 @@ import {SaveButtonService} from "./saveButtonService";
 
 export class SaveButtonComponent {
     @Input() stepId;
-    constructor(private _saveButtonService: SaveButtonService){}
+    constructor(private _saveService: SaveService){}
 
     saveStep(){
         //console.log(this._formService);
         console.log(this.stepId);
-        this._saveButtonService.saveDatas(this.stepId)
+        this._saveService.saveDatas(this.stepId)
             .subscribe(
                 data => console.log(data),
                 error => console.log(error)
