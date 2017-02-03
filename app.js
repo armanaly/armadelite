@@ -6,18 +6,18 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 //Service MongoDb
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 //Service image in cloud
 var cloudinary = require('cloudinary');
 
 
 
 var appRoutes = require('./routes/app');
-var marqueRoutes = require('./routes/marques');
-var vehiculeRoutes = require('./routes/vehicules');
-var loadPhotoRoutes = require('./routes/load_image');
-var demandRoutes = require('./routes/demand');
-var stepRoutes = require('./routes/steps');
+// var marqueRoutes = require('./routes/marques');
+// var vehiculeRoutes = require('./routes/vehicules');
+// var loadPhotoRoutes = require('./routes/load_image');
+// var demandRoutes = require('./routes/demand');
+// var stepRoutes = require('./routes/steps');
 
 var app = express();
 var multer = require('multer');
@@ -67,7 +67,7 @@ app.listen('3000', function(){
 });*/
 
 
-mongoose.connect('localhost:27017/auto');
+// mongoose.connect('localhost:27017/auto');
 //mongoose.connect('marxan:Axonian456@ds063715.mlab.com:63715/heroku_1ngv0fsg');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -88,11 +88,11 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use('/marque', marqueRoutes);
-app.use('/vehicule', vehiculeRoutes);
-app.use('/load_image', loadPhotoRoutes);
-app.use('/demand', demandRoutes);
-app.use('/step', stepRoutes);
+// app.use('/marque', marqueRoutes);
+// app.use('/vehicule', vehiculeRoutes);
+// app.use('/load_image', loadPhotoRoutes);
+// app.use('/demand', demandRoutes);
+// app.use('/step', stepRoutes);
 app.use('/',appRoutes);
 
 // Object to send emails
