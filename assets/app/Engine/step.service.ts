@@ -30,7 +30,8 @@ export class StepService {
                         data[i].name,
                         data[i].configuration,
                         data[i].master_name,
-                        data[i].master_type));
+                        data[i].master_type,
+                    []));
                 //     console.log(step);
                      //objs.push(step);
                 //     console.log(objs);
