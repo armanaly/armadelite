@@ -1,4 +1,4 @@
-import {NgModule}      from '@angular/core';
+import {NgModule, APP_INITIALIZER}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 //import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -29,6 +29,50 @@ import {GridPanelComponent} from "./components/gridPanel.component";
 import {GridPanelService} from "./components/gridPanel.service";
 import {MenuComponent} from "./menu/menu.component";
 import {MailService} from "./Engine/mail.service";
+
+function getStepsFirst(_stepService: StepService) {
+    return () => _stepService.getSteps()
+    // .subscribe(
+    //   stepReturn => {
+
+    //      t     his. st   eps = stepReturn;
+
+
+    //
+    // console.log("stepReturn");
+    // console.log(stepReturn);
+    // console.log(this._stepService.steps);
+    // // this.tmp = stepReturn.json();
+    // // thi     s._stepService.step = this.tmp;
+    // //
+    // // //  for ( let i = 0; i < stepReturn.json().length; i++) {
+    // // //     console . log(step   Return.json()[  i]);
+    // // //
+    // // //     console.log(this._st  epService.step);
+    // // // }
+    // //
+    // console.log(this._stepService.step[0]);
+    // //
+    // // this._stepService.steps = this.tmp;
+    // // console.log(this._stepService.steps);
+    // // console.log(this.tmp);
+    // /* IF DATA ARE STORED IN A COLLECTION IN CONFIG FILE */
+    // if (typeof this._stepService.steps[0].configuration.collection != 'undefined') {
+    // }
+    //
+    // /*  IF A LIST EXISTS IN CONFIG FILE */
+    // if (typeof this._stepService.steps[0].configuration.list != 'undefined') {
+    //     this.lists.push(this._stepService.steps[0].configuration.list);
+    //     this.listsData.push({
+    //         "name": this._stepService.steps[0].name,
+    //         "list": this._stepService.steps[0].configuration.list
+    //     });
+    // }
+    // console.log(this.listsData);
+    // this._stepService.datas = this.listsData.slice();
+    // INITIATE FORM SERVICE TO this._formService.init();
+//})}
+}
 @NgModule({
     declarations: [
         AppComponent, MainComponent,
@@ -43,7 +87,13 @@ import {MailService} from "./Engine/mail.service";
     ],
     bootstrap: [AppComponent],
     providers: [ FormService, ProfileService, PhotosService,
-                 StepService, CollectionService, SaveService,
+                 StepService,
+        { provide: APP_INITIALIZER,
+                    useFactory: getStepsFirst,
+            deps: [StepService],
+        multi: true},
+
+                CollectionService, SaveService,
                 MailService, GridPanelService]
 })
 export class AppModule {

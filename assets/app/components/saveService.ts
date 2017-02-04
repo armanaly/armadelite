@@ -9,7 +9,7 @@ export class SaveService {
 
     constructor (private _http: Http, private _formService: FormService) {}
 
-    saveDatas(currentStep){
+    saveData(currentStep){
         // console.log('saveDemande');
         // console.log(form);
 

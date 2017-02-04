@@ -22,7 +22,7 @@ import {SaveService} from "../components/saveService";
     <div class="row" align="center">
         
             <!--<div  class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/grid']"> Data grid </a></button></div>-->
-            <div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/step']"> NEW FORM</a></button></div>
+            <!--<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/step']"> NEW FORM</a></button></div>-->
             <!--<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/']"> Ajouter contact </a></button></div>-->
             <!--<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/']"> Lister contacts </a></button></div>-->
 
@@ -191,6 +191,7 @@ export class MainComponent implements OnInit {
 
             }
         }
+        // START THE FIRST STEP
         else {
             //this.current_step_id = this.stepId;
             //this.datas = this._stepService.datas.slice();
@@ -330,14 +331,13 @@ export class MainComponent implements OnInit {
         console.log(this._stepService);
         console.log(this._formService);
         console.log("GO NEXT STEP");
-        console.log(this._stepService.steps.length);
+        console.log(this._stepService.steps);
 
 
         console.log(x);
         this.indexStepObj = x;
         // IF A MAIL IS CONFIGURED IN STEP CONFIG
-        if (typeof this._stepService.steps[this.indexStepObj].configuration.mail_id != "undefined" && this.indexStepObj > -1)
-        {
+        if (this.indexStepObj > -1){
             // IF A MAIL IS CONFIGURED IN STEP CONFIG OR IF LAST STEP OF FORM
             if (typeof this._stepService.steps[this.indexStepObj].configuration.mail_id != "undefined" )
             {

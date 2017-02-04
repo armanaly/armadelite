@@ -10,10 +10,11 @@ export class StepService {
     constructor (private _http: Http) {}
     steps: any;
     step: StepModel[] = [];
-    getSteps(){
+    getSteps(): Promise<void>{
         var completeUrl = GlobalVariable.BASE_URL+'step';
         return this._http.get(completeUrl)
-            .map(response => {
+            .toPromise()
+            .then(response => {
                 console.log(response.json());
                 const data = response.json();
 
@@ -45,7 +46,7 @@ export class StepService {
 
 
                 //console.log(objTest);
-                return objs;
+             //   return objs;
 
         })
             .catch(error => Observable.throw(error));
