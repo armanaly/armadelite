@@ -4,24 +4,9 @@
     <list default="true" id="00e82b7e-2225-4c3a-a599-ccf4911817e3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myapper" afterPath="$PROJECT_DIR$/myapper" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/russianballet" afterPath="$PROJECT_DIR$/russianballet" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/Engine/step.service.ts" afterPath="$PROJECT_DIR$/assets/app/Engine/step.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.component.ts" afterPath="$PROJECT_DIR$/assets/app/app.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.routing.ts" afterPath="$PROJECT_DIR$/assets/app/app.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/components/gridPanel.component.ts" afterPath="$PROJECT_DIR$/assets/app/components/gridPanel.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/components/gridPanel.service.ts" afterPath="$PROJECT_DIR$/assets/app/components/gridPanel.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/components/saveButton.ts" afterPath="$PROJECT_DIR$/assets/app/components/saveButton.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/global.ts" afterPath="$PROJECT_DIR$/assets/app/global.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/menu/menu.component.ts" afterPath="$PROJECT_DIR$/assets/app/menu/menu.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/Engine/step.service.js" afterPath="$PROJECT_DIR$/public/js/app/Engine/step.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/app.component.js" afterPath="$PROJECT_DIR$/public/js/app/app.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/app.routing.js" afterPath="$PROJECT_DIR$/public/js/app/app.routing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/components/gridPanel.component.js" afterPath="$PROJECT_DIR$/public/js/app/components/gridPanel.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/components/gridPanel.service.js" afterPath="$PROJECT_DIR$/public/js/app/components/gridPanel.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/components/saveButton.js" afterPath="$PROJECT_DIR$/public/js/app/components/saveButton.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/global.js" afterPath="$PROJECT_DIR$/public/js/app/global.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/menu/menu.component.js" afterPath="$PROJECT_DIR$/public/js/app/menu/menu.component.js" />
     </list>
     <ignored path="mysaver.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,7 +29,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
@@ -61,11 +46,21 @@
       <file leaf-file-name="menu.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/menu/menu.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
+            <state relative-caret-position="-39">
               <caret line="3" column="42" lean-forward="false" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
               <folding>
                 <marker date="1486393063820" expanded="true" signature="319:621" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/app/global.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -232,7 +227,6 @@
         <option value="$PROJECT_DIR$/public/systemjs.config.js" />
         <option value="$PROJECT_DIR$/assets/app/vehicule/main.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/components/saveService.ts" />
-        <option value="$PROJECT_DIR$/assets/app/global.ts" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/assets/app/components/saveButton.ts" />
         <option value="$PROJECT_DIR$/assets/app/app.module.ts" />
@@ -242,6 +236,7 @@
         <option value="$PROJECT_DIR$/assets/app/components/gridPanel.service.ts" />
         <option value="$PROJECT_DIR$/assets/app/components/gridPanel.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/global.ts" />
       </list>
     </option>
   </component>
@@ -256,9 +251,10 @@
     <handled-path value="$PROJECT_DIR$/public/js/vendor/ng2-bootstrap/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-6" />
-    <option name="width" value="1937" />
-    <option name="height" value="1080" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -708,7 +704,7 @@
       <workItem from="1486283540494" duration="7785000" />
       <workItem from="1486372339242" duration="9595000" />
       <workItem from="1486419071604" duration="17000" />
-      <workItem from="1486494526790" duration="86000" />
+      <workItem from="1486494526790" duration="775000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout Sélection des équipements dans tableau">
       <created>1476008307314</created>
@@ -924,7 +920,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="831282000" />
+    <option name="totallyTimeSpent" value="831971000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -936,29 +932,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="1937" height="1080" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18904686" sideWeight="0.4937304" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18914647" sideWeight="0.4937304" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38870794" sideWeight="0.59820956" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3110368" sideWeight="0.4341412" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35451505" sideWeight="0.4915701" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39910814" sideWeight="0.39989462" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24288724" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3110368" sideWeight="0.5679663" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3110368" sideWeight="0.5658588" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18914647" sideWeight="0.5062696" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38870794" sideWeight="0.4017904" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31661093" sideWeight="0.4915701" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1222,13 +1218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/global.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1302,16 +1291,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/menu/menu.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="42" lean-forward="false" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
-          <folding>
-            <marker date="1486393063820" expanded="true" signature="319:621" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/components/gridPanel.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -1349,6 +1328,24 @@
             <marker date="1486418380908" expanded="true" signature="655:728" ph="..." />
             <marker date="1486418380908" expanded="true" signature="692:722" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/menu/menu.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-39">
+          <caret line="3" column="42" lean-forward="false" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
+          <folding>
+            <marker date="1486393063820" expanded="true" signature="319:621" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/global.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
