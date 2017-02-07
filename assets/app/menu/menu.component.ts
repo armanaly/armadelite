@@ -1,6 +1,7 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core'
 import {StepService} from "../Engine/step.service";
 import {Router} from '@angular/router';
+import {GridPanelService} from "../components/gridPanel.service";
 @Component({
     selector: 'grid-panel',
     template: `
@@ -14,19 +15,21 @@ import {Router} from '@angular/router';
 
 export class MenuComponent{
     constructor(
-         public _stepService: StepService, private router: Router
+         private _stepService: StepService, private router: Router, private _gridService: GridPanelService
         )
     {}
-
-  //  router = new Router;
-
     ngOnInit(){
+console.log(window);
 
-         ///setTimeout(() => {
              if (this._stepService.steps[0].master_type == 'form'){
                  this.router.navigate(['/step']);
+             }else{
+                 this._gridService.getDatas()
+                     .subscribe(data => {
+                             // this.router.navigate(['/grid']);
+                         },
+                         error => console.log(error)
+                     )
              }
-        // }, 10000)
-
     }
 }

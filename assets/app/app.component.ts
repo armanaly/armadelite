@@ -3,7 +3,7 @@ import {StepService} from "./Engine/step.service";
 import {CollectionService} from "./Engine/collection.service";
 import {FormService} from "./vehicule/form.service";
 //i                   mport {Mar     queService} from "./marque/marque.service";
-//i                                           mport      v {Mar     queService} from "./marque/marque.service";
+//i                                                           mport      v {Mar     queService} from "./marque/marque.service";
 //i                   ;,                                                  mport {Marque} from "./marque/marque";
 
 @Component({
@@ -26,9 +26,9 @@ export class AppComponent {
     tmp = [];
     ngOnInit() {
         this._formService.init();
-//         console.log('appComponent');
-//         th is._s   tepServ ice.getSteps()
-//             .subscribe(
+//         console.log('ap      pComponent');
+//         th      is._s   tep   Serv  ice.getSteps()
+//             .subscri                 be(
 //                 stepReturn => {
 //
 //                     //      t     his. st   eps = stepReturn;
@@ -36,7 +36,7 @@ export class AppComponent {
 //
 //
 //                     console.log("stepReturn");
-//                     console.log(stepReturn);
+//                     conso     le.log(st epReturn);
 //                     console.log(this._stepService.steps);
 //                     // this.tmp = stepReturn.json();
 //                     // thi     s._stepService.step = this.tmp;
@@ -69,7 +69,7 @@ export class AppComponent {
 //                     // INITIATE FORM SERVICE TO KEEP ALL SELECTIONS MADE BY USER IN STEPS
 //                     this._formService.init();
 //
-// //console.  log(this._formService);
+// //console.  log(this._formS      ervice);
 // //Big list contains all list of buttons
 // //var keyName = this._stepService.s        ep[0].configuration.form_value.name;
 // //this._formService.arraySteps[0][keyName] =  this.route.snapshot.params.name;

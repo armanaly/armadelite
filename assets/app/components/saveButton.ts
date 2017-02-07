@@ -15,7 +15,7 @@ export class SaveButtonComponent {
     saveStep(){
         //console.log(this._formService);
         console.log(this.stepId);
-        this._saveService.saveDatas(this.stepId)
+        this._saveService.saveData(this.stepId)
             .subscribe(
                 data => console.log(data),
                 error => console.log(error)

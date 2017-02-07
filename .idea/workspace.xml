@@ -4,16 +4,24 @@
     <list default="true" id="00e82b7e-2225-4c3a-a599-ccf4911817e3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myapper" afterPath="$PROJECT_DIR$/myapper" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/russianballet" afterPath="$PROJECT_DIR$/russianballet" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/Engine/step.service.ts" afterPath="$PROJECT_DIR$/assets/app/Engine/step.service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.component.ts" afterPath="$PROJECT_DIR$/assets/app/app.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.module.ts" afterPath="$PROJECT_DIR$/assets/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/components/saveService.ts" afterPath="$PROJECT_DIR$/assets/app/components/saveService.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/vehicule/main.component.ts" afterPath="$PROJECT_DIR$/assets/app/vehicule/main.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.routing.ts" afterPath="$PROJECT_DIR$/assets/app/app.routing.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/components/gridPanel.component.ts" afterPath="$PROJECT_DIR$/assets/app/components/gridPanel.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/components/gridPanel.service.ts" afterPath="$PROJECT_DIR$/assets/app/components/gridPanel.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/components/saveButton.ts" afterPath="$PROJECT_DIR$/assets/app/components/saveButton.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/global.ts" afterPath="$PROJECT_DIR$/assets/app/global.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/menu/menu.component.ts" afterPath="$PROJECT_DIR$/assets/app/menu/menu.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/Engine/step.service.js" afterPath="$PROJECT_DIR$/public/js/app/Engine/step.service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/app.component.js" afterPath="$PROJECT_DIR$/public/js/app/app.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/app.module.js" afterPath="$PROJECT_DIR$/public/js/app/app.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/vehicule/main.component.js" afterPath="$PROJECT_DIR$/public/js/app/vehicule/main.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/app.routing.js" afterPath="$PROJECT_DIR$/public/js/app/app.routing.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/components/gridPanel.component.js" afterPath="$PROJECT_DIR$/public/js/app/components/gridPanel.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/components/gridPanel.service.js" afterPath="$PROJECT_DIR$/public/js/app/components/gridPanel.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/components/saveButton.js" afterPath="$PROJECT_DIR$/public/js/app/components/saveButton.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/global.js" afterPath="$PROJECT_DIR$/public/js/app/global.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/menu/menu.component.js" afterPath="$PROJECT_DIR$/public/js/app/menu/menu.component.js" />
     </list>
     <ignored path="mysaver.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,12 +47,12 @@
       <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+            <state relative-caret-position="357">
+              <caret line="30" column="36" lean-forward="false" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
               <folding>
                 <element signature="e#0#56#0" expanded="true" />
-                <marker date="1486229507813" expanded="true" signature="639:712" ph="..." />
-                <marker date="1486229507813" expanded="true" signature="676:706" ph="..." />
+                <marker date="1486418380908" expanded="true" signature="655:728" ph="..." />
+                <marker date="1486418380908" expanded="true" signature="692:722" ph="..." />
               </folding>
             </state>
           </provider>
@@ -53,12 +61,43 @@
       <file leaf-file-name="menu.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/menu/menu.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="25" />
+            <state relative-caret-position="51">
+              <caret line="3" column="42" lean-forward="false" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
               <folding>
-                <element signature="e#0#68#0" expanded="true" />
-                <marker date="1486158679468" expanded="true" signature="253:555" ph="..." />
+                <marker date="1486393063820" expanded="true" signature="319:621" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gridPanel.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/components/gridPanel.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+              <folding>
+                <marker date="1486418337643" expanded="true" signature="506:822" ph="..." />
+                <marker date="1486418337643" expanded="true" signature="528:585" ph="..." />
+                <marker date="1486418337643" expanded="true" signature="624:803" ph="..." />
+                <marker date="1486418337643" expanded="true" signature="872:1808" ph="..." />
+                <marker date="1486418337643" expanded="true" signature="935:1789" ph="..." />
+                <marker date="1486418337643" expanded="true" signature="1005:1766" ph="..." />
+                <marker date="1486418337643" expanded="true" signature="1006:1766" ph="..." />
+                <marker date="1486418337643" expanded="true" signature="1036:1219" ph="..." />
+                <marker date="1486418337643" expanded="true" signature="1113:1189" ph="..." />
+                <marker date="1486418337643" expanded="true" signature="1291:1737" ph="..." />
+                <marker date="1486418337643" expanded="true" signature="1366:1480" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gridPanel.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/components/gridPanel.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="38" column="78" lean-forward="false" selection-start-line="38" selection-start-column="78" selection-end-line="38" selection-end-column="78" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,37 +105,20 @@
       <file leaf-file-name="app.routing.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="38" />
+            <state relative-caret-position="136">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/vehicule/main.component.ts">
+      <file leaf-file-name="saveButton.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/components/saveButton.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="359" column="38" lean-forward="true" selection-start-line="359" selection-start-column="38" selection-end-line="359" selection-end-column="38" />
+            <state relative-caret-position="255">
+              <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
               <folding>
-                <element signature="e#0#54#0" expanded="true" />
-                <marker date="1486229500197" expanded="true" signature="766:4101" ph="..." />
-                <marker date="1486229500197" expanded="true" signature="863:1471" ph="..." />
-                <marker date="1486229500197" expanded="true" signature="1525:1708" ph="..." />
-                <marker date="1486229500197" expanded="true" signature="1549:1697" ph="..." />
-                <marker date="1486229500197" expanded="true" signature="1794:3616" ph="..." />
-                <marker date="1486229500197" expanded="true" signature="1893:2269" ph="..." />
-                <marker date="1486229500197" expanded="true" signature="1921:2254" ph="..." />
-                <marker date="1486229500197" expanded="true" signature="2369:2751" ph="..." />
-                <marker date="1486229500197" expanded="true" signature="2396:2736" ph="..." />
-                <marker date="1486229500197" expanded="true" signature="2855:3248" ph="..." />
-                <marker date="1486229500197" expanded="true" signature="2885:3225" ph="..." />
-                <marker date="1486229500197" expanded="true" signature="3340:3599" ph="..." />
-                <marker date="1486229500197" expanded="true" signature="3366:3584" ph="..." />
-                <marker date="1486229500197" expanded="true" signature="3729:3871" ph="..." />
-                <marker date="1486229500197" expanded="true" signature="3945:4089" ph="..." />
-                <marker date="1486229500197" expanded="true" signature="4125:4303" ph="{...}" />
-                <marker date="1486229500197" expanded="true" signature="4766:4768" ph="{...}" />
+                <marker date="1486297813271" expanded="true" signature="243:348" ph="..." />
               </folding>
             </state>
           </provider>
@@ -112,31 +134,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="collection.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/Engine/collection.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1717">
-              <caret line="106" column="17" lean-forward="false" selection-start-line="106" selection-start-column="17" selection-end-line="106" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="backButton.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/vehicule/backButton.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="74" column="1" lean-forward="false" selection-start-line="74" selection-start-column="1" selection-end-line="74" selection-end-column="1" />
+            <state relative-caret-position="969">
+              <caret line="84" column="39" lean-forward="false" selection-start-line="84" selection-start-column="39" selection-end-line="84" selection-end-column="39" />
               <folding>
                 <element signature="e#176#222#0" expanded="true" />
               </folding>
@@ -147,18 +149,8 @@
       <file leaf-file-name="step.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/Engine/step.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="48" column="15" lean-forward="false" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="systemjs.builder.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/systemjs.builder.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="22" column="45" lean-forward="false" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -221,13 +213,11 @@
         <option value="$PROJECT_DIR$/assets/app/components/panelButtons.ts" />
         <option value="$PROJECT_DIR$/assets/app/state/state.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/vehicule/vehicule.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/components/gridPanel.service.ts" />
         <option value="$PROJECT_DIR$/assets/app/vehicule/form.service.ts" />
         <option value="$PROJECT_DIR$/assets/app/components/saveButtonService.ts" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/assets/app/vehicule/listButtons.ts" />
         <option value="$PROJECT_DIR$/assets/app/vehicule/vehicule.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/components/gridPanel.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/components/panelBtnImg.ts" />
         <option value="$PROJECT_DIR$/assets/app/vehicule/multipleSelection.ts" />
         <option value="$PROJECT_DIR$/assets/app/profile/profile.component.ts" />
@@ -235,20 +225,22 @@
         <option value="$PROJECT_DIR$/assets/app/components/fieldPanel.ts" />
         <option value="$PROJECT_DIR$/assets/app/components/fieldPanel.service.ts" />
         <option value="$PROJECT_DIR$/assets/app/Engine/stepModel.ts" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/assets/app/app.routing.ts" />
         <option value="$PROJECT_DIR$/assets/app/Engine/mail.service.ts" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/assets/app/global.ts" />
-        <option value="$PROJECT_DIR$/assets/app/menu/menu.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/components/saveButton.ts" />
         <option value="$PROJECT_DIR$/assets/app/vehicule/backButton.ts" />
         <option value="$PROJECT_DIR$/public/systemjs.config.js" />
-        <option value="$PROJECT_DIR$/assets/app/Engine/step.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/app.module.ts" />
         <option value="$PROJECT_DIR$/assets/app/vehicule/main.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/components/saveService.ts" />
+        <option value="$PROJECT_DIR$/assets/app/global.ts" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/assets/app/components/saveButton.ts" />
+        <option value="$PROJECT_DIR$/assets/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/assets/app/Engine/step.service.ts" />
+        <option value="$PROJECT_DIR$/assets/app/app.routing.ts" />
+        <option value="$PROJECT_DIR$/assets/app/menu/menu.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/components/gridPanel.service.ts" />
+        <option value="$PROJECT_DIR$/assets/app/components/gridPanel.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/app.component.ts" />
       </list>
     </option>
@@ -264,10 +256,9 @@
     <handled-path value="$PROJECT_DIR$/public/js/vendor/ng2-bootstrap/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-6" />
+    <option name="width" value="1937" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -285,6 +276,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -448,7 +440,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -713,7 +704,11 @@
       <workItem from="1485334700726" duration="9156000" />
       <workItem from="1485417629157" duration="1447000" />
       <workItem from="1486140855054" duration="7183000" />
-      <workItem from="1486220058621" duration="3509000" />
+      <workItem from="1486220058621" duration="4941000" />
+      <workItem from="1486283540494" duration="7785000" />
+      <workItem from="1486372339242" duration="9595000" />
+      <workItem from="1486419071604" duration="17000" />
+      <workItem from="1486494526790" duration="86000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout Sélection des équipements dans tableau">
       <created>1476008307314</created>
@@ -929,7 +924,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="812367000" />
+    <option name="totallyTimeSpent" value="831282000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -941,29 +936,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-6" y="0" width="1937" height="1080" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18914647" sideWeight="0.4937304" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18904686" sideWeight="0.4937304" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39910814" sideWeight="0.59114856" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38870794" sideWeight="0.59820956" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35451505" sideWeight="0.4915701" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39910814" sideWeight="0.40885141" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24288724" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3110368" sideWeight="0.5753425" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3110368" sideWeight="0.5679663" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18914647" sideWeight="0.5062696" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38870794" sideWeight="0.4017904" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31661093" sideWeight="0.4915701" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1014,6 +1009,10 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/myapper" />
+      <path value="$PROJECT_DIR$/russianballet" />
+    </ignored-roots>
     <MESSAGE value="Ajout Sélection des équipements dans tableau" />
     <MESSAGE value="CSS modified" />
     <MESSAGE value="load Image" />
@@ -1068,20 +1067,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/components/gridPanel.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="92" lean-forward="false" selection-start-line="26" selection-start-column="92" selection-end-line="26" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/components/gridPanel.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/vehicule/multipleSelection.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="541">
@@ -1103,25 +1088,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/vehicule/listButtons.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="20" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/marque.js" />
     <entry file="file://$PROJECT_DIR$/models/vehicule.js" />
     <entry file="file://$PROJECT_DIR$/routes/marques.js" />
     <entry file="file://$PROJECT_DIR$/models/demande.js" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt" />
     <entry file="file://$PROJECT_DIR$/tmp mongoDB.py" />
     <entry file="file://$PROJECT_DIR$/node_modules/gulp/index.js">
@@ -1136,13 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="50" column="4" lean-forward="false" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
-          <folding>
-            <marker date="1485081365849" expanded="true" signature="395:1656" ph="..." />
-            <marker date="1485081365849" expanded="true" signature="438:1641" ph="..." />
-            <marker date="1485081365849" expanded="true" signature="468:1618" ph="..." />
-            <marker date="1485081365849" expanded="true" signature="782:1483" ph="..." />
-            <marker date="1485081365849" expanded="true" signature="864:1332" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1150,7 +1113,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="58" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1165,9 +1127,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="12" column="61" lean-forward="false" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#70#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1213,37 +1172,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/global.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/components/saveButton.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#68#0" expanded="false" />
-            <marker date="1486159775580" expanded="true" signature="243:348" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/Engine/collection.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1717">
           <caret line="106" column="17" lean-forward="false" selection-start-line="106" selection-start-column="17" selection-end-line="106" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/vehicule/backButton.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1273,7 +1205,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1281,7 +1212,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
           <caret line="52" column="9" lean-forward="true" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1289,44 +1219,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
           <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/global.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
+    <entry file="file://$PROJECT_DIR$/assets/app/vehicule/main.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/Engine/step.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="48" column="15" lean-forward="false" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/menu/menu.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-            <marker date="1486158679468" expanded="true" signature="253:555" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="74" column="1" lean-forward="false" selection-start-line="74" selection-start-column="1" selection-end-line="74" selection-end-column="1" />
-          <folding>
-            <element signature="e#176#222#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="5882">
+          <caret line="359" column="38" lean-forward="false" selection-start-line="359" selection-start-column="38" selection-end-line="359" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1338,41 +1252,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/vehicule/main.component.ts">
+    <entry file="file://$PROJECT_DIR$/assets/app/components/saveButton.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding>
+            <marker date="1486297813271" expanded="true" signature="243:348" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/vehicule/listButtons.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="33" column="20" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="84" column="39" lean-forward="false" selection-start-line="84" selection-start-column="39" selection-end-line="84" selection-end-column="39" />
+          <folding>
+            <element signature="e#176#222#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/Engine/step.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="22" column="45" lean-forward="false" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="359" column="38" lean-forward="true" selection-start-line="359" selection-start-column="38" selection-end-line="359" selection-end-column="38" />
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/vehicule/backButton.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/menu/menu.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="42" lean-forward="false" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
-            <marker date="1486229500197" expanded="true" signature="766:4101" ph="..." />
-            <marker date="1486229500197" expanded="true" signature="863:1471" ph="..." />
-            <marker date="1486229500197" expanded="true" signature="1525:1708" ph="..." />
-            <marker date="1486229500197" expanded="true" signature="1549:1697" ph="..." />
-            <marker date="1486229500197" expanded="true" signature="1794:3616" ph="..." />
-            <marker date="1486229500197" expanded="true" signature="1893:2269" ph="..." />
-            <marker date="1486229500197" expanded="true" signature="1921:2254" ph="..." />
-            <marker date="1486229500197" expanded="true" signature="2369:2751" ph="..." />
-            <marker date="1486229500197" expanded="true" signature="2396:2736" ph="..." />
-            <marker date="1486229500197" expanded="true" signature="2855:3248" ph="..." />
-            <marker date="1486229500197" expanded="true" signature="2885:3225" ph="..." />
-            <marker date="1486229500197" expanded="true" signature="3340:3599" ph="..." />
-            <marker date="1486229500197" expanded="true" signature="3366:3584" ph="..." />
-            <marker date="1486229500197" expanded="true" signature="3729:3871" ph="..." />
-            <marker date="1486229500197" expanded="true" signature="3945:4089" ph="..." />
-            <marker date="1486229500197" expanded="true" signature="4125:4303" ph="{...}" />
-            <marker date="1486229500197" expanded="true" signature="4766:4768" ph="{...}" />
+            <marker date="1486393063820" expanded="true" signature="319:621" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/components/gridPanel.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="38" column="78" lean-forward="false" selection-start-line="38" selection-start-column="78" selection-end-line="38" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/components/gridPanel.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <folding>
+            <marker date="1486418337643" expanded="true" signature="506:822" ph="..." />
+            <marker date="1486418337643" expanded="true" signature="528:585" ph="..." />
+            <marker date="1486418337643" expanded="true" signature="624:803" ph="..." />
+            <marker date="1486418337643" expanded="true" signature="872:1808" ph="..." />
+            <marker date="1486418337643" expanded="true" signature="935:1789" ph="..." />
+            <marker date="1486418337643" expanded="true" signature="1005:1766" ph="..." />
+            <marker date="1486418337643" expanded="true" signature="1006:1766" ph="..." />
+            <marker date="1486418337643" expanded="true" signature="1036:1219" ph="..." />
+            <marker date="1486418337643" expanded="true" signature="1113:1189" ph="..." />
+            <marker date="1486418337643" expanded="true" signature="1291:1737" ph="..." />
+            <marker date="1486418337643" expanded="true" signature="1366:1480" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+        <state relative-caret-position="357">
+          <caret line="30" column="36" lean-forward="false" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
-            <marker date="1486229507813" expanded="true" signature="639:712" ph="..." />
-            <marker date="1486229507813" expanded="true" signature="676:706" ph="..." />
+            <marker date="1486418380908" expanded="true" signature="655:728" ph="..." />
+            <marker date="1486418380908" expanded="true" signature="692:722" ph="..." />
           </folding>
         </state>
       </provider>

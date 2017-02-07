@@ -15,6 +15,8 @@ export class StepService {
         return this._http.get(completeUrl)
             .toPromise()
             .then(response => {
+                console.log(window.location)
+
                 console.log(response.json());
                 const data = response.json();
 
@@ -39,10 +41,14 @@ export class StepService {
                 //   //  objTest.push(step);
                 }
                 //this.step = objs;
-                console.log(this.step[0]);
-                for (let i = 0; i < this.step.length; i++) {
-                    console.log(this.step[i].step_id);
+                if (window.location.hash == '#/admin'){
+                    this.steps[0].master_type = 'admin'
                 }
+
+                 console.log(this.step[0]);
+                // for (let i = 0; i < this.step.length; i++) {
+                //     console.log(this.step[i].step_id);
+                // }
 
 
                 //console.log(objTest);

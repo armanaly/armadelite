@@ -11,10 +11,8 @@ const APP_ROUTES: Routes = [
     {path: '', component:MenuComponent },    //
     {path: 'step/:id', component: MainComponent},
     {path: 'step', component: MainComponent},
-    //{path: 'details/:name', component: VehiculeComponent},
     {path: 'grid', component: GridPanelComponent},
     {path: 'photos', component: PhotosComponent},
-    {path: 'profile', component: ProfileComponent}
 ];
 
 export const ROUTING = RouterModule.forRoot(APP_ROUTES);
