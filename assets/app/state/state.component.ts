@@ -1,5 +1,5 @@
 import {Component} from '@angular/core'
-import {FormService} from "../vehicule/form.service";
+import {FormService} from "../components/form.service";
 
 @Component({
     selector: 'state-vehicule',

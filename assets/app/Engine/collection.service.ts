@@ -6,7 +6,7 @@ import { Observable } from "rxjs/Observable";
 // import { Marque } from "./marque";
 import { GlobalVariable } from "../global";
 import {StepService} from "./step.service";
-import {FormService} from "../vehicule/form.service";
+import {FormService} from "../components/form.service";
 @Injectable()
 export class CollectionService { 
 
@@ -51,7 +51,7 @@ export class CollectionService {
         console.log(filters);
         for (var i=0; i< filters.length;i++) {
             filtersNameToString.push(filters[i].field);
-            filtersValueToString.push(this.getValueSelected(filters[i].step_id));
+            filtersValueToString.push(encodeURIComponent(this.getValueSelected(filters[i].step_id)));
 
             console.log(filtersValueToString);
             // filtersValueToString.push('AUDI');

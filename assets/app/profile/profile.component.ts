@@ -1,7 +1,7 @@
 import {Component} from '@angular/core'
 import {FormProfile} from '../profile/formProfile'
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
-import {FormService} from "../vehicule/form.service";
+import {FormService} from "../components/form.service";
 //import {ControlGroup} from "../../../public/js/vendor/@angular/common/esm/src/forms-deprecated/model";
 import {ProfileService} from "./profile.service";
 //import {ControlGroup, Control} from "@angular/common";

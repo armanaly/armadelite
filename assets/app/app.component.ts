@@ -1,7 +1,7 @@
 import {Component, Output, Inject} from '@angular/core';
 import {StepService} from "./Engine/step.service";
 import {CollectionService} from "./Engine/collection.service";
-import {FormService} from "./vehicule/form.service";
+import {FormService} from "./components/form.service";
 //i                   mport {Mar     queService} from "./marque/marque.service";
 //i                                                           mport      v {Mar     queService} from "./marque/marque.service";
 //i                   ;,                                                  mport {Marque} from "./marque/marque";
@@ -27,10 +27,11 @@ export class AppComponent {
     ngOnInit() {
         this._formService.init();
 //         console.log('ap      pComponent');
-//         th      is._s   tep   Serv  ice.getSteps()
-//             .subscri                 be(
+//         th      is._s    tep      Serv  ice.getSteps()
+//             .subscri                   be(
 //                 stepReturn => {
 //
+
 //                     //      t     his. st   eps = stepReturn;
 //
 //

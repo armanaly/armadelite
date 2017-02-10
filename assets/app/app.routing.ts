@@ -1,6 +1,6 @@
 import {Routes, RouterModule} from "@angular/router";
 
-import {MainComponent} from './vehicule/main.component';
+import {MainComponent} from './components/main.component';
 import {StateComponent} from './state/state.component';
 import {ProfileComponent} from "./profile/profile.component";
 import {PhotosComponent} from "./photos/photos.component";

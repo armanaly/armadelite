@@ -1,6 +1,6 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core'
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
-import {FormService} from "../vehicule/form.service";
+import {FormService} from "./form.service";
 import {GridPanelService} from "./gridPanel.service";
 import {Router, NavigationExtras} from '@angular/router';
 import {isObject} from "rxjs/util/isObject";

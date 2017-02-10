@@ -5,13 +5,13 @@ import {Validators, FormBuilder, FormGroup, FormControl} from "@angular/forms";
 import {StepModel} from "../Engine/stepModel";
 
 import {FormService} from "./form.service";
-import {BackButtonComponent} from "./backButton";
+import {BackButtonComponent} from "../comonents/backButton";
 import {StepService} from "../Engine/step.service";
 import {CollectionService} from "../Engine/collection.service";
 import {forEach} from "../../../public/js/vendor/@angular/router/src/utils/collection";
 import {Observable} from "rxjs";
 import {MailService} from "../Engine/mail.service";
-import {SaveService} from "../components/saveService";
+import {SaveService} from "./saveService";
 @Component({
     selector: 'vehicule-detail',
     template: `
@@ -327,29 +327,16 @@ export class MainComponent implements OnInit {
 
 
     // GO TO NEXT STEP ( x + 1)
-    goToNextStep(x){
+    goToNextStep(stepIndex){
         console.log(this._stepService);
         console.log(this._formService);
         console.log("GO NEXT STEP");
         console.log(this._stepService.steps);
 
 
-        console.log(x);
-        this.indexStepObj = x;
-        // IF A MAIL IS CONFIGURED IN STEP CONFIG
-        if (this.indexStepObj > -1){
-            // IF A MAIL IS CONFIGURED IN STEP CONFIG OR IF LAST STEP OF FORM
-            if (typeof this._stepService.steps[this.indexStepObj].configuration.mail_id != "undefined" )
-            {
-                this._mailService.sendMail(this._stepService.steps[this.indexStepObj].configuration.mail_id)
-                    .subscribe(
-                        mailState => {
-                            console.log(mailState);
-                        },
-                        error => console.log(error)
-                    );
-            }
-        }
+        console.log(stepIndex);
+        this.indexStepObj = stepIndex;
+
 
         // if (this.indexStepObj <= 0 )
         // {
@@ -361,28 +348,30 @@ export class MainComponent implements OnInit {
                 .subscribe(
                     data => {
                         this.formCompleted = true;
-                        console.log(data) },
+                        this._mailService.sendMail(this._stepService.steps[this.indexStepObj].configuration.mail_id, data._body)
+                            .subscribe(
+                                mailState => {
+                                    console.log(mailState);
+                                },
+                                error => console.log(error)
+                            );
+                        console.log(data._body) },
                     error => console.log(error)
                 )
         }
-        else {
+        else
+        {
             this.indexStepObj ++;
-//        }
-        // while ( typeof this._stepService.step[this.indexStepObj] == 'undefined' ) {
-        //      this.indexStepObj++;
-        // }
-        console.log("this.indexStepObj "+this.indexStepObj);
-        console.log(this._stepService.steps[this.indexStepObj]);
+
+            console.log("this.indexStepObj "+this.indexStepObj);
+            console.log(this._stepService.steps[this.indexStepObj]);
 
 
-        // TEMPORARY STEP_ID BECAUSE WE NEED TO WAIT FOR ASYNCHROUNOUS QUERY
-        var tmpNewstepId = this._stepService.steps[this.indexStepObj].step_id;
-        // console.log('indexStpObj :' + this.indexStepObj);
-        // console.log('tmpNewStepId: '+  tmpNewstepId);
-        // // this.previousStepId = this.stepId;
+            // TEMPORARY STEP_ID BECAUSE WE NEED TO WAIT FOR ASYNCHROUNOUS QUERY
+            var tmpNewstepId = this._stepService.steps[this.indexStepObj].step_id;
 
-        /* IF LIST BUTTON COMPONENT */
-        console.log(this._stepService.steps[this.indexStepObj].type);
+            /* IF LIST BUTTON COMPONENT */
+            console.log(this._stepService.steps[this.indexStepObj].type);
 
 
 
@@ -480,7 +469,14 @@ export class MainComponent implements OnInit {
                     console.log('default');
             }
          }
+        // IF A MAIL IS CONFIGURED IN STEP CONFIG
+        if (this.indexStepObj > -1){
+            // IF A MAIL IS CONFIGURED IN STEP CONFIG OR IF LAST STEP OF FORM
+            if (typeof this._stepService.steps[this.indexStepObj].configuration.mail_id != "undefined" )
+            {
 
+            }
+        }
 
     }
 
@@ -491,8 +487,8 @@ export class MainComponent implements OnInit {
         var tmpObj = {};
         tmpObj[$event.valueName] = $event.valueSelected;
         console.log(tmpObj);
-        this._formService.previous_step_id = this.stepId;
-        this._formService.arrayStepsIdx = $event.stepIdx;
+      //  this._formService.previous_step_id = this.stepId;
+      //  this._formService.arrayStepsIdx = $event.stepIdx;
         this._formService.arraySteps[this.indexStepObj] = tmpObj;
         console.log("event.stepIdx: " + $event.stepIdx)
         console.log(tmpObj);
@@ -508,7 +504,7 @@ export class MainComponent implements OnInit {
         // console.log(this._formService.arraySteps);
         // console.log($event.valueName);
         this._formService.current_step_id = $event.stepId;
-        this._formService.previous_step_id = this.stepId;
+       // this._formService.previous_step_id = this.stepId;
         for (let j =0; j<this._formService.arraySteps.length; j++){
 
             //console.log(this._formService.arraySteps[j].keys);

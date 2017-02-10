@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Http, Headers} from "@angular/http";
-import {FormService} from "../vehicule/form.service";
+import {FormService} from "../components/form.service";
 import { Observable } from "rxjs/Observable";
 import 'rxjs/Rx';
 import { GlobalVariable } from "../global";

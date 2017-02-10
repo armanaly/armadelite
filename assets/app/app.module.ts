@@ -9,16 +9,16 @@ import {FormsModule, ReactiveFormsModule}   from '@angular/forms';
 import {ROUTING} from "./app.routing"
 
 
-import {MainComponent} from "./vehicule/main.component";
+import {MainComponent} from "./components/main.component";
 import {StateComponent} from "./state/state.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {PhotosComponent} from "./photos/photos.component";
-import {FormService} from "./vehicule/form.service";
+import {FormService} from "./components/form.service";
 import {ProfileService} from "./profile/profile.service";
 import {PhotosService} from "./photos/photos.service";
-import {BackButtonComponent} from "./vehicule/backButton";
-import {ListButtonsComponent} from "./vehicule/listButtons";
-import {MultiSelectionComponent} from "./vehicule/multipleSelection";
+import {BackButtonComponent} from "./comonents/backButton";
+import {ListButtonsComponent} from "./comonents/listButtons";
+import {MultiSelectionComponent} from "./comonents/multipleSelection";
 import {StepService} from "./Engine/step.service";
 import {CollectionService} from "./Engine/collection.service";
 import {PanelBtnComponent} from "./components/panelBtnImg";

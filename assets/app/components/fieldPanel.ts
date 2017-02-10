@@ -1,6 +1,6 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core'
 import {FormBuilder, Validators, FormGroup, FormControl} from "@angular/forms";
-import {FormService} from "../vehicule/form.service";
+import {FormService} from "./form.service";
 @Component({
     selector: 'field-panel',
     template: `
