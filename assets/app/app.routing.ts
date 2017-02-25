@@ -8,10 +8,11 @@ import {GridPanelComponent} from "./components/gridPanel.component";
 import {MenuComponent} from "./menu/menu.component";
 
 const APP_ROUTES: Routes = [
-    {path: '', component:MenuComponent },    //
+    {path: '', component:MenuComponent,  },    //
     {path: 'step/:id', component: MainComponent},
     {path: 'step', component: MainComponent},
     {path: 'grid', component: GridPanelComponent},
+    {path: 'grid/:grid_name', component: GridPanelComponent},
     {path: 'photos', component: PhotosComponent},
 ];
 

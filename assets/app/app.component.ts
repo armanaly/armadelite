@@ -1,9 +1,9 @@
 import {Component, Output, Inject} from '@angular/core';
 import {StepService} from "./Engine/step.service";
-import {CollectionService} from "./Engine/collection.service";
+import {ActivatedRoute} from '@angular/router';
 import {FormService} from "./components/form.service";
-//i                   mport {Mar     queService} from "./marque/marque.service";
-//i                                                           mport      v {Mar     queService} from "./marque/marque.service";
+//i                   mport {Mar               queService} from "./marqu     e/marque.service";
+//i                                                           mpo rt      v {Mar     queService} from "./marque/marque.service";
 //i                   ;,                                                  mport {Marque} from "./marque/marque";
 
 @Component({
@@ -18,40 +18,42 @@ import {FormService} from "./components/form.service";
 export class AppComponent {
 
     constructor(
-        public _formService: FormService,
-        public _stepService: StepService
+        private _formService: FormService,
+        private _stepService: StepService
     ){}
     lists = [];
     listsData = [];
     tmp = [];
+
     ngOnInit() {
+
         this._formService.init();
-//         console.log('ap      pComponent');
-//         th      is._s    tep      Serv  ice.getSteps()
-//             .subscri                   be(
-//                 stepReturn => {
+//         console.log('ap         pCompo         nent');
+//         th      is._s                      te                              p      Serv  ice.getSteps()
+//             .subscri                                        be(
+//                 stepReturn              =     > {
 //
 
-//                     //      t     his. st   eps = stepReturn;
+//                     //      t     his.                st   eps = stepReturn;
 //
 //
 //
 //                     console.log("stepReturn");
-//                     conso     le.log(st epReturn);
-//                     console.log(this._stepService.steps);
-//                     // this.tmp = stepReturn.json();
+//                     conso      le.  log(st epReturn);
+//                     console       .lo g(this._stepService.steps);
+//                     // this.tmp = step Return.json();
 //                     // thi     s._stepService.step = this.tmp;
 //                     //
-//                     // //  for ( let i = 0; i < stepReturn.json().length; i++) {
+//                     // //              for ( let i = 0; i < stepReturn.json(). length; i++) {
 //                     // //     console . log(step   Return.json()[  i]);
 //                     // //
-//                     // //     console.log(this._st  epService.step);
+//                     // //     c    onsole.log(this._st  epService.step);
 //                     // // }
 //                     //
 //                     console.log(this._stepService.step[0]);
 //                     //
 //                     // this._stepService.steps = this.tmp;
-//                     // console.log(this._stepService.steps);
+//                     // console.     log(this._stepService.steps);
 //                     // console.log(this.tmp);
 //                     /* IF DATA ARE STORED IN A COLLECTION IN CONFIG FILE */
 //                     if (typeof this._stepService.steps[0].configuration.collection != 'undefined') {

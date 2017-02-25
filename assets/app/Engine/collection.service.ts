@@ -27,7 +27,7 @@ export class CollectionService {
         var query = '_id=' +_id + '&collName=' + collName + '&filters_name=' + filtersNameToString + '&filters_value=' + filtersValueToString;
 
         let completeUrl =  GlobalVariable.BASE_URL+'getFormData?'+query;
-        //return Promise.resolve(this._http.get(completeUrl)
+        //return Promise.resolve (this._http.get(completeUrl)
         //  let body = { "filters": filters, "collName" : collName};
         let headers= new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({ headers: headers });
