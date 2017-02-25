@@ -1,96 +1,116 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core'
 import {FormBuilder, Validators, FormGroup, FormControl} from "@angular/forms";
 import {FormService} from "./form.service";
+import {EmailValidator} from "./emailValidator.component";
 @Component({
     selector: 'field-panel',
     template: `
  
         <div class="panel-heading panel-heading-custom">{{objStep.configuration.labelPanel}} </div>
-         <div class="panel-body">
+        <div class="panel-body">
             <form name="{{objStep.name}}"  >
-<div [formGroup]="myGroup">                  
+                <div [formGroup]="myGroup">                  
 
                <!--/* FORMAT Configuration.form_values-->
                     <!--[{  name,     :id -->
                         <!--type,     :string, number-->
                     <!--}]-->
                <!--*/ -->
-                <div *ngFor="let field of objStep.configuration.form_values">
-                     <label >{{field.label}}</label>
-                     <input 
-                            class="form-control" 
-                            type="{{field.type}}" 
-                            id="{{field.name}}"
-                            name="{{field.name}}"
-                            required="{{field.required}}"
-                            minlength="{{field.minlength}}"
-                            maxlength="{{field.maxlength}}"
-                            formControlName="{{field.name}}"
-                            >
-                      <div class="alert alert-danger" role="alert" *ngIf="!myGroup.controls[field.name].valid">*</div>         
-                </div>
+                    <div *ngFor="let field of objStep.configuration.form_values">
+                         <div *ngIf="field.type == 'text'">
+                             <label >{{field.label}} </label>
+                             <input   
+                                    class="form-control" 
+                                    type="{{field.type}}" 
+                                    id="{{field.name}}"
+                                    name="{{field.name}}"
+                                    required="{{field.required}}"
+                                    minlength="{{field.minlength}}"
+                                    maxlength="{{field.maxlength}}"
+                                    formControlName="{{field.name}}"
+                                    >
+                         
+                            <div class="alert alert-danger" role="alert" *ngIf="!myGroup.controls[field.name].valid">This field is required</div>   
+                         </div>
+                         <!--<div *ngIf="field.type == 'phone'">-->
+                                <!--<div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">-->
+                                    <!--<label>{{field.label}}</label>-->
+                                    <!--<input  -->
+                                        <!--class="form-control" -->
+                                        <!--type="text" -->
+                                        <!--placeholder="Type your phone number" -->
+                                        <!--(change)="validatePhone(field.type)"-->
+                                        <!--#phone-->
+                                        <!--formControlName="{{field.type}}"-->
+                                        <!--[formControl]="myGroup.controls[field.name]">-->
+                                    <!--<div *ngIf="!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched" class="alert alert-danger">Please enter a phone number valid.-->
+                                    <!---->
+                                    <!--</div>-->
+                                   <!---->
+                                <!--</div>-->
+                            <!--&lt;!&ndash;<div class="alert alert-danger" role="alert" *ngIf="!myGroup.controls[field.name].valid">This field is required</div>   &ndash;&gt;-->
+                         <!--</div>-->
+                          <div *ngIf="field.type == 'email'">
+                                <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
+                                    <label>Email:</label>
+                                    <input  
+                                        class="form-control" 
+                                        type="{{field.type}}" 
+                                         id="{{field.name}}"
+                                        name="{{field.name}}"
+                                        placeholder="John@doe.com" 
+                                        #email
+                                        formControlName="{{field.name}}"
+                                        required="{{field.required}}"
+                                        [formControl]="myGroup.controls[field.name]">
+                                    <div *ngIf="!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched" class="alert alert-danger">
+                                        Email is required and format should be john@doe.com
+                                    </div>
+                                   
+                                </div>
+                         </div>
+                    </div>
                 
-                <button type="button" (click)="onClick()" class="btn btn-primary">Valider</button>
-            </div>   
+                    <button type="button" (click)="onClick()" class="btn btn-primary">Valider</button>
+                </div>   
             </form>
-        </div>
-        <!--<!--id="{{objStep.configuration.form_values[0].name}}"-->
-  
+        </div> 
 `
 
 })
 
 export class FieldPanelComponent {
-    @Input() objStep;
-    @Input() stepIdx;
+    @Input() objStep;     //Value received from MainComponent
+    @Input() stepIdx;     //Value received from MainComponent
     @Output() sent = new EventEmitter(); // Emitter to send back data to parent component
 
-    constructor(private _fb: FormBuilder, public _formService: FormService ) {  //private _profileService: ProfileService
-    }
-       // registerForm = FormGroup;
+    constructor(private _fb: FormBuilder, public _formService: FormService ) {}
+
     myGroup = new FormGroup({});
     ngOnInit() {
-        // for (let index = 0; index < this.objStep.configuration.form_values.length; index++){
-        //     eval(this.objStep.configuration.form_values[index].name) : new FormControl()
-        //
-        // }
-
 
         for (let index = 0; index < this.objStep.configuration.form_values.length; index++) {
-            this.myGroup.controls[this.objStep.configuration.form_values[index].name] = new FormControl();
+            //console.log(this.objStep.configuration.form_values[index])
+            if (this.objStep.configuration.form_values[index].type == 'email')
+            {
+                this.myGroup.controls[this.objStep.configuration.form_values[index].name] = new FormControl('', [Validators.required, EmailValidator.checkEmail]);
+            }
+            else
+            {
+                this.myGroup.controls[this.objStep.configuration.form_values[index].name] = new FormControl();
+            }
         }
-
-
- // console.log(x);
- //        this.myGroup = new FormGroup({
- //            //eval(this.objStep.configuration.form_values[1].name) :  new FormControl();
- //            adresse: new FormControl(),
- //            nom: new FormControl(),
- //            c: new FormControl(),
- //                email: new FormControl()
- //
- //        });
-
-        console.log(this.myGroup);
-
-        console.log(this.objStep);
-
-        // console.log(this._formService);
-        // for (let index = 0; index < this.objStep.configuration.form_values.length; index++) {
-        //     window['val'+index] = this.objStep.configuration.form_values[index].name;
-        //     console.log(index);
-        // }
-        // console.log(this.objStep);
-        // console.log(val0);
-        //  this.registerForm = this._fb.group({
-        // //     eval(this.objStep.configuration.form_values[0].name): ['', Validators.required]
-        //     eval(val1) : ['', Validators.required]
-        //  })
     }
 
-    log(x){
-        console.log(x);
+    validatePhone(c: FormControl) {
+        let PHONE_REGEXP = /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i;
+        return PHONE_REGEXP.test(c.value) ? null : {
+            validatePhone: {
+                valid: false
+            }
+    };
     }
+
 
     onClick() {
         console.log('form');
@@ -98,7 +118,8 @@ export class FieldPanelComponent {
         console.log(eval(this.objStep.name));
         console.log(this.objStep.configuration.form_values[0].name);
         console.log(eval(this.objStep.name)[this.objStep.configuration.form_values[0].name].value);
-        console.log(eval(this.objStep.name)[this.objStep.configuration.form_values[1].name].value);
+        console.log(this.objStep.configuration.form_values);
+      //  console.log(eval(this.objStep.name)[this.objStep.configuration.form_values[1].name].value);
 
         var valuesName= [];
         var valuesSelected = [];
@@ -116,5 +137,4 @@ export class FieldPanelComponent {
             name: this.objStep.name
             })
     }
-
 }

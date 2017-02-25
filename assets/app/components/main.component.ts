@@ -16,7 +16,7 @@ import {SaveService} from "./saveService";
     selector: 'vehicule-detail',
     template: `
  
-<div class="panel panel-default">
+<div class="panel panel-default" *ngIf="formCompleted == false">
    
 <!--<p>Session ID: {{ current_step_id | async }}</p>-->
     <div class="row" align="center">
@@ -96,11 +96,14 @@ import {SaveService} from "./saveService";
 
 </save-button>
 
-    <div *ngIf="formCompleted" class="alert alert-success" role="alert">
-        Your request has been sent, you should receive a email with the information you sent to us. We'll come back to you very soon
-    </div>
-    
 </div>
+
+ <div class="jumbotron" *ngIf="formCompleted" class="alert alert-success" role="alert">
+      <div class="container">
+        <h1>Your request has been sent, you should receive a email with the information you sent to us. <br>
+        We'll come back to you very soon</h1>
+        </div>
+ </div>
 `,
 
     styles: [` nav{    
@@ -130,22 +133,13 @@ export class MainComponent implements OnInit {
     datas = [];
     lists = [];
     formCompleted = false;
-    // public my_form = new FormGroup({
-    //     mileage_input: new FormControl()
-    // });
-    //formVehicule: ControlGroup;
-    //formService: FormService;
+
     constructor(
         private route: ActivatedRoute, private _fb: FormBuilder,
         private _formService: FormService, private _stepService: StepService,
         private _collectionService: CollectionService, private _mailService: MailService,
         private _saveService: SaveService)
         {}
-
-    // vehicules: Vehicule[];
-    // confirm: boolean = false;
-    // verifMileage: boolean = false;
-    // missingMileage: boolean = false;
     tmp_id = '';
     public progressBar:number = 0;
 
@@ -184,7 +178,7 @@ export class MainComponent implements OnInit {
         console.log(this._formService);
         // console.log(this.current_step_id.source._value.id);
         if (!(typeof this.current_step_id.source._value.current_id == 'undefined')) {
-            if (this.current_step_id.source._value.current_id != 'None') {
+            if (this.current_step_id.source._value.current_id == 'None') {
                 this.tmp_id = this.current_step_id.source._value._id;
 
                 this.goToStep(this.current_step_id.source._value.current_id);

@@ -4,14 +4,28 @@ import { StepModel } from "./stepModel";
 import {GlobalVariable} from "../global";
 import 'rxjs/Rx';
 import { Observable } from "rxjs/Observable";
+import {ActivatedRoute, Router} from "@angular/router";
 @Injectable()
 export class StepService {
+
+    constructor (
+
+        private _http: Http
+      )
+    {}
+
     datas;
-    constructor (private _http: Http) {}
     steps: any;
     step: StepModel[] = [];
-    getSteps(): Promise<void>{
-        var completeUrl = GlobalVariable.BASE_URL+'step';
+    //appName = '';
+
+    getSteps(appName): Promise<void>{
+        console.log(window);
+        //let appName = "ballet";
+        //let appName = this.route.snapshot.queryParams["app"];
+        console.log(appName);
+        var query = 'app_name=' +appName;
+        var completeUrl = GlobalVariable.BASE_URL+'step?'+query;
         return this._http.get(completeUrl)
             .toPromise()
             .then(response => {
@@ -43,6 +57,8 @@ export class StepService {
                 //this.step = objs;
                 if (window.location.hash == '#/admin'){
                     this.steps[0].master_type = 'admin'
+
+
                 }
 
                  console.log(this.step[0]);
