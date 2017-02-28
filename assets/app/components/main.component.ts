@@ -421,6 +421,12 @@ export class MainComponent implements OnInit {
                                     console.log(this.lists);
                                     console.log(this.datas);
                                     this.stepId = tmpNewstepId;
+                                    // Skip the step if there is only 1 result
+                                    console.log("TEST IF ONLY 1 RECORD");
+                                    if (data.length == 1){
+                                        this._formService.arraySteps[this.indexStepObj][this._stepService.steps[this.indexStepObj].configuration.form_value.name] = data[0]
+                                        this.goToNextStep(this.indexStepObj);
+                                    }
                                     console.log(this.stepId);
                                 },
                                 error => console.log(error)
@@ -555,29 +561,9 @@ export class MainComponent implements OnInit {
     }
 
     getSelections($event) {
-        console.log($event.valueSelected);
-        console.log($event.stepIdx);
-        // if (this._formService.arraySteps[$event.stepIdx].nom == $event.name) {
-        //     let tmpKeyName = $event.name;
-        //     // console.log("tmpKeyName: " + tmpKeyName);
-        //     for (let i = 0; i < $event.valueSelected.length; i++) {
-
-
-                // console.log("keyObject: " + keyObject);
-                // console.log("newValue: " + newValue);
-//                        console.log(this._formService.arraySteps[j][tmpKeyName][i][keyObject]);
-
-                //var tmpObj = {};
-                //let tmpSave = tmpKeyName+'['+i+'].'+keyObject;
-                //console.log(tmpSave);
-                // tmpObj[$event.valueName[i]= $event.valueSelected[i] ;
-                this._formService.arraySteps[$event.stepIdx][$event.valueName] = $event.valueSelected;
-                //this._formService.arraySteps[j][eval(tmpSave)] = newValue;
-                // console.log(this._formService.arraySteps[$event.stepIdx][tmpKeyName][i][keyObject]);
-                console.log(' ');
-
-
-        console.log(this._formService);
+        // Copy selection into _formService
+        this._formService.arraySteps[$event.stepIdx][$event.valueName] = $event.valueSelected;
+        //Go to next Step
         this.goToNextStep($event.stepIdx);
     }
 }
