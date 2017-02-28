@@ -8,7 +8,7 @@ import {Component, Input, Output, EventEmitter} from '@angular/core'
       
         <!--<div class="col-md-3" *ngFor="let valeurList of listOfElements">-->
         <ul class="items">
-            <li *ngFor="let valeurList of listOfElements">
+            <li *ngFor="let valeurList of currentList">
             <button *ngIf="isSelected(valeurList) == false" type="button" 
                     (click)="onChooseVal($event)"  
                     value="{{valeurList}}" 
@@ -23,8 +23,10 @@ import {Component, Input, Output, EventEmitter} from '@angular/core'
             </button>
             </li>
         </ul>
-        </div>
+        <div><button btn-default btn-lg (click)="submit()">SUIVANT</button></div>
         <span class="label label-info">{{footNote}} </span>
+        </div>
+        
 
 `
 })
@@ -32,14 +34,28 @@ import {Component, Input, Output, EventEmitter} from '@angular/core'
 export class MultiSelectionComponent {
 
     @Input() objStep;
-    @Input() listOfElements;
-    @Input() stepIdx;
     @Input() valueSelected; // Value to pass to the formService containing the selection
-    @Input() stepId;        // Send the current step in order to increment it
-    @Input() footNote = ''; //Optional insert a footnote in component
+    @Input() stepIdx;
+    @Input() listOfElements;
+    // @Input() stepId;        // Send the current step in order to increment it
+    // @Input() footNote = ''; //Optional insert a footnote in component
     @Output() change = new EventEmitter(); // Emitter to send back data to parent component
 
     tmpArray = [];
+    currentList;
+
+    ngOnInit() {
+        console.log('ok');
+        console.log(this.listOfElements);
+        for (let datas of this.listOfElements){
+            // console.log(datas);
+            // console.log(datas.name);
+
+            if (datas.name == this.objStep.name){
+                this.currentList = datas.list;
+            }
+        }
+    }
 
     onChooseVal($event) {
         var addOption = true;
@@ -55,12 +71,17 @@ export class MultiSelectionComponent {
             this.tmpArray.push(event.target.value);
         }
 
-        this.change.emit({
-            valueSelected: $event.target.value,
-            stepId: this.stepId
-        })
+
 
     };
+
+    submit() {
+        this.change.emit({
+            valueName : this.objStep.configuration.form_value.name,
+            valueSelected: this.tmpArray,
+            stepIdx : this.stepIdx
+        })
+    }
 
     isSelected(option) {
         for (let i = 0; i < this.tmpArray.length; i++) {

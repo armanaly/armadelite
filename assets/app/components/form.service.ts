@@ -23,7 +23,7 @@ export class FormService {
             // console.log(i.type);
 
             let step_id = i.step_id;
-            if (i.type == "click_selection" || i.type == 'image_selection') {
+            if (i.type == "click_selection" || i.type == 'image_selection' || i.type == "multi_selection") {
 
                 let keyName = i.configuration.form_value.name;
                 this.arraySteps.push({[keyName]: ""});

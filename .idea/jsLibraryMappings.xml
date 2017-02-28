@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$" libraries="{mysaver/node_modules}" />
+    <file url="file://$PROJECT_DIR$/assets/app/app.module.ts" libraries="{flask_angular2/public/js/vendor/ng2-bootstrap/node_modules}" />
+    <file url="file://$PROJECT_DIR$/public/js/vendor/ng2-bootstrap" libraries="{flask_angular2/public/js/vendor/ng2-bootstrap/node_modules}" />
     <includedPredefinedLibrary name="ECMAScript 6" />
   </component>
 </project>

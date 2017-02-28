@@ -30,12 +30,11 @@ import {GridPanelService} from "./components/gridPanel.service";
 import {MenuComponent} from "./menu/menu.component";
 import {MailService} from "./Engine/mail.service";
 import {assetUrl} from "@angular/compiler/src/identifiers";
-import escape = require("core-js/fn/regexp/escape");
 
 
 
 function getStepsFirst(_stepService: StepService) {
-    let appName = window.location.search.replace(new RegExp("^(?:.*[&\\?]" + 'app'.replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1")));
+    let appName = window.location.search.replace(new RegExp("^(?:.*[&\\?]" + 'app'.replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1");
     return () => _stepService.getSteps(appName)
     // .subscribe(
     //   stepReturn => {

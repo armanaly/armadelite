@@ -28,8 +28,8 @@ export class AppComponent {
     ngOnInit() {
 
         this._formService.init();
-//         console.log('ap         pCompo         nent');
-//         th      is._s                      te                              p      Serv  ice.getSteps()
+//         console.log('ap               pCompo                nent');
+//         th      is.    _s                      te                              p      Serv  ice.getSteps()
 //             .subscri                                        be(
 //                 stepReturn              =     > {
 //
