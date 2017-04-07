@@ -15,7 +15,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@angular/common": "4.0.0",
+    "@angular/common": "2.4.0",
     "@angular/compiler": "2.4.0",
     "@angular/core": "2.4.0",
     "@angular/forms": "2.4.0",
