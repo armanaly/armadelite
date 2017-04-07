@@ -4,7 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 import {FormService} from "./components/form.service";
 //i                   mport {Mar               queService} from "./marqu     e/marque.service";
 //i                                                           mpo rt      v {Mar     queService} from "./marque/marque.service";
-//i                   ;,                                                  mport {Marque} from "./marque/marque";
+//i                                             ;,                                                  mport {Marque} from "./marque/marque";
 
 @Component({
     moduleId: module.id,
@@ -12,14 +12,14 @@ import {FormService} from "./components/form.service";
     template: `
         <div class="container">          
            <router-outlet
-             ></router-outlet></div>
+             ></router-outlet></div>          
      `})
 
 export class AppComponent {
 
     constructor(
-        private _formService: FormService,
-        private _stepService: StepService
+        private _formService: FormService/*,
+        private _stepService: StepService*/
     ){}
     lists = [];
     listsData = [];
@@ -28,9 +28,9 @@ export class AppComponent {
     ngOnInit() {
 
         this._formService.init();
-//         console.log('ap               pCompo                nent');
-//         th      is.        _s                      te                              p      Serv  ice.getSteps()
-//             .subscri                                        be(
+//         console   .log('ap                          pCompo                nent');
+//         th      is.                            np           m                        For Adults_s                         te                              p      Serv  ice.getSteps()
+//             .subscri                                          be(
 //                 stepReturn              =     > {
 //
 
@@ -44,7 +44,7 @@ export class AppComponent {
 //                     // this.tmp = step Return.json();
 //                     // thi     s._stepService.step = this.tmp;
 //                     //
-//                     // //              for ( let i = 0; i < stepReturn.json(). length; i++) {
+//                     // //                for ( let i = 0; i < stepReturn.json(). length; i++) {
 //                     // //     console . log(step   Return.json()[  i]);
 //                     // //
 //                     // //     c    onsole.log(this._st  epService.step);

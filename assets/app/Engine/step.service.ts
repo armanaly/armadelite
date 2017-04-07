@@ -15,8 +15,9 @@ export class StepService {
     {}
 
     datas;
-    steps: any;
-    step: StepModel[] = [];
+    step = new Array();
+    essai;
+    steps: StepModel[] = [];
     //appName = '';
 
     getSteps(appName): Promise<void>{
@@ -39,9 +40,11 @@ export class StepService {
                 let objTest = [];
                 console.log("data");
                 console.log(data);
+                // console.log(this.steps);
+                // VIRE STEP CAR INUTILE
                 for (let i = 0; i < data.length; i++) {
-                    console.log(data[i].step_id);
-                    this.step.push(new StepModel(
+                    // console.log(data[i].step_id);
+                    this.step[i] = (new StepModel(
                         data[i].step_id,
                         data[i].type,
                         data[i].name,
@@ -49,19 +52,23 @@ export class StepService {
                         data[i].master_name,
                         data[i].master_type,
                     []));
-                //     console.log(step);
+                 }
+
                      //objs.push(step);
                 //     console.log(objs);
                 //   //  objTest.push(step);
-                }
+
                 //this.step = objs;
                 if (window.location.hash == '#/admin'){
                     this.steps[0].master_type = 'admin'
 
 
                 }
+                console.log(this.steps);
 
-                 console.log(this.step[0]);
+
+           //    console.log(this.step);
+                // console.log(this.step[0]);
                 // for (let i = 0; i < this.step.length; i++) {
                 //     console.log(this.step[i].step_id);
                 // }

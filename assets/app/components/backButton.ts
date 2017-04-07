@@ -4,7 +4,7 @@ import {Component, Input, Output, EventEmitter} from '@angular/core'
     selector: 'previous-page',
     template: `
         <nav class="form-navArrow">
-            <i class="glyphicon glyphicon-chevron-left" (click)="onClick()">PRECEDENT</i>
+            <button ><i class="glyphicon glyphicon-triangle-left" (click)="onClick()"> </i></button>
         </nav>
 `
 })

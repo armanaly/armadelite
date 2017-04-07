@@ -31,31 +31,34 @@ export class GridPanelService {
                 for (var i in data[0].config){
                     // if (key != '_id' && key != 'step_id'){
                     console.log(data[0].config[i]);
-                    // console.log(key.valueOf())
-                  //  if(typeof data[0].config[i] === "object"){
+                    // console.lota[0].config[i] === "object"){
                     var result = "";
-
-                    // for (var p in data[0].config[i]) {
-                            if(typeof data[0].config[i].field_panel_name != 'undefined' ) {
-                                //var j = 0;
-                                for (var q in data[0].config[i].field_panel_values){
-                                    // console.log(p)
-                                    // console.log(q);
-                                    // result += p + " , " + data[0].colNames[i][p] + "\n";
-                                    // console.log(p+"_"+data[0].colNames[i][p][j])
-                                    // this.keysName.push(p+"_"+data[0].colNames[i][p][j]);
-                                    this.keysName.push(data[0].config[i].field_panel_name + '_' + data[0].config[i].field_panel_values[q].data);
-                                    this.colTitle.push({"title":data[0].config[i].field_panel_values[q].title, "key" : data[0].config[i].field_panel_name + '_' + data[0].config[i].field_panel_values[q].data})
-                                    // console.log(data[0].colNames[i][p])
-                                    //j++;
-                                }
+                    if(typeof data[0].config[i].field_panel_name != 'undefined' ) {
+                        //var j = 0;
+                        for (var q in data[0].config[i].field_panel_values){
+                            // console.log(p)
+                            // console.log(q);
+                            // result += p + " , " + data[0].colNames[i][p] + "\n";
+                            // console.log(p+"_"+data[0].colNames[i][p][j])
+                            // this.keysName.push(p+"_"+data[0].colNames[i][p][j]);
+                            this.keysName.push(data[0].config[i].field_panel_name + '_' + data[0].config[i].field_panel_values[q].data);
+                            this.colTitle.push({"title":data[0].config[i].field_panel_values[q].title, "key" : data[0].config[i].field_panel_name + '_' + data[0].config[i].field_panel_values[q].data, "type": "field_panel"})
+                            // console.log(data[0].colNames[i][p])
+                            //j++;
+                        }
+                    }
+                    else if(typeof data[0].config[i].type != 'undefined' ) {
+                        switch (data[0].config[i].type) {
+                            case 'checkbox': {
+                                this.keysName.push(data[0].config[i].data);
+                                this.colTitle.push({"title": data[0].config[i].title, "key": data[0].config[i].data, "type": "checkbox"})
                             }
-
-                        //}
-
+                            break;
+                        }
+                    }
                     else{
                         this.keysName.push(data[0].config[i].data);
-                        this.colTitle.push({"title": data[0].config[i].title, "key": data[0].config[i].data})
+                        this.colTitle.push({"title": data[0].config[i].title, "key": data[0].config[i].data, "type": "value"})
                     }
                 }
                 data.shift();
@@ -79,6 +82,10 @@ export class GridPanelService {
                 // return objs;
             //})
             .catch(error => Observable.throw(error))
+    }
+
+    updateCheckBox(val){
+
     }
 
     getActivatedGrids(){
@@ -136,6 +143,23 @@ export class GridPanelService {
             }
         }
         //console.log(arrByNom);
+    }
+
+    updateCheckbox(value,_id){
+        // console.log('saveDemande');
+        // console.log(form );
+
+        //this._formService.arraySteps.push({"step_id": currentStep});
+        let body = JSON.stringify({"value" : value, "_id": _id});
+        //
+        // console.log("body");
+        // console.log(body);
+        const headers = new Headers({'Content-Type': 'application/json'});
+        // return this._http.post('http://localhost:3000/demand', body, {headers: headers})
+        var completeUrl = GlobalVariable.BASE_URL + 'update_checkbox';
+        return this._http.post(completeUrl, body, {headers: headers})
+            .map(response => response)
+            .catch(error => Observable.throw(error.json()));
     }
 
 }

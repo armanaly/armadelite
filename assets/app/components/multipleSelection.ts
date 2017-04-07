@@ -37,11 +37,11 @@ export class MultiSelectionComponent {
     @Input() valueSelected; // Value to pass to the formService containing the selection
     @Input() stepIdx;
     @Input() listOfElements;
+    @Input() valuesSelected;
     // @Input() stepId;        // Send the current step in order to increment it
     // @Input() footNote = ''; //Optional insert a footnote in component
     @Output() change = new EventEmitter(); // Emitter to send back data to parent component
 
-    tmpArray = [];
     currentList;
 
     ngOnInit() {
@@ -60,15 +60,15 @@ export class MultiSelectionComponent {
     onChooseVal($event) {
         var addOption = true;
 
-        for (let i = 0; i < this.tmpArray.length; i++) {
-            if (this.tmpArray[i] == event.target.value) {
-                this.tmpArray.splice(i, 1);
+        for (let i = 0; i < this.valuesSelected.length; i++) {
+            if (this.valuesSelected[i] == event.target.value) {
+                this.valuesSelected.splice(i, 1);
                 addOption = false;
                 break;
             }
         }
         if (addOption) {
-            this.tmpArray.push(event.target.value);
+            this.valuesSelected.push(event.target.value);
         }
 
 
@@ -78,14 +78,14 @@ export class MultiSelectionComponent {
     submit() {
         this.change.emit({
             valueName : this.objStep.configuration.form_value.name,
-            valueSelected: this.tmpArray,
+            valueSelected: this.valuesSelected,
             stepIdx : this.stepIdx
         })
     }
 
     isSelected(option) {
-        for (let i = 0; i < this.tmpArray.length; i++) {
-            if (this.tmpArray[i] == option) {
+        for (let i = 0; i < this.valuesSelected.length; i++) {
+            if (this.valuesSelected[i] == option) {
                 return true;
             }
         }

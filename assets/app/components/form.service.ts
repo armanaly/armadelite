@@ -7,7 +7,7 @@ import {StepService} from "../Engine/step.service";
 @Injectable()
 export class FormService {
 
-    constructor(public _stepService: StepService){}
+    constructor(private _stepService: StepService){}
     // ICI JE VAIS RAMENER this._stepService et de là je créée à la volée les données de mon formulaire de config et je le mets dans les variable du service de formulaire (form.service.ts)
     arraySteps = [];
 
@@ -17,8 +17,8 @@ export class FormService {
 
         // console.log("LIST of STEPS");
         // console.log(this._stepService.step);
-        this._stepService.step.sort();
-        for (let i of this._stepService.step) {
+        //this._stepService.steps.sort();
+        for (let i of this._stepService.steps) {
             // console.log(i.step_id);
             // console.log(i.type);
 

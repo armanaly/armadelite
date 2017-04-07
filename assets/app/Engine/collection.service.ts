@@ -97,7 +97,7 @@ export class CollectionService {
         console.log(this._formService);
         console.log(this._stepService);
         //RETRIEVE IN STEP CONFIG FILE THE NAME OF SAVED VALUE FOR THE SPECIFIED STEP
-        for (var item of this._stepService.step) {
+        for (var item of this._stepService.steps) {
             if (item.step_id == stepId) {
                 var valueForFormService = item.configuration.form_value.name;
             }
