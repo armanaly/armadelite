@@ -24,13 +24,9 @@ import {Http} from "@angular/http";
                         <button><i class="glyphicon glyphicon-triangle-left" (click)="this.router.navigate(['/'])" ></i></button>
               </nav>
                 <div class="panel-body">
-               <div class="page-header"><table><tr><td>
-                             <nav class="form-navArrow">
-                        <button><i class="glyphicon glyphicon-triangle-left" (click)="this.router.navigate(['/'])" ></i></button>
-              </nav>
-                </td>
+               <div class="page-header">
                  <h1>{{grid_name}}</h1>
-                </tr></table></div>
+               </div>
                 <div class="table-responsive" *ngIf="display">
                     <table class="table table-hover table-condensed"  >
                         <tr>

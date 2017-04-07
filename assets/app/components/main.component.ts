@@ -88,12 +88,12 @@ import {SaveService} from "./saveService";
         </div>
         
  </div>
-      <progress class="progress progress-danger" [attr.value]="progressBar" max="100" ></progress>
-      <div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="11" aria-valuemin="3" aria-valuemax="12" style="min-width: 2em;">
-    0%
-  </div>
-</div>
+      <!--<progress class="progress progress-danger" [attr.value]="progressBar" max="100" ></progress>-->
+      <!--<div class="progress">-->
+  <!--<div class="progress-bar" role="progressbar" aria-valuenow="11" aria-valuemin="3" aria-valuemax="12" style="min-width: 2em;">-->
+    <!--0%-->
+  <!--</div>-->
+<!--</div>-->
 <save-button
     *ngIf="this._stepService.steps[0].master_type == 'workflow'"
     (saveStep)="saveStep($event)"
