@@ -51,6 +51,7 @@ export class StepService {
                         data[i].configuration,
                         data[i].master_name,
                         data[i].master_type,
+                        data[i].conditions,
                     []));
                  }
 

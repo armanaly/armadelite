@@ -8,12 +8,14 @@
 import { Location } from '@angular/common';
 import { Compiler, Injector, NgModuleFactoryLoader, Type } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Routes } from './config';
+import { QueryParamsHandling, Routes } from './config';
+import { Event } from './events';
+import { DetachedRouteHandle, RouteReuseStrategy } from './route_reuse_strategy';
 import { RouterOutletMap } from './router_outlet_map';
 import { ActivatedRoute, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from './router_state';
 import { Params } from './shared';
+import { UrlHandlingStrategy } from './url_handling_strategy';
 import { UrlSerializer, UrlTree } from './url_tree';
-import { TreeNode } from './utils/tree';
 /**
  * @whatItDoes Represents the extra options used during navigation.
  *
@@ -29,16 +31,13 @@ export interface NavigationExtras {
     * [{
     *   path: 'parent',
     *   component: ParentComponent,
-    *   children: [
-    *     {
-    *       path: 'list',
-    *       component: ListComponent
-    *     },
-    *     {
-    *       path: 'child',
-    *       component: ChildComponent
-    *     }
-    *   ]
+    *   children: [{
+    *     path: 'list',
+    *     component: ListComponent
+    *   },{
+    *     path: 'child',
+    *     component: ChildComponent
+    *   }]
     * }]
     * ```
     *
@@ -77,12 +76,25 @@ export interface NavigationExtras {
     /**
     * Preserves the query parameters for the next navigation.
     *
+    * deprecated, use `queryParamsHandling` instead
+    *
     * ```
     * // Preserve query params from /results?page=1 to /view?page=1
     * this.router.navigate(['/view'], { preserveQueryParams: true });
     * ```
+    *
+    * @deprecated since v4
     */
     preserveQueryParams?: boolean;
+    /**
+    *  config strategy to handle the query parameters for the next navigation.
+    *
+    * ```
+    * // from /results?page=1 to /view?page=1&page=2
+    * this.router.navigate(['/view'], { queryParams: { page: 2 },  queryParamsHandling: "merge" });
+    * ```
+    */
+    queryParamsHandling?: QueryParamsHandling;
     /**
     * Preserves the fragment for the next navigation
     *
@@ -112,126 +124,6 @@ export interface NavigationExtras {
     replaceUrl?: boolean;
 }
 /**
- * @whatItDoes Represents an event triggered when a navigation starts.
- *
- * @stable
- */
-export declare class NavigationStart {
-    /** @docsNotRequired */
-    id: number;
-    /** @docsNotRequired */
-    url: string;
-    constructor(
-        /** @docsNotRequired */
-        id: number, 
-        /** @docsNotRequired */
-        url: string);
-    /** @docsNotRequired */
-    toString(): string;
-}
-/**
- * @whatItDoes Represents an event triggered when a navigation ends successfully.
- *
- * @stable
- */
-export declare class NavigationEnd {
-    /** @docsNotRequired */
-    id: number;
-    /** @docsNotRequired */
-    url: string;
-    /** @docsNotRequired */
-    urlAfterRedirects: string;
-    constructor(
-        /** @docsNotRequired */
-        id: number, 
-        /** @docsNotRequired */
-        url: string, 
-        /** @docsNotRequired */
-        urlAfterRedirects: string);
-    /** @docsNotRequired */
-    toString(): string;
-}
-/**
- * @whatItDoes Represents an event triggered when a navigation is canceled.
- *
- * @stable
- */
-export declare class NavigationCancel {
-    /** @docsNotRequired */
-    id: number;
-    /** @docsNotRequired */
-    url: string;
-    /** @docsNotRequired */
-    reason: string;
-    constructor(
-        /** @docsNotRequired */
-        id: number, 
-        /** @docsNotRequired */
-        url: string, 
-        /** @docsNotRequired */
-        reason: string);
-    /** @docsNotRequired */
-    toString(): string;
-}
-/**
- * @whatItDoes Represents an event triggered when a navigation fails due to an unexpected error.
- *
- * @stable
- */
-export declare class NavigationError {
-    /** @docsNotRequired */
-    id: number;
-    /** @docsNotRequired */
-    url: string;
-    /** @docsNotRequired */
-    error: any;
-    constructor(
-        /** @docsNotRequired */
-        id: number, 
-        /** @docsNotRequired */
-        url: string, 
-        /** @docsNotRequired */
-        error: any);
-    /** @docsNotRequired */
-    toString(): string;
-}
-/**
- * @whatItDoes Represents an event triggered when routes are recognized.
- *
- * @stable
- */
-export declare class RoutesRecognized {
-    /** @docsNotRequired */
-    id: number;
-    /** @docsNotRequired */
-    url: string;
-    /** @docsNotRequired */
-    urlAfterRedirects: string;
-    /** @docsNotRequired */
-    state: RouterStateSnapshot;
-    constructor(
-        /** @docsNotRequired */
-        id: number, 
-        /** @docsNotRequired */
-        url: string, 
-        /** @docsNotRequired */
-        urlAfterRedirects: string, 
-        /** @docsNotRequired */
-        state: RouterStateSnapshot);
-    /** @docsNotRequired */
-    toString(): string;
-}
-/**
- * @whatItDoes Represents a router event.
- *
- * Please see {@link NavigationStart}, {@link NavigationEnd}, {@link NavigationCancel}, {@link
- * NavigationError},
- * {@link RoutesRecognized} for more information.
- *
- * @stable
- */
-export declare type Event = NavigationStart | NavigationEnd | NavigationCancel | NavigationError | RoutesRecognized;
-/**
  * @whatItDoes Error handler that is invoked when a navigation errors.
  *
  * @description
@@ -242,6 +134,16 @@ export declare type Event = NavigationStart | NavigationEnd | NavigationCancel |
  * @stable
  */
 export declare type ErrorHandler = (error: any) => any;
+/**
+ * Does not detach any subtrees. Reuses routes as long as their route config is the same.
+ */
+export declare class DefaultRouteReuseStrategy implements RouteReuseStrategy {
+    shouldDetach(route: ActivatedRouteSnapshot): boolean;
+    store(route: ActivatedRouteSnapshot, detachedTree: DetachedRouteHandle): void;
+    shouldAttach(route: ActivatedRouteSnapshot): boolean;
+    retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle;
+    shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot): boolean;
+}
 /**
  * @whatItDoes Provides the navigation and url manipulation capabilities.
  *
@@ -256,14 +158,16 @@ export declare class Router {
     private urlSerializer;
     private outletMap;
     private location;
-    private injector;
     config: Routes;
     private currentUrlTree;
+    private rawUrlTree;
+    private navigations;
+    private routerEvents;
     private currentRouterState;
     private locationSubscription;
-    private routerEvents;
     private navigationId;
     private configLoader;
+    private ngModule;
     /**
      * Error handler that is invoked when a navigation errors.
      *
@@ -274,6 +178,11 @@ export declare class Router {
      * Indicates if at least one navigation happened.
      */
     navigated: boolean;
+    /**
+     * Extracts and merges URLs. Used for AngularJS to Angular migrations.
+     */
+    urlHandlingStrategy: UrlHandlingStrategy;
+    routeReuseStrategy: RouteReuseStrategy;
     /**
      * Creates the router service.
      */
@@ -286,18 +195,12 @@ export declare class Router {
      * Sets up the location change listener.
      */
     setUpLocationChangeListener(): void;
-    /**
-     * Returns the current route state.
-     */
-    routerState: RouterState;
-    /**
-     * Returns the current url.
-     */
-    url: string;
-    /**
-     * Returns an observable of route events
-     */
-    events: Observable<Event>;
+    /** The current route state */
+    readonly routerState: RouterState;
+    /** The current url */
+    readonly url: string;
+    /** An observable of router events */
+    readonly events: Observable<Event>;
     /**
      * Resets the configuration used for navigation and generating links.
      *
@@ -308,18 +211,14 @@ export declare class Router {
      *  { path: 'team/:id', component: TeamCmp, children: [
      *    { path: 'simple', component: SimpleCmp },
      *    { path: 'user/:name', component: UserCmp }
-     *  ] }
+     *  ]}
      * ]);
      * ```
      */
     resetConfig(config: Routes): void;
-    /**
-     * @docsNotRequired
-     */
+    /** @docsNotRequired */
     ngOnDestroy(): void;
-    /**
-     * Disposes of the router.
-     */
+    /** Disposes of the router */
     dispose(): void;
     /**
      * Applies an array of commands to the current url tree and creates a new url tree.
@@ -362,14 +261,14 @@ export declare class Router {
      * router.createUrlTree(['../../team/44/user/22'], {relativeTo: route});
      * ```
      */
-    createUrlTree(commands: any[], {relativeTo, queryParams, fragment, preserveQueryParams, preserveFragment}?: NavigationExtras): UrlTree;
+    createUrlTree(commands: any[], {relativeTo, queryParams, fragment, preserveQueryParams, queryParamsHandling, preserveFragment}?: NavigationExtras): UrlTree;
     /**
      * Navigate based on the provided url. This navigation is always absolute.
      *
      * Returns a promise that:
-     * - is resolved with 'true' when navigation succeeds
-     * - is resolved with 'false' when navigation fails
-     * - is rejected when an error happens
+     * - resolves to 'true' when navigation succeeds,
+     * - resolves to 'false' when navigation fails,
+     * - is rejected when an error happens.
      *
      * ### Usage
      *
@@ -389,9 +288,9 @@ export declare class Router {
      * If no starting route is provided, the navigation is absolute.
      *
      * Returns a promise that:
-     * - is resolved with 'true' when navigation succeeds
-     * - is resolved with 'false' when navigation fails
-     * - is rejected when an error happens
+     * - resolves to 'true' when navigation succeeds,
+     * - resolves to 'false' when navigation fails,
+     * - is rejected when an error happens.
      *
      * ### Usage
      *
@@ -399,41 +298,42 @@ export declare class Router {
      * router.navigate(['team', 33, 'user', 11], {relativeTo: route});
      *
      * // Navigate without updating the URL
-     * router.navigate(['team', 33, 'user', 11], {relativeTo: route, skipLocationChange: true });
+     * router.navigate(['team', 33, 'user', 11], {relativeTo: route, skipLocationChange: true});
      * ```
      *
-     * In opposite to `navigateByUrl`, `navigate` always takes a delta
-     * that is applied to the current URL.
+     * In opposite to `navigateByUrl`, `navigate` always takes a delta that is applied to the current
+     * URL.
      */
     navigate(commands: any[], extras?: NavigationExtras): Promise<boolean>;
-    /**
-     * Serializes a {@link UrlTree} into a string.
-     */
+    /** Serializes a {@link UrlTree} into a string */
     serializeUrl(url: UrlTree): string;
-    /**
-     * Parses a string into a {@link UrlTree}.
-     */
+    /** Parses a string into a {@link UrlTree} */
     parseUrl(url: string): UrlTree;
-    /**
-     * Returns if the url is activated or not.
-     */
+    /** Returns whether the url is activated */
     isActive(url: string | UrlTree, exact: boolean): boolean;
-    private scheduleNavigation(url, extras);
-    private runNavigate(url, shouldPreventPushState, shouldReplaceUrl, id);
+    private removeEmptyProps(params);
+    private processNavigations();
+    private scheduleNavigation(rawUrl, source, extras);
+    private executeScheduledNavigation({id, rawUrl, extras, resolve, reject});
+    private runNavigate(url, rawUrl, shouldPreventPushState, shouldReplaceUrl, id, precreatedState);
+    private resetUrlToCurrentUrlTree();
 }
 export declare class PreActivation {
     private future;
     private curr;
-    private injector;
-    private checks;
-    constructor(future: RouterStateSnapshot, curr: RouterStateSnapshot, injector: Injector);
+    private moduleInjector;
+    private canActivateChecks;
+    private canDeactivateChecks;
+    constructor(future: RouterStateSnapshot, curr: RouterStateSnapshot, moduleInjector: Injector);
     traverse(parentOutletMap: RouterOutletMap): void;
     checkGuards(): Observable<boolean>;
     resolveData(): Observable<any>;
     private traverseChildRoutes(futureNode, currNode, outletMap, futurePath);
-    traverseRoutes(futureNode: TreeNode<ActivatedRouteSnapshot>, currNode: TreeNode<ActivatedRouteSnapshot>, parentOutletMap: RouterOutletMap, futurePath: ActivatedRouteSnapshot[]): void;
-    private deactivateOutletAndItChildren(route, outlet);
-    private deactivateOutletMap(outletMap);
+    private traverseRoutes(futureNode, currNode, parentOutletMap, futurePath);
+    private shouldRunGuardsAndResolvers(curr, future, mode);
+    private deactiveRouteAndItsChildren(route, outlet);
+    private runCanDeactivateChecks();
+    private runCanActivateChecks();
     private runCanActivate(future);
     private runCanActivateChild(path);
     private extractCanActivateChild(p);

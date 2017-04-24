@@ -9,7 +9,7 @@ import {FormService} from "./components/form.service";
 @Component({
     moduleId: module.id,
     selector: 'my-app',
-    template: `
+    template: ` 
         <div class="container">          
            <router-outlet
              ></router-outlet></div>          
@@ -30,7 +30,7 @@ export class AppComponent {
         this._formService.init();
 //         console   .log('ap                          pCompo                nent');
 //         th      is.                            np           m                        For Adults_s                         te                              p      Serv  ice.getSteps()
-//             .subscri                                          be(
+//             .subscri                                            be(
 //                 stepReturn              =     > {
 //
 
@@ -38,14 +38,14 @@ export class AppComponent {
 //
 //
 //
-//                     console.log("stepReturn");
+//                     console .log("stepRetu    rn");
 //                     conso      le.  log(st epReturn);
 //                     console       .lo g(this._stepService.steps);
 //                     // this.tmp = step Return.json();
 //                     // thi     s._stepService.step = this.tmp;
 //                     //
 //                     // //                for ( let i = 0; i < stepReturn.json(). length; i++) {
-//                     // //     console . log(step   Return.json()[  i]);
+//                     // //     console .  log(step   Return.json()[  i]);
 //                     // //
 //                     // //     c    onsole.log(this._st  epService.step);
 //                     // // }
