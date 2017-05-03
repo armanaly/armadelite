@@ -5,7 +5,7 @@ import {EmailValidator} from "./emailValidator.component";
 @Component({
     selector: 'field-panel',
     template: `
- 
+ <div *ngIf="display">
         <div class="panel-heading panel-heading-custom">{{objStep.configuration.labelPanel}} </div>
         <div class="panel-body">
             <form name="{{objStep.name}}"  >
@@ -75,6 +75,7 @@ import {EmailValidator} from "./emailValidator.component";
                 </div>   
             </form>
         </div> 
+        </div>
 `
 
 })
@@ -85,9 +86,27 @@ export class FieldPanelComponent {
     @Output() sent = new EventEmitter(); // Emitter to send back data to parent component
 
     constructor(private _fb: FormBuilder, public _formService: FormService ) {}
-
+    display = false;
     myGroup = new FormGroup({});
     ngOnInit() {
+
+        if (this.objStep.conditions.length > 0){
+            let valueCondition = this.objStep.conditions[0].value;
+            let keyCondition = this.objStep.conditions[0].key;
+            console.log(valueCondition);
+            console.log(keyCondition);
+            console.log(this.stepIdx);
+            console.log(this._formService);
+            // console.log(this._formService.arraySteps.find(keyCondition));
+
+            if (typeof (this._formService.arraySteps.find(x => x[keyCondition] === valueCondition)) != 'undefined'){
+            // if (valueCondition == this._formService.arraySteps[tmpStepIdx][keyCondition]){
+                this.display = true;
+            }
+        }
+        else{
+            this.display = true;
+        }
 
         for (let index = 0; index < this.objStep.configuration.form_values.length; index++) {
             //console.log(this.objStep.configuration.form_values[index])

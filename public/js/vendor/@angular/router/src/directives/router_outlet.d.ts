@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ComponentFactoryResolver, EventEmitter, Injector, OnDestroy, ResolvedReflectiveProvider, ViewContainerRef } from '@angular/core';
+import { ComponentFactoryResolver, ComponentRef, EventEmitter, Injector, OnDestroy, ResolvedReflectiveProvider, ViewContainerRef } from '@angular/core';
 import { RouterOutletMap } from '../router_outlet_map';
 import { ActivatedRoute } from '../router_state';
 /**
@@ -28,7 +28,6 @@ import { ActivatedRoute } from '../router_state';
  *   (activate)='onActivate($event)'
  *   (deactivate)='onDeactivate($event)'></router-outlet>
  * ```
- * @selector 'a[routerLink]'
  * @ngModule RouterModule
  *
  * @stable
@@ -45,9 +44,17 @@ export declare class RouterOutlet implements OnDestroy {
     deactivateEvents: EventEmitter<any>;
     constructor(parentOutletMap: RouterOutletMap, location: ViewContainerRef, resolver: ComponentFactoryResolver, name: string);
     ngOnDestroy(): void;
-    isActivated: boolean;
-    component: Object;
-    activatedRoute: ActivatedRoute;
+    /** @deprecated since v4 **/
+    readonly locationInjector: Injector;
+    /** @deprecated since v4 **/
+    readonly locationFactoryResolver: ComponentFactoryResolver;
+    readonly isActivated: boolean;
+    readonly component: Object;
+    readonly activatedRoute: ActivatedRoute;
+    detach(): ComponentRef<any>;
+    attach(ref: ComponentRef<any>, activatedRoute: ActivatedRoute): void;
     deactivate(): void;
-    activate(activatedRoute: ActivatedRoute, loadedResolver: ComponentFactoryResolver, loadedInjector: Injector, providers: ResolvedReflectiveProvider[], outletMap: RouterOutletMap): void;
+    /** @deprecated since v4, use {@link activateWith} */
+    activate(activatedRoute: ActivatedRoute, resolver: ComponentFactoryResolver, injector: Injector, providers: ResolvedReflectiveProvider[], outletMap: RouterOutletMap): void;
+    activateWith(activatedRoute: ActivatedRoute, resolver: ComponentFactoryResolver | null, outletMap: RouterOutletMap): void;
 }

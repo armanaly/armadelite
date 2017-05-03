@@ -186,9 +186,7 @@ export class MainComponent implements OnInit {
         if (!(typeof this.current_step_id.source._value.current_id == 'undefined')) {
             if (this.current_step_id.source._value.current_id == 'None') {
                 this.tmp_id = this.current_step_id.source._value._id;
-
                 this.goToStep(this.current_step_id.source._value.current_id);
-
             }
         }
         // START THE FIRST STEP
@@ -198,14 +196,9 @@ export class MainComponent implements OnInit {
             //console.log(this.datas);
             this.goToNextStep(-1);
         }
-        // console.log(this._stepService);
-        // cons ole.log(this._stepService.datas);
-
-
         console.log(this.datas[0].name);
         console.log(this._stepService.steps);
         console.log(this.stepId);
-        //  this.goToNextStep();
     }
 
     goPreviousStep($event) {
@@ -351,16 +344,22 @@ export class MainComponent implements OnInit {
 
 
         console.log(stepIndex);
+        // let stepId = this._stepService.steps[stepIndex].step_id
         this.indexStepObj = stepIndex;
 
 
         console.log('currentStepId: ' + this.current_step_id);
+        console.log(this.current_step_id);
         console.log("indexStepObj : " + this.indexStepObj);
         console.log('tmp_id : ' + this.tmp_id);
         console.log(this.datas);
 
         // if (this.indexStepObj <= 0 )
         // {
+
+        /*
+            BUG POSSIBLE SI CE N EST PAS LE DERNIERE STEP DANS STEPS ARRAY
+         */
         // IF WE ARE ON THE LAST STEP OF THE FORM WE SAVE THE FORM IN DB, SEND AN EMAIL AND SHOW A MESSAGE TO THE USER
         let nbSteps = this._stepService.steps.length;
         nbSteps = nbSteps - 1;
@@ -386,11 +385,48 @@ export class MainComponent implements OnInit {
                 )
         }
         else {
+           // console.log(this._stepService.steps[this.indexStepObj].step_id);
+
             this.indexStepObj++;
+            console.log(this.stepId);
+            console.log(this._stepService.steps[this.indexStepObj].step_id);
+            if (this.indexStepObj > 1) {
+                //     console.log(this._stepService.steps[this.indexStepObj].step_id);
+                //     console.log("this.indexStepObj " + this.indexStepObj);
+                //     console.log("this.stepId " + this.stepId);
+                while (this._stepService.steps[this.indexStepObj].step_id == this.stepId) {
+                    this.indexStepObj++;
+                }
+            }
+            console.log(this.stepId);
+            console.log(this._stepService.steps[this.indexStepObj].step_id);
+            // }
+            // SI IL Y A DES CONDITIONS DEFINIES A L'ETAPE SUIVANTE ALORS ON VERIFIE QUELLE ETAPE CORRESPOND A LA CONDITION SINON ON AVANCE
+            // DANS LE TABLEAU DES ETAPES
+            if (this._stepService.steps[this.indexStepObj].conditions.length > 0)
+            {
+                let keyCondition = this._stepService.steps[this.indexStepObj].conditions[0].key;
+                let valueCondition = this._stepService.steps[this.indexStepObj].conditions[0].value;
 
-            console.log("this.indexStepObj " + this.indexStepObj);
-            console.log(this._stepService.steps[this.indexStepObj]);
+                console.log("valueCondition: " + valueCondition);
+                console.log("keyCondition: " + keyCondition);
+                console.log(this._formService.arraySteps.find(x => x[keyCondition] === valueCondition))
 
+                while (typeof (this._formService.arraySteps.find(x => x[keyCondition] === valueCondition)) === 'undefined'){
+                //while (this._formService.arraySteps[stepIndex][keyCondition] != valueCondition){
+                    console.log((typeof (this._formService.arraySteps.find(x => x[keyCondition] === valueCondition))));
+                    console.log("condition pas remplie, j'avance de 1 indice dans le tableau. Indice: " + this.indexStepObj);
+                    this.indexStepObj++;
+                    if (this._stepService.steps[this.indexStepObj].conditions.length > 0) {
+                        let keyCondition = this._stepService.steps[this.indexStepObj].conditions[0].key;
+                        let valueCondition = this._stepService.steps[this.indexStepObj].conditions[0].value;
+                        console.log(valueCondition);
+                        console.log(this._formService.arraySteps[0][keyCondition]);
+                    }
+                    break;
+                }
+                console.log('condition remplie, je reste sur l indice: ' + this.indexStepObj)
+            }
 
             // TEMPORARY STEP_ID BECAUSE WE NEED TO WAIT FOR ASYNCHROUNOUS QUERY
             var tmpNewstepId = this._stepService.steps[this.indexStepObj].step_id;

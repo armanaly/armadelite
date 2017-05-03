@@ -18,15 +18,23 @@ export class FormService {
         // console.log("LIST of STEPS");
         // console.log(this._stepService.step);
         //this._stepService.steps.sort();
+        let keyExists = [];
         for (let i of this._stepService.steps) {
             // console.log(i.step_id);
             // console.log(i.type);
 
-            let step_id = i.step_id;
+          //  let step_id = i.step_id;
             if (i.type == "click_selection" || i.type == 'image_selection' || i.type == "multi_selection") {
 
                 let keyName = i.configuration.form_value.name;
-                this.arraySteps.push({[keyName]: ""});
+
+                // J'ajoute une seule fois la variable qui va recevoir le formulaire
+                if (!keyExists.includes(keyName)){
+                    this.arraySteps.push({[keyName]: ""});
+                    keyExists.push(keyName);
+                }
+
+
                 // }
                 // TODO voir si il faut relire les form_value dans ce cas car c'est un tableau et plus une variable
             }

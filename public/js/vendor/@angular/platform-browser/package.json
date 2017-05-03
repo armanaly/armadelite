@@ -2,49 +2,50 @@
   "_args": [
     [
       {
-        "raw": "@angular/platform-browser@2.4.0",
+        "raw": "@angular/platform-browser@latest",
         "scope": "@angular",
         "escapedName": "@angular%2fplatform-browser",
         "name": "@angular/platform-browser",
-        "rawSpec": "2.4.0",
-        "spec": "2.4.0",
-        "type": "version"
+        "rawSpec": "latest",
+        "spec": "latest",
+        "type": "tag"
       },
       "D:\\workspace\\flask_angular2"
     ]
   ],
-  "_from": "@angular/platform-browser@2.4.0",
-  "_id": "@angular/platform-browser@2.4.0",
+  "_from": "@angular/platform-browser@latest",
+  "_id": "@angular/platform-browser@4.0.1",
   "_inCache": true,
   "_installable": true,
   "_location": "/@angular/platform-browser",
-  "_nodeVersion": "6.9.1",
+  "_nodeVersion": "6.9.5",
   "_npmOperationalInternal": {
     "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/platform-browser-2.4.0.tgz_1482259901384_0.36230603442527354"
+    "tmp": "tmp/platform-browser-4.0.1.tgz_1490830660742_0.737566526979208"
   },
   "_npmUser": {
     "name": "angular",
     "email": "angular-core+npm@google.com"
   },
-  "_npmVersion": "3.5.3",
+  "_npmVersion": "3.10.10",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "@angular/platform-browser@2.4.0",
+    "raw": "@angular/platform-browser@latest",
     "scope": "@angular",
     "escapedName": "@angular%2fplatform-browser",
     "name": "@angular/platform-browser",
-    "rawSpec": "2.4.0",
-    "spec": "2.4.0",
-    "type": "version"
+    "rawSpec": "latest",
+    "spec": "latest",
+    "type": "tag"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-2.4.0.tgz",
-  "_shasum": "c662a0fefec50ff18b8fface93686e2267037714",
+  "_resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-4.0.1.tgz",
+  "_shasum": "4b9efbeb2fbb900de188743b988802d3aa2b33ff",
   "_shrinkwrap": null,
-  "_spec": "@angular/platform-browser@2.4.0",
+  "_spec": "@angular/platform-browser@latest",
   "_where": "D:\\workspace\\flask_angular2",
   "author": {
     "name": "angular"
@@ -57,24 +58,25 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "c662a0fefec50ff18b8fface93686e2267037714",
-    "tarball": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-2.4.0.tgz"
+    "shasum": "4b9efbeb2fbb900de188743b988802d3aa2b33ff",
+    "tarball": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-4.0.1.tgz"
   },
+  "es2015": "./@angular/platform-browser.js",
   "homepage": "https://github.com/angular/angular#readme",
   "license": "MIT",
-  "main": "bundles/platform-browser.umd.js",
+  "main": "./bundles/platform-browser.umd.js",
   "maintainers": [
     {
       "name": "angular",
       "email": "angular-core+npm@google.com"
     }
   ],
-  "module": "index.js",
+  "module": "./@angular/platform-browser.es5.js",
   "name": "@angular/platform-browser",
   "optionalDependencies": {},
   "peerDependencies": {
-    "@angular/core": "2.4.0",
-    "@angular/common": "2.4.0"
+    "@angular/core": "4.0.1",
+    "@angular/common": "4.0.1"
   },
   "readme": "ERROR: No README data found!",
   "repository": {
@@ -82,6 +84,6 @@
     "url": "git+https://github.com/angular/angular.git"
   },
   "scripts": {},
-  "typings": "index.d.ts",
-  "version": "2.4.0"
+  "typings": "./platform-browser.d.ts",
+  "version": "4.0.1"
 }
