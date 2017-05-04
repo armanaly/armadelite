@@ -49,23 +49,26 @@ export class CollectionService {
         console.log(filters);
         console.log("FIELD FILTER SIZE")
         console.log(filters);
-        for (var i=0; i< filters.length;i++) {
-            filtersNameToString.push(filters[i].field);
-            filtersValueToString.push(encodeURIComponent(this.getValueSelected(filters[i].step_id)));
+        console.log(select);
+        if (filters.length > 0 ) {
 
-            console.log(filtersValueToString);
-            // filtersValueToString.push('AUDI');
+            for (var i = 0; i < filters.length; i++) {
+                filtersNameToString.push(filters[i].field);
+                filtersValueToString.push(encodeURIComponent(this.getValueSelected(filters[i].step_id)));
+
+                console.log(filtersValueToString);
+                // filtersValueToString.push('AUDI');
+            }
+
+            // for (var i=0; i< filters.length;i++) {
+            //     for (var j=0; i< filters[j].field.length;j++) {
+            //         filtersNameToString.push(filters[i].field[j]);
+            //         filtersValueToString.push(this.getValueSelected(filters[i].step_id[j]));
+            //     }
+
+
+            var query = 'collName=' + collName + '&filters_name=' + filtersNameToString + '&filters_value=' + filtersValueToString;
         }
-
-        // for (var i=0; i< filters.length;i++) {
-        //     for (var j=0; i< filters[j].field.length;j++) {
-        //         filtersNameToString.push(filters[i].field[j]);
-        //         filtersValueToString.push(this.getValueSelected(filters[i].step_id[j]));
-        //     }
-
-
-        var query = 'collName=' + collName + '&filters_name=' + filtersNameToString + '&filters_value=' + filtersValueToString;
-
         if (select != ''){
             query = query + '&select=' + select;
         }
@@ -78,18 +81,6 @@ export class CollectionService {
         return this._http.get(completeUrl)
             .toPromise()
             .then(response => response.json())
-             //   console.log(response)
-
-
-          //  .map(response => response.json()
-                //  let objs: any[] = [];
-                //  for (let i = 0; i < data.length; i++) {
-                //      // let marque = new Marque(data[i].name, data[i].url, data[i].modeles);
-                //      objs.push(data[i]);
-                //  }
-                // // console.log(objs)
-                //  return objs;
-        //)
             .catch(error => Observable.throw(error))
     }
 

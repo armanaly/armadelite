@@ -29,8 +29,8 @@ export class AppComponent {
 
         this._formService.init();
 //         console   .log('ap                          pCompo                nent');
-//         th      is.                            np           m                        For Adults_s                         te                              p      Serv  ice.getSteps()
-//             .subscri                                            be(
+//         th      is.                                                  np           m                        For Adults_s                         te                              p      Serv  ice.getSteps()
+//             .subscri                                                  be(
 //                 stepReturn              =     > {
 //
 
@@ -44,33 +44,33 @@ export class AppComponent {
 //                     // this.tmp = step Return.json();
 //                     // thi     s._stepService.step = this.tmp;
 //                     //
-//                     // //                for ( let i = 0; i < stepReturn.json(). length; i++) {
+//                     // //                for ( let i =    0; i < stepReturn.json(). length; i++) {
 //                     // //     console .  log(step   Return.json()[  i]);
 //                     // //
-//                     // //     c    onsole.log(this._st  epService.step);
+//                     // //     c     onsole.lo  g(this._st  ep   v   Service.step);
 //                     // // }
 //                     //
-//                     console.log(this._stepService.step[0]);
+//                     console.log(this.    _stepService.step[0]);
 //                     //
 //                     // this._stepService.steps = this.tmp;
 //                     // console.     log(this._stepService.steps);
 //                     // console.log(this.tmp);
 //                     /* IF DATA ARE STORED IN A COLLECTION IN CONFIG FILE */
-//                     if (typeof this._stepService.steps[0].configuration.collection != 'undefined') {
+//                     if (typeof this._stepService.steps[0].configu       ration.collection != 'undefined') {
 //                     }
 //
 //                     /*  IF A LIST EXISTS IN CONFIG FILE */
-//                     if (typeof this._stepService.steps[0].configuration.list != 'undefined') {
-//                         this.lists.push(this._stepService.steps[0].configuration.list);
-//                         this.listsData.push({
+//                     if (typeof        this._stepService.steps[0].configuration.list != 'undefined') {
+    //                         this.lists.push(this._stepService.steps[0].configuration.list);
+//                                    this.listsDa   ta.push({
 //                             "name": this._stepService.steps[0].name,
-//                             "list": this._stepService.steps[0].configuration.list
+//                             "list": this._stepSer        vice.steps[0].configuration.list
 //                         });
 //                     }
 //                     console.log(this.listsData);
 //                     this._stepService.datas = this.listsData.slice();
 //                     // INITIATE FORM SERVICE TO KEEP ALL SELECTIONS MADE BY USER IN STEPS
-//                     this._formService.init();
+//                     this._formServi          ce.init();
 //
 // //console.  log(this._formS      ervice);
 // //Big list contains all list of buttons

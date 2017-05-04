@@ -45,7 +45,7 @@ export class PanelBtnComponent {
                 this.currentList = datas.list;
             }
         }
-        // console.log(this.currentList);
+        console.log(this.currentList);
         // console.log(this.objStep);
 
     }
