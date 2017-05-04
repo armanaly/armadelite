@@ -47,7 +47,7 @@ export class ListButtonsComponent {
 
         console.log("ngOnInitStart");
         console.log("this.stepIdx " + this.stepIdx);
-        console.log("this.objStep " + this.objStep);
+        console.log(this.objStep.conditions.length);
 
         if (this.objStep.conditions.length > 0){
             let valueCondition = this.objStep.conditions[0].value;
