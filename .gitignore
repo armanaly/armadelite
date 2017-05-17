@@ -8,3 +8,4 @@ public/js/app/global.js
 node_modules/
 static/
 templates/
+/imports/
