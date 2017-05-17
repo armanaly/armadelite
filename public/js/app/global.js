@@ -1,8 +1,0 @@
-"use strict";
-exports.GlobalVariable = Object.freeze({
-    //BASE_URL : 'https://apiflask.herokuapp.com/',
-    BASE_URL: 'http://localhost:5000/',
-    APP_NAME: 'ballet'
-});
-
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdsb2JhbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ2Esc0JBQWMsR0FBRyxNQUFNLENBQUMsTUFBTSxDQUFDO0lBQ3hDLCtDQUErQztJQUMvQyxRQUFRLEVBQUUsd0JBQXdCO0lBQ2xDLFFBQVEsRUFBRSxRQUFRO0NBQ3JCLENBQUMsQ0FBQyIsImZpbGUiOiJnbG9iYWwuanMiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuZXhwb3J0IGNvbnN0IEdsb2JhbFZhcmlhYmxlID0gT2JqZWN0LmZyZWV6ZSh7XHJcbiAgICAvL0JBU0VfVVJMIDogJ2h0dHBzOi8vYXBpZmxhc2suaGVyb2t1YXBwLmNvbS8nLFxyXG4gICAgQkFTRV9VUkw6ICdodHRwOi8vbG9jYWxob3N0OjUwMDAvJyxcclxuICAgIEFQUF9OQU1FOiAnYmFsbGV0J1xyXG59KTtcclxuIl0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
