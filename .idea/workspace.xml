@@ -2,565 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e82b7e-2225-4c3a-a599-ccf4911817e3" name="Default" comment="multi_app &#10;multi grid&#10;&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app/components/fieldPanel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/Engine/collection.service.ts" afterPath="$PROJECT_DIR$/assets/app/Engine/collection.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/app.component.ts" afterPath="$PROJECT_DIR$/assets/app/app.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/components/fieldPanel.ts" afterPath="$PROJECT_DIR$/assets/app/components/fieldPanel.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/components/listButtons.ts" afterPath="$PROJECT_DIR$/assets/app/components/listButtons.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/components/panelBtnImg.ts" afterPath="$PROJECT_DIR$/assets/app/components/panelBtnImg.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imports/import.py" afterPath="$PROJECT_DIR$/imports/import.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/Engine/collection.service.js" afterPath="$PROJECT_DIR$/public/js/app/Engine/collection.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/Engine/step.service.js" afterPath="$PROJECT_DIR$/public/js/app/Engine/step.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/Engine/stepModel.js" afterPath="$PROJECT_DIR$/public/js/app/Engine/stepModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/app.component.js" afterPath="$PROJECT_DIR$/public/js/app/app.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/components/backButton.js" afterPath="$PROJECT_DIR$/public/js/app/components/backButton.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/components/form.service.js" afterPath="$PROJECT_DIR$/public/js/app/components/form.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/components/gridPanel.component.js" afterPath="$PROJECT_DIR$/public/js/app/components/gridPanel.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/components/listButtons.js" afterPath="$PROJECT_DIR$/public/js/app/components/listButtons.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/components/main.component.js" afterPath="$PROJECT_DIR$/public/js/app/components/main.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/components/panelBtnImg.js" afterPath="$PROJECT_DIR$/public/js/app/components/panelBtnImg.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app/global.js" afterPath="$PROJECT_DIR$/public/js/app/global.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/@angular/animations.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/@angular/animations.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/@angular/animations.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/@angular/animations.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/@angular/animations/browser.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/@angular/animations/browser.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/@angular/animations/browser.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/@angular/animations/browser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/@angular/animations/browser/testing.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/@angular/animations/browser/testing.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/@angular/animations/browser/testing.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/@angular/animations/browser/testing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/README.md" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/animations.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/animations.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser.metadata.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/public_api.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/public_api.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/animation_engine.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/animation_engine.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/browser.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/browser.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation_dsl_visitor.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation_dsl_visitor.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation_timeline_instruction.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation_timeline_instruction.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation_timeline_visitor.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation_timeline_visitor.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation_transition_expr.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation_transition_expr.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation_transition_factory.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation_transition_factory.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation_transition_instruction.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation_transition_instruction.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation_trigger.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation_trigger.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation_validator_visitor.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/animation_validator_visitor.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/style_normalization/animation_style_normalizer.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/style_normalization/animation_style_normalizer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/style_normalization/web_animations_style_normalizer.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/dsl/style_normalization/web_animations_style_normalizer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/private_export.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/private_export.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/render/animation_driver.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/render/animation_driver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/render/animation_engine_instruction.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/render/animation_engine_instruction.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/render/dom_animation_engine.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/render/dom_animation_engine.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/render/noop_animation_engine.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/render/noop_animation_engine.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/render/web_animations/dom_animation.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/render/web_animations/dom_animation.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/render/web_animations/web_animations_driver.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/render/web_animations/web_animations_driver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/render/web_animations/web_animations_player.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/render/web_animations/web_animations_player.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/util.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/src/util.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/testing.metadata.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/testing.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/testing/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/testing/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/testing/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/testing/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/testing/src/mock_animation_driver.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/testing/src/mock_animation_driver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/testing/src/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/browser/testing/src/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/bundles/animations-browser-testing.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/bundles/animations-browser-testing.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/bundles/animations-browser-testing.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/bundles/animations-browser-testing.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/bundles/animations-browser.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/bundles/animations-browser.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/bundles/animations-browser.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/bundles/animations-browser.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/bundles/animations.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/bundles/animations.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/bundles/animations.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/bundles/animations.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/public_api.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/public_api.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/src/animation_event.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/src/animation_event.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/src/animation_metadata.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/src/animation_metadata.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/src/animations.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/src/animations.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/src/players/animation_group_player.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/src/players/animation_group_player.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/src/players/animation_player.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/src/players/animation_player.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/src/private_export.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/src/private_export.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/animations/src/util.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/animations/src/util.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/@angular/common.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/@angular/common.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/@angular/common.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/@angular/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/@angular/common/testing.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/@angular/common/testing.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/@angular/common/testing.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/@angular/common/testing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/bundles/common-testing.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/bundles/common-testing.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/bundles/common-testing.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/bundles/common-testing.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/bundles/common.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/bundles/common.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/bundles/common.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/bundles/common.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/common.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/common.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/public_api.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/public_api.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/common.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/common.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/common_module.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/common_module.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/directives/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/directives/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/directives/ng_class.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/directives/ng_class.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/directives/ng_component_outlet.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/directives/ng_component_outlet.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/directives/ng_for_of.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/directives/ng_for_of.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/directives/ng_if.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/directives/ng_if.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/directives/ng_plural.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/directives/ng_plural.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/directives/ng_template_outlet.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/directives/ng_template_outlet.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/localization.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/localization.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/location/location.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/location/location.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/location/location_strategy.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/location/location_strategy.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/location/platform_location.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/location/platform_location.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/pipes/async_pipe.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/pipes/async_pipe.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/pipes/case_conversion_pipes.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/pipes/case_conversion_pipes.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/pipes/date_pipe.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/pipes/date_pipe.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/pipes/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/pipes/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/pipes/invalid_pipe_argument_error.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/pipes/invalid_pipe_argument_error.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/pipes/number_pipe.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/pipes/number_pipe.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/platform_id.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/src/platform_id.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/testing.metadata.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/testing.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/testing/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/testing/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/testing/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/testing/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/testing/src/location_mock.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/testing/src/location_mock.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/testing/src/mock_location_strategy.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/testing/src/mock_location_strategy.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/common/testing/src/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/common/testing/src/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/README.md" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/index.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/codegen.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/codegen.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/codegen.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/codegen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/compiler_host.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/compiler_host.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/compiler_host.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/compiler_host.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/extract_i18n.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/extract_i18n.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/extract_i18n.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/extract_i18n.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/extractor.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/extractor.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/extractor.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/extractor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/main.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/main.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/main.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/ngtools_api.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/ngtools_api.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/ngtools_api.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/ngtools_api.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/ngtools_impl.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/ngtools_impl.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/ngtools_impl.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/ngtools_impl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/path_mapped_compiler_host.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/path_mapped_compiler_host.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/path_mapped_compiler_host.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/path_mapped_compiler_host.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/version.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/version.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/version.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli/src/version.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/@angular/compiler.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/@angular/compiler.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/@angular/compiler.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/@angular/compiler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/@angular/compiler/testing.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/@angular/compiler/testing.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/@angular/compiler/testing.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/@angular/compiler/testing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/bundles/compiler-testing.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/bundles/compiler-testing.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/bundles/compiler-testing.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/bundles/compiler-testing.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/bundles/compiler.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/bundles/compiler.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/bundles/compiler.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/bundles/compiler.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/compiler.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/compiler.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/compiler.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/compiler.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/compiler_host.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/compiler_host.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/compiler_options.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/compiler_options.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/static_reflection_capabilities.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/static_reflection_capabilities.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/static_reflector.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/static_reflector.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/static_symbol.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/static_symbol.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/static_symbol_resolver.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/static_symbol_resolver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/summary_resolver.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/summary_resolver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/summary_serializer.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/summary_serializer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/util.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/aot/util.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/chars.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/chars.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/compile_metadata.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/compile_metadata.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/compiler.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/compiler.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/compiler_util/expression_converter.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/compiler_util/expression_converter.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/config.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/config.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/directive_normalizer.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/directive_normalizer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/directive_resolver.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/directive_resolver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/expression_parser/ast.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/expression_parser/ast.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/expression_parser/lexer.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/expression_parser/lexer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/expression_parser/parser.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/expression_parser/parser.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/digest.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/digest.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/extractor.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/extractor.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/i18n_ast.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/i18n_ast.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/i18n_html_parser.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/i18n_html_parser.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/i18n_parser.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/i18n_parser.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/message_bundle.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/message_bundle.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/serializers/serializer.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/serializers/serializer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/serializers/xliff.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/serializers/xliff.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/serializers/xmb.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/serializers/xmb.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/serializers/xtb.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/serializers/xtb.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/translation_bundle.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/i18n/translation_bundle.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/identifiers.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/identifiers.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/injectable.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/injectable.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/jit/compiler.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/jit/compiler.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/lifecycle_reflector.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/lifecycle_reflector.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/metadata_resolver.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/metadata_resolver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/ml_parser/icu_ast_expander.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/ml_parser/icu_ast_expander.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/ml_parser/parser.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/ml_parser/parser.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/ng_module_compiler.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/ng_module_compiler.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/ng_module_resolver.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/ng_module_resolver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/abstract_emitter.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/abstract_emitter.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/abstract_js_emitter.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/abstract_js_emitter.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/class_builder.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/class_builder.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/output_ast.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/output_ast.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/output_interpreter.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/output_interpreter.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/output_jit.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/output_jit.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/path_util.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/path_util.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/source_map.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/source_map.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/ts_emitter.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/ts_emitter.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/value_util.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/output/value_util.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/parse_util.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/parse_util.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/pipe_resolver.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/pipe_resolver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/provider_analyzer.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/provider_analyzer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/style_url_resolver.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/style_url_resolver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/summary_resolver.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/summary_resolver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/template_parser/binding_parser.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/template_parser/binding_parser.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/template_parser/template_ast.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/template_parser/template_ast.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/template_parser/template_parser.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/template_parser/template_parser.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/url_resolver.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/url_resolver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/util.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/util.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/view_compiler/view_compiler.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/src/view_compiler/view_compiler.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing.metadata.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing/src/directive_resolver_mock.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing/src/directive_resolver_mock.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing/src/metadata_overrider.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing/src/metadata_overrider.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing/src/ng_module_resolver_mock.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing/src/ng_module_resolver_mock.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing/src/pipe_resolver_mock.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing/src/pipe_resolver_mock.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing/src/schema_registry_mock.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing/src/schema_registry_mock.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing/src/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/compiler/testing/src/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/@angular/core.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/@angular/core.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/@angular/core.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/@angular/core.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/@angular/core/testing.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/@angular/core/testing.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/@angular/core/testing.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/@angular/core/testing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/bundles/core-testing.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/bundles/core-testing.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/bundles/core-testing.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/bundles/core-testing.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/bundles/core.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/bundles/core.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/bundles/core.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/bundles/core.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/core.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/core.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/public_api.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/public_api.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/animation/animation_metadata_wrapped.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/animation/animation_metadata_wrapped.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/animation/dsl.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/animation/dsl.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/application_init.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/application_init.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/application_module.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/application_module.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/application_ref.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/application_ref.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/application_tokens.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/application_tokens.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection/change_detection.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection/change_detection.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection/change_detection_util.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection/change_detection_util.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection/change_detector_ref.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection/change_detector_ref.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection/constants.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection/constants.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection/differs/default_iterable_differ.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection/differs/default_iterable_differ.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection/differs/default_keyvalue_differ.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection/differs/default_keyvalue_differ.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection/differs/iterable_differs.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection/differs/iterable_differs.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection/differs/keyvalue_differs.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/change_detection/differs/keyvalue_differs.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/codegen_private_exports.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/codegen_private_exports.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/core.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/core.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/core_private_export.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/core_private_export.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/debug/debug_node.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/debug/debug_node.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di/forward_ref.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di/forward_ref.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di/injection_token.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di/injection_token.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di/injector.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di/injector.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di/provider.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di/provider.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di/reflective_errors.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di/reflective_errors.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di/reflective_injector.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di/reflective_injector.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di/reflective_key.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di/reflective_key.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di/reflective_provider.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/di/reflective_provider.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/error_handler.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/error_handler.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/errors.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/errors.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/event_emitter.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/event_emitter.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/i18n/tokens.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/i18n/tokens.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/linker/compiler.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/linker/compiler.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/linker/component_factory.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/linker/component_factory.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/linker/component_factory_resolver.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/linker/component_factory_resolver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/linker/ng_module_factory.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/linker/ng_module_factory.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/linker/query_list.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/linker/query_list.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/linker/template_ref.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/linker/template_ref.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/linker/view_container_ref.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/linker/view_container_ref.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/linker/view_ref.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/linker/view_ref.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/metadata/di.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/metadata/di.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/metadata/directives.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/metadata/directives.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/metadata/lifecycle_hooks.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/metadata/lifecycle_hooks.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/metadata/view.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/metadata/view.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/profile/profile.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/profile/profile.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/profile/wtf_impl.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/profile/wtf_impl.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/reflection/platform_reflection_capabilities.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/reflection/platform_reflection_capabilities.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/reflection/reflection_capabilities.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/reflection/reflection_capabilities.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/reflection/reflector.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/reflection/reflector.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/reflection/reflector_reader.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/reflection/reflector_reader.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/render.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/render.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/render/api.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/render/api.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/testability/testability.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/testability/testability.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/type.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/type.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/util.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/util.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/util/decorators.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/util/decorators.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/util/lang.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/util/lang.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/version.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/version.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/element.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/element.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/errors.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/errors.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/ng_content.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/ng_content.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/provider.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/provider.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/pure_expression.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/pure_expression.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/query.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/query.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/refs.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/refs.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/services.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/services.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/text.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/text.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/types.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/types.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/util.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/util.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/view.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/view.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/view_attach.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/view/view_attach.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/zone/ng_zone.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/src/zone/ng_zone.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing.metadata.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/async.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/async.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/async_test_completer.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/async_test_completer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/before_each.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/before_each.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/component_fixture.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/component_fixture.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/fake_async.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/fake_async.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/metadata_override.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/metadata_override.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/private_export_testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/private_export_testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/test_bed.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/test_bed.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/test_compiler.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/test_compiler.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/core/testing/src/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/@angular/forms.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/@angular/forms.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/@angular/forms.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/@angular/forms.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/bundles/forms.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/bundles/forms.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/bundles/forms.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/bundles/forms.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/forms.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/forms.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/public_api.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/public_api.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/abstract_control_directive.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/abstract_control_directive.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/abstract_form_group_directive.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/abstract_form_group_directive.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/control_container.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/control_container.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/control_value_accessor.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/control_value_accessor.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/default_value_accessor.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/default_value_accessor.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/ng_control.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/ng_control.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/ng_control_status.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/ng_control_status.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/ng_form.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/ng_form.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/ng_model.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/ng_model.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/ng_no_validate_directive.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/ng_no_validate_directive.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/normalize_validator.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/normalize_validator.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/reactive_directives/form_control_directive.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/reactive_directives/form_control_directive.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/reactive_directives/form_control_name.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/reactive_directives/form_control_name.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/reactive_directives/form_group_directive.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/reactive_directives/form_group_directive.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/reactive_directives/form_group_name.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/reactive_directives/form_group_name.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/select_control_value_accessor.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/select_control_value_accessor.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/select_multiple_control_value_accessor.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/select_multiple_control_value_accessor.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/shared.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/shared.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/validators.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/directives/validators.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/forms.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/forms.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/model.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/model.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/validators.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/forms/src/validators.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/@angular/http.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/@angular/http.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/@angular/http.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/@angular/http.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/@angular/http/testing.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/@angular/http/testing.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/@angular/http/testing.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/@angular/http/testing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/bundles/http-testing.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/bundles/http-testing.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/bundles/http-testing.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/bundles/http-testing.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/bundles/http.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/bundles/http.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/bundles/http.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/bundles/http.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/http.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/http.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/public_api.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/public_api.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/src/backends/browser_jsonp.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/src/backends/browser_jsonp.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/src/backends/xhr_backend.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/src/backends/xhr_backend.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/src/base_request_options.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/src/base_request_options.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/src/interfaces.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/src/interfaces.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/src/static_request.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/src/static_request.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/src/static_response.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/src/static_response.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/testing.metadata.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/testing.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/testing/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/testing/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/testing/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/testing/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/testing/src/mock_backend.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/testing/src/mock_backend.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/http/testing/src/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/http/testing/src/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic/testing.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic/testing.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic/testing.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic/testing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/platform-browser-dynamic.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/platform-browser-dynamic.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/src/private_export.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/src/private_export.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/testing.metadata.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/testing.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/testing/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/testing/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/testing/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/testing/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/testing/src/dom_test_component_renderer.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/testing/src/dom_test_component_renderer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/testing/src/private_export_testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/testing/src/private_export_testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/testing/src/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser-dynamic/testing/src/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/@angular/platform-browser.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/@angular/platform-browser.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/@angular/platform-browser.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/@angular/platform-browser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/@angular/platform-browser/animations.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/@angular/platform-browser/animations.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/@angular/platform-browser/animations.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/@angular/platform-browser/animations.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/@angular/platform-browser/testing.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/@angular/platform-browser/testing.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/@angular/platform-browser/testing.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/@angular/platform-browser/testing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations.metadata.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations/public_api.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations/public_api.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations/src/animation_renderer.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations/src/animation_renderer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations/src/animations.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations/src/animations.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations/src/module.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations/src/module.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations/src/private_export.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations/src/private_export.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations/src/providers.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/animations/src/providers.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/bundles/platform-browser-animations.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/bundles/platform-browser-animations.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/bundles/platform-browser-animations.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/bundles/platform-browser-animations.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/bundles/platform-browser-testing.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/bundles/platform-browser-testing.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/bundles/platform-browser-testing.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/bundles/platform-browser-testing.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/bundles/platform-browser.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/bundles/platform-browser.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/bundles/platform-browser.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/bundles/platform-browser.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/platform-browser.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/platform-browser.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/public_api.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/public_api.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser/browser_adapter.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser/browser_adapter.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser/location/browser_platform_location.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser/location/browser_platform_location.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser/meta.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser/meta.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser/server-transition.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser/server-transition.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser/title.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser/title.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser/tools/browser.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser/tools/browser.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser/tools/common_tools.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser/tools/common_tools.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser/tools/tools.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/browser/tools/tools.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/debug/by.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/debug/by.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/debug/ng_probe.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/debug/ng_probe.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/dom_adapter.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/dom_adapter.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/dom_renderer.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/dom_renderer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/dom_tokens.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/dom_tokens.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/events/dom_events.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/events/dom_events.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/events/event_manager.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/events/event_manager.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/events/hammer_gestures.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/events/hammer_gestures.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/events/key_events.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/events/key_events.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/shared_styles_host.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/dom/shared_styles_host.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/platform-browser.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/platform-browser.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/private_export.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/private_export.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/security/dom_sanitization_service.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/security/dom_sanitization_service.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/security/html_sanitizer.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/src/security/html_sanitizer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/testing.metadata.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/testing.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/testing/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/testing/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/testing/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/testing/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/testing/src/browser.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/testing/src/browser.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/testing/src/browser_util.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/testing/src/browser_util.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/testing/src/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-browser/testing/src/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/@angular/platform-server.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/@angular/platform-server.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/@angular/platform-server.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/@angular/platform-server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/@angular/platform-server/testing.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/@angular/platform-server/testing.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/@angular/platform-server/testing.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/@angular/platform-server/testing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/README.md" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/bundles/platform-server-testing.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/bundles/platform-server-testing.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/bundles/platform-server-testing.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/bundles/platform-server-testing.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/bundles/platform-server.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/bundles/platform-server.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/bundles/platform-server.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/bundles/platform-server.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/integrationtest/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/integrationtest/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/platform-server.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/platform-server.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/public_api.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/public_api.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/http.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/http.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/location.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/location.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/parse5_adapter.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/parse5_adapter.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/platform-server.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/platform-server.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/platform_state.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/platform_state.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/private_export.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/private_export.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/server.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/server.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/server_renderer.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/server_renderer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/styles_host.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/styles_host.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/tokens.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/tokens.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/utils.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/utils.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/version.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/src/version.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/testing.metadata.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/testing.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/testing/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/testing/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/testing/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/testing/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/testing/src/server.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/testing/src/server.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/testing/src/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/platform-server/testing/src/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/@angular/router.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/@angular/router.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/@angular/router.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/@angular/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/@angular/router/testing.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/@angular/router/testing.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/@angular/router/testing.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/@angular/router/testing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/@angular/router/upgrade.es5.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/@angular/router/upgrade.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/@angular/router/upgrade.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/@angular/router/upgrade.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/bundles/router-testing.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/bundles/router-testing.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/bundles/router-testing.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/bundles/router-testing.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/bundles/router-upgrade.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/bundles/router-upgrade.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/bundles/router-upgrade.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/bundles/router-upgrade.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/bundles/router.umd.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/bundles/router.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/bundles/router.umd.min.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/bundles/router.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/public_api.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/public_api.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/router.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/router.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/apply_redirects.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/apply_redirects.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/config.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/config.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/create_router_state.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/create_router_state.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/directives/router_link.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/directives/router_link.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/directives/router_link_active.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/directives/router_link_active.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/directives/router_outlet.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/directives/router_outlet.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/events.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/events.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/interfaces.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/interfaces.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/private_export.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/private_export.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/route_reuse_strategy.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/route_reuse_strategy.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/router.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/router.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/router_config_loader.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/router_config_loader.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/router_module.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/router_module.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/router_preloader.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/router_preloader.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/router_state.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/router_state.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/shared.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/shared.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/url_handling_strategy.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/url_handling_strategy.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/url_tree.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/url_tree.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/utils/collection.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/utils/collection.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/utils/tree.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/utils/tree.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/version.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/src/version.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/testing.metadata.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/testing.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/testing/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/testing/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/testing/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/testing/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/testing/src/router_testing_module.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/testing/src/router_testing_module.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/testing/src/testing.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/testing/src/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/upgrade.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/upgrade.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/upgrade.metadata.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/upgrade.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/upgrade/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/upgrade/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/upgrade/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/upgrade/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/router/upgrade/src/upgrade.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/router/upgrade/src/upgrade.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/index.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/index.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/package.json" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/bundler.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/bundler.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/bundler.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/bundler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/cli_options.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/cli_options.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/cli_options.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/cli_options.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/collector.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/collector.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/collector.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/collector.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/compiler_host.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/compiler_host.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/compiler_host.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/compiler_host.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/evaluator.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/evaluator.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/evaluator.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/evaluator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/index_writer.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/index_writer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/index_writer.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/index_writer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/main.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/main.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/main.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/options.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/options.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/options.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/options.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/schema.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/schema.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/schema.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/schema.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/symbols.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/symbols.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/symbols.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/symbols.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/tsc.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/tsc.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/tsc.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/tsc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/vinyl_file.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/vinyl_file.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/vinyl_file.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/src/vinyl_file.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/bundler_spec.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/bundler_spec.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/bundler_spec.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/bundler_spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/collector.spec.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/collector.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/evaluator.spec.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/evaluator.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/index_writer_spec.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/index_writer_spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/main.spec.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/main.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/symbols.spec.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/symbols.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/test_support.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/test_support.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/test_support.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/test_support.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/tsc.spec.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/tsc.spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/typescript.mocks.d.ts" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/typescript.mocks.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/typescript.mocks.js" afterPath="$PROJECT_DIR$/public/js/vendor/@angular/tsc-wrapped/test/typescript.mocks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.hbs" afterPath="$PROJECT_DIR$/views/index.hbs" />
     </list>
     <ignored path="mysaver.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -586,108 +28,130 @@
       <file leaf-file-name="main.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/components/main.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6800">
-              <caret line="413" column="0" lean-forward="false" selection-start-line="413" selection-start-column="0" selection-end-line="413" selection-end-column="0" />
+            <state relative-caret-position="9656">
+              <caret line="581" column="7" lean-forward="false" selection-start-line="581" selection-start-column="7" selection-end-line="581" selection-end-column="7" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
-                <marker date="1493130605020" expanded="true" signature="785:4180" ph="..." />
-                <marker date="1493130605020" expanded="true" signature="882:1490" ph="..." />
-                <marker date="1493130605020" expanded="true" signature="1544:1727" ph="..." />
-                <marker date="1493130605020" expanded="true" signature="1568:1716" ph="..." />
-                <marker date="1493130605020" expanded="true" signature="1813:3694" ph="..." />
-                <marker date="1493130605020" expanded="true" signature="1912:2288" ph="..." />
-                <marker date="1493130605020" expanded="true" signature="1940:2273" ph="..." />
-                <marker date="1493130605020" expanded="true" signature="2388:2770" ph="..." />
-                <marker date="1493130605020" expanded="true" signature="2415:2755" ph="..." />
-                <marker date="1493130605020" expanded="true" signature="2874:3326" ph="..." />
-                <marker date="1493130605020" expanded="true" signature="2904:3303" ph="..." />
-                <marker date="1493130605020" expanded="true" signature="3418:3677" ph="..." />
-                <marker date="1493130605020" expanded="true" signature="3444:3662" ph="..." />
-                <marker date="1493130605020" expanded="true" signature="4029:4172" ph="..." />
-                <marker date="1493130605020" expanded="true" signature="4269:4477" ph="..." />
-                <marker date="1493130605020" expanded="true" signature="4299:4469" ph="..." />
-                <marker date="1493130605020" expanded="true" signature="4312:4454" ph="..." />
-                <marker date="1493130605020" expanded="true" signature="4501:4679" ph="{...}" />
+                <marker date="1495057219869" expanded="true" signature="785:3689" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="882:1490" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="1544:1727" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="1568:1716" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="1813:3689" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="1912:2288" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="1940:2273" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="2388:2770" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="2415:2755" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="2874:3326" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="2904:3303" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="3418:3677" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="3444:3662" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="27622:30038" ph="{...}" />
+                <marker date="1495057219869" expanded="true" signature="27628:27648" ph="/*...*/" />
+                <marker date="1495057219869" expanded="true" signature="27679:29793" ph="{...}" />
+                <marker date="1495057219869" expanded="true" signature="27807:27894" ph="//..." />
+                <marker date="1495057219869" expanded="true" signature="28085:29370" ph="{...}" />
+                <marker date="1495057219869" expanded="true" signature="28100:28216" ph="//..." />
+                <marker date="1495057219869" expanded="true" signature="28286:29360" ph="{...}" />
+                <marker date="1495057219869" expanded="true" signature="28462:29346" ph="{...}" />
+                <marker date="1495057219869" expanded="true" signature="28819:29027" ph="//..." />
+                <marker date="1495057219869" expanded="true" signature="29470:29743" ph="//..." />
+                <marker date="1495057219869" expanded="true" signature="29821:30036" ph="{...}" />
+                <marker date="1495057219869" expanded="true" signature="30043:30549" ph="//..." />
+                <marker date="1495057219869" expanded="true" signature="30555:31187" ph="//..." />
+                <marker date="1495057219869" expanded="true" signature="31194:31277" ph="//..." />
+                <marker date="1495057219869" expanded="true" signature="31287:32043" ph="//..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="collection.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/Engine/collection.service.ts">
+      <file leaf-file-name="saveService.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/components/saveService.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1309">
-              <caret line="82" column="46" lean-forward="false" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
+            <state relative-caret-position="408">
+              <caret line="28" column="1" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fieldPanel.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/app/components/fieldPanel.ts">
+      <file leaf-file-name="boot.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/boot.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="55" column="24" lean-forward="false" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#68#0" expanded="true" />
-                <marker date="1493741272244" expanded="true" signature="342:7767" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="475:7751" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="518:7718" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="518:7736" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="564:7713" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="882:6818" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="942:2311" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="1094:2279" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="1193:1852" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="2394:3859" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="2545:3832" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="2644:3427" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="5517:6765" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="5676:6733" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="5778:6370" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="6523:6658" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="6891:7434" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="6920:7422" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="6920:7427" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="6979:7417" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="7012:7164" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="7079:7086" ph="×" />
-                <marker date="1493741272244" expanded="true" signature="7195:7269" ph="..." />
-                <marker date="1493741272244" expanded="true" signature="7302:7406" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="26" />
+            <state relative-caret-position="51">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/app/app.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="43" column="53" lean-forward="false" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
-              <folding>
-                <marker date="1493725796366" expanded="true" signature="685:758" ph="..." />
-                <marker date="1493725796366" expanded="true" signature="722:752" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="global.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="global.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/app/global.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/components/form.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="799">
+              <caret line="50" column="9" lean-forward="false" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+              <folding>
+                <marker date="1495057219851" expanded="true" signature="309:1927" ph="{...}" />
+                <marker date="1495057219851" expanded="true" signature="612:1925" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fieldPanel.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/components/fieldPanel.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2091">
+              <caret line="126" column="19" lean-forward="false" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
+              <folding>
+                <marker date="1495057219846" expanded="true" signature="8227:11407" ph="{...}" />
+                <marker date="1495057219846" expanded="true" signature="11443:11769" ph="{...}" />
+                <marker date="1495057219846" expanded="true" signature="11683:11762" ph="{...}" />
+                <marker date="1495057219846" expanded="true" signature="11712:11756" ph="{...}" />
+                <marker date="1495057219846" expanded="true" signature="12035:13098" ph="{...}" />
+                <marker date="1495057219846" expanded="true" signature="12637:12844" ph="{...}" />
+                <marker date="1495057219846" expanded="true" signature="12919:13086" ph="{&quot;valueName&quot;: valuesName...}" />
+                <marker date="1495057219846" expanded="true" signature="13166:13360" ph="//..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="multipleSelection.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/components/multipleSelection.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="37" column="20" lean-forward="false" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="20" />
+              <folding>
+                <marker date="1488357725665" expanded="true" signature="296:1208" ph="..." />
+                <marker date="1488357725665" expanded="true" signature="411:1051" ph="..." />
+                <marker date="1488357725665" expanded="true" signature="467:1037" ph="..." />
+                <marker date="1488357725665" expanded="true" signature="542:751" ph="..." />
+                <marker date="1488357725665" expanded="true" signature="825:1019" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.hbs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/index.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="16" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="17" />
+              <folding>
+                <marker date="1495057229430" expanded="true" signature="1374:1636" ph="..." />
+                <marker date="1495057229430" expanded="true" signature="1427:1524" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -703,7 +167,6 @@
       <find>getSelections</find>
       <find>goToStep</find>
       <find>objStep</find>
-      <find>onValueSelected</find>
       <find>step</find>
       <find>.step</find>
       <find>this._stepService</find>
@@ -714,6 +177,11 @@
       <find>goToNextStep</find>
       <find>formGrou</find>
       <find>kilométrage</find>
+      <find>upload() {         this.uploader.uploadAll();     }   upload() {         this.uploader.uploadAll();     }   upload() {         this.uploader.uploadAll();     }</find>
+      <find>cloudinary</find>
+      <find>imm</find>
+      <find>onSubmitingFields</find>
+      <find>onValueSelected</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -744,9 +212,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/app/photos/photos.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/photos/photos.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/profile/formProfile.ts" />
         <option value="$PROJECT_DIR$/assets/app/vehicule/vehicule.template.html" />
         <option value="$PROJECT_DIR$/assets/app/vehicule/buttons-form.componnent.ts" />
         <option value="$PROJECT_DIR$/assets/app/vehicule/buttonsForm.componnent.ts" />
@@ -769,32 +234,35 @@
         <option value="$PROJECT_DIR$/assets/app/profile/profile.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/components/fieldPanel.service.ts" />
         <option value="$PROJECT_DIR$/assets/app/Engine/stepModel.ts" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/assets/app/vehicule/backButton.ts" />
         <option value="$PROJECT_DIR$/public/systemjs.config.js" />
         <option value="$PROJECT_DIR$/assets/app/vehicule/main.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/app.routing.ts" />
         <option value="$PROJECT_DIR$/assets/app/menu/menu.component.ts" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/assets/app/Engine/mail.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/app.module.ts" />
         <option value="$PROJECT_DIR$/assets/app/comonents/multipleSelection.ts" />
         <option value="$PROJECT_DIR$/assets/app/Engine/step.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/components/form.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/components/saveService.ts" />
         <option value="$PROJECT_DIR$/assets/app/components/saveButton.ts" />
         <option value="$PROJECT_DIR$/assets/app/components/gridPanel.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/global.ts" />
-        <option value="$PROJECT_DIR$/assets/app/components/gridPanel.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/components/backButton.ts" />
         <option value="$PROJECT_DIR$/assets/app/components/panelBtnImg.ts" />
         <option value="$PROJECT_DIR$/assets/app/components/listButtons.ts" />
         <option value="$PROJECT_DIR$/assets/app/Engine/collection.service.ts" />
-        <option value="$PROJECT_DIR$/assets/app/components/main.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/components/fieldPanel.ts" />
+        <option value="$PROJECT_DIR$/assets/app/components/gridPanel.component.ts" />
+        <option value="$PROJECT_DIR$/npm-debug.log" />
+        <option value="$PROJECT_DIR$/assets/app/app.routing.ts" />
+        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/index.hbs" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/assets/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/assets/app/components/saveService.ts" />
+        <option value="$PROJECT_DIR$/assets/app/components/fileUpload.service.ts" />
         <option value="$PROJECT_DIR$/assets/app/app.component.ts" />
-        <option value="$PROJECT_DIR$/assets/app/components/fieldPanel.ts" />
+        <option value="$PROJECT_DIR$/assets/app/components/form.service.ts" />
+        <option value="$PROJECT_DIR$/assets/app/components/main.component.ts" />
+        <option value="$PROJECT_DIR$/assets/app/components/fileUpload.ts" />
+        <option value="$PROJECT_DIR$/assets/app/global.ts" />
       </list>
     </option>
   </component>
@@ -940,7 +408,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -958,65 +426,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flask_angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flask_angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flask_angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flask_angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flask_angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flask_angular2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="imports" />
+              <option name="myItemId" value="modele" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1093,6 +507,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="profile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask_angular2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask_angular2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="photos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1478,7 +914,19 @@
       <workItem from="1493623364218" duration="4324000" />
       <workItem from="1493707517429" duration="13546000" />
       <workItem from="1493798052319" duration="1372000" />
-      <workItem from="1493884303291" duration="1155000" />
+      <workItem from="1493884303291" duration="11029000" />
+      <workItem from="1493970621102" duration="7467000" />
+      <workItem from="1494178169952" duration="1052000" />
+      <workItem from="1494229319800" duration="12263000" />
+      <workItem from="1494314076627" duration="6394000" />
+      <workItem from="1494402762335" duration="9519000" />
+      <workItem from="1494488927897" duration="842000" />
+      <workItem from="1494574493837" duration="6097000" />
+      <workItem from="1494679889853" duration="4085000" />
+      <workItem from="1494769937794" duration="3313000" />
+      <workItem from="1494835247170" duration="8357000" />
+      <workItem from="1494924964174" duration="2286000" />
+      <workItem from="1495010414331" duration="2069000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout Sélection des équipements dans tableau">
       <created>1476008307314</created>
@@ -1694,7 +1142,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1020418000" />
+    <option name="totallyTimeSpent" value="1094036000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1707,28 +1155,28 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1088" y="-848" width="1096" height="1896" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2816635" sideWeight="0.4937304" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298791" sideWeight="0.49621928" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25330812" sideWeight="0.4937304" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287277" sideWeight="0.7088847" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2838227" sideWeight="0.7712665" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3540587" sideWeight="0.48393196" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24288724" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3177893" sideWeight="0.41020793" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3177893" sideWeight="0.7637051" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18914647" sideWeight="0.5062696" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287277" sideWeight="0.2911153" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2838227" sideWeight="0.22873347" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31661093" sideWeight="0.4873551" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1799,28 +1247,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/app/vehicule/mileageValidator.ts" />
-    <entry file="file://$PROJECT_DIR$/assets/app/vehicule/formVehicule.ts" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/ide/ide-scripting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/components/fieldPanel.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" column="8" lean-forward="false" selection-start-line="12" selection-start-column="3" selection-end-line="26" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/marque.js" />
-    <entry file="file://$PROJECT_DIR$/models/vehicule.js" />
-    <entry file="file://$PROJECT_DIR$/routes/marques.js" />
-    <entry file="file://$PROJECT_DIR$/models/demande.js" />
-    <entry file="file://$PROJECT_DIR$/requirements.txt" />
-    <entry file="file://$PROJECT_DIR$/tmp mongoDB.py" />
     <entry file="file://$PROJECT_DIR$/node_modules/gulp/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1828,7 +1254,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/npm-debug.log" />
     <entry file="file://$PROJECT_DIR$/routes/nodemailer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1864,13 +1289,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/systemjs.builder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/systemjs.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
@@ -1899,13 +1317,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/Engine/mail.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="98" lean-forward="false" selection-start-line="16" selection-start-column="98" selection-end-line="16" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1921,88 +1332,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/components/multipleSelection.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/components/gridPanel.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2652">
-          <caret line="160" column="27" lean-forward="false" selection-start-line="160" selection-start-column="27" selection-end-line="160" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/components/form.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="10" lean-forward="false" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/components/saveService.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/components/saveButton.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/Engine/step.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="46" column="29" lean-forward="false" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/Engine/stepModel.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-888">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/boot.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/components/gridPanel.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="28" column="15" lean-forward="false" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -2020,14 +1353,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/global.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/www">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -2042,13 +1367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="99" lean-forward="false" selection-start-line="29" selection-start-column="99" selection-end-line="29" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/components/listButtons.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
@@ -2060,95 +1378,289 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1309">
           <caret line="82" column="46" lean-forward="false" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/app/components/main.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6800">
-          <caret line="413" column="0" lean-forward="false" selection-start-line="413" selection-start-column="0" selection-end-line="413" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-            <marker date="1493130605020" expanded="true" signature="785:4180" ph="..." />
-            <marker date="1493130605020" expanded="true" signature="882:1490" ph="..." />
-            <marker date="1493130605020" expanded="true" signature="1544:1727" ph="..." />
-            <marker date="1493130605020" expanded="true" signature="1568:1716" ph="..." />
-            <marker date="1493130605020" expanded="true" signature="1813:3694" ph="..." />
-            <marker date="1493130605020" expanded="true" signature="1912:2288" ph="..." />
-            <marker date="1493130605020" expanded="true" signature="1940:2273" ph="..." />
-            <marker date="1493130605020" expanded="true" signature="2388:2770" ph="..." />
-            <marker date="1493130605020" expanded="true" signature="2415:2755" ph="..." />
-            <marker date="1493130605020" expanded="true" signature="2874:3326" ph="..." />
-            <marker date="1493130605020" expanded="true" signature="2904:3303" ph="..." />
-            <marker date="1493130605020" expanded="true" signature="3418:3677" ph="..." />
-            <marker date="1493130605020" expanded="true" signature="3444:3662" ph="..." />
-            <marker date="1493130605020" expanded="true" signature="4029:4172" ph="..." />
-            <marker date="1493130605020" expanded="true" signature="4269:4477" ph="..." />
-            <marker date="1493130605020" expanded="true" signature="4299:4469" ph="..." />
-            <marker date="1493130605020" expanded="true" signature="4312:4454" ph="..." />
-            <marker date="1493130605020" expanded="true" signature="4501:4679" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/assets/app/Engine/step.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
-          <caret line="40" column="3" lean-forward="true" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
+          <caret line="46" column="29" lean-forward="false" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/Engine/mail.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="98" lean-forward="false" selection-start-line="16" selection-start-column="98" selection-end-line="16" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/profile/profile.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/components/gridPanel.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/vendor/@angular/router/src/utils/collection.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/photos/photos.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="61" lean-forward="false" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/photos/photos.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1581">
+          <caret line="93" column="9" lean-forward="false" selection-start-line="93" selection-start-column="9" selection-end-line="93" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/app.routing.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="60" lean-forward="false" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/npm-debug.log" />
+    <entry file="file://$PROJECT_DIR$/assets/app/components/gridPanel.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="876">
+          <caret line="186" column="0" lean-forward="true" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/systemjs.builder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsd.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/typings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="26" />
-          <folding />
+          <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app/app.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/components/saveButton.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="49" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="101" column="39" lean-forward="false" selection-start-line="101" selection-start-column="39" selection-end-line="101" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+            <element signature="e#176#222#0" expanded="true" />
+            <element signature="e#777#837#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="43" column="53" lean-forward="false" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
+        <state relative-caret-position="408">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
-            <marker date="1493725796366" expanded="true" signature="685:758" ph="..." />
-            <marker date="1493725796366" expanded="true" signature="722:752" ph="..." />
+            <element signature="e#0#56#0" expanded="true" />
+            <marker date="1495057219824" expanded="true" signature="222:295" ph="..." />
+            <marker date="1495057219824" expanded="true" signature="259:289" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="16" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="17" />
+          <folding>
+            <marker date="1495057229430" expanded="true" signature="1374:1636" ph="..." />
+            <marker date="1495057229430" expanded="true" signature="1427:1524" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="40" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/components/multipleSelection.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="20" lean-forward="false" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="20" />
+          <folding>
+            <marker date="1488357725665" expanded="true" signature="296:1208" ph="..." />
+            <marker date="1488357725665" expanded="true" signature="411:1051" ph="..." />
+            <marker date="1488357725665" expanded="true" signature="467:1037" ph="..." />
+            <marker date="1488357725665" expanded="true" signature="542:751" ph="..." />
+            <marker date="1488357725665" expanded="true" signature="825:1019" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/components/fieldPanel.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="55" column="24" lean-forward="false" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+        <state relative-caret-position="2091">
+          <caret line="126" column="19" lean-forward="false" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
           <folding>
-            <element signature="e#0#68#0" expanded="true" />
-            <marker date="1493741272244" expanded="true" signature="342:7767" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="475:7751" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="518:7718" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="518:7736" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="564:7713" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="882:6818" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="942:2311" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="1094:2279" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="1193:1852" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="2394:3859" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="2545:3832" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="2644:3427" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="5517:6765" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="5676:6733" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="5778:6370" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="6523:6658" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="6891:7434" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="6920:7422" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="6920:7427" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="6979:7417" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="7012:7164" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="7079:7086" ph="×" />
-            <marker date="1493741272244" expanded="true" signature="7195:7269" ph="..." />
-            <marker date="1493741272244" expanded="true" signature="7302:7406" ph="..." />
+            <marker date="1495057219846" expanded="true" signature="8227:11407" ph="{...}" />
+            <marker date="1495057219846" expanded="true" signature="11443:11769" ph="{...}" />
+            <marker date="1495057219846" expanded="true" signature="11683:11762" ph="{...}" />
+            <marker date="1495057219846" expanded="true" signature="11712:11756" ph="{...}" />
+            <marker date="1495057219846" expanded="true" signature="12035:13098" ph="{...}" />
+            <marker date="1495057219846" expanded="true" signature="12637:12844" ph="{...}" />
+            <marker date="1495057219846" expanded="true" signature="12919:13086" ph="{&quot;valueName&quot;: valuesName...}" />
+            <marker date="1495057219846" expanded="true" signature="13166:13360" ph="//..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/components/fileUpload.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/components/form.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="50" column="9" lean-forward="false" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+          <folding>
+            <marker date="1495057219851" expanded="true" signature="309:1927" ph="{...}" />
+            <marker date="1495057219851" expanded="true" signature="612:1925" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/components/main.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9656">
+          <caret line="581" column="7" lean-forward="false" selection-start-line="581" selection-start-column="7" selection-end-line="581" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+            <marker date="1495057219869" expanded="true" signature="785:3689" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="882:1490" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="1544:1727" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="1568:1716" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="1813:3689" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="1912:2288" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="1940:2273" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="2388:2770" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="2415:2755" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="2874:3326" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="2904:3303" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="3418:3677" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="3444:3662" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="27622:30038" ph="{...}" />
+            <marker date="1495057219869" expanded="true" signature="27628:27648" ph="/*...*/" />
+            <marker date="1495057219869" expanded="true" signature="27679:29793" ph="{...}" />
+            <marker date="1495057219869" expanded="true" signature="27807:27894" ph="//..." />
+            <marker date="1495057219869" expanded="true" signature="28085:29370" ph="{...}" />
+            <marker date="1495057219869" expanded="true" signature="28100:28216" ph="//..." />
+            <marker date="1495057219869" expanded="true" signature="28286:29360" ph="{...}" />
+            <marker date="1495057219869" expanded="true" signature="28462:29346" ph="{...}" />
+            <marker date="1495057219869" expanded="true" signature="28819:29027" ph="//..." />
+            <marker date="1495057219869" expanded="true" signature="29470:29743" ph="//..." />
+            <marker date="1495057219869" expanded="true" signature="29821:30036" ph="{...}" />
+            <marker date="1495057219869" expanded="true" signature="30043:30549" ph="//..." />
+            <marker date="1495057219869" expanded="true" signature="30555:31187" ph="//..." />
+            <marker date="1495057219869" expanded="true" signature="31194:31277" ph="//..." />
+            <marker date="1495057219869" expanded="true" signature="31287:32043" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/components/saveService.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="28" column="1" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/components/fileUpload.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1423">
+          <caret line="192" column="9" lean-forward="false" selection-start-line="192" selection-start-column="9" selection-end-line="192" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/boot.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/global.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
