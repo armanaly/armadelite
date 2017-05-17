@@ -48,6 +48,13 @@ export class FormService {
                 this.arraySteps.push({"nom": i.name ,[i.name]: keysList});
             }
 
+            if (i.type == 'file_upload'){
+                let keyName = i.configuration.form_value.name;
+
+                // let formData:FormData = new FormData();
+                this.arraySteps.push({"nom": keyName, "file_uploaded": File});
+
+            }
         }
             // console.log(this);
         }

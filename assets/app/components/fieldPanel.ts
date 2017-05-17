@@ -166,31 +166,38 @@ export class FieldPanelComponent {
 
 
 
-        var objFieldsPanel = this._formService.arraySteps.find(x => x[this.objStep.configuration.form_values[0].name] === this.objStep.name);
-        console.log("objFieldsPanel");
-        console.log(objFieldsPanel);
+        if (this.display){
+            var objFieldsPanel = this._formService.arraySteps.find(y => y["nom"] === this.objStep.name);
+            // console.log(this.objStep.configuration.form_values[0].name);
+            // console.log(this.objStep.name);
+            // console.log(this._formService.arraySteps);
+            //
+            // console.log("objFieldsPanel");
+            // console.log(objFieldsPanel);
 
-        // ADD ALL SPECIFIC CONTROL FOR EACH FIELD
-        for (let index = 0; index < this.objStep.configuration.form_values.length; index++) {
-            //console.log(this.objStep.configuration.form_values[index])
-            console.log(this.objStep.name); //kilometrage
-            console.log(this.objStep.configuration.form_values[index].name);   // 1 = NOM ; 2 = EMAIL
-            console.log(this._formService.arraySteps);
+            // ADD ALL SPECIFIC CONTROL FOR EACH FIELD
+            for (let index = 0; index < this.objStep.configuration.form_values.length; index++) {
+                //console.log(this.objStep.configuration.form_values[index])
+                console.log(this.objStep.name); //kilometrage
+                console.log(this.objStep.configuration.form_values[index].name);   // 1 = NOM ; 2 = EMAIL
+                console.log(this._formService.arraySteps);
 
-            if (this.objStep.configuration.form_values[index].type == 'email')
-            {
-                this.myGroup.addControl([this.objStep.configuration.form_values[index].name].toLocaleString(), new FormControl('', [Validators.required, EmailValidator.checkEmail]);
+                if (this.objStep.configuration.form_values[index].type == 'email')
+                {
+                    this.myGroup.addControl([this.objStep.configuration.form_values[index].name].toLocaleString(), new FormControl('', [Validators.required, EmailValidator.checkEmail]));
+                }
+                else
+                {
+                    this.myGroup.addControl([this.objStep.configuration.form_values[index].name].toLocaleString(), new FormControl('', [Validators.required, Validators.minLength(2)]));
+                }
+
+                // SET FIELD VALUE IF A DATA HAS BEEN INSERTED PREVIOUSLY
+                let keyField = objFieldsPanel[this.objStep.name][index];
+                let valueField = keyField[this.objStep.configuration.form_values[index].name];
+                this.myGroup.controls[this.objStep.configuration.form_values[index].name].setValue(valueField);
             }
-            else
-            {
-                this.myGroup.addControl([this.objStep.configuration.form_values[index].name].toLocaleString(), new FormControl('', [Validators.required, Validators.minLength(2)]);
-            }
-
-            // SET FIELD VALUE IF A DATA HAS BEEN INSERTED PREVIOUSLY
-            let keyField = objFieldsPanel[this.objStep.name][index];
-            let valueField = keyField[this.objStep.configuration.form_values[index].name];
-            this.myGroup.controls[this.objStep.configuration.form_values[index].name].setValue(valueField);
-
+            console.log(this.myGroup);
+            console.log(this.myGroup.invalid);
         }
     //
     //     //**********************************
@@ -207,8 +214,7 @@ export class FieldPanelComponent {
     //     }
     // }
 
-        console.log(this.myGroup);
-        console.log(this.myGroup.invalid);
+
     }
 
     validatePhone(c: FormControl) {

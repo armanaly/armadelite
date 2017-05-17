@@ -1,4 +1,4 @@
-/* global describe, it, expect, require */
+var identity = function (x) { return x; };
 
 describe('Function', function () {
   describe('#name', function () {
@@ -18,7 +18,7 @@ describe('Function', function () {
     });
 
     it('returns empty string for anonymous functions', function () {
-      var anon = function () {};
+      var anon = identity(function () {});
       expect(anon.name).to.equal('');
 
       // pre-ES6, this property is nonconfigurable.
@@ -35,7 +35,7 @@ describe('Function', function () {
     it('returns "anomymous" for Function functions', function () {
       /* eslint no-new-func: 1 */
       /* jshint evil: true */
-      var func = Function('');
+      var func = identity(Function(''));
       /* jshint evil: false */
       expect(typeof func.name).to.equal('string');
       expect(func.name === 'anonymous' || func.name === '').to.equal(true);

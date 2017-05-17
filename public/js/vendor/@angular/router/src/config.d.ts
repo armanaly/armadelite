@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { NgModuleFactory, Type } from '@angular/core';
+import { NgModuleFactory, NgModuleRef, Type } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { UrlSegment, UrlSegmentGroup } from './url_tree';
 /**
@@ -17,7 +17,6 @@ import { UrlSegment, UrlSegmentGroup } from './url_tree';
  * - `path` is a string that uses the route matcher DSL.
  * - `pathMatch` is a string that specifies the matching strategy.
  * - `matcher` defines a custom strategy for path matching and supersedes `path` and `pathMatch`.
- *   See {@link UrlMatcher} for more info.
  * - `component` is a component type.
  * - `redirectTo` is the url fragment which will replace the current matched segment.
  * - `outlet` is the name of the outlet the component should be placed into.
@@ -347,7 +346,9 @@ export interface Route {
     loadChildren?: LoadChildren;
     runGuardsAndResolvers?: RunGuardsAndResolvers;
 }
-export interface InternalRoute extends Route {
-    _loadedConfig?: any;
+export declare class LoadedRouterConfig {
+    routes: Route[];
+    module: NgModuleRef<any>;
+    constructor(routes: Route[], module: NgModuleRef<any>);
 }
 export declare function validateConfig(config: Routes, parentPath?: string): void;

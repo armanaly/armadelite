@@ -1,5 +1,3 @@
-/* global describe, it, xit, expect, require, beforeEach, afterEach */
-
 // Big thanks to V8 folks for test ideas.
 // v8/test/mjsunit/harmony/collections.js
 
@@ -52,7 +50,7 @@ describe('Map', function () {
     return result;
   };
 
-  var prototypePropIsEnumerable = (function () {}).propertyIsEnumerable('prototype');
+  var prototypePropIsEnumerable = Object.prototype.propertyIsEnumerable.call(function () {}, 'prototype');
   var expectNotEnumerable = function (object) {
     if (prototypePropIsEnumerable && typeof object === 'function') {
       expect(Object.keys(object)).to.eql(['prototype']);
@@ -293,7 +291,7 @@ describe('Map', function () {
   });
 
   describe('#keys()', function () {
-    if (!Map.prototype.hasOwnProperty('keys')) {
+    if (!Object.prototype.hasOwnProperty.call(Map.prototype, 'keys')) {
       return it('exists', function () {
         expect(Map.prototype).to.have.property('keys');
       });
@@ -313,7 +311,7 @@ describe('Map', function () {
   });
 
   describe('#values()', function () {
-    if (!Map.prototype.hasOwnProperty('values')) {
+    if (!Object.prototype.hasOwnProperty.call(Map.prototype, 'values')) {
       return it('exists', function () {
         expect(Map.prototype).to.have.property('values');
       });
@@ -333,7 +331,7 @@ describe('Map', function () {
   });
 
   describe('#entries()', function () {
-    if (!Map.prototype.hasOwnProperty('entries')) {
+    if (!Object.prototype.hasOwnProperty.call(Map.prototype, 'entries')) {
       return it('exists', function () {
         expect(Map.prototype).to.have.property('entries');
       });
@@ -352,7 +350,7 @@ describe('Map', function () {
     });
 
     it('throws when called on a non-Map', function () {
-      var expectedMessage = /^(Method )?Map.prototype.entries called on incompatible receiver |^entries method called on incompatible |^Cannot create a Map entry iterator for a non-Map object.|^Map\.prototype\.entries: 'this' is not a Map object$/;
+      var expectedMessage = /^(Method )?Map.prototype.entries called on incompatible receiver |^entries method called on incompatible |^Cannot create a Map entry iterator for a non-Map object.|^Map\.prototype\.entries: 'this' is not a Map object$|^std_Map_iterator method called on incompatible \w+$/;
       var nonMaps = [true, false, 'abc', NaN, new Set([1, 2]), { a: true }, [1], Object('abc'), Object(NaN)];
       nonMaps.forEach(function (nonMap) {
         expect(function () { return Map.prototype.entries.call(nonMap); }).to['throw'](TypeError, expectedMessage);

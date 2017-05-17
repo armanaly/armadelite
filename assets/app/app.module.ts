@@ -14,8 +14,8 @@ import {StateComponent} from "./state/state.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {PhotosComponent} from "./photos/photos.component";
 import {FormService} from "./components/form.service";
-import {ProfileService} from "./profile/profile.service";
-import {PhotosService} from "./photos/photos.service";
+// import {ProfileService} from "./profile/profile.service";
+// import {PhotosService} from "./photos/photos.service";
 import {BackButtonComponent} from "./components/backButton";
 import {ListButtonsComponent} from "./components/listButtons";
 import {MultiSelectionComponent} from "./components/multipleSelection";
@@ -30,6 +30,14 @@ import {GridPanelService} from "./components/gridPanel.service";
 import {MenuComponent} from "./menu/menu.component";
 import {MailService} from "./Engine/mail.service";
 import {assetUrl} from "@angular/compiler/src/identifiers";
+// import {FileUploadService} from "./components/fileUpload.service";
+// import {Ng2CloudinaryModule} from "ng2-cloudinary";
+import { Ng2CloudinaryModule } from 'ng2-cloudinary';
+import { FileUploadModule } from 'ng2-file-upload';
+// import { Cloudinary } from 'cloudinary-core';
+// import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular';
+import {FileUploadComponent} from "./components/fileUpload";
+import {FileUploadService} from "./components/fileUpload.service";
 
 
 
@@ -72,6 +80,10 @@ function getStepsFirst(_stepService: StepService) {
     //         "list": this._stepService.steps[0].configuration.list
     //     });
     // }
+
+
+    // , Ng2CloudinaryModule, FileUploadModule  ,  , FileUploadService
+
     // console.log(this.listsData);
     // this._stepService.datas = this.listsData.slice();
     // INITIATE FORM SERVICE TO this._formService.init();
@@ -80,24 +92,27 @@ function getStepsFirst(_stepService: StepService) {
 @NgModule({
     declarations: [
         AppComponent, MainComponent,
-        StateComponent, PhotosComponent, ProfileComponent,
+        // StateComponent, PhotosComponent, ProfileComponent,
         BackButtonComponent, ListButtonsComponent, MultiSelectionComponent,
-        PanelBtnComponent, FieldPanelComponent, SaveButtonComponent, GridPanelComponent, MenuComponent
+        PanelBtnComponent, FieldPanelComponent, SaveButtonComponent,
+        GridPanelComponent, MenuComponent, FileUploadComponent
     ],
     imports: [
         BrowserModule, FormsModule, ROUTING,
         HttpModule, ReactiveFormsModule
-
     ],
+
+
     bootstrap: [AppComponent],
-    providers: [ FormService, ProfileService, PhotosService,
-                 StepService,
+
+    providers: [ FormService, StepService,
                 {   provide: APP_INITIALIZER,
                     useFactory: getStepsFirst,
                     deps: [StepService],
                     multi: true
                 },
-                CollectionService, SaveService,
+                // provideCloudinary(require('cloudinary-core'), { cloud_name: 'havjcqppv' } as CloudinaryConfiguration),
+                CollectionService, SaveService, FileUploadService,
                 MailService, GridPanelService]
 })
 export class AppModule {

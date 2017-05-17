@@ -1,5 +1,5 @@
 /**
- * @license Angular v4.0.1
+ * @license Angular v4.1.1
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -270,7 +270,7 @@ class ServerPlatformLocation {
     /**
      * @return {?}
      */
-    getBaseHrefFromDOM() { return ɵgetDOM().getBaseHref(this._doc); }
+    getBaseHrefFromDOM() { return ((ɵgetDOM().getBaseHref(this._doc))); }
     /**
      * @param {?} fn
      * @return {?}
@@ -458,6 +458,9 @@ class Parse5DomAdapter extends ɵDomAdapter {
     setProperty(el, name, value) {
         if (name === 'innerHTML') {
             this.setInnerHTML(el, value);
+        }
+        else if (name === 'innerText') {
+            this.setText(el, value);
         }
         else if (name === 'className') {
             el.attribs['class'] = el.className = value;
@@ -1063,7 +1066,7 @@ class Parse5DomAdapter extends ɵDomAdapter {
      * @param {?=} styleValue
      * @return {?}
      */
-    hasStyle(element, styleName, styleValue = null) {
+    hasStyle(element, styleName, styleValue) {
         const /** @type {?} */ value = this.getStyle(element, styleName) || '';
         return styleValue ? value == styleValue : value.length > 0;
     }
@@ -1110,7 +1113,7 @@ class Parse5DomAdapter extends ɵDomAdapter {
     /**
      * @param {?} element
      * @param {?} styleName
-     * @param {?} styleValue
+     * @param {?=} styleValue
      * @return {?}
      */
     setStyle(element, styleName, styleValue) {
@@ -2269,7 +2272,7 @@ function renderModuleFactory(moduleFactory, options) {
 /**
  * \@stable
  */
-const VERSION = new Version('4.0.1');
+const VERSION = new Version('4.1.1');
 
 /**
  * @license

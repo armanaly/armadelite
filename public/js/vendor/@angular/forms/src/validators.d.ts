@@ -14,9 +14,6 @@ import { AbstractControl } from './model';
  *
  * Provide this using `multi: true` to add validators.
  *
- * ### Example
- *
- * {@example core/forms/ts/ng_validators/ng_validators.ts region='ng_validators'}
  * @stable
  */
 export declare const NG_VALIDATORS: InjectionToken<(Function | Validator)[]>;
@@ -78,7 +75,8 @@ export declare class Validators {
      * Compose multiple validators into a single function that returns the union
      * of the individual error maps.
      */
-    static compose(validators: ValidatorFn[]): ValidatorFn;
-    static composeAsync(validators: AsyncValidatorFn[]): AsyncValidatorFn;
+    static compose(validators: null): null;
+    static compose(validators: (ValidatorFn | null | undefined)[]): ValidatorFn | null;
+    static composeAsync(validators: (AsyncValidatorFn | null)[]): AsyncValidatorFn | null;
 }
 export declare function toObservable(r: any): Observable<any>;

@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 //Service MongoDb
 // var mongoose = require('mongoose');
 //Service image in cloud
-var cloudinary = require('cloudinary');
+// var cloudinary = require('cloudinary');
 
 
 
@@ -34,11 +34,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-cloudinary.config({
-    cloud_name: 'htamml3fv',
-    api_key: '479571498319886',
-    api_secret: 'wBUZ-eReQJpK_mninA2SMIP7WzI'
-});
+// cloudinary.config({
+//     cloud_name: 'htamml3fv',
+//     api_key: '479571498319886',
+//     api_secret: 'wBUZ-eReQJpK_mninA2SMIP7WzI'
+// });
 
 /*var storage = multer.diskStorage({ //multers disk storage settings
   destination: function (req, file, cb) {

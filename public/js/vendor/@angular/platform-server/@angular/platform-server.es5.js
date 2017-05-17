@@ -4,7 +4,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 /**
- * @license Angular v4.0.1
+ * @license Angular v4.1.1
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -284,7 +284,7 @@ var ServerPlatformLocation = (function () {
     /**
      * @return {?}
      */
-    ServerPlatformLocation.prototype.getBaseHrefFromDOM = function () { return ɵgetDOM().getBaseHref(this._doc); };
+    ServerPlatformLocation.prototype.getBaseHrefFromDOM = function () { return ((ɵgetDOM().getBaseHref(this._doc))); };
     /**
      * @param {?} fn
      * @return {?}
@@ -493,6 +493,9 @@ var Parse5DomAdapter = (function (_super) {
     Parse5DomAdapter.prototype.setProperty = function (el, name, value) {
         if (name === 'innerHTML') {
             this.setInnerHTML(el, value);
+        }
+        else if (name === 'innerText') {
+            this.setText(el, value);
         }
         else if (name === 'className') {
             el.attribs['class'] = el.className = value;
@@ -1106,7 +1109,6 @@ var Parse5DomAdapter = (function (_super) {
      * @return {?}
      */
     Parse5DomAdapter.prototype.hasStyle = function (element, styleName, styleValue) {
-        if (styleValue === void 0) { styleValue = null; }
         var /** @type {?} */ value = this.getStyle(element, styleName) || '';
         return styleValue ? value == styleValue : value.length > 0;
     };
@@ -1153,7 +1155,7 @@ var Parse5DomAdapter = (function (_super) {
     /**
      * @param {?} element
      * @param {?} styleName
-     * @param {?} styleValue
+     * @param {?=} styleValue
      * @return {?}
      */
     Parse5DomAdapter.prototype.setStyle = function (element, styleName, styleValue) {
@@ -2321,7 +2323,7 @@ function renderModuleFactory(moduleFactory, options) {
 /**
  * \@stable
  */
-var VERSION = new Version('4.0.1');
+var VERSION = new Version('4.1.1');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.

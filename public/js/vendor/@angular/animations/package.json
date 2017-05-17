@@ -14,14 +14,14 @@
     ]
   ],
   "_from": "@angular/animations@latest",
-  "_id": "@angular/animations@4.0.1",
+  "_id": "@angular/animations@4.1.1",
   "_inCache": true,
   "_installable": true,
   "_location": "/@angular/animations",
-  "_nodeVersion": "6.9.5",
+  "_nodeVersion": "6.10.0",
   "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/animations-4.0.1.tgz_1490830631225_0.4015774200670421"
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/animations-4.1.1.tgz_1493933192906_0.04897425579838455"
   },
   "_npmUser": {
     "name": "angular",
@@ -42,8 +42,8 @@
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/animations/-/animations-4.0.1.tgz",
-  "_shasum": "154420c8ee5c22fbaf1434b6d156150cf5218da6",
+  "_resolved": "https://registry.npmjs.org/@angular/animations/-/animations-4.1.1.tgz",
+  "_shasum": "1000f8b22dc2031a8c36d225eb2dcf5f6c0d0af5",
   "_shrinkwrap": null,
   "_spec": "@angular/animations@latest",
   "_where": "D:\\workspace\\flask_angular2",
@@ -58,8 +58,8 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "154420c8ee5c22fbaf1434b6d156150cf5218da6",
-    "tarball": "https://registry.npmjs.org/@angular/animations/-/animations-4.0.1.tgz"
+    "shasum": "1000f8b22dc2031a8c36d225eb2dcf5f6c0d0af5",
+    "tarball": "https://registry.npmjs.org/@angular/animations/-/animations-4.1.1.tgz"
   },
   "es2015": "./@angular/animations.js",
   "homepage": "https://github.com/angular/angular#readme",
@@ -75,7 +75,7 @@
   "name": "@angular/animations",
   "optionalDependencies": {},
   "peerDependencies": {
-    "@angular/core": "4.0.1"
+    "@angular/core": "4.1.1"
   },
   "readme": "ERROR: No README data found!",
   "repository": {
@@ -84,5 +84,5 @@
   },
   "scripts": {},
   "typings": "./animations.d.ts",
-  "version": "4.0.1"
+  "version": "4.1.1"
 }

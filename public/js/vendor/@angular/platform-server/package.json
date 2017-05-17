@@ -14,14 +14,14 @@
     ]
   ],
   "_from": "@angular/platform-server@latest",
-  "_id": "@angular/platform-server@4.0.1",
+  "_id": "@angular/platform-server@4.1.1",
   "_inCache": true,
   "_installable": true,
   "_location": "/@angular/platform-server",
-  "_nodeVersion": "6.9.5",
+  "_nodeVersion": "6.10.0",
   "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/platform-server-4.0.1.tgz_1490830663427_0.5304880372714251"
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/platform-server-4.1.1.tgz_1493933228082_0.5802369569428265"
   },
   "_npmUser": {
     "name": "angular",
@@ -42,8 +42,8 @@
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/platform-server/-/platform-server-4.0.1.tgz",
-  "_shasum": "3d5fc98255c0f60c6f9079eb8d6cc0c8def31d06",
+  "_resolved": "https://registry.npmjs.org/@angular/platform-server/-/platform-server-4.1.1.tgz",
+  "_shasum": "263e5e3d601401a99fa3546ee57fc9fc2e7f4caa",
   "_shrinkwrap": null,
   "_spec": "@angular/platform-server@latest",
   "_where": "D:\\workspace\\flask_angular2",
@@ -61,8 +61,8 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "3d5fc98255c0f60c6f9079eb8d6cc0c8def31d06",
-    "tarball": "https://registry.npmjs.org/@angular/platform-server/-/platform-server-4.0.1.tgz"
+    "shasum": "263e5e3d601401a99fa3546ee57fc9fc2e7f4caa",
+    "tarball": "https://registry.npmjs.org/@angular/platform-server/-/platform-server-4.1.1.tgz"
   },
   "es2015": "./@angular/platform-server.js",
   "homepage": "https://github.com/angular/angular#readme",
@@ -78,11 +78,11 @@
   "name": "@angular/platform-server",
   "optionalDependencies": {},
   "peerDependencies": {
-    "@angular/animations": "4.0.1",
-    "@angular/core": "4.0.1",
-    "@angular/common": "4.0.1",
-    "@angular/compiler": "4.0.1",
-    "@angular/platform-browser": "4.0.1"
+    "@angular/animations": "4.1.1",
+    "@angular/core": "4.1.1",
+    "@angular/common": "4.1.1",
+    "@angular/compiler": "4.1.1",
+    "@angular/platform-browser": "4.1.1"
   },
   "readme": "ERROR: No README data found!",
   "repository": {
@@ -91,5 +91,5 @@
   },
   "scripts": {},
   "typings": "./platform-server.d.ts",
-  "version": "4.0.1"
+  "version": "4.1.1"
 }

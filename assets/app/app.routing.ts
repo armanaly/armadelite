@@ -12,8 +12,8 @@ const APP_ROUTES: Routes = [
     {path: 'step/:id', component: MainComponent},
     {path: 'step', component: MainComponent},
     {path: 'grid', component: GridPanelComponent},
-    {path: 'grid/:grid_name', component: GridPanelComponent},
-    {path: 'photos', component: PhotosComponent},
+    {path: 'grid/:grid_name', component: GridPanelComponent}
+    // {path: 'photos', component: PhotosComponent},
 ];
 
 export const ROUTING = RouterModule.forRoot(APP_ROUTES);

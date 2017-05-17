@@ -14,14 +14,14 @@
     ]
   ],
   "_from": "@angular/forms@latest",
-  "_id": "@angular/forms@4.0.1",
+  "_id": "@angular/forms@4.1.1",
   "_inCache": true,
   "_installable": true,
   "_location": "/@angular/forms",
-  "_nodeVersion": "6.9.5",
+  "_nodeVersion": "6.10.0",
   "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/forms-4.0.1.tgz_1490830651082_0.9427514707203954"
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/forms-4.1.1.tgz_1493933207333_0.2407096652314067"
   },
   "_npmUser": {
     "name": "angular",
@@ -42,8 +42,8 @@
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/forms/-/forms-4.0.1.tgz",
-  "_shasum": "b9ebdbbb8ace0f9a3bf9e53c299eafdfab1d5041",
+  "_resolved": "https://registry.npmjs.org/@angular/forms/-/forms-4.1.1.tgz",
+  "_shasum": "6af39f7c416e9f038c39f7ee5bfa51d9da550bf0",
   "_shrinkwrap": null,
   "_spec": "@angular/forms@latest",
   "_where": "D:\\workspace\\flask_angular2",
@@ -58,8 +58,8 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "b9ebdbbb8ace0f9a3bf9e53c299eafdfab1d5041",
-    "tarball": "https://registry.npmjs.org/@angular/forms/-/forms-4.0.1.tgz"
+    "shasum": "6af39f7c416e9f038c39f7ee5bfa51d9da550bf0",
+    "tarball": "https://registry.npmjs.org/@angular/forms/-/forms-4.1.1.tgz"
   },
   "es2015": "./@angular/forms.js",
   "homepage": "https://github.com/angular/angular#readme",
@@ -75,9 +75,9 @@
   "name": "@angular/forms",
   "optionalDependencies": {},
   "peerDependencies": {
-    "@angular/core": "4.0.1",
-    "@angular/common": "4.0.1",
-    "@angular/platform-browser": "4.0.1"
+    "@angular/core": "4.1.1",
+    "@angular/common": "4.1.1",
+    "@angular/platform-browser": "4.1.1"
   },
   "readme": "ERROR: No README data found!",
   "repository": {
@@ -86,5 +86,5 @@
   },
   "scripts": {},
   "typings": "./forms.d.ts",
-  "version": "4.0.1"
+  "version": "4.1.1"
 }

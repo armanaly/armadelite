@@ -87,6 +87,17 @@ import {SaveService} from "./saveService";
             ></field-panel>
         </div>
         
+        <!--UPLOAD FILE PANEL --->
+        <div *ngIf="objStep.type == 'file_upload'">
+            <file-upload          
+                *ngIf="stepId == objStep.step_id"
+                    [objStep] = "objStep"
+                    [stepIdx]="i"
+                    (sent)="onSubmitFile($event)"
+            ></file-upload>
+        </div>
+        
+        
  </div>
       <!--<progress class="progress progress-danger" [attr.value]="progressBar" max="100" ></progress>-->
       <!--<div class="progress">-->
@@ -534,9 +545,13 @@ export class MainComponent implements OnInit {
                     break;
 
                 case 'field_panel':
-                    console.log('ici');
+                    console.log('field_panel');
                     this.stepId = tmpNewstepId;
                     break;
+
+                case 'file_upload':
+                    console.log("file_upload");
+                    this.stepId = tmpNewstepId;
 
                 case 'multi_selection':
                     if (typeof this._stepService.steps[this.indexStepObj].configuration.list != 'undefined') {
@@ -581,6 +596,15 @@ export class MainComponent implements OnInit {
         console.log(tmpObj);
         this.goToNextStep($event.stepIdx);
     }
+
+    /* WHEN CLICK NEXT ON FILE UPLOAD STEP */
+    onSubmitFile($event){
+        console.log($event)
+        console.log($event.fileUploaded)
+        this._formService.arraySteps[this.indexStepObj].file_uploaded = $event.fileUploaded;
+        this.goToNextStep($event.stepIdx);
+    }
+
 
     /* WHEN SUBMITING */
     onSubmitingFields($event) {

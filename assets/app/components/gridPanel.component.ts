@@ -1,9 +1,6 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core'
-import {FormBuilder, Validators, FormGroup} from "@angular/forms";
-import {FormService} from "./form.service";
 import {GridPanelService} from "./gridPanel.service";
 import {Router, NavigationExtras, ActivatedRoute} from '@angular/router';
-import {isObject} from "rxjs/util/isObject";
 import {StepService} from "../Engine/step.service";
 import {Http} from "@angular/http";
 @Component({

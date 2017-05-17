@@ -14,14 +14,14 @@
     ]
   ],
   "_from": "@angular/platform-browser@latest",
-  "_id": "@angular/platform-browser@4.0.1",
+  "_id": "@angular/platform-browser@4.1.1",
   "_inCache": true,
   "_installable": true,
   "_location": "/@angular/platform-browser",
-  "_nodeVersion": "6.9.5",
+  "_nodeVersion": "6.10.0",
   "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/platform-browser-4.0.1.tgz_1490830660742_0.737566526979208"
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/platform-browser-4.1.1.tgz_1493933222117_0.39486677083186805"
   },
   "_npmUser": {
     "name": "angular",
@@ -42,8 +42,8 @@
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-4.0.1.tgz",
-  "_shasum": "4b9efbeb2fbb900de188743b988802d3aa2b33ff",
+  "_resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-4.1.1.tgz",
+  "_shasum": "e2f545b458e7858cc0b20b0ae4cc99237560fb72",
   "_shrinkwrap": null,
   "_spec": "@angular/platform-browser@latest",
   "_where": "D:\\workspace\\flask_angular2",
@@ -58,8 +58,8 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "4b9efbeb2fbb900de188743b988802d3aa2b33ff",
-    "tarball": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-4.0.1.tgz"
+    "shasum": "e2f545b458e7858cc0b20b0ae4cc99237560fb72",
+    "tarball": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-4.1.1.tgz"
   },
   "es2015": "./@angular/platform-browser.js",
   "homepage": "https://github.com/angular/angular#readme",
@@ -75,8 +75,8 @@
   "name": "@angular/platform-browser",
   "optionalDependencies": {},
   "peerDependencies": {
-    "@angular/core": "4.0.1",
-    "@angular/common": "4.0.1"
+    "@angular/core": "4.1.1",
+    "@angular/common": "4.1.1"
   },
   "readme": "ERROR: No README data found!",
   "repository": {
@@ -85,5 +85,5 @@
   },
   "scripts": {},
   "typings": "./platform-browser.d.ts",
-  "version": "4.0.1"
+  "version": "4.1.1"
 }

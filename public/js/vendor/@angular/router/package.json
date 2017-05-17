@@ -14,14 +14,14 @@
     ]
   ],
   "_from": "@angular/router@latest",
-  "_id": "@angular/router@4.0.1",
+  "_id": "@angular/router@4.1.1",
   "_inCache": true,
   "_installable": true,
   "_location": "/@angular/router",
-  "_nodeVersion": "6.9.5",
+  "_nodeVersion": "6.10.0",
   "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/router-4.0.1.tgz_1490830673156_0.10691373981535435"
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/router-4.1.1.tgz_1493933236313_0.32428092509508133"
   },
   "_npmUser": {
     "name": "angular",
@@ -42,8 +42,8 @@
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/router/-/router-4.0.1.tgz",
-  "_shasum": "2d73a4b6c40e18d5cd0bfd1f20222af64a11c11e",
+  "_resolved": "https://registry.npmjs.org/@angular/router/-/router-4.1.1.tgz",
+  "_shasum": "0a7ce03065197982786782cf5429fa6f0c0300fa",
   "_shrinkwrap": null,
   "_spec": "@angular/router@latest",
   "_where": "D:\\workspace\\flask_angular2",
@@ -58,8 +58,8 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "2d73a4b6c40e18d5cd0bfd1f20222af64a11c11e",
-    "tarball": "https://registry.npmjs.org/@angular/router/-/router-4.0.1.tgz"
+    "shasum": "0a7ce03065197982786782cf5429fa6f0c0300fa",
+    "tarball": "https://registry.npmjs.org/@angular/router/-/router-4.1.1.tgz"
   },
   "es2015": "./@angular/router.js",
   "homepage": "https://github.com/angular/angular/blob/master/modules/%40angular/router/README.md",
@@ -79,9 +79,9 @@
   "name": "@angular/router",
   "optionalDependencies": {},
   "peerDependencies": {
-    "@angular/core": "4.0.1",
-    "@angular/common": "4.0.1",
-    "@angular/platform-browser": "4.0.1",
+    "@angular/core": "4.1.1",
+    "@angular/common": "4.1.1",
+    "@angular/platform-browser": "4.1.1",
     "rxjs": "^5.0.1"
   },
   "readme": "ERROR: No README data found!",
@@ -91,5 +91,5 @@
   },
   "scripts": {},
   "typings": "./router.d.ts",
-  "version": "4.0.1"
+  "version": "4.1.1"
 }

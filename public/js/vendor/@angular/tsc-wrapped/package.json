@@ -2,26 +2,26 @@
   "_args": [
     [
       {
-        "raw": "@angular/tsc-wrapped@4.0.1",
+        "raw": "@angular/tsc-wrapped@4.1.1",
         "scope": "@angular",
         "escapedName": "@angular%2ftsc-wrapped",
         "name": "@angular/tsc-wrapped",
-        "rawSpec": "4.0.1",
-        "spec": "4.0.1",
+        "rawSpec": "4.1.1",
+        "spec": "4.1.1",
         "type": "version"
       },
       "D:\\workspace\\flask_angular2\\node_modules\\@angular\\compiler-cli"
     ]
   ],
-  "_from": "@angular/tsc-wrapped@4.0.1",
-  "_id": "@angular/tsc-wrapped@4.0.1",
+  "_from": "@angular/tsc-wrapped@4.1.1",
+  "_id": "@angular/tsc-wrapped@4.1.1",
   "_inCache": true,
   "_installable": true,
   "_location": "/@angular/tsc-wrapped",
-  "_nodeVersion": "6.9.5",
+  "_nodeVersion": "6.10.0",
   "_npmOperationalInternal": {
     "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/tsc-wrapped-4.0.1.tgz_1490830683795_0.5625264230184257"
+    "tmp": "tmp/tsc-wrapped-4.1.1.tgz_1493933251047_0.7321522051934153"
   },
   "_npmUser": {
     "name": "angular",
@@ -30,21 +30,21 @@
   "_npmVersion": "3.10.10",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "@angular/tsc-wrapped@4.0.1",
+    "raw": "@angular/tsc-wrapped@4.1.1",
     "scope": "@angular",
     "escapedName": "@angular%2ftsc-wrapped",
     "name": "@angular/tsc-wrapped",
-    "rawSpec": "4.0.1",
-    "spec": "4.0.1",
+    "rawSpec": "4.1.1",
+    "spec": "4.1.1",
     "type": "version"
   },
   "_requiredBy": [
     "/@angular/compiler-cli"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/tsc-wrapped/-/tsc-wrapped-4.0.1.tgz",
-  "_shasum": "5323cc99263b097bceeb8e423270b5f58ffb2186",
+  "_resolved": "https://registry.npmjs.org/@angular/tsc-wrapped/-/tsc-wrapped-4.1.1.tgz",
+  "_shasum": "ade793cdbe64c650c5f5946ff424c6a3577b09d8",
   "_shrinkwrap": null,
-  "_spec": "@angular/tsc-wrapped@4.0.1",
+  "_spec": "@angular/tsc-wrapped@4.1.1",
   "_where": "D:\\workspace\\flask_angular2\\node_modules\\@angular\\compiler-cli",
   "bugs": {
     "url": "https://github.com/angular/angular/issues"
@@ -66,8 +66,8 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "5323cc99263b097bceeb8e423270b5f58ffb2186",
-    "tarball": "https://registry.npmjs.org/@angular/tsc-wrapped/-/tsc-wrapped-4.0.1.tgz"
+    "shasum": "ade793cdbe64c650c5f5946ff424c6a3577b09d8",
+    "tarball": "https://registry.npmjs.org/@angular/tsc-wrapped/-/tsc-wrapped-4.1.1.tgz"
   },
   "homepage": "https://github.com/angular/angular/tree/master/tools/tsc-wrapped",
   "license": "MIT",
@@ -88,5 +88,5 @@
     "url": "git+https://github.com/angular/angular.git"
   },
   "scripts": {},
-  "version": "4.0.1"
+  "version": "4.1.1"
 }

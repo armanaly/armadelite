@@ -2,49 +2,49 @@
   "_args": [
     [
       {
-        "raw": "@angular/upgrade@2.4.0",
+        "raw": "@angular/upgrade@^4.1.1",
         "scope": "@angular",
         "escapedName": "@angular%2fupgrade",
         "name": "@angular/upgrade",
-        "rawSpec": "2.4.0",
-        "spec": "2.4.0",
-        "type": "version"
+        "rawSpec": "^4.1.1",
+        "spec": ">=4.1.1 <5.0.0",
+        "type": "range"
       },
       "D:\\workspace\\flask_angular2"
     ]
   ],
-  "_from": "@angular/upgrade@2.4.0",
-  "_id": "@angular/upgrade@2.4.0",
+  "_from": "@angular/upgrade@>=4.1.1 <5.0.0",
+  "_id": "@angular/upgrade@4.1.1",
   "_inCache": true,
   "_installable": true,
   "_location": "/@angular/upgrade",
-  "_nodeVersion": "6.9.1",
+  "_nodeVersion": "6.10.0",
   "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/upgrade-2.4.0.tgz_1482259913253_0.22316304058767855"
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/upgrade-4.1.1.tgz_1493933237884_0.18104195035994053"
   },
   "_npmUser": {
     "name": "angular",
     "email": "angular-core+npm@google.com"
   },
-  "_npmVersion": "3.5.3",
+  "_npmVersion": "3.10.10",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "@angular/upgrade@2.4.0",
+    "raw": "@angular/upgrade@^4.1.1",
     "scope": "@angular",
     "escapedName": "@angular%2fupgrade",
     "name": "@angular/upgrade",
-    "rawSpec": "2.4.0",
-    "spec": "2.4.0",
-    "type": "version"
+    "rawSpec": "^4.1.1",
+    "spec": ">=4.1.1 <5.0.0",
+    "type": "range"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/upgrade/-/upgrade-2.4.0.tgz",
-  "_shasum": "92c5104991a1e2bbd7be39ac27606e457367ae1d",
+  "_resolved": "https://registry.npmjs.org/@angular/upgrade/-/upgrade-4.1.1.tgz",
+  "_shasum": "f04f99caaddd8730d4479ee73d477c8302919e7e",
   "_shrinkwrap": null,
-  "_spec": "@angular/upgrade@2.4.0",
+  "_spec": "@angular/upgrade@^4.1.1",
   "_where": "D:\\workspace\\flask_angular2",
   "author": {
     "name": "angular"
@@ -57,26 +57,27 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "92c5104991a1e2bbd7be39ac27606e457367ae1d",
-    "tarball": "https://registry.npmjs.org/@angular/upgrade/-/upgrade-2.4.0.tgz"
+    "shasum": "f04f99caaddd8730d4479ee73d477c8302919e7e",
+    "tarball": "https://registry.npmjs.org/@angular/upgrade/-/upgrade-4.1.1.tgz"
   },
+  "es2015": "./@angular/upgrade.js",
   "homepage": "https://github.com/angular/angular#readme",
   "license": "MIT",
-  "main": "bundles/upgrade.umd.js",
+  "main": "./bundles/upgrade.umd.js",
   "maintainers": [
     {
       "name": "angular",
       "email": "angular-core+npm@google.com"
     }
   ],
-  "module": "index.js",
+  "module": "./@angular/upgrade.es5.js",
   "name": "@angular/upgrade",
   "optionalDependencies": {},
   "peerDependencies": {
-    "@angular/core": "2.4.0",
-    "@angular/compiler": "2.4.0",
-    "@angular/platform-browser": "2.4.0",
-    "@angular/platform-browser-dynamic": "2.4.0"
+    "@angular/core": "4.1.1",
+    "@angular/compiler": "4.1.1",
+    "@angular/platform-browser": "4.1.1",
+    "@angular/platform-browser-dynamic": "4.1.1"
   },
   "readme": "ERROR: No README data found!",
   "repository": {
@@ -84,6 +85,6 @@
     "url": "git+https://github.com/angular/angular.git"
   },
   "scripts": {},
-  "typings": "index.d.ts",
-  "version": "2.4.0"
+  "typings": "./upgrade.d.ts",
+  "version": "4.1.1"
 }

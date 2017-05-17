@@ -14,14 +14,14 @@
     ]
   ],
   "_from": "@angular/platform-browser-dynamic@latest",
-  "_id": "@angular/platform-browser-dynamic@4.0.1",
+  "_id": "@angular/platform-browser-dynamic@4.1.1",
   "_inCache": true,
   "_installable": true,
   "_location": "/@angular/platform-browser-dynamic",
-  "_nodeVersion": "6.9.5",
+  "_nodeVersion": "6.10.0",
   "_npmOperationalInternal": {
     "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/platform-browser-dynamic-4.0.1.tgz_1490830662022_0.8342775027267635"
+    "tmp": "tmp/platform-browser-dynamic-4.1.1.tgz_1493933226577_0.2741261455230415"
   },
   "_npmUser": {
     "name": "angular",
@@ -42,8 +42,8 @@
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.0.1.tgz",
-  "_shasum": "fd5debb2d3f6474350965e71c2674e2170d7cfcb",
+  "_resolved": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.1.1.tgz",
+  "_shasum": "682881035140e22d498abca139907aa8187f6bfa",
   "_shrinkwrap": null,
   "_spec": "@angular/platform-browser-dynamic@latest",
   "_where": "D:\\workspace\\flask_angular2",
@@ -58,8 +58,8 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "fd5debb2d3f6474350965e71c2674e2170d7cfcb",
-    "tarball": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.0.1.tgz"
+    "shasum": "682881035140e22d498abca139907aa8187f6bfa",
+    "tarball": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.1.1.tgz"
   },
   "es2015": "./@angular/platform-browser-dynamic.js",
   "homepage": "https://github.com/angular/angular#readme",
@@ -75,10 +75,10 @@
   "name": "@angular/platform-browser-dynamic",
   "optionalDependencies": {},
   "peerDependencies": {
-    "@angular/core": "4.0.1",
-    "@angular/common": "4.0.1",
-    "@angular/compiler": "4.0.1",
-    "@angular/platform-browser": "4.0.1"
+    "@angular/core": "4.1.1",
+    "@angular/common": "4.1.1",
+    "@angular/compiler": "4.1.1",
+    "@angular/platform-browser": "4.1.1"
   },
   "readme": "ERROR: No README data found!",
   "repository": {
@@ -87,5 +87,5 @@
   },
   "scripts": {},
   "typings": "./platform-browser-dynamic.d.ts",
-  "version": "4.0.1"
+  "version": "4.1.1"
 }
