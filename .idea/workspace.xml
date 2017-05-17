@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="00e82b7e-2225-4c3a-a599-ccf4911817e3" name="Default" comment="multi_app &#10;multi grid&#10;&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/app/global.ts" afterPath="$PROJECT_DIR$/assets/app/global.ts" />
+=======
+    <list default="true" id="00e82b7e-2225-4c3a-a599-ccf4911817e3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+>>>>>>> task_15
     </list>
     <ignored path="mysaver.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,6 +34,7 @@
       <file leaf-file-name="main.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/components/main.component.ts">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="10047">
               <caret line="604" column="7" lean-forward="false" selection-start-line="604" selection-start-column="7" selection-end-line="604" selection-end-column="7" />
               <folding>
@@ -53,11 +59,46 @@
                 <marker date="1494853625092" expanded="true" signature="4658:4828" ph="..." />
                 <marker date="1494853625092" expanded="true" signature="4671:4813" ph="..." />
                 <marker date="1494853625092" expanded="true" signature="4860:5038" ph="{...}" />
+=======
+            <state relative-caret-position="9656">
+              <caret line="581" column="7" lean-forward="false" selection-start-line="581" selection-start-column="7" selection-end-line="581" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+                <marker date="1495057219869" expanded="true" signature="785:3689" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="882:1490" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="1544:1727" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="1568:1716" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="1813:3689" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="1912:2288" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="1940:2273" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="2388:2770" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="2415:2755" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="2874:3326" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="2904:3303" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="3418:3677" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="3444:3662" ph="..." />
+                <marker date="1495057219869" expanded="true" signature="27622:30038" ph="{...}" />
+                <marker date="1495057219869" expanded="true" signature="27628:27648" ph="/*...*/" />
+                <marker date="1495057219869" expanded="true" signature="27679:29793" ph="{...}" />
+                <marker date="1495057219869" expanded="true" signature="27807:27894" ph="//..." />
+                <marker date="1495057219869" expanded="true" signature="28085:29370" ph="{...}" />
+                <marker date="1495057219869" expanded="true" signature="28100:28216" ph="//..." />
+                <marker date="1495057219869" expanded="true" signature="28286:29360" ph="{...}" />
+                <marker date="1495057219869" expanded="true" signature="28462:29346" ph="{...}" />
+                <marker date="1495057219869" expanded="true" signature="28819:29027" ph="//..." />
+                <marker date="1495057219869" expanded="true" signature="29470:29743" ph="//..." />
+                <marker date="1495057219869" expanded="true" signature="29821:30036" ph="{...}" />
+                <marker date="1495057219869" expanded="true" signature="30043:30549" ph="//..." />
+                <marker date="1495057219869" expanded="true" signature="30555:31187" ph="//..." />
+                <marker date="1495057219869" expanded="true" signature="31194:31277" ph="//..." />
+                <marker date="1495057219869" expanded="true" signature="31287:32043" ph="//..." />
+>>>>>>> task_15
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="fileUpload.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/components/fileUpload.service.ts">
           <provider selected="true" editor-type-id="text-editor">
@@ -67,20 +108,37 @@
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#77#120#0" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="saveService.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/components/saveService.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="28" column="1" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+              <folding />
+>>>>>>> task_15
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="saveService.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/components/saveService.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
               <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+=======
+      <file leaf-file-name="boot.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/boot.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+>>>>>>> task_15
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="fileUpload.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/components/fileUpload.ts">
           <provider selected="true" editor-type-id="text-editor">
@@ -101,50 +159,112 @@
                 <marker date="1494855271610" expanded="true" signature="1418:1605" ph="..." />
                 <marker date="1494855271610" expanded="true" signature="2137:2193" ph="..." />
               </folding>
+=======
+      <file leaf-file-name="global.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/global.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+>>>>>>> task_15
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="boot.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/boot.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
               <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+=======
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+>>>>>>> task_15
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="global.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/app/global.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
               <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
               <folding />
+=======
+      <file leaf-file-name="form.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/components/form.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="799">
+              <caret line="50" column="9" lean-forward="false" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+              <folding>
+                <marker date="1495057219851" expanded="true" signature="309:1927" ph="{...}" />
+                <marker date="1495057219851" expanded="true" signature="612:1925" ph="{...}" />
+              </folding>
+>>>>>>> task_15
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="form.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/components/form.service.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="867">
               <caret line="54" column="58" lean-forward="false" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
               <folding />
+=======
+      <file leaf-file-name="fieldPanel.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/components/fieldPanel.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2091">
+              <caret line="126" column="19" lean-forward="false" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
+              <folding>
+                <marker date="1495057219846" expanded="true" signature="8227:11407" ph="{...}" />
+                <marker date="1495057219846" expanded="true" signature="11443:11769" ph="{...}" />
+                <marker date="1495057219846" expanded="true" signature="11683:11762" ph="{...}" />
+                <marker date="1495057219846" expanded="true" signature="11712:11756" ph="{...}" />
+                <marker date="1495057219846" expanded="true" signature="12035:13098" ph="{...}" />
+                <marker date="1495057219846" expanded="true" signature="12637:12844" ph="{...}" />
+                <marker date="1495057219846" expanded="true" signature="12919:13086" ph="{&quot;valueName&quot;: valuesName...}" />
+                <marker date="1495057219846" expanded="true" signature="13166:13360" ph="//..." />
+              </folding>
+>>>>>>> task_15
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="fieldPanel.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/components/fieldPanel.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2091">
               <caret line="126" column="19" lean-forward="false" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
               <folding />
+=======
+      <file leaf-file-name="multipleSelection.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/app/components/multipleSelection.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="37" column="20" lean-forward="false" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="20" />
+              <folding>
+                <marker date="1488357725665" expanded="true" signature="296:1208" ph="..." />
+                <marker date="1488357725665" expanded="true" signature="411:1051" ph="..." />
+                <marker date="1488357725665" expanded="true" signature="467:1037" ph="..." />
+                <marker date="1488357725665" expanded="true" signature="542:751" ph="..." />
+                <marker date="1488357725665" expanded="true" signature="825:1019" ph="..." />
+              </folding>
+>>>>>>> task_15
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="multipleSelection.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/app/components/multipleSelection.ts">
           <provider selected="true" editor-type-id="text-editor">
@@ -167,6 +287,17 @@
             <state relative-caret-position="527">
               <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="17" />
               <folding />
+=======
+      <file leaf-file-name="index.hbs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/index.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="16" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="17" />
+              <folding>
+                <marker date="1495057229430" expanded="true" signature="1374:1636" ph="..." />
+                <marker date="1495057229430" expanded="true" signature="1427:1524" ph="..." />
+              </folding>
+>>>>>>> task_15
             </state>
           </provider>
         </entry>
@@ -222,7 +353,7 @@
   <component name="GithubProjectSettings">
     <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
     <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="eduwell" />
-    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="mysaver" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="russianBallet" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -253,7 +384,6 @@
         <option value="$PROJECT_DIR$/public/systemjs.config.js" />
         <option value="$PROJECT_DIR$/assets/app/vehicule/main.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/menu/menu.component.ts" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/assets/app/Engine/mail.service.ts" />
         <option value="$PROJECT_DIR$/assets/app/comonents/multipleSelection.ts" />
         <option value="$PROJECT_DIR$/assets/app/Engine/step.service.ts" />
@@ -278,6 +408,10 @@
         <option value="$PROJECT_DIR$/assets/app/components/main.component.ts" />
         <option value="$PROJECT_DIR$/assets/app/components/fileUpload.ts" />
         <option value="$PROJECT_DIR$/assets/app/global.ts" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/.gitignore" />
+>>>>>>> task_15
       </list>
     </option>
   </component>
@@ -941,7 +1075,11 @@
       <workItem from="1494769937794" duration="3313000" />
       <workItem from="1494835247170" duration="8357000" />
       <workItem from="1494924964174" duration="2286000" />
+<<<<<<< HEAD
       <workItem from="1495010414331" duration="789000" />
+=======
+      <workItem from="1495010414331" duration="3481000" />
+>>>>>>> task_15
     </task>
     <task id="LOCAL-00001" summary="Ajout Sélection des équipements dans tableau">
       <created>1476008307314</created>
@@ -1153,11 +1291,36 @@
       <option name="project" value="LOCAL" />
       <updated>1485168196538</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="remove imports&#10;&#10;&#10;">
+      <created>1495057662281</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1495057662281</updated>
+    </task>
+    <task id="LOCAL-00032" summary="remove imports&#10;&#10;&#10;">
+      <created>1495058545415</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1495058545415</updated>
+    </task>
+    <task id="LOCAL-00033" summary="remove imports&#10;&#10;&#10;">
+      <created>1495058884644</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1495058884644</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="1092756000" />
+=======
+    <option name="totallyTimeSpent" value="1095448000" />
+>>>>>>> task_15
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1170,22 +1333,35 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1088" y="-848" width="1096" height="1896" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298791" sideWeight="0.49621928" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25330812" sideWeight="0.4937304" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2838227" sideWeight="0.7712665" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3540587" sideWeight="0.48393196" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24288724" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3177893" sideWeight="0.7637051" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18914647" sideWeight="0.5062696" order="2" side_tool="true" content_ui="tabs" />
+=======
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2838227" sideWeight="0.7712665" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3540587" sideWeight="0.48393196" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2838227" sideWeight="0.22873347" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24288724" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3177893" sideWeight="0.7637051" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18914647" sideWeight="0.5062696" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+>>>>>>> task_15
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2838227" sideWeight="0.22873347" order="5" side_tool="false" content_ui="tabs" />
+=======
+>>>>>>> task_15
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1253,7 +1429,8 @@
     <MESSAGE value="Using nodemailer&#10;" />
     <MESSAGE value="Flask 0.0.1&#10;" />
     <MESSAGE value="multi_app &#10;multi grid&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="multi_app &#10;multi grid&#10;&#10;" />
+    <MESSAGE value="remove imports&#10;&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove imports&#10;&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1305,6 +1482,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/systemjs.config.js">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
           <caret line="52" column="9" lean-forward="true" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
@@ -1319,12 +1497,15 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/profile/profile.component.ts">
+=======
+>>>>>>> task_15
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1258">
           <caret line="83" column="8" lean-forward="false" selection-start-line="83" selection-start-column="10" selection-end-line="88" selection-end-column="54" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/assets/app/state/state.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2176">
@@ -1333,12 +1514,41 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
+=======
+    <entry file="file://$PROJECT_DIR$/assets/app/profile/formProfile.ts">
+>>>>>>> task_15
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/login/login.component.ts" />
+    <entry file="file://$PROJECT_DIR$/assets/app/menu/menu.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="39" column="46" lean-forward="false" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/Engine/stepModel.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/assets/app/components/backButton.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="42" column="34" lean-forward="false" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/components/panelBtnImg.ts">
+      <provider selected="true" editor-type-id="text-editor">
+=======
     <entry file="file://$PROJECT_DIR$/assets/app/login/login.component.ts" />
     <entry file="file://$PROJECT_DIR$/assets/app/menu/menu.component.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -1363,6 +1573,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/components/panelBtnImg.ts">
       <provider selected="true" editor-type-id="text-editor">
+>>>>>>> task_15
         <state relative-caret-position="119">
           <caret line="7" column="46" lean-forward="false" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="46" />
         </state>
@@ -1504,6 +1715,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app/app.module.js">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1527,6 +1739,29 @@
             <element signature="e#783#843#0" expanded="true" />
             <element signature="e#1752#1805#0" expanded="true" />
             <element signature="e#1991#2051#0" expanded="true" />
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/components/saveButton.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="49" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="101" column="39" lean-forward="false" selection-start-line="101" selection-start-column="39" selection-end-line="101" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#61#0" expanded="false" />
+            <element signature="e#176#222#0" expanded="false" />
+            <element signature="e#777#837#0" expanded="false" />
+>>>>>>> task_15
           </folding>
         </state>
       </provider>
@@ -1536,18 +1771,33 @@
         <state relative-caret-position="408">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#0#56#0" expanded="true" />
             <marker date="1494527244594" expanded="true" signature="222:295" ph="..." />
             <marker date="1494527244594" expanded="true" signature="259:289" ph="..." />
+=======
+            <element signature="e#0#56#0" expanded="false" />
+            <marker date="1495057219824" expanded="true" signature="222:295" ph="..." />
+            <marker date="1495057219824" expanded="true" signature="259:289" ph="..." />
+>>>>>>> task_15
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.hbs">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="527">
           <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="17" />
           <folding />
+=======
+        <state relative-caret-position="442">
+          <caret line="26" column="16" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="17" />
+          <folding>
+            <marker date="1495057229430" expanded="true" signature="1374:1636" ph="..." />
+            <marker date="1495057229430" expanded="true" signature="1427:1524" ph="..." />
+          </folding>
+>>>>>>> task_15
         </state>
       </provider>
     </entry>
@@ -1576,6 +1826,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2091">
           <caret line="126" column="19" lean-forward="false" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
+<<<<<<< HEAD
           <folding />
         </state>
       </provider>
@@ -1587,10 +1838,22 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#77#120#0" expanded="true" />
+=======
+          <folding>
+            <marker date="1495057219846" expanded="true" signature="8227:11407" ph="{...}" />
+            <marker date="1495057219846" expanded="true" signature="11443:11769" ph="{...}" />
+            <marker date="1495057219846" expanded="true" signature="11683:11762" ph="{...}" />
+            <marker date="1495057219846" expanded="true" signature="11712:11756" ph="{...}" />
+            <marker date="1495057219846" expanded="true" signature="12035:13098" ph="{...}" />
+            <marker date="1495057219846" expanded="true" signature="12637:12844" ph="{...}" />
+            <marker date="1495057219846" expanded="true" signature="12919:13086" ph="{&quot;valueName&quot;: valuesName...}" />
+            <marker date="1495057219846" expanded="true" signature="13166:13360" ph="//..." />
+>>>>>>> task_15
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/assets/app/components/form.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
@@ -1625,10 +1888,28 @@
             <marker date="1494853625092" expanded="true" signature="4658:4828" ph="..." />
             <marker date="1494853625092" expanded="true" signature="4671:4813" ph="..." />
             <marker date="1494853625092" expanded="true" signature="4860:5038" ph="{...}" />
+=======
+    <entry file="file://$PROJECT_DIR$/assets/app/components/fileUpload.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/components/form.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="50" column="9" lean-forward="false" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+          <folding>
+            <marker date="1495057219851" expanded="true" signature="309:1927" ph="{...}" />
+            <marker date="1495057219851" expanded="true" signature="612:1925" ph="{...}" />
+>>>>>>> task_15
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/assets/app/components/saveService.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -1655,10 +1936,65 @@
             <marker date="1494855271610" expanded="true" signature="1360:1623" ph="..." />
             <marker date="1494855271610" expanded="true" signature="1418:1605" ph="..." />
             <marker date="1494855271610" expanded="true" signature="2137:2193" ph="..." />
+=======
+    <entry file="file://$PROJECT_DIR$/assets/app/components/main.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9656">
+          <caret line="581" column="7" lean-forward="false" selection-start-line="581" selection-start-column="7" selection-end-line="581" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+            <marker date="1495057219869" expanded="true" signature="785:3689" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="882:1490" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="1544:1727" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="1568:1716" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="1813:3689" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="1912:2288" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="1940:2273" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="2388:2770" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="2415:2755" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="2874:3326" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="2904:3303" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="3418:3677" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="3444:3662" ph="..." />
+            <marker date="1495057219869" expanded="true" signature="27622:30038" ph="{...}" />
+            <marker date="1495057219869" expanded="true" signature="27628:27648" ph="/*...*/" />
+            <marker date="1495057219869" expanded="true" signature="27679:29793" ph="{...}" />
+            <marker date="1495057219869" expanded="true" signature="27807:27894" ph="//..." />
+            <marker date="1495057219869" expanded="true" signature="28085:29370" ph="{...}" />
+            <marker date="1495057219869" expanded="true" signature="28100:28216" ph="//..." />
+            <marker date="1495057219869" expanded="true" signature="28286:29360" ph="{...}" />
+            <marker date="1495057219869" expanded="true" signature="28462:29346" ph="{...}" />
+            <marker date="1495057219869" expanded="true" signature="28819:29027" ph="//..." />
+            <marker date="1495057219869" expanded="true" signature="29470:29743" ph="//..." />
+            <marker date="1495057219869" expanded="true" signature="29821:30036" ph="{...}" />
+            <marker date="1495057219869" expanded="true" signature="30043:30549" ph="//..." />
+            <marker date="1495057219869" expanded="true" signature="30555:31187" ph="//..." />
+            <marker date="1495057219869" expanded="true" signature="31194:31277" ph="//..." />
+            <marker date="1495057219869" expanded="true" signature="31287:32043" ph="//..." />
+>>>>>>> task_15
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/assets/app/components/saveService.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="28" column="1" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/app/components/fileUpload.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1423">
+          <caret line="192" column="9" lean-forward="false" selection-start-line="192" selection-start-column="9" selection-end-line="192" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> task_15
     <entry file="file://$PROJECT_DIR$/assets/app/boot.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1669,8 +2005,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/global.ts">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="51">
           <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+=======
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+>>>>>>> task_15
           <folding />
         </state>
       </provider>

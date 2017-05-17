@@ -15,6 +15,7 @@
   },
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "@angular/animations": "^4.1.1",
     "@angular/common": "^4.1.1",
     "@angular/compiler": "^4.1.1",
@@ -32,6 +33,22 @@
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
     "cookie-parser": "^1.4.3",
+=======
+    "@angular/common": "2.4.0",
+    "@angular/compiler": "2.4.0",
+    "@angular/core": "2.4.0",
+    "@angular/forms": "2.4.0",
+    "@angular/http": "2.4.0",
+    "@angular/platform-browser": "2.4.0",
+    "@angular/platform-browser-dynamic": "2.4.0",
+    "@angular/router": "3.0.0",
+    "@angular/upgrade": "2.4.0",
+    "angular2-in-memory-web-api": "0.0.20",
+    "body-parser": "~1.15.2",
+    "bootstrap": "^3.3.7",
+    "cloudinary": "^1.4.3",
+    "cookie-parser": "~1.4.3",
+>>>>>>> task_15
     "core-js": "^2.4.1",
     "debug": "~2.2.0",
     "es6-shim": "^0.35.1",
