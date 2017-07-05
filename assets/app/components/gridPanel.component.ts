@@ -63,7 +63,6 @@ import {Http} from "@angular/http";
                         </tr>
                         <tr *ngFor="let item of _gridService.dataGrid">
                             <td *ngFor="let key of _gridService.keysName;let i = index" align="center">
-                                 <!--{{item}}-->
                                                      
                                 <span *ngIf="!filterActivated && this._gridService.colTitle[i].type != 'checkbox' "> {{item[key]}}  </span>
                                 
@@ -73,9 +72,11 @@ import {Http} from "@angular/http";
                                 </span>
                                 <!--<span *ngIf=""-->
                             </td>
-                            
-                            <td  *ngIf="this._stepService.steps[0].master_type == 'workflow'"> <button class="btn btn-success" type="button" (click)="goToCurrentStep(item)" value="{{item.step_id}} ">Current step </button></td>
+                            <td *ngIf="item.details.activated"><button class="btn btn-success" type="button" (click)="goToCurrentStep(item)" value="{{item.step_id}} ">DETAIL </button></td>
+                            <td *ngIf="this._stepService.steps[0].master_type == 'workflow'"> <button class="btn btn-success" type="button" (click)="goToCurrentStep(item)" value="{{item.step_id}} ">Current step </button></td>
+                        
                         </tr>
+                        
                     </table>
                 </div>
                

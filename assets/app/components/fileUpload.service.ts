@@ -24,5 +24,8 @@ export class FileUploadService {
         return this._http.post(completeUrl, body, {headers: headers})
             .map(response => response)
             .catch(error => Observable.throw(error.json()));
+
+
+
     }
 }

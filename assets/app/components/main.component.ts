@@ -377,23 +377,56 @@ export class MainComponent implements OnInit {
         if (this.indexStepObj == nbSteps) {
             console.log('save form')
             console.log(this._formService.arraySteps);
-            this._saveService.saveData(this._stepService.steps[this.indexStepObj].step_id)
+
+            // SAVE UPLOADED FILES
+            this._saveService.saveFiles()
                 .subscribe(
                     data => {
-                        this.formCompleted = true;
-                        if (typeof this._stepService.steps[this.indexStepObj].configuration.mail_id != 'undefined') {
-                            this._mailService.sendMail(this._stepService.steps[this.indexStepObj].configuration.mail_id, data._body)
-                                .subscribe(
-                                    mailState => {
-                                        console.log(mailState);
-                                    },
-                                    error => console.log(error)
-                                );
-                            console.log(data._body)
+                        console.log('*****************************************************');
+                        console.log(data);
+                        let arrayFiles= [];
+                        for (let i in data) {
+                            console.log(data[i]);
+                            arrayFiles.push({"fileName":data[i].step_name, "file_url": data[i].file_url})
+                            // for (let j = 0; j < this._formService.arraySteps.length; j++) {
+                            //     console.log(this._formService.arraySteps[j].nom);
+                            //     console.log(data[i].step_name);
+                            //     //if (this._formService.arraySteps[j].nom == data[i].step_name) {
+                            //         this._formService.arraySteps[j].details = [{ "file_url": data[i].file_url}];
+                            //
+                            //       //  break;
+                            //     //}
+                            // }
                         }
+
+                        this._formService.arraySteps.push({"fileDetails" : arrayFiles});
+                        console.log(this._formService.arraySteps);
+
+                        //SAVE FORM DATA
+                        this._saveService.saveData(this._stepService.steps[this.indexStepObj].step_id)
+                            .subscribe(
+                                data => {
+                                    this.formCompleted = true;
+                                    if (typeof this._stepService.steps[this.indexStepObj].configuration.mail_id != 'undefined') {
+                                        console.log("SEND NOTIFICATION");
+                                        // SEND MAIL CONFIRMATION
+                                        this._mailService.sendMail(this._stepService.steps[this.indexStepObj].configuration.mail_id, data._body)
+                                            .subscribe(
+                                                mailState => {
+                                                    console.log(mailState);
+                                                },
+                                                error => console.log(error)
+                                            );
+                                        console.log(data._body)
+                                    }
+                                },
+                                error => console.log(error)
+                            )
                     },
                     error => console.log(error)
                 )
+
+
         }
         else {
            // console.log(this._stepService.steps[this.indexStepObj].step_id);
@@ -599,8 +632,8 @@ export class MainComponent implements OnInit {
 
     /* WHEN CLICK NEXT ON FILE UPLOAD STEP */
     onSubmitFile($event){
-        console.log($event)
-        console.log($event.fileUploaded)
+        console.log($event);
+        console.log($event.fileUploaded);
         this._formService.arraySteps[this.indexStepObj].file_uploaded = $event.fileUploaded;
         this.goToNextStep($event.stepIdx);
     }

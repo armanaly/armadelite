@@ -4,13 +4,14 @@
 
 import { Injectable } from "@angular/core";
 import {StepService} from "../Engine/step.service";
+import {File} from "gulp-typescript/release/input";
 @Injectable()
 export class FormService {
 
     constructor(private _stepService: StepService){}
     // ICI JE VAIS RAMENER this._stepService et de là je créée à la volée les données de mon formulaire de config et je le mets dans les variable du service de formulaire (form.service.ts)
     arraySteps = [];
-
+    arrayFiles: FormData = new FormData();
     current_step_id = 1;
 
     init(){
@@ -52,7 +53,8 @@ export class FormService {
                 let keyName = i.configuration.form_value.name;
 
                 // let formData:FormData = new FormData();
-                this.arraySteps.push({"nom": keyName, "file_uploaded": File});
+                this.arraySteps.push({"nom": keyName, "type": "file"})
+                // this.arrayFiles.push({"nom": keyName, "file": File});
 
             }
         }
