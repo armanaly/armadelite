@@ -23,7 +23,7 @@ import {FormService} from "./form.service";
                 </li>
             </ul>
          </div>
-         <span class="label label-info">{{footNote}} </span>
+         <span class="label label-info" *ngIf="footNote != ''">{{footNote}} </span>
      </div>
 `
 })

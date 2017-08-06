@@ -7,7 +7,7 @@ import { Observable } from "rxjs/Observable";
 import {ActivatedRoute, Router} from "@angular/router";
 @Injectable()
 export class StepService {
-
+// , private router: Router
     constructor (
 
         private _http: Http
@@ -63,20 +63,8 @@ export class StepService {
                 if (window.location.hash == '#/admin'){
                     this.steps[0].master_type = 'admin'
 
-
                 }
                 console.log(this.steps);
-
-
-           //    console.log(this.step);
-                // console.log(this.step[0]);
-                // for (let i = 0; i < this.step.length; i++) {
-                //     console.log(this.step[i].step_id);
-                // }
-
-
-                //console.log(objTest);
-             //   return objs;
 
         })
             .catch(error => Observable.throw(error));

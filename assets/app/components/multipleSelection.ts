@@ -24,7 +24,7 @@ import {Component, Input, Output, EventEmitter} from '@angular/core'
             </li>
         </ul>
         <div><button btn-default btn-lg (click)="submit()">SUIVANT</button></div>
-        <span class="label label-info">{{footNote}} </span>
+        <span class="label label-info"  *ngIf="footNote != ''">{{footNote}} </span>
         </div>
         
 

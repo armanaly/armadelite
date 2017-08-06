@@ -6,7 +6,7 @@ import {StepService} from "../Engine/step.service"
     selector: 'previous-page',
     template: `
         <nav class="form-navArrow">
-            <button ><i class="glyphicon glyphicon-triangle-left" (click)="onClick()"> </i></button>
+            <button (click)="onClick()" class="tg-bn4o" ><i class="glyphicon glyphicon-triangle-left" > RETOUR </i></button>
         </nav>
 `
 })
@@ -20,14 +20,18 @@ export class BackButtonComponent {
     onClick(){
         console.log(this.stepId);
         let stepIndex = this.idxStepObj;
-
+        let keyName = this._stepService.step[this.idxStepObj].name;
+        this._formService.arraySteps[this.idxStepObj][keyName] = '';
         this.idxStepObj --;
         console.log(this._stepService.steps[this.idxStepObj].step_id);
         // CHECK IF THE PREVIOUS STEP HAS THE SAME STEP_ID
         while (this._stepService.steps[this.idxStepObj].step_id == this.stepId){
             this.idxStepObj --;
+            if (this._stepService.steps[this.idxStepObj].step_id != this.stepId){
+                break;
+            }
             console.log(this._stepService.steps[this.idxStepObj]);
-            break;
+
         }
         // SI IL Y A DES CONDITIONS DEFINIES A L'ETAPE PRECEDENTE ALORS ON VERIFIE QUELLE ETAPE CORRESPOND A LA CONDITION SINON ON RECULE
         // DANS LE TABLEAU DES ETAPES
@@ -44,9 +48,14 @@ export class BackButtonComponent {
 
             while (typeof (this._formService.arraySteps.find(x => x[keyCondition] === valueCondition)) === 'undefined') {
                 this.idxStepObj --;
-                keyCondition = this._stepService.steps[this.idxStepObj].conditions[0].key;
-                valueCondition = this._stepService.steps[this.idxStepObj].conditions[0].value;
-                // break;
+
+                if (this._stepService.steps[this.idxStepObj].conditions.length > 0){
+                    keyCondition = this._stepService.steps[this.idxStepObj].conditions[0].key;
+                    valueCondition = this._stepService.steps[this.idxStepObj].conditions[0].value;
+                }
+                else {
+                    break;
+                }
             }
 console.log(this.idxStepObj);
             // if (this._stepService.steps[this.idxStepObj].conditions.length > 0)

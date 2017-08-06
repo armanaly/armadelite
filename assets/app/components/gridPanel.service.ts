@@ -12,6 +12,8 @@ export class GridPanelService {
     dataGrid = [];
     keysName = [];
     colTitle = [];
+    keysName_details = [];
+    colTitle_details = [];
     originalData = this.dataGrid;
 
     getDatas(grid_name){
@@ -25,9 +27,11 @@ export class GridPanelService {
         return this._http.get(completeUrl)
             .map(response =>
             {
-                console.log(response);
+
                 let data = response.json();
                 console.log(data);
+                console.log(data[0].config);
+                console.log(data[0].config_details);
                 for (var i in data[0].config){
                     // if (key != '_id' && key != 'step_id'){
                     console.log(data[0].config[i]);
@@ -52,8 +56,11 @@ export class GridPanelService {
                             case 'checkbox': {
                                 this.keysName.push(data[0].config[i].data);
                                 this.colTitle.push({"title": data[0].config[i].title, "key": data[0].config[i].data, "type": "checkbox"})
+                                break;
                             }
-                            break;
+
+
+
                         }
                     }
                     else{
@@ -61,6 +68,23 @@ export class GridPanelService {
                         this.colTitle.push({"title": data[0].config[i].title, "key": data[0].config[i].data, "type": "value"})
                     }
                 }
+
+
+
+                // DETAILS DATA
+                 for (let i in data[0].config_details){
+                     switch (data[0].config_details[i].type) {
+                        case 'file_details': {
+                            this.keysName_details.push(data[0].config_details[i].file_name);
+                            this.colTitle_details.push({"title": data[0].config_details[i].label, "key": data[0].config_details[i].file_name, "type": "file"})
+                            break;
+                        }
+                         case 'field': {
+                             this.keysName_details.push(data[0].config_details[i].data);
+                             this.colTitle_details.push({"title": data[0].config_details[i].label, "key": data[0].config_details[i].data, "type": "field", "editable": data[0].config_details[i].editable})
+                         }
+                     }
+                 }
                 data.shift();
                 console.log(this.keysName);
                 console.log(this.colTitle);

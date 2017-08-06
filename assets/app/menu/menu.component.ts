@@ -6,8 +6,10 @@ import {GlobalVariable} from "../global";
 @Component({
     selector: 'grid-panel',
     template: `
+
+    
     <div class="row" align="center" *ngIf="ready == true">
-        
+
             <div  *ngFor="let grid of grids" class="col-md-3">
                 <!--<button class="btn btn-success" type="button" (click)="showGrid(grid.name)" value="{{grid.name}} ">{{grid.name}} -->
                 <!--</button>-->

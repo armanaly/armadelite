@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core'
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute} from "@angular/router"
 import {Validators, FormBuilder, FormGroup, FormControl} from "@angular/forms";
 
 import {StepModel} from "../Engine/stepModel";
@@ -41,7 +41,7 @@ import {SaveService} from "./saveService";
     
    <div *ngFor="let objStep of this._stepService.steps; let i = index" >
         <!-- IMAGE LIST BUTTON PANEL -->
-        <div *ngIf="objStep.type == 'image_selection' ">
+        <div *ngIf="objStep.type == 'image_selection' && dataLoaded ">
             <panel-btn-img
                 *ngIf="stepId == objStep.step_id"
                     [objStep] = "objStep" 
@@ -140,7 +140,7 @@ export class MainComponent implements OnInit {
     //lists = [];
     listsData = [];
 
-
+    dataLoaded = false;
     current_step_id: Observable<string>;
     //@Input() marque: Marque;
     stepId = 1;
@@ -163,10 +163,47 @@ export class MainComponent implements OnInit {
    // steps: StepModel[];
     customCollectionData = [];
 
+
+
     ngOnInit() {
+
+
         console.log('init main Component');
         // IF FIRST STEP IS A COLLECTION
+console.log(this._stepService.steps[0].configuration)
+
         if (typeof this._stepService.steps[0].configuration.collection != 'undefined') {
+            // console.log("go to next step -1")
+            // this.goToNextStep(-1);
+            // // this._collectionService.getDatas("marques", '', "name", 'btn')
+            //     .subscribe(data => {
+            //             console.log(data);
+            //
+            //             this.lists.push(data);
+            //             this.datas.push({
+            //                 "name": this._stepService.steps[this.indexStepObj].name,
+            //                 "url": data.url,
+            //                 "list": data,
+            //                 "loaded": true
+            //             });
+            //
+            //             this.previousStepId = this.stepId;
+            //             // this.stepId = this._stepService.step[this.indexStepObj].step_id;
+            //             console.log(this.stepId);
+            //             console.log(this.lists);
+            //             console.log(this.datas);
+            //             this.stepId = 0;
+            //             // Skip the step if there is only 1 result
+            //             console.log("TEST IF ONLY 1 RECORD");
+            //             if (data.length == 1) {
+            //                 this._formService.arraySteps[this.indexStepObj][this._stepService.steps[this.indexStepObj].configuration.form_value.name] = data[0];
+            //                 this.goToNextStep(this.indexStepObj);
+            //             }
+            //             console.log(this.stepId);
+            //             this.goToNextStep(-1);
+            //         },
+            //         error => console.log(error)
+            //     );
         }
 
         /*  IF FIRST STEP IS A LIST */
@@ -176,7 +213,7 @@ export class MainComponent implements OnInit {
                 "name": this._stepService.steps[0].name,
                 "list": this._stepService.steps[0].configuration.list
             });
-        }
+ } // FIN IF COMMENTE POUR TEST EN BAS DE CODE
         console.log(this.listsData);
         this._stepService.datas = this.listsData.slice();
         // INITIATE FORM SERVICE TO KEEP ALL SELECTIONS MADE BY USER IN STEPS
@@ -207,9 +244,11 @@ export class MainComponent implements OnInit {
             //console.log(this.datas);
             this.goToNextStep(-1);
         }
-        console.log(this.datas[0].name);
+       // console.log(this.datas[0].name);
         console.log(this._stepService.steps);
         console.log(this.stepId);
+
+
     }
 
     goPreviousStep($event) {
@@ -288,13 +327,13 @@ export class MainComponent implements OnInit {
                             console.log(this.datas);
 
                             this._collectionService.getFormData(this.tmp_id, collectionName, filterList, valueToKeep)
-                                .then(data => {
+                                .subscribe(data => {
                                         console.log('apres getFormData()');
                                         console.log(data);
 
                                         console.log('STEP SERVICE N' + i);
                                         console.log(this._stepService.steps[i]);
-                                        this._collectionService.getDatas(this._stepService.steps[i].configuration.collection.name, this._stepService.steps[i].configuration.collection.filter[0].step_id, valueToKeep)
+                                        this._collectionService.getDatas(this._stepService.steps[i].configuration.collection.name, this._stepService.steps[i].configuration.collection.filter[0].step_id, valueToKeep,'btn')
                                             .then(result => {
                                                     console.log(result);
                                                     this.datas.push({
@@ -346,6 +385,7 @@ export class MainComponent implements OnInit {
     }
 
 
+
     // GO TO NEXT STEP ( x + 1)
     goToNextStep(stepIndex) {
         console.log(this._stepService);
@@ -360,13 +400,10 @@ export class MainComponent implements OnInit {
 
 
         console.log('currentStepId: ' + this.current_step_id);
-        console.log(this.current_step_id);
         console.log("indexStepObj : " + this.indexStepObj);
         console.log('tmp_id : ' + this.tmp_id);
-        console.log(this.datas);
 
-        // if (this.indexStepObj <= 0 )
-        // {
+        console.log(this.datas);
 
         /*
             BUG POSSIBLE SI CE N EST PAS LE DERNIERE STEP DANS STEPS ARRAY
@@ -432,7 +469,8 @@ export class MainComponent implements OnInit {
            // console.log(this._stepService.steps[this.indexStepObj].step_id);
 
             this.indexStepObj++;
-            console.log(this.stepId);
+            console.log("stepId: " + this.stepId);
+            console.log("indexStepObj: " + this.indexStepObj);
             console.log(this._stepService.steps[this.indexStepObj].step_id);
             if (this.indexStepObj > 1) {
                 //     console.log(this._stepService.steps[this.indexStepObj].step_id);
@@ -442,9 +480,8 @@ export class MainComponent implements OnInit {
                     this.indexStepObj++;
                 }
             }
-            console.log(this.stepId);
-            console.log(this._stepService.steps[this.indexStepObj].step_id);
             // }
+
             // SI IL Y A DES CONDITIONS DEFINIES A L'ETAPE SUIVANTE ALORS ON VERIFIE QUELLE ETAPE CORRESPOND A LA CONDITION SINON ON AVANCE
             // DANS LE TABLEAU DES ETAPES
             if (this._stepService.steps[this.indexStepObj].conditions.length > 0)
@@ -455,28 +492,35 @@ export class MainComponent implements OnInit {
                 console.log("valueCondition: " + valueCondition);
                 console.log("keyCondition: " + keyCondition);
                 console.log(this._formService.arraySteps.find(x => x[keyCondition] === valueCondition))
-
+                // CHECK WHILE CONDITION IS FULLFILLED
                 while (typeof (this._formService.arraySteps.find(x => x[keyCondition] === valueCondition)) === 'undefined'){
                 //while (this._formService.arraySteps[stepIndex][keyCondition] != valueCondition){
                     console.log((typeof (this._formService.arraySteps.find(x => x[keyCondition] === valueCondition))));
                     console.log("condition pas remplie, j'avance de 1 indice dans le tableau. Indice: " + this.indexStepObj);
                     this.indexStepObj++;
                     if (this._stepService.steps[this.indexStepObj].conditions.length > 0) {
-                        let keyCondition = this._stepService.steps[this.indexStepObj].conditions[0].key;
-                        let valueCondition = this._stepService.steps[this.indexStepObj].conditions[0].value;
+                         keyCondition = this._stepService.steps[this.indexStepObj].conditions[0].key;
+                         valueCondition = this._stepService.steps[this.indexStepObj].conditions[0].value;
+                        console.log(this.indexStepObj)
+                        console.log(keyCondition);
                         console.log(valueCondition);
                         console.log(this._formService.arraySteps[0][keyCondition]);
                     }
-                    break;
+                    else{
+                        break;
+                    }
+
                 }
+
                 console.log('condition remplie, je reste sur l indice: ' + this.indexStepObj)
+                console.log(this.indexStepObj);
             }
 
             // TEMPORARY STEP_ID BECAUSE WE NEED TO WAIT FOR ASYNCHROUNOUS QUERY
             var tmpNewstepId = this._stepService.steps[this.indexStepObj].step_id;
 
             /* IF LIST BUTTON COMPONENT */
-            console.log(this._stepService.steps[this.indexStepObj].type);
+            console.log("type component: " + this._stepService.steps[this.indexStepObj].type);
 
 
             switch (this._stepService.steps[this.indexStepObj].type) {
@@ -519,8 +563,9 @@ export class MainComponent implements OnInit {
                             // }
                             //   this._collectionService.getDatas(collectionName).then(collectionDataReturn => this.lists.push(collectionDataReturn))
                             console.log(this.tmp_id);
-                            this._collectionService.getDatas(collectionName, filterList, valueToKeep)
+                            this._collectionService.getDatas(collectionName, filterList, valueToKeep, 'btn')
                                 .then(data => {
+
                                         console.log(data);
 
                                         this.lists.push(data);
@@ -565,6 +610,80 @@ export class MainComponent implements OnInit {
                     break;
 
                 case 'image_selection':
+                    if (typeof this._stepService.steps[this.indexStepObj].configuration.collection != 'undefined') {
+                        console.log("GET DATA FROM COLLECTION");
+                        let filterList = [];
+                        //for (var item of this._stepService.step) {
+                        //if (this._stepService.step[this.indexStepObj].step_id == tmpNewstepId) {
+                        let collectionName = this._stepService.steps[this.indexStepObj].configuration.collection.name;
+                        console.log(collectionName);
+
+                        console.log(this._stepService.steps[this.indexStepObj]);
+                        /*
+                         TODO TESTER SI FILTER EXISTE DANS COLLECTION
+                         */
+                        // STEP_ID OU SE TROUVE LE NOM DE LA VARIABLE DE LA VALEUR A FILTRER
+                        if (typeof this._stepService.steps[this.indexStepObj].configuration.filter != 'undefined'){
+                            let valueToFilter = this._stepService.steps[this.indexStepObj].configuration.collection.filter[0].step_id;
+                            console.log(valueToFilter);
+                            console.log(this._stepService.steps[this.indexStepObj].configuration.collection.filter[0].step_id);
+                            console.log(this._formService);
+
+                            filterList = this._stepService.steps[this.indexStepObj].configuration.collection.filter;
+                        }
+                            // }
+                        // if (Number(item.step_id) == Number(this.previousStepId)) {
+                        //     console.log(item.configuration);
+                        //     var valueFilterList = item.configuration.form_value.name;
+                        // }
+                        var valueToKeep = ''
+                        // SET NOM DE VARIABLE TO SAVE IN FORM SERVICE
+                        if (typeof this._stepService.steps[this.indexStepObj].configuration.collection.value != 'undefined') {
+                            valueToKeep = this._stepService.steps[this.indexStepObj].configuration.collection.value;
+                        }
+                        console.log(valueToKeep);
+                        // else {
+                        //     var valueToKeep = ''
+                        // }
+                        //   this._collectionService.getDatas(collectionName).then(collectionDataReturn => this.lists.push(collectionDataReturn))
+                        console.log(this.tmp_id);
+                        this._collectionService.getDatas(collectionName, filterList, valueToKeep, 'img_btn')
+                            .then(data => {
+                                    console.log('service returns data');
+                                    console.log(data);
+
+                                    this.lists.push(data);
+                                    for (let i in data){
+                                        this.datas.push({
+                                            "name": data[i].name,
+                                            "url": data[i].url,
+                                            "list": data[i].list,
+                                            "loaded": true
+                                        });
+                                    }
+
+                                    this.previousStepId = this.stepId;
+                                    // this.stepId = this._stepService.step[this.indexStepObj].step_id;
+                                    console.log(this.stepId);
+                                    console.log(this.lists);
+                                    console.log(this.datas);
+                                    this.stepId = tmpNewstepId;
+                                    // Skip the step if there is only 1 result
+                                    console.log("TEST IF ONLY 1 RECORD");
+                                    this.dataLoaded = true;
+                                    if (data.length == 1) {
+                                        this._formService.arraySteps[this.indexStepObj][this._stepService.steps[this.indexStepObj].configuration.form_value.name] = data[0];
+                                        this.goToNextStep(this.indexStepObj);
+                                    }
+                                    console.log(this.stepId);
+                                },
+                                error => console.log(error)
+                            );
+                    }
+
+
+
+                    //IF DATA ARE STORED IN A LIST IN CONFIG FILE
                     if (typeof this._stepService.steps[this.indexStepObj].configuration.list != 'undefined') {
                         console.log("GET DATA FROM LIST");
                         this.lists.push(this._stepService.steps[this.indexStepObj].configuration.list);
@@ -575,7 +694,7 @@ export class MainComponent implements OnInit {
                         console.log(this.datas);
                         this.stepId = tmpNewstepId;
                     }
-                    break;
+                    // break;
 
                 case 'field_panel':
                     console.log('field_panel');
@@ -663,12 +782,7 @@ export class MainComponent implements OnInit {
 
                     console.log("keyObject: " + keyObject);
                     console.log("newValue: " + newValue);
-//                        console.log(this._formService.arraySteps[j][tmpKeyName][i][keyObject]);
 
-                    //var tmpObj = {};
-                    //let tmpSave = tmpKeyName+'['+i+'].'+keyObject;
-                    //console.log(tmpSave);
-                    // tmpObj[$event.valueName[i]= $event.valueSelected[i] ;
                     this._formService.arraySteps[j][tmpKeyName][i][keyObject] = newValue;
                     //this._formService.arraySteps[j][eval(tmpSave)] = newValue;
                     console.log(this._formService.arraySteps[j][tmpKeyName][i][keyObject]);
@@ -696,64 +810,6 @@ export class MainComponent implements OnInit {
         this.goToNextStep($event.stepIdx);
     }
 }
-    // getListEquipment(){
-    //     var addOption = true;
-    //     for (let i = 0; i < this._formService.optionsSelected.length; i++){
-    //         if (this._formService.optionsSelected[i] == event.target.value) {
-    //             this._formService.optionsSelected.splice(i,1);
-    //             addOption = false;
-    //             break;
-    //         }
-    //     }
-    //     if (addOption){
-    //         this._formService.optionsSelected.push(event.target.value);
-    //     }
-    // }
-    //
-
-    //     //Check if there is more than one choice possible, we display the choices if not, we skip this step and goes directly to the gearbox selection
-    //     if (this.listNbPortes.length > 1) {
-    //         this.listNbPortes.sort();
-    //         // this.indexStepObj ++;
-    //         this._formService.porteSelected = "";
-    //     }
-    //     else {
-    //         this._formService.porteSelected = this.listNbPortes[0];
-    //         this.getGearBox('');
-    //         this.indexStepObj += 10;
-    //         console.log(this.indexStepObj);
-    //     }
-    //     //this.showCarburant = false;
-    // }
-    //
-    //
-
-
-    // getOption(event:any) {
-        //console.log(this._formService.optionsSelected);
-
-        //
-        // var addOption = true;
-        // for (let i = 0; i < this._formService.optionsSelected.length; i++){
-        //     if (this._formService.optionsSelected[i] == event.target.value) {
-        //         this._formService.optionsSelected.splice(i,1);
-        //         addOption = false;
-        //         break;
-        //     }
-        // }
-        // if (addOption){
-        //     this._formService.optionsSelected.push(event.target.value);
-        // }
-//    };
-    //
-    // isSelected(option){
-    //     for (let i = 0; i < this._formService.optionsSelected.length; i++){
-    //         if (this._formService.optionsSelected[i] == option){
-    //             return true;
-    //         }
-    //     }
-    //     return false;
-    // }
 
 
 

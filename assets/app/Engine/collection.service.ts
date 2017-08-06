@@ -3,10 +3,12 @@ import { Injectable } from "@angular/core";
 import 'rxjs/Rx';
 import { Observable } from "rxjs/Observable";
 
+
 // import { Marque } from "./marque";
 import { GlobalVariable } from "../global";
 import {StepService} from "./step.service";
 import {FormService} from "../components/form.service";
+import {resolve} from "url";
 @Injectable()
 export class CollectionService { 
 
@@ -32,24 +34,27 @@ export class CollectionService {
         let headers= new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({ headers: headers });
         return this._http.get(completeUrl)
-            .toPromise()
-            .then(response =>response.json())
+            .map((response : Response) => response.json())
+            .catch((error: Response) => Observable.throw(error.json()))
 
-                //this.getDatas(collName, filters, select)
 
-        // response.json()
 
-            .catch(error => Observable.throw(error))
+
+        // return this._http.get(completeUrl)
+        //     .toPromise()
+        //     .then(response =>response.json())
+        //     .catch(error => Observable.throw(error))
 
     }
 
-    getDatas(collName, filters, select): Promise<any> {
+    getDatas(collName, filters, select, type) {
         var filtersNameToString = []
         var filtersValueToString = []
         console.log(filters);
         console.log("FIELD FILTER SIZE")
         console.log(filters);
         console.log(select);
+        let query = 'col_name=' + collName + '&return_type=' + type
         if (filters.length > 0 ) {
 
             for (var i = 0; i < filters.length; i++) {
@@ -67,8 +72,12 @@ export class CollectionService {
             //     }
 
 
-            var query = 'collName=' + collName + '&filters_name=' + filtersNameToString + '&filters_value=' + filtersValueToString;
+            query = query + '&filters_name=' + filtersNameToString + '&filters_value=' + filtersValueToString;
         }
+        else{
+            query = query + '&filters_name=&filters_value=';
+        }
+
         if (select != ''){
             query = query + '&select=' + select;
         }
@@ -78,10 +87,15 @@ export class CollectionService {
       //  let body = { "filters": filters, "collName" : collName};
         let headers= new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({ headers: headers });
+        console.log('before GET')
+        // let myPromise = new Promise((resolve, reject) => {
+        //
+        // })
         return this._http.get(completeUrl)
             .toPromise()
-            .then(response => response.json())
+            .then(response =>response.json())
             .catch(error => Observable.throw(error))
+
     }
 
     private getValueSelected(stepId) {

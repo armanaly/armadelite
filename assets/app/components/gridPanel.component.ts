@@ -28,12 +28,16 @@ import {Http} from "@angular/http";
                     <table class="table table-hover table-condensed"  >
                         <tr>
                             <th *ngFor="let obj of _gridService.colTitle;let i = index">
-                                <div>{{obj.title}}&nbsp; <button  class="glyphicon glyphicon-filter" 
-                                                        type="button" 
-                                                        (click)="showFilterInput(i)">
-                                                </button><br>
-                                                 <input   
+                                <div>{{obj.title}}&nbsp; 
+                                    <button  
+                                        class="glyphicon glyphicon-filter" 
+                                        type="button" 
+                                        (click)="showFilterInput(i)">
+                                    </button>
+                                    <br>
+                                    <input   
                                         *ngIf="showInput[i] == true"
+                                        myAutofocus="true"
                                         type="text" 
                                         id="{{obj.key}}"
                                         name="{{obj.key}}"
@@ -41,27 +45,12 @@ import {Http} from "@angular/http";
                                      >
                                      <br>
                                      
-                                                 </div>
-                                <!--<table><tr><td> </td>-->
-                                        <!--<td>   <button  class="glyphicon glyphicon-filter" -->
-                                                        <!--type="button" -->
-                                                        <!--(click)="showFilterInput(i)">-->
-                                                <!--</button> -->
-                                        <!--</td></tr>-->
-                                    <!--<tr><td>-->
-                                    <!--<input   -->
-                                        <!--*ngIf="showInput[i] == true"-->
-                                        <!--type="text" -->
-                                        <!--id="{{obj.key}}"-->
-                                        <!--name="{{obj.key}}"-->
-                                        <!--(keyup)="filter($event)"-->
-                                     <!--&gt;</td>-->
-                                     <!--</tr>-->
-                                 <!--</table>-->
+                                </div>
+
                             </th>
                             
                         </tr>
-                        <tr *ngFor="let item of _gridService.dataGrid">
+                        <tr *ngFor="let item of _gridService.dataGrid;let j = index">
                             <td *ngFor="let key of _gridService.keysName;let i = index" align="center">
                                                      
                                 <span *ngIf="!filterActivated && this._gridService.colTitle[i].type != 'checkbox' "> {{item[key]}}  </span>
@@ -72,16 +61,44 @@ import {Http} from "@angular/http";
                                 </span>
                                 <!--<span *ngIf=""-->
                             </td>
-                            <td *ngIf="item.details.activated"><button class="btn btn-success" type="button" (click)="goToCurrentStep(item)" value="{{item.step_id}} ">DETAIL </button></td>
+                             <td *ngIf="item.details.activated"><button class="btn btn-success" type="button"><a [routerLink]="['/details', item._id] "> Détail </a> </button></td>
+                            <!-- MODAL <td *ngIf="item.details.activated"><button class="btn btn-success" type="button" data-toggle="modal" data-target="#myModal">DETAIL </button></td>-->
                             <td *ngIf="this._stepService.steps[0].master_type == 'workflow'"> <button class="btn btn-success" type="button" (click)="goToCurrentStep(item)" value="{{item.step_id}} ">Current step </button></td>
                         
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  
+                          <div *ngIf="item.details.activated" class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel"></h4>
+                              </div>
+                              <div class="modal-body">
+                                BODY ICI {{item.detail[0].power}}
+                                <br> {{key}} <br>{{_gridService.keysName_details[0]}}
+                                <div *ngFor="let fields of _gridService.keysName_details">
+                                    {{fields}}
+                                    <!--l-->
+                                    <!--{{fields[0].power}}-->
+                                <!---->
+                                </div>
+                                
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                         </tr>
                         
                     </table>
                 </div>
                
             </div>
-            
+            <!-- Modal -->
+
     `
 })
 
@@ -90,44 +107,22 @@ import {Http} from "@angular/http";
    // router = new Router;
     constructor(private _stepService: StepService, private _gridService: GridPanelService, private router: Router,
                 private route: ActivatedRoute, private _http: Http){}
+
     display = false;
-    // myListData2 = [{"age": 15,"duration":"5"}];
-    // keysName2 = ["age"];
     myListData = [];// =  this._gridService.dataGrid;
     grid_name;
-    //keysName = this._gridService.keysName;
-keysName = [];
+    keysName = [];
     showInput = [];
-filterActivated = false;
+    filterActivated = false;
+
     ngOnInit() {
-
-        // var myArray = [0, 9, 8, 3, 3, 3, 5, 9, 5, 0];
-        // var newArray = [];
-        // myArray.sort();
-        // newArray.push(myArray[0]);
-        //
-        // var myArray = [0, 9, 8, 3, 3, 3, 5, 9, 5, 0];
-        // var newArray = [];
-        //
-        // newArray.push(myArray[0]);
-        //
-        // for (let i = 1; i < myArray.length; i++) {
-        //     if (newArray.includes(myArray[i]) == false )
-        //     {
-        //         newArray.push(myArray[i]);
-        //     }
-        // }
-        //
-        // newArray.sort();
-
-        // console.log(myArray);
-        // console.log(newArray);
 
         this.grid_name = this.route.snapshot.queryParams["grid_name"];
 
         this._gridService.getDatas(this.grid_name)
             .subscribe(data => {
                 console.log(data)
+                console.log(this._gridService)
                 },
         error => console.log(error)
     )
