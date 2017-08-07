@@ -4,8 +4,9 @@ node_modules/*
 code/
 launchFlask.bat
 assets/app/global.ts
-public/js/app/global.js
 node_modules/
 static/
 templates/
 /imports/
+'node_modules' 
+public/images/logos voitures/
