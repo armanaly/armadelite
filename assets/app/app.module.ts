@@ -1,6 +1,5 @@
 import {NgModule, APP_INITIALIZER} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-//import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppComponent}  from './app.component';
 import {HttpModule} from "@angular/http";
@@ -47,7 +46,6 @@ function getStepsFirst(_stepService: StepService) {
 @NgModule({
     declarations: [
         AppComponent, MainComponent,
-        // StateComponent, PhotosComponent, ProfileComponent,
         BackButtonComponent, ListButtonsComponent, MultiSelectionComponent,
         PanelBtnComponent, FieldPanelComponent, SaveButtonComponent,
         GridPanelComponent, MenuComponent, FileUploadComponent,

@@ -8,8 +8,8 @@
         "experimentalDecorators": true,
         "removeComments": true,
         "noImplicitAny": false,
-        "outDir": "../public/js/app",
-        "strictNullChecks": true
+        "outDir": "../public/js/app"
+//        ,"strictNullChecks": true
     },
     "files": [
         "./assets/app/boot.ts"
