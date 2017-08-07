@@ -2,7 +2,7 @@
   "name": "appauto",
   "version": "0.0.1",
   "engines": {
-    "node": "6.3.0",
+    "node": "6.11.1",
     "npm": "3.10.3"
   },
   "scripts": {
