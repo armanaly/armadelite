@@ -9,8 +9,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class StepService {
 
     constructor (private _http: Http) {}
-
-    datas;
+    //datas;
     step = new Array();
     steps: StepModel[] = [];
 
@@ -25,7 +24,6 @@ export class StepService {
             .then(response => {
                 console.log(window.location)
 
-                console.log(response.json());
                 const data = response.json();
 
                 this.steps = response.json();
