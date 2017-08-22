@@ -35,6 +35,10 @@ import {SignupComponent} from "./auth/signup.component";
 import {SigninComponent} from "./auth/signin.component";
 import {AuthenticationComponent} from "./auth/authentication.component";
 import {MyAutoFocusDirective} from "./directives/autofocus";
+import {BalletDetailsComponent} from "./components/balletDetails.component";
+import {BalletDetailsService} from "./components/balletDetails.service";
+import {GroupComponent} from "./components/group/group.component";
+import {GroupService} from "./components/group/group.service";
 
 
 
@@ -49,8 +53,9 @@ function getStepsFirst(_stepService: StepService) {
         BackButtonComponent, ListButtonsComponent, MultiSelectionComponent,
         PanelBtnComponent, FieldPanelComponent, SaveButtonComponent,
         GridPanelComponent, MenuComponent, FileUploadComponent,
-        GridDetailsComponent, SignupComponent, SigninComponent,
+        BalletDetailsComponent, SignupComponent, SigninComponent,
         AuthenticationComponent, MyAutoFocusDirective
+        , GroupComponent
     ],
     imports: [
         BrowserModule, FormsModule, ROUTING,
@@ -68,8 +73,8 @@ function getStepsFirst(_stepService: StepService) {
                 },
                 // provideCloudinary(require('cloudinary-core'), { cloud_name: 'havjcqppv' } as CloudinaryConfiguration),
                 CollectionService, SaveService, FileUploadService,
-                MailService, GridPanelService, GridDetailsService,
-                AuthService]
+                MailService, GridPanelService, BalletDetailsService,
+                AuthService, GroupService]
 })
 export class AppModule {
     

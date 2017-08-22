@@ -23,7 +23,7 @@ export class SaveService {
     saveData(currentStep) {
 
             this._formService.arraySteps.push({"step_id": currentStep});
-            let body = JSON.stringify(this._formService.arraySteps);
+            let body = this._formService.arraySteps;
 
             console.log("body");
             console.log(body);
@@ -33,7 +33,7 @@ export class SaveService {
             const headers = new Headers({'Content-Type': 'application/json'});
             // return this._http.post('http://localhost:3000/demand', body, {headers: headers})
             var completeUrl = GlobalVariable.BASE_URL + 'save_datas';
-            return this._http.post(completeUrl, body, {headers: headers})
+            return this._http.post(completeUrl, JSON.stringify(body), {headers: headers})
                 .map(response => response)
                 .catch(error => Observable.throw(error.json()));
         }

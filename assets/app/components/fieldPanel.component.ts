@@ -193,13 +193,7 @@ export class FieldPanelComponent {
 
 
         if (this.tempDisplay){
-            var objFieldsPanel = this._formService.arraySteps.find(y => y["nom"] === this.objStep.name);
-            // console.log(this.objStep.configuration.form_values[0].name);
-            // console.log(this.objStep.name);
-            // console.log(this._formService.arraySteps);
-            //
-             console.log("objFieldsPanel");
-             console.log(objFieldsPanel);
+
 console.log(this.objStep);
             // ADD ALL SPECIFIC CONTROL FOR EACH FIELD
             for (let index = 0; index < this.objStep.configuration.form_values.length; index++) {
@@ -221,9 +215,15 @@ console.log(this.objStep);
                 }
 
                 // SET FIELD VALUE IF A DATA HAS BEEN INSERTED PREVIOUSLY
-                let keyField = objFieldsPanel[this.objStep.name][index];
-                let valueField = keyField[this.objStep.configuration.form_values[index].name];
-                this.myGroup.controls[this.objStep.configuration.form_values[index].name].setValue(valueField);
+                var objFieldsPanel = this._formService.arraySteps.find(y => y["nom"] === this.objStep.name);
+
+                console.log("objFieldsPanel");
+                console.log(objFieldsPanel);
+                if (typeof objFieldsPanel != 'undefined'){
+                    let keyField = objFieldsPanel[this.objStep.name][index];
+                    let valueField = keyField[this.objStep.configuration.form_values[index].name];
+                    this.myGroup.controls[this.objStep.configuration.form_values[index].name].setValue(valueField);
+                }
             }
             this.display = true;
             console.log(this.myGroup);

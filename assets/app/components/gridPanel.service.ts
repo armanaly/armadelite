@@ -16,11 +16,15 @@ export class GridPanelService {
     colTitle_details = [];
     originalData = this.dataGrid;
 
-    getDatas(grid_name){
+    getDatas(grid_name,valeur){
         this.dataGrid = [];
         this.keysName = [];
         this.colTitle = [];
-        let query = "grid_name="+grid_name;
+
+
+        let query = "grid_name="+grid_name+"&filter="+valeur;
+
+
         let headers= new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({ headers: headers });
         var completeUrl = GlobalVariable.BASE_URL+'data_grid?'+query;
@@ -106,10 +110,6 @@ export class GridPanelService {
                 // return objs;
             //})
             .catch(error => Observable.throw(error))
-    }
-
-    updateCheckBox(val){
-
     }
 
     getActivatedGrids(){

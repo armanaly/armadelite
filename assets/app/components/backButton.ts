@@ -58,28 +58,7 @@ export class BackButtonComponent {
                 }
             }
 console.log(this.idxStepObj);
-            // if (this._stepService.steps[this.idxStepObj].conditions.length > 0)
-        // {
-        //     let keyCondition = this._stepService.steps[this.idxStepObj].conditions[0].key;
-        //     let valueCondition = this._stepService.steps[this.idxStepObj].conditions[0].value;
-        //     console.log()
-        //     while (typeof (this._formService.arraySteps.find(x => x[keyCondition] === valueCondition)) != 'undefined'){
-        //     //while (this._formService.arraySteps[stepIndex][keyCondition] != valueCondition){
-        //         console.log("condition pas remplie, je recule de 1 indice dans le tableau. Indice: " + this.idxStepObj);
-        //         this.idxStepObj--;
-        //         if (this._stepService.steps[this.idxStepObj].conditions.length > 0) {
-        //             let keyCondition = this._stepService.steps[this.idxStepObj].conditions[0].key;
-        //             let valueCondition = this._stepService.steps[this.idxStepObj].conditions[0].value;
-        //             console.log(valueCondition);
-        //             console.log(this._formService.arraySteps[0][keyCondition]);
-        //         }
-        //         break;
-        //     }
-        //     console.log('condition remplie, je reste sur l indice: ' + this.idxStepObj)
-        // }
-        // while ( typeof this.currentStep[idxStepObj] == 'undefined' ) {
-        //     this.stepId--;
-        // }
+
 
         }
     console.log(this.idxStepObj);

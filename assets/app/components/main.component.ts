@@ -436,7 +436,9 @@ console.log(this._stepService.steps[0].configuration)
                             // }
                         }
 
-                        this._formService.arraySteps.push({"fileDetails" : arrayFiles});
+                        if (arrayFiles.length > 0 ){
+                            this._formService.arraySteps.push({"fileDetails" : arrayFiles});
+                        }
                         console.log(this._formService.arraySteps);
 
                         //SAVE FORM DATA
@@ -494,7 +496,6 @@ console.log(this._stepService.steps[0].configuration)
                 console.log(this._formService.arraySteps.find(x => x[keyCondition] === valueCondition))
                 // CHECK WHILE CONDITION IS FULLFILLED
                 while (typeof (this._formService.arraySteps.find(x => x[keyCondition] === valueCondition)) === 'undefined'){
-                //while (this._formService.arraySteps[stepIndex][keyCondition] != valueCondition){
                     console.log((typeof (this._formService.arraySteps.find(x => x[keyCondition] === valueCondition))));
                     console.log("condition pas remplie, j'avance de 1 indice dans le tableau. Indice: " + this.indexStepObj);
                     this.indexStepObj++;
@@ -584,6 +585,12 @@ console.log(this._stepService.steps[0].configuration)
                                         // Skip the step if there is only 1 result
                                         console.log("TEST IF ONLY 1 RECORD");
                                         if (data.length == 1) {
+                                            console.log(this.indexStepObj);
+                                            console.log(this._formService.arraySteps[this.indexStepObj]);
+                                            console.log(this._stepService.steps[this.indexStepObj].configuration.form_value.name)
+                                            console.log("data 0")
+                                            console.log(data[0])
+                                            console.log(this._formService.arraySteps[this.indexStepObj][this._stepService.steps[this.indexStepObj].configuration.form_value.name])
                                             this._formService.arraySteps[this.indexStepObj][this._stepService.steps[this.indexStepObj].configuration.form_value.name] = data[0];
                                             this.goToNextStep(this.indexStepObj);
                                         }
@@ -743,7 +750,29 @@ console.log(this._stepService.steps[0].configuration)
         console.log(tmpObj);
         //  this._formService.previous_step_id = this.stepId;
         //  this._formService.arrayStepsIdx = $event.stepIdx;
-        this._formService.arraySteps[this.indexStepObj] = tmpObj;
+
+
+        console.log($event.stepIdx);
+        console.log(this._formService.arraySteps[$event.stepIdx]);
+        console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+        console.log(this.indexStepObj);
+        console.log(this._formService.arraySteps[this.indexStepObj]);
+        console.log(this._formService.arraySteps);
+        let keyToFind = $event.valueName
+        for(let key in this._formService.arraySteps) {
+            for (let property in this._formService.arraySteps[key] ){
+                console.log(this._formService.arraySteps[key].keyToFind);
+                console.log("*****************************************************************")
+                if (property == keyToFind){
+                    this._formService.arraySteps[key] = tmpObj;
+                    break;
+                }
+                console.log(property);
+            }
+
+            console.log($event.valueName);
+        }
+
         console.log("event.stepIdx: " + $event.stepIdx);
         console.log(tmpObj);
         this.goToNextStep($event.stepIdx);

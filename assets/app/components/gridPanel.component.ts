@@ -53,7 +53,7 @@ import {Http} from "@angular/http";
                         <tr *ngFor="let item of _gridService.dataGrid;let j = index">
                             <td *ngFor="let key of _gridService.keysName;let i = index" align="center">
                                                      
-                                <span *ngIf="!filterActivated && this._gridService.colTitle[i].type != 'checkbox' "> {{item[key]}}  </span>
+                                <span *ngIf="!filterActivated && _gridService.colTitle[i].type != 'checkbox' "> {{item[key]}}  </span>
                                 
                                 <span *ngIf="this._gridService.colTitle[i].type == 'checkbox' "> 
                                     <input *ngIf="item[key]" type="checkbox" value="{{item[key]}}" checked (change)=updateCheckBox($event,item) /> 
@@ -61,36 +61,42 @@ import {Http} from "@angular/http";
                                 </span>
                                 <!--<span *ngIf=""-->
                             </td>
-                             <td *ngIf="item.details.activated"><button class="btn btn-success" type="button"><a [routerLink]="['/details', item._id] "> Détail </a> </button></td>
+                            
+                            <!--*ngIf="item.group_mgt"-->
+                            <td ><button class="btn btn-success" type="button"><a [routerLink]="['/groupManagement', item._id, grid_name, valeur] ">{{item.stage}} Group </a> </button></td>
+                            <!-- IF DETAILS IS ACTIVATED IN GRID CONFIG COLLECTION -->
+                            <td *ngIf="item.details.activated"><button class="btn btn-success" type="button"><a [routerLink]="['/details', item._id] "> Detail </a> </button></td>
                             <!-- MODAL <td *ngIf="item.details.activated"><button class="btn btn-success" type="button" data-toggle="modal" data-target="#myModal">DETAIL </button></td>-->
+                            
+                            <!--IF WORKFLOW TYPE BTN TO GO BACK TO CURRENT STEP -->
                             <td *ngIf="this._stepService.steps[0].master_type == 'workflow'"> <button class="btn btn-success" type="button" (click)="goToCurrentStep(item)" value="{{item.step_id}} ">Current step </button></td>
                         
-                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  
-                          <div *ngIf="item.details.activated" class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel"></h4>
-                              </div>
-                              <div class="modal-body">
-                                BODY ICI {{item.detail[0].power}}
-                                <br> {{key}} <br>{{_gridService.keysName_details[0]}}
-                                <div *ngFor="let fields of _gridService.keysName_details">
-                                    {{fields}}
-                                    <!--l-->
-                                    <!--{{fields[0].power}}-->
+                            <!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
+  <!---->
+                          <!--<div *ngIf="item.details.activated" class="modal-dialog" role="document">-->
+                            <!--<div class="modal-content">-->
+                              <!--<div class="modal-header">-->
+                                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                                <!--<h4 class="modal-title" id="myModalLabel"></h4>-->
+                              <!--</div>-->
+                              <!--<div class="modal-body">-->
+                                <!--BODY ICI {{item.detail[0].power}}-->
+                                <!--<br> {{key}} <br>{{_gridService.keysName_details[0]}}-->
+                                <!--<div *ngFor="let fields of _gridService.keysName_details">-->
+                                    <!--{{fields}}-->
+                                    <!--&lt;!&ndash;l&ndash;&gt;-->
+                                    <!--&lt;!&ndash;{{fields[0].power}}&ndash;&gt;-->
+                                <!--&lt;!&ndash;&ndash;&gt;-->
+                                <!--</div>-->
                                 <!---->
-                                </div>
-                                
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                              <!--</div>-->
+                              <!--<div class="modal-footer">-->
+                                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                              <!--</div>-->
+                            <!--</div>-->
+                          <!--</div>-->
+                        <!--</div>-->
                         </tr>
                         
                     </table>
@@ -114,19 +120,32 @@ import {Http} from "@angular/http";
     keysName = [];
     showInput = [];
     filterActivated = false;
+    valeur = "";
 
     ngOnInit() {
 
         this.grid_name = this.route.snapshot.queryParams["grid_name"];
 
-        this._gridService.getDatas(this.grid_name)
-            .subscribe(data => {
-                console.log(data)
-                console.log(this._gridService)
-                },
-        error => console.log(error)
-    )
-
+        this.valeur = this.route.snapshot.queryParams["master_val"];
+        console.log(this.valeur)
+        if(this.valeur != ''){
+            this._gridService.getDatas(this.grid_name, this.valeur)
+                .subscribe(data => {
+                        console.log(data)
+                        console.log(this._gridService)
+                    },
+                    error => console.log(error)
+                )
+        }
+        else {
+            this._gridService.getDatas(this.grid_name, '')
+                .subscribe(data => {
+                    console.log(data)
+                    console.log(this._gridService)
+                    },
+            error => console.log(error)
+        )
+        }
 
         for (let i = 0; i < this._gridService.colTitle.length; i++) {
             this.showInput.push(false);
@@ -168,6 +187,7 @@ import {Http} from "@angular/http";
         console.log(typeof value === 'undefined')
         return (typeof value === 'undefined');
     }
+
 
     updateCheckBox($event, item){
        // let value = $event.target.getAttribute('value');

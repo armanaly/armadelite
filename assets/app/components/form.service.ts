@@ -21,21 +21,22 @@ export class FormService {
         //this._stepService.steps.sort();
         let keyExists = [];
         for (let i of this._stepService.steps) {
-            // console.log(i.step_id);
-            // console.log(i.type);
-
+            console.log(i.step_id);
+            console.log(i.type);
+            console.log(i.name);
           //  let step_id = i.step_id;
             if (i.type == "click_selection" || i.type == 'image_selection' || i.type == "multi_selection") {
 
                 let keyName = i.configuration.form_value.name;
 
-                // J'ajoute une seule fois la variable qui va recevoir le formulaire
-                if (!keyExists.includes(keyName)){
+                // J'ajoute une seule fois la variable que va recevoir le formulaire
+                //check if variable is already in array
+                if (keyExists.indexOf(keyName) == -1){
                     this.arraySteps.push({[keyName]: ""});
                     keyExists.push(keyName);
                 }
-
-
+                console.log("keyExists");
+                console.log((keyExists));
                 // }
                 // TODO voir si il faut relire les form_value dans ce cas car c'est un tableau et plus une variable
             }
@@ -43,8 +44,11 @@ export class FormService {
             if (i.type == "field_panel") {
                 let keysList = [];
                 for (let j of i.configuration.form_values) {
-                        let keyName = j.name;
-                        keysList.push({[keyName]: ""})
+
+                    let keyName = j.name;
+                    keysList.push({[keyName]: ""})
+                    console.log(keysList)
+                    console.log(keyName)
                 }
                 this.arraySteps.push({"nom": i.name ,[i.name]: keysList});
             }
@@ -58,6 +62,11 @@ export class FormService {
 
             }
         }
+
+
+
+
+        console.log(this.arraySteps);
             // console.log(this);
         }
 }
