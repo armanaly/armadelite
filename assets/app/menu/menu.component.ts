@@ -10,13 +10,45 @@ import {GlobalVariable} from "../global";
     
     <div class="row" align="center" *ngIf="ready == true">
 
-            <div  *ngFor="let grid of grids" class="col-md-3">
-                <!--<button class="btn btn-success" type="button" (click)="showGrid(grid.name)" value="{{grid.name}} ">{{grid.name}} -->
-                <!--</button>-->
-                <button type="button" class="btn btn-success">
-                    
-                    <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid.name}"> {{grid.name}} </a>
-                </button>
+            <div *ngIf="preMenu == 1"> 
+                <!--steps from admin_ballet-->
+                    <!--step 1 { type : buttons } pass stage_name to step 2-->
+                    <!--step 2 {type: grids} get all grids from stage_name-->
+                <!--steps from grids-->
+                
+                 <div *ngFor="let btn of preMenuLst" class="col-md-3">
+                    <button class="btn btn-success" type="button" 
+                        (click)="getGridsBtn($event, btn.value)"
+                        value="{{btn.children}}">{{btn.value}}
+                    </button>
+                </div>
+            
+            
+            </div>
+            
+            <div *ngIf="preMenu == 2"> 
+                <div *ngFor="let grid of grids" class="col-md-3">
+                    <!--<button class="btn btn-success" type="button" (click)="showGrid(grid.name)" value="{{grid.name}} ">{{grid.name}} -->
+                    <!--</button>-->
+                    <div *ngIf="grid.display">
+                        <button type="button" class="btn btn-success" >
+                            <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid.name, 'master_val': val_level2}">{{grid.name}} </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            
+           <div  *ngIf="preMenu == 0"> 
+                <div *ngFor="let grid of grids" class="col-md-3">
+                    <!--<button class="btn btn-success" type="button" (click)="showGrid(grid.name)" value="{{grid.name}} ">{{grid.name}} -->
+                    <!--</button>-->
+                    <span *ngIf="grid.display">
+                        <button type="button" class="btn btn-success" >
+                            <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid.name}">{{grid.name}} </a>
+                        </button>
+                    </span>
+                </div>
             </div>
             <!--<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/step']"> Nouveau flow</a></button></div>-->
 
@@ -32,13 +64,13 @@ export class MenuComponent{
     grids = [];
     ready = false;
     appName = '';
-
+    preMenu = 0;
+    preMenuLst = [];
+    level2 = false;
+    val_level2 = '';
     ngOnInit(){
-console.log(window);
-
         this.appName = this.route.snapshot.queryParams["app"];
-        console.log(this.appName);
-             if (this._stepService.steps[0].master_type == 'form'){
+        if (this._stepService.steps[0].master_type == 'form' ){
                  this.router.navigate(['/step']);
              }else{
                  this._gridService.getActivatedGrids()
@@ -46,28 +78,63 @@ console.log(window);
                          gridsList => {
                              console.log(gridsList)
                              this.grids = gridsList;
-                                this.ready = true;
+                             for (let j = 0; j < this.grids.length; j++) {
+                                 console.log(this.grids[j].name);
+                                 console.log(this.grids[j].listBtn);
+                                  if (typeof this.grids[j].listBtn != 'undefined'){
+                                      this.preMenu = 1;
+                                      this.preMenuLst = this.grids[j].listBtn;
+                                     console.log(this.grids[j].listBtn);
+                                 }
+                             }
+                                 this.ready = true;
                      }), error => console.log(error)
              }
     }
+
+
+    getGridsBtn($event, val){
+        var gridList = $event.target.value;
+        this.val_level2 = val;
+        console.log(gridList);
+        console.log(val)
+        // TOUS LES GRIDS de la collection grids
+        for (let idxGrid in this.grids){
+            //cas où un prémenu exist alors on a dans grids un "type": "listBtn"
+
+            if (typeof this.grids[idxGrid].listBtn != 'undefined'){
+            {
+                for (let i in this.grids[idxGrid].listBtn){
+                    if (this.grids[idxGrid].listBtn[i].value == val){
+                        console.log(this.grids[idxGrid].listBtn[i]);
+                        console.log(this.grids[idxGrid].listBtn[i].value);
+                        console.log(this.grids[idxGrid].listBtn[i].children);
+                        for (let j in this.grids) {
+                            console.log(this.grids[j].name)
+                            console.log(this.grids[idxGrid].listBtn[i].children);
+                            console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+                            if (this.grids[idxGrid].listBtn[i].children.indexOf(this.grids[j].name) > -1 )
+                            {
+                                this.grids[j].display = true;
+                            }
+                            else{
+                                this.grids[j].display = false;
+                            }
+                        }
+                        console.log(this.grids)
+                        //this.grids = this.grids[idxGrid].listBtn[i].children;
+                        // je dois uniquement garder les btn de this.grids qui sont dans la liste children
+
+                    }
+
+                }
+
+            }
+            }
+        }
+        this.preMenu = 2;
+        this.level2 = true;
+    }
+
 }
 
-    // showGrid(){
-    // let navigationExtras: NavigationExtras = {
-    //     queryParams: { 'current_id': item.step_id, '_id': item._id }
-    //
-    // };
-
-// let navigationExtras: NavigationExtras = {
-//     preserveQueryParams: true,
-//     preserveFragment: true,
-//     queryParams: {'grid_name': gridName},
-//     fragment: 'anchor'
-// };
-// this.router.navigate(['grid'], navigationExtras);
-
-// this._gridService.getDatas(gridsList)
-//     .subscribe(data => {},
-//         error => console.log(error)
-//     )
-// }, error => console.log(error)
