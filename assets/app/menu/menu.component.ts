@@ -25,11 +25,12 @@ import {GlobalVariable} from "../global";
                     <!--step 2 {type: grids} get all grids from stage_name-->
                 <!--steps from grids-->
                 
-                 <div *ngFor="let btn of preMenuLst" class="col-md-3">
+                 <div *ngFor="let btn of preMenuLst">
                     <button class="btn btn-primary btn-lg" type="button" 
                         (click)="getGridsBtn($event, btn.value)"
                         value="{{btn.children}}">{{btn.value}}
                     </button>
+                    <br>
                 </div>
             
             
