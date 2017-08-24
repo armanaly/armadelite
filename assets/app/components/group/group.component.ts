@@ -9,16 +9,16 @@ import {GridPanelService} from "../gridPanel.service";
     selector: 'group',
     template: `
     
-      <nav class="form-navArrow">
+      <nav class="form-navArrow" *ngIf="display">
             <a [routerLink]="['/grid']" replaceUrl="True" [queryParams]="{'grid_name': grid.name, 'master_val': val_level2}">
             <button><i class="glyphicon glyphicon-triangle-left" (click)="this.router.navigate(['/'])" >BACK</i></button></a>
       </nav>
-    <div class="page-header" align="center">
-     <h1 *ngIf="stage != ''">{{stage}} - {{course_type}}</h1>
-   </div>
+
     
     <div class="panel-body" *ngIf="display">
-     
+       <div class="page-header" align="center">
+     <h1 *ngIf="stage != ''">{{stage}} - {{course_type}}</h1>
+   </div>  
     
      <table class="table table-hover table-condensed"  >
                         
