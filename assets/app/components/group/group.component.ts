@@ -15,10 +15,10 @@ import {GridPanelService} from "../gridPanel.service";
       </nav>
 
     
-    <div class="panel-body" *ngIf="display">
-       <div class="page-header" align="center">
-     <h1 *ngIf="stage != ''">{{stage}} - {{course_type}}</h1>
-   </div>  
+    <div  *ngIf="display"> 
+       <div align="center">
+          <h1 *ngIf="stage != ''">{{stage}} - {{course_type}}</h1>
+        </div>  
     
      <table class="table table-hover table-condensed"  >
                         
