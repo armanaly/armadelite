@@ -10,9 +10,16 @@ import {GridPanelService} from "../gridPanel.service";
     template: `
     
       <nav class="form-navArrow">
-            <button><i class="glyphicon glyphicon-triangle-left" (click)="this.router.navigate(['/'])" >BACK</i></button>
+            <a [routerLink]="['/grid']" replaceUrl="True" [queryParams]="{'grid_name': grid.name, 'master_val': val_level2}">
+            <button><i class="glyphicon glyphicon-triangle-left" (click)="this.router.navigate(['/'])" >BACK</i></button></a>
       </nav>
+    <div class="page-header" align="center">
+     <h1 *ngIf="stage != ''">{{stage}} - {{course_type}}</h1>
+   </div>
+    
     <div class="panel-body" *ngIf="display">
+     
+    
      <table class="table table-hover table-condensed"  >
                         
                         <tr >
@@ -36,8 +43,8 @@ import {GridPanelService} from "../gridPanel.service";
         <span *ngIf="currentGroup != ''"> Current group: {{this.currentGroup}}</span>
         <span>
             Set to group: 
-            <select id="groups" (change)="updateGroup($event)">
-                <option *ngIf="currentGroup == '' " > --</option>
+            <select id="groups" (change)="updateGroup($event)"  >
+                <option> --</option>
                 <option *ngFor="let group of this.groups" value="{{group}}">{{group}}</option>
             </select>
         </span>
@@ -75,8 +82,9 @@ export class GroupComponent {
         this._groupService.getGroups(this.obj_id, this.course_type, this.stage)
             .subscribe(data => {
                     this.values = data;
-                    this.groups = this.values[this.values.length - 1].groups;
-                    this.values.pop();
+                    // this.groups = this.values[this.values.length - 1].groups;
+                    // this.values.pop();
+                console.log(this.values)
                     this.currentGroup = this.student['group'];
                     console.log(this.groups);
                     this.display = true;

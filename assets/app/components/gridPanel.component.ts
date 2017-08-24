@@ -20,11 +20,14 @@ import {Http} from "@angular/http";
               <nav class="form-navArrow">
                         <button><i class="glyphicon glyphicon-triangle-left" (click)="this.router.navigate(['/'])" ></i></button>
               </nav>
-                <div class="panel-body">
-               <div class="page-header">
-                 <h1>{{grid_name}}</h1>
+               
+               <div class="page-header" align="center">
+                 <h1 *ngIf="valeur != ''">{{valeur}}</h1>
+                 <h2>{{grid_name}}</h2>
                </div>
-                <div class="table-responsive" *ngIf="display">
+               
+                <div class="panel-body">
+               <div class="table-responsive" *ngIf="display">
                     <table class="table table-hover table-condensed"  >
                         <tr>
                             <th *ngFor="let obj of _gridService.colTitle;let i = index">
@@ -63,9 +66,9 @@ import {Http} from "@angular/http";
                             </td>
                             
                             <!--*ngIf="item.group_mgt"-->
-                            <td ><button class="btn btn-success" type="button"><a [routerLink]="['/groupManagement', item._id, grid_name, valeur] ">{{item.stage}} Group </a> </button></td>
+                            <td ><a [routerLink]="['/groupManagement', item._id, grid_name, valeur] "><button class="btn btn-success" type="button">{{item.stage}} Group </button></a> </td>
                             <!-- IF DETAILS IS ACTIVATED IN GRID CONFIG COLLECTION -->
-                            <td *ngIf="item.details.activated"><button class="btn btn-success" type="button"><a [routerLink]="['/details', item._id] "> Detail </a> </button></td>
+                            <td *ngIf="item.details.activated"><a [routerLink]="['/details', item._id] "><button class="btn btn-success" type="button"> Detail </button></a> </td>
                             <!-- MODAL <td *ngIf="item.details.activated"><button class="btn btn-success" type="button" data-toggle="modal" data-target="#myModal">DETAIL </button></td>-->
                             
                             <!--IF WORKFLOW TYPE BTN TO GO BACK TO CURRENT STEP -->

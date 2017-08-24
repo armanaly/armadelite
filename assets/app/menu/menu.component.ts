@@ -8,8 +8,17 @@ import {GlobalVariable} from "../global";
     template: `
 
     
-    <div class="row" align="center" *ngIf="ready == true">
+        <div *ngIf="backBtn" align="left">
+            <nav class="form-navArrow">
+                
+                
+                <button (click)="onClick()" class="tg-bn4o" ><i class="glyphicon glyphicon-triangle-left" > BACK </i></button>
+            </nav>
+        </div>
 
+    <div class="panel-body" *ngIf="ready == true">
+
+        
             <div *ngIf="preMenu == 1"> 
                 <!--steps from admin_ballet-->
                     <!--step 1 { type : buttons } pass stage_name to step 2-->
@@ -17,7 +26,7 @@ import {GlobalVariable} from "../global";
                 <!--steps from grids-->
                 
                  <div *ngFor="let btn of preMenuLst" class="col-md-3">
-                    <button class="btn btn-success" type="button" 
+                    <button class="btn btn-primary btn-lg" type="button" 
                         (click)="getGridsBtn($event, btn.value)"
                         value="{{btn.children}}">{{btn.value}}
                     </button>
@@ -27,13 +36,18 @@ import {GlobalVariable} from "../global";
             </div>
             
             <div *ngIf="preMenu == 2"> 
-                <div *ngFor="let grid of grids" class="col-md-3">
+                
+                 <div><h1>{{val_level2}}</h1></div>
+                <div *ngFor="let grid of grids" >
+                   
                     <!--<button class="btn btn-success" type="button" (click)="showGrid(grid.name)" value="{{grid.name}} ">{{grid.name}} -->
                     <!--</button>-->
                     <div *ngIf="grid.display">
-                        <button type="button" class="btn btn-success" >
-                            <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid.name, 'master_val': val_level2}">{{grid.name}} </a>
-                        </button>
+                        
+                            <a [routerLink]="['/grid']" replaceUrl="True" [queryParams]="{'grid_name': grid.name, 'master_val': val_level2}">
+                                <button type="button" class="btn btn-primary btn-lg" > {{grid.name}}</button> 
+                            </a>
+                                
                     </div>
                 </div>
             </div>
@@ -44,7 +58,7 @@ import {GlobalVariable} from "../global";
                     <!--<button class="btn btn-success" type="button" (click)="showGrid(grid.name)" value="{{grid.name}} ">{{grid.name}} -->
                     <!--</button>-->
                     <span *ngIf="grid.display">
-                        <button type="button" class="btn btn-success" >
+                        <button type="button" class="btn btn-primary btn-lg" >
                             <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid.name}">{{grid.name}} </a>
                         </button>
                     </span>
@@ -65,6 +79,7 @@ export class MenuComponent{
     ready = false;
     appName = '';
     preMenu = 0;
+    backBtn = false;
     preMenuLst = [];
     level2 = false;
     val_level2 = '';
@@ -72,24 +87,25 @@ export class MenuComponent{
         this.appName = this.route.snapshot.queryParams["app"];
         if (this._stepService.steps[0].master_type == 'form' ){
                  this.router.navigate(['/step']);
-             }else{
-                 this._gridService.getActivatedGrids()
-                     .then(
-                         gridsList => {
-                             console.log(gridsList)
-                             this.grids = gridsList;
-                             for (let j = 0; j < this.grids.length; j++) {
-                                 console.log(this.grids[j].name);
-                                 console.log(this.grids[j].listBtn);
-                                  if (typeof this.grids[j].listBtn != 'undefined'){
-                                      this.preMenu = 1;
-                                      this.preMenuLst = this.grids[j].listBtn;
-                                     console.log(this.grids[j].listBtn);
-                                 }
-                             }
-                                 this.ready = true;
-                     }), error => console.log(error)
              }
+        else {
+             this._gridService.getActivatedGrids()
+                 .then(
+                     gridsList => {
+                         console.log(gridsList)
+                         this.grids = gridsList;
+                         for (let j = 0; j < this.grids.length; j++) {
+                             console.log(this.grids[j].name);
+                             console.log(this.grids[j].listBtn);
+                              if (typeof this.grids[j].listBtn != 'undefined'){
+                                  this.preMenu = 1;
+                                  this.preMenuLst = this.grids[j].listBtn;
+                                 console.log(this.grids[j].listBtn);
+                             }
+                         }
+                             this.ready = true;
+                 }), error => console.log(error)
+         }
     }
 
 
@@ -133,7 +149,13 @@ export class MenuComponent{
             }
         }
         this.preMenu = 2;
+        this.backBtn = true;
         this.level2 = true;
+    }
+
+    onClick() {
+        this.preMenu = 1;
+        this.backBtn = false;
     }
 
 }
