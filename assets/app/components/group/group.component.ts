@@ -10,8 +10,8 @@ import {GridPanelService} from "../gridPanel.service";
     template: `
     
       <nav class="form-navArrow" *ngIf="display">
-            <a [routerLink]="['/grid']" replaceUrl="True" [queryParams]="{'grid_name': grid.name, 'master_val': val_level2}">
-            <button><i class="glyphicon glyphicon-triangle-left" (click)="this.router.navigate(['/'])" >BACK</i></button></a>
+            <a [routerLink]="['/grid']" [queryParams]="{'grid_name': course_type, 'master_val': stage}">
+            <button><i class="glyphicon glyphicon-triangle-left" >BACK</i></button></a>
       </nav>
 
     
@@ -77,13 +77,14 @@ export class GroupComponent {
         });
        console.log(this.obj_id)
        console.log(this._gridService.dataGrid);
-       this.student = this._gridService.dataGrid[this._gridService.dataGrid.findIndex(x => x._id == this.obj_id)]
+       this.student = this._gridService.dataGrid[this._gridService.dataGrid.findIndex(x => x._id == this.obj_id)];
+        console.log(this.student)
        console.log(this.course_type)
         this._groupService.getGroups(this.obj_id, this.course_type, this.stage)
             .subscribe(data => {
                     this.values = data;
-                    // this.groups = this.values[this.values.length - 1].groups;
-                    // this.values.pop();
+                    this.groups = this.values[this.values.length - 1].groups;
+                    this.values.pop();
                 console.log(this.values)
                     this.currentGroup = this.student['group'];
                     console.log(this.groups);

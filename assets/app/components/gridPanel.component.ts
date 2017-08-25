@@ -128,7 +128,6 @@ import {Http} from "@angular/http";
     ngOnInit() {
 
         this.grid_name = this.route.snapshot.queryParams["grid_name"];
-
         this.valeur = this.route.snapshot.queryParams["master_val"];
         console.log(this.valeur)
         if(this.valeur != ''){
