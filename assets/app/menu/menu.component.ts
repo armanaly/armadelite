@@ -30,7 +30,7 @@ import {GlobalVariable} from "../global";
                         (click)="getGridsBtn($event, btn.value)"
                         value="{{btn.children}}">{{btn.value}}
                     </button>
-                    <br>
+                    <br><br>
                 </div>
             
             
@@ -50,6 +50,7 @@ import {GlobalVariable} from "../global";
                             </a>
                                 
                     </div>
+                    <br><br>
                 </div>
             </div>
             
