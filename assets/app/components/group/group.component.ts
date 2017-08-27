@@ -11,7 +11,7 @@ import {GridPanelService} from "../gridPanel.service";
     
       <nav class="form-navArrow" *ngIf="display">
             <a [routerLink]="['/grid']" [queryParams]="{'grid_name': course_type, 'master_val': stage}">
-            <button><i class="glyphicon glyphicon-triangle-left" >BACK</i></button></a>
+            <button><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
       </nav>
 
     

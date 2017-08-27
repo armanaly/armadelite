@@ -17,10 +17,12 @@ import {Http} from "@angular/http";
             <!--</div>-->
           
               
-              <nav class="form-navArrow">
-                        <button><i class="glyphicon glyphicon-triangle-left" (click)="this.router.navigate(['/'])" ></i></button>
-              </nav>
-               
+              
+              <div>
+                <nav class="form-navArrow">
+                    <button><i class="glyphicon glyphicon-triangle-left" (click)="this.router.navigate(['/'])" ></i></button>
+                </nav>
+               </div>
                <div class="page-header" align="center">
                  <h1 *ngIf="valeur != ''">{{valeur}}</h1>
                  <h2>{{grid_name}}</h2>
@@ -64,6 +66,9 @@ import {Http} from "@angular/http";
                                 </span>
                                 <!--<span *ngIf=""-->
                             </td>
+                            
+                            <td><a [routerLink]="['/editStudent', item._id] "> <button type="button" > <i class="glyphicon glyphicon-edit"> </i></button></a> </td>
+
                             
                             <!--*ngIf="item.group_mgt"-->
                             <td ><a [routerLink]="['/groupManagement', item._id, grid_name, valeur] "><button class="btn btn-success" type="button">{{item.stage}} Group </button></a> </td>

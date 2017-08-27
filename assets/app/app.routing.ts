@@ -10,6 +10,7 @@ import {SignupComponent} from "./auth/signup.component";
 import {AuthenticationComponent} from "./auth/authentication.component";
 import {BalletDetailsComponent} from "./components/balletDetails.component";
 import {GroupComponent} from "./components/group/group.component";
+import {EditStudentComponent} from "./components/student/editStudent.component";
 
 const APP_ROUTES: Routes = [
     {path: '', component:MenuComponent  },    //
@@ -21,7 +22,8 @@ const APP_ROUTES: Routes = [
     {path: 'details/:record', component: BalletDetailsComponent},
     {path: 'auth/signup', component: SignupComponent},
     {path: 'menu', component:MenuComponent},
-    {path: 'groupManagement/:record/:course_type/:stage', component: GroupComponent}
+    {path: 'groupManagement/:record/:course_type/:stage', component: GroupComponent},
+    {path: 'editStudent/:record', component: EditStudentComponent}
 ];
 
 export const ROUTING = RouterModule.forRoot(APP_ROUTES);

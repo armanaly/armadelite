@@ -40,7 +40,7 @@ import {BalletDetailsService} from "./balletDetails.service";
     <!--<li role="presentation"><a href="#tech" aria-controls="tech" role="tab" data-toggle="tab">Caractéristiques techniques</a></li>-->
   </ul>
                   
-        <div class="tab-content">  
+        <div class="tab-content" >  
             
             <!-- TAB ALL INFOS -->
             <div role="tabpanel" class="tab-pane active" id="home">
