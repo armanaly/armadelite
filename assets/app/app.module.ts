@@ -39,6 +39,7 @@ import {BalletDetailsComponent} from "./components/balletDetails.component";
 import {BalletDetailsService} from "./components/balletDetails.service";
 import {GroupComponent} from "./components/group/group.component";
 import {GroupService} from "./components/group/group.service";
+import {EditStudentComponent} from "./components/student/editStudent.component";
 
 
 
@@ -55,7 +56,7 @@ function getStepsFirst(_stepService: StepService) {
         GridPanelComponent, MenuComponent, FileUploadComponent,
         BalletDetailsComponent, SignupComponent, SigninComponent,
         AuthenticationComponent, MyAutoFocusDirective
-        , GroupComponent
+        , GroupComponent, EditStudentComponent
     ],
     imports: [
         BrowserModule, FormsModule, ROUTING,

@@ -32,6 +32,7 @@ import {BalletDetailsService} from "./balletDetails.service";
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Details</a></li>
+    <li role="presentation"><a href="#registration" aria-controls="registration" role="tab" data-toggle="tab">Registration</a></li>
     <li role="presentation"><a href="#notes" aria-controls="notes" role="tab" data-toggle="tab">Notes</a></li>
     
     <!--<li role="presentation"><a href="#photos" aria-controls="photos" role="tab" data-toggle="tab"  *ngIf="images_to_show">Photos</a></li>-->
@@ -39,7 +40,7 @@ import {BalletDetailsService} from "./balletDetails.service";
     <!--<li role="presentation"><a href="#tech" aria-controls="tech" role="tab" data-toggle="tab">Caractéristiques techniques</a></li>-->
   </ul>
                   
-        <div class="tab-content">  
+        <div class="tab-content" >  
             
             <!-- TAB ALL INFOS -->
             <div role="tabpanel" class="tab-pane active" id="home">
@@ -52,15 +53,21 @@ import {BalletDetailsService} from "./balletDetails.service";
                       </tr>
                       <tr>
                         <td class="tg-txgi">Birthday</td>
-                        <td class="tg-6k2t"></td>
+                        <td class="tg-6k2t">{{record_details.dob}}</td>
                         <td class="tg-txgi">Age</td>
                         <td class="tg-6k2t">{{record_details.age}}</td>
                       </tr>
                       <tr>
                         <td class="tg-txgi">Country</td>
-                        <td class="tg-6k2t">{{record_details.profile[4].country}}</td>
+                        <td class="tg-6k2t">{{record_details.profile[6].country}}</td>
                         <td class="tg-txgi">City</td>
-                        <td class="tg-6k2t">{{record_details.profile[5].city}}</td>
+                        <td class="tg-6k2t">{{record_details.profile[7].city}}</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-txgi">BECA</td>
+                        <td class="tg-6k2t">{{record_details.BECA}}</td>
+                        <td class="tg-txgi">DNI</td>
+                        <td class="tg-6k2t">{{record_details.DNI}}</td>
                       </tr>
                       <tr>
                         <th class="tg-yw4l"><span class="glyphicon glyphicon-earphone"> {{record_details.profile[2].phone}}</span></th><td class="tg-txgi"></td>
@@ -120,6 +127,41 @@ import {BalletDetailsService} from "./balletDetails.service";
                     </table>
                 </div>
                 </div>
+            
+             <!-- REGISTRATION -->
+            <div role="tabpanel" class="tab-pane" id="registration" >
+                 <div class="tg-wrap">
+                    <table class="tg">
+                      <tr>
+                        <th></th>
+                        <th class="tg-bn4o" colspan="3">{{record_details.profile[0].nom}} {{record_details.profile[1].firstname}} </th>
+                      </tr>
+                      <tr>
+                        <td class="tg-txgi">Course</td>
+                        <td class="tg-6k2t">{{record_details.course_type}}</td>
+                        <td class="tg-txgi">Group</td>
+                        <td class="tg-6k2t">{{record_details.group}}</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-txgi">Duration</td>
+                        <td class="tg-6k2t">{{record_details.duration}}</td>
+                        <td class="tg-txgi">Residence</td>
+                        <td class="tg-6k2t">{{record_details.residence}}</td>
+                      
+                      </tr>
+                      <tr>
+                        <td class="tg-txgi">BECA</td>
+                        <td class="tg-6k2t">{{record_details.BECA}}</td>
+                        <td class="tg-txgi">DNI</td>
+                        <td class="tg-6k2t">{{record_details.DNI}}</td>
+                      </tr>
+                      <tr *ngIf="record_details.course_type == 'Professional'">
+                        <td class="tg-txgi" >Audition place</td>
+                        <td class="tg-6k2t" >{{record_details.audition}}</td>
+                      </tr>
+                      </table></div>
+            </div>   
+                
                 
             <!-- NOTES -->
             <div role="tabpanel" class="tab-pane" id="notes" >

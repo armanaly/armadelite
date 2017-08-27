@@ -9,10 +9,17 @@ import {GridPanelService} from "../gridPanel.service";
     selector: 'group',
     template: `
     
-      <nav class="form-navArrow">
-            <button><i class="glyphicon glyphicon-triangle-left" (click)="this.router.navigate(['/'])" >BACK</i></button>
+      <nav class="form-navArrow" *ngIf="display">
+            <a [routerLink]="['/grid']" [queryParams]="{'grid_name': course_type, 'master_val': stage}">
+            <button><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
       </nav>
-    <div class="panel-body" *ngIf="display">
+
+    
+    <div  *ngIf="display"> 
+       <div align="center">
+          <h1 *ngIf="stage != ''">{{stage}} - {{course_type}}</h1>
+        </div>  
+    
      <table class="table table-hover table-condensed"  >
                         
                         <tr >
@@ -36,8 +43,8 @@ import {GridPanelService} from "../gridPanel.service";
         <span *ngIf="currentGroup != ''"> Current group: {{this.currentGroup}}</span>
         <span>
             Set to group: 
-            <select id="groups" (change)="updateGroup($event)">
-                <option *ngIf="currentGroup == '' " > --</option>
+            <select id="groups" (change)="updateGroup($event)"  >
+                <option> --</option>
                 <option *ngFor="let group of this.groups" value="{{group}}">{{group}}</option>
             </select>
         </span>
@@ -70,13 +77,14 @@ export class GroupComponent {
         });
        console.log(this.obj_id)
        console.log(this._gridService.dataGrid);
-       this.student = this._gridService.dataGrid[this._gridService.dataGrid.findIndex(x => x._id == this.obj_id)]
+       this.student = this._gridService.dataGrid[this._gridService.dataGrid.findIndex(x => x._id == this.obj_id)];
+        console.log(this.student)
        console.log(this.course_type)
         this._groupService.getGroups(this.obj_id, this.course_type, this.stage)
             .subscribe(data => {
                     this.values = data;
-                    // this.groups = this.values[this.values.length - 1].groups;
-                    // this.values.pop();
+                    this.groups = this.values[this.values.length - 1].groups;
+                    this.values.pop();
                 console.log(this.values)
                     this.currentGroup = this.student['group'];
                     console.log(this.groups);
