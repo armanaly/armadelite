@@ -9,7 +9,6 @@ import {GridPanelService} from "../gridPanel.service";
     selector: 'group',
     template: `
     
-<<<<<<< HEAD:assets/app/components/ballet/group.component.ts
      <nav class="form-navArrow" *ngIf="display">
         <a [routerLink]="['/grid']" [queryParams]="{'grid_name': course_type, 'master_val': stage}">
         <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
@@ -21,37 +20,6 @@ import {GridPanelService} from "../gridPanel.service";
 
     <div class="panel-body"  *ngIf="display"> 
         <div>
-=======
-      <nav class="form-navArrow" *ngIf="display">
-            <a [routerLink]="['/grid']" [queryParams]="{'grid_name': course_type, 'master_val': stage}">
-            <button><i class="glyphicon glyphicon-triangle-left" >BACK</i></button></a>
-      </nav>
-
-    
-    <div  *ngIf="display"> 
-       <div align="center">
-          <h1 *ngIf="stage != ''">{{stage}} - {{course_type}}</h1>
-        </div>  
-    
-     <table class="table table-hover table-condensed"  >
-                        
-                        <tr >
-                            <td></td>
-                            <td>WEEK 1</td>
-                            <td>WEEK 2</td>
-                            <td>WEEK 3</td>
-                        </tr>
-                        <tr *ngFor="let item of this.values">
-                            <!--<div ngIf="typeOf (item.group) != 'undefined'">-->
-                                <td>{{item.group}}</td>
-                                <td *ngFor="let peoples of item.lst"> 
-                                   {{peoples.people}} 
-                                </td>
-                            <!--</div>-->
-                        </tr>
-        </table>
-        <span>
->>>>>>> d1fa1eedbea399ac5399c1fa03a123a371822cea:assets/app/components/group/group.component.ts
             {{student.profile_nom}} {{student.profile_firstname}} - Number of weeks: {{student.duration}} 
         </div>
         <span>

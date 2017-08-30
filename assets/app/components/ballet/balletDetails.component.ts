@@ -59,15 +59,9 @@ import {BalletDetailsService} from "./balletDetails.service";
                       </tr>
                       <tr>
                         <td class="tg-txgi">Country</td>
-                        <td class="tg-6k2t">{{record_details.profile[6].country}}</td>
+                        <td class="tg-6k2t">{{record_details.profile[4].country}}</td>
                         <td class="tg-txgi">City</td>
-                        <td class="tg-6k2t">{{record_details.profile[7].city}}</td>
-                      </tr>
-                      <tr>
-                        <td class="tg-txgi">BECA</td>
-                        <td class="tg-6k2t">{{record_details.BECA}}</td>
-                        <td class="tg-txgi">DNI</td>
-                        <td class="tg-6k2t">{{record_details.DNI}}</td>
+                        <td class="tg-6k2t">{{record_details.profile[5].city}}</td>
                       </tr>
                       <tr>
                         <td class="tg-txgi">BECA</td>
