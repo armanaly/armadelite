@@ -5,7 +5,7 @@ export class Student {
         public DNI: string,
         public BECA: string,
         public father: string,
-        public intolerencia: string,
+        public intolerancia: string,
         public email2: string,
         public phone2: string
     ) {  }

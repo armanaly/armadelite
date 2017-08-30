@@ -72,16 +72,16 @@ import {StudentService} from "./student.service";
                 </div>
                 
                 <div class="form-group">
-                    <label for="Intolerence" class="col-sm-2 control-label" >Intolerence</label>
+                    <label for="Intolerance" class="col-sm-2 control-label" >Intolerance</label>
                     <div class="col-sm-10">
                         <input 
                             class="form-control"
                             type="text"
-                            id="intolerencia"
-                            name="intolerencia"
-                            value="{{student_info.intolerencia}}"
-                            [(ngModel)]="model.intolerencia" 
-                            name="intolerencia"
+                            id="intolerancia"
+                            name="intolerancia"
+                            value="{{student_info.intolerancia}}"
+                            [(ngModel)]="model.intolerancia" 
+                            name="intolerancia"
                             #intolerencia="ngModel">
                     </div>
                 </div>
@@ -156,7 +156,7 @@ export class StudentComponent {
             .subscribe(data => {
                     console.log(data)
                     this.student_info = data;
-                    this.model = new Student(data._id,data.DNI,data.BECA, data.father, data.intolerencia);
+                    this.model = new Student(data._id,data.DNI,data.BECA, data.father, data.intolerancia, data.email2, data.phone2);
                     console.log(this.model);
                     this.display_edit = true;
                 },
