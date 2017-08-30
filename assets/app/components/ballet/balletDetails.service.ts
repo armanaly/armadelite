@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
-import {StepModel} from "../Engine/stepModel";
-import { GlobalVariable } from "../global";
+import {StepModel} from "../../Engine/stepModel";
+import { GlobalVariable } from "../../global";
 import {Http, Headers, RequestOptions} from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import includes = require("core-js/fn/string/includes");

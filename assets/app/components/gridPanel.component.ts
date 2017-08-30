@@ -6,26 +6,18 @@ import {Http} from "@angular/http";
 @Component({
     selector: 'grid-panel',
     template: `
-            <!--<div align="left">-->
-                <!--<nav>-->
-                <!---->
-                    <!--<div class="col-md-3">-->
-                        <!--<button type="button" class="btn btn-success glyphicon glyphicon-plus" (click)="this.router.navigate(['/step'])" >Add new line</button>-->
-                    <!--</div>-->
-                <!--</nav>-->
-                <!---->
-            <!--</div>-->
-          
-              
-              
               <div>
                 <nav class="form-navArrow">
-                    <button><i class="glyphicon glyphicon-triangle-left" (click)="this.router.navigate(['/'])" ></i></button>
+                   <a [routerLink]="['/']">
+                   <!--<a [routerLink]="['/menu']" [queryParams]="{'firstLoad': false}">-->
+                       <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
                 </nav>
-               </div>
-               <div class="page-header" align="center">
-                 <h1 *ngIf="valeur != ''">{{valeur}}</h1>
-                 <h2>{{grid_name}}</h2>
+              </div>
+               
+               
+               <div class="panel-heading panel-heading-custom" align="center">
+                 <h2 *ngIf="valeur != ''">{{valeur}}</h2>
+                 <h3>{{grid_name}}</h3>
                </div>
                
                 <div class="panel-body">
@@ -64,16 +56,29 @@ import {Http} from "@angular/http";
                                     <input *ngIf="item[key]" type="checkbox" value="{{item[key]}}" checked (change)=updateCheckBox($event,item) /> 
                                     <input *ngIf="item[key] == false" type="checkbox" value="{{item[key]}}" (change)=updateCheckBox($event,item) /> 
                                 </span>
-                                <!--<span *ngIf=""-->
                             </td>
                             
-                            <td><a [routerLink]="['/editStudent', item._id] "> <button type="button" > <i class="glyphicon glyphicon-edit"> </i></button></a> </td>
+                            <td>
+                                <a [routerLink]="['/editStudent', item._id] "> 
+                                    <button class="btn btn-primary" type="button" > 
+                                        <i class="glyphicon glyphicon-edit"> </i>
+                                    </button>
+                                </a> 
+                            </td>
 
                             
                             <!--*ngIf="item.group_mgt"-->
-                            <td ><a [routerLink]="['/groupManagement', item._id, grid_name, valeur] "><button class="btn btn-success" type="button">{{item.stage}} Group </button></a> </td>
+                            <td >
+                                <a [routerLink]="['/groupManagement', item._id, grid_name, valeur] ">
+                                    <button class="btn btn-primary" type="button">{{item.stage}} Group </button>
+                                </a> 
+                            </td>
                             <!-- IF DETAILS IS ACTIVATED IN GRID CONFIG COLLECTION -->
-                            <td *ngIf="item.details.activated"><a [routerLink]="['/details', item._id] "><button class="btn btn-success" type="button"> Detail </button></a> </td>
+                            <td *ngIf="item.details.activated">
+                                <a [routerLink]="['/details', item._id] ">
+                                    <button class="btn btn-primary" type="button"> Detail </button>
+                                </a> 
+                            </td>
                             <!-- MODAL <td *ngIf="item.details.activated"><button class="btn btn-success" type="button" data-toggle="modal" data-target="#myModal">DETAIL </button></td>-->
                             
                             <!--IF WORKFLOW TYPE BTN TO GO BACK TO CURRENT STEP -->

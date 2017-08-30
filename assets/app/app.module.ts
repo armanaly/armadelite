@@ -35,11 +35,12 @@ import {SignupComponent} from "./auth/signup.component";
 import {SigninComponent} from "./auth/signin.component";
 import {AuthenticationComponent} from "./auth/authentication.component";
 import {MyAutoFocusDirective} from "./directives/autofocus";
-import {BalletDetailsComponent} from "./components/balletDetails.component";
-import {BalletDetailsService} from "./components/balletDetails.service";
-import {GroupComponent} from "./components/group/group.component";
-import {GroupService} from "./components/group/group.service";
-import {EditStudentComponent} from "./components/student/editStudent.component";
+import {BalletDetailsComponent} from "./components/ballet/balletDetails.component";
+import {BalletDetailsService} from "./components/ballet/balletDetails.service";
+import {GroupComponent} from "./components/ballet/group.component";
+import {GroupService} from "./components/ballet/group.service";
+import {StudentComponent} from "./components/ballet/student.component";
+import {StudentService} from "./components/ballet/student.service";
 
 
 
@@ -56,7 +57,7 @@ function getStepsFirst(_stepService: StepService) {
         GridPanelComponent, MenuComponent, FileUploadComponent,
         BalletDetailsComponent, SignupComponent, SigninComponent,
         AuthenticationComponent, MyAutoFocusDirective
-        , GroupComponent, EditStudentComponent
+        , GroupComponent, StudentComponent
     ],
     imports: [
         BrowserModule, FormsModule, ROUTING,
@@ -75,7 +76,7 @@ function getStepsFirst(_stepService: StepService) {
                 // provideCloudinary(require('cloudinary-core'), { cloud_name: 'havjcqppv' } as CloudinaryConfiguration),
                 CollectionService, SaveService, FileUploadService,
                 MailService, GridPanelService, BalletDetailsService,
-                AuthService, GroupService]
+                AuthService, GroupService, StudentService]
 })
 export class AppModule {
     

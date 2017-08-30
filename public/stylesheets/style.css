@@ -3,7 +3,7 @@
 }
 
 .panel-heading-custom {
-    color: cornsilk; background: #4CAF50;;
+    color: #e0f8e0; background: #1E7FCB;;
     font-family: monospace;
     text-align: center;
 }
@@ -13,7 +13,7 @@
 
 .panel-body {
     border: dotted;
-    border-color: #4CAF50;
+    border-color: #1E7FCB;
 }
 
 .btn-primary-custom{

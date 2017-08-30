@@ -8,9 +8,9 @@ import {GridPanelComponent} from "./components/gridPanel.component";
 import {MenuComponent} from "./menu/menu.component";
 import {SignupComponent} from "./auth/signup.component";
 import {AuthenticationComponent} from "./auth/authentication.component";
-import {BalletDetailsComponent} from "./components/balletDetails.component";
-import {GroupComponent} from "./components/group/group.component";
-import {EditStudentComponent} from "./components/student/editStudent.component";
+import {BalletDetailsComponent} from "./components/ballet/balletDetails.component";
+import {GroupComponent} from "./components/ballet/group.component";
+import {StudentComponent} from "./components/ballet/student.component";
 
 const APP_ROUTES: Routes = [
     {path: '', component:MenuComponent  },    //
@@ -21,9 +21,9 @@ const APP_ROUTES: Routes = [
     {path: 'grid/:grid_name/:master_val', component: GridPanelComponent},
     {path: 'details/:record', component: BalletDetailsComponent},
     {path: 'auth/signup', component: SignupComponent},
-    {path: 'menu', component:MenuComponent},
+    {path: ':firstLoad', component:MenuComponent},
     {path: 'groupManagement/:record/:course_type/:stage', component: GroupComponent},
-    {path: 'editStudent/:record', component: EditStudentComponent}
+    {path: 'editStudent/:record', component: StudentComponent}
 ];
 
 export const ROUTING = RouterModule.forRoot(APP_ROUTES);

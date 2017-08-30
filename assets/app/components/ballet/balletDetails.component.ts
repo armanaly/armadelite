@@ -1,9 +1,9 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core'
-import {GridPanelService} from "./gridPanel.service";
+import {GridPanelService} from "../gridPanel.service";
 import {Router, NavigationExtras, ActivatedRoute} from '@angular/router';
-import {StepService} from "../Engine/step.service";
+import {StepService} from "../../Engine/step.service";
 import {Http} from "@angular/http";
-import {GridDetailsService} from "./gridDetails.service";
+import {GridDetailsService} from "../gridDetails.service";
 import {BalletDetailsService} from "./balletDetails.service";
 @Component({
     selector: 'grid-details',
@@ -21,10 +21,10 @@ import {BalletDetailsService} from "./balletDetails.service";
 @media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}</style>
               
               
-  <!--<previous-page></previous-page>-->
-  <nav class="form-navArrow">
-            <button (click)="this.router.navigate(['/menu'])"><i class="glyphicon glyphicon-triangle-left"> Retour</i></button>
-  </nav>
+       <nav class="form-navArrow" *ngIf="display">
+            <a [routerLink]="['/grid']" [queryParams]="{'grid_name': record_details.course_type, 'master_val': record_details.stage}">
+            <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
+       </nav>
   
     <div class="panel-body" *ngIf="display">
 
@@ -59,9 +59,9 @@ import {BalletDetailsService} from "./balletDetails.service";
                       </tr>
                       <tr>
                         <td class="tg-txgi">Country</td>
-                        <td class="tg-6k2t">{{record_details.profile[6].country}}</td>
+                        <td class="tg-6k2t">{{record_details.profile[4].country}}</td>
                         <td class="tg-txgi">City</td>
-                        <td class="tg-6k2t">{{record_details.profile[7].city}}</td>
+                        <td class="tg-6k2t">{{record_details.profile[5].city}}</td>
                       </tr>
                       <tr>
                         <td class="tg-txgi">BECA</td>
@@ -73,57 +73,12 @@ import {BalletDetailsService} from "./balletDetails.service";
                         <th class="tg-yw4l"><span class="glyphicon glyphicon-earphone"> {{record_details.profile[2].phone}}</span></th><td class="tg-txgi"></td>
                         <th class="tg-yw4l"><span class="glyphicon glyphicon-envelope"> {{record_details.profile[3].email}}</span></th>
                       </tr>
+                      <tr>
+                        <th class="tg-yw4l">(2)<span class="glyphicon glyphicon-earphone"></span> <span>{{record_details.phone2}}</span></th><td class="tg-txgi"></td>
+                        <th class="tg-yw4l">(2)<span class="glyphicon glyphicon-envelope"></span><span>{{record_details.email2}}</span></th>
+                      </tr>
                      
-                     <!--<tr>-->
-                        <!--<td class="tg-txgi">Portes</td>-->
-                        <!--<td class="tg-6k2t">{{record_details.nbportesSelected}}</td>-->
-                      <!--</tr>-->
-                     <!---->
-                      <!--<tr>      -->
-                        <!--<td colspan="4"></td>-->
-                      <!--</tr>-->
-                      <!---->
-                      <!--<tr>-->
-                        <!--<th class="tg-yw4l" align="center"  colspan="3">{{record_details.profile[0].nom}}</th> -->
-                        <!--<th class="tg-yw4l"><span class="glyphicon glyphicon-earphone"> {{record_details.profile[2].tel}}</span></th>-->
-                      <!--</tr>-->
-                  <!---->
-                      <!--<tr>-->
-                        <!--<td class="tg-txgi"  colspan="3">Code Postal {{record_details.profile[1].adresse}}</td>-->
-                    <!---->
-                        <!---->
-                  <!---->
-                       <!--</tr>-->
-                      <!--<tr><td colspan="4"></td></tr>-->
-                      <!---->
-                      <!---->
-                      <!--<tr>-->
-                        <!---->
-                        <!--<td class="tg-txgi">Valeur catalogue</td>-->
-                        <!--<td class="tg-6k2t" *ngIf="details" >{{tech_details.prix}}</td>-->
-                      <!--</tr>-->
-                         <!--<tr>-->
-                        <!--<td class="tg-txgi" *ngIf="record_details.premiere_main == 'OUI'">Première main</td>-->
-                        <!--<td class="tg-txgi" *ngIf="record_details.premiere_main == 'NON'">Seconde main</td>-->
-                        <!--<td class="tg-6k2t" ><span class="glyphicon glyphicon-ok"></span></td>-->
-                        <!--<td class="tg-txgi" *ngIf="record_details.import == 'OUI'">Importé</td>-->
-                        <!--<td class="tg-6k2t" *ngIf="record_details.import == 'OUI'"><span class="glyphicon glyphicon-ok"></span></td>-->
-                      <!--</tr>-->
-                      <!--<tr>-->
-                        <!--<td class="tg-txgi" >Clés</td>-->
-                        <!--<td class="tg-6k2t" >{{record_details.cle}}</td>-->
-                        <!--<td class="tg-txgi" *ngIf="record_details.carnet == 'OUI'">Carnet d'entretien</td>-->
-                        <!--<td class="tg-6k2t" *ngIf="record_details.carnet == 'OUI'"><span class="glyphicon glyphicon-ok"></span></td>-->
-                        <!---->
-                      <!--</tr>-->
-                       <!--<tr *ngIf="record_details.options_voiture.length > 0">-->
-                        <!--<td class="tg-txgi">Options</td>-->
-                        <!--<td class="tg-6k2t" colspan="3"> <ul class="items">-->
-                                                    <!--<li *ngFor="let options_voiture of record_details.options_voiture">-->
-                                                        <!--{{options_voiture}}  -->
-                                                    <!--</li>-->
-                                                <!--</ul></td>-->
-                      <!--</tr>-->
+                  
                     </table>
                 </div>
                 </div>
