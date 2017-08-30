@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$/assets/app/components/main.component.ts" libraries="{flask_angular2/public/js/vendor/@angular/compiler-cli/node_modules}" />
-    <file url="file://$PROJECT_DIR$/public/js/vendor/@angular/compiler-cli" libraries="{flask_angular2/public/js/vendor/@angular/compiler-cli/node_modules}" />
+    <file url="file://$PROJECT_DIR$" libraries="{russianballet/node_modules}" />
     <includedPredefinedLibrary name="ECMAScript 6" />
   </component>
 </project>

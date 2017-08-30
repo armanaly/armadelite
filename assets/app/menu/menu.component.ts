@@ -12,12 +12,27 @@ import {GlobalVariable} from "../global";
         </nav>
     </div>
 
+<<<<<<< HEAD
           
     <div class="panel-heading panel-heading-custom" *ngIf="preMenu == 2">
             <h2>{{val_level2}}</h2>
     </div>
 
     <div class="panel-body" *ngIf="ready == true">
+=======
+    
+        <div *ngIf="backBtn" align="left">
+            <nav class="form-navArrow">
+                
+                
+                <button (click)="onClick()" class="tg-bn4o" ><i class="glyphicon glyphicon-triangle-left" > BACK </i></button>
+            </nav>
+        </div>
+
+    <div class="panel-body" *ngIf="ready == true">
+
+        
+>>>>>>> d1fa1eedbea399ac5399c1fa03a123a371822cea
             <div *ngIf="preMenu == 1"> 
                 <!--steps from admin_ballet-->
                     <!--step 1 { type : buttons } pass stage_name to step 2-->
@@ -36,6 +51,7 @@ import {GlobalVariable} from "../global";
             </div>
             
             <div *ngIf="preMenu == 2"> 
+<<<<<<< HEAD
 
                 <div *ngFor="let grid of grids" >
                     <div *ngIf="grid.display">
@@ -45,6 +61,22 @@ import {GlobalVariable} from "../global";
                         <br><br>    
                     </div>
                     
+=======
+                
+                 <div><h1>{{val_level2}}</h1></div>
+                <div *ngFor="let grid of grids" >
+                   
+                    <!--<button class="btn btn-success" type="button" (click)="showGrid(grid.name)" value="{{grid.name}} ">{{grid.name}} -->
+                    <!--</button>-->
+                    <div *ngIf="grid.display">
+                        
+                            <a [routerLink]="['/grid']" replaceUrl="True" [queryParams]="{'grid_name': grid.name, 'master_val': val_level2}">
+                                <button type="button" class="btn btn-primary btn-lg" > {{grid.name}}</button> 
+                            </a>
+                                
+                    </div>
+                    <br><br>
+>>>>>>> d1fa1eedbea399ac5399c1fa03a123a371822cea
                 </div>
             </div>
             
@@ -82,6 +114,7 @@ export class MenuComponent{
     firstLoad = true;
     ngOnInit(){
         this.appName = this.route.snapshot.queryParams["app"];
+<<<<<<< HEAD
 
         if (typeof this.route.snapshot.queryParams["firstLoad"] != 'undefined') {
             this.firstLoad = this.route.snapshot.queryParams["hasLoaded"];
@@ -120,6 +153,29 @@ export class MenuComponent{
                         }), error => console.log(error)
             }
 
+=======
+        if (this._stepService.steps[0].master_type == 'form' ){
+                 this.router.navigate(['/step']);
+             }
+        else {
+             this._gridService.getActivatedGrids()
+                 .then(
+                     gridsList => {
+                         console.log(gridsList)
+                         this.grids = gridsList;
+                         for (let j = 0; j < this.grids.length; j++) {
+                             console.log(this.grids[j].name);
+                             console.log(this.grids[j].listBtn);
+                              if (typeof this.grids[j].listBtn != 'undefined'){
+                                  this.preMenu = 1;
+                                  this.preMenuLst = this.grids[j].listBtn;
+                                 console.log(this.grids[j].listBtn);
+                             }
+                         }
+                             this.ready = true;
+                 }), error => console.log(error)
+         }
+>>>>>>> d1fa1eedbea399ac5399c1fa03a123a371822cea
     }
 
 

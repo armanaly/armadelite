@@ -6,6 +6,7 @@ import {Http} from "@angular/http";
 @Component({
     selector: 'grid-panel',
     template: `
+<<<<<<< HEAD
               <div>
                 <nav class="form-navArrow">
                    <a [routerLink]="['/']">
@@ -18,6 +19,26 @@ import {Http} from "@angular/http";
                <div class="panel-heading panel-heading-custom" align="center">
                  <h2 *ngIf="valeur != ''">{{valeur}}</h2>
                  <h3>{{grid_name}}</h3>
+=======
+            <!--<div align="left">-->
+                <!--<nav>-->
+                <!---->
+                    <!--<div class="col-md-3">-->
+                        <!--<button type="button" class="btn btn-success glyphicon glyphicon-plus" (click)="this.router.navigate(['/step'])" >Add new line</button>-->
+                    <!--</div>-->
+                <!--</nav>-->
+                <!---->
+            <!--</div>-->
+          
+              
+              <nav class="form-navArrow">
+                        <button><i class="glyphicon glyphicon-triangle-left" (click)="this.router.navigate(['/'])" ></i></button>
+              </nav>
+               
+               <div class="page-header" align="center">
+                 <h1 *ngIf="valeur != ''">{{valeur}}</h1>
+                 <h2>{{grid_name}}</h2>
+>>>>>>> d1fa1eedbea399ac5399c1fa03a123a371822cea
                </div>
                
                 <div class="panel-body">
@@ -68,6 +89,7 @@ import {Http} from "@angular/http";
 
                             
                             <!--*ngIf="item.group_mgt"-->
+<<<<<<< HEAD
                             <td >
                                 <a [routerLink]="['/groupManagement', item._id, grid_name, valeur] ">
                                     <button class="btn btn-primary" type="button">{{item.stage}} Group </button>
@@ -79,6 +101,11 @@ import {Http} from "@angular/http";
                                     <button class="btn btn-primary" type="button"> Detail </button>
                                 </a> 
                             </td>
+=======
+                            <td ><a [routerLink]="['/groupManagement', item._id, grid_name, valeur] "><button class="btn btn-success" type="button">{{item.stage}} Group </button></a> </td>
+                            <!-- IF DETAILS IS ACTIVATED IN GRID CONFIG COLLECTION -->
+                            <td *ngIf="item.details.activated"><a [routerLink]="['/details', item._id] "><button class="btn btn-success" type="button"> Detail </button></a> </td>
+>>>>>>> d1fa1eedbea399ac5399c1fa03a123a371822cea
                             <!-- MODAL <td *ngIf="item.details.activated"><button class="btn btn-success" type="button" data-toggle="modal" data-target="#myModal">DETAIL </button></td>-->
                             
                             <!--IF WORKFLOW TYPE BTN TO GO BACK TO CURRENT STEP -->
