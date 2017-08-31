@@ -99,7 +99,7 @@ import {StudentService} from "./student.service";
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="email2" class="col-sm-2 control-label" >email 2</label>
+                    <label for="email2" class="col-sm-2 control-label" >Email 2</label>
                     <div class="col-sm-10">
                         <input 
                             class="form-control"
@@ -110,6 +110,20 @@ import {StudentService} from "./student.service";
                             [(ngModel)]="model.email2" 
                             name="email2"
                             #email2="ngModel">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="notes" class="col-sm-2 control-label" >Notes</label>
+                    <div class="col-sm-10">
+                        <input 
+                            class="form-control"
+                            type="text"
+                            id="notes"
+                            name="notes"
+                            value="{{student_info.notes}}"
+                            [(ngModel)]="model.notes" 
+                            name="notes"
+                            #notes="ngModel">
                     </div>
                 </div>
                 <div class="form-group">
@@ -155,7 +169,7 @@ export class StudentComponent {
             .subscribe(data => {
                     console.log(data)
                     this.student_info = data;
-                    this.model = new Student(data._id,data.DNI,data.BECA, data.father, data.intolerancia, data.email2, data.phone2);
+                    this.model = new Student(data._id,data.DNI,data.BECA, data.father, data.intolerancia, data.email_2, data.phone_2, data.note);
                     console.log(this.model);
                     this.display_edit = true;
                 },

@@ -26,26 +26,26 @@ import {BalletDetailsService} from "./balletDetails.service";
             <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
        </nav>
   
-    <div class="panel-body" *ngIf="display">
+  <div class="panel-body" *ngIf="display">
 
        
   <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Details</a></li>
-    <li role="presentation"><a href="#registration" aria-controls="registration" role="tab" data-toggle="tab">Registration</a></li>
-    <li role="presentation"><a href="#notes" aria-controls="notes" role="tab" data-toggle="tab">Notes</a></li>
-    
-    <!--<li role="presentation"><a href="#photos" aria-controls="photos" role="tab" data-toggle="tab"  *ngIf="images_to_show">Photos</a></li>-->
-    <!--<li role="presentation"><a href="#admin" aria-controls="admin" role="tab" data-toggle="tab">Détails administratifs</a></li>-->
-    <!--<li role="presentation"><a href="#tech" aria-controls="tech" role="tab" data-toggle="tab">Caractéristiques techniques</a></li>-->
-  </ul>
-                  
-        <div class="tab-content" >  
+  <!--<ul class="nav nav-tabs" role="tablist">-->
+    <!--<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Details</a></li>-->
+    <!--<li role="presentation"><a href="#registration" aria-controls="registration" role="tab" data-toggle="tab">Registration</a></li>-->
+    <!--<li role="presentation"><a href="#notes" aria-controls="notes" role="tab" data-toggle="tab">Notes</a></li>-->
+    <!---->
+    <!--&lt;!&ndash;<li role="presentation"><a href="#photos" aria-controls="photos" role="tab" data-toggle="tab"  *ngIf="images_to_show">Photos</a></li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li role="presentation"><a href="#admin" aria-controls="admin" role="tab" data-toggle="tab">Détails administratifs</a></li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li role="presentation"><a href="#tech" aria-controls="tech" role="tab" data-toggle="tab">Caractéristiques techniques</a></li>&ndash;&gt;-->
+  <!--</ul>-->
+                  <!---->
+        <!--<div class="tab-content" >  -->
             
             <!-- TAB ALL INFOS -->
-            <div role="tabpanel" class="tab-pane active" id="home">
+            <!--<div role="tabpanel" class="tab-pane active" id="home">-->
                  
-                <div class="tg-wrap">
+                <div >
                     <table class="tg">
                       <tr>
                         <th></th>
@@ -70,27 +70,23 @@ import {BalletDetailsService} from "./balletDetails.service";
                         <td class="tg-6k2t">{{record_details.DNI}}</td>
                       </tr>
                       <tr>
-                        <th class="tg-yw4l"><span class="glyphicon glyphicon-earphone"> {{record_details.profile[2].phone}}</span></th><td class="tg-txgi"></td>
-                        <th class="tg-yw4l"><span class="glyphicon glyphicon-envelope"> {{record_details.profile[3].email}}</span></th>
+                        <th class="tg-yw4l" colspan="2"><span class="glyphicon glyphicon-earphone"> {{record_details.profile[2].phone}}</span></th>
+                        <th class="tg-yw4l"  colspan="2"><span class="glyphicon glyphicon-envelope"> {{record_details.profile[3].email}}</span></th>
                       </tr>
                       <tr>
-                        <th class="tg-yw4l">(2)<span class="glyphicon glyphicon-earphone"></span> <span>{{record_details.phone2}}</span></th><td class="tg-txgi"></td>
-                        <th class="tg-yw4l">(2)<span class="glyphicon glyphicon-envelope"></span><span>{{record_details.email2}}</span></th>
+                        <th class="tg-yw4l" colspan="2">(2) <span class="glyphicon glyphicon-earphone"></span> <span>{{record_details.phone2}}</span></th>
+                        <th class="tg-yw4l" colspan="2">(2) <span class="glyphicon glyphicon-envelope"></span><span>{{record_details.email2}}</span></th>
                       </tr>
                      
                   
-                    </table>
-                </div>
-                </div>
-            
-             <!-- REGISTRATION -->
-            <div role="tabpanel" class="tab-pane" id="registration" >
-                 <div class="tg-wrap">
-                    <table class="tg">
-                      <tr>
-                        <th></th>
-                        <th class="tg-bn4o" colspan="3">{{record_details.profile[0].nom}} {{record_details.profile[1].firstname}} </th>
-                      </tr>
+                    <!--</table>-->
+                <!--</div>-->
+                <!--</div>-->
+            <!---->
+             <!--&lt;!&ndash; REGISTRATION &ndash;&gt;-->
+            <!--<div role="tabpanel" class="tab-pane" id="registration" >-->
+                 <!--<div class="tg-wrap">-->
+                    <!--<table class="tg">-->
                       <tr>
                         <td class="tg-txgi">Course</td>
                         <td class="tg-6k2t">{{record_details.course_type}}</td>
@@ -114,22 +110,33 @@ import {BalletDetailsService} from "./balletDetails.service";
                         <td class="tg-txgi" >Audition place</td>
                         <td class="tg-6k2t" >{{record_details.audition}}</td>
                       </tr>
-                      </table></div>
-            </div>   
-                
-                
+                      
+                      <tr>
+                        <td colspan="4">
+                            <textarea disabled rows="15" cols="100">
+                                {{record_details.notes }}
+                            </textarea>        
+                        
+                        </td>
+                        
+                      </tr>
+                      </table>
+                      </div>
+            <!--</div>   -->
+                <!---->
+                </div>
             <!-- NOTES -->
-            <div role="tabpanel" class="tab-pane" id="notes" >
-                <textarea rows="100" cols="500">
-                    {{record_details.age }}
-                </textarea>
-            </div>
-            
+            <!--<div role="tabpanel" class="tab-pane" id="notes" >-->
+                <!--<textarea rows="100" cols="500">-->
+                    <!--{{record_details.age }}-->
+                <!--</textarea>-->
+            <!--</div>-->
+            <!---->
 
-        </div>
-            
+        <!--</div>-->
+            <!---->
 
-    </div>
+    <!--</div>-->
 `
 })
 

@@ -7,7 +7,8 @@ export class Student {
         public father: string,
         public intolerancia: string,
         public email2: string,
-        public phone2: string
+        public phone2: string,
+        public note: string
     ) {  }
 
 }

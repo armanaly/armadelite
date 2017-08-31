@@ -117,7 +117,7 @@ import {SaveService} from "./saveService";
 
  <div class="jumbotron" *ngIf="formCompleted" class="alert alert-success" role="alert">
       <div class="container">
-        <h1>Your request has been sent, you should receive a email with the information you sent to us. <br>
+        <h1>Your request has been sent. <br>
         We'll come back to you very soon</h1>
         </div>
  </div>
@@ -173,37 +173,7 @@ export class MainComponent implements OnInit {
 console.log(this._stepService.steps[0].configuration)
 
         if (typeof this._stepService.steps[0].configuration.collection != 'undefined') {
-            // console.log("go to next step -1")
-            // this.goToNextStep(-1);
-            // // this._collectionService.getDatas("marques", '', "name", 'btn')
-            //     .subscribe(data => {
-            //             console.log(data);
-            //
-            //             this.lists.push(data);
-            //             this.datas.push({
-            //                 "name": this._stepService.steps[this.indexStepObj].name,
-            //                 "url": data.url,
-            //                 "list": data,
-            //                 "loaded": true
-            //             });
-            //
-            //             this.previousStepId = this.stepId;
-            //             // this.stepId = this._stepService.step[this.indexStepObj].step_id;
-            //             console.log(this.stepId);
-            //             console.log(this.lists);
-            //             console.log(this.datas);
-            //             this.stepId = 0;
-            //             // Skip the step if there is only 1 result
-            //             console.log("TEST IF ONLY 1 RECORD");
-            //             if (data.length == 1) {
-            //                 this._formService.arraySteps[this.indexStepObj][this._stepService.steps[this.indexStepObj].configuration.form_value.name] = data[0];
-            //                 this.goToNextStep(this.indexStepObj);
-            //             }
-            //             console.log(this.stepId);
-            //             this.goToNextStep(-1);
-            //         },
-            //         error => console.log(error)
-            //     );
+
         }
 
         /*  IF FIRST STEP IS A LIST */
