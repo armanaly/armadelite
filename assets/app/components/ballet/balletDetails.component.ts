@@ -125,75 +125,7 @@ import {BalletDetailsService} from "./balletDetails.service";
                 </textarea>
             </div>
             
-                              <!---->
-            <!--</div>-->
-                    <!---->
-            <!--&lt;!&ndash; INFOS CONTACT&ndash;&gt;-->
-            <!--<div role="tabpanel" class="tab-pane" id="contact">-->
-                    <!--<div class="tg-wrap"><table class="tg">-->
-                  <!--<tr>-->
-                    <!--<th class="tg-031e">Nom</th>-->
-                    <!--<th class="tg-yw4l">{{record_details.profile[0].nom}}</th>-->
-                  <!--</tr>-->
-                  <!--<tr>-->
-                    <!--<td class="tg-031e">Code Postal</td>-->
-                    <!--<td class="tg-yw4l">{{record_details.profile[1].adresse}}</td>-->
-                  <!--</tr>-->
-                  <!--<tr>-->
-                    <!--<td class="tg-031e">Téléphone</td>-->
-                    <!--<td class="tg-yw4l">{{record_details.profile[2].tel}}</td>-->
-                  <!--</tr>-->
-                  <!--<tr>-->
-                    <!--<td class="tg-031e">Email</td>-->
-                    <!--<td class="tg-yw4l">{{record_details.profile[3].email}}</td>-->
-                  <!--</tr>-->
-                <!--</table></div>-->
-                    <!---->
-            <!--</div>-->
-                      <!---->
-            <!--&lt;!&ndash; PHOTOS VEHICULE &ndash;&gt;-->
-            <!--<div role="tabpanel" class="tab-pane" id="photos" *ngIf="images_to_show">-->
-                <!--<img class="img-thumbnail"  src="{{record_details.fileDetails[0].file_url}}" width="480" height="320">-->
-                <!--<br>-->
-                <!--<img class="img-responsive" src="{{record_details.fileDetails[1].file_url}}" width="480" height="320">-->
-                <!---->
-                <!--<img class="img-responsive" src="{{record_details.fileDetails[2].file_url}}" width="480" height="320">-->
-                <!--<img class="img-responsive" src="{{record_details.fileDetails[3].file_url}}" width="480" height="320">-->
-                <!--<img class="img-responsive" src="{{record_details.fileDetails[4].file_url}}" width="480" height="320">-->
-            <!--</div>-->
 
-            <!--&lt;!&ndash; INFO ADMINISTRATIVES&ndash;&gt;-->
-            <!--<div role="tabpanel" class="tab-pane" id="admin">          -->
-                <!--<div class="row">-->
-                    <!--<div class="col-md-6">: {{record_details.premiere_main}}</div>-->
-                    <!--<div class="col-md-6">Importé: {{record_details.import}}</div>-->
-                <!--</div>-->
-                <!---->
-                <!--<div class="row">-->
-                    <!--<div class="col-md-6">Carnet d'entretien: {{record_details.carnet}}</div>-->
-                    <!--<div class="col-md-6">Clés: {{record_details.cle}}</div>-->
-                <!--</div>-->
-                <!---->
-                <!--<div class="row" *ngIf="record_details.roule == 'NON'">-->
-                    <!--<div *ngIf="record_details.accident == OUI"> -->
-                        <!--Véhicule accidenté<br>-->
-                        <!--Raison: {{record_details.accident}}-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!---->
-            <!--&lt;!&ndash; INFO TECHNIQUES &ndash;&gt;-->
-            <!--<div role="tabpanel" class="tab-pane" id="tech">-->
-                <!--<div class="row">-->
-                    <!--<div class="col-md-6">: {{record_details.premiere_main}}</div>-->
-                    <!--<div class="col-md-6">Importé: {{record_details.import}}</div>-->
-                <!--</div>-->
-                <!---->
-                <!--<div class="row">-->
-                    <!--<div class="col-md-6">Carnet d'entretien: {{record_details.carnet}}</div>-->
-                    <!--<div class="col-md-6">Clés: {{record_details.cle}}</div>-->
-                <!--</div>-->
-                      <!---->
         </div>
             
 

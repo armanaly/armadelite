@@ -12,7 +12,7 @@ import {FormService} from "./form.service";
             
             <ul class="items">
                 <li *ngFor="let valeurList of currentList">
-                    <button *ngIf="valueSelected != valeurList" class="btn btn-success" type="button" 
+                    <button *ngIf="valueSelected != valeurList" class="btn btn-primary" type="button" 
                         (click)="onChooseVal($event)"
                         value="{{valeurList}}">{{valeurList}}
                     </button>

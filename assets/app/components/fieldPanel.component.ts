@@ -8,7 +8,7 @@ import {EmailValidator} from "./emailValidator.component";
  <div *ngIf="display">
         <div class="panel-heading panel-heading-custom">{{objStep.configuration.labelPanel}} </div>
         <div class="panel-body">
-            <form name="{{objStep.name}}"  >
+            <form  class="form-horizontal" name="{{objStep.name}}"  >
                 <div [formGroup]="myGroup">                  
 
                <!--/* FORMAT Configuration.form_values-->
@@ -19,22 +19,10 @@ import {EmailValidator} from "./emailValidator.component";
                     <div *ngFor="let field of objStep.configuration.form_values; let i = index">
                          <div *ngIf="field.type == 'text'">
                              <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
-                                 <label >{{field.label}} </label>
-                                 <input *ngIf="i == 0"     
-                                        myAutofocus
-                                        class="form-control" 
-                                        type="{{field.type}}" 
-                                        id="{{field.name}}"
-                                        name="{{field.name}}"
-                                        required="{{field.required}}"
-                                        minlength="{{field.minlength}}"
-                                        maxlength="{{field.maxlength}}"
-                                        formControlName="{{field.name}}"
-                                        [formControl]="myGroup.controls[field.name]"
-                                       
-                                        >
-                             
-                                    <input *ngIf="i > 0"     
+                                 <label for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label}} </label>
+                                 <div class="col-sm-10">
+                                     <input *ngIf="i == 0"     
+                                            myAutofocus
                                             class="form-control" 
                                             type="{{field.type}}" 
                                             id="{{field.name}}"
@@ -44,17 +32,30 @@ import {EmailValidator} from "./emailValidator.component";
                                             maxlength="{{field.maxlength}}"
                                             formControlName="{{field.name}}"
                                             [formControl]="myGroup.controls[field.name]"
-                                           
                                             >
                              
-                                <div class="alert alert-danger" role="alert" *ngIf="!myGroup.controls[field.name].valid ">This field is required</div>   
-                                <div *ngIf="myGroup.controls[field.name].hasError('min') && myGroup.controls[field.name].touched" class="alert alert-danger">Field must be at least {{field.minlength}} characters long.</div>
+                                        <input *ngIf="i > 0"     
+                                                class="form-control" 
+                                                type="{{field.type}}" 
+                                                id="{{field.name}}"
+                                                name="{{field.name}}"
+                                                required="{{field.required}}"
+                                                minlength="{{field.minlength}}"
+                                                maxlength="{{field.maxlength}}"
+                                                formControlName="{{field.name}}"
+                                                [formControl]="myGroup.controls[field.name]"
+                                                >
+                              
+                                    <div class="alert alert-danger" role="alert" *ngIf="!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched ">This field is required</div>   
+                                    <div *ngIf="myGroup.controls[field.name].hasError('min') && myGroup.controls[field.name].touched" class="alert alert-danger">Field must be at least {{field.minlength}} characters long.</div>
+                                   </div>
                              </div>
                          </div>
                          
                     <div *ngIf="field.type == 'number'">
                         <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
-                             <label >{{field.label}} </label>
+                             <label for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label}} </label>
+                             <div class="col-sm-10">
                              <input *ngIf="i == 0"  
                                     myAutofocus
                                     class="form-control" 
@@ -85,16 +86,18 @@ import {EmailValidator} from "./emailValidator.component";
                                     [formControl]="myGroup.controls[field.name]"
                                    
                                     >
-                         
-                            <div class="alert alert-danger" role="alert" *ngIf="!myGroup.controls[field.name].valid ">This field is required</div>   
+                        </div> 
+                            <div class="alert alert-danger" role="alert" *ngIf="!myGroup.controls[field.name].valid  && myGroup.controls[field.name].touched">This field is required</div>   
                             <div *ngIf="myGroup.controls[field.name].hasError('min') && myGroup.controls[field.name].touched" class="alert alert-danger">Veuillez indiquer un nombre plus grand</div>
+                        
                         </div>
                     </div>
                          
                      
                     <div *ngIf="field.type == 'email'">
                         <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
-                            <label>Email:</label>
+                            <label for="{{field.value}}"   class="col-sm-2 control-label">Email:</label>
+                            <div class="col-sm-10">
                             <input *ngIf="i == 0"  
                                 myAutofocus 
                                 class="form-control" 
@@ -117,11 +120,11 @@ import {EmailValidator} from "./emailValidator.component";
                                 formControlName="{{field.name}}"
                                 required="{{field.required}}"
                                 [formControl]="myGroup.controls[field.name]">
-                                                                
+                                                              
                             <div *ngIf="!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched" class="alert alert-danger">
                                 Email is required and format should be john@doe.com
                             </div>
-                           
+                            </div> 
                         </div>
                     </div>
                      
@@ -147,7 +150,7 @@ import {EmailValidator} from "./emailValidator.component";
 </div>
             
                  <!--<button type="submit" class="btn btn-primary" [disabled]="myGroup.invalid">Valider</button>-->
-                    <button type="button"  data-target="#myModal" (click)="onClick()" class="btn btn-primary">Valider</button>
+                    <button type="button"  data-target="#myModal" (click)="onClick()" class="btn btn-primary">Submit</button>
                 </div>   
             </form>
         </div> 

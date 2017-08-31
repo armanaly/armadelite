@@ -45,7 +45,6 @@ import {StudentService} from "./student.service";
                 </div>
                 
                 <div class="form-group">
-                    
                     <label for="BECA" class="col-sm-2 control-label" >BECA</label>
                     <div class="col-sm-10">
                         <select class="form-control" id="BECA"
