@@ -6,15 +6,21 @@ import {GlobalVariable} from "../global";
 @Component({
     selector: 'grid-panel',
     template: `
-    <div *ngIf="backBtn" align="left">
-        <nav class="form-navArrow">
-            <button (click)="onClick()" class="btn btn-warning" ><i class="glyphicon glyphicon-triangle-left" > STAGES</i></button>
-        </nav>
-    </div>
+
 
           
     <div class="panel-heading panel-heading-custom" *ngIf="preMenu == 2">
-            <h2>{{val_level2}}</h2>
+        <div  class="row" align="left">
+            <div *ngIf="backBtn" class="col-md-2">
+                <nav class="form-navArrow">
+                    <button (click)="onClick()" class="btn btn-warning" ><i class="glyphicon glyphicon-triangle-left" > STAGES</i></button>
+                </nav>
+            </div>
+        
+           <div class="col-md-10">
+                <h2>{{val_level2}}</h2>
+           </div>
+        </div>
     </div>
 
     <div class="panel-body" *ngIf="ready == true">
@@ -63,14 +69,14 @@ import {GlobalVariable} from "../global";
             <!--<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/step']"> Nouveau flow</a></button></div>-->
 
     </div>
-` })
+`
+})
 
-export class MenuComponent{
-    constructor(
-         private _stepService: StepService, private router: Router, private _gridService: GridPanelService,
-         private route: ActivatedRoute
-        )
-    {}
+export class MenuComponent {
+    constructor(private _stepService: StepService, private router: Router, private _gridService: GridPanelService,
+                private route: ActivatedRoute) {
+    }
+
     grids = [];
     ready = false;
     appName = '';
@@ -80,7 +86,8 @@ export class MenuComponent{
     level2 = false;
     val_level2 = '';
     firstLoad = true;
-    ngOnInit(){
+
+    ngOnInit() {
         this.appName = this.route.snapshot.queryParams["app"];
 
         if (typeof this.route.snapshot.queryParams["firstLoad"] != 'undefined') {
@@ -90,76 +97,75 @@ export class MenuComponent{
         console.log(this.grids)
 
 
-            if (this._stepService.steps[0].master_type == 'form' && this.firstLoad) {
-                this.router.navigate(['/step']);
-            }
-            else {
-                this._gridService.getActivatedGrids()
-                    .then(
-                        gridsList => {
-                            console.log(gridsList)
-                            this.grids = gridsList;
-                            for (let j = 0; j < this.grids.length; j++) {
-                                console.log(this.grids[j].name);
-                                console.log(this.grids[j].listBtn);
-                                if (typeof this.grids[j].listBtn != 'undefined') {
-                                    if (this.firstLoad == true) {
-                                        this.preMenu = 1;
-                                        this.preMenuLst = this.grids[j].listBtn;
-                                        console.log(this.grids[j].listBtn);
-                                    }
+        if (this._stepService.steps[0].master_type == 'form' && this.firstLoad) {
+            this.router.navigate(['/step']);
+        }
+        else {
+            this._gridService.getActivatedGrids()
+                .then(
+                    gridsList => {
+                        console.log(gridsList)
+                        this.grids = gridsList;
+                        for (let j = 0; j < this.grids.length; j++) {
+                            console.log(this.grids[j].name);
+                            console.log(this.grids[j].listBtn);
+                            if (typeof this.grids[j].listBtn != 'undefined') {
+                                if (this.firstLoad == true) {
+                                    this.preMenu = 1;
+                                    this.preMenuLst = this.grids[j].listBtn;
+                                    console.log(this.grids[j].listBtn);
                                 }
-
                             }
-                            // if (this.firstLoad == false){
-                            //     this.getGridsBtn()
-                            //     this.preMenu = 2;
-                            //     console.log('2')
-                            // }
-                            this.ready = true;
-                        }), error => console.log(error)
-            }
+
+                        }
+                        // if (this.firstLoad == false){
+                        //     this.getGridsBtn()
+                        //     this.preMenu = 2;
+                        //     console.log('2')
+                        // }
+                        this.ready = true;
+                    }), error => console.log(error)
+        }
 
     }
 
 
-    getGridsBtn($event, val){
+    getGridsBtn($event, val) {
         var gridList = $event.target.value;
         this.val_level2 = val;
         console.log(gridList);
         console.log(val)
         // TOUS LES GRIDS de la collection grids
-        for (let idxGrid in this.grids){
+        for (let idxGrid in this.grids) {
             //cas où un prémenu exist alors on a dans grids un "type": "listBtn"
 
-            if (typeof this.grids[idxGrid].listBtn != 'undefined'){
-            {
-                for (let i in this.grids[idxGrid].listBtn){
-                    if (this.grids[idxGrid].listBtn[i].value == val){
-                        console.log(this.grids[idxGrid].listBtn[i]);
-                        console.log(this.grids[idxGrid].listBtn[i].value);
-                        console.log(this.grids[idxGrid].listBtn[i].children);
-                        for (let j in this.grids) {
-                            console.log(this.grids[j].name)
+            if (typeof this.grids[idxGrid].listBtn != 'undefined') {
+                {
+                    for (let i in this.grids[idxGrid].listBtn) {
+                        if (this.grids[idxGrid].listBtn[i].value == val) {
+                            console.log(this.grids[idxGrid].listBtn[i]);
+                            console.log(this.grids[idxGrid].listBtn[i].value);
                             console.log(this.grids[idxGrid].listBtn[i].children);
-                            console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-                            if (this.grids[idxGrid].listBtn[i].children.indexOf(this.grids[j].name) > -1 )
-                            {
-                                this.grids[j].display = true;
+                            for (let j in this.grids) {
+                                console.log(this.grids[j].name)
+                                console.log(this.grids[idxGrid].listBtn[i].children);
+                                console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+                                if (this.grids[idxGrid].listBtn[i].children.indexOf(this.grids[j].name) > -1) {
+                                    this.grids[j].display = true;
+                                }
+                                else {
+                                    this.grids[j].display = false;
+                                }
                             }
-                            else{
-                                this.grids[j].display = false;
-                            }
+                            console.log(this.grids)
+                            //this.grids = this.grids[idxGrid].listBtn[i].children;
+                            // je dois uniquement garder les btn de this.grids qui sont dans la liste children
+
                         }
-                        console.log(this.grids)
-                        //this.grids = this.grids[idxGrid].listBtn[i].children;
-                        // je dois uniquement garder les btn de this.grids qui sont dans la liste children
 
                     }
 
                 }
-
-            }
             }
         }
         this.preMenu = 2;

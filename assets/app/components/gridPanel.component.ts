@@ -8,7 +8,8 @@ import {Http} from "@angular/http";
     template: `
               <div>
                 <nav class="form-navArrow">
-                   <a [routerLink]="['/menu']" [queryParams]="{'firstLoad': false}">
+                   <!--<a [routerLink]="['/menu']" [queryParams]="{'firstLoad': false}">-->
+                   <a [routerLink]="['/']" >
                        <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
                 </nav>
               </div>
