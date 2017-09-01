@@ -15,15 +15,22 @@ import {StudentService} from "./student.service";
     template: `
     
 
-       <nav class="form-navArrow" *ngIf="display_edit">
-            <a [routerLink]="['/grid']" [queryParams]="{'grid_name': student_info.course_type, 'master_val': student_info.stage}">
-            <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
-       </nav>
+
     
     <div  *ngIf="display_edit"> 
           
           <div class="panel-heading panel-heading-custom">
-                <h2>{{student_info.profile[1].firstname}}  {{student_info.profile[0].nom}}</h2>
+            <div  class="row" align="left">
+                <div class="col-md-2">
+                    <nav class="form-navArrow" *ngIf="display_edit">
+                        <a [routerLink]="['/grid']" [queryParams]="{'grid_name': student_info.course_type, 'master_val': student_info.stage}">
+                        <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
+                    </nav>
+                </div>
+                <div class="col-md-10" align="center">
+                    <h2>{{student_info.profile[1].firstname}}  {{student_info.profile[0].nom}}</h2>
+                </div>
+            </div>
            </div>
           <!--<h2>{{student_info.age}} years old</h2>-->
     

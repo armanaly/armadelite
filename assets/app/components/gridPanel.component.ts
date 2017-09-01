@@ -6,20 +6,24 @@ import {Http} from "@angular/http";
 @Component({
     selector: 'grid-panel',
     template: `
-              <div>
-                <nav class="form-navArrow">
-                   <!--<a [routerLink]="['/menu']" [queryParams]="{'firstLoad': false}">-->
-                   <a [routerLink]="['/']" >
-                       <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
-                </nav>
-              </div>
+             
                
                
                <div class="panel-heading panel-heading-custom" align="center">
-                 <h2 *ngIf="valeur != ''">{{valeur}}</h2>
-                 <h3>{{grid_name}}</h3>
+                 <div  class="row" align="left">
+                  <div class="col-md-2">
+                    <nav class="form-navArrow">
+                       <!--<a [routerLink]="['/menu']" [queryParams]="{'firstLoad': false}">-->
+                       <a [routerLink]="['/']" >
+                           <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
+                    </nav>
+                  </div>
+                 <div class="col-md-10" align="center">
+                     <h2 *ngIf="valeur != ''">{{valeur}}</h2>
+                     <h3>{{grid_name}}</h3>
+                 </div>
                </div>
-               
+               </div>
                 <div class="panel-body">
                <div class="table-responsive" *ngIf="display">
                     <table class="table table-hover table-condensed"  >

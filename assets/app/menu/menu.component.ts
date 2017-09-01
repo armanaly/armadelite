@@ -17,7 +17,7 @@ import {GlobalVariable} from "../global";
                 </nav>
             </div>
         
-           <div class="col-md-10">
+           <div class="col-md-10" align="center">
                 <h2>{{val_level2}}</h2>
            </div>
         </div>

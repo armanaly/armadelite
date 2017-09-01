@@ -20,11 +20,19 @@ import {BalletDetailsService} from "./balletDetails.service";
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
 @media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}</style>
               
-              
-       <nav class="form-navArrow" *ngIf="display">
-            <a [routerLink]="['/grid']" [queryParams]="{'grid_name': record_details.course_type, 'master_val': record_details.stage}">
-            <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
-       </nav>
+        <div class="panel-heading panel-heading-custom" *ngIf="display">
+            <div  class="row" align="left">
+                <div class="col-md-2">
+                   <nav class="form-navArrow" *ngIf="display">
+                        <a [routerLink]="['/grid']" [queryParams]="{'grid_name': record_details.course_type, 'master_val': record_details.stage}">
+                        <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
+                   </nav>
+                </div>
+            <div class="col-md-10" align="center">
+                <h2>{{record_details.profile[0].nom}} {{record_details.profile[1].firstname}} </h2>
+            </div>
+        </div>
+       </div>
   
   <div class="panel-body" *ngIf="display">
 
@@ -47,10 +55,6 @@ import {BalletDetailsService} from "./balletDetails.service";
                  
                 <div >
                     <table class="tg">
-                      <tr>
-                        <th></th>
-                        <th class="tg-bn4o" colspan="3">{{record_details.profile[0].nom}} {{record_details.profile[1].firstname}} </th>
-                      </tr>
                       <tr>
                         <td class="tg-txgi">Birthday</td>
                         <td class="tg-6k2t">{{record_details.dob}}</td>
