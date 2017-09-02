@@ -25,7 +25,7 @@ import {FormService} from "./form.service";
                 </li>
             </ul>
          </div>
-         <span class="label label-info" *ngIf="objStep.configuration?.foot_note != ''">{{objStep.configuration.foot_note}} </span>
+         <span class="label label-info" *ngIf="objStep.configuration.foot_note && objStep.configuration.foot_note != ''">{{objStep.configuration.foot_note}} </span>
      </div>
 `
 })
