@@ -150,10 +150,13 @@ import {EmailValidator} from "./emailValidator.component";
 </div>
             
                  <!--<button type="submit" class="btn btn-primary" [disabled]="myGroup.invalid">Valider</button>-->
-                    <button type="button"  data-target="#myModal" (click)="onClick()" class="btn btn-primary">Submit</button>
+                 <div align="center">
+                    <button type="button" data-target="#myModal" (click)="onClick()" class="btn btn-primary">   Envoyer   </button>
+                 </div>
                 </div>   
             </form>
         </div> 
+        
         </div>
 `
 
@@ -172,7 +175,8 @@ export class FieldPanelComponent {
     errorForm = false;
     ngOnInit() {
 
-        console.log('NgOnInit')
+        console.log('NgOnInit');
+        console.log(this.objStep);
         // CHECK IF THIS MUST DISPLAYED
         if (this.objStep.conditions.length > 0){
             let valueCondition = this.objStep.conditions[0].value;

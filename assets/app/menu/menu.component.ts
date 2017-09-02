@@ -89,19 +89,17 @@ export class MenuComponent {
 
     ngOnInit() {
         this.appName = this.route.snapshot.queryParams["app"];
-
         if (typeof this.route.snapshot.queryParams["firstLoad"] != 'undefined') {
             this.firstLoad = this.route.snapshot.queryParams["hasLoaded"];
         }
         console.log(this.firstLoad);
         console.log(this.grids)
 
-
         if (this._stepService.steps[0].master_type == 'form' && this.firstLoad) {
             this.router.navigate(['/step']);
         }
         else {
-            this._gridService.getActivatedGrids()
+            this._gridService.getActivatedGrids(this.appName)
                 .then(
                     gridsList => {
                         console.log(gridsList)

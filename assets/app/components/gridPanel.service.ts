@@ -112,14 +112,21 @@ export class GridPanelService {
             .catch(error => Observable.throw(error))
     }
 
-    getActivatedGrids(){
+    getActivatedGrids(master_name){
         // let query = "master="+master_name;
-        let headers= new Headers({'Content-Type': 'application/json'});
-        let options = new RequestOptions({ headers: headers });
-        var completeUrl = GlobalVariable.BASE_URL+'get_grids';
-        return this._http.get(completeUrl)
+        // let headers= new Headers({'Content-Type': 'application/json'});
+        // let options = new RequestOptions({ headers: headers });
+        // var completeUrl = GlobalVariable.BASE_URL+'get_grids';
+        // return this._http.get(completeUrl)
+        //     .toPromise().then(response => response.json())
+        //     .catch(error => Observable.throw(error))
+
+        let body = JSON.stringify({"master" : master_name});
+        const headers = new Headers({'Content-Type': 'application/json'});
+        var completeUrl = GlobalVariable.BASE_URL + 'get_grids';
+        return this._http.post(completeUrl, body, {headers: headers})
             .toPromise().then(response => response.json())
-            .catch(error => Observable.throw(error))
+            .catch(error => Observable.throw(error.json()));
     }
 
     filterParNom(obj, arg){

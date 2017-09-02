@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
-import { GlobalVariable } from "../global";
 import {Http, RequestOptions, Headers} from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import {FormService} from "./form.service";
+import {GlobalVariable} from "../global";
 
 @Injectable()
 export class SaveService {
@@ -23,15 +23,14 @@ export class SaveService {
     saveData(currentStep) {
 
             this._formService.arraySteps.push({"step_id": currentStep});
+            this._formService.arraySteps.push({"master" : "play"})
             let body = this._formService.arraySteps;
 
             console.log("body");
             console.log(body);
 
             //SAVE FORM DATA INTO COLLECTION
-
             const headers = new Headers({'Content-Type': 'application/json'});
-            // return this._http.post('http://localhost:3000/demand', body, {headers: headers})
             var completeUrl = GlobalVariable.BASE_URL + 'save_datas';
             return this._http.post(completeUrl, JSON.stringify(body), {headers: headers})
                 .map(response => response)

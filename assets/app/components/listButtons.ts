@@ -7,10 +7,12 @@ import {FormService} from "./form.service";
      <div *ngIf="display">
          <div class="panel-heading panel-heading-custom">{{objStep.configuration.labelPanel}} </div>
          <div class="panel-body" >
-          
+            <div class="jumbotron" *ngIf="objStep.configuration.header_note != ''">
+                <p [innerHTML] = "objStep.configuration.header_note"></p>
+            </div>
             <!--<div class="col-md-3" *ngFor="let valeurList of listOfElements">-->
             
-            <ul class="items">
+            <ul class="items" >
                 <li *ngFor="let valeurList of currentList">
                     <button *ngIf="valueSelected != valeurList" class="btn btn-primary" type="button" 
                         (click)="onChooseVal($event)"
@@ -23,7 +25,7 @@ import {FormService} from "./form.service";
                 </li>
             </ul>
          </div>
-         <span class="label label-info" *ngIf="footNote != ''">{{footNote}} </span>
+         <span class="label label-info" *ngIf="objStep.configuration?.foot_note != ''">{{objStep.configuration.foot_note}} </span>
      </div>
 `
 })
@@ -33,7 +35,7 @@ export class ListButtonsComponent {
     @Input() listOfElements;
     @Input() stepIdx;
     @Input() valueSelected; // Value to pass to the formService containing the selection
-    @Input() footNote = ''; //Optional insert a footnote in component
+
     @Output() change = new EventEmitter(); // Emitter to send back data to parent component
     currentList;
     display = false;
@@ -48,7 +50,7 @@ export class ListButtonsComponent {
         console.log("ngOnInitStart");
         console.log("this.stepIdx " + this.stepIdx);
         console.log(this.objStep.conditions.length);
-
+        console.log(this.objStep);
         if (this.objStep.conditions.length > 0){
             let valueCondition = this.objStep.conditions[0].value;
             let keyCondition = this.objStep.conditions[0].key;
