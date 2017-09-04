@@ -21,9 +21,7 @@ export class GridPanelService {
         this.keysName = [];
         this.colTitle = [];
 
-
         let query = "grid_name="+grid_name+"&filter="+valeur;
-
 
         let headers= new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({ headers: headers });

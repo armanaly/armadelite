@@ -19,7 +19,7 @@ import {Http} from "@angular/http";
                     </nav>
                   </div>
                  <div class="col-md-10" align="center">
-                     <h2 *ngIf="valeur != ''">{{valeur}}</h2>
+                     <h2 *ngIf="master != ''">{{master}}</h2>
                      <h3>{{grid_name}}</h3>
                  </div>
                </div>
@@ -29,15 +29,15 @@ import {Http} from "@angular/http";
                     <table class="table table-hover table-condensed"  >
                         <tr>
                             <th *ngFor="let obj of _gridService.colTitle;let i = index">
-                                <div *ngIf="obj.filterable">{{obj.title}}&nbsp; 
-                                    <button  
+                                <div >{{obj.title}}&nbsp; 
+                                    <button *ngIf="obj.filterable" 
                                         class="glyphicon glyphicon-filter" 
                                         type="button" 
                                         (click)="showFilterInput(i)">
                                     </button>
                                     <br>
                                     <input   
-                                        *ngIf="showInput[i] == true"
+                                        *ngIf="obj.filterable && showInput[i]"
                                         myAutofocus="true"
                                         type="text" 
                                         id="{{obj.key}}"
@@ -62,7 +62,7 @@ import {Http} from "@angular/http";
                                 </span>
                             </td>
                             
-                            <td *ngIf="master && master == 'ballet'">
+                            <td *ngIf="_stepService.steps[0].master_name == 'ballet'">
                                 <a [routerLink]="['/editStudent', item._id] "> 
                                     <button class="btn btn-primary" type="button" > 
                                         <i class="glyphicon glyphicon-edit"> </i>
@@ -72,7 +72,7 @@ import {Http} from "@angular/http";
 
                             
                             <!--*ngIf="item.group_mgt"-->
-                            <td *ngIf="master && master == 'ballet'" >
+                            <td *ngIf="_stepService.steps[0].master_name == 'ballet'" >
                                 <a [routerLink]="['/groupManagement', item._id, grid_name, valeur] ">
                                     <button class="btn btn-primary" type="button">{{item.stage}} Group </button>
                                 </a> 

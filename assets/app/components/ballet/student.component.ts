@@ -23,7 +23,7 @@ import {StudentService} from "./student.service";
             <div  class="row" align="left">
                 <div class="col-md-2">
                     <nav class="form-navArrow" *ngIf="display_edit">
-                        <a [routerLink]="['/grid']" [queryParams]="{'grid_name': student_info.course_type, 'master_val': student_info.stage}">
+                        <a [routerLink]="['/grid']" [queryParams]="{'grid_name': student_info.course_type, 'master': student_info.stage}">
                         <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
                     </nav>
                 </div>

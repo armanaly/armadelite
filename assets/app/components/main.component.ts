@@ -38,7 +38,7 @@ import {SaveService} from "./saveService";
             </previous-page>
         </div>
         <div class=".col-md-11" *ngIf="_stepService.steps[0].logo_url != ''" align="center">
-            <img class="img-thumbnail"  src="{{_stepService.steps[0].logo_url}}" width="480" height="320">
+            <img class="img-thumbnail"  src="{{_stepService.steps[0].logo_url}}" width="240" height="160">
         
         </div>
     </div>

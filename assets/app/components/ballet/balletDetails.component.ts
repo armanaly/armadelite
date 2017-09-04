@@ -24,7 +24,7 @@ import {BalletDetailsService} from "./balletDetails.service";
             <div  class="row" align="left">
                 <div class="col-md-2">
                    <nav class="form-navArrow" *ngIf="display">
-                        <a [routerLink]="['/grid']" [queryParams]="{'grid_name': record_details.course_type, 'master_val': record_details.stage}">
+                        <a [routerLink]="['/grid']" [queryParams]="{'grid_name': record_details.course_type, 'master': record_details.stage}">
                         <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
                    </nav>
                 </div>

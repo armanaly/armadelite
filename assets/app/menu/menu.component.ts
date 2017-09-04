@@ -24,6 +24,18 @@ import {GlobalVariable} from "../global";
     </div>
 
     <div class="panel-body" *ngIf="ready == true">
+           <div  *ngIf="preMenu == 0"> 
+                <div *ngFor="let grid of grids" class="col-md-3">
+                    <!--<button class="btn btn-success" type="button" (click)="showGrid(grid.name)" value="{{grid.name}} ">{{grid.name}} -->
+                    <!--</button>-->
+                    <span *ngIf="grid.display">
+                        <button type="button" class="btn btn-primary btn-lg" >
+                            <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid.name, 'master':_stepService.steps[0].master_name}">{{grid.name}} </a>
+                        </button>
+                    </span>
+                </div>
+            </div>
+            
             <div *ngIf="preMenu == 1"> 
                 <!--steps from admin_ballet-->
                     <!--step 1 { type : buttons } pass stage_name to step 2-->
@@ -39,35 +51,22 @@ import {GlobalVariable} from "../global";
                 </div>
             
             
-            </div>
-            
+            </div>          
+          
+          
+            <!--<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/step']"> Nouveau flow</a></button></div>-->
             <div *ngIf="preMenu == 2"> 
 
-                <div *ngFor="let grid of grids" >
-                    <div *ngIf="grid.display">
-                        <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid.name, 'master_val': val_level2}">
-                            <button type="button" class="btn btn-primary btn-lg" > {{grid.name}}</button> 
+                <div *ngFor="let grid of gridBtns" >
+                    <!--<div *ngIf="grid.display">-->
+                        <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid, 'master': val_level2}">
+                            <button type="button" class="btn btn-primary btn-lg" > {{grid}}</button> 
                         </a>
                         <br><br>    
-                    </div>
+                    <!--</div>-->
                     
                 </div>
             </div>
-            
-            
-           <div  *ngIf="preMenu == 0"> 
-                <div *ngFor="let grid of grids" class="col-md-3">
-                    <!--<button class="btn btn-success" type="button" (click)="showGrid(grid.name)" value="{{grid.name}} ">{{grid.name}} -->
-                    <!--</button>-->
-                    <span *ngIf="grid.display">
-                        <button type="button" class="btn btn-primary btn-lg" >
-                            <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid.name, 'master':_stepService.steps[0].master_name}">{{grid.name}} </a>
-                        </button>
-                    </span>
-                </div>
-            </div>
-            <!--<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/step']"> Nouveau flow</a></button></div>-->
-
     </div>
 `
 })
@@ -86,7 +85,7 @@ export class MenuComponent {
     level2 = false;
     val_level2 = '';
     firstLoad = true;
-
+    gridBtns;
     ngOnInit() {
         this.appName = this.route.snapshot.queryParams["app"];
         if (typeof this.route.snapshot.queryParams["firstLoad"] != 'undefined') {
@@ -130,9 +129,10 @@ export class MenuComponent {
 
 
     getGridsBtn($event, val) {
-        var gridList = $event.target.value;
+        //this.gridBtns = $event.target.value;
         this.val_level2 = val;
-        console.log(gridList);
+        //console.log(this.gridBtns);
+       // console.log(gridList);
         console.log(val)
         // TOUS LES GRIDS de la collection grids
         for (let idxGrid in this.grids) {
@@ -140,29 +140,39 @@ export class MenuComponent {
 
             if (typeof this.grids[idxGrid].listBtn != 'undefined') {
                 {
-                    for (let i in this.grids[idxGrid].listBtn) {
-                        if (this.grids[idxGrid].listBtn[i].value == val) {
-                            console.log(this.grids[idxGrid].listBtn[i]);
-                            console.log(this.grids[idxGrid].listBtn[i].value);
-                            console.log(this.grids[idxGrid].listBtn[i].children);
-                            for (let j in this.grids) {
-                                console.log(this.grids[j].name)
-                                console.log(this.grids[idxGrid].listBtn[i].children);
-                                console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-                                if (this.grids[idxGrid].listBtn[i].children.indexOf(this.grids[j].name) > -1) {
-                                    this.grids[j].display = true;
-                                }
-                                else {
-                                    this.grids[j].display = false;
-                                }
-                            }
-                            console.log(this.grids)
-                            //this.grids = this.grids[idxGrid].listBtn[i].children;
-                            // je dois uniquement garder les btn de this.grids qui sont dans la liste children
+                    //for (let i in this.grids[idxGrid].listBtn) {
+                     let obj = this.grids[idxGrid].listBtn.find(o => o.value == val);
+                    this.gridBtns = obj.children;
+                     // console.log(obj);
+                    // console.log(obj.children);
+                    // console.log(this.grids),
+         //               console.log(gridList);
 
-                        }
-
-                    }
+                    // if (this.grids[idxGrid].listBtn.indexOf.value == val) {
+                    //         console.log(this.grids[idxGrid].listBtn[i]);
+                    //         console.log(this.grids[idxGrid].listBtn[i].value);
+                    //         console.log(this.grids[idxGrid].listBtn[i].children);
+                    //         for (let j in this.grids) {
+                    //             console.log(this.grids[j])
+                    //             console.log(this.grids[j].name)
+                    //             console.log(this.grids[idxGrid].listBtn[i].children);
+                    //             this.gridBtns = this.grids[idxGrid].listBtn[i].children;
+                    //             console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+                    //             if (this.grids[idxGrid].listBtn[i].children.indexOf(this.grids[j].name) > -1) {
+                    //                 this.grids[j].display = true;
+                    //             }
+                    //             else {
+                    //                 this.grids[j].display = true;
+                    //                 // this.grids[j].display = false;
+                    //             }
+                    //         }
+                    //         console.log(this.gridBtns)
+                    //         //this.grids = this.grids[idxGrid].listBtn[i].children;
+                    //         // je dois uniquement garder les btn de this.grids qui sont dans la liste children
+                    //
+                    //     }
+                    //
+                    // }
 
                 }
             }

@@ -15,7 +15,7 @@ import {GridPanelService} from "../grid.service";
         <div  class="row" align="left">
             <div class="col-md-2">
                  <nav class="form-navArrow">
-                    <a [routerLink]="['/grid']" [queryParams]="{'grid_name': course_type, 'master_val': stage}">
+                    <a [routerLink]="['/grid']" [queryParams]="{'grid_name': course_type, 'master': stage}">
                     <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
                  </nav>
             </div>
