@@ -50,7 +50,15 @@ export class GridPanelService {
                             // console.log(p+"_"+data[0].colNames[i][p][j])
                             // this.keysName.push(p+"_"+data[0].colNames[i][p][j]);
                             this.keysName.push(data[0].config[i].field_panel_name + '_' + data[0].config[i].field_panel_values[q].data);
-                            this.colTitle.push({"title":data[0].config[i].field_panel_values[q].title, "key" : data[0].config[i].field_panel_name + '_' + data[0].config[i].field_panel_values[q].data, "type": "field_panel"})
+                            let objColTitle = {}
+                            objColTitle.title = data[0].config[i].field_panel_values[q].title;
+                            objColTitle.key = data[0].config[i].field_panel_name + '_' + data[0].config[i].field_panel_values[q].data;
+                            objColTitle.type = "field_panel";
+;
+                            if (typeof (data[0].config[i].field_panel_values[q].filterable) != 'undefined'){
+                                objColTitle.filterable = true;
+                            }
+                            this.colTitle.push(objColTitle);
                             // console.log(data[0].colNames[i][p])
                             //j++;
                         }
@@ -176,12 +184,12 @@ export class GridPanelService {
         //console.log(arrByNom);
     }
 
-    updateCheckbox(value,_id){
+    updateCheckbox(value,_id,master){
         // console.log('saveDemande');
         // console.log(form );
-
+console.log(master)
         //this._formService.arraySteps.push({"step_id": currentStep});
-        let body = JSON.stringify({"value" : value, "_id": _id});
+        let body = JSON.stringify({"value" : value, "_id": _id, "master": master});
         //
         // console.log("body");
         // console.log(body);

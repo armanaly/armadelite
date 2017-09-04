@@ -29,7 +29,7 @@ import {Http} from "@angular/http";
                     <table class="table table-hover table-condensed"  >
                         <tr>
                             <th *ngFor="let obj of _gridService.colTitle;let i = index">
-                                <div>{{obj.title}}&nbsp; 
+                                <div *ngIf="obj.filterable">{{obj.title}}&nbsp; 
                                     <button  
                                         class="glyphicon glyphicon-filter" 
                                         type="button" 
@@ -142,7 +142,7 @@ import {Http} from "@angular/http";
     ngOnInit() {
 
         this.grid_name = this.route.snapshot.queryParams["grid_name"];
-        this.master = this.route.snapshot.queryParams["master_val"];
+        this.master = this.route.snapshot.queryParams["master"];
         console.log(this.master)
         if(this.master != ''){
             this._gridService.getDatas(this.grid_name, this.master)
@@ -208,8 +208,9 @@ import {Http} from "@angular/http";
     updateCheckBox($event, item){
        // let value = $event.target.getAttribute('value');
         let value =$event.target.checked;
-console.log(item)
-        this._gridService.updateCheckbox(value,item._id)
+        console.log(item)
+        console.log(this.master)
+        this._gridService.updateCheckbox(value,item._id,this.master)
             .subscribe(
                 data => console.log(data),
                 error => console.log(error)
