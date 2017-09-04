@@ -4,7 +4,7 @@ import {Router, NavigationExtras, ActivatedRoute} from '@angular/router';
 import {Http} from "@angular/http";
 import {GroupService} from "./group.service";
 import {forEach} from "../../../../public/js/vendor/@angular/router/src/utils/collection";
-import {GridPanelService} from "../gridPanel.service";
+import {GridPanelService} from "../grid.service";
 import {BalletDetailsService} from "./balletDetails.service";
 import {FormControl, FormGroup} from "../../../../public/js/vendor/@angular/forms/src/model";
 import {Validators} from "../../../../public/js/vendor/@angular/forms/src/validators";
@@ -135,7 +135,7 @@ import {StudentService} from "./student.service";
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-primary " [disabled]="!studentForm.form.valid">Submit</button>
+                        <button type="submit" class="btn btn-primary" [disabled]="!studentForm.form.valid">Submit</button>
                     </div>
                 </div>
             </form>    

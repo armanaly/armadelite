@@ -19,25 +19,30 @@ import {SaveService} from "./saveService";
 <div class="panel panel-default" *ngIf="formCompleted == false">
    
 <!--<p>Session ID: {{ current_step_id | async }}</p>-->
-    <div class="row" align="center">
-        
-            <!--<div  class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/grid']"> Data grid </a></button></div>-->
-            <!--<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/step']"> NEW FORM</a></button></div>-->
-            <!--<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/']"> Ajouter contact </a></button></div>-->
-            <!--<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/']"> Lister contacts </a></button></div>-->
+    <!--<div class="row" align="center">-->
+        <!---->
+            <!--&lt;!&ndash;<div  class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/grid']"> Data grid </a></button></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/step']"> NEW FORM</a></button></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/']"> Ajouter contact </a></button></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/']"> Lister contacts </a></button></div>&ndash;&gt;-->
 
+    <!--</div>-->
+    <!--<br>-->
+    <!---->
+     <div *ngIf="_stepService.steps[0].logo_url != '' || this.stepId != 1" >
+         <div class=".col-md-1" *ngIf="this.stepId != 1">
+            <previous-page 
+                [stepId] = "stepId"
+                [idxStepObj] =  "indexStepObj"
+                (change) = goPreviousStep($event) >
+            </previous-page>
+        </div>
+        <div class=".col-md-11" *ngIf="_stepService.steps[0].logo_url != ''" align="center">
+            <img class="img-thumbnail"  src="{{_stepService.steps[0].logo_url}}" width="480" height="320">
+        
+        </div>
     </div>
-    <br>
-    
-    
-    <div *ngIf="this.stepId != 1">
-        <previous-page 
-            [stepId] = "stepId"
-            [idxStepObj] =  "indexStepObj"
-            (change) = goPreviousStep($event) >
-        </previous-page>
-    </div>
-    <br>
+
     
    <div *ngFor="let objStep of this._stepService.steps; let i = index" >
         <!-- IMAGE LIST BUTTON PANEL -->

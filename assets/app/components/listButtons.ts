@@ -7,7 +7,7 @@ import {FormService} from "./form.service";
      <div *ngIf="display">
          <div class="panel-heading panel-heading-custom">{{objStep.configuration.labelPanel}} </div>
          <div class="panel-body" >
-            <div class="jumbotron" *ngIf="objStep.configuration.header_note != ''">
+            <div class="jumbotron" *ngIf="objStep.configuration.header_note && objStep.configuration.header_note != ''">
                 <p [innerHTML] = "objStep.configuration.header_note"></p>
             </div>
             <!--<div class="col-md-3" *ngFor="let valeurList of listOfElements">-->

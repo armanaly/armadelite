@@ -1,7 +1,7 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core'
 import {StepService} from "../Engine/step.service";
 import {Router, ActivatedRoute} from '@angular/router';
-import {GridPanelService} from "../components/gridPanel.service";
+import {GridPanelService} from "../components/grid.service";
 import {GlobalVariable} from "../global";
 @Component({
     selector: 'grid-panel',

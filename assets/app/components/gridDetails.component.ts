@@ -1,5 +1,5 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core'
-import {GridPanelService} from "./gridPanel.service";
+import {GridPanelService} from "./grid.service";
 import {Router, NavigationExtras, ActivatedRoute} from '@angular/router';
 import {StepService} from "../Engine/step.service";
 import {Http} from "@angular/http";

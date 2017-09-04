@@ -39,6 +39,7 @@ export class StepService {
                         data[i].step_id,
                         data[i].type,
                         data[i].name,
+                        data[i].logo_url,
                         data[i].configuration,
                         data[i].master_name,
                         data[i].master_type,

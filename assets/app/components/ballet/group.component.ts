@@ -4,7 +4,7 @@ import {Router, NavigationExtras, ActivatedRoute} from '@angular/router';
 import {Http} from "@angular/http";
 import {GroupService} from "./group.service";
 import {forEach} from "../../../../public/js/vendor/@angular/router/src/utils/collection";
-import {GridPanelService} from "../gridPanel.service";
+import {GridPanelService} from "../grid.service";
 @Component({
     selector: 'group',
     template: `

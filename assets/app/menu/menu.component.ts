@@ -1,7 +1,7 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core'
 import {StepService} from "../Engine/step.service";
 import {Router, ActivatedRoute} from '@angular/router';
-import {GridPanelService} from "../components/gridPanel.service";
+import {GridPanelService} from "../components/grid.service";
 import {GlobalVariable} from "../global";
 @Component({
     selector: 'grid-panel',
@@ -45,7 +45,7 @@ import {GlobalVariable} from "../global";
 
                 <div *ngFor="let grid of grids" >
                     <div *ngIf="grid.display">
-                        <a [routerLink]="['/grid']" replaceUrl="True" [queryParams]="{'grid_name': grid.name, 'master_val': val_level2}">
+                        <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid.name, 'master_val': val_level2}">
                             <button type="button" class="btn btn-primary btn-lg" > {{grid.name}}</button> 
                         </a>
                         <br><br>    
@@ -61,7 +61,7 @@ import {GlobalVariable} from "../global";
                     <!--</button>-->
                     <span *ngIf="grid.display">
                         <button type="button" class="btn btn-primary btn-lg" >
-                            <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid.name}">{{grid.name}} </a>
+                            <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid.name, 'master':_stepService.steps[0].master_name}">{{grid.name}} </a>
                         </button>
                     </span>
                 </div>
@@ -95,11 +95,12 @@ export class MenuComponent {
         console.log(this.firstLoad);
         console.log(this.grids)
 
+        console.log(this._stepService.steps[0].master_name)
         if (this._stepService.steps[0].master_type == 'form' && this.firstLoad) {
             this.router.navigate(['/step']);
         }
         else {
-            this._gridService.getActivatedGrids(this.appName)
+            this._gridService.getActivatedGrids(this._stepService.steps[0].master_name)
                 .then(
                     gridsList => {
                         console.log(gridsList)

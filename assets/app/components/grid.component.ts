@@ -1,5 +1,5 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core'
-import {GridPanelService} from "./gridPanel.service";
+import {GridPanelService} from "./grid.service";
 import {Router, NavigationExtras, ActivatedRoute} from '@angular/router';
 import {StepService} from "../Engine/step.service";
 import {Http} from "@angular/http";
@@ -62,7 +62,7 @@ import {Http} from "@angular/http";
                                 </span>
                             </td>
                             
-                            <td>
+                            <td *ngIf="master && master == 'ballet'">
                                 <a [routerLink]="['/editStudent', item._id] "> 
                                     <button class="btn btn-primary" type="button" > 
                                         <i class="glyphicon glyphicon-edit"> </i>
@@ -72,7 +72,7 @@ import {Http} from "@angular/http";
 
                             
                             <!--*ngIf="item.group_mgt"-->
-                            <td >
+                            <td *ngIf="master && master == 'ballet'" >
                                 <a [routerLink]="['/groupManagement', item._id, grid_name, valeur] ">
                                     <button class="btn btn-primary" type="button">{{item.stage}} Group </button>
                                 </a> 
@@ -137,15 +137,15 @@ import {Http} from "@angular/http";
     keysName = [];
     showInput = [];
     filterActivated = false;
-    valeur = "";
+    master = "";
 
     ngOnInit() {
 
         this.grid_name = this.route.snapshot.queryParams["grid_name"];
-        this.valeur = this.route.snapshot.queryParams["master_val"];
-        console.log(this.valeur)
-        if(this.valeur != ''){
-            this._gridService.getDatas(this.grid_name, this.valeur)
+        this.master = this.route.snapshot.queryParams["master_val"];
+        console.log(this.master)
+        if(this.master != ''){
+            this._gridService.getDatas(this.grid_name, this.master)
                 .subscribe(data => {
                         console.log(data)
                         console.log(this._gridService)

@@ -4,7 +4,7 @@ import {MainComponent} from './components/main.component';
 
 import {ProfileComponent} from "./profile/profile.component";
 import {PhotosComponent} from "./photos/photos.component";
-import {GridPanelComponent} from "./components/gridPanel.component";
+import {GridPanelComponent} from "./components/grid.component";
 import {MenuComponent} from "./menu/menu.component";
 import {SignupComponent} from "./auth/signup.component";
 import {AuthenticationComponent} from "./auth/authentication.component";
