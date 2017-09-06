@@ -42,8 +42,8 @@ import {GlobalVariable} from "../global";
                     <!--step 2 {type: grids} get all grids from stage_name-->
                 <!--steps from grids-->
                 
-                 <div *ngFor="let btn of preMenuLst">
-                    <button class="btn btn-primary btn-lg" type="button" 
+                 <div *ngFor="let btn of preMenuLst" align="center">
+                    <button class="btn btn-primary btn-lg"  type="button"  style="width: 500px"
                         (click)="getGridsBtn($event, btn.value)"
                         value="{{btn.children}}">{{btn.value}}
                     </button>
@@ -57,12 +57,12 @@ import {GlobalVariable} from "../global";
             <!--<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/step']"> Nouveau flow</a></button></div>-->
             <div *ngIf="preMenu == 2"> 
 
-                <div *ngFor="let grid of gridBtns" >
+                <div *ngFor="let grid of gridBtns" align="center">
                     <!--<div *ngIf="grid.display">-->
                         <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid, 'master': val_level2}">
-                            <button type="button" class="btn btn-primary btn-lg" > {{grid}}</button> 
+                            <button type="button" style="width: 500px" class="btn btn-primary btn-lg" > {{grid}}</button> 
                         </a>
-                        <br><br>    
+                        <br><br>   
                     <!--</div>-->
                     
                 </div>

@@ -22,24 +22,24 @@ import {GridPanelService} from "../grid.service";
         
           <div class="col-md-10" align="center">
             <h1 *ngIf="stage != ''">{{stage}} - {{course_type}}</h1>
+            <h4>Number of students per week and per group</h4>
           </div>
           </div>
     </div>
 
     <div class="panel-body"  *ngIf="display"> 
-        <div>
-            {{student.profile_nom}} {{student.profile_firstname}} - Number of weeks: {{student.duration}} 
-        </div>
-        <span>
-            Set to group: 
+        <div align="center">
+            <h3>{{student.profile_nom}} {{student.profile_firstname}} </h3>
+            <h4>Number of weeks: {{student.duration}}  -  Current group: {{this.currentGroup}}</h4>
+            <h4>Set to group:</h4> 
             <select id="groups" (change)="updateGroup($event)"  >
                 <option> --</option>
                 <option *ngFor="let group of this.groups" value="{{group}}">{{group}}</option>
             </select>
-        </span>
+        </div>
 
-        <div>Current group: {{this.currentGroup}}</div>
-        <div></div>        
+        
+        <br>        
         <table class="table table-hover table-condensed"  >
             <tr >
                 <td></td>
@@ -80,7 +80,8 @@ export class GroupComponent {
             this.course_type = params['course_type']
             this.stage = params['stage']
         });
-       console.log(this.obj_id)
+       console.log(this.obj_id);
+       console.log(this.stage);
        console.log(this._gridService.dataGrid);
        this.student = this._gridService.dataGrid[this._gridService.dataGrid.findIndex(x => x._id == this.obj_id)];
         console.log(this.student)

@@ -122,24 +122,52 @@ import {StudentService} from "./student.service";
                 <div class="form-group">
                     <label for="notes" class="col-sm-2 control-label" >Notes</label>
                     <div class="col-sm-10">
-                        <input 
-                            class="form-control"
-                            type="text"
-                            id="notes"
-                            name="notes"
-                            value="{{student_info.notes}}"
-                            [(ngModel)]="model.notes" 
-                            name="notes"
-                            #notes="ngModel">
+                        
+                          <textarea 
+                                    rows="15" 
+                                    cols="100"
+                                    id="notes"
+                                    name="notes"
+                                    [(ngModel)]="model.notes" 
+                                    #notes="ngModel"
+                                    >
+                                {{record_details.notes }}
+                            </textarea>        
+                        <!--<input -->
+                            <!--class="form-control"-->
+                            <!--type="text"-->
+                            <!--id="notes"-->
+                            <!--name="notes"-->
+                            <!--value="{{student_info.notes}}"-->
+                            <!--[(ngModel)]="model.notes" -->
+                            <!--name="notes"-->
+                            <!--#notes="ngModel">-->
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-primary" [disabled]="!studentForm.form.valid">Submit</button>
+                        <button type="submit" data-target="#myModal" class="btn btn-primary" [disabled]="!studentForm.form.valid">SAVE CHANGES</button>
                     </div>
                 </div>
             </form>    
-        </div>    
+        </div>  
+          <div  id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+        
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Done</h4>
+              </div>
+              <div class="modal-body">
+                <p>Student updated</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>  </div>
     </div>`
 })
 
@@ -176,7 +204,7 @@ export class StudentComponent {
             .subscribe(data => {
                     console.log(data)
                     this.student_info = data;
-                    this.model = new Student(data._id,data.DNI,data.BECA, data.father, data.intolerancia, data.email_2, data.phone_2, data.note);
+                    this.model = new Student(data._id,data.DNI,data.BECA, data.father, data.intolerancia, data.email_2, data.phone_2, data.notes);
                     console.log(this.model);
                     this.display_edit = true;
                 },
@@ -190,7 +218,7 @@ export class StudentComponent {
         this._studentService.updateStudent(this.model)
             .subscribe(data => {
                     console.log(data)
-
+                    $("#myModal").modal('show')
                 },
                 error => console.log(error)
             )

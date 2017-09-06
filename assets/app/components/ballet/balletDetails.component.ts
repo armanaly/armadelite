@@ -29,7 +29,7 @@ import {BalletDetailsService} from "./balletDetails.service";
                    </nav>
                 </div>
             <div class="col-md-10" align="center">
-                <h2>{{record_details.profile[0].nom}} {{record_details.profile[1].firstname}} </h2>
+                <h2><b class="text-uppercase">{{record_details.profile[0].nom}}</b> {{record_details.profile[1].firstname}} </h2>
             </div>
         </div>
        </div>
@@ -67,19 +67,27 @@ import {BalletDetailsService} from "./balletDetails.service";
                         <td class="tg-txgi">City</td>
                         <td class="tg-6k2t">{{record_details.profile[5].city}}</td>
                       </tr>
+                      <!--<tr>-->
+                        <!--<td class="tg-txgi">BECA</td>-->
+                        <!--<td class="tg-6k2t">{{record_details.BECA}}</td>-->
+                        <!--<td class="tg-txgi">DNI</td>-->
+                        <!--<td class="tg-6k2t">{{record_details.DNI}}</td>-->
+                      <!--</tr>-->
                       <tr>
-                        <td class="tg-txgi">BECA</td>
-                        <td class="tg-6k2t">{{record_details.BECA}}</td>
-                        <td class="tg-txgi">DNI</td>
-                        <td class="tg-6k2t">{{record_details.DNI}}</td>
+                        <td class="tg-txgi">Phone 1</td>
+                        <td class="tg-6k2t">{{record_details.profile[2].phone}}</td>
+                        <td class="tg-txgi">Phone 2</td>
+                        <td class="tg-6k2t">{{record_details.phone2}}</td>
+                        <!--<th class="tg-yw4l" colspan="2"><span class="glyphicon glyphicon-earphone"> {{record_details.profile[2].phone}}</span></th>-->
+                        <!--<th class="tg-yw4l"  colspan="2"><span class="glyphicon glyphicon-envelope"> {{record_details.profile[3].email}}</span></th>-->
                       </tr>
                       <tr>
-                        <th class="tg-yw4l" colspan="2"><span class="glyphicon glyphicon-earphone"> {{record_details.profile[2].phone}}</span></th>
-                        <th class="tg-yw4l"  colspan="2"><span class="glyphicon glyphicon-envelope"> {{record_details.profile[3].email}}</span></th>
-                      </tr>
-                      <tr>
-                        <th class="tg-yw4l" colspan="2">(2) <span class="glyphicon glyphicon-earphone"></span> <span>{{record_details.phone2}}</span></th>
-                        <th class="tg-yw4l" colspan="2">(2) <span class="glyphicon glyphicon-envelope"></span><span>{{record_details.email2}}</span></th>
+                        <td class="tg-txgi">Email 1</td>
+                        <td class="tg-6k2t">{{record_details.profile[3].email}}</td>
+                        <td class="tg-txgi">Email 2</td>
+                        <td class="tg-6k2t">{{record_details.email2}}</td>
+                        <!--<th class="tg-yw4l" colspan="2">(2) <span class="glyphicon glyphicon-earphone"></span> <span>{{record_details.phone2}}</span></th>-->
+                        <!--<th class="tg-yw4l" colspan="2">(2) <span class="glyphicon glyphicon-envelope"></span><span>{{record_details.email2}}</span></th>-->
                       </tr>
                      
                   
@@ -114,16 +122,17 @@ import {BalletDetailsService} from "./balletDetails.service";
                         <td class="tg-txgi" >Audition place</td>
                         <td class="tg-6k2t" >{{record_details.audition}}</td>
                       </tr>
-                      
-                      <tr>
-                        <td colspan="4">
+                      <tr> 
+                        <td colspan="1" class="tg-txgi">Notes</td>
+                        <td colspan="3">
                             <textarea disabled rows="15" cols="100">
                                 {{record_details.notes }}
                             </textarea>        
                         
                         </td>
-                        
                       </tr>
+                       
+                        
                       </table>
                       </div>
             <!--</div>   -->

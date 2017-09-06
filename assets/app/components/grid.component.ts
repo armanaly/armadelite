@@ -62,6 +62,7 @@ import {Http} from "@angular/http";
                                 </span>
                             </td>
                             
+                            <!-- EDIT BUTTON -->
                             <td *ngIf="_stepService.steps[0].master_name == 'ballet'">
                                 <a [routerLink]="['/editStudent', item._id] "> 
                                     <button class="btn btn-primary" type="button" > 
@@ -70,11 +71,11 @@ import {Http} from "@angular/http";
                                 </a> 
                             </td>
 
-                            
+                            <!--- GROUP MANAGEMENT BUTTON --->
                             <!--*ngIf="item.group_mgt"-->
                             <td *ngIf="_stepService.steps[0].master_name == 'ballet'" >
-                                <a [routerLink]="['/groupManagement', item._id, grid_name, valeur] ">
-                                    <button class="btn btn-primary" type="button">{{item.stage}} Group </button>
+                                <a [routerLink]="['/groupManagement', item._id, grid_name, master] ">
+                                    <button class="btn btn-primary" type="button"> Group </button>
                                 </a> 
                             </td>
                             <!-- IF DETAILS IS ACTIVATED IN GRID CONFIG COLLECTION -->
