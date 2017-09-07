@@ -10,12 +10,13 @@ import {SaveService} from "./saveService";
 
 export class SaveButtonComponent {
     @Input() stepId;
+    @Input() app_name;
     constructor(private _saveService: SaveService){}
 
     saveStep(){
         //console.log(this._formService);
-        console.log(this.stepId);
-        this._saveService.saveData(this.stepId)
+        console.log(this.app_name);
+        this._saveService.saveData(this.stepId,this.app_name)
             .subscribe(
                 data => console.log(data),
                 error => console.log(error)

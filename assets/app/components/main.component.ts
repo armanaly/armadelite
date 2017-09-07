@@ -114,6 +114,7 @@ import {SaveService} from "./saveService";
     *ngIf="this._stepService.steps[0].master_type == 'workflow'"
     (saveStep)="saveStep($event)"
     [stepId]="this.stepId"
+    [app_name]="this.appName"
 >
 
 </save-button>
@@ -153,6 +154,7 @@ export class MainComponent implements OnInit {
     indexStepObj = 0;
     labelPanel = "";
     datas = [];
+    appName = "";
     lists = [];
     formCompleted = false;
     valuesSelected = [];
@@ -175,7 +177,7 @@ export class MainComponent implements OnInit {
 
         console.log('init main Component');
         // IF FIRST STEP IS A COLLECTION
-console.log(this._stepService.steps[0].configuration)
+        console.log(this._stepService.steps[0].configuration)
 
         if (typeof this._stepService.steps[0].configuration.collection != 'undefined') {
 
@@ -197,7 +199,9 @@ console.log(this._stepService.steps[0].configuration)
        // console.log(this._stepService.step);
         console.log(this._stepService.steps);
         var master_type = this._stepService.steps[0].master_type;
-
+        this.appName = this._stepService.steps[0].master_name;
+        console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+        console.log(this._stepService.steps[0]);
         this.current_step_id = this.route
             .queryParams
             .map(params => params['id'] || 'None'
@@ -417,7 +421,7 @@ console.log(this._stepService.steps[0].configuration)
                         console.log(this._formService.arraySteps);
 
                         //SAVE FORM DATA
-                        this._saveService.saveData(this._stepService.steps[this.indexStepObj].step_id)
+                        this._saveService.saveData(this._stepService.steps[this.indexStepObj].step_id,this.appName)
                             .subscribe(
                                 data => {
                                     this.formCompleted = true;

@@ -20,10 +20,10 @@ export class SaveService {
                 .catch(error => Observable.throw(error))
                 }
 
-    saveData(currentStep) {
-
-            this._formService.arraySteps.push({"step_id": currentStep});
-            this._formService.arraySteps.push({"master" : "play"})
+    saveData(currentStep, appName) {
+console.log(appName)
+            this._formService.arraySteps.push({"step_id": currentStep},{"app_name" : appName});
+            //this._formService.arraySteps.push()
             let body = this._formService.arraySteps;
 
             console.log("body");
