@@ -83,11 +83,11 @@ import {StudentService} from "./student.service";
                         <input 
                             class="form-control"
                             type="text"
-                            id="intolerancia"
-                            name="intolerancia"
-                            value="{{student_info.intolerancia}}"
-                            [(ngModel)]="model.intolerancia" 
-                            name="intolerancia"
+                            id="intolerencia"
+                            name="intolerencia"
+                            value="{{student_info.intolerencia}}"
+                            [(ngModel)]="model.intolerencia" 
+                            name="intolerencia"
                             #intolerencia="ngModel">
                     </div>
                 </div>
@@ -131,7 +131,7 @@ import {StudentService} from "./student.service";
                                     [(ngModel)]="model.notes" 
                                     #notes="ngModel"
                                     >
-                                {{record_details.notes }}
+                                {{student_info.notes }}
                             </textarea>        
                         <!--<input -->
                             <!--class="form-control"-->
@@ -204,7 +204,7 @@ export class StudentComponent {
             .subscribe(data => {
                     console.log(data)
                     this.student_info = data;
-                    this.model = new Student(data._id,data.DNI,data.BECA, data.father, data.intolerancia, data.email_2, data.phone_2, data.notes);
+                    this.model = new Student(data._id,data.DNI,data.BECA, data.father, data.intolerencia, data.email2, data.phone2, data.notes);
                     console.log(this.model);
                     this.display_edit = true;
                 },
