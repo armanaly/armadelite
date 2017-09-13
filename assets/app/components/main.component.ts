@@ -130,8 +130,13 @@ import {SaveService} from "./saveService";
 <img class="img-thumbnail"  src="http://res.cloudinary.com/htamml3fv/image/upload/v1504451389/isen_play2_p8y0ey.jpg" >
  <div class="jumbotron" *ngIf="formCompleted" class="alert alert-success" role="alert">
       <div class="container">
-        <h1>Your request has been sent. <br>
-        We'll come back to you very soon</h1>
+         Afin de confirmer votre inscription, merci de payer la somme de 140 € sur le compte suivant : <br>
+         <table>
+         <tr><td>TITULAIRE DU COMPTE: </td><td> Bureau des élèves-ISEB</td></tr>
+         <tr><td>IBAN: </td><td>  FR76 1558 9297 1803 0818 3454 079</td></tr>
+         <tr><td>COMMUNICATION: </td><td>  bde play {{this._formService.arraySteps[0].profile[0].nom}} {{this._formService.arraySteps[0].profile[0].prenom}}</td></tr>
+         
+         </table>
         </div>
  </div>
 `,
@@ -434,6 +439,7 @@ export class MainComponent implements OnInit {
                                     this.formCompleted = true;
                                     if (typeof this._stepService.steps[this.indexStepObj].configuration.mail_id != 'undefined') {
                                         console.log("SEND NOTIFICATION");
+                                        console.log(data._body)
                                         // SEND MAIL CONFIRMATION
                                         this._mailService.sendMail(this._stepService.steps[this.indexStepObj].configuration.mail_id, data._body)
                                             .subscribe(
