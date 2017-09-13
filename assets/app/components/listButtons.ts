@@ -11,14 +11,18 @@ import {FormService} from "./form.service";
                 <p [innerHTML] = "objStep.configuration.header_note"></p>
             </div>
             <!--<div class="col-md-3" *ngFor="let valeurList of listOfElements">-->
-            
+
             <ul class="items" >
                 <li *ngFor="let valeurList of currentList">
-                    <button *ngIf="valueSelected != valeurList" class="btn btn-primary" type="button" 
+                    <button *ngIf="valueSelected != valeurList" 
+                        class="btn btn-default btn-lg"
+                        type="button" 
                         (click)="onChooseVal($event)"
                         value="{{valeurList}}">{{valeurList}}
                     </button>
-                    <button *ngIf="valueSelected == valeurList" class="btn btn-info-custom" type="button" 
+                    <button *ngIf="valueSelected == valeurList" 
+                        class="btn btn-info-custom" 
+                        type="button" 
                         (click)="onChooseVal($event)"
                         value="{{valeurList}}">{{valeurList}}
                     </button>

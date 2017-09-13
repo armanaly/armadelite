@@ -6,7 +6,7 @@ import {StepService} from "../Engine/step.service"
     selector: 'previous-page',
     template: `
         <nav class="form-navArrow">
-            <button (click)="onClick()" class="btn btn-primary" ><i class="glyphicon glyphicon-triangle-left" > RETOUR </i></button>
+            <button (click)="onClick()" class="btn btn-default btn-lg" ><i class="glyphicon glyphicon-triangle-left" >  </i></button>
         </nav>
 `
 })

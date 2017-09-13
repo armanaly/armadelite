@@ -2,17 +2,30 @@
     table-border-color-light: green;
 }
 
+/*.panel-heading-custom {*/
+    /*color: #e0f8e0; background: #1E7FCB;*/
+    /*font-family: monospace;*/
+    /*text-align: center;*/
+/*}*/
+
+/* RED VERSION*/
 .panel-heading-custom {
-    color: #e0f8e0; background: #1E7FCB;;
+    color: #e0f8e0; background: darkred;
     font-family: monospace;
     text-align: center;
 }
+
 .panel-default > .panel-body-custom {
     background:  #1E7FCB;
 }
 
+.btn-default {
+    background: darkred;
+    color: #e0f8e0;
+}
+
 .panel-body {
-    border: dotted;
+    border: hidden;
     border-color: #1E7FCB;
 }
 
@@ -108,11 +121,14 @@ section {
 
 
 .buttonRed {
-    background-color: #ED0000;
+    background-color: darkred;
+    color: #e0f8e0;
+    text-decoration-color: white;
     padding: 15px 32px;
     border-radius: 50%;
     -webkit-transition-duration: 0.2s; /* Safari */
     transition-duration: 0.2s;
+
 }
 
 .buttonRed:hover {

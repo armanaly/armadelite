@@ -26,7 +26,7 @@ import {GlobalVariable} from "../global";
     </div>
 
     <div class="panel-body" *ngIf="ready == true">
-           <div>{{preMenu}}</div>
+          
            <div  *ngIf="preMenu == 0"> 
                 <div *ngFor="let grid of grids" class="col-md-3">
                     <!--<button class="btn btn-success" type="button" (click)="showGrid(grid.name)" value="{{grid.name}} ">{{grid.name}} -->

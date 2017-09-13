@@ -13,10 +13,6 @@ import {FormService} from "./components/form.service";
 export class AppComponent {
 
     constructor(private _formService: FormService){}
-    // lists = [];
-    // listsData = [];
-    // tmp = [];
-
     ngOnInit() {
         this._formService.init();
     }
