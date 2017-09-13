@@ -11,7 +11,9 @@ import {GlobalVariable} from "../global";
           
     <div class="panel-heading panel-heading-custom" *ngIf="preMenu == 2">
         <div  class="row" align="left">
+            
             <div *ngIf="backBtn" class="col-md-2">
+                
                 <nav class="form-navArrow">
                     <button (click)="onClick()" class="btn btn-warning" ><i class="glyphicon glyphicon-triangle-left" > STAGES</i></button>
                 </nav>
@@ -24,13 +26,14 @@ import {GlobalVariable} from "../global";
     </div>
 
     <div class="panel-body" *ngIf="ready == true">
+           <div>{{preMenu}}</div>
            <div  *ngIf="preMenu == 0"> 
                 <div *ngFor="let grid of grids" class="col-md-3">
                     <!--<button class="btn btn-success" type="button" (click)="showGrid(grid.name)" value="{{grid.name}} ">{{grid.name}} -->
                     <!--</button>-->
                     <span *ngIf="grid.display">
                         <button type="button" class="btn btn-primary btn-lg" >
-                            <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid.name, 'master':_stepService.steps[0].master_name}">{{grid.name}} </a>
+                            <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid.name, 'master':_stepService.steps[0].master_name, 'app_name': appName}">{{grid.name}} </a>
                         </button>
                     </span>
                 </div>
@@ -41,7 +44,6 @@ import {GlobalVariable} from "../global";
                     <!--step 1 { type : buttons } pass stage_name to step 2-->
                     <!--step 2 {type: grids} get all grids from stage_name-->
                 <!--steps from grids-->
-                
                  <div *ngFor="let btn of preMenuLst" align="center">
                     <button class="btn btn-primary btn-lg"  type="button"  style="width: 500px"
                         (click)="getGridsBtn($event, btn.value)"
@@ -56,10 +58,9 @@ import {GlobalVariable} from "../global";
           
             <!--<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/step']"> Nouveau flow</a></button></div>-->
             <div *ngIf="preMenu == 2"> 
-
                 <div *ngFor="let grid of gridBtns" align="center">
                     <!--<div *ngIf="grid.display">-->
-                        <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid, 'master': val_level2}">
+                        <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid, 'master': val_level2, 'app_name': appName}">
                             <button type="button" style="width: 500px" class="btn btn-primary btn-lg" > {{grid}}</button> 
                         </a>
                         <br><br>   
@@ -91,6 +92,7 @@ export class MenuComponent {
         if (typeof this.route.snapshot.queryParams["firstLoad"] != 'undefined') {
             this.firstLoad = this.route.snapshot.queryParams["hasLoaded"];
         }
+        console.log(this.appName)
         console.log(this.firstLoad);
         console.log(this.grids)
 

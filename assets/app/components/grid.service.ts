@@ -182,12 +182,12 @@ export class GridPanelService {
         //console.log(arrByNom);
     }
 
-    updateCheckbox(value,_id,master){
+    updateCheckbox(value,_id,master,app_name, field_name){
         // console.log('saveDemande');
         // console.log(form );
 console.log(master)
         //this._formService.arraySteps.push({"step_id": currentStep});
-        let body = JSON.stringify({"value" : value, "_id": _id, "master": master});
+        let body = JSON.stringify({"value" : value, "_id": _id, "master": master, "appName": app_name, "field_name": field_name });
         //
         // console.log("body");
         // console.log(body);

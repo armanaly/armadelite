@@ -13,12 +13,13 @@ import {GroupComponent} from "./components/ballet/group.component";
 import {StudentComponent} from "./components/ballet/student.component";
 
 const APP_ROUTES: Routes = [
-    {path: '', component:MenuComponent  },    //
+    {path: '', component:MenuComponent  },
+    {path: 'home/:app', component:MenuComponent  },
     {path: 'step/:id', component: MainComponent},
     {path: 'step', component: MainComponent},
     {path: 'grid', component: GridPanelComponent},
     {path: 'grid/:grid_name', component: GridPanelComponent},
-    {path: 'grid/:grid_name/:master_val', component: GridPanelComponent},
+    {path: 'grid/:grid_name/:master_val/:app_name', component: GridPanelComponent},
     {path: 'details/:record', component: BalletDetailsComponent},
     {path: 'auth/signup', component: SignupComponent},
     {path: ':firstLoad', component:MenuComponent},

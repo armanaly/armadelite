@@ -14,7 +14,7 @@ import {Http} from "@angular/http";
                   <div class="col-md-2">
                     <nav class="form-navArrow">
                        <!--<a [routerLink]="['/menu']" [queryParams]="{'firstLoad': false}">-->
-                       <a [routerLink]="['/']" >
+                       <a [routerLink]="['/home']" [queryParams]="{'app': app_name}" >
                            <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
                     </nav>
                   </div>
@@ -57,8 +57,8 @@ import {Http} from "@angular/http";
                                 <span *ngIf="!filterActivated && _gridService.colTitle[i].type != 'checkbox' "> {{item[key]}}  </span>
                                 
                                 <span *ngIf="this._gridService.colTitle[i].type == 'checkbox' "> 
-                                    <input *ngIf="item[key]" type="checkbox" value="{{item[key]}}" checked (change)=updateCheckBox($event,item) /> 
-                                    <input *ngIf="item[key] == false" type="checkbox" value="{{item[key]}}" (change)=updateCheckBox($event,item) /> 
+                                    <input *ngIf="item[key]" name="{{key}}" type="checkbox" value="{{item[key]}}" checked (change)=updateCheckBox($event,item) /> 
+                                    <input *ngIf="item[key] == false" name="{{key}}" type="checkbox" value="{{item[key]}}" (change)=updateCheckBox($event,item) /> 
                                 </span>
                             </td>
                             
@@ -139,11 +139,14 @@ import {Http} from "@angular/http";
     showInput = [];
     filterActivated = false;
     master = "";
+    app_name = "";
 
     ngOnInit() {
 
         this.grid_name = this.route.snapshot.queryParams["grid_name"];
         this.master = this.route.snapshot.queryParams["master"];
+        this.app_name = this.route.snapshot.queryParams["app_name"];
+        console.log(this.app_name);
         console.log(this.master)
         if(this.master != ''){
             this._gridService.getDatas(this.grid_name, this.master)
@@ -210,8 +213,10 @@ import {Http} from "@angular/http";
        // let value = $event.target.getAttribute('value');
         let value =$event.target.checked;
         console.log(item)
+        console.log($event.target)
+        let fieldName = $event.target.name;
         console.log(this.master)
-        this._gridService.updateCheckbox(value,item._id,this.master)
+        this._gridService.updateCheckbox(value,item._id,this.master, this.app_name, fieldName)
             .subscribe(
                 data => console.log(data),
                 error => console.log(error)
