@@ -39,10 +39,10 @@ import {SaveService} from "./saveService";
                     (change) = goPreviousStep($event) >
                 </previous-page>
              </div>
-              <div class="col-md-4" *ngIf="_stepService.steps[0].logo_url != ''" align="left"><img class="img-thumbnail"  src="{{_stepService.steps[0].logo_url}}" width="240" height="160"></div>
-              <div class="col-md-6"><h1> WEEK-END PLAISIR ET DECOUVERTES...</h1><br>
+              <div class="col-md-10" *ngIf="_stepService.steps[0].logo_url != ''" align="center"><img class="img-thumbnail"  src="{{_stepService.steps[0].logo_url}}" width="240" height="160"></div>
+              <!--<div class="col-md-6"><h1> WEEK-END PLAISIR ET DECOUVERTES...</h1><br>-->
               
-              </div>
+              <!--</div>-->
               
         </div>
         <!---->
@@ -127,14 +127,14 @@ import {SaveService} from "./saveService";
 </save-button>
 
 </div>
-<img class="img-thumbnail"  src="http://res.cloudinary.com/htamml3fv/image/upload/v1504451389/isen_play2_p8y0ey.jpg" >
- <div class="jumbotron" *ngIf="formCompleted" class="alert alert-success" role="alert">
+<!--<img class="img-thumbnail"  src="http://res.cloudinary.com/htamml3fv/image/upload/v1504451389/isen_play2_p8y0ey.jpg" >-->
+ <div align="center" class="jumbotron" *ngIf="formCompleted" class="alert alert-success" role="alert">
       <div class="container">
          Afin de confirmer votre inscription, merci de payer la somme de 140 € sur le compte suivant : <br>
          <table>
-         <tr><td>TITULAIRE DU COMPTE: </td><td> Bureau des élèves-ISEB</td></tr>
+         <tr><td>TITULAIRE DU COMPTE:  </td><td> Bureau des élèves-ISEB</td></tr>
          <tr><td>IBAN: </td><td>  FR76 1558 9297 1803 0818 3454 079</td></tr>
-         <tr><td>COMMUNICATION: </td><td>  bde play {{this._formService.arraySteps[0].profile[0].nom}} {{this._formService.arraySteps[0].profile[0].prenom}}</td></tr>
+         <tr><td>COMMUNICATION: </td><td>  bde play {{this._formService.arraySteps[0].profile[0].nom}} {{this._formService.arraySteps[0].profile[1].prenom}}</td></tr>
          
          </table>
         </div>

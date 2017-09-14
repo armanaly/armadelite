@@ -1,3 +1,20 @@
+.button{ border:0px;padding:0px;cursor:pointer;background-color: #fb0;height: 33px;color: #fff;text-decoration: none;display: inline-block;	font-size: 13px;text-transform: uppercase; line-height: 33px;padding: 0px 33px 0px 33px;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    border-radius: 18px;
+}
+.big_button{padding:0px;height: 47px;line-height: 47px;padding: 0px 43px 0px 43px; -webkit-border-radius: 22px;
+    -moz-border-radius: 22px;
+    border-radius: 22px;}
+.button:hover{background-color: #d99f00;color: #fff;}
+
+.bordered_button{border: 3px solid #7f5d3e;height: 37px;display: inline-block;line-height: 31px;color: #fff;padding-left: 16px;padding-right: 16px;text-transform: uppercase;text-decoration: none;font-size: 13px;letter-spacing: 1px;}
+.bordered_button:hover{border-color: #fff;text-decoration: none;}
+
+.brown_button{border: 3px solid #7f5d3e;height: 37px;display: inline-block;line-height: 31px;color: #fff;padding-left: 16px;padding-right: 16px;text-transform: uppercase;text-decoration: none;font-size: 13px;letter-spacing: 1px;background-color: #7f5d3e;}
+.brown_button:hover{border-color: #7f5d3e;text-decoration: none;}
+
+
 .panel-default {
     table-border-color-light: green;
 }
@@ -9,8 +26,15 @@
 /*}*/
 
 /* RED VERSION*/
+/*.panel-heading-custom {*/
+    /*color: #e0f8e0; background: darkred;*/
+    /*font-family: monospace;*/
+    /*text-align: center;*/
+/*}*/
+
+/*BALLET VERSION*/
 .panel-heading-custom {
-    color: #e0f8e0; background: darkred;
+    color: #e0f8e0; background: black;
     font-family: monospace;
     text-align: center;
 }
