@@ -4,7 +4,7 @@ import {Component, Input, Output, EventEmitter} from '@angular/core'
     selector: 'panel-btn-img',
     template: `
      <div *ngIf="display">
-         <div class="panel-heading panel-heading-custom" align="center">{{objStep.labelPanel}} </div>
+         <div class="panel-heading panel-heading-custom" align="center"><p class="text-uppercase">{{objStep.labelPanel}}</p> </div>
          <div class="panel-body" >       
              <ul class="items" *ngIf="objStep.type == 'image_selection'">
                     <li *ngFor="let valeurList of currentList">

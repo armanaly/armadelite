@@ -6,7 +6,7 @@ import {EmailValidator} from "./emailValidator.component";
     selector: 'field-panel',
     template: `
  <div *ngIf="display">
-        <div class="panel-heading panel-heading-custom">{{objStep.configuration.labelPanel}} </div>
+        <div class="panel-heading panel-heading-custom"><p class="text-uppercase">{{objStep.configuration.labelPanel}} </p></div>
         <div class="panel-body">
             <form  class="form-horizontal" name="{{objStep.name}}"  >
                 <div [formGroup]="myGroup">                  

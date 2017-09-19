@@ -3,7 +3,7 @@ import {Component, Input, Output, EventEmitter} from '@angular/core'
 @Component({
     selector: 'multi-selection',
     template: `
-        <div class="panel-heading panel-heading-custom">{{objStep.configuration.labelPanel}} </div>
+        <div class="panel-heading panel-heading-custom"><p class="text-uppercase">{{objStep.configuration.labelPanel}}</p> </div>
         <div class="panel-body" >
       
         <!--<div class="col-md-3" *ngFor="let valeurList of listOfElements">-->

@@ -190,7 +190,7 @@ export class StudentComponent {
     model;
 
     becas = ['15%', '20%',
-        '25%', '50%'];
+        '25%', '50%', '75%', '100%'];
 
     ngOnInit()
     {

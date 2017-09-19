@@ -17,7 +17,7 @@ declare const filestack: {
     selector: 'file-upload',
     template: `
     <div>
-       <div class="panel-heading panel-heading-custom">{{objStep.configuration.labelPanel}} </div>
+       <div class="panel-heading panel-heading-custom"><p class="text-uppercase">{{objStep.configuration.labelPanel}}</p> </div>
        <div class="panel-body">
         <!--<input type="filepicker" name="myName" onchange="alert(event.fpfile.url)"/>-->
         <!--<input type="file" ng2FileSelect [uploader]="uploader"/>-->

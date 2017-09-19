@@ -4,7 +4,7 @@ import {Router, ActivatedRoute} from '@angular/router';
 import {GridPanelService} from "../components/grid.service";
 import {GlobalVariable} from "../global";
 @Component({
-    selector: 'grid-panel',
+    selector: 'auth',
     template: `
         <div class="panel-body">
                     <!-- Nav tabs -->

@@ -21,6 +21,9 @@ export class BackButtonComponent {
         console.log(this.stepId);
         let stepIndex = this.idxStepObj;
         let keyName = this._stepService.step[this.idxStepObj].name;
+        console.log(this._formService.arraySteps);
+        console.log(keyName);
+        console.log(this.idxStepObj);
         this._formService.arraySteps[this.idxStepObj][keyName] = '';
         this.idxStepObj --;
         console.log(this._stepService.steps[this.idxStepObj].step_id);

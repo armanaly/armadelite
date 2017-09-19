@@ -26,9 +26,6 @@ console.log(appName)
             //this._formService.arraySteps.push()
             let body = this._formService.arraySteps;
 
-            console.log("body");
-            console.log(body);
-
             //SAVE FORM DATA INTO COLLECTION
             const headers = new Headers({'Content-Type': 'application/json'});
             var completeUrl = GlobalVariable.BASE_URL + 'save_datas';

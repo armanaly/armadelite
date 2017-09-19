@@ -15,7 +15,23 @@ import {SaveService} from "./saveService";
 @Component({
     selector: 'vehicule-detail',
     template: `
- 
+
+    <div class="panel panel-default" *ngIf="formCompleted == false">
+    <div class="row" style="background-color: black" >
+             <div class=".col-md-2" *ngIf="this.stepId != 1 && this.appName !='play'">
+                <previous-page 
+                    [stepId] = "stepId"
+                    [idxStepObj] =  "indexStepObj"
+                    (change) = goPreviousStep($event) >
+                </previous-page>
+             </div>
+              <div class="col-md-10" *ngIf="_stepService.steps[0].logo_url != ''" align="center"><img class="img-thumbnail"  src="{{_stepService.steps[0].logo_url}}" width="240" height="160"></div>
+              <!--<div class="col-md-6"><h1> WEEK-END PLAISIR ET DECOUVERTES...</h1><br>-->
+              
+              <!--</div>-->
+              
+        </div>
+ </div>
 <div class="panel panel-default" *ngIf="formCompleted == false">
    
 <!--<p>Session ID: {{ current_step_id | async }}</p>-->
@@ -31,20 +47,7 @@ import {SaveService} from "./saveService";
     <!---->
      <!--<div *ngIf="this.stepId != 1" >-->
         
-        <div class="row">
-             <div class=".col-md-2" *ngIf="this.stepId != 1 && this.appName !='play'">
-                <previous-page 
-                    [stepId] = "stepId"
-                    [idxStepObj] =  "indexStepObj"
-                    (change) = goPreviousStep($event) >
-                </previous-page>
-             </div>
-              <div class="col-md-10" *ngIf="_stepService.steps[0].logo_url != ''" align="center"><img class="img-thumbnail"  src="{{_stepService.steps[0].logo_url}}" width="240" height="160"></div>
-              <!--<div class="col-md-6"><h1> WEEK-END PLAISIR ET DECOUVERTES...</h1><br>-->
-              
-              <!--</div>-->
-              
-        </div>
+     
         <!---->
         <!--<div class=".col-md-11" *ngIf="_stepService.steps[0].logo_url != ''" align="left">-->
             <!--<img class="img-thumbnail"  src="{{_stepService.steps[0].logo_url}}" width="240" height="160">-->
@@ -130,14 +133,8 @@ import {SaveService} from "./saveService";
 <!--<img class="img-thumbnail"  src="http://res.cloudinary.com/htamml3fv/image/upload/v1504451389/isen_play2_p8y0ey.jpg" >-->
  <div align="center" class="jumbotron" *ngIf="formCompleted" class="alert alert-success" role="alert">
       <div class="container">
-         Afin de confirmer votre inscription, merci de payer la somme de 140 € sur le compte suivant : <br>
-         <table>
-         <tr><td>TITULAIRE DU COMPTE:  </td><td> Bureau des élèves-ISEB</td></tr>
-         <tr><td>IBAN: </td><td>  FR76 1558 9297 1803 0818 3454 079</td></tr>
-         <tr><td>COMMUNICATION: </td><td>  bde play {{this._formService.arraySteps[0].profile[0].nom}} {{this._formService.arraySteps[0].profile[1].prenom}}</td></tr>
-         
-         </table>
-        </div>
+         <h1> Your application form has been sent correctly. Thank you very much. We will contact you shortly.</h1>
+    </div>
  </div>
 `,
 
@@ -441,7 +438,7 @@ export class MainComponent implements OnInit {
                                         console.log("SEND NOTIFICATION");
                                         console.log(data._body)
                                         // SEND MAIL CONFIRMATION
-                                        this._mailService.sendMail(this._stepService.steps[this.indexStepObj].configuration.mail_id, data._body)
+                                        this._mailService.sendMail(this._stepService.steps[this.indexStepObj].configuration.mail_id, data._body, this.appName)
                                             .subscribe(
                                                 mailState => {
                                                     console.log(mailState);

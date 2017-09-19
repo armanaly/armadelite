@@ -5,7 +5,7 @@ import {FormService} from "./form.service";
     selector: 'list-buttons',
     template: `
      <div *ngIf="display">
-         <div class="panel-heading panel-heading-custom">{{objStep.configuration.labelPanel}} </div>
+         <div class="panel-heading panel-heading-custom"><p class="text-uppercase">{{objStep.configuration.labelPanel}}</p> </div>
          <div class="panel-body" >
             <div class="jumbotron" *ngIf="objStep.configuration.header_note && objStep.configuration.header_note != ''">
                 <p [innerHTML] = "objStep.configuration.header_note"></p>
