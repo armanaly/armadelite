@@ -314,12 +314,18 @@ type _PatchFn = (global: Window, Zone: ZoneType, api: _ZonePrivate) => void;
 
 /** @internal */
 interface _ZonePrivate {
-  currentZoneFrame(): _ZoneFrame;
-  symbol(name: string): string;
-  scheduleMicroTask(task?: MicroTask): void;
+  currentZoneFrame: () => _ZoneFrame;
+  symbol: (name: string) => string;
+  scheduleMicroTask: (task?: MicroTask) => void;
   onUnhandledError: (error: Error) => void;
   microtaskDrainDone: () => void;
   showUncaughtError: () => boolean;
+  patchEventTarget: (global: any, apis: any[], options?: any) => boolean[];
+  patchOnProperties: (obj: any, properties: string[]) => void;
+  patchMethod:
+      (target: any, name: string,
+       patchFn: (delegate: Function, delegateName: string, name: string) =>
+           (self: any, args: any[]) => any) => Function;
 }
 
 /** @internal */
@@ -618,6 +624,8 @@ type AmbientZone = Zone;
 type AmbientZoneDelegate = ZoneDelegate;
 
 const Zone: ZoneType = (function(global: any) {
+  const FUNCTION = 'function';
+
   const performance: {mark(name: string): void; measure(name: string, label: string): void;} =
       global['performance'];
   function mark(name: string) {
@@ -714,7 +722,7 @@ const Zone: ZoneType = (function(global: any) {
     }
 
     public wrap<T extends Function>(callback: T, source: string): T {
-      if (typeof callback !== 'function') {
+      if (typeof callback !== FUNCTION) {
         throw new Error('Expecting function got: ' + callback);
       }
       const _callback = this._zoneDelegate.intercept(this, callback, source);
@@ -756,10 +764,22 @@ const Zone: ZoneType = (function(global: any) {
 
 
     runTask(task: Task, applyThis?: any, applyArgs?: any): any {
-      if (task.zone != this)
+      if (task.zone != this) {
         throw new Error(
             'A task can only be run in the zone of creation! (Creation: ' +
             (task.zone || NO_ZONE).name + '; Execution: ' + this.name + ')');
+      }
+      // https://github.com/angular/zone.js/issues/778, sometimes eventTask
+      // will run in notScheduled(canceled) state, we should not try to
+      // run such kind of task but just return
+
+      // we have to define an variable here, if not
+      // typescript compiler will complain below
+      const isNotScheduled = task.state === notScheduled;
+      if (isNotScheduled && task.type === eventTask) {
+        return;
+      }
+
       const reEntryGuard = task.state != running;
       reEntryGuard && (task as ZoneTask<any>)._transitionTo(running, scheduled);
       task.runCount++;
@@ -1103,16 +1123,16 @@ const Zone: ZoneType = (function(global: any) {
 
     _updateTaskCount(type: TaskType, count: number) {
       const counts = this._taskCounts;
-      const prev = (counts as any)[type];
-      const next = (counts as any)[type] = prev + count;
+      const prev = counts[type];
+      const next = counts[type] = prev + count;
       if (next < 0) {
         throw new Error('More tasks executed then were scheduled.');
       }
       if (prev == 0 || next == 0) {
         const isEmpty: HasTaskState = {
-          microTask: counts.microTask > 0,
-          macroTask: counts.macroTask > 0,
-          eventTask: counts.eventTask > 0,
+          microTask: counts['microTask'] > 0,
+          macroTask: counts['macroTask'] > 0,
+          eventTask: counts['eventTask'] > 0,
           change: type
         };
         this.hasTask(this.zone, isEmpty);
@@ -1143,18 +1163,29 @@ const Zone: ZoneType = (function(global: any) {
       this.cancelFn = cancelFn;
       this.callback = callback;
       const self = this;
-      this.invoke = function() {
-        _numberOfNestedTaskFrames++;
-        try {
-          self.runCount++;
-          return self.zone.runTask(self, this, <any>arguments);
-        } finally {
-          if (_numberOfNestedTaskFrames == 1) {
-            drainMicroTaskQueue();
-          }
-          _numberOfNestedTaskFrames--;
+      if (type === eventTask && options && (options as any).isUsingGlobalCallback) {
+        this.invoke = ZoneTask.invokeTask;
+      } else {
+        this.invoke = function() {
+          return ZoneTask.invokeTask.apply(global, [self, this, <any>arguments]);
+        };
+      }
+    }
+
+    static invokeTask(task: any, target: any, args: any): any {
+      if (!task) {
+        task = this;
+      }
+      _numberOfNestedTaskFrames++;
+      try {
+        task.runCount++;
+        return task.zone.runTask(task, target, args);
+      } finally {
+        if (_numberOfNestedTaskFrames == 1) {
+          drainMicroTaskQueue();
         }
-      };
+        _numberOfNestedTaskFrames--;
+      }
     }
 
     get zone(): Zone {
@@ -1220,14 +1251,20 @@ const Zone: ZoneType = (function(global: any) {
   const symbolThen = __symbol__('then');
   let _microTaskQueue: Task[] = [];
   let _isDrainingMicrotaskQueue: boolean = false;
+  let nativeMicroTaskQueuePromise: any;
 
   function scheduleMicroTask(task?: MicroTask) {
     // if we are not running in any task, and there has not been anything scheduled
     // we must bootstrap the initial task creation by manually scheduling the drain
     if (_numberOfNestedTaskFrames === 0 && _microTaskQueue.length === 0) {
       // We are not running in Task, so we need to kickstart the microtask queue.
-      if (global[symbolPromise]) {
-        global[symbolPromise].resolve(0)[symbolThen](drainMicroTaskQueue);
+      if (!nativeMicroTaskQueuePromise) {
+        if (global[symbolPromise]) {
+          nativeMicroTaskQueuePromise = global[symbolPromise].resolve(0);
+        }
+      }
+      if (nativeMicroTaskQueuePromise) {
+        nativeMicroTaskQueuePromise[symbolThen](drainMicroTaskQueue);
       } else {
         global[symbolSetTimeout](drainMicroTaskQueue, 0);
       }
@@ -1277,7 +1314,10 @@ const Zone: ZoneType = (function(global: any) {
     onUnhandledError: noop,
     microtaskDrainDone: noop,
     scheduleMicroTask: scheduleMicroTask,
-    showUncaughtError: () => !(Zone as any)[__symbol__('ignoreConsoleErrorUncaughtError')]
+    showUncaughtError: () => !(Zone as any)[__symbol__('ignoreConsoleErrorUncaughtError')],
+    patchEventTarget: () => [],
+    patchOnProperties: noop,
+    patchMethod: () => noop,
   };
   let _currentZoneFrame: _ZoneFrame = {parent: null, zone: new Zone(null, null)};
   let _currentTask: Task = null;

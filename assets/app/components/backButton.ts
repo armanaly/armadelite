@@ -5,9 +5,9 @@ import {StepService} from "../Engine/step.service"
 @Component({
     selector: 'previous-page',
     template: `
-        <nav class="form-navArrow">
-            <button (click)="onClick()" class="btn btn-default btn-lg" ><i class="glyphicon glyphicon-triangle-left" >  </i></button>
-        </nav>
+        <div class="form-navArrow">
+            <button (click)="onClick()" class="brown_button" ><i class="glyphicon glyphicon-triangle-left" >  </i></button>
+        </div>
 `
 })
 
@@ -24,7 +24,7 @@ export class BackButtonComponent {
         console.log(this._formService.arraySteps);
         console.log(keyName);
         console.log(this.idxStepObj);
-        this._formService.arraySteps[this.idxStepObj][keyName] = '';
+        //this._formService.arraySteps[this.idxStepObj][keyName] = '';
         this.idxStepObj --;
         console.log(this._stepService.steps[this.idxStepObj].step_id);
         // CHECK IF THE PREVIOUS STEP HAS THE SAME STEP_ID

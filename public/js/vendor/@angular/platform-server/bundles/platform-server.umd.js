@@ -1,21 +1,42 @@
 /**
- * @license Angular v4.1.1
+ * @license Angular v4.3.2
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/platform-browser'), require('@angular/animations/browser'), require('@angular/common'), require('@angular/compiler'), require('@angular/http'), require('@angular/platform-browser/animations'), require('rxjs/Observable'), require('rxjs/Subject'), require('url'), require('rxjs/operator/filter'), require('rxjs/operator/first'), require('rxjs/operator/toPromise')) :
-	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@angular/platform-browser', '@angular/animations/browser', '@angular/common', '@angular/compiler', '@angular/http', '@angular/platform-browser/animations', 'rxjs/Observable', 'rxjs/Subject', 'url', 'rxjs/operator/filter', 'rxjs/operator/first', 'rxjs/operator/toPromise'], factory) :
-	(factory((global.ng = global.ng || {}, global.ng.platformServer = global.ng.platformServer || {}),global.ng.core,global.ng.platformBrowser,global._angular_animations_browser,global.ng.common,global.ng.compiler,global._angular_http,global._angular_platformBrowser_animations,global.rxjs_Observable,global.rxjs_Subject,global.url,global.rxjs_operator_filter,global.rxjs_operator_first,global.rxjs_operator_toPromise));
-}(this, (function (exports,_angular_core,_angular_platformBrowser,_angular_animations_browser,_angular_common,_angular_compiler,_angular_http,_angular_platformBrowser_animations,rxjs_Observable,rxjs_Subject,url,rxjs_operator_filter,rxjs_operator_first,rxjs_operator_toPromise) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/platform-browser'), require('@angular/animations/browser'), require('@angular/common'), require('@angular/common/http'), require('@angular/compiler'), require('@angular/http'), require('@angular/platform-browser/animations'), require('rxjs/Observable'), require('rxjs/Subject'), require('url'), require('rxjs/operator/filter'), require('rxjs/operator/first'), require('rxjs/operator/toPromise')) :
+	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@angular/platform-browser', '@angular/animations/browser', '@angular/common', '@angular/common/http', '@angular/compiler', '@angular/http', '@angular/platform-browser/animations', 'rxjs/Observable', 'rxjs/Subject', 'url', 'rxjs/operator/filter', 'rxjs/operator/first', 'rxjs/operator/toPromise'], factory) :
+	(factory((global.ng = global.ng || {}, global.ng.platformServer = global.ng.platformServer || {}),global.ng.core,global.ng.platformBrowser,global._angular_animations_browser,global.ng.common,global._angular_common_http,global.ng.compiler,global._angular_http,global._angular_platformBrowser_animations,global.Rx,global.Rx,global.url,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype));
+}(this, (function (exports,_angular_core,_angular_platformBrowser,_angular_animations_browser,_angular_common,_angular_common_http,_angular_compiler,_angular_http,_angular_platformBrowser_animations,rxjs_Observable,rxjs_Subject,url,rxjs_operator_filter,rxjs_operator_first,rxjs_operator_toPromise) { 'use strict';
 
-var __extends = (undefined && undefined.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = Object.setPrototypeOf ||
+    ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+    function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+
+function __extends(d, b) {
+    extendStatics(d, b);
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+}
+
 /**
- * @license Angular v4.1.1
+ * @license Angular v4.3.2
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -111,42 +132,44 @@ ServerXsrfStrategy.decorators = [
  * @nocollapse
  */
 ServerXsrfStrategy.ctorParameters = function () { return []; };
-var ZoneMacroTaskConnection = (function () {
+/**
+ * @abstract
+ */
+var ZoneMacroTaskWrapper = (function () {
+    function ZoneMacroTaskWrapper() {
+    }
     /**
      * @param {?} request
-     * @param {?} backend
+     * @return {?}
      */
-    function ZoneMacroTaskConnection(request, backend) {
+    ZoneMacroTaskWrapper.prototype.wrap = function (request) {
         var _this = this;
-        this.request = request;
-        validateRequestUrl(request.url);
-        this.response = new rxjs_Observable.Observable(function (observer) {
-            var task = null;
-            var scheduled = false;
-            var sub = null;
-            var savedResult = null;
-            var savedError = null;
-            var scheduleTask = function (_task) {
+        return new rxjs_Observable.Observable(function (observer) {
+            var /** @type {?} */ task = ((null));
+            var /** @type {?} */ scheduled = false;
+            var /** @type {?} */ sub = null;
+            var /** @type {?} */ savedResult = null;
+            var /** @type {?} */ savedError = null;
+            var /** @type {?} */ scheduleTask = function (_task) {
                 task = _task;
                 scheduled = true;
-                _this.lastConnection = backend.createConnection(request);
-                sub = _this.lastConnection.response
-                    .subscribe(function (res) { return savedResult = res; }, function (err) {
+                var /** @type {?} */ delegate = _this.delegate(request);
+                sub = delegate.subscribe(function (res) { return savedResult = res; }, function (err) {
                     if (!scheduled) {
-                        throw new Error('invoke twice');
+                        throw new Error('An http observable was completed twice. This shouldn\'t happen, please file a bug.');
                     }
                     savedError = err;
                     scheduled = false;
                     task.invoke();
                 }, function () {
                     if (!scheduled) {
-                        throw new Error('invoke twice');
+                        throw new Error('An http observable was completed twice. This shouldn\'t happen, please file a bug.');
                     }
                     scheduled = false;
                     task.invoke();
                 });
             };
-            var cancelTask = function (_task) {
+            var /** @type {?} */ cancelTask = function (_task) {
                 if (!scheduled) {
                     return;
                 }
@@ -156,7 +179,7 @@ var ZoneMacroTaskConnection = (function () {
                     sub = null;
                 }
             };
-            var onComplete = function () {
+            var /** @type {?} */ onComplete = function () {
                 if (savedError !== null) {
                     observer.error(savedError);
                 }
@@ -165,10 +188,10 @@ var ZoneMacroTaskConnection = (function () {
                     observer.complete();
                 }
             };
-            // MockBackend is currently synchronous, which means that if scheduleTask is by
+            // MockBackend for Http is synchronous, which means that if scheduleTask is by
             // scheduleMacroTask, the request will hit MockBackend and the response will be
             // sent, causing task.invoke() to be called.
-            var _task = Zone.current.scheduleMacroTask('ZoneMacroTaskConnection.subscribe', onComplete, {}, function () { return null; }, cancelTask);
+            var /** @type {?} */ _task = Zone.current.scheduleMacroTask('ZoneMacroTaskWrapper.subscribe', onComplete, {}, function () { return null; }, cancelTask);
             scheduleTask(_task);
             return function () {
                 if (scheduled && task) {
@@ -181,7 +204,37 @@ var ZoneMacroTaskConnection = (function () {
                 }
             };
         });
+    };
+    /**
+     * @abstract
+     * @param {?} request
+     * @return {?}
+     */
+    ZoneMacroTaskWrapper.prototype.delegate = function (request) { };
+    return ZoneMacroTaskWrapper;
+}());
+var ZoneMacroTaskConnection = (function (_super) {
+    __extends(ZoneMacroTaskConnection, _super);
+    /**
+     * @param {?} request
+     * @param {?} backend
+     */
+    function ZoneMacroTaskConnection(request, backend) {
+        var _this = _super.call(this) || this;
+        _this.request = request;
+        _this.backend = backend;
+        validateRequestUrl(request.url);
+        _this.response = _this.wrap(request);
+        return _this;
     }
+    /**
+     * @param {?} request
+     * @return {?}
+     */
+    ZoneMacroTaskConnection.prototype.delegate = function (request) {
+        this.lastConnection = this.backend.createConnection(request);
+        return (this.lastConnection.response);
+    };
     Object.defineProperty(ZoneMacroTaskConnection.prototype, "readyState", {
         /**
          * @return {?}
@@ -193,7 +246,7 @@ var ZoneMacroTaskConnection = (function () {
         configurable: true
     });
     return ZoneMacroTaskConnection;
-}());
+}(ZoneMacroTaskWrapper));
 var ZoneMacroTaskBackend = (function () {
     /**
      * @param {?} backend
@@ -210,6 +263,30 @@ var ZoneMacroTaskBackend = (function () {
     };
     return ZoneMacroTaskBackend;
 }());
+var ZoneClientBackend = (function (_super) {
+    __extends(ZoneClientBackend, _super);
+    /**
+     * @param {?} backend
+     */
+    function ZoneClientBackend(backend) {
+        var _this = _super.call(this) || this;
+        _this.backend = backend;
+        return _this;
+    }
+    /**
+     * @param {?} request
+     * @return {?}
+     */
+    ZoneClientBackend.prototype.handle = function (request) { return this.wrap(request); };
+    /**
+     * @param {?} request
+     * @return {?}
+     */
+    ZoneClientBackend.prototype.delegate = function (request) {
+        return this.backend.handle(request);
+    };
+    return ZoneClientBackend;
+}(ZoneMacroTaskWrapper));
 /**
  * @param {?} xhrBackend
  * @param {?} options
@@ -219,10 +296,23 @@ function httpFactory(xhrBackend, options) {
     var /** @type {?} */ macroBackend = new ZoneMacroTaskBackend(xhrBackend);
     return new _angular_http.Http(macroBackend, options);
 }
+/**
+ * @param {?} backend
+ * @param {?} interceptors
+ * @return {?}
+ */
+function zoneWrappedInterceptingHandler(backend, interceptors) {
+    var /** @type {?} */ realBackend = _angular_common_http.ɵinterceptingHandler(backend, interceptors);
+    return new ZoneClientBackend(realBackend);
+}
 var SERVER_HTTP_PROVIDERS = [
     { provide: _angular_http.Http, useFactory: httpFactory, deps: [_angular_http.XHRBackend, _angular_http.RequestOptions] },
-    { provide: _angular_http.BrowserXhr, useClass: ServerXhr },
-    { provide: _angular_http.XSRFStrategy, useClass: ServerXsrfStrategy },
+    { provide: _angular_http.BrowserXhr, useClass: ServerXhr }, { provide: _angular_http.XSRFStrategy, useClass: ServerXsrfStrategy },
+    { provide: _angular_common_http.XhrFactory, useClass: ServerXhr }, {
+        provide: _angular_common_http.HttpHandler,
+        useFactory: zoneWrappedInterceptingHandler,
+        deps: [_angular_common_http.HttpBackend, [new _angular_core.Optional(), _angular_common_http.HTTP_INTERCEPTORS]]
+    }
 ];
 /**
  * @license
@@ -499,7 +589,10 @@ var Parse5DomAdapter = (function (_super) {
             el.attribs['class'] = el.className = value;
         }
         else {
-            el[name] = value;
+            // Store the property in a separate property bag so that it doesn't clobber
+            // actual parse5 properties on the Element.
+            el.properties = el.properties || {};
+            el.properties[name] = value;
         }
     };
     /**
@@ -507,7 +600,9 @@ var Parse5DomAdapter = (function (_super) {
      * @param {?} name
      * @return {?}
      */
-    Parse5DomAdapter.prototype.getProperty = function (el, name) { return el[name]; };
+    Parse5DomAdapter.prototype.getProperty = function (el, name) {
+        return el.properties ? el.properties[name] : undefined;
+    };
     /**
      * @param {?} error
      * @return {?}
@@ -1483,12 +1578,6 @@ var Parse5DomAdapter = (function (_super) {
      */
     Parse5DomAdapter.prototype.setData = function (el, name, value) { this.setAttribute(el, 'data-' + name, value); };
     /**
-     * @param {?} path
-     * @param {?} value
-     * @return {?}
-     */
-    Parse5DomAdapter.prototype.setGlobalVar = function (path, value) { _angular_platformBrowser.ɵsetValueOnPath(_angular_core.ɵglobal, path, value); };
-    /**
      * @return {?}
      */
     Parse5DomAdapter.prototype.supportsWebAnimation = function () { return false; };
@@ -1820,6 +1909,14 @@ var ServerRendererFactory2 = (function () {
             }
         }
     };
+    /**
+     * @return {?}
+     */
+    ServerRendererFactory2.prototype.begin = function () { };
+    /**
+     * @return {?}
+     */
+    ServerRendererFactory2.prototype.end = function () { };
     return ServerRendererFactory2;
 }());
 ServerRendererFactory2.decorators = [
@@ -2193,7 +2290,7 @@ var ServerModule = (function () {
 ServerModule.decorators = [
     { type: _angular_core.NgModule, args: [{
                 exports: [_angular_platformBrowser.BrowserModule],
-                imports: [_angular_http.HttpModule, _angular_platformBrowser_animations.NoopAnimationsModule],
+                imports: [_angular_http.HttpModule, _angular_common_http.HttpClientModule, _angular_platformBrowser_animations.NoopAnimationsModule],
                 providers: [
                     SERVER_RENDER_PROVIDERS,
                     SERVER_HTTP_PROVIDERS,
@@ -2273,8 +2370,12 @@ function _render(platform, moduleRefPromise) {
 /**
  * Renders a Module to string.
  *
+ * `document` is the full document HTML of the page to render, as a string.
+ * `url` is the URL for the current render request.
+ * `extraProviders` are the platform level providers for the current render request.
+ *
  * Do not use this in a production server environment. Use pre-compiled {\@link NgModuleFactory} with
- * {link renderModuleFactory} instead.
+ * {\@link renderModuleFactory} instead.
  *
  * \@experimental
  * @template T
@@ -2288,6 +2389,10 @@ function renderModule(module, options) {
 }
 /**
  * Renders a {\@link NgModuleFactory} to string.
+ *
+ * `document` is the full document HTML of the page to render, as a string.
+ * `url` is the URL for the current render request.
+ * `extraProviders` are the platform level providers for the current render request.
  *
  * \@experimental
  * @template T
@@ -2321,7 +2426,7 @@ function renderModuleFactory(moduleFactory, options) {
 /**
  * \@stable
  */
-var VERSION = new _angular_core.Version('4.1.1');
+var VERSION = new _angular_core.Version('4.3.2');
 
 exports.PlatformState = PlatformState;
 exports.ServerModule = ServerModule;
@@ -2334,10 +2439,11 @@ exports.VERSION = VERSION;
 exports.ɵINTERNAL_SERVER_PLATFORM_PROVIDERS = INTERNAL_SERVER_PLATFORM_PROVIDERS;
 exports.ɵSERVER_RENDER_PROVIDERS = SERVER_RENDER_PROVIDERS;
 exports.ɵServerRendererFactory2 = ServerRendererFactory2;
-exports.ɵf = SERVER_HTTP_PROVIDERS;
+exports.ɵg = SERVER_HTTP_PROVIDERS;
 exports.ɵc = ServerXhr;
 exports.ɵd = ServerXsrfStrategy;
 exports.ɵe = httpFactory;
+exports.ɵf = zoneWrappedInterceptingHandler;
 exports.ɵa = instantiateServerRendererFactory;
 exports.ɵb = ServerStylesHost;
 

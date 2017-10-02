@@ -6,33 +6,34 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import '../zone';
-import '../common/promise';
-import '../common/to-string';
 import './events';
 import './fs';
 
+import {findEventTasks} from '../common/events';
 import {patchTimer} from '../common/timers';
-import {findEventTask, patchMacroTask, patchMicroTask} from '../common/utils';
+import {isMix, patchMacroTask, patchMicroTask} from '../common/utils';
 
 const set = 'set';
 const clear = 'clear';
 
-Zone.__load_patch('timers', (global: any, Zone: ZoneType, api: _ZonePrivate) => {
+Zone.__load_patch('node_timers', (global: any, Zone: ZoneType, api: _ZonePrivate) => {
   // Timers
   let globalUseTimeoutFromTimer = false;
   try {
     const timers = require('timers');
     let globalEqualTimersTimeout = global.setTimeout === timers.setTimeout;
-    if (!globalEqualTimersTimeout) {
-      // if global.setTimeout not equal timers.setTimeout, check
+    if (!globalEqualTimersTimeout && !isMix) {
+      // 1. if isMix, then we are in mix environment such as Electron
+      // we should only patch timers.setTimeout because global.setTimeout
+      // have been patched
+      // 2. if global.setTimeout not equal timers.setTimeout, check
       // whether global.setTimeout use timers.setTimeout or not
       const originSetTimeout = timers.setTimeout;
       timers.setTimeout = function() {
         globalUseTimeoutFromTimer = true;
         return originSetTimeout.apply(this, arguments);
       };
-      const detectTimeout = global.setTimeout(noop, 100);
+      const detectTimeout = global.setTimeout(() => {}, 100);
       clearTimeout(detectTimeout);
       timers.setTimeout = originSetTimeout;
     }
@@ -42,6 +43,12 @@ Zone.__load_patch('timers', (global: any, Zone: ZoneType, api: _ZonePrivate) => 
   } catch (error) {
     // timers module not exists, for example, when we using nativescript
     // timers is not available
+  }
+  if (isMix) {
+    // if we are in mix environment, such as Electron,
+    // the global.setTimeout has already been patched,
+    // so we just patch timers.setTimeout
+    return;
   }
   if (!globalUseTimeoutFromTimer) {
     // 1. global setTimeout equals timers setTimeout
@@ -86,7 +93,7 @@ Zone.__load_patch(
       // handle unhandled promise rejection
       function findProcessPromiseRejectionHandler(evtName: string) {
         return function(e: any) {
-          const eventTasks = findEventTask(process, evtName);
+          const eventTasks = findEventTasks(process, evtName);
           eventTasks.forEach(eventTask => {
             // process has added unhandledrejection event listener
             // trigger the event listener
@@ -126,4 +133,22 @@ Zone.__load_patch('crypto', (global: any, Zone: ZoneType, api: _ZonePrivate) => 
       });
     });
   }
+});
+
+Zone.__load_patch('console', (global: any, Zone: ZoneType, api: _ZonePrivate) => {
+  const consoleMethods =
+      ['dir', 'log', 'info', 'error', 'warn', 'assert', 'debug', 'timeEnd', 'trace'];
+  consoleMethods.forEach((m: string) => {
+    const originalMethod = (console as any)[Zone.__symbol__(m)] = (console as any)[m];
+    if (originalMethod) {
+      (console as any)[m] = function() {
+        const args = Array.prototype.slice.call(arguments);
+        if (Zone.current === Zone.root) {
+          return originalMethod.apply(this, args);
+        } else {
+          return Zone.root.run(originalMethod, this, args);
+        }
+      };
+    }
+  });
 });

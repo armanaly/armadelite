@@ -13,17 +13,13 @@ import {StudentService} from "./student.service";
 @Component({
     selector: 'group',
     template: `
-    
-
-
-    
     <div  *ngIf="display_edit"> 
           
           <div class="panel-heading panel-heading-custom">
             <div  class="row" align="left">
                 <div class="col-md-2">
                     <nav class="form-navArrow" *ngIf="display_edit">
-                        <a [routerLink]="['/grid']" [queryParams]="{'grid_name': student_info.course_type, 'master': student_info.stage}">
+                        <a [routerLink]="['/grid']" [queryParams]="{'grid_name': course_type, 'master': stage, 'app_name':'ballet'}">
                         <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
                     </nav>
                 </div>
@@ -188,6 +184,8 @@ export class StudentComponent {
     student_info;
     studentGroup;
     model;
+    course_type;
+    stage;
 
     becas = ['15%', '20%',
         '25%', '50%', '75%', '100%'];
@@ -197,6 +195,8 @@ export class StudentComponent {
 
         this.sub = this.route.params.subscribe(params => {
             this.obj_id = params['record']; // (+) converts string 'id' to a number
+            this.course_type = params['course_type']
+            this.stage = params['stage']
         });
         console.log(this.obj_id)
         console.log(this._gridService.dataGrid);

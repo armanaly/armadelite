@@ -10,7 +10,7 @@
         "spec": "0.1.3",
         "type": "version"
       },
-      "D:\\workspace\\flask_angular2"
+      "D:\\workspace\\russian_ballet"
     ]
   ],
   "_from": "reflect-metadata@0.1.3",
@@ -42,7 +42,7 @@
   "_shasum": "64f8a41974e4f5a5aa9978dac54cfd442dc2f1d5",
   "_shrinkwrap": null,
   "_spec": "reflect-metadata@0.1.3",
-  "_where": "D:\\workspace\\flask_angular2",
+  "_where": "D:\\workspace\\russian_ballet",
   "author": {
     "name": "Ron Buckton",
     "email": "ron.buckton@microsoft.com",

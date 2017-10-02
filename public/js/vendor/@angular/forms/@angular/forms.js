@@ -1,9 +1,9 @@
 /**
- * @license Angular v4.1.1
+ * @license Angular v4.3.2
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
-import { Directive, ElementRef, EventEmitter, Host, Inject, Injectable, InjectionToken, Injector, Input, NgModule, Optional, Output, Renderer, Self, SkipSelf, Version, forwardRef, ɵisObservable, ɵisPromise, ɵlooseIdentical } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, Host, Inject, Injectable, InjectionToken, Injector, Input, NgModule, Optional, Output, Renderer2, Self, SkipSelf, Version, forwardRef, ɵisObservable, ɵisPromise, ɵlooseIdentical } from '@angular/core';
 import { forkJoin } from 'rxjs/observable/forkJoin';
 import { fromPromise } from 'rxjs/observable/fromPromise';
 import { map } from 'rxjs/operator/map';
@@ -151,14 +151,6 @@ class ControlContainer extends AbstractControlDirective {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-var __assign = (undefined && undefined.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
 /**
  * @param {?} value
  * @return {?}
@@ -202,6 +194,38 @@ const EMAIL_REGEXP = /^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(
  * \@stable
  */
 class Validators {
+    /**
+     * Validator that requires controls to have a value greater than a number.
+     * @param {?} min
+     * @return {?}
+     */
+    static min(min) {
+        return (control) => {
+            if (isEmptyInputValue(control.value) || isEmptyInputValue(min)) {
+                return null; // don't validate empty values to allow optional controls
+            }
+            const /** @type {?} */ value = parseFloat(control.value);
+            // Controls with NaN values after parsing should be treated as not having a
+            // minimum, per the HTML forms spec: https://www.w3.org/TR/html5/forms.html#attr-input-min
+            return !isNaN(value) && value < min ? { 'min': { 'min': min, 'actual': control.value } } : null;
+        };
+    }
+    /**
+     * Validator that requires controls to have a value less than a number.
+     * @param {?} max
+     * @return {?}
+     */
+    static max(max) {
+        return (control) => {
+            if (isEmptyInputValue(control.value) || isEmptyInputValue(max)) {
+                return null; // don't validate empty values to allow optional controls
+            }
+            const /** @type {?} */ value = parseFloat(control.value);
+            // Controls with NaN values after parsing should be treated as not having a
+            // maximum, per the HTML forms spec: https://www.w3.org/TR/html5/forms.html#attr-input-max
+            return !isNaN(value) && value > max ? { 'max': { 'max': max, 'actual': control.value } } : null;
+        };
+    }
     /**
      * Validator that requires controls to have a non-empty value.
      * @param {?} control
@@ -358,7 +382,7 @@ function _executeAsyncValidators(control, validators) {
  */
 function _mergeErrors(arrayOfErrors) {
     const /** @type {?} */ res = arrayOfErrors.reduce((res, errors) => {
-        return errors != null ? __assign({}, /** @type {?} */ ((res)), errors) : ((res));
+        return errors != null ? Object.assign({}, /** @type {?} */ ((res)), errors) : ((res));
     }, {});
     return Object.keys(res).length === 0 ? null : res;
 }
@@ -416,7 +440,7 @@ class CheckboxControlValueAccessor {
      * @return {?}
      */
     writeValue(value) {
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'checked', value);
+        this._renderer.setProperty(this._elementRef.nativeElement, 'checked', value);
     }
     /**
      * @param {?} fn
@@ -433,7 +457,7 @@ class CheckboxControlValueAccessor {
      * @return {?}
      */
     setDisabledState(isDisabled) {
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
     }
 }
 CheckboxControlValueAccessor.decorators = [
@@ -447,7 +471,7 @@ CheckboxControlValueAccessor.decorators = [
  * @nocollapse
  */
 CheckboxControlValueAccessor.ctorParameters = () => [
-    { type: Renderer, },
+    { type: Renderer2, },
     { type: ElementRef, },
 ];
 
@@ -500,6 +524,9 @@ class DefaultValueAccessor {
         this._compositionMode = _compositionMode;
         this.onChange = (_) => { };
         this.onTouched = () => { };
+        /**
+         * Whether the user is creating a composition string (IME events).
+         */
         this._composing = false;
         if (this._compositionMode == null) {
             this._compositionMode = !_isAndroid();
@@ -511,7 +538,7 @@ class DefaultValueAccessor {
      */
     writeValue(value) {
         const /** @type {?} */ normalizedValue = value == null ? '' : value;
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', normalizedValue);
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', normalizedValue);
     }
     /**
      * @param {?} fn
@@ -528,7 +555,7 @@ class DefaultValueAccessor {
      * @return {?}
      */
     setDisabledState(isDisabled) {
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
     }
     /**
      * @param {?} value
@@ -571,7 +598,7 @@ DefaultValueAccessor.decorators = [
  * @nocollapse
  */
 DefaultValueAccessor.ctorParameters = () => [
-    { type: Renderer, },
+    { type: Renderer2, },
     { type: ElementRef, },
     { type: undefined, decorators: [{ type: Optional }, { type: Inject, args: [COMPOSITION_BUFFER_MODE,] },] },
 ];
@@ -647,7 +674,7 @@ class NumberValueAccessor {
     writeValue(value) {
         // The value needs to be normalized for IE9, otherwise it is set to 'null' when null
         const /** @type {?} */ normalizedValue = value == null ? '' : value;
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', normalizedValue);
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', normalizedValue);
     }
     /**
      * @param {?} fn
@@ -666,7 +693,7 @@ class NumberValueAccessor {
      * @return {?}
      */
     setDisabledState(isDisabled) {
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
     }
 }
 NumberValueAccessor.decorators = [
@@ -684,7 +711,7 @@ NumberValueAccessor.decorators = [
  * @nocollapse
  */
 NumberValueAccessor.ctorParameters = () => [
-    { type: Renderer, },
+    { type: Renderer2, },
     { type: ElementRef, },
 ];
 
@@ -875,7 +902,7 @@ class RadioControlValueAccessor {
      */
     writeValue(value) {
         this._state = value === this.value;
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'checked', this._state);
+        this._renderer.setProperty(this._elementRef.nativeElement, 'checked', this._state);
     }
     /**
      * @param {?} fn
@@ -903,7 +930,7 @@ class RadioControlValueAccessor {
      * @return {?}
      */
     setDisabledState(isDisabled) {
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
     }
     /**
      * @return {?}
@@ -936,7 +963,7 @@ RadioControlValueAccessor.decorators = [
  * @nocollapse
  */
 RadioControlValueAccessor.ctorParameters = () => [
-    { type: Renderer, },
+    { type: Renderer2, },
     { type: ElementRef, },
     { type: RadioControlRegistry, },
     { type: Injector, },
@@ -984,7 +1011,7 @@ class RangeValueAccessor {
      * @return {?}
      */
     writeValue(value) {
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', parseFloat(value));
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', parseFloat(value));
     }
     /**
      * @param {?} fn
@@ -1003,7 +1030,7 @@ class RangeValueAccessor {
      * @return {?}
      */
     setDisabledState(isDisabled) {
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
     }
 }
 RangeValueAccessor.decorators = [
@@ -1021,7 +1048,7 @@ RangeValueAccessor.decorators = [
  * @nocollapse
  */
 RangeValueAccessor.ctorParameters = () => [
-    { type: Renderer, },
+    { type: Renderer2, },
     { type: ElementRef, },
 ];
 
@@ -1157,10 +1184,10 @@ class SelectControlValueAccessor {
         this.value = value;
         const /** @type {?} */ id = this._getOptionId(value);
         if (id == null) {
-            this._renderer.setElementProperty(this._elementRef.nativeElement, 'selectedIndex', -1);
+            this._renderer.setProperty(this._elementRef.nativeElement, 'selectedIndex', -1);
         }
         const /** @type {?} */ valueString = _buildValueString(id, value);
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', valueString);
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', valueString);
     }
     /**
      * @param {?} fn
@@ -1182,7 +1209,7 @@ class SelectControlValueAccessor {
      * @return {?}
      */
     setDisabledState(isDisabled) {
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
     }
     /**
      * \@internal
@@ -1222,7 +1249,7 @@ SelectControlValueAccessor.decorators = [
  * @nocollapse
  */
 SelectControlValueAccessor.ctorParameters = () => [
-    { type: Renderer, },
+    { type: Renderer2, },
     { type: ElementRef, },
 ];
 SelectControlValueAccessor.propDecorators = {
@@ -1276,7 +1303,7 @@ class NgSelectOption {
      * @return {?}
      */
     _setElementValue(value) {
-        this._renderer.setElementProperty(this._element.nativeElement, 'value', value);
+        this._renderer.setProperty(this._element.nativeElement, 'value', value);
     }
     /**
      * @return {?}
@@ -1296,7 +1323,7 @@ NgSelectOption.decorators = [
  */
 NgSelectOption.ctorParameters = () => [
     { type: ElementRef, },
-    { type: Renderer, },
+    { type: Renderer2, },
     { type: SelectControlValueAccessor, decorators: [{ type: Optional }, { type: Host },] },
 ];
 NgSelectOption.propDecorators = {
@@ -1453,7 +1480,7 @@ class SelectMultipleControlValueAccessor {
      * @return {?}
      */
     setDisabledState(isDisabled) {
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
     }
     /**
      * \@internal
@@ -1498,7 +1525,7 @@ SelectMultipleControlValueAccessor.decorators = [
  * @nocollapse
  */
 SelectMultipleControlValueAccessor.ctorParameters = () => [
-    { type: Renderer, },
+    { type: Renderer2, },
     { type: ElementRef, },
 ];
 SelectMultipleControlValueAccessor.propDecorators = {
@@ -1560,7 +1587,7 @@ class NgSelectMultipleOption {
      * @return {?}
      */
     _setElementValue(value) {
-        this._renderer.setElementProperty(this._element.nativeElement, 'value', value);
+        this._renderer.setProperty(this._element.nativeElement, 'value', value);
     }
     /**
      * \@internal
@@ -1568,7 +1595,7 @@ class NgSelectMultipleOption {
      * @return {?}
      */
     _setSelected(selected) {
-        this._renderer.setElementProperty(this._element.nativeElement, 'selected', selected);
+        this._renderer.setProperty(this._element.nativeElement, 'selected', selected);
     }
     /**
      * @return {?}
@@ -1588,7 +1615,7 @@ NgSelectMultipleOption.decorators = [
  */
 NgSelectMultipleOption.ctorParameters = () => [
     { type: ElementRef, },
-    { type: Renderer, },
+    { type: Renderer2, },
     { type: SelectMultipleControlValueAccessor, decorators: [{ type: Optional }, { type: Host },] },
 ];
 NgSelectMultipleOption.propDecorators = {
@@ -2188,13 +2215,13 @@ class AbstractControl {
      *
      * This will also mark all direct ancestors as `touched` to maintain
      * the model.
-     * @param {?=} __0
+     * @param {?=} opts
      * @return {?}
      */
-    markAsTouched({ onlySelf } = {}) {
+    markAsTouched(opts = {}) {
         this._touched = true;
-        if (this._parent && !onlySelf) {
-            this._parent.markAsTouched({ onlySelf });
+        if (this._parent && !opts.onlySelf) {
+            this._parent.markAsTouched(opts);
         }
     }
     /**
@@ -2203,14 +2230,14 @@ class AbstractControl {
      * If the control has any children, it will also mark all children as `untouched`
      * to maintain the model, and re-calculate the `touched` status of all parent
      * controls.
-     * @param {?=} __0
+     * @param {?=} opts
      * @return {?}
      */
-    markAsUntouched({ onlySelf } = {}) {
+    markAsUntouched(opts = {}) {
         this._touched = false;
         this._forEachChild((control) => { control.markAsUntouched({ onlySelf: true }); });
-        if (this._parent && !onlySelf) {
-            this._parent._updateTouched({ onlySelf });
+        if (this._parent && !opts.onlySelf) {
+            this._parent._updateTouched(opts);
         }
     }
     /**
@@ -2218,13 +2245,13 @@ class AbstractControl {
      *
      * This will also mark all direct ancestors as `dirty` to maintain
      * the model.
-     * @param {?=} __0
+     * @param {?=} opts
      * @return {?}
      */
-    markAsDirty({ onlySelf } = {}) {
+    markAsDirty(opts = {}) {
         this._pristine = false;
-        if (this._parent && !onlySelf) {
-            this._parent.markAsDirty({ onlySelf });
+        if (this._parent && !opts.onlySelf) {
+            this._parent.markAsDirty(opts);
         }
     }
     /**
@@ -2233,25 +2260,25 @@ class AbstractControl {
      * If the control has any children, it will also mark all children as `pristine`
      * to maintain the model, and re-calculate the `pristine` status of all parent
      * controls.
-     * @param {?=} __0
+     * @param {?=} opts
      * @return {?}
      */
-    markAsPristine({ onlySelf } = {}) {
+    markAsPristine(opts = {}) {
         this._pristine = true;
         this._forEachChild((control) => { control.markAsPristine({ onlySelf: true }); });
-        if (this._parent && !onlySelf) {
-            this._parent._updatePristine({ onlySelf });
+        if (this._parent && !opts.onlySelf) {
+            this._parent._updatePristine(opts);
         }
     }
     /**
      * Marks the control as `pending`.
-     * @param {?=} __0
+     * @param {?=} opts
      * @return {?}
      */
-    markAsPending({ onlySelf } = {}) {
+    markAsPending(opts = {}) {
         this._status = PENDING;
-        if (this._parent && !onlySelf) {
-            this._parent.markAsPending({ onlySelf });
+        if (this._parent && !opts.onlySelf) {
+            this._parent.markAsPending(opts);
         }
     }
     /**
@@ -2259,19 +2286,19 @@ class AbstractControl {
      * excluded from the aggregate value of any parent. Its status is `DISABLED`.
      *
      * If the control has children, all children will be disabled to maintain the model.
-     * @param {?=} __0
+     * @param {?=} opts
      * @return {?}
      */
-    disable({ onlySelf, emitEvent } = {}) {
+    disable(opts = {}) {
         this._status = DISABLED;
         this._errors = null;
         this._forEachChild((control) => { control.disable({ onlySelf: true }); });
         this._updateValue();
-        if (emitEvent !== false) {
+        if (opts.emitEvent !== false) {
             this._valueChanges.emit(this._value);
             this._statusChanges.emit(this._status);
         }
-        this._updateAncestors(!!onlySelf);
+        this._updateAncestors(!!opts.onlySelf);
         this._onDisabledChange.forEach((changeFn) => changeFn(true));
     }
     /**
@@ -2280,14 +2307,14 @@ class AbstractControl {
      * its validators.
      *
      * If the control has children, all children will be enabled.
-     * @param {?=} __0
+     * @param {?=} opts
      * @return {?}
      */
-    enable({ onlySelf, emitEvent } = {}) {
+    enable(opts = {}) {
         this._status = VALID;
         this._forEachChild((control) => { control.enable({ onlySelf: true }); });
-        this.updateValueAndValidity({ onlySelf: true, emitEvent });
-        this._updateAncestors(!!onlySelf);
+        this.updateValueAndValidity({ onlySelf: true, emitEvent: opts.emitEvent });
+        this._updateAncestors(!!opts.onlySelf);
         this._onDisabledChange.forEach((changeFn) => changeFn(false));
     }
     /**
@@ -2334,10 +2361,10 @@ class AbstractControl {
      * Re-calculates the value and validation status of the control.
      *
      * By default, it will also update the value and validity of its ancestors.
-     * @param {?=} __0
+     * @param {?=} opts
      * @return {?}
      */
-    updateValueAndValidity({ onlySelf, emitEvent } = {}) {
+    updateValueAndValidity(opts = {}) {
         this._setInitialStatus();
         this._updateValue();
         if (this.enabled) {
@@ -2345,25 +2372,25 @@ class AbstractControl {
             this._errors = this._runValidator();
             this._status = this._calculateStatus();
             if (this._status === VALID || this._status === PENDING) {
-                this._runAsyncValidator(emitEvent);
+                this._runAsyncValidator(opts.emitEvent);
             }
         }
-        if (emitEvent !== false) {
+        if (opts.emitEvent !== false) {
             this._valueChanges.emit(this._value);
             this._statusChanges.emit(this._status);
         }
-        if (this._parent && !onlySelf) {
-            this._parent.updateValueAndValidity({ onlySelf, emitEvent });
+        if (this._parent && !opts.onlySelf) {
+            this._parent.updateValueAndValidity(opts);
         }
     }
     /**
      * \@internal
-     * @param {?=} __0
+     * @param {?=} opts
      * @return {?}
      */
-    _updateTreeValidity({ emitEvent } = { emitEvent: true }) {
-        this._forEachChild((ctrl) => ctrl._updateTreeValidity({ emitEvent }));
-        this.updateValueAndValidity({ onlySelf: true, emitEvent });
+    _updateTreeValidity(opts = { emitEvent: true }) {
+        this._forEachChild((ctrl) => ctrl._updateTreeValidity(opts));
+        this.updateValueAndValidity({ onlySelf: true, emitEvent: opts.emitEvent });
     }
     /**
      * @return {?}
@@ -2418,12 +2445,12 @@ class AbstractControl {
      * expect(login.valid).toEqual(true);
      * ```
      * @param {?} errors
-     * @param {?=} __1
+     * @param {?=} opts
      * @return {?}
      */
-    setErrors(errors, { emitEvent } = {}) {
+    setErrors(errors, opts = {}) {
         this._errors = errors;
-        this._updateControlsErrors(emitEvent !== false);
+        this._updateControlsErrors(opts.emitEvent !== false);
     }
     /**
      * Retrieves a child control given the control's name or path.
@@ -2561,24 +2588,24 @@ class AbstractControl {
     }
     /**
      * \@internal
-     * @param {?=} __0
+     * @param {?=} opts
      * @return {?}
      */
-    _updatePristine({ onlySelf } = {}) {
+    _updatePristine(opts = {}) {
         this._pristine = !this._anyControlsDirty();
-        if (this._parent && !onlySelf) {
-            this._parent._updatePristine({ onlySelf });
+        if (this._parent && !opts.onlySelf) {
+            this._parent._updatePristine(opts);
         }
     }
     /**
      * \@internal
-     * @param {?=} __0
+     * @param {?=} opts
      * @return {?}
      */
-    _updateTouched({ onlySelf } = {}) {
+    _updateTouched(opts = {}) {
         this._touched = this._anyControlsTouched();
-        if (this._parent && !onlySelf) {
-            this._parent._updateTouched({ onlySelf });
+        if (this._parent && !opts.onlySelf) {
+            this._parent._updateTouched(opts);
         }
     }
     /**
@@ -2686,8 +2713,8 @@ class FormControl extends AbstractControl {
     /**
      * Patches the value of a control.
      *
-     * This function is functionally the same as {\@link FormControl.setValue} at this level.
-     * It exists for symmetry with {\@link FormGroup.patchValue} on `FormGroups` and `FormArrays`,
+     * This function is functionally the same as {\@link FormControl#setValue} at this level.
+     * It exists for symmetry with {\@link FormGroup#patchValue} on `FormGroups` and `FormArrays`,
      * where it does behave differently.
      * @param {?} value
      * @param {?=} options
@@ -2862,7 +2889,7 @@ class FormGroup extends AbstractControl {
      * Registers a control with the group's list of controls.
      *
      * This method does not update value or validity of the control, so for
-     * most cases you'll want to use {\@link FormGroup.addControl} instead.
+     * most cases you'll want to use {\@link FormGroup#addControl} instead.
      * @param {?} name
      * @param {?} control
      * @return {?}
@@ -4724,7 +4751,7 @@ const formArrayNameProvider = {
  * status is re-calculated.
  *
  * **Add new controls**: You can add new controls to the {\@link FormArray} dynamically by
- * calling its {\@link FormArray.push} method.
+ * calling its {\@link FormArray#push} method.
  *  Ex: `this.form.get('cities').push(new FormControl());`
  *
  * ### Example
@@ -5100,7 +5127,7 @@ CheckboxRequiredValidator.decorators = [
  */
 CheckboxRequiredValidator.ctorParameters = () => [];
 /**
- * Provider which adds {@link EmailValidator} to {@link NG_VALIDATORS}.
+ * Provider which adds {\@link EmailValidator} to {\@link NG_VALIDATORS}.
  */
 const EMAIL_VALIDATOR = {
     provide: NG_VALIDATORS,
@@ -5158,11 +5185,11 @@ EmailValidator.propDecorators = {
     'email': [{ type: Input },],
 };
 /**
- * Provider which adds {@link MinLengthValidator} to {@link NG_VALIDATORS}.
+ * Provider which adds {\@link MinLengthValidator} to {\@link NG_VALIDATORS}.
  *
  * ## Example:
  *
- * {@example common/forms/ts/validators/validators.ts region='min'}
+ * {\@example common/forms/ts/validators/validators.ts region='min'}
  */
 const MIN_LENGTH_VALIDATOR = {
     provide: NG_VALIDATORS,
@@ -5221,11 +5248,11 @@ MinLengthValidator.propDecorators = {
     'minlength': [{ type: Input },],
 };
 /**
- * Provider which adds {@link MaxLengthValidator} to {@link NG_VALIDATORS}.
+ * Provider which adds {\@link MaxLengthValidator} to {\@link NG_VALIDATORS}.
  *
  * ## Example:
  *
- * {@example common/forms/ts/validators/validators.ts region='max'}
+ * {\@example common/forms/ts/validators/validators.ts region='max'}
  */
 const MAX_LENGTH_VALIDATOR = {
     provide: NG_VALIDATORS,
@@ -5470,7 +5497,7 @@ FormBuilder.ctorParameters = () => [];
 /**
  * \@stable
  */
-const VERSION = new Version('4.1.1');
+const VERSION = new Version('4.3.2');
 
 /**
  * @license

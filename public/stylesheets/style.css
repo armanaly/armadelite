@@ -1,3 +1,9 @@
+@import url('//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css');
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+.date-form { margin: 10px; }
+label.control-label span { cursor: pointer; }
+
+
 .button{ border:0px;padding:0px;cursor:pointer;background-color: #fb0;height: 33px;color: #fff;text-decoration: none;display: inline-block;	font-size: 13px;text-transform: uppercase; line-height: 33px;padding: 0px 33px 0px 33px;
     -webkit-border-radius: 18px;
     -moz-border-radius: 18px;
@@ -12,7 +18,7 @@
 .bordered_button:hover{border-color: #fff;text-decoration: none;}
 
 .brown_button{border: 3px solid #7f5d3e;height: 37px;display: inline-block;line-height: 31px;color: #fff;padding-left: 16px;padding-right: 16px;text-transform: uppercase;text-decoration: none;font-size: 13px;letter-spacing: 1px;background-color: #7f5d3e;}
-.brown_button:hover{border-color: #7f5d3e;text-decoration: none;}
+.brown_button:hover{border-color: #CECECE;text-decoration: none;}
 
 
 .panel-default {

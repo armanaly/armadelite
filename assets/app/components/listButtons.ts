@@ -14,6 +14,7 @@ import {FormService} from "./form.service";
 
             <ul class="items" >
                 <li *ngFor="let valeurList of currentList">
+                     <!--data-toggle="tooltip" title=" "-->
                     <button *ngIf="valueSelected != valeurList" 
                         class="brown_button"
                         type="button" 
@@ -21,6 +22,7 @@ import {FormService} from "./form.service";
                         value="{{valeurList}}">{{valeurList}}
                     </button>
                     <button *ngIf="valueSelected == valeurList" 
+                        data-toggle="tooltip" title=" text"
                         class="brown_button" 
                         type="button" 
                         (click)="onChooseVal($event)"
@@ -29,7 +31,7 @@ import {FormService} from "./form.service";
                 </li>
             </ul>
          </div>
-         <span class="label label-info" *ngIf="objStep.configuration.foot_note && objStep.configuration.foot_note != ''">{{objStep.configuration.foot_note}} </span>
+         <div class="panel-heading panel-heading-custom" *ngIf="objStep.configuration.foot_note && objStep.configuration.foot_note != ''"> <p [innerHTML] = "objStep.configuration.foot_note"></p> </div>
      </div>
 `
 })

@@ -10,7 +10,7 @@
         "spec": ">=0.35.1 <0.36.0",
         "type": "range"
       },
-      "D:\\workspace\\flask_angular2"
+      "D:\\workspace\\russian_ballet"
     ]
   ],
   "_from": "es6-shim@>=0.35.1 <0.36.0",
@@ -45,7 +45,7 @@
   "_shasum": "9bfb7363feffff87a6cdb6cd93e405ec3c4b6f26",
   "_shrinkwrap": null,
   "_spec": "es6-shim@^0.35.1",
-  "_where": "D:\\workspace\\flask_angular2",
+  "_where": "D:\\workspace\\russian_ballet",
   "author": {
     "name": "Paul Miller",
     "url": "http://paulmillr.com"

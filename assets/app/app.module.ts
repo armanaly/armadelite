@@ -5,6 +5,8 @@ import {AppComponent}  from './app.component';
 import {HttpModule} from "@angular/http";
 import {FormsModule, ReactiveFormsModule}   from '@angular/forms';
 
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import {MdDatepickerModule} from '@angular/material';
 import {ROUTING} from "./app.routing"
 
 
@@ -41,6 +43,8 @@ import {GroupComponent} from "./components/ballet/group.component";
 import {GroupService} from "./components/ballet/group.service";
 import {StudentComponent} from "./components/ballet/student.component";
 import {StudentService} from "./components/ballet/student.service";
+import {BrowserAnimationsModule} from "../../public/js/vendor/@angular/platform-browser/animations/src/module";
+import {ExportService} from "./components/export.service";
 
 
 
@@ -63,7 +67,7 @@ function getStepsFirst(_stepService: StepService) {
         BrowserModule, FormsModule, ROUTING,
         HttpModule, ReactiveFormsModule
     ],
-
+    // , MdDatepickerModule
 
     bootstrap: [AppComponent],
 
@@ -76,7 +80,7 @@ function getStepsFirst(_stepService: StepService) {
                 // provideCloudinary(require('cloudinary-core'), { cloud_name: 'havjcqppv' } as CloudinaryConfiguration),
                 CollectionService, SaveService, FileUploadService,
                 MailService, GridPanelService, BalletDetailsService,
-                AuthService, GroupService, StudentService]
+                AuthService, GroupService, StudentService, ExportService]
 })
 export class AppModule {
     

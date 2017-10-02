@@ -2,6 +2,7 @@ import {Component, Input, Output, EventEmitter} from '@angular/core'
 import {FormBuilder, Validators, FormGroup, FormControl, FormArray} from "@angular/forms";
 import {FormService} from "./form.service";
 import {EmailValidator} from "./emailValidator.component";
+// import {MdDatepickerModule} from '@angular/material';
 @Component({
     selector: 'field-panel',
     template: `
@@ -93,6 +94,20 @@ import {EmailValidator} from "./emailValidator.component";
                         </div>
                     </div>
                          
+                    <div *ngIf="field.type == 'date'">
+                        <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
+                             <label for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label}} </label>
+                             <div class="col-sm-10">
+                                <input class="form-control"  
+                                    type='date' 
+                                    name='{{field.name}}'
+                                    id="{{field.name}}"
+                                    formControlName="{{field.name}}"
+                                    required="{{field.required}}"
+                                    [formControl]="myGroup.controls[field.name]"/>
+                             </div>
+                        </div>
+                    </div> 
                      
                     <div *ngIf="field.type == 'email'">
                         <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
@@ -115,14 +130,13 @@ import {EmailValidator} from "./emailValidator.component";
                                 type="{{field.type}}" 
                                 id="{{field.name}}"
                                 name="{{field.name}}"
-                             
                                 #email
                                 formControlName="{{field.name}}"
                                 required="{{field.required}}"
                                 [formControl]="myGroup.controls[field.name]">
                                                               
                             <div *ngIf="!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched" class="alert alert-danger">
-                                Nous avons besoin d'une adresse email valide
+                                We need a valid adress email
                             </div>
                             </div> 
                         </div>
@@ -136,13 +150,13 @@ import {EmailValidator} from "./emailValidator.component";
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Champs obligatoires</h4>
+        <h4 class="modal-title">Fields mandatory</h4>
       </div>
       <div class="modal-body">
-        <p>Merci de remplir tous les champs obligatoires</p>
+        <p>Thanks for fill in all the mandatory fields</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
 
@@ -151,7 +165,7 @@ import {EmailValidator} from "./emailValidator.component";
             
                  <!--<button type="submit" class="btn btn-primary" [disabled]="myGroup.invalid">Valider</button>-->
                  <div align="center">
-                    <button type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Envoyer   </button>
+                    <button type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Send   </button>
                  </div>
                 </div>   
             </form>
@@ -208,7 +222,7 @@ console.log(this.objStep);
                 if (typeof (this.objStep.configuration.form_values[index].autofocus) == 'undefined'){
                     this.objStep.configuration.form_values[index].autofocus = false;
                 }
-                console.log(this.objStep.name); //kilometrage
+                console.log(this.objStep.name);
                 console.log(this.objStep.configuration.form_values[index].name);   // 1 = NOM ; 2 = EMAIL
                 console.log(this._formService.arraySteps);
 
@@ -226,32 +240,21 @@ console.log(this.objStep);
 
                 console.log("objFieldsPanel");
                 console.log(objFieldsPanel);
+                console.log(objFieldsPanel[this.objStep.name][index])
                 if (typeof objFieldsPanel != 'undefined'){
-                    let keyField = objFieldsPanel[this.objStep.name][index];
-                    let valueField = keyField[this.objStep.configuration.form_values[index].name];
-                    this.myGroup.controls[this.objStep.configuration.form_values[index].name].setValue(valueField);
+
+                    if (typeof objFieldsPanel[this.objStep.name][index] != 'undefined')
+                    {
+                        let keyField = objFieldsPanel[this.objStep.name][index];
+                        let valueField = keyField[this.objStep.configuration.form_values[index].name];
+                        this.myGroup.controls[this.objStep.configuration.form_values[index].name].setValue(valueField);
+                    }
+
                 }
             }
             this.display = true;
             console.log(this.myGroup);
             console.log(this.myGroup.invalid);
-
-
-
-    //
-    //     //**********************************
-    //     for (let index = 0; index < this.objStep.configuration.form_values.length; index++) {
-    //     //console.log(this.objStep.configuration.form_values[index])
-    //     if (this.objStep.configuration.form_values[index].type == 'email')
-    //     {
-    //         this.arr.push(new FormControl(this.objStep.configuration.form_values[index].name, [Validators.required, EmailValidator.checkEmail]));
-    //         console.log(this.myGroup);
-    //     }
-    //     else
-    //     {
-    //         this.arr.push(new FormControl(this.objStep.configuration.form_values[index].name, [Validators.required, Validators.minLength(2)]));
-    //     }
-    // }
 
         console.log(this.myGroup);
         console.log(this.myGroup.invalid);

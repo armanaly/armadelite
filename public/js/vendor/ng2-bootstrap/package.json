@@ -10,7 +10,7 @@
         "spec": ">=1.1.9 <2.0.0",
         "type": "range"
       },
-      "D:\\workspace\\flask_angular2"
+      "D:\\workspace\\russian_ballet"
     ]
   ],
   "_from": "ng2-bootstrap@>=1.1.9 <2.0.0",
@@ -45,7 +45,7 @@
   "_shasum": "8bef6179d7436ba547901447f18fee8fff4355c2",
   "_shrinkwrap": null,
   "_spec": "ng2-bootstrap@^1.1.9",
-  "_where": "D:\\workspace\\flask_angular2",
+  "_where": "D:\\workspace\\russian_ballet",
   "author": {
     "name": "Dmitriy Shekhovtsov",
     "email": "valorkin@gmail.com"
@@ -56,6 +56,7 @@
   "dependencies": {
     "moment": "2.18.1"
   },
+  "deprecated": "ng2-bootstrap is renamed to ngx-bootstrap, please do npm i ngx-bootstrap -S",
   "description": "Native Angular Bootstrap Components",
   "devDependencies": {},
   "directories": {},

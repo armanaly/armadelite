@@ -3,6 +3,7 @@ import {GridPanelService} from "./grid.service";
 import {Router, NavigationExtras, ActivatedRoute} from '@angular/router';
 import {StepService} from "../Engine/step.service";
 import {Http} from "@angular/http";
+import {ExportService} from "./export.service";
 @Component({
     selector: 'grid-panel',
     template: `
@@ -14,7 +15,7 @@ import {Http} from "@angular/http";
                   <div class="col-md-2">
                     <nav class="form-navArrow">
                        <!--<a [routerLink]="['/menu']" [queryParams]="{'firstLoad': false}">-->
-                       <a [routerLink]="['/home']" [queryParams]="{'app': app_name}" >
+                       <a [routerLink]="['/home']" [queryParams]="{'app': 'ballet', 'master': master, 'premenu': 1}" >
                            <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
                     </nav>
                   </div>
@@ -23,6 +24,7 @@ import {Http} from "@angular/http";
                      <h3>{{grid_name}}</h3>
                  </div>
                </div>
+               <div><button (click)="exportExcel()">Export excel</button></div>
                </div>
                 <div class="panel-body">
                <div class="table-responsive" *ngIf="display">
@@ -54,17 +56,41 @@ import {Http} from "@angular/http";
                         <tr *ngFor="let item of _gridService.dataGrid;let j = index">
                             <td *ngFor="let key of _gridService.keysName;let i = index" align="center">
                                                      
-                                <span *ngIf="!filterActivated && _gridService.colTitle[i].type != 'checkbox' "> {{item[key]}}  </span>
                                 
+                                <!-- TYPE CHECK BOX -->
                                 <span *ngIf="this._gridService.colTitle[i].type == 'checkbox' "> 
                                     <input *ngIf="item[key]" name="{{key}}" type="checkbox" value="{{item[key]}}" checked (change)=updateCheckBox($event,item) /> 
                                     <input *ngIf="item[key] == false" name="{{key}}" type="checkbox" value="{{item[key]}}" (change)=updateCheckBox($event,item) /> 
                                 </span>
+                                
+                                <!-- TYPE COMBO MORE THAN 1 VALUE IN LIST COMBO-->
+                                <span *ngIf="this._gridService.colTitle[i].type == 'combo' &&  _gridService.dataGrid[0].course_list.length > 1" >
+                                       <select id="groups" (change)="changeCourse($event, item._id)"   >
+                                            <option selected value="item[key]">{{item[key]}}</option>
+                                            <option *ngFor="let course of _gridService.dataGrid[0].course_list">{{course}}</option>
+                                       </select>
+                                </span>
+                                <!-- TYPE COMBO LESS THAN 1 VALUE IN LIST COMBO-->
+                                <span *ngIf="this._gridService.colTitle[i].type == 'combo' && _gridService.dataGrid[0].course_list.length < 2">
+                                        {{item[key]}}  
+                                </span>
+                                
+                                <!-- NORMAL TYPE -->
+                                <span *ngIf="!filterActivated && _gridService.colTitle[i].type == 'standard'">
+                                    {{item[key]}}  
+                                </span>
+                                
+                                <!-- FIELD PANEL TYPE -->
+                                <span *ngIf="!filterActivated && _gridService.colTitle[i].type == 'field_panel'">
+                                    {{item[key]}}  
+                                </span>
+                                
+                                
                             </td>
                             
                             <!-- EDIT BUTTON -->
                             <td *ngIf="_stepService.steps[0].master_name == 'ballet'">
-                                <a [routerLink]="['/editStudent', item._id] "> 
+                                <a [routerLink]="['/editStudent', item._id, grid_name, master] "> 
                                     <button class="btn btn-primary" type="button" > 
                                         <i class="glyphicon glyphicon-edit"> </i>
                                     </button>
@@ -130,7 +156,7 @@ import {Http} from "@angular/http";
 
    // router = new Router;
     constructor(private _stepService: StepService, private _gridService: GridPanelService, private router: Router,
-                private route: ActivatedRoute, private _http: Http){}
+                private route: ActivatedRoute, private _http: Http, private _exportService: ExportService){}
 
     display = false;
     myListData = [];// =  this._gridService.dataGrid;
@@ -226,6 +252,17 @@ import {Http} from "@angular/http";
 
     }
 
+    changeCourse($event, id){
+        let course_type = $event.target.value
+        this._gridService.changeCourse(course_type,this.obj_id)
+            .subscribe(
+                data => {
+                    alert('ok')
+                },
+                error => console.log(error)
+
+            )
+    }
     filter(event: any){
         console.log(event.target);
         //if (event.target.value ==''){
@@ -236,5 +273,17 @@ import {Http} from "@angular/http";
         this._gridService.filterData(event.target.value, event.srcElement.id);}
         //  this.filterActivated = true;
     //}
+
+    exportExcel(){
+        this.grid_name
+        this.master
+        console.log(this._gridService.dataGrid)
+        this._exportService.toExcel(this.grid_name,this.master)
+            .subscribe(
+                data => console.log(data),
+                error => console.log(error)
+            )
+
+    }
 
 }

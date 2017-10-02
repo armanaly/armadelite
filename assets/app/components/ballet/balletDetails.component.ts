@@ -24,7 +24,7 @@ import {BalletDetailsService} from "./balletDetails.service";
             <div  class="row" align="left">
                 <div class="col-md-2">
                    <nav class="form-navArrow" *ngIf="display">
-                        <a [routerLink]="['/grid']" [queryParams]="{'grid_name': record_details.course_type, 'master': record_details.stage}">
+                        <a [routerLink]="['/grid']" [queryParams]="{'grid_name': record_details.course_type, 'master': record_details.stage, 'app_name': 'ballet'}">
                         <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
                    </nav>
                 </div>
@@ -57,15 +57,15 @@ import {BalletDetailsService} from "./balletDetails.service";
                     <table class="tg">
                       <tr>
                         <td class="tg-txgi">Birthday</td>
-                        <td class="tg-6k2t">{{record_details.dob}}</td>
+                        <td class="tg-6k2t">{{record_details.profile[4].birthday}}</td>
                         <td class="tg-txgi">Age</td>
                         <td class="tg-6k2t">{{record_details.age}}</td>
                       </tr>
                       <tr>
                         <td class="tg-txgi">Country</td>
-                        <td class="tg-6k2t">{{record_details.profile[4].country}}</td>
+                        <td class="tg-6k2t">{{record_details.profile[5].country}}</td>
                         <td class="tg-txgi">City</td>
-                        <td class="tg-6k2t">{{record_details.profile[5].city}}</td>
+                        <td class="tg-6k2t">{{record_details.profile[6].city}}</td>
                       </tr>
                       <!--<tr>-->
                         <!--<td class="tg-txgi">BECA</td>-->

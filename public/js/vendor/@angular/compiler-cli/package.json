@@ -2,51 +2,50 @@
   "_args": [
     [
       {
-        "raw": "@angular/compiler-cli@latest",
+        "raw": "@angular/compiler-cli@4.3.2",
         "scope": "@angular",
         "escapedName": "@angular%2fcompiler-cli",
         "name": "@angular/compiler-cli",
-        "rawSpec": "latest",
-        "spec": "latest",
-        "type": "tag"
+        "rawSpec": "4.3.2",
+        "spec": "4.3.2",
+        "type": "version"
       },
-      "D:\\workspace\\flask_angular2"
+      "D:\\workspace\\russian_ballet"
     ]
   ],
-  "_from": "@angular/compiler-cli@latest",
-  "_id": "@angular/compiler-cli@4.1.1",
+  "_from": "@angular/compiler-cli@4.3.2",
+  "_id": "@angular/compiler-cli@4.3.2",
   "_inCache": true,
   "_installable": true,
   "_location": "/@angular/compiler-cli",
-  "_nodeVersion": "6.10.0",
+  "_nodeVersion": "6.9.2",
   "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/compiler-cli-4.1.1.tgz_1493933200881_0.9052003230899572"
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/compiler-cli-4.3.2.tgz_1501190002113_0.1514715114608407"
   },
   "_npmUser": {
     "name": "angular",
     "email": "angular-core+npm@google.com"
   },
-  "_npmVersion": "3.10.10",
+  "_npmVersion": "3.10.9",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "@angular/compiler-cli@latest",
+    "raw": "@angular/compiler-cli@4.3.2",
     "scope": "@angular",
     "escapedName": "@angular%2fcompiler-cli",
     "name": "@angular/compiler-cli",
-    "rawSpec": "latest",
-    "spec": "latest",
-    "type": "tag"
+    "rawSpec": "4.3.2",
+    "spec": "4.3.2",
+    "type": "version"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/compiler-cli/-/compiler-cli-4.1.1.tgz",
-  "_shasum": "8cea89ee12129c3f0edb55853e18b37b164f2953",
+  "_resolved": "https://registry.npmjs.org/@angular/compiler-cli/-/compiler-cli-4.3.2.tgz",
+  "_shasum": "a9c4b94590c82d0e3f28b1de497be636e21c3cc6",
   "_shrinkwrap": null,
-  "_spec": "@angular/compiler-cli@latest",
-  "_where": "D:\\workspace\\flask_angular2",
+  "_spec": "@angular/compiler-cli@4.3.2",
+  "_where": "D:\\workspace\\russian_ballet",
   "bin": {
     "ngc": "./src/main.js",
     "ng-xi18n": "./src/extract_i18n.js"
@@ -67,7 +66,7 @@
     }
   ],
   "dependencies": {
-    "@angular/tsc-wrapped": "4.1.1",
+    "@angular/tsc-wrapped": "4.3.2",
     "minimist": "^1.2.0",
     "reflect-metadata": "^0.1.2"
   },
@@ -75,8 +74,8 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "8cea89ee12129c3f0edb55853e18b37b164f2953",
-    "tarball": "https://registry.npmjs.org/@angular/compiler-cli/-/compiler-cli-4.1.1.tgz"
+    "shasum": "a9c4b94590c82d0e3f28b1de497be636e21c3cc6",
+    "tarball": "https://registry.npmjs.org/@angular/compiler-cli/-/compiler-cli-4.3.2.tgz"
   },
   "homepage": "https://github.com/angular/angular/tree/master/packages/compiler-cli",
   "keywords": [
@@ -95,8 +94,8 @@
   "optionalDependencies": {},
   "peerDependencies": {
     "typescript": "^2.0.2",
-    "@angular/compiler": "4.1.1",
-    "@angular/core": "4.1.1"
+    "@angular/compiler": "4.3.2",
+    "@angular/core": "4.3.2"
   },
   "readme": "ERROR: No README data found!",
   "repository": {
@@ -105,5 +104,5 @@
   },
   "scripts": {},
   "typings": "index.d.ts",
-  "version": "4.1.1"
+  "version": "4.3.2"
 }

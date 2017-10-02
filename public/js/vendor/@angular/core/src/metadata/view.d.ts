@@ -59,21 +59,21 @@ export declare enum ViewEncapsulation {
  * {@link Component}
  */
 export declare class ViewMetadata {
-    /** {@link Component.templateUrl} */
+    /** {@link Component#templateUrl} */
     templateUrl: string | undefined;
-    /** {@link Component.template} */
+    /** {@link Component#template} */
     template: string | undefined;
-    /** {@link Component.stylesUrl} */
+    /** {@link Component#stylesUrl} */
     styleUrls: string[] | undefined;
-    /** {@link Component.styles} */
+    /** {@link Component#styles} */
     styles: string[] | undefined;
-    /** {@link Component.encapsulation} */
+    /** {@link Component#encapsulation} */
     encapsulation: ViewEncapsulation | undefined;
-    /** {@link Component.animation} */
+    /** {@link Component#animation} */
     animations: any[] | undefined;
-    /** {@link Component.interpolation} */
+    /** {@link Component#interpolation} */
     interpolation: [string, string] | undefined;
-    constructor({templateUrl, template, encapsulation, styles, styleUrls, animations, interpolation}?: {
+    constructor(opts?: {
         templateUrl?: string;
         template?: string;
         encapsulation?: ViewEncapsulation;

@@ -8,7 +8,8 @@ export class Student {
         public intolerencia: string,
         public email2: string,
         public phone2: string,
-        public notes: string
+        public notes: string,
+        public course_type: string
     ) {  }
 
 }

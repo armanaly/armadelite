@@ -2,64 +2,65 @@
   "_args": [
     [
       {
-        "raw": "@angular/core@latest",
+        "raw": "@angular/core@4.3.2",
         "scope": "@angular",
         "escapedName": "@angular%2fcore",
         "name": "@angular/core",
-        "rawSpec": "latest",
-        "spec": "latest",
-        "type": "tag"
+        "rawSpec": "4.3.2",
+        "spec": "4.3.2",
+        "type": "version"
       },
-      "D:\\workspace\\flask_angular2"
+      "D:\\workspace\\russian_ballet"
     ]
   ],
-  "_from": "@angular/core@latest",
-  "_id": "@angular/core@4.1.1",
+  "_from": "@angular/core@4.3.2",
+  "_id": "@angular/core@4.3.2",
   "_inCache": true,
   "_installable": true,
   "_location": "/@angular/core",
-  "_nodeVersion": "6.10.0",
+  "_nodeVersion": "6.9.2",
   "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/core-4.1.1.tgz_1493933203431_0.17317965882830322"
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/core-4.3.2.tgz_1501190004139_0.8110975774470717"
   },
   "_npmUser": {
     "name": "angular",
     "email": "angular-core+npm@google.com"
   },
-  "_npmVersion": "3.10.10",
+  "_npmVersion": "3.10.9",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "@angular/core@latest",
+    "raw": "@angular/core@4.3.2",
     "scope": "@angular",
     "escapedName": "@angular%2fcore",
     "name": "@angular/core",
-    "rawSpec": "latest",
-    "spec": "latest",
-    "type": "tag"
+    "rawSpec": "4.3.2",
+    "spec": "4.3.2",
+    "type": "version"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/core/-/core-4.1.1.tgz",
-  "_shasum": "1230645c842f8a6a050403d4947f982e7ef70c60",
+  "_resolved": "https://registry.npmjs.org/@angular/core/-/core-4.3.2.tgz",
+  "_shasum": "ea78341c3501ad8f43b51ffb183e200dc19844c3",
   "_shrinkwrap": null,
-  "_spec": "@angular/core@latest",
-  "_where": "D:\\workspace\\flask_angular2",
+  "_spec": "@angular/core@4.3.2",
+  "_where": "D:\\workspace\\russian_ballet",
   "author": {
     "name": "angular"
   },
   "bugs": {
     "url": "https://github.com/angular/angular/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "tslib": "^1.7.1"
+  },
   "description": "Angular - the core framework",
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "1230645c842f8a6a050403d4947f982e7ef70c60",
-    "tarball": "https://registry.npmjs.org/@angular/core/-/core-4.1.1.tgz"
+    "shasum": "ea78341c3501ad8f43b51ffb183e200dc19844c3",
+    "tarball": "https://registry.npmjs.org/@angular/core/-/core-4.3.2.tgz"
   },
   "es2015": "./@angular/core.js",
   "homepage": "https://github.com/angular/angular#readme",
@@ -85,5 +86,5 @@
   },
   "scripts": {},
   "typings": "./core.d.ts",
-  "version": "4.1.1"
+  "version": "4.3.2"
 }

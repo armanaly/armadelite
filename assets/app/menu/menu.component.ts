@@ -92,6 +92,7 @@ export class MenuComponent {
         if (typeof this.route.snapshot.queryParams["firstLoad"] != 'undefined') {
             this.firstLoad = this.route.snapshot.queryParams["hasLoaded"];
         }
+
         console.log(this.appName)
         console.log(this.firstLoad);
         console.log(this.grids)
@@ -106,25 +107,42 @@ export class MenuComponent {
                     gridsList => {
                         console.log(gridsList)
                         this.grids = gridsList;
-                        for (let j = 0; j < this.grids.length; j++) {
-                            console.log(this.grids[j].name);
-                            console.log(this.grids[j].listBtn);
-                            if (typeof this.grids[j].listBtn != 'undefined') {
-                                if (this.firstLoad == true) {
-                                    this.preMenu = 1;
-                                    this.preMenuLst = this.grids[j].listBtn;
-                                    console.log(this.grids[j].listBtn);
+
+
+
+
+
+
+                            for (let j = 0; j < this.grids.length; j++) {
+                                console.log(this.grids[j].name);
+                                console.log(this.grids[j].listBtn);
+                                if (typeof this.grids[j].listBtn != 'undefined') {
+                                    if (this.firstLoad == true) {
+                                        this.preMenu = 1;
+                                        this.preMenuLst = this.grids[j].listBtn;
+                                        console.log(this.grids[j].listBtn);
+                                    }
                                 }
+
                             }
+                            // if (this.firstLoad == false){
+                            //     this.getGridsBtn()
+                            //     this.preMenu = 2;
+                            //     console.log('2')
+                            // }
+
+
+                        if (this.route.snapshot.queryParams["premenu"] == 1) {
+                            console.log('ici')
+                            let master = this.route.snapshot.queryParams["master"];
+
+                            this.getGridsBtn('e',master);
 
                         }
-                        // if (this.firstLoad == false){
-                        //     this.getGridsBtn()
-                        //     this.preMenu = 2;
-                        //     console.log('2')
-                        // }
-                        this.ready = true;
-                    }), error => console.log(error)
+
+                            this.ready = true;
+                        }
+                    ), error => console.log(error)
         }
 
     }
@@ -136,6 +154,7 @@ export class MenuComponent {
         //console.log(this.gridBtns);
        // console.log(gridList);
         console.log(val)
+        console.log(this.grids)
         // TOUS LES GRIDS de la collection grids
         for (let idxGrid in this.grids) {
             //cas où un prémenu exist alors on a dans grids un "type": "listBtn"
@@ -185,6 +204,7 @@ export class MenuComponent {
     }
 
     onClick() {
+        console.log(this.preMenuLst);
         this.preMenu = 1;
         this.backBtn = false;
     }

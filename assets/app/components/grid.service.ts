@@ -68,14 +68,31 @@ export class GridPanelService {
                                 this.colTitle.push({"title": data[0].config[i].title, "key": data[0].config[i].data, "type": "checkbox"})
                                 break;
                             }
-
-
-
+                            case 'combo': {
+                                this.keysName.push(data[0].config[i].data);
+                                this.colTitle.push({
+                                    "title": data[0].config[i].title,
+                                    "key": data[0].config[i].data,
+                                    "type": "combo"
+                                })
+                                break;
+                            }
                         }
                     }
                     else{
+
                         this.keysName.push(data[0].config[i].data);
-                        this.colTitle.push({"title": data[0].config[i].title, "key": data[0].config[i].data, "type": "value"})
+                        console.log(data[0].config[i])
+                        if (typeof (data[0].config[i].filterable) != 'undefined'){
+                            this.colTitle.push({"title": data[0].config[i].title, "key": data[0].config[i].data, "type": "standard", "filterable" : true});
+                            }
+                        else {
+                            this.colTitle.push({
+                                "title": data[0].config[i].title,
+                                "key": data[0].config[i].data,
+                                "type": "standard"
+                            })
+                        }
                     }
                 }
 
@@ -198,5 +215,18 @@ console.log(master)
             .map(response => response)
             .catch(error => Observable.throw(error.json()));
     }
+    changeCourse(course_type, user_id){
+        console.log(course_type);
+        console.log(user_id);
 
+        let body = JSON.stringify({"course_type" : course_type, "_id": user_id});
+
+        const headers = new Headers({'Content-Type': 'application/json'});
+        var completeUrl = GlobalVariable.BASE_URL + 'update_course_type';
+        return this._http.post(completeUrl, body, {headers: headers})
+            .map(response => response)
+            .catch(error => Observable.throw(error.json()));
+
+
+    }
 }
