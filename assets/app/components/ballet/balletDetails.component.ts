@@ -57,7 +57,7 @@ import {BalletDetailsService} from "./balletDetails.service";
                     <table class="tg">
                       <tr>
                         <td class="tg-txgi">Birthday</td>
-                        <td class="tg-6k2t">{{record_details.profile[4].birthday}}</td>
+                        <td class="tg-6k2t">{{record_details.profile[4].birthdate}}</td>
                         <td class="tg-txgi">Age</td>
                         <td class="tg-6k2t">{{record_details.age}}</td>
                       </tr>

@@ -254,7 +254,7 @@ import {ExportService} from "./export.service";
 
     changeCourse($event, id){
         let course_type = $event.target.value
-        this._gridService.changeCourse(course_type,this.obj_id)
+        this._gridService.changeCourse(course_type,id)
             .subscribe(
                 data => {
                     alert('ok')
