@@ -99,7 +99,7 @@ import {ExportService} from "./export.service";
 
                             <!--- GROUP MANAGEMENT BUTTON --->
                             <!--*ngIf="item.group_mgt"-->
-                            <td *ngIf="_stepService.steps[0].master_name == 'ballet'" >
+                            <td *ngIf="_stepService.steps[0].master_name == 'ballet' && grid_name != 'New demands'" >
                                 <a [routerLink]="['/groupManagement', item._id, grid_name, master] ">
                                     <button class="btn btn-primary" type="button"> Group </button>
                                 </a> 
@@ -257,7 +257,7 @@ import {ExportService} from "./export.service";
         this._gridService.changeCourse(course_type,id)
             .subscribe(
                 data => {
-                    alert('ok')
+
                 },
                 error => console.log(error)
 
