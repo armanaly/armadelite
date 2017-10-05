@@ -67,7 +67,11 @@ import {ExportService} from "./export.service";
                                 <span *ngIf="this._gridService.colTitle[i].type == 'combo' &&  _gridService.dataGrid[0].course_list.length > 1" >
                                        <select id="groups" (change)="changeCourse($event, item._id)"   >
                                             <option selected value="item[key]">{{item[key]}}</option>
-                                            <option *ngFor="let course of _gridService.dataGrid[0].course_list">{{course}}</option>
+                                            
+                                            <option *ngFor="let course of _gridService.dataGrid[0].course_list">
+                                                <b selected *ngIf="course == item[key]">{{course}}</b>
+                                                <b *ngIf="course != item[key]">{{course}}</b></option>
+                                                
                                        </select>
                                 </span>
                                 <!-- TYPE COMBO LESS THAN 1 VALUE IN LIST COMBO-->
@@ -106,7 +110,7 @@ import {ExportService} from "./export.service";
                             </td>
                             <!-- IF DETAILS IS ACTIVATED IN GRID CONFIG COLLECTION -->
                             <td *ngIf="item.details.activated">
-                                <a [routerLink]="['/details', item._id] ">
+                                <a [routerLink]="['/details', item._id, grid_name] ">
                                     <button class="btn btn-primary" type="button"> Detail </button>
                                 </a> 
                             </td>

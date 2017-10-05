@@ -458,7 +458,7 @@ export class MainComponent implements OnInit {
         }
         else {
            // console.log(this._stepService.steps[this.indexStepObj].step_id);
-
+            let tmp_step_id = this.indexStepObj;
             this.indexStepObj++;
             console.log("stepId: " + this.stepId);
             console.log("indexStepObj: " + this.indexStepObj);
@@ -599,6 +599,14 @@ export class MainComponent implements OnInit {
                                 "name": this._stepService.steps[this.indexStepObj].name,
                                 "list": this._stepService.steps[this.indexStepObj].configuration.list
                             });
+                            console.log(this._stepService.steps[this.indexStepObj].configuration.list.length)
+                            console.log(this.indexStepObj)
+                            if (this._stepService.steps[this.indexStepObj].configuration.list.length == 1){
+                                console.log("1 SEULE VALEUR ALORS GO TO NEXT STEP")
+                                this._formService.arraySteps[this.indexStepObj-1][this._stepService.steps[this.indexStepObj].configuration.form_value.name] = this._stepService.steps[this.indexStepObj].configuration.list[0];
+                                this.goToNextStep(this.indexStepObj);
+                                break;
+                            }
                             console.log(this.datas);
                             this.stepId = tmpNewstepId;
                         }
@@ -690,7 +698,7 @@ export class MainComponent implements OnInit {
                         console.log(this.datas);
                         this.stepId = tmpNewstepId;
                     }
-                    // break;
+                     break;
 
                 case 'field_panel':
                     console.log('field_panel');
@@ -700,6 +708,7 @@ export class MainComponent implements OnInit {
                 case 'file_upload':
                     console.log("file_upload");
                     this.stepId = tmpNewstepId;
+                    break;
 
                 case 'multi_selection':
                     if (typeof this._stepService.steps[this.indexStepObj].configuration.list != 'undefined') {

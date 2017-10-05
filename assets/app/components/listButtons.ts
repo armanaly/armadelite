@@ -78,7 +78,8 @@ export class ListButtonsComponent {
         else{
             this.display = true;
         }
-
+console.log('OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+        console.log(this.display)
          // console.log(this.listOfElements);
          // console.log(this.valueSelected);
         for (let datas of this.listOfElements){
@@ -87,6 +88,7 @@ export class ListButtonsComponent {
 
             if (datas.name == this.objStep.name){
                 this.currentList = datas.list;
+                console.log(this.currentList);
             }
         }
 

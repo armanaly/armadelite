@@ -24,7 +24,7 @@ import {BalletDetailsService} from "./balletDetails.service";
             <div  class="row" align="left">
                 <div class="col-md-2">
                    <nav class="form-navArrow" *ngIf="display">
-                        <a [routerLink]="['/grid']" [queryParams]="{'grid_name': record_details.course_type, 'master': record_details.stage, 'app_name': 'ballet'}">
+                        <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid_name, 'master': record_details.stage, 'app_name': 'ballet'}">
                         <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
                    </nav>
                 </div>
@@ -163,7 +163,7 @@ export class BalletDetailsComponent {
     private sub: any;
     obj_id;
     list_options= [];
-
+    grid_name = '';
     display = false;
     details = false;
 
@@ -171,10 +171,12 @@ export class BalletDetailsComponent {
 
     ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
-            this.obj_id = params['record']; // (+) converts string 'id' to a number
-
-            // In a real app: dispatch action to load the details here.
+            this.obj_id = params['record'];// (+) converts string 'id' to a number
+            this.grid_name = params['grid_name']
         });
+
+       // this.grid_name = this.route.snapshot.queryParams["grid_name"];
+       console.log(this.grid_name);
        console.log(this.obj_id)
 
         this._balletDetailsService.getDatas(this.obj_id)

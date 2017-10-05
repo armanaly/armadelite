@@ -20,7 +20,7 @@ const APP_ROUTES: Routes = [
     {path: 'grid', component: GridPanelComponent},
     {path: 'grid/:grid_name', component: GridPanelComponent},
     {path: 'grid/:grid_name/:master_val/:app_name', component: GridPanelComponent},
-    {path: 'details/:record', component: BalletDetailsComponent},
+    {path: 'details/:record/:grid_name', component: BalletDetailsComponent},
     {path: 'auth/signup', component: SignupComponent},
     {path: ':firstLoad', component:MenuComponent},
     {path: 'groupManagement/:record/:course_type/:stage', component: GroupComponent},
