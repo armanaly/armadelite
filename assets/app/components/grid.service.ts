@@ -51,7 +51,7 @@ export class GridPanelService {
                             objColTitle.title = data[0].config[i].field_panel_values[q].title;
                             objColTitle.key = data[0].config[i].field_panel_name + '_' + data[0].config[i].field_panel_values[q].data;
                             objColTitle.type = "field_panel";
-;
+
                             if (typeof (data[0].config[i].field_panel_values[q].filterable) != 'undefined'){
                                 objColTitle.filterable = true;
                             }
@@ -164,17 +164,7 @@ export class GridPanelService {
         else {
             return false
         }
-        //console.log(res);
-        // if (res != null)
-        // {
-        //
-        // // }
-        // // if (obj[key] === value) {
-        //      return true;
-        //
-        // } else {
-        //     return false
-        // }
+
     }
 
     filterData(value, key){
