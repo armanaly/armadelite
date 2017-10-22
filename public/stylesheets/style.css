@@ -20,6 +20,7 @@ label.control-label span { cursor: pointer; }
 .brown_button{border: 3px solid #7f5d3e;height: 37px;display: inline-block;line-height: 31px;color: #fff;padding-left: 16px;padding-right: 16px;text-transform: uppercase;text-decoration: none;font-size: 13px;letter-spacing: 1px;background-color: #7f5d3e;}
 .brown_button:hover{border-color: #CECECE;text-decoration: none;}
 
+.black_button{border: 3px solid black;height: 37px;display: inline-block;line-height: 31px;color: black;padding-left: 16px;padding-right: 16px;text-transform: uppercase;text-decoration: none;font-size: 13px;letter-spacing: 1px;background-color: black;}
 
 .panel-default {
     table-border-color-light: green;

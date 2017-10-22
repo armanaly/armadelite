@@ -17,20 +17,21 @@ import {SaveService} from "./saveService";
     template: `
 
     <div class="panel panel-default" *ngIf="formCompleted == false">
-    <div class="row" style="background-color: black" >
-             <div class=".col-md-2" *ngIf="this.stepId != 1 && this.appName !='play'">
-                <previous-page 
-                    [stepId] = "stepId"
-                    [idxStepObj] =  "indexStepObj"
-                    (change) = goPreviousStep($event) >
-                </previous-page>
-             </div>
-              <div class="col-md-10" *ngIf="_stepService.steps[0].logo_url != ''" align="center"><img class="img-thumbnail"  src="{{_stepService.steps[0].logo_url}}" width="240" height="160"></div>
-              <!--<div class="col-md-6"><h1> WEEK-END PLAISIR ET DECOUVERTES...</h1><br>-->
-              
-              <!--</div>-->
-              
+        <div *ngIf="this.stepId == 1 && this.appName !='play'"  style="background-color: black">
+          <button class="black_button" ><i class="glyphicon glyphicon-triangle-left" >  </i></button>
+        
         </div>
+        <div *ngIf="this.stepId != 1 && this.appName !='play'" align="left" style="background-color: black">
+            <previous-page 
+                [stepId] = "stepId"
+                [idxStepObj] =  "indexStepObj"
+                (change) = goPreviousStep($event) >
+            </previous-page>
+        </div>
+        <div align="center" *ngIf="_stepService.steps[0].logo_url != ''" align="center" style="background-color: black">    
+            <img class="img-thumbnail"  src="{{_stepService.steps[0].logo_url}}" width="240" height="160">
+        </div>
+        <div  style="background-color: black;font-color:black">.</div>
  </div>
 <div class="panel panel-default" *ngIf="formCompleted == false">
    
@@ -472,38 +473,49 @@ export class MainComponent implements OnInit {
                 }
             }
             // }
-
-            // SI IL Y A DES CONDITIONS DEFINIES A L'ETAPE SUIVANTE ALORS ON VERIFIE QUELLE ETAPE CORRESPOND A LA CONDITION SINON ON AVANCE
-            // DANS LE TABLEAU DES ETAPES
-            if (this._stepService.steps[this.indexStepObj].conditions.length > 0)
-            {
-                let keyCondition = this._stepService.steps[this.indexStepObj].conditions[0].key;
-                let valueCondition = this._stepService.steps[this.indexStepObj].conditions[0].value;
-
-                console.log("valueCondition: " + valueCondition);
-                console.log("keyCondition: " + keyCondition);
-                console.log(this._formService.arraySteps.find(x => x[keyCondition] === valueCondition))
-                // CHECK WHILE CONDITION IS FULLFILLED
-                while (typeof (this._formService.arraySteps.find(x => x[keyCondition] === valueCondition)) === 'undefined'){
-                    console.log((typeof (this._formService.arraySteps.find(x => x[keyCondition] === valueCondition))));
-                    console.log("condition pas remplie, j'avance de 1 indice dans le tableau. Indice: " + this.indexStepObj);
-                    this.indexStepObj++;
-                    if (this._stepService.steps[this.indexStepObj].conditions.length > 0) {
-                         keyCondition = this._stepService.steps[this.indexStepObj].conditions[0].key;
-                         valueCondition = this._stepService.steps[this.indexStepObj].conditions[0].value;
-                        console.log(this.indexStepObj)
-                        console.log(keyCondition);
-                        console.log(valueCondition);
-                        console.log(this._formService.arraySteps[0][keyCondition]);
-                    }
-                    else{
-                        break;
-                    }
-
+            let condition = false;
+            while (condition == false) {
+                // SI IL Y A DES CONDITIONS DEFINIES A L'ETAPE SUIVANTE ALORS ON VERIFIE QUELLE ETAPE CORRESPOND A LA CONDITION SINON ON AVANCE
+                // DANS LE TABLEAU DES ETAPES
+                console.log(this._stepService.steps[this.indexStepObj])
+                console.log(this._stepService.steps[this.indexStepObj].conditions)
+                if (this._stepService.steps[this.indexStepObj].conditions.length == 0){
+                    console.log("pas de condition l'index " + this.indexStepObj)
+                    condition = true;
+                    break;
                 }
 
-                console.log('condition remplie, je reste sur l indice: ' + this.indexStepObj)
-                console.log(this.indexStepObj);
+                if (this._stepService.steps[this.indexStepObj].conditions.length == 1) {
+                    console.log("1 condition dans step à l'index " + this.indexStepObj)
+                    let keyCondition = this._stepService.steps[this.indexStepObj].conditions[0].key;
+                    let valueCondition = this._stepService.steps[this.indexStepObj].conditions[0].value;
+
+                    console.log("valueCondition: " + valueCondition);
+                    console.log("keyCondition: " + keyCondition);
+                    console.log(this._formService.arraySteps.find(x => x[keyCondition] === valueCondition))
+                    // CHECK IF CONDITION OK
+                    if (typeof (this._formService.arraySteps.find(x => x[keyCondition] === valueCondition)) != 'undefined') {
+                        condition = true;
+                        break;
+                    }
+                }
+                if (this._stepService.steps[this.indexStepObj].conditions.length == 2) {
+                    console.log("2 conditions dans step à l'index " + this.indexStepObj)
+                    let keyCondition = this._stepService.steps[this.indexStepObj].conditions[0].key;
+                    let valueCondition = this._stepService.steps[this.indexStepObj].conditions[0].value;
+                    console.log(this._stepService.steps[this.indexStepObj])
+                    let keyCondition2 = this._stepService.steps[this.indexStepObj].conditions[1].key;
+                    let valueCondition2 = this._stepService.steps[this.indexStepObj].conditions[1].value;
+                    // CHECK WHILE CONDITION IS FULLFILLED
+                    if (typeof (this._formService.arraySteps.find(x => x[keyCondition2] === valueCondition2)) != 'undefined' && typeof (this._formService.arraySteps.find(x => x[keyCondition] === valueCondition)) != 'undefined') {
+                        condition = true;
+                        break;
+                    }
+                }
+                console.log(this._stepService.steps[this.indexStepObj].conditions);
+                console.log(typeof (this._stepService.steps[this.indexStepObj].conditions));
+
+                this.indexStepObj++;
             }
 
             // TEMPORARY STEP_ID BECAUSE WE NEED TO WAIT FOR ASYNCHROUNOUS QUERY
@@ -511,8 +523,6 @@ export class MainComponent implements OnInit {
 
             /* IF LIST BUTTON COMPONENT */
             console.log("type component: " + this._stepService.steps[this.indexStepObj].type);
-
-
             switch (this._stepService.steps[this.indexStepObj].type) {
                 case 'click_selection':
 
@@ -599,7 +609,7 @@ export class MainComponent implements OnInit {
                                 "name": this._stepService.steps[this.indexStepObj].name,
                                 "list": this._stepService.steps[this.indexStepObj].configuration.list
                             });
-                            console.log(this._stepService.steps[this.indexStepObj].configuration.list.length)
+                            console.log(this._stepService.steps[this.indexStepObj])
                             console.log(this.indexStepObj)
                             if (this._stepService.steps[this.indexStepObj].configuration.list.length == 1){
                                 console.log("1 SEULE VALEUR ALORS GO TO NEXT STEP")

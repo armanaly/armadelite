@@ -114,6 +114,12 @@ import {ExportService} from "./export.service";
                                     <button class="btn btn-primary" type="button"> Detail </button>
                                 </a> 
                             </td>
+                            <!-- IF CARGO_DETAILS IS ACTIVATED IN GRID CONFIG COLLECTION -->
+                            <td *ngIf="item.cargo_details.activated">
+                                <a [routerLink]="['/cargo_details', item.id_rate, grid_name] ">
+                                    <button class="btn btn-primary" type="button"> Detail </button>
+                                </a> 
+                            </td>
                             <!-- MODAL <td *ngIf="item.details.activated"><button class="btn btn-success" type="button" data-toggle="modal" data-target="#myModal">DETAIL </button></td>-->
                             
                             <!--IF WORKFLOW TYPE BTN TO GO BACK TO CURRENT STEP -->

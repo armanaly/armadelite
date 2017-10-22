@@ -2,8 +2,6 @@ import {Routes, RouterModule} from "@angular/router";
 
 import {MainComponent} from './components/main.component';
 
-import {ProfileComponent} from "./profile/profile.component";
-import {PhotosComponent} from "./photos/photos.component";
 import {GridPanelComponent} from "./components/grid.component";
 import {MenuComponent} from "./menu/menu.component";
 import {SignupComponent} from "./auth/signup.component";
@@ -11,6 +9,7 @@ import {AuthenticationComponent} from "./auth/authentication.component";
 import {BalletDetailsComponent} from "./components/ballet/balletDetails.component";
 import {GroupComponent} from "./components/ballet/group.component";
 import {StudentComponent} from "./components/ballet/student.component";
+import {CargoDetailsComponent} from "./components/cargo/cargoDetails.component";
 
 const APP_ROUTES: Routes = [
     {path: '', component:MenuComponent  },
@@ -21,6 +20,7 @@ const APP_ROUTES: Routes = [
     {path: 'grid/:grid_name', component: GridPanelComponent},
     {path: 'grid/:grid_name/:master_val/:app_name', component: GridPanelComponent},
     {path: 'details/:record/:grid_name', component: BalletDetailsComponent},
+    {path: 'cargo_details/:record/:grid_name', component: CargoDetailsComponent},
     {path: 'auth/signup', component: SignupComponent},
     {path: ':firstLoad', component:MenuComponent},
     {path: 'groupManagement/:record/:course_type/:stage', component: GroupComponent},

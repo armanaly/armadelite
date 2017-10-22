@@ -1,5 +1,4 @@
 import {Injectable} from "@angular/core";
-import {StepModel} from "../Engine/stepModel";
 import { GlobalVariable } from "../global";
 import {Http, Headers, RequestOptions} from "@angular/http";
 import { Observable } from "rxjs/Observable";
@@ -95,9 +94,6 @@ export class GridPanelService {
                         }
                     }
                 }
-
-
-
                 // DETAILS DATA
                  for (let i in data[0].config_details){
                      switch (data[0].config_details[i].type) {

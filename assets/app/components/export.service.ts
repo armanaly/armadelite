@@ -13,7 +13,9 @@ export class ExportService {
     toExcel(course_type,stage){
         let body = JSON.stringify({"course_type" : course_type, "stage": stage});
 
-        const headers = new Headers({'Content-Type': 'application/json'});
+        let headers = new Headers({'Content-Type': 'application/json'});
+
+
         var completeUrl = GlobalVariable.BASE_URL + 'export_excel';
         return this._http.post(completeUrl, body, {headers: headers})
             .map(response => response)

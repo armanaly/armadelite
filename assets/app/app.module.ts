@@ -45,6 +45,8 @@ import {StudentComponent} from "./components/ballet/student.component";
 import {StudentService} from "./components/ballet/student.service";
 import {BrowserAnimationsModule} from "../../public/js/vendor/@angular/platform-browser/animations/src/module";
 import {ExportService} from "./components/export.service";
+import {CargoDetailsComponent} from "./components/cargo/cargoDetails.component";
+import {CargoDetailsService} from "./components/cargo/cargoDetails.service";
 
 
 
@@ -61,7 +63,7 @@ function getStepsFirst(_stepService: StepService) {
         GridPanelComponent, MenuComponent, FileUploadComponent,
         BalletDetailsComponent, SignupComponent, SigninComponent,
         AuthenticationComponent, MyAutoFocusDirective
-        , GroupComponent, StudentComponent
+        , GroupComponent, StudentComponent, CargoDetailsComponent
     ],
     imports: [
         BrowserModule, FormsModule, ROUTING,
@@ -80,7 +82,7 @@ function getStepsFirst(_stepService: StepService) {
                 // provideCloudinary(require('cloudinary-core'), { cloud_name: 'havjcqppv' } as CloudinaryConfiguration),
                 CollectionService, SaveService, FileUploadService,
                 MailService, GridPanelService, BalletDetailsService,
-                AuthService, GroupService, StudentService, ExportService]
+                AuthService, GroupService, StudentService, CargoDetailsService, ExportService]
 })
 export class AppModule {
     

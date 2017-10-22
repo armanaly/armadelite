@@ -1,4 +1,4 @@
-import {Component, Output, Inject} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormService} from "./components/form.service";
 
 @Component({
