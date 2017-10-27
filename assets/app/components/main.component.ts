@@ -135,6 +135,7 @@ import {SaveService} from "./saveService";
  <div align="center" class="jumbotron" *ngIf="formCompleted" class="alert alert-success" role="alert">
       <div class="container">
          <h1> Your application form has been sent correctly. Thank you very much. We will contact you shortly.</h1>
+         <h1>Su formulario de solicitud ha sido enviado correctamente. Muchas gracias. Nos pondremos en contacto con usted en breve.</h1>
     </div>
  </div>
 `,

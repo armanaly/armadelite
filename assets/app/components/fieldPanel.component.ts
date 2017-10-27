@@ -150,10 +150,11 @@ import {EmailValidator} from "./emailValidator.component";
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Fields mandatory</h4>
+        <h4 class="modal-title">Fields mandatory / Campos obligatorios</h4>
       </div>
       <div class="modal-body">
-        <p>Thanks for fill in all the mandatory fields</p>
+        <p>THANKS FOR FILL IN ALL THE MANDATOY FIELDS</p>
+        <p>GRACIAS POR RELLENAR TODOS LOS CAMPOS</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -165,7 +166,7 @@ import {EmailValidator} from "./emailValidator.component";
             
                  <!--<button type="submit" class="btn btn-primary" [disabled]="myGroup.invalid">Valider</button>-->
                  <div align="center">
-                    <button type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Send   </button>
+                    <button type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Send / Enviar  </button>
                  </div>
                 </div>   
             </form>
@@ -240,7 +241,7 @@ console.log(this.objStep);
 
                 console.log("objFieldsPanel");
                 console.log(objFieldsPanel);
-                console.log(objFieldsPanel[this.objStep.name][index])
+                //console.log(objFieldsPanel[this.objStep.name][index])
                 if (typeof objFieldsPanel != 'undefined'){
 
                     if (typeof objFieldsPanel[this.objStep.name][index] != 'undefined')
