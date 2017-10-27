@@ -47,7 +47,7 @@ import {EmailValidator} from "./emailValidator.component";
                                                 [formControl]="myGroup.controls[field.name]"
                                                 >
                               
-                                    <div class="alert alert-danger" role="alert" *ngIf="!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched ">This field is required</div>   
+                                    <div class="alert alert-danger" role="alert" *ngIf="!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched ">This field is required / Este campo es obligatorio</div>   
                                     <div *ngIf="myGroup.controls[field.name].hasError('min') && myGroup.controls[field.name].touched" class="alert alert-danger">Field must be at least {{field.minlength}} characters long.</div>
                                    </div>
                              </div>
@@ -136,7 +136,7 @@ import {EmailValidator} from "./emailValidator.component";
                                 [formControl]="myGroup.controls[field.name]">
                                                               
                             <div *ngIf="!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched" class="alert alert-danger">
-                                We need a valid adress email
+                                We need a valid adress email / Necesitamos una dirección de e-mail correcta
                             </div>
                             </div> 
                         </div>
