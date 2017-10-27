@@ -25,6 +25,7 @@ import {ExportService} from "./export.service";
                  </div>
                </div>
                <div><button (click)="exportExcel()">Export excel</button></div>
+               <div></div>
                </div>
                 <div class="panel-body">
                <div class="table-responsive" *ngIf="display">
@@ -284,7 +285,13 @@ import {ExportService} from "./export.service";
         console.log(this._gridService.dataGrid)
         this._exportService.toExcel(this.grid_name,this.master)
             .subscribe(
-                data => console.log(data),
+                data => {
+                    console.log(data)
+                    var MIME_TYPE = "application/x-xls";
+
+                    var blob = new Blob([data], {type: MIME_TYPE});
+                    window.location.href = window.URL.createObjectURL(blob);
+                },
                 error => console.log(error)
             )
 
