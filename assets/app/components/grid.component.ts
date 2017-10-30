@@ -27,6 +27,7 @@ import {ExportService} from "./export.service";
                <div>               
                     <button (click)="exportExcel()" class="brown_button" ><i class="glyphicon glyphicon-save" ></i></button>
                </div>
+               </div>
                 <div class="panel-body">
                <div class="table-responsive" *ngIf="display">
                     <table class="table table-hover table-condensed"  >
