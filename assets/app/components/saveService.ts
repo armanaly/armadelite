@@ -21,7 +21,7 @@ export class SaveService {
                 }
 
     saveData(currentStep, appName) {
-console.log(appName)
+            console.log(appName)
             this._formService.arraySteps.push({"step_id": currentStep},{"app_name" : appName});
             //this._formService.arraySteps.push()
             let body = this._formService.arraySteps;

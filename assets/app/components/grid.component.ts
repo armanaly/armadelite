@@ -24,8 +24,8 @@ import {ExportService} from "./export.service";
                      <h3>{{grid_name}}</h3>
                  </div>
                </div>
-               <div><button (click)="exportExcel()">Export excel</button></div>
-               <div></div>
+               <div>               
+                    <button (click)="exportExcel()" class="brown_button" ><i class="glyphicon glyphicon-save" ></i></button>
                </div>
                 <div class="panel-body">
                <div class="table-responsive" *ngIf="display">
@@ -283,14 +283,31 @@ import {ExportService} from "./export.service";
         this.grid_name
         this.master
         console.log(this._gridService.dataGrid)
+        console.log("XXXXXX")
         this._exportService.toExcel(this.grid_name,this.master)
             .subscribe(
                 data => {
                     console.log(data)
-                    var MIME_TYPE = "application/x-xls";
+                    // var MIME_TYPE = "application/x-xls";
+                    //
+                    // var blob = new Blob([data], {type: MIME_TYPE});
+                    // window.location.href = window.URL.createObjectURL(blob);
 
-                    var blob = new Blob([data], {type: MIME_TYPE});
-                    window.location.href = window.URL.createObjectURL(blob);
+                    let blob = new Blob([data], { type: 'text/csv' });
+                    let url= window.URL.createObjectURL(blob);
+                    if(navigator.msSaveOrOpenBlob) {
+                        navigator.msSaveBlob(blob, 'Book.csv');
+                    } else {
+                        let a = document.createElement('a');
+                        a.href = url;
+                        a.download = 'Book.csv';
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                    }
+                    window.URL.revokeObjectURL(url);
+
+                    // window.open(url);
                 },
                 error => console.log(error)
             )
