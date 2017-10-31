@@ -40,7 +40,8 @@ import {GridPanelService} from "../grid.service";
 
         
         <br>        
-        <table class="table table-hover table-condensed"  >
+        
+        <table class="table table-hover table-condensed" *ngIf="stage != 'Alicante Winter Intensive 2017'" >
             <tr >
                 <td></td>
                 <td>WEEK 1</td>
@@ -54,6 +55,20 @@ import {GridPanelService} from "../grid.service";
                 </td>
             </tr>
         </table>
+        
+        <table class="table table-hover table-condensed" *ngIf="stage == 'Alicante Winter Intensive 2017'" >
+            <tr >
+                <td></td>
+                <td>Nb of students</td>
+            </tr>
+            <tr *ngFor="let item of this.values">
+                <td>{{item.group}}</td>
+                <td *ngFor="let peoples of item.lst"> 
+                   {{peoples.people}} 
+                </td>
+            </tr>
+        </table>
+        
    </div>`
 })
 
