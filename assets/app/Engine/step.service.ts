@@ -12,7 +12,7 @@ export class StepService {
     //datas;
     step = new Array();
     steps: StepModel[] = [];
-
+    language = 'en';
     getSteps(appName): Promise<void>{
         console.log(window);
         console.log(appName);
@@ -24,26 +24,23 @@ export class StepService {
             .then(response => {
                 console.log(window.location)
 
-                const data = response.json();
+                // const data = response.json();
 
                 this.steps = response.json();
                 let objs: any[] = [];
                 let objTest = [];
-                console.log("data");
-                console.log(data);
-                // console.log(this.steps);
-                // VIRE STEP CAR INUTILE
-                for (let i = 0; i < data.length; i++) {
+
+                for (let i = 0; i < this.steps.length; i++) {
                     // console.log(data[i].step_id);
                     this.step[i] = (new StepModel(
-                        data[i].step_id,
-                        data[i].type,
-                        data[i].name,
-                        data[i].logo_url,
-                        data[i].configuration,
-                        data[i].master_name,
-                        data[i].master_type,
-                        data[i].conditions,
+                        this.steps[i].step_id,
+                        this.steps[i].type,
+                        this.steps[i].name,
+                        this.steps[i].logo_url,
+                        this.steps[i].configuration,
+                        this.steps[i].master_name,
+                        this.steps[i].master_type,
+                        this.steps[i].conditions,
                     []));
                  }
 

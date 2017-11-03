@@ -12,26 +12,36 @@ import {forEach} from "../../../public/js/vendor/@angular/router/src/utils/colle
 import {Observable} from "rxjs";
 import {MailService} from "../Engine/mail.service";
 import {SaveService} from "./saveService";
+import {GlobalVariable} from "../global";
 @Component({
     selector: 'vehicule-detail',
     template: `
 
     <div class="panel panel-default" *ngIf="formCompleted == false">
-        <div *ngIf="this.stepId == 1 && this.appName !='play'"  style="background-color: black">
-          <button class="black_button" ><i class="glyphicon glyphicon-triangle-left" >  </i></button>
-        
+        <div class="row">
+            <div class="col-md-9" *ngIf="this.stepId == 1 && this.appName !='play'"  style="background-color: black">
+              <button class="black_button" ><i class="glyphicon glyphicon-triangle-left" >  </i></button>
+            
+            </div>
+            <div class="col-md-9" *ngIf="this.stepId != 1 && this.appName !='play'" align="left" style="background-color: black">
+                <previous-page 
+                    [stepId] = "stepId"
+                    [idxStepObj] =  "indexStepObj"
+                    (change) = goPreviousStep($event) >
+                </previous-page>
+            </div>
+            <div class="col-md-3" align="right" style="background-color: black">
+                 <button class="brown_button" (click)="changeLanguage('es')"><i class="glyphicon glyphicon-heart-empty" >  </i></button>
+                 <button class="brown_button" (click)="changeLanguage('en')"><i class="glyphicon glyphicon-pushpin" >  </i></button>
+            </div>
         </div>
-        <div *ngIf="this.stepId != 1 && this.appName !='play'" align="left" style="background-color: black">
-            <previous-page 
-                [stepId] = "stepId"
-                [idxStepObj] =  "indexStepObj"
-                (change) = goPreviousStep($event) >
-            </previous-page>
+        <div class="row">
+            <div align="center" *ngIf="_stepService.steps[0].logo_url != ''" align="center" style="background-color: black">    
+                <img class="img-thumbnail"  src="{{_stepService.steps[0].logo_url}}" width="240" height="160">
+            </div>
         </div>
-        <div align="center" *ngIf="_stepService.steps[0].logo_url != ''" align="center" style="background-color: black">    
-            <img class="img-thumbnail"  src="{{_stepService.steps[0].logo_url}}" width="240" height="160">
-        </div>
-        <div  style="background-color: black;font-color:black">.</div>
+        <div class="row" style="background-color: black;font-color:black">
+        .</div>
  </div>
 <div class="panel panel-default" *ngIf="formCompleted == false">
    
@@ -847,6 +857,12 @@ export class MainComponent implements OnInit {
         //Go to next Step
         this.goToNextStep($event.stepIdx);
     }
+
+    changeLanguage(language){
+
+        this._stepService.language = language
+    }
+
 }
 
 

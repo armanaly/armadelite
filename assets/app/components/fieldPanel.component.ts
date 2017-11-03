@@ -136,7 +136,8 @@ import {EmailValidator} from "./emailValidator.component";
                                 [formControl]="myGroup.controls[field.name]">
                                                               
                             <div *ngIf="!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched" class="alert alert-danger">
-                                We need a valid adress email / Necesitamos una dirección de e-mail correcta
+                                <p *ngIf="app_name == 'ballet'"> We need a valid adress email / Necesitamos una dirección de e-mail correcta</p>
+                                <p *ngIf="app_name == 'auto'"> Merci d'indiquer un e-mail valide.</p>
                             </div>
                             </div> 
                         </div>
@@ -188,10 +189,12 @@ export class FieldPanelComponent {
     myGroup = new FormGroup({});
     arr = new FormArray([]);
     errorForm = false;
+    app_name;
     ngOnInit() {
 
         console.log('NgOnInit');
         console.log(this.objStep);
+        this.app_name = this.objStep.master_name;
         // CHECK IF THIS MUST DISPLAYED
         if (this.objStep.conditions.length > 0){
             let valueCondition = this.objStep.conditions[0].value;

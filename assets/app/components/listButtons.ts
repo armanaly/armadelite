@@ -1,11 +1,13 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core'
 import {FormService} from "./form.service";
+import {StepService} from "../Engine/step.service";
 
 @Component({
     selector: 'list-buttons',
     template: `
      <div *ngIf="display">
-         <div class="panel-heading panel-heading-custom"><p class="text-uppercase">{{objStep.configuration.labelPanel}}</p> </div>
+         <div *ngIf="_stepService.language == 'en'" class="panel-heading panel-heading-custom"><p class="text-uppercase">{{objStep.configuration.labelPanel}}</p> </div>
+         <div *ngIf="_stepService.language == 'es'" class="panel-heading panel-heading-custom"><p class="text-uppercase">{{objStep.configuration.labelPanel_es}}</p> </div>
          <div class="panel-body" >
             <div class="jumbotron" *ngIf="objStep.configuration.header_note && objStep.configuration.header_note != ''">
                 <p [innerHTML] = "objStep.configuration.header_note"></p>
@@ -47,12 +49,12 @@ export class ListButtonsComponent {
     display = false;
 
     constructor(
-        private _formService: FormService
+        private _formService: FormService, private _stepService: StepService
     )
     {}
 
     ngOnInit() {
-
+        console.log(this._stepService)
         console.log("ngOnInitStart");
         console.log("this.stepIdx " + this.stepIdx);
         console.log(this.objStep.conditions.length);
