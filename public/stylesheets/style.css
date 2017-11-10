@@ -40,8 +40,14 @@ label.control-label span { cursor: pointer; }
 /*}*/
 
 /*BALLET VERSION*/
-.panel-heading-custom {
+.panel-heading-black {
     color: #e0f8e0; background: black;
+    font-family: monospace;
+    text-align: center;
+}
+
+.panel-heading-yellow {
+    color: #e0f8e0; background: yellow;
     font-family: monospace;
     text-align: center;
 }

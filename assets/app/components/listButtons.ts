@@ -6,8 +6,9 @@ import {StepService} from "../Engine/step.service";
     selector: 'list-buttons',
     template: `
      <div *ngIf="display">
-         <div *ngIf="_stepService.language == 'en'" class="panel-heading panel-heading-custom"><p class="text-uppercase">{{objStep.configuration.labelPanel}}</p> </div>
-         <div *ngIf="_stepService.language == 'es'" class="panel-heading panel-heading-custom"><p class="text-uppercase">{{objStep.configuration.labelPanel_es}}</p> </div>
+         <div *ngIf="_stepService.language == 'en'" class="{{_stepService.template.panel_heading}}"><p class="text-uppercase">{{objStep.configuration.labelPanel}}</p> </div>
+         <div *ngIf="_stepService.language == 'es'" class="{{_stepService.template.panel_heading}}"><p class="text-uppercase">{{objStep.configuration.labelPanel_es}}</p> </div>
+         <div *ngIf="_stepService.language == 'fr'" class="{{_stepService.template.panel_heading}}"><p class="text-uppercase">{{objStep.configuration.labelPanel_fr}}</p> </div>
          <div class="panel-body" >
             <div class="jumbotron" *ngIf="objStep.configuration.header_note && objStep.configuration.header_note != ''">
                 <p [innerHTML] = "objStep.configuration.header_note"></p>
@@ -18,14 +19,14 @@ import {StepService} from "../Engine/step.service";
                 <li *ngFor="let valeurList of currentList">
                      <!--data-toggle="tooltip" title=" "-->
                     <button *ngIf="valueSelected != valeurList" 
-                        class="brown_button"
+                        class="{{ _stepService.template.list_btn}}"
                         type="button" 
                         (click)="onChooseVal($event)"
                         value="{{valeurList}}">{{valeurList}}
                     </button>
                     <button *ngIf="valueSelected == valeurList" 
                         data-toggle="tooltip" title=" text"
-                        class="brown_button" 
+                        class="{{_stepService.template.list_btn}}" 
                         type="button" 
                         (click)="onChooseVal($event)"
                         value="{{valeurList}}">{{valeurList}}
@@ -33,7 +34,9 @@ import {StepService} from "../Engine/step.service";
                 </li>
             </ul>
          </div>
-         <div class="panel-heading panel-heading-custom" *ngIf="objStep.configuration.foot_note && objStep.configuration.foot_note != ''"> <p [innerHTML] = "objStep.configuration.foot_note"></p> </div>
+         <div *ngIf="_stepService.language == 'en' && objStep.configuration.foot_note && objStep.configuration.foot_note != ''" [innerHTML] = "objStep.configuration.foot_note"></div> 
+         <div *ngIf="_stepService.language == 'es' && objStep.configuration.foot_note_es && objStep.configuration.foot_note_es != ''" [innerHTML] = "objStep.configuration.foot_note_es"></div>
+         <div *ngIf="_stepService.language == 'fr' && objStep.configuration.foot_note_es && objStep.configuration.foot_note_fr != ''" [innerHTML] = "objStep.configuration.foot_note_fr"></div>
      </div>
 `
 })

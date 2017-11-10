@@ -8,7 +8,6 @@ import {FormService} from "./form.service";
 import {BackButtonComponent} from "./backButton";
 import {StepService} from "../Engine/step.service";
 import {CollectionService} from "../Engine/collection.service";
-import {forEach} from "../../../public/js/vendor/@angular/router/src/utils/collection";
 import {Observable} from "rxjs";
 import {MailService} from "../Engine/mail.service";
 import {SaveService} from "./saveService";
@@ -16,57 +15,43 @@ import {GlobalVariable} from "../global";
 @Component({
     selector: 'vehicule-detail',
     template: `
-
-    <div class="panel panel-default" *ngIf="formCompleted == false">
+     <!--<div align="right"  *ngFor="let language of _stepService.languages">-->
+                         <!--<button title="{{language}}" width="20px" height="20px"  (click)="changeLanguage(language)" type="button" >-->
+                            <!--<img src="images/flags/{{language}}.png" />-->
+                         <!--</button>&nbsp;-->
+                    <!--</div>-->
+    <div *ngIf="formCompleted == false" class="{{_stepService.template.panel_heading}}">
         <div class="row">
-            <div class="col-md-9" *ngIf="this.stepId == 1 && this.appName !='play'"  style="background-color: black">
+            <div class="col-md-2" *ngIf="this.stepId == 1 && this.appName !='play'" >
               <button class="black_button" ><i class="glyphicon glyphicon-triangle-left" >  </i></button>
-            
             </div>
-            <div class="col-md-9" *ngIf="this.stepId != 1 && this.appName !='play'" align="left" style="background-color: black">
+            <div class="col-md-10" *ngIf="this.stepId != 1 && this.appName !='play'" align="left" >
                 <previous-page 
                     [stepId] = "stepId"
                     [idxStepObj] =  "indexStepObj"
                     (change) = goPreviousStep($event) >
                 </previous-page>
             </div>
-            <div class="col-md-3" align="right" style="background-color: black">
-                 <button class="brown_button" (click)="changeLanguage('es')"><i class="glyphicon glyphicon-heart-empty" >  </i></button>
-                 <button class="brown_button" (click)="changeLanguage('en')"><i class="glyphicon glyphicon-pushpin" >  </i></button>
+            <div class="col-md-10" >
+               <div class="row">
+                    <div align="right" class="col-md-2" *ngFor="let language of _stepService.languages">
+                         <button title="{{language}}" width="20px" height="20px"  (click)="changeLanguage(language)" type="button" style="background-color: transparent; border-width: 0px 0 0;">
+                            <img src="images/flags/{{language}}.png" />
+                         </button>&nbsp;
+                    </div>
+                 </div>
             </div>
         </div>
         <div class="row">
-            <div align="center" *ngIf="_stepService.steps[0].logo_url != ''" align="center" style="background-color: black">    
+            <div align="center" *ngIf="_stepService.steps[0].logo_url != ''" >    
                 <img class="img-thumbnail"  src="{{_stepService.steps[0].logo_url}}" width="240" height="160">
             </div>
         </div>
-        <div class="row" style="background-color: black;font-color:black">
-        .</div>
+        <div class="row" >
+        </div>
  </div>
 <div class="panel panel-default" *ngIf="formCompleted == false">
    
-<!--<p>Session ID: {{ current_step_id | async }}</p>-->
-    <!--<div class="row" align="center">-->
-        <!---->
-            <!--&lt;!&ndash;<div  class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/grid']"> Data grid </a></button></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/step']"> NEW FORM</a></button></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/']"> Ajouter contact </a></button></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div class="col-md-3"><button type="button" class="btn btn-success"><a [routerLink]="['/']"> Lister contacts </a></button></div>&ndash;&gt;-->
-
-    <!--</div>-->
-    <!--<br>-->
-    <!---->
-     <!--<div *ngIf="this.stepId != 1" >-->
-        
-     
-        <!---->
-        <!--<div class=".col-md-11" *ngIf="_stepService.steps[0].logo_url != ''" align="left">-->
-            <!--<img class="img-thumbnail"  src="{{_stepService.steps[0].logo_url}}" width="240" height="160">-->
-            <!---->
-        <!--</div>-->
-    <!--</div>-->
-
-    
    <div *ngFor="let objStep of this._stepService.steps; let i = index" >
         <!-- IMAGE LIST BUTTON PANEL -->
         <div *ngIf="objStep.type == 'image_selection' && dataLoaded ">
@@ -141,7 +126,7 @@ import {GlobalVariable} from "../global";
 </save-button>
 
 </div>
-<!--<img class="img-thumbnail"  src="http://res.cloudinary.com/htamml3fv/image/upload/v1504451389/isen_play2_p8y0ey.jpg" >-->
+
  <div align="center" class="jumbotron" *ngIf="formCompleted" class="alert alert-success" role="alert">
       <div class="container">
          <h1> Your application form has been sent correctly. Thank you very much. We will contact you shortly.</h1>
@@ -161,15 +146,12 @@ import {GlobalVariable} from "../global";
 
 })
 export class MainComponent implements OnInit {
-    //model = new FormVehicule(0, false);
     submitted = false;
 
-    //lists = [];
     listsData = [];
 
     dataLoaded = false;
     current_step_id: Observable<string>;
-    //@Input() marque: Marque;
     stepId = 1;
     previousStepId = 0;
     indexStepObj = 0;
@@ -185,25 +167,17 @@ export class MainComponent implements OnInit {
                 private _saveService: SaveService) {
     }
 
+    btn_class = "black_button"
+
     tmp_id = '';
     public progressBar: number = 0;
 
-   // steps: StepModel[];
     customCollectionData = [];
 
-
-
     ngOnInit() {
-
-
         console.log('init main Component');
         // IF FIRST STEP IS A COLLECTION
         console.log(this._stepService.steps[0].configuration)
-
-        if (typeof this._stepService.steps[0].configuration.collection != 'undefined') {
-
-        }
-
         /*  IF FIRST STEP IS A LIST */
         if (typeof this._stepService.steps[0].configuration.list != 'undefined') {
             this.lists.push(this._stepService.steps[0].configuration.list);
@@ -211,14 +185,10 @@ export class MainComponent implements OnInit {
                 "name": this._stepService.steps[0].name,
                 "list": this._stepService.steps[0].configuration.list
             });
- } // FIN IF COMMENTE POUR TEST EN BAS DE CODE
+        } // FIN IF COMMENTE POUR TEST EN BAS DE CODE
         console.log(this.listsData);
         this._stepService.datas = this.listsData.slice();
-        // INITIATE FORM SERVICE TO KEEP ALL SELECTIONS MADE BY USER IN STEPS
-        //this._formService.init();
 
-       // console.log(this._stepService.step);
-        console.log(this._stepService.steps);
         var master_type = this._stepService.steps[0].master_type;
         this.appName = this._stepService.steps[0].master_name;
         console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
@@ -239,12 +209,8 @@ export class MainComponent implements OnInit {
         }
         // START THE FIRST STEP
         else {
-            //this.current_step_id = this.stepId;
-            //this.datas = this._stepService.datas.slice();
-            //console.log(this.datas);
             this.goToNextStep(-1);
         }
-       // console.log(this.datas[0].name);
         console.log(this._stepService.steps);
         console.log(this.stepId);
 

@@ -2,6 +2,7 @@ import {Component, Input, Output, EventEmitter} from '@angular/core'
 import {FormBuilder, Validators, FormGroup, FormControl, FormArray} from "@angular/forms";
 import {FormService} from "./form.service";
 import {EmailValidator} from "./emailValidator.component";
+import {StepService} from "../Engine/step.service";
 // import {MdDatepickerModule} from '@angular/material';
 @Component({
     selector: 'field-panel',
@@ -20,7 +21,8 @@ import {EmailValidator} from "./emailValidator.component";
                     <div *ngFor="let field of objStep.configuration.form_values; let i = index">
                          <div *ngIf="field.type == 'text'">
                              <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
-                                 <label for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label}} </label>
+                                 <label *ngIf="_stepService.language == 'en'" for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label}} </label>
+                                 <label *ngIf="_stepService.language == 'es'" for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label_es}} </label>
                                  <div class="col-sm-10">
                                      <input *ngIf="i == 0"     
                                             myAutofocus
@@ -47,15 +49,22 @@ import {EmailValidator} from "./emailValidator.component";
                                                 [formControl]="myGroup.controls[field.name]"
                                                 >
                               
-                                    <div class="alert alert-danger" role="alert" *ngIf="!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched ">This field is required / Este campo es obligatorio</div>   
-                                    <div *ngIf="myGroup.controls[field.name].hasError('min') && myGroup.controls[field.name].touched" class="alert alert-danger">Field must be at least {{field.minlength}} characters long.</div>
+                                    <div class="alert alert-danger" role="alert" *ngIf="!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched ">
+                                        <div *ngIf="_stepService.language == 'en'">This field is required</div>
+                                        <div *ngIf="_stepService.language == 'es'">Este campo es obligatorio</div>
+                                        <div *ngIf="_stepService.language == 'fr'">Champs obligatoire</div>
+                                    </div>
+                                    <div *ngIf="myGroup.controls[field.name].hasError('min') && myGroup.controls[field.name].touched" class="alert alert-danger">
+                                        <div *ngIf="_stepService.language == 'en'">Field must be at least {{field.minlength}} characters long.</div>
+                                    </div>
                                    </div>
                              </div>
                          </div>
                          
                     <div *ngIf="field.type == 'number'">
                         <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
-                             <label for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label}} </label>
+                             <label *ngIf="_stepService.language == 'en'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label}} </label>
+                             <label *ngIf="_stepService.language == 'es'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_es}} </label>
                              <div class="col-sm-10">
                              <input *ngIf="i == 0"  
                                     myAutofocus
@@ -96,7 +105,8 @@ import {EmailValidator} from "./emailValidator.component";
                          
                     <div *ngIf="field.type == 'date'">
                         <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
-                             <label for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label}} </label>
+                             <label *ngIf="_stepService.language == 'en'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label}} </label>
+                             <label *ngIf="_stepService.language == 'es'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_es}} </label>
                              <div class="col-sm-10">
                                 <input class="form-control"  
                                     type='date' 
@@ -112,65 +122,73 @@ import {EmailValidator} from "./emailValidator.component";
                     <div *ngIf="field.type == 'email'">
                         <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
                             <label for="{{field.value}}"   class="col-sm-2 control-label">EMAIL:</label>
+                            
                             <div class="col-sm-10">
-                            <input *ngIf="i == 0"  
-                                myAutofocus 
-                                class="form-control" 
-                                type="{{field.type}}" 
-                                id="{{field.name}}"
-                                name="{{field.name}}"
-                              
-                                #email
-                                formControlName="{{field.name}}"
-                                required="{{field.required}}"
-                                [formControl]="myGroup.controls[field.name]">
-                                
-                            <input *ngIf="i > 0"  
-                                class="form-control" 
-                                type="{{field.type}}" 
-                                id="{{field.name}}"
-                                name="{{field.name}}"
-                                #email
-                                formControlName="{{field.name}}"
-                                required="{{field.required}}"
-                                [formControl]="myGroup.controls[field.name]">
-                                                              
-                            <div *ngIf="!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched" class="alert alert-danger">
-                                <p *ngIf="app_name == 'ballet'"> We need a valid adress email / Necesitamos una dirección de e-mail correcta</p>
-                                <p *ngIf="app_name == 'auto'"> Merci d'indiquer un e-mail valide.</p>
-                            </div>
+                                <input *ngIf="i == 0"  
+                                    myAutofocus 
+                                    class="form-control" 
+                                    type="{{field.type}}" 
+                                    id="{{field.name}}"
+                                    name="{{field.name}}"
+                                  
+                                    #email
+                                    formControlName="{{field.name}}"
+                                    required="{{field.required}}"
+                                    [formControl]="myGroup.controls[field.name]">
+                                    
+                                <input *ngIf="i > 0"  
+                                    class="form-control" 
+                                    type="{{field.type}}" 
+                                    id="{{field.name}}"
+                                    name="{{field.name}}"
+                                    #email
+                                    formControlName="{{field.name}}"
+                                    required="{{field.required}}"
+                                    [formControl]="myGroup.controls[field.name]">
+                                                                  
+                                <div *ngIf="!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched" class="alert alert-danger">
+                                    <p *ngIf="_stepService.language == 'en'"> We need a valid adress email </p>
+                                    <p *ngIf="_stepService.language == 'es'"> Necesitamos una dirección de e-mail correcta</p>
+                                    <p *ngIf="_stepService.language == 'fr'"> Merci d'indiquer un e-mail valide.</p>
+                                </div>
                             </div> 
                         </div>
                     </div>
                      
                     </div>
-                    <div  id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Fields mandatory / Campos obligatorios</h4>
-      </div>
-      <div class="modal-body">
-        <p>THANKS FOR FILL IN ALL THE MANDATOY FIELDS</p>
-        <p>GRACIAS POR RELLENAR TODOS LOS CAMPOS</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-            
-                 <!--<button type="submit" class="btn btn-primary" [disabled]="myGroup.invalid">Valider</button>-->
-                 <div align="center">
-                    <button type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Send / Enviar  </button>
-                 </div>
+        <div  id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+        
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 *ngIf="_stepService.language == 'en'" class="modal-title">Fields mandatory </h4>
+                <h4 *ngIf="_stepService.language == 'es'" class="modal-title">Campos obligatorios</h4>
+                <h4 *ngIf="_stepService.language == 'fr'" class="modal-title">Champs obligatoire</h4>
+              </div>
+              <div class="modal-body">
+                <p *ngIf="_stepService.language == 'en'">THANKS FOR FILL IN ALL THE MANDATOY FIELDS</p>
+                <p *ngIf="_stepService.language == 'es'">GRACIAS POR RELLENAR TODOS LOS CAMPOS</p>
+                <p *ngIf="_stepService.language == 'fr'">Merci de remplir tous les champs obligatoires</p>
+              </div>
+              <div class="modal-footer">
+                <button *ngIf="_stepService.language == 'en'" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button *ngIf="_stepService.language == 'fr'" type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+              </div>
+            </div>
+        
+          </div>
+        </div>
+                    
+             <!--<button type="submit" class="btn btn-primary" [disabled]="myGroup.invalid">Valider</button>-->
+             <div align="center">
+                <button *ngIf="_stepService.language == 'en'" type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Send   </button>
+                <button *ngIf="_stepService.language == 'es'" type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Enviar  </button>
+                <button *ngIf="_stepService.language == 'fr'" type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Envoyer  </button>
+             </div>
                 </div>   
-            </form>
+</form>
         </div> 
         
         </div>
@@ -183,20 +201,23 @@ export class FieldPanelComponent {
     @Input() stepIdx;     //Value received from MainComponent
     @Output() sent = new EventEmitter(); // Emitter to send back data to parent component
 
-    constructor(private _fb: FormBuilder, public _formService: FormService ) {}
+    constructor(private _fb: FormBuilder, public _formService: FormService, private _stepService: StepService) {
+    }
+
     display = false;
     tempDisplay = false;
     myGroup = new FormGroup({});
     arr = new FormArray([]);
     errorForm = false;
     app_name;
+
     ngOnInit() {
 
         console.log('NgOnInit');
         console.log(this.objStep);
         this.app_name = this.objStep.master_name;
         // CHECK IF THIS MUST DISPLAYED
-        if (this.objStep.conditions.length > 0){
+        if (this.objStep.conditions.length > 0) {
             let valueCondition = this.objStep.conditions[0].value;
             let keyCondition = this.objStep.conditions[0].key;
             console.log(valueCondition);
@@ -205,37 +226,34 @@ export class FieldPanelComponent {
             console.log(this._formService);
             // console.log(this._formService.arraySteps.find(keyCondition));
 
-            if (typeof (this._formService.arraySteps.find(x => x[keyCondition] === valueCondition)) != 'undefined'){
-            // if (valueCondition == this._formService.arraySteps[tmpStepIdx][keyCondition]){
+            if (typeof (this._formService.arraySteps.find(x => x[keyCondition] === valueCondition)) != 'undefined') {
+                // if (valueCondition == this._formService.arraySteps[tmpStepIdx][keyCondition]){
                 this.tempDisplay = true;
             }
         }
-        else{
+        else {
             this.tempDisplay = true;
         }
         console.log(this.myGroup);
 
 
+        if (this.tempDisplay) {
 
-        if (this.tempDisplay){
-
-console.log(this.objStep);
+            console.log(this.objStep);
             // ADD ALL SPECIFIC CONTROL FOR EACH FIELD
             for (let index = 0; index < this.objStep.configuration.form_values.length; index++) {
                 //console.log(this.objStep.configuration.form_values[index])
-                if (typeof (this.objStep.configuration.form_values[index].autofocus) == 'undefined'){
+                if (typeof (this.objStep.configuration.form_values[index].autofocus) == 'undefined') {
                     this.objStep.configuration.form_values[index].autofocus = false;
                 }
                 console.log(this.objStep.name);
                 console.log(this.objStep.configuration.form_values[index].name);   // 1 = NOM ; 2 = EMAIL
                 console.log(this._formService.arraySteps);
 
-                if (this.objStep.configuration.form_values[index].type == 'email')
-                {
+                if (this.objStep.configuration.form_values[index].type == 'email') {
                     this.myGroup.addControl([this.objStep.configuration.form_values[index].name].toLocaleString(), new FormControl('', [Validators.required, EmailValidator.checkEmail]));
                 }
-                else
-                {
+                else {
                     this.myGroup.addControl([this.objStep.configuration.form_values[index].name].toLocaleString(), new FormControl('', [Validators.required, Validators.minLength(2)]));
                 }
 
@@ -245,10 +263,9 @@ console.log(this.objStep);
                 console.log("objFieldsPanel");
                 console.log(objFieldsPanel);
                 //console.log(objFieldsPanel[this.objStep.name][index])
-                if (typeof objFieldsPanel != 'undefined'){
+                if (typeof objFieldsPanel != 'undefined') {
 
-                    if (typeof objFieldsPanel[this.objStep.name][index] != 'undefined')
-                    {
+                    if (typeof objFieldsPanel[this.objStep.name][index] != 'undefined') {
                         let keyField = objFieldsPanel[this.objStep.name][index];
                         let valueField = keyField[this.objStep.configuration.form_values[index].name];
                         this.myGroup.controls[this.objStep.configuration.form_values[index].name].setValue(valueField);
@@ -260,53 +277,53 @@ console.log(this.objStep);
             console.log(this.myGroup);
             console.log(this.myGroup.invalid);
 
-        console.log(this.myGroup);
-        console.log(this.myGroup.invalid);
+            console.log(this.myGroup);
+            console.log(this.myGroup.invalid);
 
+        }
+
+        // validatePhone(c: FormControl) {
+        //     let PHONE_REGEXP = /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i;
+        //     return PHONE_REGEXP.test(c.value) ? null : {
+        //         validatePhone: {
+        //             valid: false
+        //         }
+        // };
     }
 
-    // validatePhone(c: FormControl) {
-    //     let PHONE_REGEXP = /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i;
-    //     return PHONE_REGEXP.test(c.value) ? null : {
-    //         validatePhone: {
-    //             valid: false
-    //         }
-    // };
-    }
 
-
-     onClick() {
-   // onSubmit(){
+    onClick() {
+        // onSubmit(){
         console.log(this.arr);
         console.log(this.myGroup.controls);
-         console.log(this.myGroup.invalid);
-         console.log(this.myGroup.valid);
+        console.log(this.myGroup.invalid);
+        console.log(this.myGroup.valid);
         console.log(this.myGroup);
         if (this.myGroup.valid) {
 
-        console.log('form');
-        console.log(this.objStep.name);
-        console.log(eval(this.objStep.name));
-        console.log(this.objStep.configuration.form_values[0].name);
-        console.log(eval(this.objStep.name)[this.objStep.configuration.form_values[0].name].value);
-        console.log(this.objStep.configuration.form_values);
-      //  console.log(eval(this.objStep.name)[this.objStep.configuration.form_values[1].name].value);
+            console.log('form');
+            console.log(this.objStep.name);
+            console.log(eval(this.objStep.name));
+            console.log(this.objStep.configuration.form_values[0].name);
+            console.log(eval(this.objStep.name)[this.objStep.configuration.form_values[0].name].value);
+            console.log(this.objStep.configuration.form_values);
+            //  console.log(eval(this.objStep.name)[this.objStep.configuration.form_values[1].name].value);
 
-        var valuesName= [];
-        var valuesSelected = [];
-        for (let index=0; index < this.objStep.configuration.form_values.length; index++) {
-            valuesName.push(this.objStep.configuration.form_values[index].name)
-            valuesSelected.push(eval(this.objStep.name)[this.objStep.configuration.form_values[index].name].value);
-        }
-        console.log(valuesSelected);
+            var valuesName = [];
+            var valuesSelected = [];
+            for (let index = 0; index < this.objStep.configuration.form_values.length; index++) {
+                valuesName.push(this.objStep.configuration.form_values[index].name)
+                valuesSelected.push(eval(this.objStep.name)[this.objStep.configuration.form_values[index].name].value);
+            }
+            console.log(valuesSelected);
 
-        this.sent.emit(
-            {
-            valueName : valuesName,
-            valueSelected : valuesSelected,
-            stepIdx : this.stepIdx,
-            name: this.objStep.name
-            })
+            this.sent.emit(
+                {
+                    valueName: valuesName,
+                    valueSelected: valuesSelected,
+                    stepIdx: this.stepIdx,
+                    name: this.objStep.name
+                })
 
         }
         else {

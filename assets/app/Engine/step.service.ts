@@ -12,7 +12,9 @@ export class StepService {
     //datas;
     step = new Array();
     steps: StepModel[] = [];
-    language = 'en';
+    language = '';
+    languages = [];
+    template: '';
     getSteps(appName): Promise<void>{
         console.log(window);
         console.log(appName);
@@ -27,9 +29,12 @@ export class StepService {
                 // const data = response.json();
 
                 this.steps = response.json();
+                this.language = response.json()[0].default_language;
+                this.languages = response.json()[0].languages;
+                this.template = response.json()[0].design;
                 let objs: any[] = [];
                 let objTest = [];
-
+                this.steps.splice(0,1);
                 for (let i = 0; i < this.steps.length; i++) {
                     // console.log(data[i].step_id);
                     this.step[i] = (new StepModel(
@@ -48,6 +53,9 @@ export class StepService {
                     this.steps[0].master_type = 'admin'
                 }
                 console.log(this.steps);
+                console.log(this.language);
+                console.log(this.languages);
+                console.log(this.template)
         })
             .catch(error => Observable.throw(error));
     }

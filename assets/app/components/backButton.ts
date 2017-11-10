@@ -6,7 +6,7 @@ import {StepService} from "../Engine/step.service"
     selector: 'previous-page',
     template: `
         <div class="form-navArrow">
-            <button (click)="onClick()" class="brown_button" ><i class="glyphicon glyphicon-triangle-left" >  </i></button>
+            <button (click)="onClick()" class="{{_stepService.template.back_btn}}" ><i class="glyphicon glyphicon-triangle-left" >  </i></button>
         </div>
 `
 })
@@ -17,6 +17,9 @@ export class BackButtonComponent {
     @Input() stepId;
     @Output() change = new EventEmitter();
     constructor(private _stepService: StepService, private _formService: FormService){}
+
+    // btn_class = "buttonWhite"
+
     onClick(){
         console.log(this.stepId);
         let stepIndex = this.idxStepObj;
