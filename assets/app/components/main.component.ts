@@ -15,7 +15,7 @@ import {SaveService} from "./saveService";
             <!--<div class="col-md-8" *ngIf="this.stepId == 1 && this.appName !='play'" >-->
               <!--<button class="{{_stepService.template.back_btn}}" ><i class="glyphicon glyphicon-triangle-left" >  </i></button>-->
             <!--</div>-->
-            <div class="col-md-8" *ngIf="this.stepId == 1 && this.appName !='play'"><button class="{{_stepService.template.back_btn}}" ></div>
+            <div class="col-md-8" *ngIf="this.stepId == 1 && this.appName !='play'"><button class="{{_stepService.template.back_btn}}" ></button></div>
             <div class="col-md-8" *ngIf="this.stepId != 1 && this.appName !='play'" align="left" >
                 <previous-page 
                     [stepId] = "stepId"
