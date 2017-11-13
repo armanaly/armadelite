@@ -13,9 +13,7 @@ import {StepService} from "../Engine/step.service";
             <div class="jumbotron" *ngIf="objStep.configuration.header_note && objStep.configuration.header_note != ''">
                 <p [innerHTML] = "objStep.configuration.header_note"></p>
             </div>
-            <!--<div class="col-md-3" *ngFor="let valeurList of listOfElements">-->
-
-            <ul class="items" >
+            <ul class="items"  >
                 <li *ngFor="let valeurList of currentList">
                      <!--data-toggle="tooltip" title=" "-->
                     <button *ngIf="valueSelected != valeurList" 
@@ -36,7 +34,7 @@ import {StepService} from "../Engine/step.service";
          </div>
          <div *ngIf="_stepService.language == 'en' && objStep.configuration.foot_note && objStep.configuration.foot_note != ''" [innerHTML] = "objStep.configuration.foot_note"></div> 
          <div *ngIf="_stepService.language == 'es' && objStep.configuration.foot_note_es && objStep.configuration.foot_note_es != ''" [innerHTML] = "objStep.configuration.foot_note_es"></div>
-         <div *ngIf="_stepService.language == 'fr' && objStep.configuration.foot_note_es && objStep.configuration.foot_note_fr != ''" [innerHTML] = "objStep.configuration.foot_note_fr"></div>
+         <div *ngIf="_stepService.language == 'fr' && objStep.configuration.foot_note_fr && objStep.configuration.foot_note_fr != ''" [innerHTML] = "objStep.configuration.foot_note_fr"></div>
      </div>
 `
 })
@@ -57,21 +55,9 @@ export class ListButtonsComponent {
     {}
 
     ngOnInit() {
-        console.log(this._stepService)
-        console.log("ngOnInitStart");
-        console.log("this.stepIdx " + this.stepIdx);
-        console.log(this.objStep.conditions.length);
-        console.log(this.objStep);
         if (this.objStep.conditions.length > 0){
             let valueCondition = this.objStep.conditions[0].value;
             let keyCondition = this.objStep.conditions[0].key;
-
-
-            console.log("valueCondition: " + valueCondition);
-            console.log("keyCondition: " + keyCondition);
-            console.log(this._formService);
-            // console.log(this._formService.arraySteps.find(keyCondition));
-
 
             let tmpStepIdx = this.stepIdx - 1; // stepIdx temporaire
             /* LOOK FOR VALUE SELECTED INTO FORM SERVICE (**arraySteps**)
@@ -99,29 +85,17 @@ export class ListButtonsComponent {
         else{
             this.display = true;
         }
-console.log('OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
-        console.log(this.display)
-         // console.log(this.listOfElements);
-         // console.log(this.valueSelected);
         for (let datas of this.listOfElements){
-            // console.log(datas);
-            // console.log(datas.name);
-
             if (datas.name == this.objStep.name){
                 this.currentList = datas.list;
-                console.log(this.currentList);
             }
         }
-
     }
     onChooseVal($event){
-        // console.log($event);
-
         this.change.emit({
             valueName : this.objStep.configuration.form_value.name,
             valueSelected : $event.target.value,
             stepIdx : this.stepIdx
         })
-
     };
 }

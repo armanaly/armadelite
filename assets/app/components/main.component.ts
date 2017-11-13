@@ -1,44 +1,36 @@
 import {Component, Input, OnInit} from '@angular/core'
 import {ActivatedRoute} from "@angular/router"
-import {Validators, FormBuilder, FormGroup, FormControl} from "@angular/forms";
-
-import {StepModel} from "../Engine/stepModel";
-
+import {FormBuilder} from "@angular/forms";
 import {FormService} from "./form.service";
-import {BackButtonComponent} from "./backButton";
 import {StepService} from "../Engine/step.service";
 import {CollectionService} from "../Engine/collection.service";
 import {Observable} from "rxjs";
 import {MailService} from "../Engine/mail.service";
 import {SaveService} from "./saveService";
-import {GlobalVariable} from "../global";
 @Component({
     selector: 'vehicule-detail',
     template: `
-     <!--<div align="right"  *ngFor="let language of _stepService.languages">-->
-                         <!--<button title="{{language}}" width="20px" height="20px"  (click)="changeLanguage(language)" type="button" >-->
-                            <!--<img src="images/flags/{{language}}.png" />-->
-                         <!--</button>&nbsp;-->
-                    <!--</div>-->
     <div *ngIf="formCompleted == false" class="{{_stepService.template.panel_heading}}">
         <div class="row">
-            <div class="col-md-2" *ngIf="this.stepId == 1 && this.appName !='play'" >
-              <button class="black_button" ><i class="glyphicon glyphicon-triangle-left" >  </i></button>
-            </div>
-            <div class="col-md-10" *ngIf="this.stepId != 1 && this.appName !='play'" align="left" >
+            <!--<div class="col-md-8" *ngIf="this.stepId == 1 && this.appName !='play'" >-->
+              <!--<button class="{{_stepService.template.back_btn}}" ><i class="glyphicon glyphicon-triangle-left" >  </i></button>-->
+            <!--</div>-->
+            <div class="col-md-8" *ngIf="this.stepId == 1 && this.appName !='play'"><button class="{{_stepService.template.back_btn}}" ></div>
+            <div class="col-md-8" *ngIf="this.stepId != 1 && this.appName !='play'" align="left" >
                 <previous-page 
                     [stepId] = "stepId"
                     [idxStepObj] =  "indexStepObj"
                     (change) = goPreviousStep($event) >
                 </previous-page>
             </div>
-            <div class="col-md-10" >
-               <div class="row">
-                    <div align="right" class="col-md-2" *ngFor="let language of _stepService.languages">
-                         <button title="{{language}}" width="20px" height="20px"  (click)="changeLanguage(language)" type="button" style="background-color: transparent; border-width: 0px 0 0;">
+            <div class="col-md-4" >
+
+                  <div class="pull-right">
+                    <span style="width: 20px; height:20px;" *ngFor="let language of _stepService.languages">
+                         <button title="{{language}}"   (click)="changeLanguage(language)" type="button" style="background-color: transparent; border-width: 0px 0 0;">
                             <img src="images/flags/{{language}}.png" />
-                         </button>&nbsp;
-                    </div>
+                         </button>
+                    </span>
                  </div>
             </div>
         </div>
@@ -129,8 +121,9 @@ import {GlobalVariable} from "../global";
 
  <div align="center" class="jumbotron" *ngIf="formCompleted" class="alert alert-success" role="alert">
       <div class="container">
-         <h1> Your application form has been sent correctly. Thank you very much. We will contact you shortly.</h1>
-         <h1>Su formulario de solicitud ha sido enviado correctamente. Muchas gracias. Nos pondremos en contacto con usted en breve.</h1>
+         <h1 *ngIf="_stepService.language == 'en'" >Your application form has been sent correctly. Thank you very much. We will contact you shortly.</h1> 
+         <h1 *ngIf="_stepService.language == 'es'" >Su formulario de solicitud ha sido enviado correctamente. Muchas gracias. Nos pondremos en contacto con usted en breve.</h1>
+         <h1 *ngIf="_stepService.language == 'fr'" >Votre demande a bien été envoyée, nous prendrons contact avec vous dans les plus brefs délais.</h1>         
     </div>
  </div>
 `,

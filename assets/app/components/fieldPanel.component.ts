@@ -3,12 +3,15 @@ import {FormBuilder, Validators, FormGroup, FormControl, FormArray} from "@angul
 import {FormService} from "./form.service";
 import {EmailValidator} from "./emailValidator.component";
 import {StepService} from "../Engine/step.service";
-// import {MdDatepickerModule} from '@angular/material';
 @Component({
     selector: 'field-panel',
     template: `
  <div *ngIf="display">
-        <div class="panel-heading panel-heading-custom"><p class="text-uppercase">{{objStep.configuration.labelPanel}} </p></div>
+        <div class="{{_stepService.template.panel_heading}}">
+            <p *ngIf="_stepService.language == 'en'" class="text-uppercase">{{objStep.configuration.labelPanel}} </p>
+            <p *ngIf="_stepService.language == 'es'" class="text-uppercase">{{objStep.configuration.labelPanel_es}} </p>
+            <p *ngIf="_stepService.language == 'fr'" class="text-uppercase">{{objStep.configuration.labelPanel_fr}} </p>
+        </div>
         <div class="panel-body">
             <form  class="form-horizontal" name="{{objStep.name}}"  >
                 <div [formGroup]="myGroup">                  
@@ -23,6 +26,7 @@ import {StepService} from "../Engine/step.service";
                              <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
                                  <label *ngIf="_stepService.language == 'en'" for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label}} </label>
                                  <label *ngIf="_stepService.language == 'es'" for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label_es}} </label>
+                                 <label *ngIf="_stepService.language == 'fr'" for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label_fr}} </label>
                                  <div class="col-sm-10">
                                      <input *ngIf="i == 0"     
                                             myAutofocus
@@ -55,7 +59,8 @@ import {StepService} from "../Engine/step.service";
                                         <div *ngIf="_stepService.language == 'fr'">Champs obligatoire</div>
                                     </div>
                                     <div *ngIf="myGroup.controls[field.name].hasError('min') && myGroup.controls[field.name].touched" class="alert alert-danger">
-                                        <div *ngIf="_stepService.language == 'en'">Field must be at least {{field.minlength}} characters long.</div>
+                                        <p *ngIf="_stepService.language == 'en'">Field must be at least {{field.minlength}} characters long.</p>
+                                        <p *ngIf="_stepService.language == 'fr'">Ce champs doit contenir au minimum {{field.minlength}} caractères.</p>
                                     </div>
                                    </div>
                              </div>
@@ -65,6 +70,7 @@ import {StepService} from "../Engine/step.service";
                         <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
                              <label *ngIf="_stepService.language == 'en'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label}} </label>
                              <label *ngIf="_stepService.language == 'es'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_es}} </label>
+                             <label *ngIf="_stepService.language == 'fr'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_fr}} </label>
                              <div class="col-sm-10">
                              <input *ngIf="i == 0"  
                                     myAutofocus
@@ -107,6 +113,7 @@ import {StepService} from "../Engine/step.service";
                         <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
                              <label *ngIf="_stepService.language == 'en'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label}} </label>
                              <label *ngIf="_stepService.language == 'es'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_es}} </label>
+                             <label *ngIf="_stepService.language == 'fr'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_fr}} </label>
                              <div class="col-sm-10">
                                 <input class="form-control"  
                                     type='date' 
@@ -174,6 +181,7 @@ import {StepService} from "../Engine/step.service";
               </div>
               <div class="modal-footer">
                 <button *ngIf="_stepService.language == 'en'" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button *ngIf="_stepService.language == 'es'" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                 <button *ngIf="_stepService.language == 'fr'" type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
               </div>
             </div>

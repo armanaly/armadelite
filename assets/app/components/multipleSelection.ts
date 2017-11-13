@@ -12,7 +12,7 @@ import {StepService} from "../Engine/step.service";
                             <button *ngIf="isSelected(valeurList) == false" type="button" 
                                     (click)="onChooseVal($event)"  
                                     value="{{valeurList}}" 
-                                    class="btn btn-primary btn-primary-custom">
+                                    class="{{ _stepService.template.list_btn}}">
                             {{valeurList}}
                             </button>
                             <button *ngIf="isSelected(valeurList) == true" type="button" 

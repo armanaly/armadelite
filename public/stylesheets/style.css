@@ -48,7 +48,13 @@ label.control-label span { cursor: pointer; }
 
 .panel-heading-yellow {
     color: #e0f8e0; background: yellow;
-    font-family: monospace;
+    font-family: Georgia;
+    text-align: center;
+}
+
+.panel-heading-red {
+    color: #FFFF00; background: darkred;
+    font-family: Georgia;
     text-align: center;
 }
 
