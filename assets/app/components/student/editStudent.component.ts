@@ -2,10 +2,12 @@ import {Component, Input, Output, EventEmitter} from '@angular/core'
 import {Router, NavigationExtras, ActivatedRoute} from '@angular/router';
 // import {StepService} from "../Engine/step.service";
 import {Http} from "@angular/http";
-import {GroupService} from "../group/group.service";
+// import {GroupService} from "group.service";
 import {forEach} from "../../../../public/js/vendor/@angular/router/src/utils/collection";
 import {GridPanelService} from "../grid.service";
-import {BalletDetailsService} from "../balletDetails.service";
+import {BalletDetailsService} from "../ballet/balletDetails.service";
+import {GroupService} from "../ballet/group.service";
+// import {BalletDetailsService} from "balletDetails.service";
 @Component({
     selector: 'group',
     template: `

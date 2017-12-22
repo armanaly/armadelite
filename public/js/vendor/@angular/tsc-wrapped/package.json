@@ -1,51 +1,33 @@
 {
   "_args": [
     [
-      {
-        "raw": "@angular/tsc-wrapped@4.3.2",
-        "scope": "@angular",
-        "escapedName": "@angular%2ftsc-wrapped",
-        "name": "@angular/tsc-wrapped",
-        "rawSpec": "4.3.2",
-        "spec": "4.3.2",
-        "type": "version"
-      },
-      "D:\\workspace\\russian_ballet\\node_modules\\@angular\\compiler-cli"
+      "@angular/tsc-wrapped@4.4.6",
+      "D:\\workspace\\russian_ballet"
     ]
   ],
-  "_from": "@angular/tsc-wrapped@4.3.2",
-  "_id": "@angular/tsc-wrapped@4.3.2",
-  "_inCache": true,
-  "_installable": true,
+  "_from": "@angular/tsc-wrapped@4.4.6",
+  "_id": "@angular/tsc-wrapped@4.4.6",
+  "_inBundle": false,
+  "_integrity": "sha1-Fnh8u/UL3H5zgSOxnDJSfyROF40=",
   "_location": "/@angular/tsc-wrapped",
-  "_nodeVersion": "6.9.2",
-  "_npmOperationalInternal": {
-    "host": "s3://npm-registry-packages",
-    "tmp": "tmp/tsc-wrapped-4.3.2.tgz_1501190027590_0.8441903542261571"
-  },
-  "_npmUser": {
-    "name": "angular",
-    "email": "angular-core+npm@google.com"
-  },
-  "_npmVersion": "3.10.9",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "@angular/tsc-wrapped@4.3.2",
-    "scope": "@angular",
-    "escapedName": "@angular%2ftsc-wrapped",
+    "type": "version",
+    "registry": true,
+    "raw": "@angular/tsc-wrapped@4.4.6",
     "name": "@angular/tsc-wrapped",
-    "rawSpec": "4.3.2",
-    "spec": "4.3.2",
-    "type": "version"
+    "escapedName": "@angular%2ftsc-wrapped",
+    "scope": "@angular",
+    "rawSpec": "4.4.6",
+    "saveSpec": null,
+    "fetchSpec": "4.4.6"
   },
   "_requiredBy": [
     "/@angular/compiler-cli"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/tsc-wrapped/-/tsc-wrapped-4.3.2.tgz",
-  "_shasum": "81eb97d5cd4cc5c7a0a7a442561855bdc0569387",
-  "_shrinkwrap": null,
-  "_spec": "@angular/tsc-wrapped@4.3.2",
-  "_where": "D:\\workspace\\russian_ballet\\node_modules\\@angular\\compiler-cli",
+  "_resolved": "https://registry.npmjs.org/@angular/tsc-wrapped/-/tsc-wrapped-4.4.6.tgz",
+  "_spec": "4.4.6",
+  "_where": "D:\\workspace\\russian_ballet",
   "bugs": {
     "url": "https://github.com/angular/angular/issues"
   },
@@ -63,30 +45,15 @@
     "tsickle": "^0.21.0"
   },
   "description": "Wraps the tsc CLI, allowing extensions.",
-  "devDependencies": {},
-  "directories": {},
-  "dist": {
-    "shasum": "81eb97d5cd4cc5c7a0a7a442561855bdc0569387",
-    "tarball": "https://registry.npmjs.org/@angular/tsc-wrapped/-/tsc-wrapped-4.3.2.tgz"
-  },
   "homepage": "https://github.com/angular/angular/blob/master/tools/@angular/tsc-wrapped",
   "license": "MIT",
-  "maintainers": [
-    {
-      "name": "angular",
-      "email": "angular-core+npm@google.com"
-    }
-  ],
   "name": "@angular/tsc-wrapped",
-  "optionalDependencies": {},
   "peerDependencies": {
     "typescript": "^2.1.5"
   },
-  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/angular/angular.git"
   },
-  "scripts": {},
-  "version": "4.3.2"
+  "version": "4.4.6"
 }

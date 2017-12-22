@@ -2,9 +2,10 @@
 
     // map tells the System loader where to look for things
     var map = {
+
         'app':                        'js/app', // 'dist',
         'rxjs':                       'js/vendor/rxjs',
-        '@angular':                   'js/vendor/@angular',
+        '@angular':                   'node_modules/@angular',
         // angular bundles
         '@angular/core': 'js/vendor/@angular/core/bundles/core.umd.js',
         '@angular/common': 'js/vendor/@angular/common/bundles/common.umd.js',
@@ -19,13 +20,15 @@
         '@angular/cdk/platform': 'js/vendor/@angular/cdk/bundles/cdk-platform.umd.js',
         '@angular/cdk/a11y': 'js/vendor/@angular/cdk/bundles/cdk-a11y.umd.js',
         '@angular/cdk/rxjs': 'js/vendor/@angular/cdk/bundles/cdk-rxjs.umd.js',
-        '@angular/cdk/coercion': 'js/vendor/@angular/cdk/bundles/cdk-coercion.umd.js'
+        '@angular/cdk/coercion': 'js/vendor/@angular/cdk/bundles/cdk-coercion.umd.js',
+
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
-        'app':                        { main: 'boot.js',  defaultExtension: 'js' },
-        'rxjs':                       { defaultExtension: 'js' }
+        'rxjs':                       { defaultExtension: 'js' },
+        'app':                        { main: 'boot.js',  defaultExtension: 'js' }
+
     };
 
     var config = {

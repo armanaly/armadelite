@@ -3,7 +3,6 @@ import {GridPanelService} from "../grid.service";
 import {Router, NavigationExtras, ActivatedRoute} from '@angular/router';
 import {StepService} from "../../Engine/step.service";
 import {Http} from "@angular/http";
-import {GridDetailsService} from "../gridDetails.service";
 import {BalletDetailsService} from "./balletDetails.service";
 @Component({
     selector: 'grid-details',
@@ -29,7 +28,7 @@ import {BalletDetailsService} from "./balletDetails.service";
                    </nav>
                 </div>
             <div class="col-md-10" align="center">
-                <h2><b class="text-uppercase">{{record_details.profile[0].nom}}</b> {{record_details.profile[1].firstname}} </h2>
+                <h2><b class="text-uppercase">{{record_details.profile[1].nom}}</b> {{record_details.profile[0].firstname}} </h2>
             </div>
         </div>
        </div>
@@ -118,7 +117,7 @@ import {BalletDetailsService} from "./balletDetails.service";
                         <td class="tg-txgi">DNI</td>
                         <td class="tg-6k2t">{{record_details.DNI}}</td>
                       </tr>
-                      <tr *ngIf="record_details.course_type == 'Professional'">
+                      <tr *ngIf="record_details.audition != ''">
                         <td class="tg-txgi" >Audition place</td>
                         <td class="tg-6k2t" >{{record_details.audition}}</td>
                       </tr>

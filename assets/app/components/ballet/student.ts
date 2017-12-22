@@ -9,7 +9,10 @@ export class Student {
         public email2: string,
         public phone2: string,
         public notes: string,
-        public course_type: string
+        public token: string,
+        public course_type: string,
+        public audition: string
+
     ) {  }
 
 }

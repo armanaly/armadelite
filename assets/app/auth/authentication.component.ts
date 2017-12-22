@@ -3,6 +3,7 @@ import {StepService} from "../Engine/step.service";
 import {Router, ActivatedRoute} from '@angular/router';
 import {GridPanelService} from "../components/grid.service";
 import {GlobalVariable} from "../global";
+import {AuthService} from "./auth.service";
 @Component({
     selector: 'auth',
     template: `
@@ -27,7 +28,7 @@ import {GlobalVariable} from "../global";
 
 export class AuthenticationComponent {
 
-    constructor(private route: ActivatedRoute) {
+    constructor(private route: ActivatedRoute, authService: AuthService) {
     }
 
     appName = '';
@@ -38,4 +39,6 @@ export class AuthenticationComponent {
         this.appName = this.route.snapshot.queryParams["app"];
         console.log(this.appName);
     }
+
+
 }

@@ -1,5 +1,5 @@
 /**
- * @license Angular v4.3.2
+ * @license Angular v4.4.6
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -638,7 +638,7 @@ function wrapIntoObservable(value) {
         // change detection.
         return fromPromise(Promise.resolve(value));
     }
-    return of(value);
+    return of(/** @type {?} */ (value));
 }
 
 /**
@@ -1792,7 +1792,10 @@ function match(segmentGroup, route, segments) {
     const /** @type {?} */ res = matcher(segments, segmentGroup, route);
     if (!res) {
         return {
-            matched: false, consumedSegments: /** @type {?} */ ([]), lastChild: 0, positionalParamSegments: {},
+            matched: false,
+            consumedSegments: /** @type {?} */ ([]),
+            lastChild: 0,
+            positionalParamSegments: {},
         };
     }
     return {
@@ -4482,7 +4485,7 @@ class ActivateRoutes {
         if (context) {
             const /** @type {?} */ children = nodeChildrenAsMap(route);
             const /** @type {?} */ contexts = route.value.component ? context.children : parentContexts;
-            forEach(children, (v, k) => { this.deactivateRouteAndItsChildren(v, contexts); });
+            forEach(children, (v, k) => this.deactivateRouteAndItsChildren(v, contexts));
             if (context.outlet) {
                 // Destroy the component
                 context.outlet.deactivate();
@@ -4682,7 +4685,7 @@ function validateCommands(commands) {
  *
  * You can tell the directive to how to handle queryParams, available options are:
  *  - 'merge' merge the queryParams into the current queryParams
- *  - 'preserve' prserve the current queryParams
+ *  - 'preserve' preserve the current queryParams
  *  - default / '' use the queryParams only
  *  same options for {\@link NavigationExtras#queryParamsHandling}
  *
@@ -5048,19 +5051,20 @@ class RouterLinkActive {
     update() {
         if (!this.links || !this.linksWithHrefs || !this.router.navigated)
             return;
-        const /** @type {?} */ hasActiveLinks = this.hasActiveLinks();
-        // react only when status has changed to prevent unnecessary dom updates
-        if (this.active !== hasActiveLinks) {
-            this.classes.forEach((c) => {
-                if (hasActiveLinks) {
-                    this.renderer.addClass(this.element.nativeElement, c);
-                }
-                else {
-                    this.renderer.removeClass(this.element.nativeElement, c);
-                }
-            });
-            Promise.resolve(hasActiveLinks).then(active => this.active = active);
-        }
+        Promise.resolve().then(() => {
+            const /** @type {?} */ hasActiveLinks = this.hasActiveLinks();
+            if (this.active !== hasActiveLinks) {
+                this.active = hasActiveLinks;
+                this.classes.forEach((c) => {
+                    if (hasActiveLinks) {
+                        this.renderer.addClass(this.element.nativeElement, c);
+                    }
+                    else {
+                        this.renderer.removeClass(this.element.nativeElement, c);
+                    }
+                });
+            }
+        });
     }
     /**
      * @param {?} router
@@ -5492,7 +5496,6 @@ class RouterPreloader {
         const onEndLoad = (r) => router.triggerEvent(new RouteConfigLoadEnd(r));
         this.loader = new RouterConfigLoader(moduleLoader, compiler, onStartLoad, onEndLoad);
     }
-    ;
     /**
      * @return {?}
      */
@@ -5974,7 +5977,7 @@ function provideRouterInitializer() {
 /**
  * \@stable
  */
-const VERSION = new Version('4.3.2');
+const VERSION = new Version('4.4.6');
 
 /**
  * @license

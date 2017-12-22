@@ -1,3 +1,4 @@
+declare const $ : any;
 import {Component, Input, Output, EventEmitter} from '@angular/core'
 import {FormBuilder, Validators, FormGroup, FormControl, FormArray} from "@angular/forms";
 import {FormService} from "./form.service";
@@ -7,29 +8,41 @@ import {StepService} from "../Engine/step.service";
     selector: 'field-panel',
     template: `
  <div *ngIf="display">
-        <div class="{{_stepService.template.panel_heading}}">
-            <p *ngIf="_stepService.language == 'en'" class="text-uppercase">{{objStep.configuration.labelPanel}} </p>
-            <p *ngIf="_stepService.language == 'es'" class="text-uppercase">{{objStep.configuration.labelPanel_es}} </p>
-            <p *ngIf="_stepService.language == 'fr'" class="text-uppercase">{{objStep.configuration.labelPanel_fr}} </p>
-        </div>
-        <div class="panel-body">
-            <form  class="form-horizontal" name="{{objStep.name}}"  >
-                <div [formGroup]="myGroup">                  
+    <div class="{{_stepService.template.panel_heading}}">
+        <p *ngIf="_stepService.language == 'en'" class="text-uppercase">{{objStep.configuration.labelPanel}} </p>
+        <p *ngIf="_stepService.language == 'es'" class="text-uppercase">{{objStep.configuration.labelPanel_es}} </p>
+        <p *ngIf="_stepService.language == 'fr'" class="text-uppercase">{{objStep.configuration.labelPanel_fr}} </p>
+    </div>
+    <div class="panel-body">
+        <form  class="form-horizontal" name="{{objStep.name}}"  >
+            <div [formGroup]="myGroup">                  
 
                <!--/* FORMAT Configuration.form_values-->
                     <!--[{  name,     :id
                         ,  type :string, number-->
                     <!--}]-->
                <!--*/ -->
-                    <div *ngFor="let field of objStep.configuration.form_values; let i = index">
-                         <div *ngIf="field.type == 'text'">
-                             <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
-                                 <label *ngIf="_stepService.language == 'en'" for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label}} </label>
-                                 <label *ngIf="_stepService.language == 'es'" for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label_es}} </label>
-                                 <label *ngIf="_stepService.language == 'fr'" for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label_fr}} </label>
-                                 <div class="col-sm-10">
-                                     <input *ngIf="i == 0"     
-                                            myAutofocus
+                <div *ngFor="let field of objStep.configuration.form_values; let i = index">
+                     <div *ngIf="field.type == 'text'">
+                         <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
+                             <label *ngIf="_stepService.language == 'en'" for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label}} </label>
+                             <label *ngIf="_stepService.language == 'es'" for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label_es}} </label>
+                             <label *ngIf="_stepService.language == 'fr'" for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label_fr}} </label>
+                             <div class="col-sm-10">
+                                 <input *ngIf="i == 0"     
+                                        myAutofocus
+                                        class="form-control" 
+                                        type="{{field.type}}" 
+                                        id="{{field.name}}"
+                                        name="{{field.name}}"
+                                        required="{{field.required}}"
+                                        minlength="{{field.minlength}}"
+                                        maxlength="{{field.maxlength}}"
+                                        formControlName="{{field.name}}"
+                                        [formControl]="myGroup.controls[field.name]"
+                                        >
+                         
+                                    <input *ngIf="i > 0"     
                                             class="form-control" 
                                             type="{{field.type}}" 
                                             id="{{field.name}}"
@@ -40,32 +53,20 @@ import {StepService} from "../Engine/step.service";
                                             formControlName="{{field.name}}"
                                             [formControl]="myGroup.controls[field.name]"
                                             >
-                             
-                                        <input *ngIf="i > 0"     
-                                                class="form-control" 
-                                                type="{{field.type}}" 
-                                                id="{{field.name}}"
-                                                name="{{field.name}}"
-                                                required="{{field.required}}"
-                                                minlength="{{field.minlength}}"
-                                                maxlength="{{field.maxlength}}"
-                                                formControlName="{{field.name}}"
-                                                [formControl]="myGroup.controls[field.name]"
-                                                >
-                              
-                                    <div class="alert alert-danger" role="alert" *ngIf="!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched ">
-                                        <div *ngIf="_stepService.language == 'en'">This field is required</div>
-                                        <div *ngIf="_stepService.language == 'es'">Este campo es obligatorio</div>
-                                        <div *ngIf="_stepService.language == 'fr'">Champs obligatoire</div>
-                                    </div>
-                                    <div *ngIf="myGroup.controls[field.name].hasError('min') && myGroup.controls[field.name].touched" class="alert alert-danger">
-                                        <p *ngIf="_stepService.language == 'en'">Field must be at least {{field.minlength}} characters long.</p>
-                                        <p *ngIf="_stepService.language == 'fr'">Ce champs doit contenir au minimum {{field.minlength}} caractères.</p>
-                                    </div>
-                                   </div>
-                             </div>
+                          
+                                <div class="alert alert-danger" role="alert" *ngIf="!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched ">
+                                    <div *ngIf="_stepService.language == 'en'">This field is required</div>
+                                    <div *ngIf="_stepService.language == 'es'">Este campo es obligatorio</div>
+                                    <div *ngIf="_stepService.language == 'fr'">Champs obligatoire</div>
+                                </div>
+                                <div *ngIf="myGroup.controls[field.name].hasError('min') && myGroup.controls[field.name].touched" class="alert alert-danger">
+                                    <p *ngIf="_stepService.language == 'en'">Field must be at least {{field.minlength}} characters long.</p>
+                                    <p *ngIf="_stepService.language == 'fr'">Ce champs doit contenir au minimum {{field.minlength}} caractères.</p>
+                                </div>
+                               </div>
                          </div>
-                         
+                     </div>
+                     
                     <div *ngIf="field.type == 'number'">
                         <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
                              <label *ngIf="_stepService.language == 'en'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label}} </label>
@@ -188,20 +189,19 @@ import {StepService} from "../Engine/step.service";
         
           </div>
         </div>
-                    
+             <div *ngIf="btnDisabled"><i class="fa fa-spinner fa-spin" style="font-size:96px"></i></div>       
              <!--<button type="submit" class="btn btn-primary" [disabled]="myGroup.invalid">Valider</button>-->
              <div align="center">
-                <button *ngIf="_stepService.language == 'en'" type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Send   </button>
-                <button *ngIf="_stepService.language == 'es'" type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Enviar  </button>
-                <button *ngIf="_stepService.language == 'fr'" type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Envoyer  </button>
+                <button [disabled]="btnDisabled" *ngIf="_stepService.language == 'en'" type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Send   </button>
+                <button [disabled]="btnDisabled" *ngIf="_stepService.language == 'es'" type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Enviar  </button>
+                <button [disabled]="btnDisabled" *ngIf="_stepService.language == 'fr'" type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Envoyer  </button>
+                <button [disabled]="btnDisabled" *ngIf="_stepService.language == 'nl'" type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   VERZENDEN  </button>
              </div>
                 </div>   
-</form>
-        </div> 
-        
-        </div>
+    </form>
+    </div> 
+ </div>
 `
-
 })
 
 export class FieldPanelComponent {
@@ -218,6 +218,7 @@ export class FieldPanelComponent {
     arr = new FormArray([]);
     errorForm = false;
     app_name;
+    btnDisabled = false;
 
     ngOnInit() {
 
@@ -308,7 +309,7 @@ export class FieldPanelComponent {
         console.log(this.myGroup.valid);
         console.log(this.myGroup);
         if (this.myGroup.valid) {
-
+            this.btnDisabled = true;
             console.log('form');
             console.log(this.objStep.name);
             console.log(eval(this.objStep.name));
@@ -336,11 +337,6 @@ export class FieldPanelComponent {
         }
         else {
             $("#myModal").modal('show')
-            // console.log(this.errorForm);
-            // console.log('error');
-            // // this.errorForm = true;
-            // console.log(this.errorForm);
-            // alert("form pas valide");
         }
     }
 }

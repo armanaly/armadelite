@@ -3,8 +3,7 @@ import {GridPanelService} from "../grid.service";
 import {Router, NavigationExtras, ActivatedRoute} from '@angular/router';
 import {StepService} from "../../Engine/step.service";
 import {Http} from "@angular/http";
-import {GridDetailsService} from "../gridDetails.service";
-import {BalletDetailsService, CargoDetailsService} from "./cargoDetails.service";
+import {CargoDetailsService} from "./cargoDetails.service";
 @Component({
     selector: 'grid-details',
     template: `

@@ -21,6 +21,8 @@ export class StudentService {
         console.log("body");
         console.log(body);
 
+
+
         const headers = new Headers({'Content-Type': 'application/json'});
         var completeUrl = GlobalVariable.BASE_URL + 'update_student';
         return this._http.post(completeUrl, JSON.stringify(body), {headers: headers})

@@ -4,6 +4,7 @@ import {Http, Headers, RequestOptions} from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import includes = require("core-js/fn/string/includes");
 
+
 @Injectable()
 export class GridPanelService {
 
@@ -14,7 +15,8 @@ export class GridPanelService {
     keysName_details = [];
     colTitle_details = [];
     originalData = this.dataGrid;
-
+    key;
+    value;
     getDatas(grid_name,valeur){
         this.dataGrid = [];
         this.keysName = [];
@@ -47,7 +49,7 @@ export class GridPanelService {
                             // console.log(p+"_"+data[0].colNames[i][p][j])
                             // this.keysName.push(p+"_"+data[0].colNames[i][p][j]);
                             this.keysName.push(data[0].config[i].field_panel_name + '_' + data[0].config[i].field_panel_values[q].data);
-                            let objColTitle = {}
+                            let objColTitle = {title:'',key:'',type:'', filterable: false}
                             objColTitle.title = data[0].config[i].field_panel_values[q].title;
                             objColTitle.key = data[0].config[i].field_panel_name + '_' + data[0].config[i].field_panel_values[q].data;
                             objColTitle.type = "field_panel";

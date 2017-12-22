@@ -1,3 +1,4 @@
+declare const $ : any;
 import {Component, Input, Output, EventEmitter} from '@angular/core'
 import {Router, NavigationExtras, ActivatedRoute} from '@angular/router';
 // import {StepService} from "../Engine/step.service";
@@ -57,7 +58,16 @@ import {StudentService} from "./student.service";
                         </select>
                     </div>
                 </div>
-                
+                 <div class="form-group">
+                    <label for="AUDITION" class="col-sm-2 control-label" >AUDITION</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="audition"
+                            [(ngModel)]="model.audition" name="audition"
+                            #audition="ngModel" >
+                             <option *ngFor="let audition of auditions" [value]="audition">{{audition}}</option>
+                        </select>
+                    </div>
+                </div>               
                 <div class="form-group">
                     <label for="Father" class="col-sm-2 control-label" >Father</label>
                     <div class="col-sm-10">
@@ -204,7 +214,8 @@ export class StudentComponent {
             .subscribe(data => {
                     console.log(data)
                     this.student_info = data;
-                    this.model = new Student(data._id,data.DNI,data.BECA, data.father, data.intolerencia, data.email2, data.phone2, data.notes);
+                    let token = localStorage.getItem('token');
+                    this.model = new Student(data._id,data.DNI,data.BECA, data.father, data.intolerencia, data.email2, data.phone2, data.notes, token, data.course_type, data.audition);
                     console.log(this.model);
                     this.display_edit = true;
                 },
@@ -217,6 +228,7 @@ export class StudentComponent {
     onSubmit() {
         this._studentService.updateStudent(this.model)
             .subscribe(data => {
+
                     console.log(data)
                     $("#myModal").modal('show')
                 },

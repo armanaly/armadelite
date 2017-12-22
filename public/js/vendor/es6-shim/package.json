@@ -1,50 +1,31 @@
 {
   "_args": [
     [
-      {
-        "raw": "es6-shim@^0.35.1",
-        "scope": null,
-        "escapedName": "es6-shim",
-        "name": "es6-shim",
-        "rawSpec": "^0.35.1",
-        "spec": ">=0.35.1 <0.36.0",
-        "type": "range"
-      },
+      "es6-shim@0.35.3",
       "D:\\workspace\\russian_ballet"
     ]
   ],
-  "_from": "es6-shim@>=0.35.1 <0.36.0",
+  "_from": "es6-shim@0.35.3",
   "_id": "es6-shim@0.35.3",
-  "_inCache": true,
-  "_installable": true,
+  "_inBundle": false,
+  "_integrity": "sha1-m/tzY/7//4emzbbNk+QF7DxLbyY=",
   "_location": "/es6-shim",
-  "_nodeVersion": "7.4.0",
-  "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/es6-shim-0.35.3.tgz_1485240587767_0.6348716060165316"
-  },
-  "_npmUser": {
-    "name": "ljharb",
-    "email": "ljharb@gmail.com"
-  },
-  "_npmVersion": "4.0.5",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "es6-shim@^0.35.1",
-    "scope": null,
-    "escapedName": "es6-shim",
+    "type": "version",
+    "registry": true,
+    "raw": "es6-shim@0.35.3",
     "name": "es6-shim",
-    "rawSpec": "^0.35.1",
-    "spec": ">=0.35.1 <0.36.0",
-    "type": "range"
+    "escapedName": "es6-shim",
+    "rawSpec": "0.35.3",
+    "saveSpec": null,
+    "fetchSpec": "0.35.3"
   },
   "_requiredBy": [
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/es6-shim/-/es6-shim-0.35.3.tgz",
-  "_shasum": "9bfb7363feffff87a6cdb6cd93e405ec3c4b6f26",
-  "_shrinkwrap": null,
-  "_spec": "es6-shim@^0.35.1",
+  "_spec": "0.35.3",
   "_where": "D:\\workspace\\russian_ballet",
   "author": {
     "name": "Paul Miller",
@@ -72,12 +53,6 @@
     "promises-es6-tests": "^0.5.0",
     "uglify-js": "2.7.3"
   },
-  "directories": {},
-  "dist": {
-    "shasum": "9bfb7363feffff87a6cdb6cd93e405ec3c4b6f26",
-    "tarball": "https://registry.npmjs.org/es6-shim/-/es6-shim-0.35.3.tgz"
-  },
-  "gitHead": "129819173958a0da2b487e219425baf0ca6d1a99",
   "homepage": "https://github.com/paulmillr/es6-shim/",
   "keywords": [
     "ecmascript",
@@ -93,19 +68,7 @@
   ],
   "license": "MIT",
   "main": "es6-shim",
-  "maintainers": [
-    {
-      "name": "paulmillr",
-      "email": "paul@paulmillr.com"
-    },
-    {
-      "name": "ljharb",
-      "email": "ljharb@gmail.com"
-    }
-  ],
   "name": "es6-shim",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git://github.com/paulmillr/es6-shim.git"

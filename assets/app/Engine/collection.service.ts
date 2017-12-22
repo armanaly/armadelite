@@ -8,7 +8,7 @@ import { Observable } from "rxjs/Observable";
 import { GlobalVariable } from "../global";
 import {StepService} from "./step.service";
 import {FormService} from "../components/form.service";
-import {resolve} from "url";
+import {StepModel} from "./stepModel";
 @Injectable()
 export class CollectionService { 
 
@@ -109,7 +109,7 @@ export class CollectionService {
         }
         console.log(valueForFormService);
         // RETURN THE CONTENT OF VARIABLE PICKED UP IN STEP SERVICE
-        for (var item of this._formService.arraySteps) {
+        for (let item of this._formService.arraySteps as Array<StepModel>) {
             if (typeof eval('item.' + valueForFormService) != 'undefined') {
                 return eval('item.' + valueForFormService);
             }

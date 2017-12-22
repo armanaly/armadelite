@@ -1,62 +1,62 @@
 import {Component, Input, Output, EventEmitter} from "@angular/core";
-// import {FileUploadService} from "./fileUpload.service";
 import {Http, RequestOptions, Headers} from "@angular/http";
-import { Observable } from "rxjs/Observable";
-import { CloudinaryOptions, CloudinaryUploader } from 'ng2-cloudinary';
 import {FileUploadService} from "./fileUpload.service";
-import {GlobalVariable} from "../global";
 import {FormService} from "./form.service";
-declare const filestack: {
-    init(apiKey: string): {
-        pick({ maxFiles }: { maxFiles: number }):
-            Promise<{ filesUploaded: { url: string }[] }>
-    }
-};
+import {StepService} from "../Engine/step.service";
 
 @Component({
-    selector: 'file-upload',
-    template: `
-    <div>
-       <div class="panel-heading panel-heading-custom"><p class="text-uppercase">{{objStep.configuration.labelPanel}}</p> </div>
-       <div class="panel-body">
-        <!--<input type="filepicker" name="myName" onchange="alert(event.fpfile.url)"/>-->
-        <!--<input type="file" ng2FileSelect [uploader]="uploader"/>-->
-        <table>
+selector: 'file-upload',
+template: `
+<div>
+   <div *ngIf="_stepService.language == 'en'" class="{{_stepService.template.panel_heading}}"><p class="text-uppercase">{{objStep.configuration.labelPanel}}</p> </div>
+   <div *ngIf="_stepService.language == 'es'" class="{{_stepService.template.panel_heading}}"><p class="text-uppercase">{{objStep.configuration.labelPanel_es}}</p> </div>
+   <div *ngIf="_stepService.language == 'fr'" class="{{_stepService.template.panel_heading}}"><p class="text-uppercase">{{objStep.configuration.labelPanel_fr}}</p> </div>
+   
+   <div class="panel-body">
+        <table align="center">
             <tr>
+                <td align="center">
+                    <!--<div class="fileinput fileinput-new" data-provides="fileinput" (change)="fileChange($event)" accept=".jpeg,.jpg,.png">-->
+                        <!--<span class="btn btn-default btn-file"><span>Choose file</span><input type="file" /></span>-->
+                        <!--<span class="fileinput-filename"></span><span class="fileinput-new">No file chosen</span>-->
+                    <!--</div>-->
+                    <!---->
+                    <div>
+                        <!--<label class="btn btn-primary">-->
+                            <!--Browse&hellip; <input type="file" style="display: none;">-->
+                        <!--</label>-->
+                        <span class="btn btn-default btn-file">
+                              <span *ngIf="_stepService.language == 'fr' && isUploaded == false">Ajouter photo</span>
+                              <span *ngIf="_stepService.language == 'es' && isUploaded == false">Espagnol</span>    
+                              <span *ngIf="_stepService.language == 'en' && isUploaded == false">Add picture</span>
+                              <span *ngIf="_stepService.language == 'fr' && isUploaded">Changer photo</span>
+                              <span *ngIf="_stepService.language == 'es' && isUploaded">Espagnol</span>    
+                              <span *ngIf="_stepService.language == 'en' && isUploaded">Change picture</span>       
+                            <input type="file" (change)="fileChange($event)" accept=".jpeg,.jpg,.png">
+                        </span>
+                    </div>
+                    <!--<input class="{{_stepService.template.list_btn}}" type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".jpeg,.jpg,.png,.pdf,.doc,.docx">-->
+                </td>
                 <td>
-                    <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".jpeg,.jpg,.png,.pdf,.doc,.docx">
+                    <div *ngIf="this.isUploaded">
+                        <button type="button" class="{{_stepService.template.list_btn}}"  (click)="goToNextStep()">SUIVANT</button>
+                    </div>
                 </td>
             <tr>
+            <tr *ngIf="this.isUploaded">
+                <td >
+                    <img src="{{imageSrc}}" width="480" height="320">
+                </td>
+            </tr>
             <tr>
                 <td> 
                     <img src="{{objStep.configuration.path_model}}" width="480" height="320"> 
                 </td>
             </tr>
-            <tr>
-                <td *ngIf="this.isUploaded">
-                    <img src="{{imageSrc}}" width="480" height="320">
-                    <!--<img src="{{this.url_uploaded_file}}" width="480" height="320">    -->
-                </td>
-            </tr>
-            
-        
+         
         </table>
-               <div *ngIf="this.isUploaded == false"><button type="button" btn-default btn-lg (click)="goToStep()">JE NE SOUHAITE PAS AJOUTER DES PHOTOS</button></div>
-               <div *ngIf="this.isUploaded"><button type="button" btn-default btn-lg (click)="goToNextStep()">SUIVANT</button></div>
-        <!--<input name="file" type="file" (change)="onChange($event)"/>-->
-        <!--<input type="filepicker" data-fp-apikey="AgaXy7tWgRMuzr11Hh6OJz"-->
-               <!--onchange="console.log(event.fpfile)">-->
-
-      <!--<input type="file" ng2FileSelect [uploader]="uploader" accept="image/*;capture=camera">-->
-
-    <!--<button (click)="upload()">Upload</button>-->
-
-<!--<cl-image [public-id]="imageId" [cloud-name]="uploader.cloudName"></cl-image>-->
-<!--<input type="button" value="Upload" onclick="showPicker()" />-->
-<!--<input type="filepicker-dragdrop" data-fp-apikey="AgaXy7tWgRMuzr11Hh6OJz" data-fp-mimetypes="*/*" data-fp-container="modal" data-fp-maxsize="10000000" data-fp-store-location="S3" onchange="alert(event.fpfile.url)">-->
-       </div>
-    
-    </div>
+   </div>
+</div>
 `})
 
 export class FileUploadComponent {
@@ -69,145 +69,97 @@ export class FileUploadComponent {
     imageSrc: string;
     cloudinaryImage: any;
     display = false;
-     // uploader: CloudinaryUploader = new CloudinaryUploader(
-     //     new CloudinaryOptions({ cloudName: 'havjcqppv', uploadPreset: 'oi2x61db' })
-     // );
+
     file : File;
     fileUploaded : File;
     @Input() objStep;     //Value received from MainComponent
     @Input() stepIdx;     //Value received from MainComponent
     @Output() sent = new EventEmitter(); // Emitter to send back data to parent component
     constructor(private _fileUploadService : FileUploadService, private _http: Http,
-                private _formService: FormService) {
-        //  , this.uploader.onSuccessItem = (item: any, response: string, status: number, headers: any) => {
-        //     //response is the cloudinary response
-        //     //see http://cloudinary.com/documentation/upload_images#upload_response
-        //     let res: any = JSON.parse(response);
-        //     this.imageId = res.public_id;
-        //     return { item, response, status, headers };
-        // };
-
+                private _formService: FormService, private _stepService: StepService) {
     }
 
+ ngOnInit() {
+    console.log(this.objStep);
+    console.log(this.objStep.configuration.path_model)
+ }
 
-    upload() {
-        // this.uploader.uploadAll();
-    }
-     ngOnInit() {
-        console.log(this.objStep);
-        console.log(this.objStep.configuration.path_model)
-     }
-        //
-    //
-    //
-    //     // var client = filestack.init('AgaXy7tWgRMuzr11Hh6OJz');
-    //     // function showPicker() {
-    //     //     client.pick({
-    //     //     }).then(function(result) {
-    //     //         console.log(JSON.stringify(result.filesUploaded))
-    //     //     });
-    //     // }
-    // }
-    //
+fileChange(event) {
 
-    fileChange(event) {
-    console.log(event.target);
   // GARDER FICHIER DANS LE CACHE
+ let fileList: FileList = event.target.files;
 
-         let fileList: FileList = event.target.files;
-     if(fileList.length > 0) {
-         let file: File = fileList[0];
-         let formData = new FormData();
+ // if (this.isUploaded){
+ //     this._formService.arrayFiles.append();
+ // }
 
-         this.fileUploaded = file;
-         this._formService.arrayFiles.append('uploadFile', file, this.objStep.name);
-         console.log(this._formService.arrayFiles.get('uploadFile'));
+ if(fileList.length > 0) {
+     let file: File = fileList[0];
+     let formData = new FormData();
 
-         this.url_uploaded_file = 'blabla';
-         //
-         var fileToUpload = event.dataTransfer ? event.dataTransfer.files[0] : event.target.files[0];
+     console.log(this._formService.arrayFiles)
+     // if (this.isUploaded){
+     //     this._formService.arrayFiles.splice(1,-1);
+     // }
+     // console.log(this._formService.arrayFiles)
+     this.fileUploaded = file;
+     this._formService.arrayFiles.append('uploadFile', file, this.objStep.name);
 
-         var pattern = /image-*/;
-         var reader = new FileReader();
+     console.log(this._formService.arrayFiles.get('uploadFile'));
 
-         if (!fileToUpload.type.match(pattern)) {
-             alert('invalid format');
-             return;
-         }
+     this.url_uploaded_file = 'blabla';
+     //
+     var fileToUpload = event.dataTransfer ? event.dataTransfer.files[0] : event.target.files[0];
 
-         // this.loaded = false;
+     var pattern = /image-*/;
+     var reader = new FileReader();
 
-         reader.onload = this._handleReaderLoaded.bind(this);
-         reader.readAsDataURL(fileToUpload);
-// FIN GARDER FICHIER DANS LE CACHE
+     if (!fileToUpload.type.match(pattern)) {
+         alert('invalid format');
+         return;
+     }
 
-         // this._formService.arraySteps.push({"nom": this.objStep.name, "file": File});
-         //this._formService.arrayFiles.push(formData);
+     reader.onload = this._handleReaderLoaded.bind(this);
+     reader.readAsDataURL(fileToUpload);
 
-
-         this.isUploaded = true;
-
-         // let headers = new Headers();
-         // headers.append('EncType', 'multipart/form-data');
-         // headers.append('Accept', 'application/json');
-         // let options = new RequestOptions({headers: headers});
-         // var completeUrl = GlobalVariable.BASE_URL + 'store_file';
-         // this._http.post(`${completeUrl}`, formData, {headers: headers})
-         //     .map(res => res.json())
-         //     .catch(error => Observable.throw(error))
-         //     .subscribe(
-         //         data => {
-         //             console.log('success')
-         //             this.url_uploaded_file = data.url;
-         //             this.id_img = data.id_img;
-         //         },
-         //         error => console.log(error)
-         //     )
-     }        }
+     this.isUploaded = true;
+ }
+}
 
 _handleReaderLoaded(e) {
     var reader = e.target;
     this.imageSrc = reader.result;
-   // console.log(this.imageSrc)
-    //this.loaded = true;
+
 }
 
-    onChange(event: EventTarget) {
-        let eventObj: MSInputMethodContext = <MSInputMethodContext> event;
-        let target: HTMLInputElement = <HTMLInputElement> eventObj.target;
-        let files: FileList = target.files;
-        this.file = files[0];
-        console.log(this.file);
+onChange(event: EventTarget) {
+    let eventObj: MSInputMethodContext = <MSInputMethodContext> event;
+    let target: HTMLInputElement = <HTMLInputElement> eventObj.target;
+    let files: FileList = target.files;
+    this.file = files[0];
 
-        this._fileUploadService.storeFile(files[0])
-            .subscribe(data => {
-                    console.log(data)
-                },
-                error => console.log(error)
-            )
-    }
+    this._fileUploadService.storeFile(files[0])
+        .subscribe(data => {
+                console.log(data)
+            },
+            error => console.log(error)
+        )
+}
 
-    goToStep(){
-        this.sent.emit({
-            stepIdx: this.stepIdx
-        })
-    }
+goToStep(){
+    this.sent.emit({
+        stepIdx: this.stepIdx
+    })
+}
 
-    goToNextStep() {
-        this.sent.emit({
-            valueName : this.objStep.name,
-            url_uploaded: this.url_uploaded_file,
-            id_img: this.id_img,
-            fileUploaded: this.fileUploaded,
-            stepIdx : this.stepIdx
-        })
-    }
+goToNextStep() {
+    this.sent.emit({
+        valueName : this.objStep.name,
+        url_uploaded: this.url_uploaded_file,
+        id_img: this.id_img,
+        fileUploaded: this.fileUploaded,
+        stepIdx : this.stepIdx
+    })
+}
 
-    //
-    // async showPicker() {
-    //     const client = filestack.init('AgaXy7tWgRMuzr11Hh6OJz');
-    //     const result = await client.pick({ maxFiles: 1 });
-    //     const url = result.filesUploaded[0].url;
-    //     this.uploadedFileUrls.push(url);
-    // }
 }

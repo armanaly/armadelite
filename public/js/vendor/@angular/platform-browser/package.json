@@ -1,50 +1,32 @@
 {
   "_args": [
     [
-      {
-        "raw": "@angular/platform-browser@4.3.2",
-        "scope": "@angular",
-        "escapedName": "@angular%2fplatform-browser",
-        "name": "@angular/platform-browser",
-        "rawSpec": "4.3.2",
-        "spec": "4.3.2",
-        "type": "version"
-      },
+      "@angular/platform-browser@4.4.6",
       "D:\\workspace\\russian_ballet"
     ]
   ],
-  "_from": "@angular/platform-browser@4.3.2",
-  "_id": "@angular/platform-browser@4.3.2",
-  "_inCache": true,
-  "_installable": true,
+  "_from": "@angular/platform-browser@4.4.6",
+  "_id": "@angular/platform-browser@4.4.6",
+  "_inBundle": false,
+  "_integrity": "sha1-qYOcVH4bZU+h0kqJeAyLpquNzOA=",
   "_location": "/@angular/platform-browser",
-  "_nodeVersion": "6.9.2",
-  "_npmOperationalInternal": {
-    "host": "s3://npm-registry-packages",
-    "tmp": "tmp/platform-browser-4.3.2.tgz_1501190015589_0.019515100633725524"
-  },
-  "_npmUser": {
-    "name": "angular",
-    "email": "angular-core+npm@google.com"
-  },
-  "_npmVersion": "3.10.9",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "@angular/platform-browser@4.3.2",
-    "scope": "@angular",
-    "escapedName": "@angular%2fplatform-browser",
+    "type": "version",
+    "registry": true,
+    "raw": "@angular/platform-browser@4.4.6",
     "name": "@angular/platform-browser",
-    "rawSpec": "4.3.2",
-    "spec": "4.3.2",
-    "type": "version"
+    "escapedName": "@angular%2fplatform-browser",
+    "scope": "@angular",
+    "rawSpec": "4.4.6",
+    "saveSpec": null,
+    "fetchSpec": "4.4.6"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-4.3.2.tgz",
-  "_shasum": "7ff0f6a5c29f138faeeb7ab808eb7ab202a08594",
-  "_shrinkwrap": null,
-  "_spec": "@angular/platform-browser@4.3.2",
+  "_resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-4.4.6.tgz",
+  "_spec": "4.4.6",
   "_where": "D:\\workspace\\russian_ballet",
   "author": {
     "name": "angular"
@@ -56,35 +38,20 @@
     "tslib": "^1.7.1"
   },
   "description": "Angular - library for using Angular in a web browser",
-  "devDependencies": {},
-  "directories": {},
-  "dist": {
-    "shasum": "7ff0f6a5c29f138faeeb7ab808eb7ab202a08594",
-    "tarball": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-4.3.2.tgz"
-  },
   "es2015": "./@angular/platform-browser.js",
   "homepage": "https://github.com/angular/angular#readme",
   "license": "MIT",
   "main": "./bundles/platform-browser.umd.js",
-  "maintainers": [
-    {
-      "name": "angular",
-      "email": "angular-core+npm@google.com"
-    }
-  ],
   "module": "./@angular/platform-browser.es5.js",
   "name": "@angular/platform-browser",
-  "optionalDependencies": {},
   "peerDependencies": {
-    "@angular/core": "4.3.2",
-    "@angular/common": "4.3.2"
+    "@angular/core": "4.4.6",
+    "@angular/common": "4.4.6"
   },
-  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/angular/angular.git"
   },
-  "scripts": {},
   "typings": "./platform-browser.d.ts",
-  "version": "4.3.2"
+  "version": "4.4.6"
 }

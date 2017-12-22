@@ -10,8 +10,8 @@ var appDev = 'assets/app';
 var appProd = 'public/js/app';
 var vendor = 'public/js/vendor';
 
-var tsconfig = gulpTypescript.createProject('tsconfig.json');
-
+// var tsconfig = gulpTypescript.createProject('tsconfig.json');
+const tsconfig = gulpTypescript.createProject("tsconfig.json", { typescript: require("typescript") });
 gulp.task('build-ts', function () {
     return gulp.src(appDev + '/**/*.ts')
         .pipe(gulpSourcemaps.init())

@@ -4,7 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent}  from './app.component';
 import {HttpModule} from "@angular/http";
 import {FormsModule, ReactiveFormsModule}   from '@angular/forms';
-
+import {Observable} from 'rxjs/Observable';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import {MdDatepickerModule} from '@angular/material';
 import {ROUTING} from "./app.routing"
@@ -25,13 +25,11 @@ import {GridPanelComponent} from "./components/grid.component";
 import {GridPanelService} from "./components/grid.service";
 import {MenuComponent} from "./menu/menu.component";
 import {MailService} from "./Engine/mail.service";
-import {assetUrl} from "@angular/compiler/src/identifiers";
-import { Ng2CloudinaryModule } from 'ng2-cloudinary';
-import { FileUploadModule } from 'ng2-file-upload';
+// import {assetUrl} from "@angular/compiler/src/identifiers";
+// import { Ng2CloudinaryModule } from 'ng2-cloudinary';
+// import { FileUploadModule } from 'ng2-file-upload';
 import {FileUploadComponent} from "./components/fileUpload";
 import {FileUploadService} from "./components/fileUpload.service";
-import {GridDetailsComponent} from "./components/gridDetails.component";
-import {GridDetailsService} from "./components/gridDetails.service";
 import {AuthService} from "./auth/auth.service";
 import {SignupComponent} from "./auth/signup.component";
 import {SigninComponent} from "./auth/signin.component";
@@ -47,7 +45,10 @@ import {BrowserAnimationsModule} from "../../public/js/vendor/@angular/platform-
 import {ExportService} from "./components/export.service";
 import {CargoDetailsComponent} from "./components/cargo/cargoDetails.component";
 import {CargoDetailsService} from "./components/cargo/cargoDetails.service";
-
+import {OffreComponent} from "./components/auto/offre.component";
+import {OffreService} from "./components/auto/offre.service";
+import {AutoDetailsComponent} from "./components/auto/autoDetails.component";
+import {AutoDetailsService} from "./components/auto/autoDetails.service";
 
 
 function getStepsFirst(_stepService: StepService) {
@@ -63,13 +64,13 @@ function getStepsFirst(_stepService: StepService) {
         GridPanelComponent, MenuComponent, FileUploadComponent,
         BalletDetailsComponent, SignupComponent, SigninComponent,
         AuthenticationComponent, MyAutoFocusDirective
-        , GroupComponent, StudentComponent, CargoDetailsComponent
+        ,GroupComponent, StudentComponent, CargoDetailsComponent,
+        AutoDetailsComponent, OffreComponent
     ],
     imports: [
         BrowserModule, FormsModule, ROUTING,
         HttpModule, ReactiveFormsModule
     ],
-    // , MdDatepickerModule
 
     bootstrap: [AppComponent],
 
@@ -82,7 +83,9 @@ function getStepsFirst(_stepService: StepService) {
                 // provideCloudinary(require('cloudinary-core'), { cloud_name: 'havjcqppv' } as CloudinaryConfiguration),
                 CollectionService, SaveService, FileUploadService,
                 MailService, GridPanelService, BalletDetailsService,
-                AuthService, GroupService, StudentService, CargoDetailsService, ExportService]
+                AuthService, GroupService, StudentService,
+                CargoDetailsService, ExportService, AutoDetailsService,
+                OffreService]
 })
 export class AppModule {
     

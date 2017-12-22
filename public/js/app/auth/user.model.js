@@ -1,13 +1,14 @@
 "use strict";
-var User = (function () {
-    function User(email, password, firstName, lastName) {
+Object.defineProperty(exports, "__esModule", { value: true });
+class User {
+    constructor(email, password, app, firstname, name) {
         this.email = email;
         this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.app = app;
+        this.firstname = firstname;
+        this.name = name;
     }
-    return User;
-}());
+}
 exports.User = User;
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImF1dGgvdXNlci5tb2RlbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUE7SUFDSSxjQUFtQixLQUFhLEVBQ2IsUUFBZ0IsRUFDaEIsU0FBa0IsRUFDbEIsUUFBaUI7UUFIakIsVUFBSyxHQUFMLEtBQUssQ0FBUTtRQUNiLGFBQVEsR0FBUixRQUFRLENBQVE7UUFDaEIsY0FBUyxHQUFULFNBQVMsQ0FBUztRQUNsQixhQUFRLEdBQVIsUUFBUSxDQUFTO0lBQUcsQ0FBQztJQUM1QyxXQUFDO0FBQUQsQ0FMQSxBQUtDLElBQUE7QUFMWSxZQUFJLE9BS2hCLENBQUEiLCJmaWxlIjoiYXV0aC91c2VyLm1vZGVsLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNsYXNzIFVzZXIge1xuICAgIGNvbnN0cnVjdG9yKHB1YmxpYyBlbWFpbDogc3RyaW5nLFxuICAgICAgICAgICAgICAgIHB1YmxpYyBwYXNzd29yZDogc3RyaW5nLFxuICAgICAgICAgICAgICAgIHB1YmxpYyBmaXJzdE5hbWU/OiBzdHJpbmcsXG4gICAgICAgICAgICAgICAgcHVibGljIGxhc3ROYW1lPzogc3RyaW5nKSB7fVxufVxuIl0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImF1dGgvdXNlci5tb2RlbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBO0lBQ0ksWUFBbUIsS0FBYSxFQUNiLFFBQWdCLEVBQ2hCLEdBQVcsRUFDWCxTQUFrQixFQUNsQixJQUFhO1FBSmIsVUFBSyxHQUFMLEtBQUssQ0FBUTtRQUNiLGFBQVEsR0FBUixRQUFRLENBQVE7UUFDaEIsUUFBRyxHQUFILEdBQUcsQ0FBUTtRQUNYLGNBQVMsR0FBVCxTQUFTLENBQVM7UUFDbEIsU0FBSSxHQUFKLElBQUksQ0FBUztJQUFHLENBQUM7Q0FDdkM7QUFORCxvQkFNQyIsImZpbGUiOiJhdXRoL3VzZXIubW9kZWwuanMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY2xhc3MgVXNlciB7XG4gICAgY29uc3RydWN0b3IocHVibGljIGVtYWlsOiBzdHJpbmcsXG4gICAgICAgICAgICAgICAgcHVibGljIHBhc3N3b3JkOiBzdHJpbmcsXG4gICAgICAgICAgICAgICAgcHVibGljIGFwcDogc3RyaW5nLFxuICAgICAgICAgICAgICAgIHB1YmxpYyBmaXJzdG5hbWU/OiBzdHJpbmcsXG4gICAgICAgICAgICAgICAgcHVibGljIG5hbWU/OiBzdHJpbmcpIHt9XG59XG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=

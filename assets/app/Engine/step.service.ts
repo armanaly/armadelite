@@ -2,8 +2,9 @@ import { Http, Headers } from "@angular/http";
 import { Injectable, EventEmitter } from "@angular/core";
 import { StepModel } from "./stepModel";
 import {GlobalVariable} from "../global";
-import 'rxjs/Rx';
-import { Observable } from "rxjs/Observable";
+// import {Observable} from 'rxjs/Observable';
+// import 'rxjs/Rx';
+// import { Observable } from "rxjs/Observable";
 import {ActivatedRoute, Router} from "@angular/router";
 @Injectable()
 export class StepService {
@@ -14,7 +15,9 @@ export class StepService {
     steps: StepModel[] = [];
     language = '';
     languages = [];
+    datas;
     template: '';
+    menu_level= 0;
     getSteps(appName): Promise<void>{
         console.log(window);
         console.log(appName);
@@ -22,7 +25,7 @@ export class StepService {
         var query = 'app_name=' +appName;
         var completeUrl = GlobalVariable.BASE_URL+'step?'+query;
         return this._http.get(completeUrl)
-            .toPromise()
+             .toPromise()
             .then(response => {
                 console.log(window.location)
 
@@ -32,6 +35,7 @@ export class StepService {
                 this.language = response.json()[0].default_language;
                 this.languages = response.json()[0].languages;
                 this.template = response.json()[0].design;
+                this.menu_level = response.json()[0].menu_level;
                 let objs: any[] = [];
                 let objTest = [];
                 this.steps.splice(0,1);
@@ -48,15 +52,16 @@ export class StepService {
                         this.steps[i].conditions,
                     []));
                  }
-
-                 if (window.location.hash == '#/admin'){
-                    this.steps[0].master_type = 'admin'
+                this.steps[0].master_type = 'form';
+                console.log(window.location.hash);
+                if (window.location.hash == '#/admin'){
+                    this.steps[0].master_type = 'admin';
                 }
                 console.log(this.steps);
                 console.log(this.language);
                 console.log(this.languages);
                 console.log(this.template)
         })
-            .catch(error => Observable.throw(error));
+            .catch(error => console.log(error.json()));
     }
-}
+    }

@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core'
 import {FormGroup, Validators, FormControl} from "@angular/forms";
 import {AuthService} from "./auth.service";
 import {User} from "./user.model";
-import {Router} from "@angular/router";
-
+import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 @Component({
     selector: 'app-signin',
     template: `
@@ -34,27 +33,31 @@ import {Router} from "@angular/router";
 export class SigninComponent implements OnInit {
     myForm: FormGroup;
     response = {}
-    constructor(private _authService: AuthService, private _router: Router) {}
-
+    constructor(private _authService: AuthService, private router: Router,private route: ActivatedRoute) {}
+    appName;
+    private sub: any;
     onSubmit() {
         console.log(this.myForm);
         const credentials = new User(
             this.myForm.value.email,
-            this.myForm.value.password
+            this.myForm.value.password,
+            this.appName
         );
         this._authService.signin(credentials)
             .subscribe(
                 data => {
                     console.log(data)
                     this.response = data;
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('userId', data.user_id);
+                    localStorage.setItem('token', data.token.$binary);
+                    localStorage.setItem('userId', data.user_id.$oid);
+                    localStorage.setItem('app', this.appName);
                     if (data.logged){
-                        this._router.navigateByUrl('/menu')
+                        console.log(this.response)
+                        this.router.navigate(['/menu', this.appName]);
                     }
 
 
-                    console.log(this.response)},
+                    },
 
                 error => console.error(error)
             );
@@ -62,6 +65,13 @@ export class SigninComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.sub = this.route.params.subscribe(params => {
+            this.appName = params['app']; // (+) converts string 'id' to a number
+
+            // In a real app: dispatch action to load the details here.
+        });
+        // this.appName = this.route.snapshot.queryParams["app"];
+        console.log(this.appName)
         this.myForm = new FormGroup({
             firstName: new FormControl(null, Validators.required),
             lastName: new FormControl(null, Validators.required),

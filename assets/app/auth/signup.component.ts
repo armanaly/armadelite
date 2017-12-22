@@ -55,6 +55,7 @@ export class SignupComponent implements OnInit {
         const user = new User(
             this.myForm.value.email,
             this.myForm.value.password,
+            'ballet',
             this.myForm.value.firstName,
             this.myForm.value.lastName
         );
