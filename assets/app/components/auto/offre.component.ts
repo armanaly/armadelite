@@ -57,11 +57,20 @@ import {OffreService} from "./offre.service";
                         [(ngModel)]="_details.model.prix_vente" name="prix_vente"
                     #prix_vente="ngModel">
                 </div>
-                
+                 <div class="modal-footer" align="center">
+                <button type="button" class="btn btn-default" data-dismiss="modal" (click)="saveSellingPrice(prix_rachat.value)">Enregistrer</button>
+              </div>
                 
             </div>
 
             </form>
+              <div class="form-group" *ngIf="_details.model.etat_transaction == 4" >
+                <label for="prix_vente" class="col-sm-2 control-label" >PRIX VENTE : {{_details.model.prix_vente}}</label>
+               
+              <!--</div>-->
+                
+            </div>          
+            
             
         <!-- MODAL INDIQUE PRIX ACHAT-->
         <div  id="achat" class="modal fade" role="dialog">
@@ -146,6 +155,7 @@ export class OffreComponent{
                      console.log(response)
                      console.log(response.etat)
                      this._details.model.etat_transaction = 2;
+                     this._details.model.offre_rachat = offre;
                  },
                  error => console.log(error)
              )
@@ -156,8 +166,8 @@ export class OffreComponent{
         this._offreService.saveBuyingPrice(price, this._details.record_details._id)
             .subscribe(data => {
                     console.log(data);
-                let response = data._body;
-                console.log(response)
+                    let response = data._body;
+                    console.log(response)
                     console.log(response.etat)
                     this._details.model.etat_transaction = 3;
                 },
@@ -169,7 +179,7 @@ export class OffreComponent{
         this._offreService.saveSellingPrice(price, this._details.record_details._id)
             .subscribe(data => {
                     this._details.model.etat_transaction = 4;
-                    console.log(data)
+                    this._details.model.prix_vente = price;
                 },
                 error => console.log(error)
             )

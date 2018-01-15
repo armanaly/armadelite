@@ -14,6 +14,7 @@ import {StepService} from "../Engine/step.service";
             <div class="jumbotron" *ngIf="objStep.configuration.header_note && objStep.configuration.header_note != ''">
                 <p [innerHTML] = "objStep.configuration.header_note"></p>
             </div>
+        
             <ul class="items"  *ngIf="_stepService.language == 'fr'" >
                 <li  *ngFor="let valeurList of currentList_fr">
                      <!--data-toggle="tooltip" title=" "-->
@@ -83,12 +84,12 @@ import {StepService} from "../Engine/step.service";
                     </button>
                 </li>
             </ul>
+            </div>
          </div>
          <div *ngIf="_stepService.language == 'en' && objStep.configuration.foot_note && objStep.configuration.foot_note != ''" [innerHTML] = "objStep.configuration.foot_note"></div> 
          <div *ngIf="_stepService.language == 'es' && objStep.configuration.foot_note_es && objStep.configuration.foot_note_es != ''" [innerHTML] = "objStep.configuration.foot_note_es"></div>
          <div *ngIf="_stepService.language == 'fr' && objStep.configuration.foot_note_fr && objStep.configuration.foot_note_fr != ''" [innerHTML] = "objStep.configuration.foot_note_fr"></div>
          <div *ngIf="_stepService.language == 'nl' && objStep.configuration.foot_note_fr && objStep.configuration.foot_note_nl != ''" [innerHTML] = "objStep.configuration.foot_note_nl"></div>
-     </div>
 `
 })
 
@@ -104,6 +105,7 @@ export class ListButtonsComponent {
     currentList_fr;
     currentList_nl;
     currentList_en;
+    listDefault;
     display = false;
 
     constructor(
@@ -144,16 +146,28 @@ export class ListButtonsComponent {
         //     this.display = true;
         // }
         console.log(this._stepService.language)
+        console.log(this.listOfElements)
         for (let datas of this.listOfElements){
             if (datas.name == this.objStep.name){
-                if (typeof datas.list_es !== 'undefined')
+                if (datas.list_es.length > 0)
                     this.currentList_es = datas.list_es;
-                if (typeof datas.list_nl !== 'undefined')
+                else
+                    this.currentList_es = datas.list;
+
+                if (datas.list_nl.length > 0)
                     this.currentList_nl = datas.list_nl;
-                if (typeof datas.list_fr !== 'undefined')
+                else
+                    this.currentList_nl = datas.list;
+
+                if (datas.list_fr.length > 0)
                     this.currentList_fr = datas.list_fr;
-                if (typeof datas.list_en !== 'undefined')
+                else
+                    this.currentList_fr = datas.list;
+
+                if (datas.list_en.length > 0)
                     this.currentList_en = datas.list_en;
+                else
+                    this.currentList_en = datas.list;
                 break;
             }
         }

@@ -20,7 +20,7 @@ export class BackButtonComponent {
     onClick(){
         // console.log(this.stepId);
         let stepIndex = this.idxStepObj;
-        let keyName = this._stepService.step[this.idxStepObj].name;
+        let keyName = this._stepService.steps[this.idxStepObj].name;
         // console.log(this._formService.arraySteps);
         // console.log(keyName);
         // console.log(this.idxStepObj);

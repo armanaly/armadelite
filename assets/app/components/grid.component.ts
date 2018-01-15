@@ -88,7 +88,7 @@ import {ExportService} from "./export.service";
                     </td>
                     
                     <!-- EDIT BUTTON -->
-                    <td *ngIf="_stepService.steps[0].master_name == 'ballet'">
+                    <td *ngIf="app_name == 'ballet'">
                         <a [routerLink]="['/editStudent', item._id, grid_name, master] "> 
                             <button class="btn btn-primary" type="button" > 
                                 <i class="glyphicon glyphicon-edit"> </i>
@@ -98,13 +98,13 @@ import {ExportService} from "./export.service";
     
                     <!--- GROUP MANAGEMENT BUTTON --->
                     <!--*ngIf="item.group_mgt"-->
-                    <td *ngIf="_stepService.steps[0].master_name == 'ballet' && grid_name != 'New demands'" >
+                    <td *ngIf="app_name == 'ballet' && grid_name != 'New demands'" >
                         <a [routerLink]="['/groupManagement', item._id, grid_name, master] ">
                             <button class="btn btn-primary" type="button"> Group </button>
                         </a> 
                     </td>
                     <!-- IF DETAILS IS ACTIVATED IN GRID CONFIG COLLECTION -->
-                    <td *ngIf="item.details.activated && master_name == 'ballet'">
+                    <td *ngIf="item.details.activated && app_name == 'ballet'">
                         <a [routerLink]="['/details', item._id, grid_name] ">
                             <button class="btn btn-primary" type="button"> Detail </button>
                         </a> 

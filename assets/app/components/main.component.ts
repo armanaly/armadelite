@@ -182,7 +182,7 @@ export class MainComponent implements OnInit {
             });
         } // FIN IF COMMENTE POUR TEST EN BAS DE CODE
         console.log(this.listsData);
-        this._stepService.datas = this.listsData.slice();
+        // this._stepService.datas = this.listsData.slice();
 
         var master_type = this._stepService.steps[0].master_type;
         this.appName = this._stepService.steps[0].master_name;
@@ -249,114 +249,114 @@ export class MainComponent implements OnInit {
      this.tmp_id == DATA ID TO RETRIEVE ALL DATAS SELECTED FROM THIS WORKFLOW
      */
 
-    goToStep(curStepId) {
-        console.log("GO TO STEP : " + curStepId);
-        console.log(this._formService);
-
-        for (let i = 0; i < this._stepService.steps.length; i++) {
-
-            if (this._stepService.steps[i].step_id == curStepId) {
-                console.log('STEP ID : ' + this._stepService.steps[i].step_id)
-                switch (this._stepService.steps[i].type) {
-                    case 'click_selection':
-                        console.log('LIST BUTTONS CASE');
-                        console.log(this._stepService.steps[i].step_id);
-                        if (typeof this._stepService.steps[i].configuration.collection != 'undefined') {
-                            var filterList = [];
-                            // for (var item of this._stepService.step) {
-                            //     if (item.step_id == curStepId) {
-                            var collectionName = this._stepService.steps[i].configuration.collection.name;
-                            // console.log(item);
-                            /*
-                             TODO TESTER SI FILTER EXISTE DANS COLLECTION
-                             */
-                            // STEP_ID OU SE TROUVE LE NOM DE LA VARIABLE DE LA VALEUR A FILTRER
-                            var valueToFilter = this._stepService.steps[i].configuration.collection.filter[0].step_id;
-                            console.log(valueToFilter);
-                            console.log(this._stepService.steps[i].configuration.collection.filter[0].step_id);
-                            console.log(this._formService);
-
-                            filterList = this._stepService.steps[i].configuration.collection.filter;
-
-                            if (typeof this._stepService.steps[i].configuration.collection.value != 'undefined') {
-                                var valueToKeep = this._stepService.steps[i].configuration.collection.value;
-                            }
-                            else {
-                                valueToKeep = ''
-                            }
-                            //   this._collectionService.getDatas(collectionName).then(collectionDataReturn => this.lists.push(collectionDataReturn))
-                            console.log('currentStepId: ' + this.current_step_id);
-                            console.log('tmp_id : ' + this.tmp_id);
-                            console.log(this.datas);
-
-                            this._collectionService.getFormData(this.tmp_id, collectionName, filterList, valueToKeep)
-                                .subscribe(data => {
-                                        console.log('apres getFormData()');
-                                        console.log(data);
-
-                                        console.log('STEP SERVICE N' + i);
-                                        console.log(this._stepService.steps[i]);
-                                        this._collectionService.getDatas(this._stepService.steps[i].configuration.collection.name, this._stepService.steps[i].configuration.collection.filter[0].step_id, valueToKeep,'btn')
-                                            .then(result => {
-                                                    console.log(result);
-                                                    this.datas.push({
-                                                        "name": this._stepService.steps[i].name,
-                                                        "list": result
-                                                    });
-
-                                                    this.previousStepId = this.stepId;
-                                                    // this.stepId = this._stepService.step[this.indexStepObj].step_id;
-                                                    console.log(this.stepId);
-                                                    console.log(this.lists);
-                                                    console.log(this.datas);
-                                                    this.stepId = curStepId;
-                                                    console.log(this.stepId);
-                                                },
-                                                error => console.log(error)
-                                                //this.lists.push(data);
-                                            )
-                                    },
-                                    error => console.log(error)
-                                );
-
-                        }
-                        // IF A LIST EXISTS IN STEP SERVICE
-                        if (typeof this._stepService.steps[i].configuration.list != 'undefined') {
-                            this.datas.push({
-                                "name": this._stepService.steps[i].name,
-                                "list": this._stepService.steps[i].configuration.list,
-                                "list_es": this._stepService.steps[i].configuration.list_es,
-                                "loaded": true
-                            });
-                            this.stepId = curStepId;
-                        }
-                        break;
-
-
-                    case 'field_panel':
-                        console.log('FIELD PANEL CASE');
-                        this.stepId = curStepId;
-                        break;
-
-                    default:
-                        console.log('STEP TYPE: ' + this._stepService.steps[i].type + 'DOES NOT EXIST IN STEP.SERVICE ');
-                }
-                break;
-            } //FIN SWITCH
-            this.datas = this._stepService.datas.slice();
-
-        }
-    }
+    // goToStep(curStepId) {
+    //     console.log("GO TO STEP : " + curStepId);
+    //     console.log(this._formService);
+    //
+    //     for (let i = 0; i < this._stepService.steps.length; i++) {
+    //
+    //         if (this._stepService.steps[i].step_id == curStepId) {
+    //             console.log('STEP ID : ' + this._stepService.steps[i].step_id)
+    //             switch (this._stepService.steps[i].type) {
+    //                 case 'click_selection':
+    //                     console.log('LIST BUTTONS CASE');
+    //                     console.log(this._stepService.steps[i].step_id);
+    //                     if (typeof this._stepService.steps[i].configuration.collection != 'undefined') {
+    //                         var filterList = [];
+    //                         // for (var item of this._stepService.step) {
+    //                         //     if (item.step_id == curStepId) {
+    //                         var collectionName = this._stepService.steps[i].configuration.collection.name;
+    //                         // console.log(item);
+    //                         /*
+    //                          TODO TESTER SI FILTER EXISTE DANS COLLECTION
+    //                          */
+    //                         // STEP_ID OU SE TROUVE LE NOM DE LA VARIABLE DE LA VALEUR A FILTRER
+    //                         var valueToFilter = this._stepService.steps[i].configuration.collection.filter[0].step_id;
+    //                         console.log(valueToFilter);
+    //                         console.log(this._stepService.steps[i].configuration.collection.filter[0].step_id);
+    //                         console.log(this._formService);
+    //
+    //                         filterList = this._stepService.steps[i].configuration.collection.filter;
+    //
+    //                         if (typeof this._stepService.steps[i].configuration.collection.value != 'undefined') {
+    //                             var valueToKeep = this._stepService.steps[i].configuration.collection.value;
+    //                         }
+    //                         else {
+    //                             valueToKeep = ''
+    //                         }
+    //                         //   this._collectionService.getDatas(collectionName).then(collectionDataReturn => this.lists.push(collectionDataReturn))
+    //                         console.log('currentStepId: ' + this.current_step_id);
+    //                         console.log('tmp_id : ' + this.tmp_id);
+    //                         console.log(this.datas);
+    //
+    //                         this._collectionService.getFormData(this.tmp_id, collectionName, filterList, valueToKeep)
+    //                             .subscribe(data => {
+    //                                     console.log('apres getFormData()');
+    //                                     console.log(data);
+    //
+    //                                     console.log('STEP SERVICE N' + i);
+    //                                     console.log(this._stepService.steps[i]);
+    //                                     this._collectionService.getDatas(this._stepService.steps[i].configuration.collection.name, this._stepService.steps[i].configuration.collection.filter[0].step_id, valueToKeep,'btn')
+    //                                         .then(result => {
+    //                                                 console.log(result);
+    //                                                 this.datas.push({
+    //                                                     "name": this._stepService.steps[i].name,
+    //                                                     "list": result
+    //                                                 });
+    //
+    //                                                 this.previousStepId = this.stepId;
+    //                                                 // this.stepId = this._stepService.step[this.indexStepObj].step_id;
+    //                                                 console.log(this.stepId);
+    //                                                 console.log(this.lists);
+    //                                                 console.log(this.datas);
+    //                                                 this.stepId = curStepId;
+    //                                                 console.log(this.stepId);
+    //                                             },
+    //                                             error => console.log(error)
+    //                                             //this.lists.push(data);
+    //                                         )
+    //                                 },
+    //                                 error => console.log(error)
+    //                             );
+    //
+    //                     }
+    //                     // IF A LIST EXISTS IN STEP SERVICE
+    //                     if (typeof this._stepService.steps[i].configuration.list != 'undefined') {
+    //                         this.datas.push({
+    //                             "name": this._stepService.steps[i].name,
+    //                             "list": this._stepService.steps[i].configuration.list,
+    //                             "list_es": this._stepService.steps[i].configuration.list_es,
+    //                             "loaded": true
+    //                         });
+    //                         this.stepId = curStepId;
+    //                     }
+    //                     break;
+    //
+    //
+    //                 case 'field_panel':
+    //                     console.log('FIELD PANEL CASE');
+    //                     this.stepId = curStepId;
+    //                     break;
+    //
+    //                 default:
+    //                     console.log('STEP TYPE: ' + this._stepService.steps[i].type + 'DOES NOT EXIST IN STEP.SERVICE ');
+    //             }
+    //             break;
+    //         } //FIN SWITCH
+    //         this.datas = this._stepService.datas.slice();
+    //
+    //     }
+    // }
 
 
 
     // GO TO NEXT STEP ( x + 1)
     goToNextStep(stepIndex) {
-        console.log(this._stepService);
-        console.log(this._formService);
+        if (stepIndex > 0){
+            console.log(this._stepService.steps[stepIndex].name);
+        }
+            console.log(this._formService);
         console.log("GO NEXT STEP");
-        console.log(this._stepService.steps);
-
 
         console.log(stepIndex);
         // let stepId = this._stepService.steps[stepIndex].step_id
@@ -457,20 +457,31 @@ export class MainComponent implements OnInit {
                 }
 
                 if (this._stepService.steps[this.indexStepObj].conditions.length == 1) {
+                    // console.log("1 condition dans step à l'index " + this.indexStepObj)
+                    // let keyCondition = this._stepService.steps[this.indexStepObj].conditions[0].key;
+                    // console.log(keyCondition);
+                    // for (let cond of this._stepService.steps[this.indexStepObj].conditions[0].value){
+                    //     console.log(cond);
+                    //     console.log(this._formService.arraySteps);
+                    //     if (typeof (this._formService.arraySteps.find(x => x[keyCondition] === cond)) != 'undefined') {
+                    //         console.log(condition);
+                    //         condition = true;
+                    //         console.log(condition);
+                    //         break;
+                    //     }
+                    // }
                     console.log("1 condition dans step à l'index " + this.indexStepObj)
                     let keyCondition = this._stepService.steps[this.indexStepObj].conditions[0].key;
-                    console.log(keyCondition);
-                    for (let cond of this._stepService.steps[this.indexStepObj].conditions[0].value){
-                        console.log(cond);
-                        console.log(this._formService.arraySteps);
-                        if (typeof (this._formService.arraySteps.find(x => x[keyCondition] === cond)) != 'undefined') {
-                            console.log(condition);
-                            condition = true;
-                            console.log(condition);
-                            break;
-                        }
-                    }
+                    let valueCondition = this._stepService.steps[this.indexStepObj].conditions[0].value;
 
+                    console.log("valueCondition: " + valueCondition);
+                    console.log("keyCondition: " + keyCondition);
+                    console.log(this._formService.arraySteps.find(x => x[keyCondition] === valueCondition))
+                    // CHECK IF CONDITION OK
+                    if (typeof (this._formService.arraySteps.find(x => x[keyCondition] === valueCondition)) != 'undefined') {
+                        condition = true;
+                        break;
+                    }
 
 
                     // CHECK IF CONDITION OK
@@ -562,11 +573,11 @@ export class MainComponent implements OnInit {
                                         console.log(this.datas);
                                         this.stepId = tmpNewstepId;
                                         // Skip the step if there is only 1 result
-                                        console.log("TEST IF ONLY 1 RECORD");
-                                        if (data.length == 1) {
-                                            this._formService.arraySteps[this.indexStepObj][this._stepService.steps[this.indexStepObj].configuration.form_value.name] = data[0];
-                                            this.goToNextStep(this.indexStepObj);
-                                        }
+                                        // console.log("TEST IF ONLY 1 RECORD");
+                                        // if (data.length == 1) {
+                                        //     this._formService.arraySteps[this.indexStepObj][this._stepService.steps[this.indexStepObj].configuration.form_value.name] = data[0];
+                                        //     this.goToNextStep(this.indexStepObj);
+                                        // }
                                         console.log(this.stepId);
                                     },
                                     error => console.log(error)
@@ -576,25 +587,25 @@ export class MainComponent implements OnInit {
                         else {
                             let leaveFunction = false;
                             console.log(this._stepService.steps[this.indexStepObj].configuration);
-                            if (typeof this._stepService.steps[this.indexStepObj].configuration.list_fr !== 'undefined' ){
-                                if (this._stepService.steps[this.indexStepObj].configuration.list_fr.length == 1)
-                                {
-                                    console.log("1 SEULE VALEUR ALORS GO TO NEXT STEP")
-                                    leaveFunction = true;
-                                    this._formService.arraySteps[this.indexStepObj-1][this._stepService.steps[this.indexStepObj].configuration.form_value.name] = this._stepService.steps[this.indexStepObj].configuration.list_fr[0];
-                                    this.goToNextStep(this.indexStepObj);
-
-                                }
-                            }
-                            if (typeof this._stepService.steps[this.indexStepObj].configuration.list !== 'undefined' && leaveFunction == false ){
-                                if (this._stepService.steps[this.indexStepObj].configuration.list.length == 1)
-                                {
-                                    console.log("1 SEULE VALEUR ALORS GO TO NEXT STEP")
-                                    leaveFunction = true;
-                                    this._formService.arraySteps[this.indexStepObj-1][this._stepService.steps[this.indexStepObj].configuration.form_value.name] = this._stepService.steps[this.indexStepObj].configuration.list[0];
-                                    this.goToNextStep(this.indexStepObj);
-                                }
-                            }
+                            // if (typeof this._stepService.steps[this.indexStepObj].configuration.list_fr !== 'undefined' ){
+                            //     if (this._stepService.steps[this.indexStepObj].configuration.list_fr.length == 1)
+                            //     {
+                            //         console.log("1 SEULE VALEUR ALORS GO TO NEXT STEP")
+                            //         leaveFunction = true;
+                            //         this._formService.arraySteps[this.indexStepObj][this._stepService.steps[this.indexStepObj].configuration.form_value.name] = this._stepService.steps[this.indexStepObj].configuration.list_fr[0];
+                            //         this.goToNextStep(this.indexStepObj);
+                            //
+                            //     }
+                            // }
+                            // if (typeof this._stepService.steps[this.indexStepObj].configuration.list !== 'undefined' && leaveFunction == false ){
+                            //     if (this._stepService.steps[this.indexStepObj].configuration.list.length == 1)
+                            //     {
+                            //         console.log("1 SEULE VALEUR ALORS GO TO NEXT STEP")
+                            //         leaveFunction = true;
+                            //         this._formService.arraySteps[this.indexStepObj][this._stepService.steps[this.indexStepObj].configuration.form_value.name] = this._stepService.steps[this.indexStepObj].configuration.list[0];
+                            //         this.goToNextStep(this.indexStepObj);
+                            //     }
+                            // }
 
                             if (leaveFunction == false) {
 
@@ -604,7 +615,7 @@ export class MainComponent implements OnInit {
                             //this.lists.push(this._stepService.steps[this.indexStepObj].configuration.list);
                             var objLists = {"name": this._stepService.steps[this.indexStepObj].name, "list_fr":[],"list_nl":[],"list_en":[], "list_es":[], "list":[]};
                             if (typeof this._stepService.steps[this.indexStepObj].configuration.list !== 'undefined')
-                                {    objLists.list = this._stepService.steps[this.indexStepObj].configuration.list; }
+                            {    objLists.list = this._stepService.steps[this.indexStepObj].configuration.list; }
                             if (typeof this._stepService.steps[this.indexStepObj].configuration.list_fr !== 'undefined')
                             {    objLists.list_fr = this._stepService.steps[this.indexStepObj].configuration.list_fr; }
                             if (typeof this._stepService.steps[this.indexStepObj].configuration.list_nl !== 'undefined')
@@ -747,13 +758,17 @@ export class MainComponent implements OnInit {
     }
 
     onValueSelected($event) {
-        let tmpObj = {};
-        tmpObj[$event.valueName] = $event.valueSelected;
+        // let tmpObj = {};
+        // tmpObj[$event.valueName] = $event.valueSelected;
 
         let keyToFind = $event.valueName
+        console.log(keyToFind)
+        console.log(this._formService.arraySteps)
         let isFound = false
         for (let i=0; i < this._formService.arraySteps.length; i++){
             if (typeof (this._formService.arraySteps[i][keyToFind]) !== 'undefined'){
+                console.log(this._formService.arraySteps[i])
+                console.log($event.valueSelected)
                 this._formService.arraySteps[i][keyToFind] = $event.valueSelected
                 console.log("I: " + i);
                 isFound = true;

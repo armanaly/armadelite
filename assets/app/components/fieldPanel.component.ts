@@ -58,6 +58,7 @@ import {StepService} from "../Engine/step.service";
                                     <div *ngIf="_stepService.language == 'en'">This field is required</div>
                                     <div *ngIf="_stepService.language == 'es'">Este campo es obligatorio</div>
                                     <div *ngIf="_stepService.language == 'fr'">Champs obligatoire</div>
+                                    <div *ngIf="_stepService.language == 'nl'">Dit veld is vermeld</div>
                                 </div>
                                 <div *ngIf="myGroup.controls[field.name].hasError('min') && myGroup.controls[field.name].touched" class="alert alert-danger">
                                     <p *ngIf="_stepService.language == 'en'">Field must be at least {{field.minlength}} characters long.</p>
@@ -70,8 +71,9 @@ import {StepService} from "../Engine/step.service";
                     <div *ngIf="field.type == 'number'">
                         <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
                              <label *ngIf="_stepService.language == 'en'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label}} </label>
-                             <label *ngIf="_stepService.language == 'es'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_es}} </label>
-                             <label *ngIf="_stepService.language == 'fr'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_fr}} </label>
+                             <!--<label *ngIf="_stepService.language == 'es'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_es}} </label>-->
+                             <!--<label *ngIf="_stepService.language == 'fr'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_fr}} </label>-->
+                             <!--<label *ngIf="_stepService.language == 'nl'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_nl}} </label>-->
                              <div class="col-sm-10">
                              <input *ngIf="i == 0"  
                                     myAutofocus
@@ -102,7 +104,15 @@ import {StepService} from "../Engine/step.service";
                                     formControlName="{{field.name}}"
                                     [formControl]="myGroup.controls[field.name]"
                                     >
-                         <div class="alert alert-danger" role="alert" *ngIf="!myGroup.controls[field.name].valid  && myGroup.controls[field.name].touched"></div>   
+                          <div class="alert alert-danger" role="alert" *ngIf="!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched ">
+                                    <div>ERROR</div>
+                                    <div *ngIf="_stepService.language == 'en'">This field is required</div>
+                                    <div *ngIf="_stepService.language == 'nl'">Dit veld is vermeld</div>
+                                    <div *ngIf="_stepService.language == 'es'">Este campo es obligatorio</div>
+                                    <div *ngIf="_stepService.language == 'fr'">Champs obligatoire</div>
+                          </div>
+                         
+                         
                          <div *ngIf="myGroup.controls[field.name].hasError('min') && myGroup.controls[field.name].touched" class="alert alert-danger">Veuillez indiquer un nombre plus grand</div>
                         
                         </div> 
@@ -271,7 +281,7 @@ export class FieldPanelComponent {
 
                 console.log("objFieldsPanel");
                 console.log(objFieldsPanel);
-                //console.log(objFieldsPanel[this.objStep.name][index])
+                console.log(objFieldsPanel[this.objStep.name][index])
                 if (typeof objFieldsPanel != 'undefined') {
 
                     if (typeof objFieldsPanel[this.objStep.name][index] != 'undefined') {
