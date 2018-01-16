@@ -227,7 +227,7 @@ export class MenuComponent {
     }
 
     isLoggedIn() {
-        return this._authService.isLoggedIn()
+        return this._authService.isLoggedIn(this.appName)
     }
 }
 
