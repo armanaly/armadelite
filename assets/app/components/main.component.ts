@@ -556,12 +556,10 @@ export class MainComponent implements OnInit {
                                         objLists.list_es = data;
                                         objLists.list_en = data;
 
-                                    for (let values of this.datas){
-                                        if (values.name == this._stepService.steps[this.indexStepObj].name){
-                                            this.datas.pop();
-                                            console.log("vider ces valeurs")
+                                        for (let i in this.datas){
+                                            if (this.datas[i].name == this._stepService.steps[this.indexStepObj].name){
+                                                this.datas.splice(parseInt(i),1);
                                         }
-                                        console.log(values)
                                     }
                                         this.lists.push(data);
                                         this.datas.push(objLists);
@@ -624,6 +622,12 @@ export class MainComponent implements OnInit {
                             { objLists.list_en = this._stepService.steps[this.indexStepObj].configuration.list_en;}
                             if (typeof this._stepService.steps[this.indexStepObj].configuration.list_es !== 'undefined')
                             { objLists.list_es = this._stepService.steps[this.indexStepObj].configuration.list_es;}
+
+                            for (let i in this.datas){
+                                if (this.datas[i].name == this._stepService.steps[this.indexStepObj].name){
+                                    this.datas.splice(parseInt(i),1);
+                                }
+                            }
                             this.datas.push(objLists);
 
                             console.log(this._stepService.steps[this.indexStepObj]);

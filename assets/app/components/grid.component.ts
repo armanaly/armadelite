@@ -20,11 +20,11 @@ import {ExportService} from "./export.service";
             </nav>
           </div>
          <div class="col-md-10" align="center">
-             <h2 *ngIf="master != ''">{{master}}</h2>
+             <h2 *ngIf="master != '0' ">{{master}}</h2>
              <h3>{{grid_name}}</h3>
          </div>
        </div>
-       <div>               
+       <div *ngIf="export == true">               
             <button (click)="exportExcel()" class="brown_button" ><i class="glyphicon glyphicon-save" ></i></button>
        </div>
        </div>
