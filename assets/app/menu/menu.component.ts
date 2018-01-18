@@ -127,6 +127,8 @@ export class MenuComponent {
         console.log(this._stepService.steps[0].master_type)
         console.log(this._stepService.steps[0].master_type == 'admin')
         // this.signedIn ||
+        console.log(this.isLoggedIn())
+        console.log(this.preMenu)
         if (this.isLoggedIn() && this._stepService.steps[0].master_type == 'admin' || this.preMenu == 1)
         {
             console.log("DANS PREMENU 1")
@@ -175,7 +177,7 @@ export class MenuComponent {
                 this.router.navigate(['/step']);
             }
             else {
-                if (this.isLoggedIn()  == false && this.firstLoad == true) {
+                if (this.isLoggedIn() == false && this.firstLoad == true) {
                     this.router.navigate(['/signin', this.appName]);
                 }
             }
@@ -227,7 +229,8 @@ export class MenuComponent {
     }
 
     isLoggedIn() {
-        return this._authService.isLoggedIn(this.appName)
+        console.log(this.appName)
+        return this._authService.isLoggedIn()
     }
 }
 

@@ -41,14 +41,17 @@ export class AuthService {
         this.router.navigate(['/signin', app]);
     }
 
-    isLoggedIn(currentApp){
-        let app = localStorage.getItem('app');
-        if (app == currentApp){
+    isLoggedIn(){
+        // console.log(currentApp)
+
+        // let app = localStorage.getItem('app');
+        // console.log(app)
+        // if (app == currentApp){
             return localStorage.getItem('token') !== null;
-        }
-        else{
-            return false
-        }
+        // }
+        // else{
+        //     return false
+        // }
 
     }
 }
