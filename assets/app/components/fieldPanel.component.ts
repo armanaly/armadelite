@@ -25,9 +25,10 @@ import {StepService} from "../Engine/step.service";
                 <div *ngFor="let field of objStep.configuration.form_values; let i = index">
                      <div *ngIf="field.type == 'text'">
                          <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
-                             <label *ngIf="_stepService.language == 'en'" for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label}} </label>
+                             <label *ngIf="_stepService.language == 'en'" for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label_en}} </label>
                              <label *ngIf="_stepService.language == 'es'" for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label_es}} </label>
                              <label *ngIf="_stepService.language == 'fr'" for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label_fr}} </label>
+                              <label *ngIf="_stepService.language == 'nl'" for="{{field.value}}"   class="col-sm-2 control-label" >{{field.label_nl}} </label>
                              <div class="col-sm-10">
                                  <input *ngIf="i == 0"     
                                         myAutofocus
@@ -70,10 +71,10 @@ import {StepService} from "../Engine/step.service";
                      
                     <div *ngIf="field.type == 'number'">
                         <div class="form-group" [ngClass]="{'has-error':!myGroup.controls[field.name].valid && myGroup.controls[field.name].touched}">
-                             <label *ngIf="_stepService.language == 'en'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label}} </label>
-                             <!--<label *ngIf="_stepService.language == 'es'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_es}} </label>-->
-                             <!--<label *ngIf="_stepService.language == 'fr'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_fr}} </label>-->
-                             <!--<label *ngIf="_stepService.language == 'nl'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_nl}} </label>-->
+                             <label *ngIf="_stepService.language == 'en'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_en}} </label>
+                             <label *ngIf="_stepService.language == 'es'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_es}} </label>
+                             <label *ngIf="_stepService.language == 'fr'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_fr}} </label>
+                             <label *ngIf="_stepService.language == 'nl'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_nl}} </label>
                              <div class="col-sm-10">
                              <input *ngIf="i == 0"  
                                     myAutofocus
@@ -125,6 +126,7 @@ import {StepService} from "../Engine/step.service";
                              <label *ngIf="_stepService.language == 'en'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label}} </label>
                              <label *ngIf="_stepService.language == 'es'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_es}} </label>
                              <label *ngIf="_stepService.language == 'fr'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_fr}} </label>
+                             <label *ngIf="_stepService.language == 'nl'" for="{{field.value}}"  class="col-sm-2 control-label" >{{field.label_nl}} </label>
                              <div class="col-sm-10">
                                 <input class="form-control"  
                                     type='date' 
@@ -184,28 +186,31 @@ import {StepService} from "../Engine/step.service";
                 <h4 *ngIf="_stepService.language == 'en'" class="modal-title">Fields mandatory </h4>
                 <h4 *ngIf="_stepService.language == 'es'" class="modal-title">Campos obligatorios</h4>
                 <h4 *ngIf="_stepService.language == 'fr'" class="modal-title">Champs obligatoire</h4>
+                <h4 *ngIf="_stepService.language == 'nl'" class="modal-title">Velden vermeld</h4>
               </div>
               <div class="modal-body">
                 <p *ngIf="_stepService.language == 'en'">THANKS FOR FILL IN ALL THE MANDATOY FIELDS</p>
                 <p *ngIf="_stepService.language == 'es'">GRACIAS POR RELLENAR TODOS LOS CAMPOS</p>
                 <p *ngIf="_stepService.language == 'fr'">Merci de remplir tous les champs obligatoires</p>
+                <p *ngIf="_stepService.language == 'nl'">Bedankt alles velden zijn vermeld</p>
               </div>
               <div class="modal-footer">
                 <button *ngIf="_stepService.language == 'en'" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button *ngIf="_stepService.language == 'es'" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                 <button *ngIf="_stepService.language == 'fr'" type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                <button *ngIf="_stepService.language == 'fr'" type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
               </div>
             </div>
         
           </div>
         </div>
-             <div *ngIf="btnDisabled"><i class="fa fa-spinner fa-spin" style="font-size:96px"></i></div>       
+             <!--<div *ngIf="btnDisabled"><i class="fa fa-spinner fa-spin" style="font-size:96px"></i></div>       -->
              <!--<button type="submit" class="btn btn-primary" [disabled]="myGroup.invalid">Valider</button>-->
              <div align="center">
                 <button [disabled]="btnDisabled" *ngIf="_stepService.language == 'en'" type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Send   </button>
                 <button [disabled]="btnDisabled" *ngIf="_stepService.language == 'es'" type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Enviar  </button>
                 <button [disabled]="btnDisabled" *ngIf="_stepService.language == 'fr'" type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Envoyer  </button>
-                <button [disabled]="btnDisabled" *ngIf="_stepService.language == 'nl'" type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   VERZENDEN  </button>
+                <button [disabled]="btnDisabled" *ngIf="_stepService.language == 'nl'" type="button" data-target="#myModal" (click)="onClick()" class="btn btn-default btn-lg">   Verzenden  </button>
              </div>
                 </div>   
     </form>
@@ -235,7 +240,7 @@ export class FieldPanelComponent {
         console.log('NgOnInit');
         console.log(this.objStep);
         this.app_name = this.objStep.master_name;
-        // CHECK IF THIS MUST DISPLAYED
+        /* CHECK IF THIS MUST DISPLAYED*/
         if (this.objStep.conditions.length > 0) {
             let valueCondition = this.objStep.conditions[0].value;
             let keyCondition = this.objStep.conditions[0].key;
@@ -243,10 +248,8 @@ export class FieldPanelComponent {
             console.log(keyCondition);
             console.log(this.stepIdx);
             console.log(this._formService);
-            // console.log(this._formService.arraySteps.find(keyCondition));
 
             if (typeof (this._formService.arraySteps.find(x => x[keyCondition] === valueCondition)) != 'undefined') {
-                // if (valueCondition == this._formService.arraySteps[tmpStepIdx][keyCondition]){
                 this.tempDisplay = true;
             }
         }
@@ -259,9 +262,8 @@ export class FieldPanelComponent {
         if (this.tempDisplay) {
 
             console.log(this.objStep);
-            // ADD ALL SPECIFIC CONTROL FOR EACH FIELD
+            /* ADD ALL SPECIFIC CONTROL FOR EACH FIELD */
             for (let index = 0; index < this.objStep.configuration.form_values.length; index++) {
-                //console.log(this.objStep.configuration.form_values[index])
                 if (typeof (this.objStep.configuration.form_values[index].autofocus) == 'undefined') {
                     this.objStep.configuration.form_values[index].autofocus = false;
                 }
@@ -276,12 +278,11 @@ export class FieldPanelComponent {
                     this.myGroup.addControl([this.objStep.configuration.form_values[index].name].toLocaleString(), new FormControl('', [Validators.required, Validators.minLength(2)]));
                 }
 
-                // SET FIELD VALUE IF A DATA HAS BEEN INSERTED PREVIOUSLY
+                /* SET FIELD VALUE IF A DATA HAS BEEN INSERTED PREVIOUSLY */
                 var objFieldsPanel = this._formService.arraySteps.find(y => y["nom"] === this.objStep.name);
 
                 console.log("objFieldsPanel");
                 console.log(objFieldsPanel);
-                console.log(objFieldsPanel[this.objStep.name][index])
                 if (typeof objFieldsPanel != 'undefined') {
 
                     if (typeof objFieldsPanel[this.objStep.name][index] != 'undefined') {
@@ -301,18 +302,17 @@ export class FieldPanelComponent {
 
         }
 
-        // validatePhone(c: FormControl) {
-        //     let PHONE_REGEXP = /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i;
-        //     return PHONE_REGEXP.test(c.value) ? null : {
-        //         validatePhone: {
-        //             valid: false
-        //         }
-        // };
+        /* validatePhone(c: FormControl) {
+             let PHONE_REGEXP = /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i;
+             return PHONE_REGEXP.test(c.value) ? null : {
+                 validatePhone: {
+                     valid: false
+                 }
+         };*/
     }
 
 
     onClick() {
-        // onSubmit(){
         console.log(this.arr);
         console.log(this.myGroup.controls);
         console.log(this.myGroup.invalid);
@@ -325,13 +325,13 @@ export class FieldPanelComponent {
             console.log(eval(this.objStep.name));
             console.log(this.objStep.configuration.form_values[0].name);
             console.log(eval(this.objStep.name)[this.objStep.configuration.form_values[0].name].value);
-            console.log(this.objStep.configuration.form_values);
+
             //  console.log(eval(this.objStep.name)[this.objStep.configuration.form_values[1].name].value);
 
             var valuesName = [];
             var valuesSelected = [];
             for (let index = 0; index < this.objStep.configuration.form_values.length; index++) {
-                valuesName.push(this.objStep.configuration.form_values[index].name)
+                valuesName.push(this.objStep.configuration.form_values[index].name);
                 valuesSelected.push(eval(this.objStep.name)[this.objStep.configuration.form_values[index].name].value);
             }
             console.log(valuesSelected);
@@ -346,7 +346,7 @@ export class FieldPanelComponent {
 
         }
         else {
-            $("#myModal").modal('show')
+            $("#myModal").modal('show');
         }
     }
 }

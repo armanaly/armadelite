@@ -372,14 +372,14 @@ export class MainComponent implements OnInit {
         /*
             BUG POSSIBLE SI CE N EST PAS LE DERNIERE STEP DANS STEPS ARRAY
          */
-        // IF WE ARE ON THE LAST STEP OF THE FORM WE SAVE THE FORM IN DB, SEND AN EMAIL AND SHOW A MESSAGE TO THE USER
+        /* IF WE ARE ON THE LAST STEP OF THE FORM WE SAVE THE FORM IN DB, SEND AN EMAIL AND SHOW A MESSAGE TO THE USER */
         let nbSteps = this._stepService.steps.length;
         nbSteps = nbSteps - 1;
         if (this.indexStepObj == nbSteps) {
             console.log('save form');
             console.log(this._formService.arraySteps);
 
-            // SAVE UPLOADED FILES
+            /* SAVE UPLOADED FILES */
             this._saveService.saveFiles()
                 .subscribe(
                     data => {
@@ -389,15 +389,15 @@ export class MainComponent implements OnInit {
                         for (let i in data) {
                             console.log(data[i]);
                             arrayFiles.push({"fileName":data[i].step_name, "file_url": data[i].file_url})
-                            // for (let j = 0; j < this._formService.arraySteps.length; j++) {
-                            //     console.log(this._formService.arraySteps[j].nom);
-                            //     console.log(data[i].step_name);
-                            //     //if (this._formService.arraySteps[j].nom == data[i].step_name) {
-                            //         this._formService.arraySteps[j].details = [{ "file_url": data[i].file_url}];
-                            //
-                            //       //  break;
-                            //     //}
-                            // }
+                            /*for (let j = 0; j < this._formService.arraySteps.length; j++) {
+                                console.log(this._formService.arraySteps[j].nom);
+                                console.log(data[i].step_name);
+                                //if (this._formService.arraySteps[j].nom == data[i].step_name) {
+                                    this._formService.arraySteps[j].details = [{ "file_url": data[i].file_url}];
+
+                                  //  break;
+                                //}
+                            }*/
                         }
 
                         if (arrayFiles.length > 0 ){
@@ -405,7 +405,7 @@ export class MainComponent implements OnInit {
                         }
                         console.log(this._formService.arraySteps);
 
-                        //SAVE FORM DATA
+                        /* SAVE FORM DATA */
                         this._saveService.saveData(this._stepService.steps[this.indexStepObj].step_id,this.appName)
                             .subscribe(
                                 data => {
@@ -413,7 +413,7 @@ export class MainComponent implements OnInit {
                                     if (typeof this._stepService.steps[this.indexStepObj].configuration.mail_id != 'undefined') {
                                         console.log("SEND NOTIFICATION");
                                         console.log(data._body)
-                                        // SEND MAIL CONFIRMATION
+                                        /* SEND MAIL CONFIRMATION */
                                         this._mailService.sendMail(this._stepService.steps[this.indexStepObj].configuration.mail_id, data._body, this.appName)
                                             .subscribe(
                                                 mailState => {
@@ -510,7 +510,7 @@ export class MainComponent implements OnInit {
                     this.indexStepObj++;
             }
 
-            // TEMPORARY STEP_ID BECAUSE WE NEED TO WAIT FOR ASYNCHROUNOUS QUERY
+            /* TEMPORARY STEP_ID BECAUSE WE NEED TO WAIT FOR ASYNCHROUNOUS QUERY */
             var tmpNewstepId = this._stepService.steps[this.indexStepObj].step_id;
 
             /* IF LIST BUTTON COMPONENT */
@@ -808,8 +808,7 @@ export class MainComponent implements OnInit {
         console.log($event);
         console.log($event.stepIdx);
         console.log($event.name);
-        // console.log(this._formService.arraySteps);
-        // console.log($event.valueName);
+
         this._formService.current_step_id = $event.stepId;
         // this._formService.previous_step_id = this.stepId;
         for (let j = 0; j < this._formService.arraySteps.length; j++) {
@@ -828,7 +827,6 @@ export class MainComponent implements OnInit {
                     console.log("newValue: " + newValue);
 
                     this._formService.arraySteps[j][tmpKeyName][i][keyObject] = newValue;
-                    //this._formService.arraySteps[j][eval(tmpSave)] = newValue;
                     console.log(this._formService.arraySteps[j][tmpKeyName][i][keyObject]);
                     console.log(' ');
                 }
