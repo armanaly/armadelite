@@ -1,22 +1,20 @@
+import {StepService} from "../../Engine/step.service";
 declare const $ : any;
 import {Component, Input, Output, EventEmitter} from '@angular/core'
 import {Router, NavigationExtras, ActivatedRoute} from '@angular/router';
-// import {StepService} from "../Engine/step.service";
 import {Http} from "@angular/http";
 import {GroupService} from "./group.service";
-import {forEach} from "../../../../public/js/vendor/@angular/router/src/utils/collection";
 import {GridPanelService} from "../grid.service";
 import {BalletDetailsService} from "./balletDetails.service";
-import {FormControl, FormGroup} from "../../../../public/js/vendor/@angular/forms/src/model";
-import {Validators} from "../../../../public/js/vendor/@angular/forms/src/validators";
+
 import {Student} from "./student";
 import {StudentService} from "./student.service";
 @Component({
-    selector: 'group',
+    selector: 'edit_student',
     template: `
     <div  *ngIf="display_edit"> 
           
-          <div class="panel-heading panel-heading-custom">
+          <div  class="{{_stepService.template.panel_heading}}">
             <div  class="row" align="left">
                 <div class="col-md-2">
                     <nav class="form-navArrow" *ngIf="display_edit">
@@ -25,7 +23,7 @@ import {StudentService} from "./student.service";
                     </nav>
                 </div>
                 <div class="col-md-10" align="center">
-                    <h2>{{student_info.profile[1].firstname}}  {{student_info.profile[0].nom}}</h2>
+                     <h2><b class="text-uppercase">{{student_info.profile[1].nom}}</b> {{student_info.profile[0].firstname}} </h2>
                 </div>
             </div>
            </div>
@@ -67,7 +65,17 @@ import {StudentService} from "./student.service";
                              <option *ngFor="let audition of auditions" [value]="audition">{{audition}}</option>
                         </select>
                     </div>
-                </div>               
+                </div> 
+                <div class="form-group">
+                    <label for="DURATION" class="col-sm-2 control-label" >Duration</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="duration"
+                            [(ngModel)]="model.duration" name="duration"
+                            #duration="ngModel" >
+                             <option *ngFor="let duration of durations" [value]="duration">{{duration}}</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="Father" class="col-sm-2 control-label" >Father</label>
                     <div class="col-sm-10">
@@ -182,7 +190,7 @@ export class StudentComponent {
     constructor(
         private router: Router, private _gridService : GridPanelService,
         private _groupService: GroupService,  private _balletDetailsService: BalletDetailsService,
-        private _studentService: StudentService,
+        private _studentService: StudentService, private _stepService: StepService,
         private route: ActivatedRoute, private _http: Http){}
 
     private sub: any;
@@ -197,8 +205,12 @@ export class StudentComponent {
     course_type;
     stage;
 
-    becas = ['15%', '20%',
+    auditions = ['MADRID','BARCELONA', 'ALICANTE', 'NOVELDA','VIDEO AUDITION']
+
+    becas = ['0','15%', '20%',
         '25%', '50%', '75%', '100%'];
+
+    durations = ["1","2","3"];
 
     ngOnInit()
     {
@@ -215,7 +227,7 @@ export class StudentComponent {
                     console.log(data)
                     this.student_info = data;
                     let token = localStorage.getItem('token');
-                    this.model = new Student(data._id,data.DNI,data.BECA, data.father, data.intolerencia, data.email2, data.phone2, data.notes, token, data.course_type, data.audition);
+                    this.model = new Student(data._id,data.DNI,data.BECA, data.father, data.intolerencia, data.email2, data.phone2, data.notes, token, data.course_type, data.audition, data.duration);
                     console.log(this.model);
                     this.display_edit = true;
                 },

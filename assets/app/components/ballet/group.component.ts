@@ -5,13 +5,11 @@ import {Http} from "@angular/http";
 import {GroupService} from "./group.service";
 import {forEach} from "../../../../public/js/vendor/@angular/router/src/utils/collection";
 import {GridPanelService} from "../grid.service";
+import {StepService} from "../../Engine/step.service";
 @Component({
     selector: 'group',
     template: `
-    
-
- 
-    <div class="panel-heading panel-heading-custom" *ngIf="display">
+    <div  class="{{_stepService.template.panel_heading}}" *ngIf="display">
         <div  class="row" align="left">
             <div class="col-md-2">
                  <nav class="form-navArrow">
@@ -77,7 +75,7 @@ export class GroupComponent {
     constructor(
                 private router: Router, private _gridService : GridPanelService,
                  private _groupService: GroupService,
-                private route: ActivatedRoute, private _http: Http){}
+                private route: ActivatedRoute, private _http: Http,private _stepService: StepService){}
 
 
     private sub: any;

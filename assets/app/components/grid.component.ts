@@ -98,7 +98,7 @@ import {ExportService} from "./export.service";
     
                     <!--- GROUP MANAGEMENT BUTTON --->
                     <!--*ngIf="item.group_mgt"-->
-                    <td *ngIf="app_name == 'ballet' && grid_name != 'New demands'" >
+                    <td *ngIf="item.details.group" >
                         <a [routerLink]="['/groupManagement', item._id, grid_name, master] ">
                             <button class="btn btn-primary" type="button"> Group </button>
                         </a> 

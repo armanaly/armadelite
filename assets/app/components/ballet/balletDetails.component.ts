@@ -19,7 +19,7 @@ import {BalletDetailsService} from "./balletDetails.service";
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
 @media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}</style>
               
-        <div class="panel-heading panel-heading-custom" *ngIf="display">
+        <div  class="{{_stepService.template.panel_heading}}" *ngIf="display">
             <div  class="row" align="left">
                 <div class="col-md-2">
                    <nav class="form-navArrow" *ngIf="display">
@@ -27,9 +27,9 @@ import {BalletDetailsService} from "./balletDetails.service";
                         <button class="btn btn-warning"><i class="glyphicon glyphicon-triangle-left" ></i>BACK</button></a>
                    </nav>
                 </div>
-            <div class="col-md-10" align="center">
-                <h2><b class="text-uppercase">{{record_details.profile[1].nom}}</b> {{record_details.profile[0].firstname}} </h2>
-            </div>
+                <div class="col-md-10" align="center">
+                    <h2><b class="text-uppercase">{{record_details.profile[1].nom}}</b> {{record_details.profile[0].firstname}} </h2>
+                </div>
         </div>
        </div>
   

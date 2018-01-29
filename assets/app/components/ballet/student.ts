@@ -11,7 +11,8 @@ export class Student {
         public notes: string,
         public token: string,
         public course_type: string,
-        public audition: string
+        public audition: string,
+        public duration
 
     ) {  }
 
