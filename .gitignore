@@ -2,11 +2,10 @@ node_modules/*
 +typings/
 .vscode/
 code/
-launchFlask.bat
-public/js//app/global.js
+
 node_modules/
 static/
 templates/
-/imports/
+
 'node_modules' 
 public/images/logos voitures/
