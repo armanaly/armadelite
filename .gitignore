@@ -2,10 +2,11 @@ node_modules/*
 +typings/
 .vscode/
 code/
-
+/imports
 node_modules/
 static/
 templates/
 
 'node_modules' 
 public/images/logos voitures/
+
