@@ -7,7 +7,7 @@ import {ExportService} from "./export.service";
 @Component({
     selector: 'grid-panel',
     template: `
-       <div  class="{{_stepService.template.panel_heading}}" align="center">
+       <div  class="{{_stepService.template.panel_heading}}" >
          <div  class="row" align="left">
           <div class="col-md-2">
             <nav class="form-navArrow">
@@ -24,7 +24,7 @@ import {ExportService} from "./export.service";
              <h3>{{grid_name}}</h3>
          </div>
        </div>
-       <div *ngIf="export == true">               
+       <div *ngIf="export" align="left">               
             <button (click)="exportExcel()" class="brown_button" ><i class="glyphicon glyphicon-save" ></i></button>
        </div>
        </div>
@@ -90,7 +90,7 @@ import {ExportService} from "./export.service";
                     <!-- EDIT BUTTON -->
                     <td *ngIf="app_name == 'ballet'">
                         <a [routerLink]="['/editStudent', item._id, grid_name, master] "> 
-                            <button class="btn btn-primary" type="button" > 
+                            <button class="{{_stepService.template.list_btn}}"  type="button" > 
                                 <i class="glyphicon glyphicon-edit"> </i>
                             </button>
                         </a> 
@@ -100,13 +100,13 @@ import {ExportService} from "./export.service";
                     <!--*ngIf="item.group_mgt"-->
                     <td *ngIf="item.details.group" >
                         <a [routerLink]="['/groupManagement', item._id, grid_name, master] ">
-                            <button class="btn btn-primary" type="button"> Group </button>
+                            <button class="{{_stepService.template.list_btn}}"  type="button"> Group </button>
                         </a> 
                     </td>
                     <!-- IF DETAILS IS ACTIVATED IN GRID CONFIG COLLECTION -->
                     <td *ngIf="item.details.activated && app_name == 'ballet'">
                         <a [routerLink]="['/details', item._id, grid_name] ">
-                            <button class="btn btn-primary" type="button"> Detail </button>
+                            <button class="{{_stepService.template.list_btn}}"  type="button"> Detail </button>
                         </a> 
                     </td>
                     <!-- AUTO DETAILS IF DETAILS IS ACTIVATED IN GRID CONFIG COLLECTION -->
@@ -145,21 +145,23 @@ import {ExportService} from "./export.service";
     filterActivated = false;
     master = "";
     app_name = "";
-
+    export = false;
     ngOnInit() {
-        console.log( this._stepService.menu_level);
+        // console.log( this._stepService.menu_level);
         this.grid_name = this.route.snapshot.queryParams["grid_name"];
         this.master = this.route.snapshot.queryParams["master"];
-        // this.app_name = this.route.snapshot.queryParams["app_name"];
         this.app_name = localStorage.getItem('app')
 
-        console.log(this.app_name);
-        console.log(this.master)
+        // console.log(this.app_name);
+        // console.log(this.master)
         if(this.master != ''){
             this._gridService.getDatas(this.grid_name, this.master)
                 .subscribe(data => {
-                        console.log(data)
-                        console.log(this._gridService)
+                         // console.log(data)
+                         // console.log(this._gridService)
+                        if (typeof this._gridService.config.export !== 'undefined'){
+                            this.export = this._gridService.config.export;
+                        }
                     },
                     error => console.log(error)
                 )
@@ -167,8 +169,8 @@ import {ExportService} from "./export.service";
         else {
             this._gridService.getDatas(this.grid_name, '')
                 .subscribe(data => {
-                    console.log(data)
-                    console.log(this._gridService)
+                    // console.log(data)
+                    // console.log(this._gridService)
                     },
             error => console.log(error)
         )
@@ -181,8 +183,8 @@ import {ExportService} from "./export.service";
         this.myListData = this._gridService.dataGrid;
         this.keysName = this._gridService.keysName;
 
-        console.log(this._gridService.keysName);
-        console.log(this._gridService);
+        // console.log(this._gridService.keysName);
+        // console.log(this._gridService);
         this.display = true;
 
 }
@@ -219,10 +221,10 @@ import {ExportService} from "./export.service";
     updateCheckBox($event, item){
        // let value = $event.target.getAttribute('value');
         let value =$event.target.checked;
-        console.log(item)
-        console.log($event.target)
+        // console.log(item)
+        // console.log($event.target)
         let fieldName = $event.target.name;
-        console.log(this.master)
+        // console.log(this.master)
         this._gridService.updateCheckbox(value,item._id,this.master, this.app_name, fieldName)
             .subscribe(
                 data => console.log(data),
@@ -245,38 +247,39 @@ import {ExportService} from "./export.service";
             )
     }
     filter(event: any){
-        console.log(event.target);
+        // console.log(event.target);
         //if (event.target.value ==''){
-        console.log("passe par grid cmp");
+        // console.log("passe par grid cmp");
             //}else {
-        console.log(event);
-        console.log(this. _gridService.dataGrid);
+        // console.log(event);
+        // console.log(this. _gridService.dataGrid);
         this._gridService.filterData(event.target.value, event.srcElement.id);}
         //  this.filterActivated = true;
     //}
 
     exportExcel(){
-        this.grid_name
-        this.master
-        console.log(this._gridService.dataGrid)
-        console.log("XXXXXX")
-        this._exportService.toExcel(this.grid_name,this.master)
+        // this.grid_name
+        // this.master
+        // console.log(this._gridService.dataGrid)
+        // console.log("XXXXXX")
+        let export_id = 0
+        if (typeof this._gridService.config.export_id !== 'undefined')
+        {
+            export_id = this._gridService.config.export_id;
+        }
+        this._exportService.toExcel(this.grid_name,this.master,this._gridService.config.export_id)
             .subscribe(
                 data => {
-                    console.log(data)
-                    // var MIME_TYPE = "application/x-xls";
-                    //
-                    // var blob = new Blob([data], {type: MIME_TYPE});
-                    // window.location.href = window.URL.createObjectURL(blob);
-
+                    // console.log(data)
+                    let fileName = this.grid_name + ".csv"
                     let blob = new Blob([data], { type: 'text/csv' });
                     let url= window.URL.createObjectURL(blob);
                     if(navigator.msSaveOrOpenBlob) {
-                        navigator.msSaveBlob(blob, 'Book.csv');
+                        navigator.msSaveBlob(blob, fileName);
                     } else {
                         let a = document.createElement('a');
                         a.href = url;
-                        a.download = 'Book.csv';
+                        a.download = fileName;
                         document.body.appendChild(a);
                         a.click();
                         document.body.removeChild(a);

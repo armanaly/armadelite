@@ -11,9 +11,13 @@ import {StepService} from "../Engine/step.service";
          <div *ngIf="_stepService.language == 'fr'" class="{{_stepService.template.panel_heading}}"><p class="text-uppercase">{{objStep.configuration.labelPanel_fr}}</p> </div>
          <div *ngIf="_stepService.language == 'nl'" class="{{_stepService.template.panel_heading}}"><p class="text-uppercase">{{objStep.configuration.labelPanel_nl}}</p> </div>
          <div class="panel-body" >
-            <div class="jumbotron" *ngIf="objStep.configuration.header_note && objStep.configuration.header_note != ''">
-                <p [innerHTML] = "objStep.configuration.header_note"></p>
+            <div class="jumbotron" *ngIf="_stepService.language == 'en' && objStep.configuration.header_note_en && objStep.configuration.header_note_en != ''">
+                <p [innerHTML] = "objStep.configuration.header_note_en"></p>
             </div>
+            <div class="jumbotron" *ngIf="_stepService.language == 'es' && objStep.configuration.header_note_es && objStep.configuration.header_note_es != ''">
+                <p [innerHTML] = "objStep.configuration.header_note_es"></p>
+            </div>
+            
         
             <ul class="items"  *ngIf="_stepService.language == 'fr'" >
                 <li  *ngFor="let valeurList of currentList_fr">
@@ -85,11 +89,12 @@ import {StepService} from "../Engine/step.service";
                 </li>
             </ul>
             </div>
+            <div class="{{_stepService.template.panel_heading}}" *ngIf="_stepService.language == 'en' && objStep.configuration.foot_note_en && objStep.configuration.foot_note_en != ''" [innerHTML] = "objStep.configuration.foot_note_en"></div> 
+            <div class="{{_stepService.template.panel_heading}}" *ngIf="_stepService.language == 'es' && objStep.configuration.foot_note_es && objStep.configuration.foot_note_es != ''" [innerHTML] = "objStep.configuration.foot_note_es"></div>
+            <div class="{{_stepService.template.panel_heading}}" *ngIf="_stepService.language == 'fr' && objStep.configuration.foot_note_fr && objStep.configuration.foot_note_fr != ''" [innerHTML] = "objStep.configuration.foot_note_fr"></div>
+            <div class="{{_stepService.template.panel_heading}}" *ngIf="_stepService.language == 'nl' && objStep.configuration.foot_note_fr && objStep.configuration.foot_note_nl != ''" [innerHTML] = "objStep.configuration.foot_note_nl"></div>
          </div>
-         <div *ngIf="_stepService.language == 'en' && objStep.configuration.foot_note && objStep.configuration.foot_note != ''" [innerHTML] = "objStep.configuration.foot_note"></div> 
-         <div *ngIf="_stepService.language == 'es' && objStep.configuration.foot_note_es && objStep.configuration.foot_note_es != ''" [innerHTML] = "objStep.configuration.foot_note_es"></div>
-         <div *ngIf="_stepService.language == 'fr' && objStep.configuration.foot_note_fr && objStep.configuration.foot_note_fr != ''" [innerHTML] = "objStep.configuration.foot_note_fr"></div>
-         <div *ngIf="_stepService.language == 'nl' && objStep.configuration.foot_note_fr && objStep.configuration.foot_note_nl != ''" [innerHTML] = "objStep.configuration.foot_note_nl"></div>
+         
 `
 })
 

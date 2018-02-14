@@ -10,9 +10,9 @@ export class ExportService {
     constructor (private _http: Http) {}
 
 
-    toExcel(course_type,stage){
+    toExcel(course_type,stage,export_id){
 
-        let body = JSON.stringify({"course_type" : course_type, "stage": stage});
+        let body = JSON.stringify({"course_type" : course_type, "stage": stage, "export_id": export_id});
         let headers= new Headers({'Content-Type': 'application/json'});
         // headers.append('Content-Type', 'application/json');
       // headers.append('responseType', ResponseContentType.Blob);

@@ -6,8 +6,8 @@ import {AuthService} from "../auth/auth.service";
 @Component({
     selector: 'grid-panel',
     template: `
-    <div align="right" >
-        <button (click)="logout()" class="btn btn-warning" ><i class="glyphicon glyphicon-log-out" ></i></button>
+     <div class="{{_stepService.template.panel_heading}}" *ngIf="preMenu == 1"  >
+         <button (click)="logout()" class="btn btn-warning" ><i class="glyphicon glyphicon-log-out" ></i></button>
     </div>
     <div class="{{_stepService.template.panel_heading}}" *ngIf="preMenu == 2" >
         <div  class="row" align="left" >
@@ -21,8 +21,11 @@ import {AuthService} from "../auth/auth.service";
                 </nav>
             </div>
         
-           <div class="col-md-10" align="center">
+           <div class="col-md-9" align="center">
                 <h2>{{val_level2}}</h2>
+           </div>
+           <div class="col-md-1" align="center">
+                <button (click)="logout()" class="btn btn-warning" ><i class="glyphicon glyphicon-log-out" ></i></button>
            </div>
           
         </div>
@@ -37,7 +40,7 @@ import {AuthService} from "../auth/auth.service";
                     <span *ngIf="grid.display">
                         
                             <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid.name, 'master': 0, 'app_name': appName}"> 
-                                <button type="button" class="btn btn-primary btn-lg" >{{grid.name}}</button>    
+                                <button type="button" class="{{_stepService.template.list_btn}}" >{{grid.name}}</button>    
                             </a>
                     </span>
                 </div>
@@ -50,7 +53,7 @@ import {AuthService} from "../auth/auth.service";
                 <!--steps from grids-->
                  <!--{{this.preMenu}}-->
                  <div *ngFor="let btn of preMenuLst" align="center">
-                    <button class="btn btn-primary btn-lg"  type="button"  style="width: 500px"
+                    <button class="{{_stepService.template.list_btn}}"  type="button"  style="width: 500px"
                         (click)="getGridsBtn($event, btn)"
                         value="{{btn.children}}">{{btn}}
                     </button>
@@ -65,7 +68,7 @@ import {AuthService} from "../auth/auth.service";
                     <!--<div *ngIf="grid.display">-->
                        
                         <a [routerLink]="['/grid']" [queryParams]="{'grid_name': grid.children, 'master': val_level2, 'app_name': appName}">
-                            <button type="button" style="width: 500px" class="btn btn-primary btn-lg"><span  class="badge pull-left">{{grid.nbRecords}}</span><span> {{grid.children}}</span></button>
+                            <button type="button" style="width: 500px" class="{{_stepService.template.list_btn}}" ><span  class="badge pull-left">{{grid.nbRecords}}</span><span> {{grid.children}}</span></button>
                             <!--<button type="button" style="width: 500px" class="btn btn-primary btn-lg" > {{grid}}</button> -->
                         </a>
                         <br><br>   

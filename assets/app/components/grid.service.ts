@@ -14,6 +14,7 @@ export class GridPanelService {
     colTitle = [];
     keysName_details = [];
     colTitle_details = [];
+    config = {"export":false,"export_id":0};
     originalData = this.dataGrid;
     key;
     value;
@@ -32,22 +33,19 @@ export class GridPanelService {
             {
 
                 let data = response.json();
-                console.log(data);
-                console.log(data[0].config);
-                console.log(data[0].config_details);
+                this.config = data[0].details;
+
+                // console.log(data);
+                // console.log(data[0].config);
+                // console.log(data[0].config_details);
                 for (var i in data[0].config){
                     // if (key != '_id' && key != 'step_id'){
-                    console.log(data[0].config[i]);
+                    // console.log(data[0].config[i]);
                     // console.lota[0].config[i] === "object"){
                     var result = "";
                     if(typeof data[0].config[i].field_panel_name != 'undefined' ) {
                         //var j = 0;
                         for (var q in data[0].config[i].field_panel_values){
-                            // console.log(p)
-                            // console.log(q);
-                            // result += p + " , " + data[0].colNames[i][p] + "\n";
-                            // console.log(p+"_"+data[0].colNames[i][p][j])
-                            // this.keysName.push(p+"_"+data[0].colNames[i][p][j]);
                             this.keysName.push(data[0].config[i].field_panel_name + '_' + data[0].config[i].field_panel_values[q].data);
                             let objColTitle = {title:'',key:'',type:'', filterable: false}
                             objColTitle.title = data[0].config[i].field_panel_values[q].title;
@@ -58,8 +56,6 @@ export class GridPanelService {
                                 objColTitle.filterable = true;
                             }
                             this.colTitle.push(objColTitle);
-                            // console.log(data[0].colNames[i][p])
-                            //j++;
                         }
                     }
                     else if(typeof data[0].config[i].type != 'undefined' ) {
@@ -81,9 +77,8 @@ export class GridPanelService {
                         }
                     }
                     else{
-
                         this.keysName.push(data[0].config[i].data);
-                        console.log(data[0].config[i])
+                        // console.log(data[0].config[i])
                         if (typeof (data[0].config[i].filterable) != 'undefined'){
                             this.colTitle.push({"title": data[0].config[i].title, "key": data[0].config[i].data, "type": "standard", "filterable" : true});
                             }
@@ -111,8 +106,8 @@ export class GridPanelService {
                      }
                  }
                 data.shift();
-                console.log(this.keysName);
-                console.log(this.colTitle);
+                // console.log(this.keysName);
+                // console.log(this.colTitle);
                 this.dataGrid = data;
                 this.originalData = this.dataGrid;
                 return 'ok'
