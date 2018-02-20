@@ -6,8 +6,11 @@ import {AuthService} from "../auth/auth.service";
 @Component({
     selector: 'grid-panel',
     template: `
-     <div class="{{_stepService.template.panel_heading}}" *ngIf="preMenu == 1"  >
-         <button (click)="logout()" class="btn btn-warning" ><i class="glyphicon glyphicon-log-out" ></i></button>
+     <div class="{{_stepService.template.panel_heading}}" *ngIf="preMenu == 1"   >
+         <!--<button (click)="logout()" class="btn btn-warning" ><i class="glyphicon glyphicon-log-out" ></i></button>-->
+         <div align="right">
+            <button (click)="logout()" class="btn btn-warning" ><img src="/images/icones/if_door_open.png"> </button>
+        </div>
     </div>
     <div class="{{_stepService.template.panel_heading}}" *ngIf="preMenu == 2" >
         <div  class="row" align="left" >
@@ -24,8 +27,9 @@ import {AuthService} from "../auth/auth.service";
            <div class="col-md-9" align="center">
                 <h2>{{val_level2}}</h2>
            </div>
-           <div class="col-md-1" align="center">
-                <button (click)="logout()" class="btn btn-warning" ><i class="glyphicon glyphicon-log-out" ></i></button>
+           <div class="col-md-1" align="right">
+                <!--<button (click)="logout()" class="btn btn-warning" ><i class="glyphicon glyphicon-log-out" ></i></button>-->
+                <button (click)="logout()" class="btn btn-warning" ><img src="/images/icones/if_door_open.png"> </button>
            </div>
           
         </div>

@@ -129,13 +129,6 @@ export class GridPanelService {
     }
 
     getActivatedGrids(master_name){
-        // let query = "master="+master_name;
-        // let headers= new Headers({'Content-Type': 'application/json'});
-        // let options = new RequestOptions({ headers: headers });
-        // var completeUrl = GlobalVariable.BASE_URL+'get_grids';
-        // return this._http.get(completeUrl)
-        //     .toPromise().then(response => response.json())
-        //     .catch(error => Observable.throw(error))
 
         let body = JSON.stringify({"master" : master_name});
         const headers = new Headers({'Content-Type': 'application/json'});
@@ -147,14 +140,11 @@ export class GridPanelService {
 
     filterParNom(obj, arg){
 
-        console.log(obj);
-        console.log(arg);
-        console.log(this)
         let key = this.key;
         let value = this.value;
-        console.log(key);
-        console.log(value);
-        console.log(obj[key])
+        // console.log(key);
+        // console.log(value);
+        // console.log(obj[key])
         // var res = value.match(/obj[key]/g);
         if (value.indexOf(obj[key]) >=0)
         {return true}

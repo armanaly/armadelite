@@ -17,8 +17,28 @@ label.control-label span { cursor: pointer; }
 .bordered_button{border: 3px solid #7f5d3e;height: 37px;display: inline-block;line-height: 31px;color: #fff;padding-left: 16px;padding-right: 16px;text-transform: uppercase;text-decoration: none;font-size: 13px;letter-spacing: 1px;}
 .bordered_button:hover{border-color: #fff;text-decoration: none;}
 
-.brown_button{border: 3px solid #7f5d3e;height: 37px;display: inline-block;line-height: 31px;color: #fff;padding-left: 16px;padding-right: 16px;text-transform: uppercase;text-decoration: none;font-size: 13px;letter-spacing: 1px;background-color: #7f5d3e;}
+.brown_button{border: 3px solid #7f5d3e;height: 37px;
+    display: inline-block;
+    line-height: 31px;
+    color: #fff;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    background-color: #7f5d3e;}
 .brown_button:hover{border-color: #CECECE;text-decoration: none;}
+
+/* BUTTON SHOWED IN GRID */
+.grid_btn_brown {
+    text-transform: uppercase;
+    background-color: #7f5d3e;
+    line-height: 12px;
+    height: 25px;
+    color: #fff;
+}
+.grid_btn_brown:hover{border-color: #CECECE;text-decoration: none;}
 
 .black_button{border: 3px solid black;height: 37px;display: inline-block;line-height: 31px;color: black;padding-left: 16px;padding-right: 16px;text-transform: uppercase;text-decoration: none;font-size: 13px;letter-spacing: 1px;background-color: black;}
 
@@ -38,6 +58,11 @@ label.control-label span { cursor: pointer; }
     /*font-family: monospace;*/
     /*text-align: center;*/
 /*}*/
+
+.span-table {
+    max-width: 200px;
+    word-wrap: break-word;
+}
 
 /*BALLET VERSION*/
 .panel-heading-black {
@@ -193,7 +218,7 @@ section {
 }
 .buttonBrown {
     background-color: #5B3C10;
-    padding: 15px 32px;
+    padding: 10px 25px;
     border-radius: 50%;
     -webkit-transition-duration: 0.2s; /* Safari */
     transition-duration: 0.2s;

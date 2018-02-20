@@ -34,6 +34,22 @@ import {ExportService} from "./export.service";
                 <tr>
                     <th *ngFor="let obj of _gridService.colTitle;let i = index">
                         <div >{{obj.title}}&nbsp; 
+                              
+                                <!--class="glyphicon glyphicon-filter"-->
+                              <!--<input type="button" *ngIf="obj.filterable" -->
+                                <!--style="background-image:url('/images/icones/if_filter.png')"-->
+                                <!--(click)="showFilterInput(i)">-->
+                            <!---->
+                            <!--<br>-->
+                            <!--<input   -->
+                                <!--*ngIf="obj.filterable && showInput[i]"-->
+                                <!--myAutofocus="true"-->
+                                <!--type="text" -->
+                                <!--id="{{obj.key}}"-->
+                                <!--name="{{obj.key}}"-->
+                                <!--(keyup)="filter($event)"-->
+                             <!--&gt;-->
+                            
                             <button *ngIf="obj.filterable" 
                                 class="glyphicon glyphicon-filter" 
                                 type="button" 
@@ -82,15 +98,20 @@ import {ExportService} from "./export.service";
                         </span>
                         
                         <!-- FIELD PANEL TYPE -->
-                        <span *ngIf="!filterActivated && _gridService.colTitle[i].type == 'field_panel'">
-                            {{item[key]}}  
-                        </span>
+                        <p class="span-table" *ngIf="!filterActivated && _gridService.colTitle[i].type == 'field_panel'">
+                            {{item[key]}}
+                        
+                        </p>
+                        
+                        <!--<span class="span-table" *ngIf="!filterActivated && _gridService.colTitle[i].type == 'field_panel'">-->
+                            <!--{{item[key]}}  -->
+                        <!--</span>-->
                     </td>
                     
                     <!-- EDIT BUTTON -->
-                    <td *ngIf="app_name == 'ballet'">
+                    <td  *ngIf="item.details.activated && app_name == 'ballet'">
                         <a [routerLink]="['/editStudent', item._id, grid_name, master] "> 
-                            <button class="{{_stepService.template.list_btn}}"  type="button" > 
+                            <button class="{{_stepService.template.grid_btn}}"  type="button" > 
                                 <i class="glyphicon glyphicon-edit"> </i>
                             </button>
                         </a> 
@@ -98,17 +119,17 @@ import {ExportService} from "./export.service";
     
                     <!--- GROUP MANAGEMENT BUTTON --->
                     <!--*ngIf="item.group_mgt"-->
-                    <td *ngIf="item.details.group" >
+                    <td *ngIf="_stepService.steps[0].master_name == 'ballet' && item.details.group" >
                         <a [routerLink]="['/groupManagement', item._id, grid_name, master] ">
-                            <button class="{{_stepService.template.list_btn}}"  type="button"> Group </button>
+                            <button class="{{_stepService.template.grid_btn}}"  type="button"> Group </button>
                         </a> 
                     </td>
                     <!-- IF DETAILS IS ACTIVATED IN GRID CONFIG COLLECTION -->
-                    <td *ngIf="item.details.activated && app_name == 'ballet'">
-                        <a [routerLink]="['/details', item._id, grid_name] ">
-                            <button class="{{_stepService.template.list_btn}}"  type="button"> Detail </button>
-                        </a> 
-                    </td>
+                    <!--<td *ngIf="item.details.activated && app_name == 'ballet'">-->
+                        <!--<a [routerLink]="['/details', item._id, grid_name] ">-->
+                            <!--<button class="{{_stepService.template.grid_btn}}"  type="button"> Detail </button>-->
+                        <!--</a> -->
+                    <!--</td>-->
                     <!-- AUTO DETAILS IF DETAILS IS ACTIVATED IN GRID CONFIG COLLECTION -->
                     <td *ngIf="item.details.activated && app_name =='auto'">
                         <a [routerLink]="['/auto_details', item._id, grid_name] ">
