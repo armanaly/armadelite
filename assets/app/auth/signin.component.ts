@@ -7,6 +7,11 @@ import {Router, ActivatedRoute, ParamMap} from '@angular/router';
     selector: 'app-signin',
     template: `
         <div class="col-md-8 col-md-offset-2">
+             <div class="row">
+                <div align="center" *ngIf="this.appName == 'ballet'" >    
+                    <img class="img-thumbnail"  src="http://res.cloudinary.com/htamml3fv/image/upload/v1505394543/balletLogo_pdo80u.jpg" width="240" height="160">
+                </div>
+            </div>
             <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label for="email">Mail</label>
@@ -26,13 +31,13 @@ import {Router, ActivatedRoute, ParamMap} from '@angular/router';
                 </div>
             </form>
             <div class="alert alert-danger" role="alert" *ngIf="!this.response.logged">{{this.response.message}}</div>
-            <button class="btn btn-primary" (click)="onSubmit()">Envoyer</button>
+            <button class="btn btn-primary" (click)="onSubmit()">SEND</button>
         </div>
     `
 })
 export class SigninComponent implements OnInit {
     myForm: FormGroup;
-    response = {}
+    response = {"logged": true}
     constructor(private _authService: AuthService, private router: Router,private route: ActivatedRoute) {}
     appName;
     private sub: any;

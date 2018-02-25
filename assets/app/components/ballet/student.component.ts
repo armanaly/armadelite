@@ -298,9 +298,6 @@ import {StudentService} from "./student.service";
                     </div>
                  </div>
                       <div class="form-group">
-                
-                
-                 
                  </div>
                  <div class="form-group">
                     <label for="Father" class="col-sm-2 control-label" >Father</label>
