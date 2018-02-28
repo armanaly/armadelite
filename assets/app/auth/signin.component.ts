@@ -42,7 +42,7 @@ export class SigninComponent implements OnInit {
     appName;
     private sub: any;
     onSubmit() {
-        console.log(this.myForm);
+        // console.log(this.myForm);
         const credentials = new User(
             this.myForm.value.email,
             this.myForm.value.password,
@@ -57,7 +57,7 @@ export class SigninComponent implements OnInit {
                     localStorage.setItem('userId', data.user_id.$oid);
                     localStorage.setItem('app', this.appName);
                     if (data.logged){
-                        console.log(this.response)
+                        // console.log(this.response)
                         this.router.navigate(['/menu', this.appName]);
                     }
 
@@ -75,8 +75,7 @@ export class SigninComponent implements OnInit {
 
             // In a real app: dispatch action to load the details here.
         });
-        // this.appName = this.route.snapshot.queryParams["app"];
-        console.log(this.appName)
+        // console.log(this.appName)
         this.myForm = new FormGroup({
             firstName: new FormControl(null, Validators.required),
             lastName: new FormControl(null, Validators.required),

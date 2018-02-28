@@ -1,7 +1,7 @@
 declare const $ : any;
 import {Component, Input, Output, EventEmitter} from '@angular/core'
 import {FormBuilder, Validators, FormGroup, FormControl, FormArray} from "@angular/forms";
-import {FormService} from "./form.service";
+import {FormService} from "../Engine/form.service";
 import {EmailValidator} from "./emailValidator.component";
 import {StepService} from "../Engine/step.service";
 @Component({

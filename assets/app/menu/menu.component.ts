@@ -1,7 +1,7 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core'
 import {StepService} from "../Engine/step.service";
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
-import {GridPanelService} from "../components/grid.service";
+import {GridPanelService} from "../admin/grid.service";
 import {AuthService} from "../auth/auth.service";
 @Component({
     selector: 'grid-panel',
@@ -104,50 +104,49 @@ export class MenuComponent {
     ngOnInit() {
 
         this.appName = this.route.snapshot.queryParams["app"];
-        console.log(this.appName);
+        // console.log(this.appName);
         if (typeof this.route.snapshot.queryParams["firstLoad"] != 'undefined') {
             this.firstLoad = this.route.snapshot.queryParams["hasLoaded"];
         }
-        console.log(this.firstLoad)
+        // console.log(this.firstLoad)
         if (typeof this.route.snapshot.queryParams["premenu"] != 'undefined') {
             this.preMenu = this.route.snapshot.queryParams["premenu"];
-            console.log(this.preMenu)
+            // console.log(this.preMenu)
         }
 
-
-        console.log(this.preMenu);
-        console.log(this.signedIn);
+        //
+        // console.log(this.preMenu);
+        // console.log(this.signedIn);
 
         this.sub = this.route.params.subscribe(params => {
             if (typeof params['signed'] != 'undefined'){
-                console.log('ici dans signed et app')
+                // console.log('ici dans signed et app')
                 this.appName = params['app'];
                 this.signedIn = params['signed'];
             }
         });
-        console.log(this.signedIn);
+        // console.log(this.signedIn);
+        //
+        // console.log(this.appName)
+        // console.log(this.firstLoad);
 
-        console.log(this.appName)
-        console.log(this.firstLoad);
-
-        console.log(this._stepService.steps[0].master_name)
-        console.log(this._stepService.steps[0].master_type)
-        console.log(this._stepService.steps[0].master_type == 'admin')
-        // this.signedIn ||
-        console.log(this.isLoggedIn())
-        console.log(this.preMenu)
+        // console.log(this._stepService.steps[0].master_name)
+        // console.log(this._stepService.steps[0].master_type)
+        // console.log(this._stepService.steps[0].master_type == 'admin')
+        // console.log(this.isLoggedIn())
+        // console.log(this.preMenu)
         if (this.isLoggedIn() && this._stepService.steps[0].master_type == 'admin' || this.preMenu == 1)
         {
             console.log("DANS PREMENU 1")
             this._gridService.getActivatedGrids(this._stepService.steps[0].master_name)
                 .then(
                     gridsList => {
-                        console.log(gridsList)
+                        // console.log(gridsList)
                         this.grids = gridsList;
 
                         for (let j = 0; j < this.grids.length; j++) {
-                            console.log(this.grids[j].name);
-                            console.log(this.grids[j].listBtn);
+                            // console.log(this.grids[j].name);
+                            // console.log(this.grids[j].listBtn);
                             if (typeof this.grids[j].listBtn != 'undefined') {
                                 if (this.firstLoad == true) {
                                     this.preMenu = 1;
@@ -159,19 +158,10 @@ export class MenuComponent {
                             }
 
                         }
-                        // if (this.firstLoad == false){
-                        //     this.getGridsBtn()
-                        //     this.preMenu = 2;
-                        //     console.log('2')
-                        // }
-
 
                         if (this.route.snapshot.queryParams["premenu"] == 1) {
-                            console.log('ici')
                             let master = this.route.snapshot.queryParams["master"];
-
                             this.getGridsBtn('e',master);
-
                         }
 
                         this.ready = true;
@@ -204,15 +194,12 @@ export class MenuComponent {
         this.gridBtns = [];
         for (let j = 0; j < this.grids.length; j++) {
             //cas où un prémenu exist alors on a dans grids un "type": "listBtn"
-            console.log(j);
             if (typeof this.grids[j].listBtn != 'undefined') {
                 {
                     for (let obj of this.grids[j].listBtn) {
-                        //  let obj = this.grids[idxGrid].listBtn.find(o => o.value == val);
                         // console.log(obj)
                         if (obj.name == val){
                             // if (this.gridBtns.indexOf({"children":obj.children, "nbRecords": obj.nbRecords}) == 1) {
-
                             this.gridBtns.push({"children":obj.children, "nbRecords": obj.nbRecords});
                         }
                     }
@@ -236,7 +223,7 @@ export class MenuComponent {
     }
 
     isLoggedIn() {
-        console.log(this.appName)
+        // console.log(this.appName)
         return this._authService.isLoggedIn()
     }
 }

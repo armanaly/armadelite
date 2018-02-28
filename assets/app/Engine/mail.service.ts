@@ -4,7 +4,7 @@ import 'rxjs/Rx';
 import { Observable } from "rxjs/Observable";
 import { GlobalVariable } from "../global";
 import {StepService} from "./step.service";
-import {FormService} from "../components/form.service";
+import {FormService} from "./form.service";
 
 @Injectable()
 

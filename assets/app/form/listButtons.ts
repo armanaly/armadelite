@@ -1,5 +1,5 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core'
-import {FormService} from "./form.service";
+import {FormService} from "../Engine/form.service";
 import {StepService} from "../Engine/step.service";
 
 @Component({
@@ -119,12 +119,9 @@ export class ListButtonsComponent {
     {}
 
     ngOnInit() {
-        console.log("dans LIST BUTTONS");
         if (this.objStep.conditions.length > 0){
-            console.log('test conditions')
             let valueCondition = this.objStep.conditions[0].value;
             let keyCondition = this.objStep.conditions[0].key;
-
             let tmpStepIdx = this.stepIdx - 1; // stepIdx temporaire
             /* LOOK FOR VALUE SELECTED INTO FORM SERVICE (**arraySteps**)
                 LA CONDITION A TESTER ET JE LA COMPARE AVEC LA VALEUR DE LA STEP COURANTE
@@ -151,8 +148,6 @@ export class ListButtonsComponent {
         else{
             this.display = true;
         }
-        console.log(this._stepService.language)
-        console.log(this.listOfElements)
         for (let datas of this.listOfElements){
             if (datas.name == this.objStep.name){
                 if (datas.list_es.length > 0)
@@ -177,7 +172,6 @@ export class ListButtonsComponent {
                 break;
             }
         }
-        // this.display = true;
     }
     onChooseVal($event){
 

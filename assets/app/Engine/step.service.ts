@@ -26,13 +26,13 @@ export class StepService {
                 this.menu_level = response.json()[0].menu_level;
 
                 this.steps.splice(0,1);
-                console.log(window.location.hash);
+                // console.log(window.location.hash);
                 if (window.location.hash == '#/admin'){
                     this.steps[0].master_type = 'admin';
                 }
                 else this.steps[0].master_type = 'form';
 
-                console.log(this.steps)
+                // console.log(this.steps)
         })
             .catch(error => console.log(error.json()));
     }

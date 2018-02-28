@@ -3,7 +3,7 @@
  */
 
 import { Injectable } from "@angular/core";
-import {StepService} from "../Engine/step.service";
+import {StepService} from "./step.service";
 import {File} from "gulp-typescript/release/input";
 @Injectable()
 export class FormService {
@@ -21,9 +21,6 @@ export class FormService {
         //this._stepService.steps.sort();
         let keyExists = [];
         for (let i of this._stepService.steps) {
-            console.log(i.step_id);
-            console.log(i.type);
-            console.log(i.name);
           //  let step_id = i.step_id;
             if (i.type == "click_selection" || i.type == 'image_selection' || i.type == "multi_selection") {
 
@@ -35,9 +32,8 @@ export class FormService {
                     this.arraySteps.push({[keyName]: ""});
                     keyExists.push(keyName);
                 }
-                console.log("keyExists");
-                console.log((keyExists));
-                // }
+                // console.log("keyExists");
+                // console.log((keyExists));
                 // TODO voir si il faut relire les form_value dans ce cas car c'est un tableau et plus une variable
             }
 
@@ -47,26 +43,16 @@ export class FormService {
 
                     let keyName = j.name;
                     keysList.push({[keyName]: ""})
-                    console.log(keysList)
-                    console.log(keyName)
+                    // console.log(keysList)
+                    // console.log(keyName)
                 }
                 this.arraySteps.push({"nom": i.name ,[i.name]: keysList});
             }
 
             if (i.type == 'file_upload'){
                 let keyName = i.configuration.form_value.name;
-
-                // let formData:FormData = new FormData();
                 this.arraySteps.push({"nom": keyName, "type": "file"})
-                // this.arrayFiles.push({"nom": keyName, "file": File});
-
             }
         }
-
-
-
-
-        console.log(this.arraySteps);
-            // console.log(this);
-        }
+    }
 }

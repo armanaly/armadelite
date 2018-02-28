@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormService} from "./components/form.service";
+import {FormService} from "./Engine/form.service";
 
 @Component({
     moduleId: module.id,

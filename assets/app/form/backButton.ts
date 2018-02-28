@@ -1,5 +1,5 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core'
-import {FormService} from "./form.service";
+import {FormService} from "../Engine/form.service";
 import {StepService} from "../Engine/step.service"
 
 @Component({

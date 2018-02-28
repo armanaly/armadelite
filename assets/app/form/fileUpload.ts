@@ -1,7 +1,7 @@
 import {Component, Input, Output, EventEmitter} from "@angular/core";
 import {Http, RequestOptions, Headers} from "@angular/http";
 import {FileUploadService} from "./fileUpload.service";
-import {FormService} from "./form.service";
+import {FormService} from "../Engine/form.service";
 import {StepService} from "../Engine/step.service";
 
 @Component({

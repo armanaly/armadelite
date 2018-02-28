@@ -7,7 +7,7 @@ import { Observable } from "rxjs/Observable";
 // import { Marque } from "./marque";
 import { GlobalVariable } from "../global";
 import {StepService} from "./step.service";
-import {FormService} from "../components/form.service";
+import {FormService} from "./form.service";
 import {StepModel} from "./stepModel";
 @Injectable()
 export class CollectionService { 
