@@ -15,9 +15,7 @@ import {SigninComponent} from "./auth/signin.component";
 
 const APP_ROUTES: Routes = [
     {path: '', component:MenuComponent  },
-    // {path: 'home/:app/:master/:premenu', component:MenuComponent  },
     {path: 'menu/:app', component:MenuComponent  },
-    // {path: 'menu', component:MenuComponent  },
     {path: 'step/:id', component: MainComponent},
     {path: 'step', component: MainComponent},
     {path: 'grid', component: GridPanelComponent},

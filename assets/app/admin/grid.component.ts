@@ -1,3 +1,4 @@
+declare const $ : any;
 import {Component, Input, Output, EventEmitter} from '@angular/core'
 import {GridPanelService} from "./grid.service";
 import {Router, NavigationExtras, ActivatedRoute} from '@angular/router';
@@ -29,26 +30,12 @@ import {ExportService} from "./export.service";
        </div>
        </div>
         <div class="panel-body">
-       <div class="table-responsive" *ngIf="display">
+       <!--class="table-responsive"-->
+       <div  *ngIf="display">
             <table class="table table-hover table-condensed"  >
                 <tr>
-                    <th *ngFor="let obj of _gridService.colTitle;let i = index">
-                        <div >{{obj.title}}&nbsp; 
-                              
-                                <!--class="glyphicon glyphicon-filter"-->
-                              <!--<input type="button" *ngIf="obj.filterable" -->
-                                <!--style="background-image:url('/images/icones/if_filter.png')"-->
-                                <!--(click)="showFilterInput(i)">-->
-                            <!---->
-                            <!--<br>-->
-                            <!--<input   -->
-                                <!--*ngIf="obj.filterable && showInput[i]"-->
-                                <!--myAutofocus="true"-->
-                                <!--type="text" -->
-                                <!--id="{{obj.key}}"-->
-                                <!--name="{{obj.key}}"-->
-                                <!--(keyup)="filter($event)"-->
-                             <!--&gt;-->
+                    <th *ngFor="let obj of _gridService.colTitle;let i = index" >
+                       {{obj.title}}&nbsp; 
                             
                             <button *ngIf="obj.filterable" 
                                 class="glyphicon glyphicon-filter" 
@@ -57,19 +44,28 @@ import {ExportService} from "./export.service";
                             </button>
                             <br>
                             <input   
-                                *ngIf="obj.filterable && showInput[i]"
+                                *ngIf="obj.filterable && showInput[i] && obj.filter_type == 'text' "
                                 myAutofocus="true"
                                 type="text" 
                                 id="{{obj.key}}"
                                 name="{{obj.key}}"
                                 (keyup)="filter($event)"
                              >
-                             <br>
-                        </div>
+                            <select 
+                                *ngIf="obj.filterable && showInput[i] && obj.filter_type == 'combo' "
+                                id="{{obj.key}}" 
+                                size="{{obj.data_combo.length}}"
+                                name="{{obj.key}}"
+                                (change)="filterByCombo($event)" >
+                                    <option *ngFor="let val of obj.data_combo" value="{{val}}">{{val}}</option>
+                            </select>
+                        
                     </th>
+                    <th  *ngIf="this._gridService.config.details_activated"></th>
+                    <th *ngIf="this._gridService.config.group"  ></th>
                 </tr>
                 <tr *ngFor="let item of _gridService.dataGrid;let j = index">
-                    <td *ngFor="let key of _gridService.keysName;let i = index" align="center">
+                    <td *ngFor="let key of _gridService.keysName;let i = index" >
                         <!-- TYPE CHECK BOX -->
                         <span *ngIf="this._gridService.colTitle[i].type == 'checkbox' "> 
                             <input *ngIf="item[key]" name="{{key}}" type="checkbox" value="{{item[key]}}" checked (change)=updateCheckBox($event,item) /> 
@@ -108,18 +104,23 @@ import {ExportService} from "./export.service";
                         <!--</span>-->
                     </td>
                     
-                    <!-- EDIT BUTTON -->
-                    <td  *ngIf="item.details.activated && app_name == 'ballet'">
+                    <!-- EDIT BUTTON BALLET -->
+                    <td  *ngIf="this._gridService.config.details_activated && app_name == 'ballet'">
                         <a [routerLink]="['/editStudent', item._id, grid_name, master] "> 
                             <button class="{{_stepService.template.grid_btn}}"  type="button" > 
                                 <i class="glyphicon glyphicon-edit"> </i>
                             </button>
                         </a> 
                     </td>
-    
+                        <!-- EDIT BUTTON AUTO  -->
+                    <td *ngIf="this._gridService.config.details_activated && app_name =='auto'">
+                        <a [routerLink]="['/auto_details', item._id, grid_name] ">
+                            <button class="btn btn-primary" type="button"> Detail </button>
+                        </a> 
+                    </td>
                     <!--- GROUP MANAGEMENT BUTTON --->
                     <!--*ngIf="item.group_mgt"-->
-                    <td *ngIf="_stepService.steps[0].master_name == 'ballet' && item.details.group" >
+                    <td *ngIf="this._gridService.config.group" >
                         <a [routerLink]="['/groupManagement', item._id, grid_name, master] ">
                             <button class="{{_stepService.template.grid_btn}}"  type="button"> Group </button>
                         </a> 
@@ -130,12 +131,7 @@ import {ExportService} from "./export.service";
                             <!--<button class="{{_stepService.template.grid_btn}}"  type="button"> Detail </button>-->
                         <!--</a> -->
                     <!--</td>-->
-                    <!-- AUTO DETAILS IF DETAILS IS ACTIVATED IN GRID CONFIG COLLECTION -->
-                    <td *ngIf="item.details.activated && app_name =='auto'">
-                        <a [routerLink]="['/auto_details', item._id, grid_name] ">
-                            <button class="btn btn-primary" type="button"> Detail </button>
-                        </a> 
-                    </td>
+
                     <!-- MODAL <td *ngIf="item.details.activated"><button class="btn btn-success" type="button" data-toggle="modal" data-target="#myModal">DETAIL </button></td>-->
                     
                     <!--IF WORKFLOW TYPE BTN TO GO BACK TO CURRENT STEP -->
@@ -172,14 +168,15 @@ import {ExportService} from "./export.service";
         this.grid_name = this.route.snapshot.queryParams["grid_name"];
         this.master = this.route.snapshot.queryParams["master"];
         this.app_name = localStorage.getItem('app')
-
+console.log(this._gridService.colTitle)
         // console.log(this.app_name);
         // console.log(this.master)
         if(this.master != ''){
             this._gridService.getDatas(this.grid_name, this.master)
                 .subscribe(data => {
                          // console.log(data)
-                         // console.log(this._gridService)
+                        console.log(this._gridService)
+                        console.log(this._gridService.config)
                         if (typeof this._gridService.config.export !== 'undefined'){
                             this.export = this._gridService.config.export;
                         }
@@ -224,8 +221,10 @@ import {ExportService} from "./export.service";
     }
 
     showFilterInput(idx){
+
         if (this.showInput[idx] == true)
         {
+            this._gridService.dataGrid = this._gridService.originalData
             this.showInput[idx] = false;
         }else{
             this.showInput[idx] = true;
@@ -261,10 +260,8 @@ import {ExportService} from "./export.service";
         this._gridService.changeCourse(course_type,id)
             .subscribe(
                 data => {
-
                 },
                 error => console.log(error)
-
             )
     }
     filter(event: any){
@@ -274,9 +271,14 @@ import {ExportService} from "./export.service";
             //}else {
         // console.log(event);
         // console.log(this. _gridService.dataGrid);
-        this._gridService.filterData(event.target.value, event.srcElement.id);}
-        //  this.filterActivated = true;
-    //}
+        this._gridService.filterData(event.target.value, event.target.id);
+    }
+
+    filterByCombo(event:any){
+
+        // console.log(id)
+        this._gridService.filterData(event.target.value, event.srcElement.id);
+    }
 
     exportExcel(){
         // this.grid_name

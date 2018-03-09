@@ -4,60 +4,63 @@ import {Http, Headers, RequestOptions} from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import includes = require("core-js/fn/string/includes");
 
-
 @Injectable()
 export class GridPanelService {
 
     constructor (private _http: Http) {}
+
     dataGrid = [];
     keysName = [];
     colTitle = [];
     keysName_details = [];
     colTitle_details = [];
-    config = {"export":false,"export_id":0};
+    config ={ "export":false,"export_id":0, "details_activated": false, "group": false}
+    // config = {"export":false,"export_id":0, "details_activated": false};
+    // config = {"export":false,"export_id":0, "details_activated""};
     originalData = this.dataGrid;
     key;
     value;
+
     getDatas(grid_name,valeur){
-        this.dataGrid = [];
         this.keysName = [];
         this.colTitle = [];
 
         let query = "grid_name="+grid_name+"&filter="+valeur;
-
-        let headers= new Headers({'Content-Type': 'application/json'});
-        let options = new RequestOptions({ headers: headers });
-        var completeUrl = GlobalVariable.BASE_URL+'data_grid?'+query;
+        let completeUrl = GlobalVariable.BASE_URL+'data_grid?'+query;
         return this._http.get(completeUrl)
             .map(response =>
             {
-
                 let data = response.json();
-                this.config = data[0].details;
+                this.config = data[0];
 
-                // console.log(data);
-                // console.log(data[0].config);
-                // console.log(data[0].config_details);
+                console.log(this.config);
+                console.log(this.config.group);
+                console.log(this.config.details_activated);
                 for (var i in data[0].config){
                     // if (key != '_id' && key != 'step_id'){
                     // console.log(data[0].config[i]);
                     // console.lota[0].config[i] === "object"){
                     var result = "";
+                    /* FIELDS PANEL */
                     if(typeof data[0].config[i].field_panel_name != 'undefined' ) {
                         //var j = 0;
                         for (var q in data[0].config[i].field_panel_values){
                             this.keysName.push(data[0].config[i].field_panel_name + '_' + data[0].config[i].field_panel_values[q].data);
-                            let objColTitle = {title:'',key:'',type:'', filterable: false}
+                            let objColTitle = {title:'',key:'',type:'', filterable: false, filter_type: "text", data_combo: []}
                             objColTitle.title = data[0].config[i].field_panel_values[q].title;
                             objColTitle.key = data[0].config[i].field_panel_name + '_' + data[0].config[i].field_panel_values[q].data;
                             objColTitle.type = "field_panel";
 
                             if (typeof (data[0].config[i].field_panel_values[q].filterable) != 'undefined'){
                                 objColTitle.filterable = true;
+                                if (typeof (data[0].config[i].field_panel_values[q].filter_type) != 'undefined'){
+                                    objColTitle.filter_type = data[0].config[i].field_panel_values[q].filter_type
+                                }
                             }
                             this.colTitle.push(objColTitle);
                         }
                     }
+                    /* CHECK BOX OR COMBO */
                     else if(typeof data[0].config[i].type != 'undefined' ) {
                         switch (data[0].config[i].type) {
                             case 'checkbox': {
@@ -76,17 +79,46 @@ export class GridPanelService {
                             }
                         }
                     }
+                    /* VALUE FROM BUTTON */
                     else{
-                        this.keysName.push(data[0].config[i].data);
-                        // console.log(data[0].config[i])
+                        let keyName = data[0].config[i].data;
+                        this.keysName.push(keyName);
+
+                        /* IF FIELD CAN BE FILTERED */
                         if (typeof (data[0].config[i].filterable) != 'undefined'){
-                            this.colTitle.push({"title": data[0].config[i].title, "key": data[0].config[i].data, "type": "standard", "filterable" : true});
+                            /* FILTERING BY TEXT BY DEFAULT */
+                            let filter_type = 'text'
+                            let data_combo = [" ALL"];
+                            if (typeof (data[0].config[i].filter_type) != 'undefined' || data[0].config[i].filter_type == 'combo' ){
+
+                                filter_type = data[0].config[i].filter_type;
+                                let x = 0
+                                for (let filterValue of data){
+                                    if (x == 0) { x++}
+                                    else {
+                                        if (data_combo.indexOf(filterValue[keyName]) == -1) {
+                                            data_combo.push(filterValue[keyName])
+                                        }
+                                    }
+                                }
+                                data_combo.sort()
+                            }
+
+
+                            this.colTitle.push({
+                                "title": data[0].config[i].title,
+                                "key": data[0].config[i].data,
+                                "type": "standard",
+                                "filterable" : true,
+                                "filter_type": filter_type,
+                                "data_combo": data_combo});
                             }
                         else {
                             this.colTitle.push({
                                 "title": data[0].config[i].title,
                                 "key": data[0].config[i].data,
-                                "type": "standard"
+                                "type": "standard",
+                                "filterable": false
                             })
                         }
                     }
@@ -96,12 +128,19 @@ export class GridPanelService {
                      switch (data[0].config_details[i].type) {
                         case 'file_details': {
                             this.keysName_details.push(data[0].config_details[i].file_name);
-                            this.colTitle_details.push({"title": data[0].config_details[i].label, "key": data[0].config_details[i].file_name, "type": "file"})
+                            this.colTitle_details.push({
+                                "title": data[0].config_details[i].label,
+                                "key": data[0].config_details[i].file_name,
+                                "type": "file"})
                             break;
                         }
                          case 'field': {
                              this.keysName_details.push(data[0].config_details[i].data);
-                             this.colTitle_details.push({"title": data[0].config_details[i].label, "key": data[0].config_details[i].data, "type": "field", "editable": data[0].config_details[i].editable})
+                             this.colTitle_details.push({
+                                 "title": data[0].config_details[i].label,
+                                 "key": data[0].config_details[i].data,
+                                 "type": "field",
+                                 "editable": data[0].config_details[i].editable})
                          }
                      }
                  }
@@ -112,19 +151,6 @@ export class GridPanelService {
                 this.originalData = this.dataGrid;
                 return 'ok'
             })
-
-
-
-            // {
-            //     const data = response.json();
-            //     // let objs: any[] = [];
-                // for (let i = 0; i < data.length; i++) {
-                //     let step = new StepModel(data[i].step_id, data[i].type, data[i].configuration);
-                //     objs.push(step);
-                //
-                // }
-                // return objs;
-            //})
             .catch(error => Observable.throw(error))
     }
 
@@ -139,43 +165,28 @@ export class GridPanelService {
     }
 
     filterParNom(obj, arg){
-
         let key = this.key;
         let value = this.value;
-        // console.log(key);
-        // console.log(value);
-        // console.log(obj[key])
-        // var res = value.match(/obj[key]/g);
-        if (value.indexOf(obj[key]) >=0)
-        {return true}
-        else {
-            return false
-        }
 
+        if (obj[key].toUpperCase().substr(0, value.length) == value.toUpperCase()) { return true }
+
+        return false
     }
 
     filterData(value, key){
-        console.log(value);
-        //this.originalData = this.dataGrid;
-        if (value == ''){
-            this.dataGrid = this.originalData;
-        }
-        else {
+        this.dataGrid = this.originalData;
+        if (value != ' ALL'){
             let result = this.dataGrid.filter(this.filterParNom, {"key":key, "value": value});
-            console.log(result);
             if (result.length > 0) {
                 this.dataGrid = result;
-            } else {
-                this.dataGrid = this.originalData;
             }
         }
-        //console.log(arrByNom);
     }
 
     updateCheckbox(value,_id,master,app_name, field_name){
         // console.log('saveDemande');
         // console.log(form );
-console.log(master)
+
         //this._formService.arraySteps.push({"step_id": currentStep});
         let body = JSON.stringify({"value" : value, "_id": _id, "master": master, "appName": app_name, "field_name": field_name });
         //

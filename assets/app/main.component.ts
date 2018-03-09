@@ -334,12 +334,6 @@ export class MainComponent implements OnInit {
 
         this.indexStepObj = stepIndex;
 
-        // console.log('currentStepId: ' + this.current_step_id);
-        // console.log("indexStepObj : " + this.indexStepObj);
-        // console.log('tmp_id : ' + this.tmp_id);
-        //
-        // console.log(this.datas);
-
         /*
             BUG POSSIBLE SI CE N EST PAS LE DERNIERE STEP DANS STEPS ARRAY
          */
