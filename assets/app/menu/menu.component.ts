@@ -13,6 +13,7 @@ import {AuthService} from "../auth/auth.service";
         </div>
     </div>
     <div class="{{_stepService.template.panel_heading}}" *ngIf="preMenu == 2" >
+        <!--PREMENU {{this.preMenu}}-->
         <div  class="row" align="left" >
             
             <div *ngIf="backBtn" class="col-md-2">
@@ -38,7 +39,7 @@ import {AuthService} from "../auth/auth.service";
     <div class="panel-body" *ngIf="ready == true">
           
            <div  *ngIf="preMenu == 0"> 
-                <!--{{this.preMenu}}-->
+                <!--PREMENU {{this.preMenu}}-->
                 <div *ngFor="let grid of grids" class="col-md-3">
                  
                     <span *ngIf="grid.display">
@@ -114,10 +115,6 @@ export class MenuComponent {
             // console.log(this.preMenu)
         }
 
-        //
-        // console.log(this.preMenu);
-        // console.log(this.signedIn);
-
         this.sub = this.route.params.subscribe(params => {
             if (typeof params['signed'] != 'undefined'){
                 // console.log('ici dans signed et app')
@@ -125,19 +122,10 @@ export class MenuComponent {
                 this.signedIn = params['signed'];
             }
         });
-        // console.log(this.signedIn);
-        //
-        // console.log(this.appName)
-        // console.log(this.firstLoad);
 
-        // console.log(this._stepService.steps[0].master_name)
-        // console.log(this._stepService.steps[0].master_type)
-        // console.log(this._stepService.steps[0].master_type == 'admin')
-        // console.log(this.isLoggedIn())
-        // console.log(this.preMenu)
         if (this.isLoggedIn() && this._stepService.steps[0].master_type == 'admin' || this.preMenu == 1)
         {
-            console.log("DANS PREMENU 1")
+
             this._gridService.getActivatedGrids(this._stepService.steps[0].master_name)
                 .then(
                     gridsList => {
@@ -158,8 +146,8 @@ export class MenuComponent {
                             }
 
                         }
-
                         if (this.route.snapshot.queryParams["premenu"] == 1) {
+                        // if (this._stepService.menu_level == 1) {
                             let master = this.route.snapshot.queryParams["master"];
                             this.getGridsBtn('e',master);
                         }

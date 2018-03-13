@@ -34,6 +34,6 @@ export class StepService {
 
                 // console.log(this.steps)
         })
-            .catch(error => console.log(error.json()));
+            .catch(error => console.log(error));
     }
 }
