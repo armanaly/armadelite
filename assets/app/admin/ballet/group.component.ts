@@ -129,16 +129,11 @@ export class GroupComponent {
                     this._groupService.getGroups(this.obj_id, this.course_type, this.stage)
                         .subscribe(data => {
                                 this.values = data;
-                                this.currentGroup = group;
-                                console.log(this.groups);
-
-
+                                // this.currentGroup = group;
+                                // console.log(this.groups);
                             },
                             error => console.log(error)
                         )
-
-
-
                 },
                         error => console.log(error)
 

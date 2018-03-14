@@ -113,27 +113,30 @@ export class ListButtonsComponent {
     listDefault;
     display = false;
 
-    constructor(
-        private _formService: FormService, private _stepService: StepService
-    )
-    {}
+    constructor( private _formService: FormService, private _stepService: StepService ) {}
 
     ngOnInit() {
+        // console.log(this.objStep.conditions.length)
+        // console.log(this.objStep.conditions)
         if (this.objStep.conditions.length > 0){
-            let valueCondition = this.objStep.conditions[0].value;
-            let keyCondition = this.objStep.conditions[0].key;
+            let valueCondition = this.objStep.conditions[0][0].value;
+            // console.log(this.objStep.conditions[0][0].value)
+            let keyCondition = this.objStep.conditions[0][0].key;
             let tmpStepIdx = this.stepIdx - 1; // stepIdx temporaire
             /* LOOK FOR VALUE SELECTED INTO FORM SERVICE (**arraySteps**)
                 LA CONDITION A TESTER ET JE LA COMPARE AVEC LA VALEUR DE LA STEP COURANTE
              */
-            //console.log(this._formService.arraySteps.find(x => x[keyCondition] === valueCondition));
-
+//             console.log(this._formService.arraySteps.find(x => x[keyCondition] === valueCondition));
+// console.log(valueCondition)
+//             console.log(keyCondition)
             if (typeof this._formService.arraySteps.find(x => x[keyCondition] === valueCondition) != 'undefined'){
                 // SI IL Y A UNE 2eme CONDITION
                 if (typeof this.objStep.conditions[1] != 'undefined'){
-                    let valueCondition2 = this.objStep.conditions[1].value;
-                    let keyCondition2 = this.objStep.conditions[1].key;
-
+                    let valueCondition2 = this.objStep.conditions[0][1].value;
+                    let keyCondition2 = this.objStep.conditions[0][1].key;
+                    // console.log(valueCondition2)
+                    // console.log(keyCondition2)
+                    console.log(this._formService.arraySteps.find(x => x[keyCondition2] === valueCondition2));
                     if (typeof this._formService.arraySteps.find(x => x[keyCondition2] === valueCondition2) != 'undefined'){
                         this.display = true;
                     }
@@ -143,11 +146,11 @@ export class ListButtonsComponent {
                 }
 
             }
-
         }
         else{
             this.display = true;
         }
+        console.log(this.display)
         for (let datas of this.listOfElements){
             if (datas.name == this.objStep.name){
                 if (datas.list_es.length > 0)
