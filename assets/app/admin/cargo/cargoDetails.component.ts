@@ -5,7 +5,7 @@ import {StepService} from "../../Engine/step.service";
 import {Http} from "@angular/http";
 import {CargoDetailsService} from "./cargoDetails.service";
 @Component({
-    selector: 'grid-details',
+    selector: 'fly-details',
     template: `
               <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
@@ -28,7 +28,7 @@ import {CargoDetailsService} from "./cargoDetails.service";
                    </nav>
                 </div>
             <div class="col-md-10" align="center">
-                <h2><b class="text-uppercase">FROM </b> {{record_details.origin}} TO {{record_details.destination}} </h2>
+                <h2><b class="text-uppercase">FROM </b> {{this.origin}} TO {{this.destination}} </h2>
             </div>
         </div>
        </div>
@@ -55,34 +55,44 @@ import {CargoDetailsService} from "./cargoDetails.service";
                 <div >
                     <table class="tg">
                       <tr>
-                        <td class="tg-txgi">-45</td>
-                        <td class="tg-6k2t">{{record_details._-45}}</td>
+                        <th>COMPANY</th>
+                        <th>MIN</th>
+                        <th>-45</th>
+                        <th>+45</th>
+                        <th>+80</th>
+                        <th>-100</th>
+                        <th>+100</th>
+                        <th>+200</th>
+                        <th>+250</th>
+                        <th>+300</th>
+                        <th>+500</th>
+                        <th>+1000</th>
+                        <th>+3000</th>
                       </tr>
-                      <tr>
-                        <td class="tg-txgi">45</td>
-                        <td class="tg-6k2t">{{record_details._45}}</td>
+                      <tr *ngFor="let detail of record_details">
+                        <td>{{detail.company_code}}</td>
+                        <td>{{detail.origin}}</td>
+                        <td>{{detail['_-45']}}</td>
+                        <td>{{detail['_+45']}}</td>
+                        <td>{{detail['_+80']}}</td>
+                        <td>{{detail['_-100']}}</td>
+                        <td>{{detail['_+100']}}</td>
+                        <td>{{detail['_+200']}}</td>
+                        <td>{{detail['_+250']}}</td>
+                        <td>{{detail['_+300']}}</td>
+                        <td>{{detail['_+500']}}</td>
+                        <td>{{detail['_+1000']}}</td>
+                        <td>{{detail['_+3000']}}</td>
                       </tr>
-                      <tr>
-                        <td class="tg-txgi">+100</td>
-                        <td class="tg-6k2t">{{record_details._+100}}</td>
-                      </tr>
-                      <tr>
-                        <td class="tg-txgi">+300</td>
-                        <td class="tg-6k2t">{{record_details._+300}}</td>
-                      </tr>
-                      <tr>
-                        <td class="tg-txgi">+500</td>
-                        <td class="tg-6k2t">{{record_details._+500}}</td>
-                      </tr>
-                      <tr> 
-                        <td colspan="1" class="tg-txgi">Notes</td>
-                        <td colspan="3">
-                            <textarea disabled rows="15" cols="100">
-                                {{record_details.notes }}
-                            </textarea>        
-                        
-                        </td>
-                      </tr>
+                      <!--<tr> -->
+                        <!--<td colspan="1" class="tg-txgi">Notes</td>-->
+                        <!--<td colspan="3">-->
+                            <!--<textarea disabled rows="15" cols="100">-->
+                                <!--{{record_details.notes }}-->
+                            <!--</textarea>        -->
+                        <!---->
+                        <!--</td>-->
+                      <!--</tr>-->
                        
                       </table>
                       </div>
@@ -98,9 +108,9 @@ export class CargoDetailsComponent {
     record_details;
     tech_details;
     private sub: any;
-    obj_id;
+    origin;
     list_options= [];
-    grid_name = '';
+    destination = '';
     display = false;
     details = false;
 
@@ -108,15 +118,15 @@ export class CargoDetailsComponent {
 
     ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
-            this.obj_id = params['record'];// (+) converts string 'id' to a number
-            this.grid_name = params['grid_name']
+            this.origin = params['origin'];// (+) converts string 'id' to a number
+            this.destination = params['destination']
         });
 
        // this.grid_name = this.route.snapshot.queryParams["grid_name"];
-       console.log(this.grid_name);
-       console.log(this.obj_id)
+       console.log(this.destination);
+       console.log(this.origin)
 
-        this._cargoDetailsService.getDatas(this.obj_id)
+        this._cargoDetailsService.getDatas(this.origin, this.destination)
             .subscribe(data => {
                     console.log(data)
                     this.record_details = data;

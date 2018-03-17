@@ -112,6 +112,14 @@ import {ExportService} from "./export.service";
                             </button>
                         </a> 
                     </td>
+                    <!-- DETAILS CARGO RATE -->
+                    <td  *ngIf="this._gridService.config.details_activated && app_name == 'cargo'">
+                        <a [routerLink]="['/flyDetails', item.origin, item.destination] "> 
+                            <button class="{{_stepService.template.grid_btn}}"  type="button" > 
+                                Rates<!--<i class="glyphicon glyphicon-edit"> </i>-->
+                            </button>
+                        </a> 
+                    </td>
                         <!-- EDIT BUTTON AUTO  -->
                     <td *ngIf="this._gridService.config.details_activated && app_name =='auto'">
                         <a [routerLink]="['/auto_details', item._id, grid_name] ">
@@ -168,6 +176,7 @@ import {ExportService} from "./export.service";
         this.grid_name = this.route.snapshot.queryParams["grid_name"];
         this.master = this.route.snapshot.queryParams["master"];
         this.app_name = localStorage.getItem('app')
+        console.log(this.app_name)
 console.log(this._gridService.colTitle)
         // console.log(this.app_name);
         // console.log(this.master)

@@ -28,7 +28,9 @@ const APP_ROUTES: Routes = [
     {path: 'signin/:app', component: SigninComponent},
     {path: ':firstLoad', component:MenuComponent},
     {path: 'groupManagement/:record/:course_type/:stage', component: GroupComponent},
-    {path: 'editStudent/:record/:course_type/:stage', component: StudentComponent}
+    {path: 'editStudent/:record/:course_type/:stage', component: StudentComponent},
+    {path: 'flyDetails/:origin/:destination', component: CargoDetailsComponent},
+
 ];
 
 export const ROUTING = RouterModule.forRoot(APP_ROUTES);

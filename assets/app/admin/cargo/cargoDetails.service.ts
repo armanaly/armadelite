@@ -16,9 +16,9 @@ export class CargoDetailsService {
     colTitle_details = [];
     originalData = this.dataGrid;
 
-    getDatas(rec_id){
+    getDatas(origin, destination){
 
-        let query = "id="+rec_id;
+        let query = "origin="+origin+"&destination="+destination;
         let headers= new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({ headers: headers });
         var completeUrl = GlobalVariable.BASE_URL+'cargo_details?'+query;
