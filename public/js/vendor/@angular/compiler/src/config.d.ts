@@ -7,17 +7,28 @@
  */
 import { MissingTranslationStrategy, ViewEncapsulation } from '@angular/core';
 export declare class CompilerConfig {
+<<<<<<< Updated upstream
     defaultEncapsulation: ViewEncapsulation | null;
     enableLegacyTemplate: boolean;
     useJit: boolean;
     missingTranslation: MissingTranslationStrategy | null;
     preserveWhitespaces: boolean;
     constructor({defaultEncapsulation, useJit, missingTranslation, enableLegacyTemplate, preserveWhitespaces}?: {
+=======
+    defaultEncapsulation: ViewEncapsulation;
+    enableLegacyTemplate: boolean;
+    useJit: boolean;
+    missingTranslation: MissingTranslationStrategy;
+    constructor({defaultEncapsulation, useJit, missingTranslation, enableLegacyTemplate}?: {
+>>>>>>> Stashed changes
         defaultEncapsulation?: ViewEncapsulation;
         useJit?: boolean;
         missingTranslation?: MissingTranslationStrategy;
         enableLegacyTemplate?: boolean;
+<<<<<<< Updated upstream
         preserveWhitespaces?: boolean;
+=======
+>>>>>>> Stashed changes
     });
 }
 export declare function preserveWhitespacesDefault(preserveWhitespacesOption: boolean | null, defaultSetting?: boolean): boolean;

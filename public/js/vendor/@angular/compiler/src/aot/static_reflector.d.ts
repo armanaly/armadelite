@@ -1,14 +1,29 @@
+<<<<<<< Updated upstream
 import { CompileReflector } from '../compile_reflector';
 import * as o from '../output/output_ast';
 import { SummaryResolver } from '../summary_resolver';
+=======
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+import { ɵReflectorReader } from '@angular/core';
+>>>>>>> Stashed changes
 import { StaticSymbol } from './static_symbol';
 import { StaticSymbolResolver } from './static_symbol_resolver';
 /**
  * A static reflector implements enough of the Reflector API that is necessary to compile
  * templates statically.
  */
+<<<<<<< Updated upstream
 export declare class StaticReflector implements CompileReflector {
     private summaryResolver;
+=======
+export declare class StaticReflector implements ɵReflectorReader {
+>>>>>>> Stashed changes
     private symbolResolver;
     private errorRecorder;
     private annotationCache;
@@ -30,9 +45,16 @@ export declare class StaticReflector implements CompileReflector {
         name: string;
         filePath: string;
         fn: any;
+<<<<<<< Updated upstream
     }[], errorRecorder?: (error: any, fileName?: string) => void);
     componentModuleUrl(typeOrFunc: StaticSymbol): string;
     resolveExternalReference(ref: o.ExternalReference): StaticSymbol;
+=======
+    }[], errorRecorder?: (error: any, fileName: string) => void);
+    importUri(typeOrFunc: StaticSymbol): string;
+    resourceUri(typeOrFunc: StaticSymbol): string;
+    resolveIdentifier(name: string, moduleUrl: string, members: string[]): StaticSymbol;
+>>>>>>> Stashed changes
     findDeclaration(moduleUrl: string, name: string, containingFile?: string): StaticSymbol;
     tryFindDeclaration(moduleUrl: string, name: string): StaticSymbol;
     findSymbolDeclaration(symbol: StaticSymbol): StaticSymbol;

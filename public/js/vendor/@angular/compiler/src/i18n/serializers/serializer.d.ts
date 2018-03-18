@@ -15,7 +15,11 @@ export declare abstract class Serializer {
         };
     };
     abstract digest(message: i18n.Message): string;
+<<<<<<< Updated upstream
     createNameMapper(message: i18n.Message): PlaceholderMapper | null;
+=======
+    createNameMapper(message: i18n.Message): PlaceholderMapper;
+>>>>>>> Stashed changes
 }
 /**
  * A `PlaceholderMapper` converts placeholder names from internal to serialized representation and
@@ -24,8 +28,13 @@ export declare abstract class Serializer {
  * It should be used for serialization format that put constraints on the placeholder names.
  */
 export interface PlaceholderMapper {
+<<<<<<< Updated upstream
     toPublicName(internalName: string): string | null;
     toInternalName(publicName: string): string | null;
+=======
+    toPublicName(internalName: string): string;
+    toInternalName(publicName: string): string;
+>>>>>>> Stashed changes
 }
 /**
  * A simple mapper that take a function to transform an internal name to a public name
@@ -36,8 +45,13 @@ export declare class SimplePlaceholderMapper extends i18n.RecurseVisitor impleme
     private publicToNextId;
     private publicToInternal;
     constructor(message: i18n.Message, mapName: (name: string) => string);
+<<<<<<< Updated upstream
     toPublicName(internalName: string): string | null;
     toInternalName(publicName: string): string | null;
+=======
+    toPublicName(internalName: string): string;
+    toInternalName(publicName: string): string;
+>>>>>>> Stashed changes
     visitText(text: i18n.Text, context?: any): any;
     visitTagPlaceholder(ph: i18n.TagPlaceholder, context?: any): any;
     visitPlaceholder(ph: i18n.Placeholder, context?: any): any;

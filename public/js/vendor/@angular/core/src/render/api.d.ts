@@ -104,9 +104,12 @@ export interface RendererType2 {
  */
 export declare abstract class RendererFactory2 {
     abstract createRenderer(hostElement: any, type: RendererType2 | null): Renderer2;
+<<<<<<< Updated upstream
     abstract begin?(): void;
     abstract end?(): void;
     abstract whenRenderingDone?(): Promise<any>;
+=======
+>>>>>>> Stashed changes
 }
 /**
  * @experimental

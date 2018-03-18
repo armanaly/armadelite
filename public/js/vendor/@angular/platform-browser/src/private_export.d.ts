@@ -7,6 +7,10 @@
  */
 export { BROWSER_SANITIZATION_PROVIDERS as ɵBROWSER_SANITIZATION_PROVIDERS, INTERNAL_BROWSER_PLATFORM_PROVIDERS as ɵINTERNAL_BROWSER_PLATFORM_PROVIDERS, initDomAdapter as ɵinitDomAdapter } from './browser';
 export { BrowserDomAdapter as ɵBrowserDomAdapter } from './browser/browser_adapter';
+<<<<<<< Updated upstream
+=======
+export { setValueOnPath as ɵsetValueOnPath } from './browser/browser_adapter';
+>>>>>>> Stashed changes
 export { BrowserPlatformLocation as ɵBrowserPlatformLocation } from './browser/location/browser_platform_location';
 export { TRANSITION_ID as ɵTRANSITION_ID } from './browser/server-transition';
 export { BrowserGetTestability as ɵBrowserGetTestability } from './browser/testability';

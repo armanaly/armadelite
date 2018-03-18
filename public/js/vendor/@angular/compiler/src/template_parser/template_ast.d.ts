@@ -5,8 +5,12 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+<<<<<<< Updated upstream
 import { SecurityContext } from '@angular/core';
 import { AstPath } from '../ast_path';
+=======
+import { SecurityContext, ɵLifecycleHooks as LifecycleHooks } from '@angular/core';
+>>>>>>> Stashed changes
 import { CompileDirectiveSummary, CompileProviderMetadata, CompileTokenMetadata } from '../compile_metadata';
 import { AST } from '../expression_parser/ast';
 import { LifecycleHooks } from '../lifecycle_reflector';
@@ -65,7 +69,11 @@ export declare class BoundElementPropertyAst implements TemplateAst {
     value: AST;
     unit: string | null;
     sourceSpan: ParseSourceSpan;
+<<<<<<< Updated upstream
     constructor(name: string, type: PropertyBindingType, securityContext: SecurityContext, value: AST, unit: string | null, sourceSpan: ParseSourceSpan);
+=======
+    constructor(name: string, type: PropertyBindingType, securityContext: SecurityContext, value: AST, unit: string, sourceSpan: ParseSourceSpan);
+>>>>>>> Stashed changes
     visit(visitor: TemplateAstVisitor, context: any): any;
     readonly isAnimation: boolean;
 }
@@ -121,8 +129,13 @@ export declare class ElementAst implements TemplateAst {
     children: TemplateAst[];
     ngContentIndex: number | null;
     sourceSpan: ParseSourceSpan;
+<<<<<<< Updated upstream
     endSourceSpan: ParseSourceSpan | null;
     constructor(name: string, attrs: AttrAst[], inputs: BoundElementPropertyAst[], outputs: BoundEventAst[], references: ReferenceAst[], directives: DirectiveAst[], providers: ProviderAst[], hasViewContainer: boolean, queryMatches: QueryMatch[], children: TemplateAst[], ngContentIndex: number | null, sourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan | null);
+=======
+    endSourceSpan: ParseSourceSpan;
+    constructor(name: string, attrs: AttrAst[], inputs: BoundElementPropertyAst[], outputs: BoundEventAst[], references: ReferenceAst[], directives: DirectiveAst[], providers: ProviderAst[], hasViewContainer: boolean, queryMatches: QueryMatch[], children: TemplateAst[], ngContentIndex: number, sourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan);
+>>>>>>> Stashed changes
     visit(visitor: TemplateAstVisitor, context: any): any;
 }
 /**

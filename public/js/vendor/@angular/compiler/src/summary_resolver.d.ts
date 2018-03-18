@@ -12,6 +12,7 @@ export interface Summary<T> {
     metadata: any;
     type?: CompileTypeSummary;
 }
+<<<<<<< Updated upstream
 export declare abstract class SummaryResolver<T> {
     abstract isLibraryFile(fileName: string): boolean;
     abstract getLibraryFileName(fileName: string): string | null;
@@ -28,4 +29,12 @@ export declare class JitSummaryResolver implements SummaryResolver<Type<any>> {
     getSymbolsOf(filePath: string): Type<any>[];
     getImportAs(reference: Type<any>): Type<any>;
     addSummary(summary: Summary<Type<any>>): void;
+=======
+export declare class SummaryResolver<T> {
+    isLibraryFile(fileName: string): boolean;
+    getLibraryFileName(fileName: string): string;
+    resolveSummary(reference: T): Summary<T>;
+    getSymbolsOf(filePath: string): T[];
+    getImportAs(reference: T): T;
+>>>>>>> Stashed changes
 }

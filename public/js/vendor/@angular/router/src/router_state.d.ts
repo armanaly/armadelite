@@ -79,6 +79,7 @@ export declare class ActivatedRoute {
     /** The outlet name of the route. It's a constant */
     outlet: string;
     /** The component of the route. It's a constant */
+<<<<<<< Updated upstream
     component: Type<any> | string | null;
     /** The current snapshot of this route */
     snapshot: ActivatedRouteSnapshot;
@@ -90,6 +91,19 @@ export declare class ActivatedRoute {
     readonly parent: ActivatedRoute | null;
     /** The first child of this route in the router state tree */
     readonly firstChild: ActivatedRoute | null;
+=======
+    component: Type<any> | string;
+    /** The current snapshot of this route */
+    snapshot: ActivatedRouteSnapshot;
+    /** The configuration used to match this route */
+    readonly routeConfig: Route;
+    /** The root of the router state */
+    readonly root: ActivatedRoute;
+    /** The parent of this route in the router state tree */
+    readonly parent: ActivatedRoute;
+    /** The first child of this route in the router state tree */
+    readonly firstChild: ActivatedRoute;
+>>>>>>> Stashed changes
     /** The children of this route in the router state tree */
     readonly children: ActivatedRoute[];
     /** The path from the root of the router state tree to this route */
@@ -133,6 +147,7 @@ export declare class ActivatedRouteSnapshot {
     /** The outlet name of the route */
     outlet: string;
     /** The component of the route */
+<<<<<<< Updated upstream
     component: Type<any> | string | null;
     /** The configuration used to match this route */
     readonly routeConfig: Route | null;
@@ -142,6 +157,17 @@ export declare class ActivatedRouteSnapshot {
     readonly parent: ActivatedRouteSnapshot | null;
     /** The first child of this route in the router state tree */
     readonly firstChild: ActivatedRouteSnapshot | null;
+=======
+    component: Type<any> | string;
+    /** The configuration used to match this route */
+    readonly routeConfig: Route;
+    /** The root of the router state */
+    readonly root: ActivatedRouteSnapshot;
+    /** The parent of this route in the router state tree */
+    readonly parent: ActivatedRouteSnapshot;
+    /** The first child of this route in the router state tree */
+    readonly firstChild: ActivatedRouteSnapshot;
+>>>>>>> Stashed changes
     /** The children of this route in the router state tree */
     readonly children: ActivatedRouteSnapshot[];
     /** The path from the root of the router state tree to this route */

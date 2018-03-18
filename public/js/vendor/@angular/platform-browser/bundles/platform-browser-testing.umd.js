@@ -1,5 +1,9 @@
 /**
+<<<<<<< Updated upstream
  * @license Angular v4.4.6
+=======
+ * @license Angular v4.0.1
+>>>>>>> Stashed changes
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -10,7 +14,11 @@
 }(this, (function (exports,_angular_core,_angular_platformBrowser) { 'use strict';
 
 /**
+<<<<<<< Updated upstream
  * @license Angular v4.4.6
+=======
+ * @license Angular v4.0.1
+>>>>>>> Stashed changes
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */

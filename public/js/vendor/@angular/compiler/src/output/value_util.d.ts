@@ -8,4 +8,8 @@
 import { OutputContext } from '../util';
 import * as o from './output_ast';
 export declare const QUOTED_KEYS = "$quoted$";
+<<<<<<< Updated upstream
 export declare function convertValueToOutputAst(ctx: OutputContext, value: any, type?: o.Type | null): o.Expression;
+=======
+export declare function convertValueToOutputAst(value: any, type?: o.Type): o.Expression;
+>>>>>>> Stashed changes

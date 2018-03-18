@@ -17,9 +17,16 @@ import { AsyncValidatorFn, ValidatorFn } from './validators';
  * @stable
  */
 export declare abstract class NgControl extends AbstractControlDirective {
+<<<<<<< Updated upstream
     name: string | null;
     valueAccessor: ControlValueAccessor | null;
     readonly validator: ValidatorFn | null;
     readonly asyncValidator: AsyncValidatorFn | null;
+=======
+    name: string;
+    valueAccessor: ControlValueAccessor;
+    readonly validator: ValidatorFn;
+    readonly asyncValidator: AsyncValidatorFn;
+>>>>>>> Stashed changes
     abstract viewToModelUpdate(newValue: any): void;
 }

@@ -1,6 +1,7 @@
 {
   "_args": [
     [
+<<<<<<< Updated upstream
       "@angular/router@4.4.6",
       "D:\\workspace\\russian_ballet"
     ]
@@ -21,43 +22,124 @@
     "rawSpec": "4.4.6",
     "saveSpec": null,
     "fetchSpec": "4.4.6"
+=======
+      {
+        "raw": "@angular/router@latest",
+        "scope": "@angular",
+        "escapedName": "@angular%2frouter",
+        "name": "@angular/router",
+        "rawSpec": "latest",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\workspace\\flask_angular2"
+    ]
+  ],
+  "_from": "@angular/router@latest",
+  "_id": "@angular/router@4.0.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/@angular/router",
+  "_nodeVersion": "6.9.5",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/router-4.0.1.tgz_1490830673156_0.10691373981535435"
+  },
+  "_npmUser": {
+    "name": "angular",
+    "email": "angular-core+npm@google.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@angular/router@latest",
+    "scope": "@angular",
+    "escapedName": "@angular%2frouter",
+    "name": "@angular/router",
+    "rawSpec": "latest",
+    "spec": "latest",
+    "type": "tag"
+>>>>>>> Stashed changes
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
+<<<<<<< Updated upstream
   "_resolved": "https://registry.npmjs.org/@angular/router/-/router-4.4.6.tgz",
   "_spec": "4.4.6",
   "_where": "D:\\workspace\\russian_ballet",
+=======
+  "_resolved": "https://registry.npmjs.org/@angular/router/-/router-4.0.1.tgz",
+  "_shasum": "2d73a4b6c40e18d5cd0bfd1f20222af64a11c11e",
+  "_shrinkwrap": null,
+  "_spec": "@angular/router@latest",
+  "_where": "D:\\workspace\\flask_angular2",
+>>>>>>> Stashed changes
   "author": {
     "name": "angular"
   },
   "bugs": {
     "url": "https://github.com/angular/angular/issues"
   },
+<<<<<<< Updated upstream
   "dependencies": {
     "tslib": "^1.7.1"
   },
   "description": "Angular - the routing library",
   "es2015": "./@angular/router.js",
   "homepage": "https://github.com/angular/angular/tree/master/packages/router",
+=======
+  "dependencies": {},
+  "description": "Angular - the routing library",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "2d73a4b6c40e18d5cd0bfd1f20222af64a11c11e",
+    "tarball": "https://registry.npmjs.org/@angular/router/-/router-4.0.1.tgz"
+  },
+  "es2015": "./@angular/router.js",
+  "homepage": "https://github.com/angular/angular/blob/master/modules/%40angular/router/README.md",
+>>>>>>> Stashed changes
   "keywords": [
     "angular",
     "router"
   ],
   "license": "MIT",
   "main": "./bundles/router.umd.js",
+<<<<<<< Updated upstream
+=======
+  "maintainers": [
+    {
+      "name": "angular",
+      "email": "angular-core+npm@google.com"
+    }
+  ],
+>>>>>>> Stashed changes
   "module": "./@angular/router.es5.js",
   "name": "@angular/router",
   "peerDependencies": {
+<<<<<<< Updated upstream
     "@angular/core": "4.4.6",
     "@angular/common": "4.4.6",
     "@angular/platform-browser": "4.4.6",
+=======
+    "@angular/core": "4.0.1",
+    "@angular/common": "4.0.1",
+    "@angular/platform-browser": "4.0.1",
+>>>>>>> Stashed changes
     "rxjs": "^5.0.1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/angular/angular.git"
   },
+<<<<<<< Updated upstream
   "typings": "./router.d.ts",
   "version": "4.4.6"
+=======
+  "scripts": {},
+  "typings": "./router.d.ts",
+  "version": "4.0.1"
+>>>>>>> Stashed changes
 }

@@ -75,7 +75,11 @@ export declare class FormControlName extends NgControl implements OnChanges, OnD
     viewToModelUpdate(newValue: any): void;
     readonly path: string[];
     readonly formDirective: any;
+<<<<<<< Updated upstream
     readonly validator: ValidatorFn | null;
+=======
+    readonly validator: ValidatorFn;
+>>>>>>> Stashed changes
     readonly asyncValidator: AsyncValidatorFn;
     readonly control: FormControl;
     private _checkParentType();

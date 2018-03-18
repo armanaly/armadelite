@@ -58,9 +58,15 @@ export declare class RequestOptions {
     /**
      * Enable use credentials for a {@link Request}.
      */
+<<<<<<< Updated upstream
     withCredentials: boolean | null;
     responseType: ResponseContentType | null;
     constructor(opts?: RequestOptionsArgs);
+=======
+    withCredentials: boolean;
+    responseType: ResponseContentType;
+    constructor({method, headers, body, url, search, params, withCredentials, responseType}?: RequestOptionsArgs);
+>>>>>>> Stashed changes
     /**
      * Creates a copy of the `RequestOptions` instance, using the optional input as values to override
      * existing values. This method will not change the values of the instance on which it is being
@@ -85,7 +91,11 @@ export declare class RequestOptions {
      * ```
      */
     merge(options?: RequestOptionsArgs): RequestOptions;
+<<<<<<< Updated upstream
     private _mergeSearchParams(params?);
+=======
+    private _mergeSearchParams(params);
+>>>>>>> Stashed changes
     private _parseParams(objParams?);
     private _appendParam(key, value, params);
 }

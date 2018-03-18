@@ -35,10 +35,18 @@ export declare class DirectiveNormalizer {
     clearCache(): void;
     clearCacheFor(normalizedDirective: CompileDirectiveMetadata): void;
     private _fetch(url);
+<<<<<<< Updated upstream
     normalizeTemplate(prenormData: PrenormalizedTemplateMetadata): SyncAsync<CompileTemplateMetadata>;
     normalizeTemplateOnly(prenomData: PrenormalizedTemplateMetadata): SyncAsync<CompileTemplateMetadata>;
     normalizeLoadedTemplate(prenormData: PrenormalizedTemplateMetadata, template: string, templateAbsUrl: string): CompileTemplateMetadata;
     normalizeExternalStylesheets(templateMeta: CompileTemplateMetadata): SyncAsync<CompileTemplateMetadata>;
+=======
+    normalizeTemplate(prenormData: PrenormalizedTemplateMetadata): SyncAsyncResult<CompileTemplateMetadata>;
+    normalizeTemplateSync(prenomData: PrenormalizedTemplateMetadata): CompileTemplateMetadata;
+    normalizeTemplateAsync(prenomData: PrenormalizedTemplateMetadata): Promise<CompileTemplateMetadata>;
+    normalizeLoadedTemplate(prenormData: PrenormalizedTemplateMetadata, template: string, templateAbsUrl: string): CompileTemplateMetadata;
+    normalizeExternalStylesheets(templateMeta: CompileTemplateMetadata): Promise<CompileTemplateMetadata>;
+>>>>>>> Stashed changes
     private _loadMissingExternalStylesheets(styleUrls, loadedStylesheets?);
     normalizeStylesheet(stylesheet: CompileStylesheetMetadata): CompileStylesheetMetadata;
 }

@@ -1,5 +1,9 @@
 /**
+<<<<<<< Updated upstream
  * @license Angular v4.4.6
+=======
+ * @license Angular v4.0.1
+>>>>>>> Stashed changes
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -9,6 +13,7 @@
 	(factory((global.ng = global.ng || {}, global.ng.platformBrowserDynamic = global.ng.platformBrowserDynamic || {}),global.ng.compiler,global.ng.core,global.ng.common,global.ng.platformBrowser));
 }(this, (function (exports,_angular_compiler,_angular_core,_angular_common,_angular_platformBrowser) { 'use strict';
 
+<<<<<<< Updated upstream
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -37,6 +42,15 @@ function __extends(d, b) {
 
 /**
  * @license Angular v4.4.6
+=======
+var __extends = (undefined && undefined.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+/**
+ * @license Angular v4.0.1
+>>>>>>> Stashed changes
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -165,7 +179,11 @@ var CachedResourceLoader = (function (_super) {
 /**
  * @stable
  */
+<<<<<<< Updated upstream
 var VERSION = new _angular_core.Version('4.4.6');
+=======
+var VERSION = new _angular_core.Version('4.0.1');
+>>>>>>> Stashed changes
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.

@@ -1,6 +1,7 @@
 {
   "_args": [
     [
+<<<<<<< Updated upstream
       "@angular/platform-browser-dynamic@4.4.6",
       "D:\\workspace\\russian_ballet"
     ]
@@ -21,39 +22,119 @@
     "rawSpec": "4.4.6",
     "saveSpec": null,
     "fetchSpec": "4.4.6"
+=======
+      {
+        "raw": "@angular/platform-browser-dynamic@latest",
+        "scope": "@angular",
+        "escapedName": "@angular%2fplatform-browser-dynamic",
+        "name": "@angular/platform-browser-dynamic",
+        "rawSpec": "latest",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\workspace\\flask_angular2"
+    ]
+  ],
+  "_from": "@angular/platform-browser-dynamic@latest",
+  "_id": "@angular/platform-browser-dynamic@4.0.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/@angular/platform-browser-dynamic",
+  "_nodeVersion": "6.9.5",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/platform-browser-dynamic-4.0.1.tgz_1490830662022_0.8342775027267635"
+  },
+  "_npmUser": {
+    "name": "angular",
+    "email": "angular-core+npm@google.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@angular/platform-browser-dynamic@latest",
+    "scope": "@angular",
+    "escapedName": "@angular%2fplatform-browser-dynamic",
+    "name": "@angular/platform-browser-dynamic",
+    "rawSpec": "latest",
+    "spec": "latest",
+    "type": "tag"
+>>>>>>> Stashed changes
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
+<<<<<<< Updated upstream
   "_resolved": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.4.6.tgz",
   "_spec": "4.4.6",
   "_where": "D:\\workspace\\russian_ballet",
+=======
+  "_resolved": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.0.1.tgz",
+  "_shasum": "fd5debb2d3f6474350965e71c2674e2170d7cfcb",
+  "_shrinkwrap": null,
+  "_spec": "@angular/platform-browser-dynamic@latest",
+  "_where": "D:\\workspace\\flask_angular2",
+>>>>>>> Stashed changes
   "author": {
     "name": "angular"
   },
   "bugs": {
     "url": "https://github.com/angular/angular/issues"
   },
+<<<<<<< Updated upstream
   "dependencies": {
     "tslib": "^1.7.1"
   },
   "description": "Angular - library for using Angular in a web browser with JIT compilation",
+=======
+  "dependencies": {},
+  "description": "Angular - library for using Angular in a web browser with JIT compilation",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "fd5debb2d3f6474350965e71c2674e2170d7cfcb",
+    "tarball": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.0.1.tgz"
+  },
+>>>>>>> Stashed changes
   "es2015": "./@angular/platform-browser-dynamic.js",
   "homepage": "https://github.com/angular/angular#readme",
   "license": "MIT",
   "main": "./bundles/platform-browser-dynamic.umd.js",
+<<<<<<< Updated upstream
+=======
+  "maintainers": [
+    {
+      "name": "angular",
+      "email": "angular-core+npm@google.com"
+    }
+  ],
+>>>>>>> Stashed changes
   "module": "./@angular/platform-browser-dynamic.es5.js",
   "name": "@angular/platform-browser-dynamic",
   "peerDependencies": {
+<<<<<<< Updated upstream
     "@angular/core": "4.4.6",
     "@angular/common": "4.4.6",
     "@angular/compiler": "4.4.6",
     "@angular/platform-browser": "4.4.6"
+=======
+    "@angular/core": "4.0.1",
+    "@angular/common": "4.0.1",
+    "@angular/compiler": "4.0.1",
+    "@angular/platform-browser": "4.0.1"
+>>>>>>> Stashed changes
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/angular/angular.git"
   },
+<<<<<<< Updated upstream
   "typings": "./platform-browser-dynamic.d.ts",
   "version": "4.4.6"
+=======
+  "scripts": {},
+  "typings": "./platform-browser-dynamic.d.ts",
+  "version": "4.0.1"
+>>>>>>> Stashed changes
 }

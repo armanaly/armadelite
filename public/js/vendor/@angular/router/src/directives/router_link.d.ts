@@ -6,7 +6,11 @@
  * found in the LICENSE file at https://angular.io/license
  */
 import { LocationStrategy } from '@angular/common';
+<<<<<<< Updated upstream
 import { ElementRef, OnChanges, OnDestroy, Renderer2 } from '@angular/core';
+=======
+import { ElementRef, OnChanges, OnDestroy, Renderer } from '@angular/core';
+>>>>>>> Stashed changes
 import { QueryParamsHandling } from '../config';
 import { Router } from '../router';
 import { ActivatedRoute } from '../router_state';
@@ -65,9 +69,15 @@ import { UrlTree } from '../url_tree';
  *
  * You can tell the directive to how to handle queryParams, available options are:
  *  - 'merge' merge the queryParams into the current queryParams
+<<<<<<< Updated upstream
  *  - 'preserve' preserve the current queryParams
  *  - default / '' use the queryParams only
  *  same options for {@link NavigationExtras#queryParamsHandling}
+=======
+ *  - 'preserve' prserve the current queryParams
+ *  - default / '' use the queryParams only
+ *  same options for {@link NavigationExtras.queryParamsHandling}
+>>>>>>> Stashed changes
  *
  * ```
  * <a [routerLink]="['/user/bob']" [queryParams]="{debug: true}" queryParamsHandling="merge">
@@ -101,7 +111,11 @@ export declare class RouterLink {
     replaceUrl: boolean;
     private commands;
     private preserve;
+<<<<<<< Updated upstream
     constructor(router: Router, route: ActivatedRoute, tabIndex: string, renderer: Renderer2, el: ElementRef);
+=======
+    constructor(router: Router, route: ActivatedRoute, tabIndex: string, renderer: Renderer, el: ElementRef);
+>>>>>>> Stashed changes
     routerLink: any[] | string;
     /**
      * @deprecated 4.0.0 use `queryParamsHandling` instead.

@@ -24,5 +24,9 @@ export declare class MessageBundle {
     }, _locale?: string | null);
     updateFromTemplate(html: string, url: string, interpolationConfig: InterpolationConfig): ParseError[];
     getMessages(): i18n.Message[];
+<<<<<<< Updated upstream
     write(serializer: Serializer, filterSources?: (path: string) => string): string;
+=======
+    write(serializer: Serializer): string;
+>>>>>>> Stashed changes
 }

@@ -23,7 +23,11 @@
 export { VERSION } from './version';
 export * from './template_parser/template_ast';
 export { TEMPLATE_TRANSFORMS } from './template_parser/template_parser';
+<<<<<<< Updated upstream
 export { CompilerConfig, preserveWhitespacesDefault } from './config';
+=======
+export { CompilerConfig } from './config';
+>>>>>>> Stashed changes
 export * from './compile_metadata';
 export * from './aot/compiler_factory';
 export * from './aot/compiler';
@@ -31,6 +35,7 @@ export * from './aot/generated_file';
 export * from './aot/compiler_options';
 export * from './aot/compiler_host';
 export * from './aot/static_reflector';
+<<<<<<< Updated upstream
 export * from './aot/static_symbol';
 export * from './aot/static_symbol_resolver';
 export * from './aot/summary_resolver';
@@ -40,6 +45,15 @@ export { JitCompiler } from './jit/compiler';
 export * from './jit/compiler_factory';
 export * from './jit/jit_reflector';
 export * from './compile_reflector';
+=======
+export * from './aot/static_reflection_capabilities';
+export * from './aot/static_symbol';
+export * from './aot/static_symbol_resolver';
+export * from './aot/summary_resolver';
+export * from './summary_resolver';
+export { JitCompiler } from './jit/compiler';
+export * from './jit/compiler_factory';
+>>>>>>> Stashed changes
 export * from './url_resolver';
 export * from './resource_loader';
 export { DirectiveResolver } from './directive_resolver';
@@ -59,8 +73,12 @@ export * from './ml_parser/html_tags';
 export * from './ml_parser/interpolation_config';
 export * from './ml_parser/tags';
 export { NgModuleCompiler } from './ng_module_compiler';
+<<<<<<< Updated upstream
 export { AssertNotNull, BinaryOperator, BinaryOperatorExpr, BuiltinMethod, BuiltinVar, CastExpr, ClassStmt, CommaExpr, CommentStmt, ConditionalExpr, DeclareFunctionStmt, DeclareVarStmt, ExpressionStatement, ExpressionVisitor, ExternalExpr, ExternalReference, FunctionExpr, IfStmt, InstantiateExpr, InvokeFunctionExpr, InvokeMethodExpr, LiteralArrayExpr, LiteralExpr, LiteralMapExpr, NotExpr, ReadKeyExpr, ReadPropExpr, ReadVarExpr, ReturnStatement, StatementVisitor, ThrowStmt, TryCatchStmt, WriteKeyExpr, WritePropExpr, WriteVarExpr, StmtModifier, Statement } from './output/output_ast';
 export { EmitterVisitorContext } from './output/abstract_emitter';
+=======
+export * from './output/path_util';
+>>>>>>> Stashed changes
 export * from './output/ts_emitter';
 export * from './parse_util';
 export * from './schema/dom_element_schema_registry';
@@ -68,4 +86,8 @@ export * from './selector';
 export * from './style_compiler';
 export * from './template_parser/template_parser';
 export { ViewCompiler } from './view_compiler/view_compiler';
+<<<<<<< Updated upstream
 export { getParseErrors, isSyntaxError, syntaxError } from './util';
+=======
+export { isSyntaxError, syntaxError } from './util';
+>>>>>>> Stashed changes

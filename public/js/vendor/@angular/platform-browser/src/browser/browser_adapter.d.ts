@@ -101,10 +101,17 @@ export declare class BrowserDomAdapter extends GenericBrowserDomAdapter {
     adoptNode(node: Node): any;
     getHref(el: Element): string;
     getEventKey(event: any): string;
+<<<<<<< Updated upstream
     getGlobalEventTarget(doc: Document, target: string): EventTarget | null;
     getHistory(): History;
     getLocation(): Location;
     getBaseHref(doc: Document): string | null;
+=======
+    getGlobalEventTarget(doc: Document, target: string): EventTarget;
+    getHistory(): History;
+    getLocation(): Location;
+    getBaseHref(doc: Document): string;
+>>>>>>> Stashed changes
     resetBaseElement(): void;
     getUserAgent(): string;
     setData(element: Element, name: string, value: string): void;
@@ -116,3 +123,8 @@ export declare class BrowserDomAdapter extends GenericBrowserDomAdapter {
     getCookie(name: string): string | null;
     setCookie(name: string, value: string): void;
 }
+<<<<<<< Updated upstream
+=======
+export declare function parseCookieValue(cookieStr: string, name: string): string;
+export declare function setValueOnPath(global: any, path: string, value: any): void;
+>>>>>>> Stashed changes

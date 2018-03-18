@@ -5,6 +5,10 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+<<<<<<< Updated upstream
+=======
+import { CompileIdentifierMetadata } from '../compile_metadata';
+>>>>>>> Stashed changes
 import { ParseSourceSpan } from '../parse_util';
 export declare enum TypeModifier {
     Const = 0,
@@ -31,7 +35,11 @@ export declare class BuiltinType extends Type {
 }
 export declare class ExpressionType extends Type {
     value: Expression;
+<<<<<<< Updated upstream
     constructor(value: Expression, modifiers?: TypeModifier[] | null);
+=======
+    constructor(value: Expression, modifiers?: TypeModifier[]);
+>>>>>>> Stashed changes
     visitType(visitor: TypeVisitor, context: any): any;
 }
 export declare class ArrayType extends Type {
@@ -75,6 +83,7 @@ export declare enum BinaryOperator {
     BiggerEquals = 14,
 }
 export declare abstract class Expression {
+<<<<<<< Updated upstream
     type: Type | null;
     sourceSpan: ParseSourceSpan | null;
     constructor(type: Type | null | undefined, sourceSpan?: ParseSourceSpan | null);
@@ -102,6 +111,35 @@ export declare abstract class Expression {
     biggerEquals(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
     isBlank(sourceSpan?: ParseSourceSpan | null): Expression;
     cast(type: Type, sourceSpan?: ParseSourceSpan | null): Expression;
+=======
+    type: Type;
+    sourceSpan: ParseSourceSpan;
+    constructor(type: Type, sourceSpan?: ParseSourceSpan);
+    abstract visitExpression(visitor: ExpressionVisitor, context: any): any;
+    prop(name: string, sourceSpan?: ParseSourceSpan): ReadPropExpr;
+    key(index: Expression, type?: Type, sourceSpan?: ParseSourceSpan): ReadKeyExpr;
+    callMethod(name: string | BuiltinMethod, params: Expression[], sourceSpan?: ParseSourceSpan): InvokeMethodExpr;
+    callFn(params: Expression[], sourceSpan?: ParseSourceSpan): InvokeFunctionExpr;
+    instantiate(params: Expression[], type?: Type, sourceSpan?: ParseSourceSpan): InstantiateExpr;
+    conditional(trueCase: Expression, falseCase?: Expression, sourceSpan?: ParseSourceSpan): ConditionalExpr;
+    equals(rhs: Expression, sourceSpan?: ParseSourceSpan): BinaryOperatorExpr;
+    notEquals(rhs: Expression, sourceSpan?: ParseSourceSpan): BinaryOperatorExpr;
+    identical(rhs: Expression, sourceSpan?: ParseSourceSpan): BinaryOperatorExpr;
+    notIdentical(rhs: Expression, sourceSpan?: ParseSourceSpan): BinaryOperatorExpr;
+    minus(rhs: Expression, sourceSpan?: ParseSourceSpan): BinaryOperatorExpr;
+    plus(rhs: Expression, sourceSpan?: ParseSourceSpan): BinaryOperatorExpr;
+    divide(rhs: Expression, sourceSpan?: ParseSourceSpan): BinaryOperatorExpr;
+    multiply(rhs: Expression, sourceSpan?: ParseSourceSpan): BinaryOperatorExpr;
+    modulo(rhs: Expression, sourceSpan?: ParseSourceSpan): BinaryOperatorExpr;
+    and(rhs: Expression, sourceSpan?: ParseSourceSpan): BinaryOperatorExpr;
+    or(rhs: Expression, sourceSpan?: ParseSourceSpan): BinaryOperatorExpr;
+    lower(rhs: Expression, sourceSpan?: ParseSourceSpan): BinaryOperatorExpr;
+    lowerEquals(rhs: Expression, sourceSpan?: ParseSourceSpan): BinaryOperatorExpr;
+    bigger(rhs: Expression, sourceSpan?: ParseSourceSpan): BinaryOperatorExpr;
+    biggerEquals(rhs: Expression, sourceSpan?: ParseSourceSpan): BinaryOperatorExpr;
+    isBlank(sourceSpan?: ParseSourceSpan): Expression;
+    cast(type: Type, sourceSpan?: ParseSourceSpan): Expression;
+>>>>>>> Stashed changes
     toStmt(): Statement;
 }
 export declare enum BuiltinVar {
@@ -111,16 +149,26 @@ export declare enum BuiltinVar {
     CatchStack = 3,
 }
 export declare class ReadVarExpr extends Expression {
+<<<<<<< Updated upstream
     name: string | null;
     builtin: BuiltinVar | null;
     constructor(name: string | BuiltinVar, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    name: string;
+    builtin: BuiltinVar;
+    constructor(name: string | BuiltinVar, type?: Type, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
     set(value: Expression): WriteVarExpr;
 }
 export declare class WriteVarExpr extends Expression {
     name: string;
     value: Expression;
+<<<<<<< Updated upstream
     constructor(name: string, value: Expression, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(name: string, value: Expression, type?: Type, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
     toDeclStmt(type?: Type | null, modifiers?: StmtModifier[] | null): DeclareVarStmt;
 }
@@ -128,14 +176,22 @@ export declare class WriteKeyExpr extends Expression {
     receiver: Expression;
     index: Expression;
     value: Expression;
+<<<<<<< Updated upstream
     constructor(receiver: Expression, index: Expression, value: Expression, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(receiver: Expression, index: Expression, value: Expression, type?: Type, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
 }
 export declare class WritePropExpr extends Expression {
     receiver: Expression;
     name: string;
     value: Expression;
+<<<<<<< Updated upstream
     constructor(receiver: Expression, name: string, value: Expression, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(receiver: Expression, name: string, value: Expression, type?: Type, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
 }
 export declare enum BuiltinMethod {
@@ -146,25 +202,40 @@ export declare enum BuiltinMethod {
 export declare class InvokeMethodExpr extends Expression {
     receiver: Expression;
     args: Expression[];
+<<<<<<< Updated upstream
     name: string | null;
     builtin: BuiltinMethod | null;
     constructor(receiver: Expression, method: string | BuiltinMethod, args: Expression[], type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    name: string;
+    builtin: BuiltinMethod;
+    constructor(receiver: Expression, method: string | BuiltinMethod, args: Expression[], type?: Type, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
 }
 export declare class InvokeFunctionExpr extends Expression {
     fn: Expression;
     args: Expression[];
+<<<<<<< Updated upstream
     constructor(fn: Expression, args: Expression[], type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(fn: Expression, args: Expression[], type?: Type, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
 }
 export declare class InstantiateExpr extends Expression {
     classExpr: Expression;
     args: Expression[];
+<<<<<<< Updated upstream
     constructor(classExpr: Expression, args: Expression[], type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(classExpr: Expression, args: Expression[], type?: Type, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
 }
 export declare class LiteralExpr extends Expression {
     value: any;
+<<<<<<< Updated upstream
     constructor(value: any, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
     visitExpression(visitor: ExpressionVisitor, context: any): any;
 }
@@ -172,6 +243,15 @@ export declare class ExternalExpr extends Expression {
     value: ExternalReference;
     typeParams: Type[] | null;
     constructor(value: ExternalReference, type?: Type | null, typeParams?: Type[] | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(value: any, type?: Type, sourceSpan?: ParseSourceSpan);
+    visitExpression(visitor: ExpressionVisitor, context: any): any;
+}
+export declare class ExternalExpr extends Expression {
+    value: CompileIdentifierMetadata;
+    typeParams: Type[];
+    constructor(value: CompileIdentifierMetadata, type?: Type, typeParams?: Type[], sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
 }
 export declare class ExternalReference {
@@ -184,22 +264,34 @@ export declare class ConditionalExpr extends Expression {
     condition: Expression;
     falseCase: Expression | null;
     trueCase: Expression;
+<<<<<<< Updated upstream
     constructor(condition: Expression, trueCase: Expression, falseCase?: Expression | null, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(condition: Expression, trueCase: Expression, falseCase?: Expression, type?: Type, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
 }
 export declare class NotExpr extends Expression {
     condition: Expression;
+<<<<<<< Updated upstream
     constructor(condition: Expression, sourceSpan?: ParseSourceSpan | null);
     visitExpression(visitor: ExpressionVisitor, context: any): any;
 }
 export declare class AssertNotNull extends Expression {
     condition: Expression;
     constructor(condition: Expression, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(condition: Expression, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
 }
 export declare class CastExpr extends Expression {
     value: Expression;
+<<<<<<< Updated upstream
     constructor(value: Expression, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(value: Expression, type: Type, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
 }
 export declare class FnParam {
@@ -210,7 +302,11 @@ export declare class FnParam {
 export declare class FunctionExpr extends Expression {
     params: FnParam[];
     statements: Statement[];
+<<<<<<< Updated upstream
     constructor(params: FnParam[], statements: Statement[], type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(params: FnParam[], statements: Statement[], type?: Type, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
     toDeclStmt(name: string, modifiers?: StmtModifier[] | null): DeclareFunctionStmt;
 }
@@ -218,26 +314,42 @@ export declare class BinaryOperatorExpr extends Expression {
     operator: BinaryOperator;
     rhs: Expression;
     lhs: Expression;
+<<<<<<< Updated upstream
     constructor(operator: BinaryOperator, lhs: Expression, rhs: Expression, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(operator: BinaryOperator, lhs: Expression, rhs: Expression, type?: Type, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
 }
 export declare class ReadPropExpr extends Expression {
     receiver: Expression;
     name: string;
+<<<<<<< Updated upstream
     constructor(receiver: Expression, name: string, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(receiver: Expression, name: string, type?: Type, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
     set(value: Expression): WritePropExpr;
 }
 export declare class ReadKeyExpr extends Expression {
     receiver: Expression;
     index: Expression;
+<<<<<<< Updated upstream
     constructor(receiver: Expression, index: Expression, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(receiver: Expression, index: Expression, type?: Type, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
     set(value: Expression): WriteKeyExpr;
 }
 export declare class LiteralArrayExpr extends Expression {
     entries: Expression[];
+<<<<<<< Updated upstream
     constructor(entries: Expression[], type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(entries: Expression[], type?: Type, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
 }
 export declare class LiteralMapEntry {
@@ -248,13 +360,22 @@ export declare class LiteralMapEntry {
 }
 export declare class LiteralMapExpr extends Expression {
     entries: LiteralMapEntry[];
+<<<<<<< Updated upstream
     valueType: Type | null;
     constructor(entries: LiteralMapEntry[], type?: MapType | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    valueType: Type;
+    constructor(entries: LiteralMapEntry[], type?: MapType, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
 }
 export declare class CommaExpr extends Expression {
     parts: Expression[];
+<<<<<<< Updated upstream
     constructor(parts: Expression[], sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(parts: Expression[], sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitExpression(visitor: ExpressionVisitor, context: any): any;
 }
 export interface ExpressionVisitor {
@@ -292,34 +413,57 @@ export declare enum StmtModifier {
 }
 export declare abstract class Statement {
     modifiers: StmtModifier[];
+<<<<<<< Updated upstream
     sourceSpan: ParseSourceSpan | null;
     constructor(modifiers?: StmtModifier[] | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    sourceSpan: ParseSourceSpan;
+    constructor(modifiers?: StmtModifier[], sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     abstract visitStatement(visitor: StatementVisitor, context: any): any;
     hasModifier(modifier: StmtModifier): boolean;
 }
 export declare class DeclareVarStmt extends Statement {
     name: string;
     value: Expression;
+<<<<<<< Updated upstream
     type: Type | null;
     constructor(name: string, value: Expression, type?: Type | null, modifiers?: StmtModifier[] | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    type: Type;
+    constructor(name: string, value: Expression, type?: Type, modifiers?: StmtModifier[], sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitStatement(visitor: StatementVisitor, context: any): any;
 }
 export declare class DeclareFunctionStmt extends Statement {
     name: string;
     params: FnParam[];
     statements: Statement[];
+<<<<<<< Updated upstream
     type: Type | null;
     constructor(name: string, params: FnParam[], statements: Statement[], type?: Type | null, modifiers?: StmtModifier[] | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    type: Type;
+    constructor(name: string, params: FnParam[], statements: Statement[], type?: Type, modifiers?: StmtModifier[], sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitStatement(visitor: StatementVisitor, context: any): any;
 }
 export declare class ExpressionStatement extends Statement {
     expr: Expression;
+<<<<<<< Updated upstream
     constructor(expr: Expression, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(expr: Expression, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitStatement(visitor: StatementVisitor, context: any): any;
 }
 export declare class ReturnStatement extends Statement {
     value: Expression;
+<<<<<<< Updated upstream
     constructor(value: Expression, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(value: Expression, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitStatement(visitor: StatementVisitor, context: any): any;
 }
 export declare class AbstractClassPart {
@@ -350,30 +494,50 @@ export declare class ClassStmt extends Statement {
     getters: ClassGetter[];
     constructorMethod: ClassMethod;
     methods: ClassMethod[];
+<<<<<<< Updated upstream
     constructor(name: string, parent: Expression | null, fields: ClassField[], getters: ClassGetter[], constructorMethod: ClassMethod, methods: ClassMethod[], modifiers?: StmtModifier[] | null, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(name: string, parent: Expression, fields: ClassField[], getters: ClassGetter[], constructorMethod: ClassMethod, methods: ClassMethod[], modifiers?: StmtModifier[], sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitStatement(visitor: StatementVisitor, context: any): any;
 }
 export declare class IfStmt extends Statement {
     condition: Expression;
     trueCase: Statement[];
     falseCase: Statement[];
+<<<<<<< Updated upstream
     constructor(condition: Expression, trueCase: Statement[], falseCase?: Statement[], sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(condition: Expression, trueCase: Statement[], falseCase?: Statement[], sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitStatement(visitor: StatementVisitor, context: any): any;
 }
 export declare class CommentStmt extends Statement {
     comment: string;
+<<<<<<< Updated upstream
     constructor(comment: string, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(comment: string, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitStatement(visitor: StatementVisitor, context: any): any;
 }
 export declare class TryCatchStmt extends Statement {
     bodyStmts: Statement[];
     catchStmts: Statement[];
+<<<<<<< Updated upstream
     constructor(bodyStmts: Statement[], catchStmts: Statement[], sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(bodyStmts: Statement[], catchStmts: Statement[], sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitStatement(visitor: StatementVisitor, context: any): any;
 }
 export declare class ThrowStmt extends Statement {
     error: Expression;
+<<<<<<< Updated upstream
     constructor(error: Expression, sourceSpan?: ParseSourceSpan | null);
+=======
+    constructor(error: Expression, sourceSpan?: ParseSourceSpan);
+>>>>>>> Stashed changes
     visitStatement(visitor: StatementVisitor, context: any): any;
 }
 export interface StatementVisitor {
@@ -456,6 +620,7 @@ export declare class RecursiveAstVisitor implements StatementVisitor, Expression
     visitAllStatements(stmts: Statement[], context: any): void;
 }
 export declare function findReadVarNames(stmts: Statement[]): Set<string>;
+<<<<<<< Updated upstream
 export declare function applySourceSpanToStatementIfNeeded(stmt: Statement, sourceSpan: ParseSourceSpan | null): Statement;
 export declare function applySourceSpanToExpressionIfNeeded(expr: Expression, sourceSpan: ParseSourceSpan | null): Expression;
 export declare function variable(name: string, type?: Type | null, sourceSpan?: ParseSourceSpan | null): ReadVarExpr;
@@ -472,3 +637,16 @@ export declare function not(expr: Expression, sourceSpan?: ParseSourceSpan | nul
 export declare function assertNotNull(expr: Expression, sourceSpan?: ParseSourceSpan | null): AssertNotNull;
 export declare function fn(params: FnParam[], body: Statement[], type?: Type | null, sourceSpan?: ParseSourceSpan | null): FunctionExpr;
 export declare function literal(value: any, type?: Type | null, sourceSpan?: ParseSourceSpan | null): LiteralExpr;
+=======
+export declare function applySourceSpanToStatementIfNeeded(stmt: Statement, sourceSpan: ParseSourceSpan): Statement;
+export declare function applySourceSpanToExpressionIfNeeded(expr: Expression, sourceSpan: ParseSourceSpan): Expression;
+export declare function variable(name: string, type?: Type, sourceSpan?: ParseSourceSpan): ReadVarExpr;
+export declare function importExpr(id: CompileIdentifierMetadata, typeParams?: Type[], sourceSpan?: ParseSourceSpan): ExternalExpr;
+export declare function importType(id: CompileIdentifierMetadata, typeParams?: Type[], typeModifiers?: TypeModifier[]): ExpressionType;
+export declare function expressionType(expr: Expression, typeModifiers?: TypeModifier[]): ExpressionType;
+export declare function literalArr(values: Expression[], type?: Type, sourceSpan?: ParseSourceSpan): LiteralArrayExpr;
+export declare function literalMap(values: [string, Expression][], type?: MapType, quoted?: boolean): LiteralMapExpr;
+export declare function not(expr: Expression, sourceSpan?: ParseSourceSpan): NotExpr;
+export declare function fn(params: FnParam[], body: Statement[], type?: Type, sourceSpan?: ParseSourceSpan): FunctionExpr;
+export declare function literal(value: any, type?: Type, sourceSpan?: ParseSourceSpan): LiteralExpr;
+>>>>>>> Stashed changes

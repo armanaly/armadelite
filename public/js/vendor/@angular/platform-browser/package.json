@@ -1,6 +1,7 @@
 {
   "_args": [
     [
+<<<<<<< Updated upstream
       "@angular/platform-browser@4.4.6",
       "D:\\workspace\\russian_ballet"
     ]
@@ -21,37 +22,115 @@
     "rawSpec": "4.4.6",
     "saveSpec": null,
     "fetchSpec": "4.4.6"
+=======
+      {
+        "raw": "@angular/platform-browser@latest",
+        "scope": "@angular",
+        "escapedName": "@angular%2fplatform-browser",
+        "name": "@angular/platform-browser",
+        "rawSpec": "latest",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\workspace\\flask_angular2"
+    ]
+  ],
+  "_from": "@angular/platform-browser@latest",
+  "_id": "@angular/platform-browser@4.0.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/@angular/platform-browser",
+  "_nodeVersion": "6.9.5",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/platform-browser-4.0.1.tgz_1490830660742_0.737566526979208"
+  },
+  "_npmUser": {
+    "name": "angular",
+    "email": "angular-core+npm@google.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@angular/platform-browser@latest",
+    "scope": "@angular",
+    "escapedName": "@angular%2fplatform-browser",
+    "name": "@angular/platform-browser",
+    "rawSpec": "latest",
+    "spec": "latest",
+    "type": "tag"
+>>>>>>> Stashed changes
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
+<<<<<<< Updated upstream
   "_resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-4.4.6.tgz",
   "_spec": "4.4.6",
   "_where": "D:\\workspace\\russian_ballet",
+=======
+  "_resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-4.0.1.tgz",
+  "_shasum": "4b9efbeb2fbb900de188743b988802d3aa2b33ff",
+  "_shrinkwrap": null,
+  "_spec": "@angular/platform-browser@latest",
+  "_where": "D:\\workspace\\flask_angular2",
+>>>>>>> Stashed changes
   "author": {
     "name": "angular"
   },
   "bugs": {
     "url": "https://github.com/angular/angular/issues"
   },
+<<<<<<< Updated upstream
   "dependencies": {
     "tslib": "^1.7.1"
   },
   "description": "Angular - library for using Angular in a web browser",
+=======
+  "dependencies": {},
+  "description": "Angular - library for using Angular in a web browser",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "4b9efbeb2fbb900de188743b988802d3aa2b33ff",
+    "tarball": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-4.0.1.tgz"
+  },
+>>>>>>> Stashed changes
   "es2015": "./@angular/platform-browser.js",
   "homepage": "https://github.com/angular/angular#readme",
   "license": "MIT",
   "main": "./bundles/platform-browser.umd.js",
+<<<<<<< Updated upstream
+=======
+  "maintainers": [
+    {
+      "name": "angular",
+      "email": "angular-core+npm@google.com"
+    }
+  ],
+>>>>>>> Stashed changes
   "module": "./@angular/platform-browser.es5.js",
   "name": "@angular/platform-browser",
   "peerDependencies": {
+<<<<<<< Updated upstream
     "@angular/core": "4.4.6",
     "@angular/common": "4.4.6"
+=======
+    "@angular/core": "4.0.1",
+    "@angular/common": "4.0.1"
+>>>>>>> Stashed changes
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/angular/angular.git"
   },
+<<<<<<< Updated upstream
   "typings": "./platform-browser.d.ts",
   "version": "4.4.6"
+=======
+  "scripts": {},
+  "typings": "./platform-browser.d.ts",
+  "version": "4.0.1"
+>>>>>>> Stashed changes
 }

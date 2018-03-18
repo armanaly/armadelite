@@ -1,5 +1,15 @@
+<<<<<<< Updated upstream
 import * as o from './output/output_ast';
 import { ParseError } from './parse_util';
+=======
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+>>>>>>> Stashed changes
 export declare const MODULE_SUFFIX = "";
 export declare function camelCaseToDashCase(input: string): string;
 export declare function dashCaseToCamelCase(input: string): string;
@@ -24,6 +34,7 @@ export declare class ValueTransformer implements ValueVisitor {
     visitPrimitive(value: any, context: any): any;
     visitOther(value: any, context: any): any;
 }
+<<<<<<< Updated upstream
 export declare type SyncAsync<T> = T | Promise<T>;
 export declare const SyncAsync: {
     assertSync: <T>(value: SyncAsync<T>) => T;
@@ -40,3 +51,14 @@ export interface OutputContext {
     statements: o.Statement[];
     importExpr(reference: any, typeParams?: o.Type[] | null): o.Expression;
 }
+=======
+export declare class SyncAsyncResult<T> {
+    syncResult: T;
+    asyncResult: Promise<T>;
+    constructor(syncResult: T, asyncResult?: Promise<T>);
+}
+export declare function syntaxError(msg: string): Error;
+export declare function isSyntaxError(error: Error): boolean;
+export declare function escapeRegExp(s: string): string;
+export declare function utf8Encode(str: string): string;
+>>>>>>> Stashed changes

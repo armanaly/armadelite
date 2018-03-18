@@ -80,4 +80,8 @@ export declare class Request extends Body {
      */
     getBody(): any;
 }
+<<<<<<< Updated upstream
 export declare const ArrayBuffer: ArrayBufferConstructor;
+=======
+export declare const ArrayBuffer: any;
+>>>>>>> Stashed changes

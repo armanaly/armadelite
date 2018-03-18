@@ -30,6 +30,10 @@ export declare class Reflector {
     method(name: string): MethodFn;
     importUri(type: any): string;
     resourceUri(type: any): string;
+<<<<<<< Updated upstream
     resolveIdentifier(name: string, moduleUrl: string, members: string[], runtime: any): any;
+=======
+    resolveIdentifier(name: string, moduleUrl: string, members: string[] | null, runtime: any): any;
+>>>>>>> Stashed changes
     resolveEnum(identifier: any, name: string): any;
 }

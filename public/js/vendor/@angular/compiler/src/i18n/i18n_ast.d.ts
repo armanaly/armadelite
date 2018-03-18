@@ -17,7 +17,10 @@ export declare class Message {
     meaning: string;
     description: string;
     id: string;
+<<<<<<< Updated upstream
     sources: MessageSpan[];
+=======
+>>>>>>> Stashed changes
     /**
      * @param nodes message AST
      * @param placeholders maps placeholder names to static content
@@ -31,6 +34,7 @@ export declare class Message {
     }, placeholderToMessage: {
         [phName: string]: Message;
     }, meaning: string, description: string, id: string);
+<<<<<<< Updated upstream
 }
 export interface MessageSpan {
     filePath: string;
@@ -38,6 +42,8 @@ export interface MessageSpan {
     startCol: number;
     endLine: number;
     endCol: number;
+=======
+>>>>>>> Stashed changes
 }
 export interface Node {
     sourceSpan: ParseSourceSpan;

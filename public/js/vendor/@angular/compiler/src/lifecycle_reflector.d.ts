@@ -5,6 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+<<<<<<< Updated upstream
 import { CompileReflector } from './compile_reflector';
 export declare enum LifecycleHooks {
     OnInit = 0,
@@ -19,3 +20,7 @@ export declare enum LifecycleHooks {
 export declare const LIFECYCLE_HOOKS_VALUES: LifecycleHooks[];
 export declare function hasLifecycleHook(reflector: CompileReflector, hook: LifecycleHooks, token: any): boolean;
 export declare function getAllLifecycleHooks(reflector: CompileReflector, token: any): LifecycleHooks[];
+=======
+import { ɵLifecycleHooks } from '@angular/core';
+export declare function hasLifecycleHook(hook: ɵLifecycleHooks, token: any): boolean;
+>>>>>>> Stashed changes

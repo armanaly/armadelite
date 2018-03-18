@@ -133,7 +133,11 @@ export declare abstract class DomSanitizer implements Sanitizer {
 export declare class DomSanitizerImpl extends DomSanitizer {
     private _doc;
     constructor(_doc: any);
+<<<<<<< Updated upstream
     sanitize(ctx: SecurityContext, value: SafeValue | string | null): string | null;
+=======
+    sanitize(ctx: SecurityContext, value: any): string;
+>>>>>>> Stashed changes
     private checkNotSafeValue(value, expectedType);
     bypassSecurityTrustHtml(value: string): SafeHtml;
     bypassSecurityTrustStyle(value: string): SafeStyle;

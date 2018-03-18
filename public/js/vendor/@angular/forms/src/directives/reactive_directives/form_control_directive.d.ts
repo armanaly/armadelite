@@ -62,8 +62,13 @@ export declare class FormControlDirective extends NgControl implements OnChanges
     constructor(validators: Array<Validator | ValidatorFn>, asyncValidators: Array<AsyncValidator | AsyncValidatorFn>, valueAccessors: ControlValueAccessor[]);
     ngOnChanges(changes: SimpleChanges): void;
     readonly path: string[];
+<<<<<<< Updated upstream
     readonly validator: ValidatorFn | null;
     readonly asyncValidator: AsyncValidatorFn | null;
+=======
+    readonly validator: ValidatorFn;
+    readonly asyncValidator: AsyncValidatorFn;
+>>>>>>> Stashed changes
     readonly control: FormControl;
     viewToModelUpdate(newValue: any): void;
     private _isControlChanged(changes);

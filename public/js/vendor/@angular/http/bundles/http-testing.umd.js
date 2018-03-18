@@ -1,5 +1,9 @@
 /**
+<<<<<<< Updated upstream
  * @license Angular v4.4.6
+=======
+ * @license Angular v4.0.1
+>>>>>>> Stashed changes
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -10,7 +14,11 @@
 }(this, (function (exports,_angular_core,_angular_http,rxjs_ReplaySubject,rxjs_Subject,rxjs_operator_take) { 'use strict';
 
 /**
+<<<<<<< Updated upstream
  * @license Angular v4.4.6
+=======
+ * @license Angular v4.0.1
+>>>>>>> Stashed changes
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -23,6 +31,7 @@
  */
 /**
  *
+<<<<<<< Updated upstream
  * Mock Connection to represent a {\@link Connection} for tests.
  *
  * \@experimental
@@ -52,6 +61,32 @@ var MockConnection = (function () {
      *
      * @param {?} res
      * @return {?}
+=======
+ * Mock Connection to represent a {@link Connection} for tests.
+ *
+ * @experimental
+ */
+var MockConnection = (function () {
+    function MockConnection(req) {
+        this.response = rxjs_operator_take.take.call(new rxjs_ReplaySubject.ReplaySubject(1), 1);
+        this.readyState = _angular_http.ReadyState.Open;
+        this.request = req;
+    }
+    /**
+     * Sends a mock response to the connection. This response is the value that is emitted to the
+     * {@link EventEmitter} returned by {@link Http}.
+     *
+     * ### Example
+     *
+     * ```
+     * var connection;
+     * backend.connections.subscribe(c => connection = c);
+     * http.request('data.json').subscribe(res => console.log(res.text()));
+     * connection.mockRespond(new Response(new ResponseOptions({ body: 'fake response' }))); //logs
+     * 'fake response'
+     * ```
+     *
+>>>>>>> Stashed changes
      */
     MockConnection.prototype.mockRespond = function (res) {
         if (this.readyState === _angular_http.ReadyState.Done || this.readyState === _angular_http.ReadyState.Cancelled) {
@@ -64,10 +99,15 @@ var MockConnection = (function () {
     /**
      * Not yet implemented!
      *
+<<<<<<< Updated upstream
      * Sends the provided {\@link Response} to the `downloadObserver` of the `Request`
      * associated with this connection.
      * @param {?} res
      * @return {?}
+=======
+     * Sends the provided {@link Response} to the `downloadObserver` of the `Request`
+     * associated with this connection.
+>>>>>>> Stashed changes
      */
     MockConnection.prototype.mockDownload = function (res) {
         // this.request.downloadObserver.onNext(res);
@@ -75,10 +115,18 @@ var MockConnection = (function () {
         //   this.request.downloadObserver.onCompleted();
         // }
     };
+<<<<<<< Updated upstream
     /**
      * Emits the provided error object as an error to the {\@link Response} {\@link EventEmitter}
      * returned
      * from {\@link Http}.
+=======
+    // TODO(jeffbcross): consider using Response type
+    /**
+     * Emits the provided error object as an error to the {@link Response} {@link EventEmitter}
+     * returned
+     * from {@link Http}.
+>>>>>>> Stashed changes
      *
      * ### Example
      *
@@ -89,8 +137,11 @@ var MockConnection = (function () {
      * connection.mockError(new Error('error'));
      * ```
      *
+<<<<<<< Updated upstream
      * @param {?=} err
      * @return {?}
+=======
+>>>>>>> Stashed changes
      */
     MockConnection.prototype.mockError = function (err) {
         // Matches ResourceLoader semantics
@@ -100,24 +151,43 @@ var MockConnection = (function () {
     return MockConnection;
 }());
 /**
+<<<<<<< Updated upstream
  * A mock backend for testing the {\@link Http} service.
  *
  * This class can be injected in tests, and should be used to override providers
  * to other backends, such as {\@link XHRBackend}.
+=======
+ * A mock backend for testing the {@link Http} service.
+ *
+ * This class can be injected in tests, and should be used to override providers
+ * to other backends, such as {@link XHRBackend}.
+>>>>>>> Stashed changes
  *
  * ### Example
  *
  * ```
+<<<<<<< Updated upstream
  * import {Injectable, ReflectiveInjector} from '\@angular/core';
  * import {async, fakeAsync, tick} from '\@angular/core/testing';
  * import {BaseRequestOptions, ConnectionBackend, Http, RequestOptions} from '\@angular/http';
  * import {Response, ResponseOptions} from '\@angular/http';
  * import {MockBackend, MockConnection} from '\@angular/http/testing';
+=======
+ * import {Injectable, ReflectiveInjector} from '@angular/core';
+ * import {async, fakeAsync, tick} from '@angular/core/testing';
+ * import {BaseRequestOptions, ConnectionBackend, Http, RequestOptions} from '@angular/http';
+ * import {Response, ResponseOptions} from '@angular/http';
+ * import {MockBackend, MockConnection} from '@angular/http/testing';
+>>>>>>> Stashed changes
  *
  * const HERO_ONE = 'HeroNrOne';
  * const HERO_TWO = 'WillBeAlwaysTheSecond';
  *
+<<<<<<< Updated upstream
  * \@Injectable()
+=======
+ * @Injectable()
+>>>>>>> Stashed changes
  * class HeroService {
  *   constructor(private http: Http) {}
  *
@@ -184,7 +254,11 @@ var MockConnection = (function () {
  *
  * This method only exists in the mock implementation, not in real Backends.
  *
+<<<<<<< Updated upstream
  * \@experimental
+=======
+ * @experimental
+>>>>>>> Stashed changes
  */
 var MockBackend = (function () {
     function MockBackend() {
@@ -198,10 +272,16 @@ var MockBackend = (function () {
      * Checks all connections, and raises an exception if any connection has not received a response.
      *
      * This method only exists in the mock implementation, not in real Backends.
+<<<<<<< Updated upstream
      * @return {?}
      */
     MockBackend.prototype.verifyNoPendingRequests = function () {
         var /** @type {?} */ pending = 0;
+=======
+     */
+    MockBackend.prototype.verifyNoPendingRequests = function () {
+        var pending = 0;
+>>>>>>> Stashed changes
         this.pendingConnections.subscribe(function (c) { return pending++; });
         if (pending > 0)
             throw new Error(pending + " pending connections to be resolved");
@@ -211,6 +291,7 @@ var MockBackend = (function () {
      * connections, if it's expected that there are connections that have not yet received a response.
      *
      * This method only exists in the mock implementation, not in real Backends.
+<<<<<<< Updated upstream
      * @return {?}
      */
     MockBackend.prototype.resolveAllConnections = function () { this.connections.subscribe(function (c) { return c.readyState = 4; }); };
@@ -222,11 +303,25 @@ var MockBackend = (function () {
      * @param {?} req
      * @return {?}
      */
+=======
+     */
+    MockBackend.prototype.resolveAllConnections = function () { this.connections.subscribe(function (c) { return c.readyState = 4; }); };
+    /**
+     * Creates a new {@link MockConnection}. This is equivalent to calling `new
+     * MockConnection()`, except that it also will emit the new `Connection` to the `connections`
+     * emitter of this `MockBackend` instance. This method will usually only be used by tests
+     * against the framework itself, not by end-users.
+     */
+>>>>>>> Stashed changes
     MockBackend.prototype.createConnection = function (req) {
         if (!req || !(req instanceof _angular_http.Request)) {
             throw new Error("createConnection requires an instance of Request, got " + req);
         }
+<<<<<<< Updated upstream
         var /** @type {?} */ connection = new MockConnection(req);
+=======
+        var connection = new MockConnection(req);
+>>>>>>> Stashed changes
         this.connections.next(connection);
         return connection;
     };
@@ -235,9 +330,13 @@ var MockBackend = (function () {
 MockBackend.decorators = [
     { type: _angular_core.Injectable },
 ];
+<<<<<<< Updated upstream
 /**
  * @nocollapse
  */
+=======
+/** @nocollapse */
+>>>>>>> Stashed changes
 MockBackend.ctorParameters = function () { return []; };
 
 exports.MockConnection = MockConnection;

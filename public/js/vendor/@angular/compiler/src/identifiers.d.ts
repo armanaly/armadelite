@@ -2,6 +2,7 @@ import { CompileTokenMetadata } from './compile_metadata';
 import { CompileReflector } from './compile_reflector';
 import * as o from './output/output_ast';
 export declare class Identifiers {
+<<<<<<< Updated upstream
     static ANALYZE_FOR_ENTRY_COMPONENTS: o.ExternalReference;
     static ElementRef: o.ExternalReference;
     static NgModuleRef: o.ExternalReference;
@@ -47,6 +48,51 @@ export declare class Identifiers {
     static RendererType2: o.ExternalReference;
     static ViewDefinition: o.ExternalReference;
     static createComponentFactory: o.ExternalReference;
+=======
+    static ANALYZE_FOR_ENTRY_COMPONENTS: IdentifierSpec;
+    static ElementRef: IdentifierSpec;
+    static NgModuleRef: IdentifierSpec;
+    static ViewContainerRef: IdentifierSpec;
+    static ChangeDetectorRef: IdentifierSpec;
+    static QueryList: IdentifierSpec;
+    static TemplateRef: IdentifierSpec;
+    static CodegenComponentFactoryResolver: IdentifierSpec;
+    static ComponentFactoryResolver: IdentifierSpec;
+    static ComponentFactory: IdentifierSpec;
+    static ComponentRef: IdentifierSpec;
+    static NgModuleFactory: IdentifierSpec;
+    static NgModuleInjector: IdentifierSpec;
+    static RegisterModuleFactoryFn: IdentifierSpec;
+    static Injector: IdentifierSpec;
+    static ViewEncapsulation: IdentifierSpec;
+    static ChangeDetectionStrategy: IdentifierSpec;
+    static SecurityContext: IdentifierSpec;
+    static LOCALE_ID: IdentifierSpec;
+    static TRANSLATIONS_FORMAT: IdentifierSpec;
+    static inlineInterpolate: IdentifierSpec;
+    static interpolate: IdentifierSpec;
+    static EMPTY_ARRAY: IdentifierSpec;
+    static EMPTY_MAP: IdentifierSpec;
+    static Renderer: IdentifierSpec;
+    static viewDef: IdentifierSpec;
+    static elementDef: IdentifierSpec;
+    static anchorDef: IdentifierSpec;
+    static textDef: IdentifierSpec;
+    static directiveDef: IdentifierSpec;
+    static providerDef: IdentifierSpec;
+    static queryDef: IdentifierSpec;
+    static pureArrayDef: IdentifierSpec;
+    static pureObjectDef: IdentifierSpec;
+    static purePipeDef: IdentifierSpec;
+    static pipeDef: IdentifierSpec;
+    static nodeValue: IdentifierSpec;
+    static ngContentDef: IdentifierSpec;
+    static unwrapValue: IdentifierSpec;
+    static createRendererType2: IdentifierSpec;
+    static RendererType2: IdentifierSpec;
+    static ViewDefinition: IdentifierSpec;
+    static createComponentFactory: IdentifierSpec;
+>>>>>>> Stashed changes
 }
 export declare function createTokenForReference(reference: any): CompileTokenMetadata;
 export declare function createTokenForExternalReference(reflector: CompileReflector, reference: o.ExternalReference): CompileTokenMetadata;

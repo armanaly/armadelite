@@ -63,8 +63,12 @@ export declare class StaticSymbolResolver {
     private importAs;
     private symbolResourcePaths;
     private symbolFromFile;
+<<<<<<< Updated upstream
     private knownFileNameToModuleNames;
     constructor(host: StaticSymbolResolverHost, staticSymbolCache: StaticSymbolCache, summaryResolver: SummaryResolver<StaticSymbol>, errorRecorder?: (error: any, fileName?: string) => void);
+=======
+    constructor(host: StaticSymbolResolverHost, staticSymbolCache: StaticSymbolCache, summaryResolver: SummaryResolver<StaticSymbol>, errorRecorder?: (error: any, fileName: string) => void);
+>>>>>>> Stashed changes
     resolveSymbol(staticSymbol: StaticSymbol): ResolvedStaticSymbol;
     /**
      * getImportAs produces a symbol that can be used to import the given symbol.
@@ -75,7 +79,11 @@ export declare class StaticSymbolResolver {
      *
      * @param staticSymbol the symbol for which to generate a import symbol
      */
+<<<<<<< Updated upstream
     getImportAs(staticSymbol: StaticSymbol): StaticSymbol | null;
+=======
+    getImportAs(staticSymbol: StaticSymbol): StaticSymbol;
+>>>>>>> Stashed changes
     /**
      * getResourcePath produces the path to the original location of the symbol and should
      * be used to determine the relative location of resource references recorded in
@@ -86,11 +94,15 @@ export declare class StaticSymbolResolver {
      * getTypeArity returns the number of generic type parameters the given symbol
      * has. If the symbol is not a type the result is null.
      */
+<<<<<<< Updated upstream
     getTypeArity(staticSymbol: StaticSymbol): number | null;
     /**
      * Converts a file path to a module name that can be used as an `import`.
      */
     fileNameToModuleName(importedFilePath: string, containingFilePath: string): string | null;
+=======
+    getTypeArity(staticSymbol: StaticSymbol): number;
+>>>>>>> Stashed changes
     recordImportAs(sourceSymbol: StaticSymbol, targetSymbol: StaticSymbol): void;
     /**
      * Invalidate all information derived from the given file.
@@ -113,7 +125,11 @@ export declare class StaticSymbolResolver {
     private _createSymbolsOf(filePath);
     private createResolvedSymbol(sourceSymbol, topLevelPath, topLevelSymbolNames, metadata);
     private createExport(sourceSymbol, targetSymbol);
+<<<<<<< Updated upstream
     private reportError(error, context?, path?);
+=======
+    private reportError(error, context, path?);
+>>>>>>> Stashed changes
     /**
      * @param module an absolute path to a module file.
      */

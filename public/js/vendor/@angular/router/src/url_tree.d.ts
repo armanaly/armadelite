@@ -45,7 +45,11 @@ export declare class UrlTree {
         [key: string]: string;
     };
     /** The fragment of the URL */
+<<<<<<< Updated upstream
     fragment: string | null;
+=======
+    fragment: string;
+>>>>>>> Stashed changes
     readonly queryParamMap: ParamMap;
     /** @docsNotRequired */
     toString(): string;
@@ -65,7 +69,11 @@ export declare class UrlSegmentGroup {
         [key: string]: UrlSegmentGroup;
     };
     /** The parent node in the url tree */
+<<<<<<< Updated upstream
     parent: UrlSegmentGroup | null;
+=======
+    parent: UrlSegmentGroup;
+>>>>>>> Stashed changes
     constructor(
         /** The URL segments of this group. See {@link UrlSegment} for more information */
         segments: UrlSegment[], 
@@ -73,7 +81,11 @@ export declare class UrlSegmentGroup {
         children: {
         [key: string]: UrlSegmentGroup;
     });
+<<<<<<< Updated upstream
     /** Whether the segment has child segments */
+=======
+    /** Wether the segment has child segments */
+>>>>>>> Stashed changes
     hasChildren(): boolean;
     /** Number of child segments */
     readonly numberOfChildren: number;

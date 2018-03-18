@@ -1,6 +1,7 @@
 import { EmitterVisitorContext } from './abstract_emitter';
 import { AbstractJsEmitterVisitor } from './abstract_js_emitter';
 import * as o from './output_ast';
+<<<<<<< Updated upstream
 export declare function jitStatements(sourceUrl: string, statements: o.Statement[]): {
     [key: string]: any;
 };
@@ -17,3 +18,6 @@ export declare class JitEmitterVisitor extends AbstractJsEmitterVisitor {
     visitDeclareFunctionStmt(stmt: o.DeclareFunctionStmt, ctx: EmitterVisitorContext): any;
     visitDeclareClassStmt(stmt: o.ClassStmt, ctx: EmitterVisitorContext): any;
 }
+=======
+export declare function jitStatements(sourceUrl: string, statements: o.Statement[], resultVars: string[]): any[];
+>>>>>>> Stashed changes

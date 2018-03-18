@@ -10,7 +10,11 @@ export declare class ParseLocation {
     getContext(maxChars: number, maxLines: number): {
         before: string;
         after: string;
+<<<<<<< Updated upstream
     } | null;
+=======
+    };
+>>>>>>> Stashed changes
 }
 export declare class ParseSourceFile {
     content: string;

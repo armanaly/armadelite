@@ -14,7 +14,12 @@ export declare function shallowEqual(a: {
     [x: string]: any;
 }): boolean;
 export declare function flatten<T>(arr: T[][]): T[];
+<<<<<<< Updated upstream
 export declare function last<T>(a: T[]): T | null;
+=======
+export declare function first<T>(a: T[]): T;
+export declare function last<T>(a: T[]): T;
+>>>>>>> Stashed changes
 export declare function and(bools: boolean[]): boolean;
 export declare function forEach<K, V>(map: {
     [key: string]: V;

@@ -5,8 +5,13 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+<<<<<<< Updated upstream
 import { ChangeDetectorRef, ComponentFactoryResolver, ComponentRef, EventEmitter, Injector, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { ChildrenOutletContexts } from '../router_outlet_context';
+=======
+import { ComponentFactoryResolver, ComponentRef, EventEmitter, Injector, OnDestroy, ResolvedReflectiveProvider, ViewContainerRef } from '@angular/core';
+import { RouterOutletMap } from '../router_outlet_map';
+>>>>>>> Stashed changes
 import { ActivatedRoute } from '../router_state';
 /**
  * @whatItDoes Acts as a placeholder that Angular dynamically fills based on the current router
@@ -44,7 +49,10 @@ export declare class RouterOutlet implements OnDestroy, OnInit {
     deactivateEvents: EventEmitter<any>;
     constructor(parentContexts: ChildrenOutletContexts, location: ViewContainerRef, resolver: ComponentFactoryResolver, name: string, changeDetector: ChangeDetectorRef);
     ngOnDestroy(): void;
+<<<<<<< Updated upstream
     ngOnInit(): void;
+=======
+>>>>>>> Stashed changes
     /** @deprecated since v4 **/
     readonly locationInjector: Injector;
     /** @deprecated since v4 **/
@@ -52,6 +60,7 @@ export declare class RouterOutlet implements OnDestroy, OnInit {
     readonly isActivated: boolean;
     readonly component: Object;
     readonly activatedRoute: ActivatedRoute;
+<<<<<<< Updated upstream
     readonly activatedRouteData: {
         [name: string]: any;
     };
@@ -65,4 +74,12 @@ export declare class RouterOutlet implements OnDestroy, OnInit {
     attach(ref: ComponentRef<any>, activatedRoute: ActivatedRoute): void;
     deactivate(): void;
     activateWith(activatedRoute: ActivatedRoute, resolver: ComponentFactoryResolver | null): void;
+=======
+    detach(): ComponentRef<any>;
+    attach(ref: ComponentRef<any>, activatedRoute: ActivatedRoute): void;
+    deactivate(): void;
+    /** @deprecated since v4, use {@link activateWith} */
+    activate(activatedRoute: ActivatedRoute, resolver: ComponentFactoryResolver, injector: Injector, providers: ResolvedReflectiveProvider[], outletMap: RouterOutletMap): void;
+    activateWith(activatedRoute: ActivatedRoute, resolver: ComponentFactoryResolver | null, outletMap: RouterOutletMap): void;
+>>>>>>> Stashed changes
 }

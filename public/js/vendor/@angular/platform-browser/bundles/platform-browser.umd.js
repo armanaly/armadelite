@@ -1,5 +1,9 @@
 /**
+<<<<<<< Updated upstream
  * @license Angular v4.4.6
+=======
+ * @license Angular v4.0.1
+>>>>>>> Stashed changes
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -9,6 +13,7 @@
 	(factory((global.ng = global.ng || {}, global.ng.platformBrowser = global.ng.platformBrowser || {}),global.ng.common,global.ng.core));
 }(this, (function (exports,_angular_common,_angular_core) { 'use strict';
 
+<<<<<<< Updated upstream
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -37,6 +42,15 @@ function __extends(d, b) {
 
 /**
  * @license Angular v4.4.6
+=======
+var __extends = (undefined && undefined.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+/**
+ * @license Angular v4.0.1
+>>>>>>> Stashed changes
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -47,7 +61,11 @@ function __extends(d, b) {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+<<<<<<< Updated upstream
 var _DOM = ((null));
+=======
+var _DOM = null;
+>>>>>>> Stashed changes
 /**
  * @return {?}
  */
@@ -76,7 +94,11 @@ function setRootDomAdapter(adapter) {
  */
 var DomAdapter = (function () {
     function DomAdapter() {
+<<<<<<< Updated upstream
         this.resourceLoaderType = ((null));
+=======
+        this.resourceLoaderType = null;
+>>>>>>> Stashed changes
     }
     /**
      * @abstract
@@ -146,6 +168,11 @@ var DomAdapter = (function () {
         enumerable: true,
         configurable: true
     });
+<<<<<<< Updated upstream
+=======
+    
+    
+>>>>>>> Stashed changes
     /**
      * @abstract
      * @param {?} nodeA
@@ -792,6 +819,16 @@ var DomAdapter = (function () {
     DomAdapter.prototype.getData = function (element, name) { };
     /**
      * @abstract
+<<<<<<< Updated upstream
+=======
+     * @param {?} name
+     * @param {?} value
+     * @return {?}
+     */
+    DomAdapter.prototype.setGlobalVar = function (name, value) { };
+    /**
+     * @abstract
+>>>>>>> Stashed changes
      * @return {?}
      */
     DomAdapter.prototype.supportsWebAnimation = function () { };
@@ -1484,6 +1521,10 @@ var BrowserDomAdapter = (function (_super) {
      * @return {?}
      */
     BrowserDomAdapter.prototype.hasStyle = function (element, styleName, styleValue) {
+<<<<<<< Updated upstream
+=======
+        if (styleValue === void 0) { styleValue = null; }
+>>>>>>> Stashed changes
         var /** @type {?} */ value = this.getStyle(element, styleName) || '';
         return styleValue ? value == styleValue : value.length > 0;
     };
@@ -1708,7 +1749,10 @@ var BrowserDomAdapter = (function (_super) {
         if (target === 'body') {
             return document.body;
         }
+<<<<<<< Updated upstream
         return null;
+=======
+>>>>>>> Stashed changes
     };
     /**
      * @return {?}
@@ -1757,6 +1801,15 @@ var BrowserDomAdapter = (function (_super) {
      */
     BrowserDomAdapter.prototype.getComputedStyle = function (element) { return getComputedStyle(element); };
     /**
+<<<<<<< Updated upstream
+=======
+     * @param {?} path
+     * @param {?} value
+     * @return {?}
+     */
+    BrowserDomAdapter.prototype.setGlobalVar = function (path, value) { setValueOnPath(_angular_core.ɵglobal, path, value); };
+    /**
+>>>>>>> Stashed changes
      * @return {?}
      */
     BrowserDomAdapter.prototype.supportsWebAnimation = function () {
@@ -1779,7 +1832,11 @@ var BrowserDomAdapter = (function (_super) {
      * @param {?} name
      * @return {?}
      */
+<<<<<<< Updated upstream
     BrowserDomAdapter.prototype.getCookie = function (name) { return _angular_common.ɵparseCookieValue(document.cookie, name); };
+=======
+    BrowserDomAdapter.prototype.getCookie = function (name) { return parseCookieValue(document.cookie, name); };
+>>>>>>> Stashed changes
     /**
      * @param {?} name
      * @param {?} value
@@ -1798,7 +1855,11 @@ var baseElement = null;
  */
 function getBaseElementHref() {
     if (!baseElement) {
+<<<<<<< Updated upstream
         baseElement = ((document.querySelector('base')));
+=======
+        baseElement = document.querySelector('base');
+>>>>>>> Stashed changes
         if (!baseElement) {
             return null;
         }
@@ -1820,6 +1881,49 @@ function relativePath(url) {
         '/' + urlParsingNode.pathname;
 }
 /**
+<<<<<<< Updated upstream
+=======
+ * @param {?} cookieStr
+ * @param {?} name
+ * @return {?}
+ */
+function parseCookieValue(cookieStr, name) {
+    name = encodeURIComponent(name);
+    for (var _i = 0, _a = cookieStr.split(';'); _i < _a.length; _i++) {
+        var cookie = _a[_i];
+        var /** @type {?} */ eqIndex = cookie.indexOf('=');
+        var _b = eqIndex == -1 ? [cookie, ''] : [cookie.slice(0, eqIndex), cookie.slice(eqIndex + 1)], cookieName = _b[0], cookieValue = _b[1];
+        if (cookieName.trim() === name) {
+            return decodeURIComponent(cookieValue);
+        }
+    }
+    return null;
+}
+/**
+ * @param {?} global
+ * @param {?} path
+ * @param {?} value
+ * @return {?}
+ */
+function setValueOnPath(global, path, value) {
+    var /** @type {?} */ parts = path.split('.');
+    var /** @type {?} */ obj = global;
+    while (parts.length > 1) {
+        var /** @type {?} */ name = parts.shift();
+        if (obj.hasOwnProperty(name) && obj[name] != null) {
+            obj = obj[name];
+        }
+        else {
+            obj = obj[name] = {};
+        }
+    }
+    if (obj === undefined || obj === null) {
+        obj = {};
+    }
+    obj[parts.shift()] = value;
+}
+/**
+>>>>>>> Stashed changes
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -1832,9 +1936,15 @@ function relativePath(url) {
  * Note: Document might not be available in the Application Context when Application and Rendering
  * Contexts are not the same (e.g. when running the application into a Web Worker).
  *
+<<<<<<< Updated upstream
  * @deprecated import from `\@angular/common` instead.
  */
 var DOCUMENT$1 = _angular_common.DOCUMENT;
+=======
+ * \@stable
+ */
+var DOCUMENT = new _angular_core.InjectionToken('DocumentToken');
+>>>>>>> Stashed changes
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -1888,7 +1998,11 @@ var BrowserPlatformLocation = (function (_super) {
     /**
      * @return {?}
      */
+<<<<<<< Updated upstream
     BrowserPlatformLocation.prototype.getBaseHrefFromDOM = function () { return ((getDOM().getBaseHref(this._doc))); };
+=======
+    BrowserPlatformLocation.prototype.getBaseHrefFromDOM = function () { return getDOM().getBaseHref(this._doc); };
+>>>>>>> Stashed changes
     /**
      * @param {?} fn
      * @return {?}
@@ -1977,7 +2091,11 @@ BrowserPlatformLocation.decorators = [
  * @nocollapse
  */
 BrowserPlatformLocation.ctorParameters = function () { return [
+<<<<<<< Updated upstream
     { type: undefined, decorators: [{ type: _angular_core.Inject, args: [DOCUMENT$1,] },] },
+=======
+    { type: undefined, decorators: [{ type: _angular_core.Inject, args: [DOCUMENT,] },] },
+>>>>>>> Stashed changes
 ]; };
 /**
  * @license
@@ -2055,7 +2173,11 @@ var Meta = (function () {
         if (!tag)
             return null;
         selector = selector || this._parseSelector(tag);
+<<<<<<< Updated upstream
         var /** @type {?} */ meta = ((this.getTag(selector)));
+=======
+        var /** @type {?} */ meta = this.getTag(selector);
+>>>>>>> Stashed changes
         if (meta) {
             return this._setMetaElementAttributes(tag, meta);
         }
@@ -2065,7 +2187,11 @@ var Meta = (function () {
      * @param {?} attrSelector
      * @return {?}
      */
+<<<<<<< Updated upstream
     Meta.prototype.removeTag = function (attrSelector) { this.removeTagElement(/** @type {?} */ ((this.getTag(attrSelector)))); };
+=======
+    Meta.prototype.removeTag = function (attrSelector) { this.removeTagElement(this.getTag(attrSelector)); };
+>>>>>>> Stashed changes
     /**
      * @param {?} meta
      * @return {?}
@@ -2084,7 +2210,11 @@ var Meta = (function () {
         if (forceCreation === void 0) { forceCreation = false; }
         if (!forceCreation) {
             var /** @type {?} */ selector = this._parseSelector(meta);
+<<<<<<< Updated upstream
             var /** @type {?} */ elem = ((this.getTag(selector)));
+=======
+            var /** @type {?} */ elem = this.getTag(selector);
+>>>>>>> Stashed changes
             // It's allowed to have multiple elements with the same name so it's not enough to
             // just check that element with the same name already present on the page. We also need to
             // check if element has tag attributes
@@ -2133,7 +2263,11 @@ Meta.decorators = [
  * @nocollapse
  */
 Meta.ctorParameters = function () { return [
+<<<<<<< Updated upstream
     { type: undefined, decorators: [{ type: _angular_core.Inject, args: [DOCUMENT$1,] },] },
+=======
+    { type: undefined, decorators: [{ type: _angular_core.Inject, args: [DOCUMENT,] },] },
+>>>>>>> Stashed changes
 ]; };
 /**
  * @license
@@ -2150,6 +2284,7 @@ var TRANSITION_ID = new _angular_core.InjectionToken('TRANSITION_ID');
 /**
  * @param {?} transitionId
  * @param {?} document
+<<<<<<< Updated upstream
  * @param {?} injector
  * @return {?}
  */
@@ -2164,12 +2299,29 @@ function appInitializerFactory(transitionId, document, injector) {
                 .forEach(function (el) { return dom.remove(el); });
         });
     };
+=======
+ * @return {?}
+ */
+function bootstrapListenerFactory(transitionId, document) {
+    var /** @type {?} */ factory = function () {
+        var /** @type {?} */ dom = getDOM();
+        var /** @type {?} */ styles = Array.prototype.slice.apply(dom.querySelectorAll(document, "style[ng-transition]"));
+        styles.filter(function (el) { return dom.getAttribute(el, 'ng-transition') === transitionId; })
+            .forEach(function (el) { return dom.remove(el); });
+    };
+    return factory;
+>>>>>>> Stashed changes
 }
 var SERVER_TRANSITION_PROVIDERS = [
     {
         provide: _angular_core.APP_INITIALIZER,
+<<<<<<< Updated upstream
         useFactory: appInitializerFactory,
         deps: [TRANSITION_ID, DOCUMENT$1, _angular_core.Injector],
+=======
+        useFactory: bootstrapListenerFactory,
+        deps: [TRANSITION_ID, DOCUMENT],
+>>>>>>> Stashed changes
         multi: true
     },
 ];
@@ -2290,7 +2442,11 @@ Title.decorators = [
  * @nocollapse
  */
 Title.ctorParameters = function () { return [
+<<<<<<< Updated upstream
     { type: undefined, decorators: [{ type: _angular_core.Inject, args: [DOCUMENT$1,] },] },
+=======
+    { type: undefined, decorators: [{ type: _angular_core.Inject, args: [DOCUMENT,] },] },
+>>>>>>> Stashed changes
 ]; };
 /**
  * @license
@@ -2299,6 +2455,7 @@ Title.ctorParameters = function () { return [
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+<<<<<<< Updated upstream
 /**
  * @param {?} input
  * @return {?}
@@ -2329,12 +2486,28 @@ var ng;
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+=======
+var __assign = (undefined && undefined.__assign) || Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s)
+            if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+    }
+    return t;
+};
+>>>>>>> Stashed changes
 var CORE_TOKENS = {
     'ApplicationRef': _angular_core.ApplicationRef,
     'NgZone': _angular_core.NgZone,
 };
+<<<<<<< Updated upstream
 var INSPECT_GLOBAL_NAME = 'probe';
 var CORE_TOKENS_GLOBAL_NAME = 'coreTokens';
+=======
+var INSPECT_GLOBAL_NAME = 'ng.probe';
+var CORE_TOKENS_GLOBAL_NAME = 'ng.coreTokens';
+>>>>>>> Stashed changes
 /**
  * Returns a {\@link DebugElement} for the given native DOM element, or
  * null if the given native element does not have an Angular view associated
@@ -2367,8 +2540,13 @@ var NgProbeToken$1 = (function () {
  */
 function _createNgProbe(extraTokens, coreTokens) {
     var /** @type {?} */ tokens = (extraTokens || []).concat(coreTokens || []);
+<<<<<<< Updated upstream
     exportNgVar(INSPECT_GLOBAL_NAME, inspectNativeElement);
     exportNgVar(CORE_TOKENS_GLOBAL_NAME, Object.assign({}, CORE_TOKENS, _ngProbeTokensToMap(tokens || [])));
+=======
+    getDOM().setGlobalVar(INSPECT_GLOBAL_NAME, inspectNativeElement);
+    getDOM().setGlobalVar(CORE_TOKENS_GLOBAL_NAME, __assign({}, CORE_TOKENS, _ngProbeTokensToMap(tokens || [])));
+>>>>>>> Stashed changes
     return function () { return inspectNativeElement; };
 }
 /**
@@ -2511,6 +2689,10 @@ var EventManagerPlugin = (function () {
         }
         return this.addEventListener(target, eventName, handler);
     };
+<<<<<<< Updated upstream
+=======
+    
+>>>>>>> Stashed changes
     return EventManagerPlugin;
 }());
 /**
@@ -2620,7 +2802,11 @@ DomSharedStylesHost.decorators = [
  * @nocollapse
  */
 DomSharedStylesHost.ctorParameters = function () { return [
+<<<<<<< Updated upstream
     { type: undefined, decorators: [{ type: _angular_core.Inject, args: [DOCUMENT$1,] },] },
+=======
+    { type: undefined, decorators: [{ type: _angular_core.Inject, args: [DOCUMENT,] },] },
+>>>>>>> Stashed changes
 ]; };
 /**
  * @license
@@ -2698,6 +2884,10 @@ var DomRendererFactory2 = (function () {
         this.rendererByCompId = new Map();
         this.defaultRenderer = new DefaultDomRenderer2(eventManager);
     }
+<<<<<<< Updated upstream
+=======
+    
+>>>>>>> Stashed changes
     /**
      * @param {?} element
      * @param {?} type
@@ -2730,6 +2920,7 @@ var DomRendererFactory2 = (function () {
             }
         }
     };
+<<<<<<< Updated upstream
     /**
      * @return {?}
      */
@@ -2738,6 +2929,8 @@ var DomRendererFactory2 = (function () {
      * @return {?}
      */
     DomRendererFactory2.prototype.end = function () { };
+=======
+>>>>>>> Stashed changes
     return DomRendererFactory2;
 }());
 DomRendererFactory2.decorators = [
@@ -3098,7 +3291,11 @@ DomEventsPlugin.decorators = [
  * @nocollapse
  */
 DomEventsPlugin.ctorParameters = function () { return [
+<<<<<<< Updated upstream
     { type: undefined, decorators: [{ type: _angular_core.Inject, args: [DOCUMENT$1,] },] },
+=======
+    { type: undefined, decorators: [{ type: _angular_core.Inject, args: [DOCUMENT,] },] },
+>>>>>>> Stashed changes
 ]; };
 /**
  * @license
@@ -3239,7 +3436,11 @@ HammerGesturesPlugin.decorators = [
  * @nocollapse
  */
 HammerGesturesPlugin.ctorParameters = function () { return [
+<<<<<<< Updated upstream
     { type: undefined, decorators: [{ type: _angular_core.Inject, args: [DOCUMENT$1,] },] },
+=======
+    { type: undefined, decorators: [{ type: _angular_core.Inject, args: [DOCUMENT,] },] },
+>>>>>>> Stashed changes
     { type: HammerGestureConfig, decorators: [{ type: _angular_core.Inject, args: [HAMMER_GESTURE_CONFIG,] },] },
 ]; };
 /**
@@ -3279,7 +3480,11 @@ var KeyEventsPlugin = (function (_super) {
      * @return {?}
      */
     KeyEventsPlugin.prototype.addEventListener = function (element, eventName, handler) {
+<<<<<<< Updated upstream
         var /** @type {?} */ parsedEvent = ((KeyEventsPlugin.parseEventName(eventName)));
+=======
+        var /** @type {?} */ parsedEvent = KeyEventsPlugin.parseEventName(eventName);
+>>>>>>> Stashed changes
         var /** @type {?} */ outsideHandler = KeyEventsPlugin.eventCallback(parsedEvent['fullKey'], handler, this.manager.getZone());
         return this.manager.getZone().runOutsideAngular(function () {
             return getDOM().onAndCancel(element, parsedEvent['domEventName'], outsideHandler);
@@ -3295,7 +3500,11 @@ var KeyEventsPlugin = (function (_super) {
         if ((parts.length === 0) || !(domEventName === 'keydown' || domEventName === 'keyup')) {
             return null;
         }
+<<<<<<< Updated upstream
         var /** @type {?} */ key = KeyEventsPlugin._normalizeKey(/** @type {?} */ ((parts.pop())));
+=======
+        var /** @type {?} */ key = KeyEventsPlugin._normalizeKey(parts.pop());
+>>>>>>> Stashed changes
         var /** @type {?} */ fullKey = '';
         MODIFIER_KEYS.forEach(function (modifierName) {
             var /** @type {?} */ index = parts.indexOf(modifierName);
@@ -3375,7 +3584,11 @@ KeyEventsPlugin.decorators = [
  * @nocollapse
  */
 KeyEventsPlugin.ctorParameters = function () { return [
+<<<<<<< Updated upstream
     { type: undefined, decorators: [{ type: _angular_core.Inject, args: [DOCUMENT$1,] },] },
+=======
+    { type: undefined, decorators: [{ type: _angular_core.Inject, args: [DOCUMENT,] },] },
+>>>>>>> Stashed changes
 ]; };
 /**
  * @license
@@ -3411,9 +3624,13 @@ KeyEventsPlugin.ctorParameters = function () { return [
  * This regular expression was taken from the Closure sanitization library.
  */
 var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi;
+<<<<<<< Updated upstream
 /**
  * A pattern that matches safe data URLs. Only matches image, video and audio types.
  */
+=======
+/** A pattern that matches safe data URLs. Only matches image, video and audio types. */
+>>>>>>> Stashed changes
 var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[a-z0-9+\/]+=*$/i;
 /**
  * @param {?} url
@@ -3443,6 +3660,7 @@ function sanitizeSrcset(srcset) {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+<<<<<<< Updated upstream
 /**
  * A <body> element that can be safely used to parse untrusted HTML. Lazily initialized below.
  */
@@ -3450,6 +3668,11 @@ var inertElement = null;
 /**
  * Lazily initialized to make sure the DOM adapter gets set before use.
  */
+=======
+/** A <body> element that can be safely used to parse untrusted HTML. Lazily initialized below. */
+var inertElement = null;
+/** Lazily initialized to make sure the DOM adapter gets set before use. */
+>>>>>>> Stashed changes
 var DOM = null;
 /**
  * Returns an HTML element that is guaranteed to not execute code when creating elements in it.
@@ -3535,7 +3758,11 @@ var HTML_ATTRS = tagSet('abbr,accesskey,align,alt,autoplay,axis,bgcolor,border,c
     'ismap,itemscope,itemprop,kind,label,lang,language,loop,media,muted,nohref,nowrap,open,preload,rel,rev,role,rows,rowspan,rules,' +
     'scope,scrolling,shape,size,sizes,span,srclang,start,summary,tabindex,target,title,translate,type,usemap,' +
     'valign,value,vspace,width');
+<<<<<<< Updated upstream
 // NB: This currently consciously doesn't support SVG. SVG sanitization has had several security
+=======
+// NB: This currently conciously doesn't support SVG. SVG sanitization has had several security
+>>>>>>> Stashed changes
 // issues in the past, so it seems safer to leave it out if possible. If support for binding SVG via
 // innerHTML is required, SVG attributes should be added here.
 // NB: Sanitization does not allow <form> elements or other active elements (<button> etc). Those
@@ -3559,20 +3786,32 @@ var SanitizingHtmlSerializer = (function () {
         // This cannot use a TreeWalker, as it has to run on Angular's various DOM adapters.
         // However this code never accesses properties off of `document` before deleting its contents
         // again, so it shouldn't be vulnerable to DOM clobbering.
+<<<<<<< Updated upstream
         var /** @type {?} */ current = ((el.firstChild));
+=======
+        var /** @type {?} */ current = el.firstChild;
+>>>>>>> Stashed changes
         while (current) {
             if (DOM.isElementNode(current)) {
                 this.startElement(/** @type {?} */ (current));
             }
             else if (DOM.isTextNode(current)) {
+<<<<<<< Updated upstream
                 this.chars(/** @type {?} */ ((DOM.nodeValue(current))));
+=======
+                this.chars(DOM.nodeValue(current));
+>>>>>>> Stashed changes
             }
             else {
                 // Strip non-element, non-text nodes.
                 this.sanitizedSomething = true;
             }
             if (DOM.firstChild(current)) {
+<<<<<<< Updated upstream
                 current = ((DOM.firstChild(current)));
+=======
+                current = DOM.firstChild(current);
+>>>>>>> Stashed changes
                 continue;
             }
             while (current) {
@@ -3580,12 +3819,20 @@ var SanitizingHtmlSerializer = (function () {
                 if (DOM.isElementNode(current)) {
                     this.endElement(/** @type {?} */ (current));
                 }
+<<<<<<< Updated upstream
                 var /** @type {?} */ next = checkClobberedElement(current, /** @type {?} */ ((DOM.nextSibling(current))));
+=======
+                var /** @type {?} */ next = checkClobberedElement(current, DOM.nextSibling(current));
+>>>>>>> Stashed changes
                 if (next) {
                     current = next;
                     break;
                 }
+<<<<<<< Updated upstream
                 current = checkClobberedElement(current, /** @type {?} */ ((DOM.parentElement(current))));
+=======
+                current = checkClobberedElement(current, DOM.parentElement(current));
+>>>>>>> Stashed changes
             }
         }
         return this.buf.join('');
@@ -3969,7 +4216,11 @@ var DomSanitizerImpl = (function (_super) {
             return null;
         switch (ctx) {
             case _angular_core.SecurityContext.NONE:
+<<<<<<< Updated upstream
                 return (value);
+=======
+                return value;
+>>>>>>> Stashed changes
             case _angular_core.SecurityContext.HTML:
                 if (value instanceof SafeHtmlImpl)
                     return value.changingThisBreaksApplicationSecurity;
@@ -3979,7 +4230,11 @@ var DomSanitizerImpl = (function (_super) {
                 if (value instanceof SafeStyleImpl)
                     return value.changingThisBreaksApplicationSecurity;
                 this.checkNotSafeValue(value, 'Style');
+<<<<<<< Updated upstream
                 return sanitizeStyle(/** @type {?} */ (value));
+=======
+                return sanitizeStyle(value);
+>>>>>>> Stashed changes
             case _angular_core.SecurityContext.SCRIPT:
                 if (value instanceof SafeScriptImpl)
                     return value.changingThisBreaksApplicationSecurity;
@@ -4049,7 +4304,11 @@ DomSanitizerImpl.decorators = [
  * @nocollapse
  */
 DomSanitizerImpl.ctorParameters = function () { return [
+<<<<<<< Updated upstream
     { type: undefined, decorators: [{ type: _angular_core.Inject, args: [DOCUMENT$1,] },] },
+=======
+    { type: undefined, decorators: [{ type: _angular_core.Inject, args: [DOCUMENT,] },] },
+>>>>>>> Stashed changes
 ]; };
 /**
  * @abstract
@@ -4142,7 +4401,11 @@ var INTERNAL_BROWSER_PLATFORM_PROVIDERS = [
     { provide: _angular_core.PLATFORM_ID, useValue: _angular_common.ɵPLATFORM_BROWSER_ID },
     { provide: _angular_core.PLATFORM_INITIALIZER, useValue: initDomAdapter, multi: true },
     { provide: _angular_common.PlatformLocation, useClass: BrowserPlatformLocation },
+<<<<<<< Updated upstream
     { provide: DOCUMENT$1, useFactory: _document, deps: [] },
+=======
+    { provide: DOCUMENT, useFactory: _document, deps: [] },
+>>>>>>> Stashed changes
 ];
 /**
  * \@security Replacing built-in sanitization providers exposes the application to XSS risks.
@@ -4331,7 +4594,11 @@ var AngularProfiler = (function () {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+<<<<<<< Updated upstream
 var PROFILER_GLOBAL_NAME = 'profiler';
+=======
+var PROFILER_GLOBAL_NAME = 'ng.profiler';
+>>>>>>> Stashed changes
 /**
  * Enabled Angular debug tools that are accessible via your browser's
  * developer console.
@@ -4349,7 +4616,11 @@ var PROFILER_GLOBAL_NAME = 'profiler';
  * @return {?}
  */
 function enableDebugTools(ref) {
+<<<<<<< Updated upstream
     exportNgVar(PROFILER_GLOBAL_NAME, new AngularProfiler(ref));
+=======
+    getDOM().setGlobalVar(PROFILER_GLOBAL_NAME, new AngularProfiler(ref));
+>>>>>>> Stashed changes
     return ref;
 }
 /**
@@ -4359,7 +4630,11 @@ function enableDebugTools(ref) {
  * @return {?}
  */
 function disableDebugTools() {
+<<<<<<< Updated upstream
     exportNgVar(PROFILER_GLOBAL_NAME, null);
+=======
+    getDOM().setGlobalVar(PROFILER_GLOBAL_NAME, null);
+>>>>>>> Stashed changes
 }
 /**
  * @license
@@ -4411,7 +4686,11 @@ var By = (function () {
      * @return {?}
      */
     By.directive = function (type) {
+<<<<<<< Updated upstream
         return function (debugElement) { return ((debugElement.providerTokens)).indexOf(type) !== -1; };
+=======
+        return function (debugElement) { return debugElement.providerTokens.indexOf(type) !== -1; };
+>>>>>>> Stashed changes
     };
     return By;
 }());
@@ -4437,7 +4716,11 @@ var By = (function () {
 /**
  * \@stable
  */
+<<<<<<< Updated upstream
 var VERSION = new _angular_core.Version('4.4.6');
+=======
+var VERSION = new _angular_core.Version('4.0.1');
+>>>>>>> Stashed changes
 
 exports.BrowserModule = BrowserModule;
 exports.platformBrowser = platformBrowser;
@@ -4447,7 +4730,11 @@ exports.disableDebugTools = disableDebugTools;
 exports.enableDebugTools = enableDebugTools;
 exports.By = By;
 exports.NgProbeToken = NgProbeToken$1;
+<<<<<<< Updated upstream
 exports.DOCUMENT = DOCUMENT$1;
+=======
+exports.DOCUMENT = DOCUMENT;
+>>>>>>> Stashed changes
 exports.EVENT_MANAGER_PLUGINS = EVENT_MANAGER_PLUGINS;
 exports.EventManager = EventManager;
 exports.HAMMER_GESTURE_CONFIG = HAMMER_GESTURE_CONFIG;
@@ -4458,6 +4745,10 @@ exports.ɵBROWSER_SANITIZATION_PROVIDERS = BROWSER_SANITIZATION_PROVIDERS;
 exports.ɵINTERNAL_BROWSER_PLATFORM_PROVIDERS = INTERNAL_BROWSER_PLATFORM_PROVIDERS;
 exports.ɵinitDomAdapter = initDomAdapter;
 exports.ɵBrowserDomAdapter = BrowserDomAdapter;
+<<<<<<< Updated upstream
+=======
+exports.ɵsetValueOnPath = setValueOnPath;
+>>>>>>> Stashed changes
 exports.ɵBrowserPlatformLocation = BrowserPlatformLocation;
 exports.ɵTRANSITION_ID = TRANSITION_ID;
 exports.ɵBrowserGetTestability = BrowserGetTestability;
@@ -4479,7 +4770,11 @@ exports.ɵb = _document;
 exports.ɵa = errorHandler;
 exports.ɵh = GenericBrowserDomAdapter;
 exports.ɵg = SERVER_TRANSITION_PROVIDERS;
+<<<<<<< Updated upstream
 exports.ɵf = appInitializerFactory;
+=======
+exports.ɵf = bootstrapListenerFactory;
+>>>>>>> Stashed changes
 exports.ɵc = _createNgProbe;
 exports.ɵd = EventManagerPlugin;
 exports.ɵe = DomSanitizerImpl;

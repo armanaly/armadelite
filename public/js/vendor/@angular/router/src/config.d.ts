@@ -5,7 +5,11 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+<<<<<<< Updated upstream
 import { NgModuleFactory, NgModuleRef, Type } from '@angular/core';
+=======
+import { NgModuleFactory, Type } from '@angular/core';
+>>>>>>> Stashed changes
 import { Observable } from 'rxjs/Observable';
 import { UrlSegment, UrlSegmentGroup } from './url_tree';
 /**
@@ -17,6 +21,10 @@ import { UrlSegment, UrlSegmentGroup } from './url_tree';
  * - `path` is a string that uses the route matcher DSL.
  * - `pathMatch` is a string that specifies the matching strategy.
  * - `matcher` defines a custom strategy for path matching and supersedes `path` and `pathMatch`.
+<<<<<<< Updated upstream
+=======
+ *   See {@link UrlMatcher} for more info.
+>>>>>>> Stashed changes
  * - `component` is a component type.
  * - `redirectTo` is the url fragment which will replace the current matched segment.
  * - `outlet` is the name of the outlet the component should be placed into.
@@ -26,12 +34,20 @@ import { UrlSegment, UrlSegmentGroup } from './url_tree';
  *   {@link CanActivateChild} for more info.
  * - `canDeactivate` is an array of DI tokens used to look up CanDeactivate handlers. See
  *   {@link CanDeactivate} for more info.
+<<<<<<< Updated upstream
  * - `canLoad` is an array of DI tokens used to look up CanLoad handlers. See
+=======
+ * - `canLoad` is an array of DI tokens used to look up CanDeactivate handlers. See
+>>>>>>> Stashed changes
  *   {@link CanLoad} for more info.
  * - `data` is additional data provided to the component via `ActivatedRoute`.
  * - `resolve` is a map of DI tokens used to look up data resolvers. See {@link Resolve} for more
  *   info.
+<<<<<<< Updated upstream
  * - `runGuardsAndResolvers` defines when guards and resolvers will be run. By default they run only
+=======
+ * - `runGuardsAndResolvers` defines when guards and resovlers will be run. By default they run only
+>>>>>>> Stashed changes
  *    when the matrix parameters of the route change. When set to `paramsOrQueryParamsChange` they
  *    will also run when query params change. And when set to `always`, they will run every time.
  * - `children` is an array of child route definitions.
@@ -346,9 +362,14 @@ export interface Route {
     loadChildren?: LoadChildren;
     runGuardsAndResolvers?: RunGuardsAndResolvers;
 }
+<<<<<<< Updated upstream
 export declare class LoadedRouterConfig {
     routes: Route[];
     module: NgModuleRef<any>;
     constructor(routes: Route[], module: NgModuleRef<any>);
+=======
+export interface InternalRoute extends Route {
+    _loadedConfig?: any;
+>>>>>>> Stashed changes
 }
 export declare function validateConfig(config: Routes, parentPath?: string): void;

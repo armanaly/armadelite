@@ -11,13 +11,18 @@ import { SourceMapGenerator } from './source_map';
 export declare const CATCH_ERROR_VAR: o.ReadVarExpr;
 export declare const CATCH_STACK_VAR: o.ReadVarExpr;
 export declare abstract class OutputEmitter {
+<<<<<<< Updated upstream
     abstract emitStatements(srcFilePath: string, genFilePath: string, stmts: o.Statement[], preamble?: string | null): string;
+=======
+    abstract emitStatements(srcFilePath: string, genFilePath: string, stmts: o.Statement[], exportedVars: string[], preamble?: string): string;
+>>>>>>> Stashed changes
 }
 export declare class EmitterVisitorContext {
     private _indent;
     static createRoot(): EmitterVisitorContext;
     private _lines;
     private _classes;
+<<<<<<< Updated upstream
     private _preambleLineCount;
     constructor(_indent: number);
     private readonly _currentLine;
@@ -28,17 +33,34 @@ export declare class EmitterVisitorContext {
     lineLength(): number;
     print(from: {
         sourceSpan: ParseSourceSpan | null;
+=======
+    constructor(_exportedVars: string[], _indent: number);
+    private readonly _currentLine;
+    isExportedVar(varName: string): boolean;
+    println(from?: {
+        sourceSpan?: ParseSourceSpan;
+    } | null, lastPart?: string): void;
+    lineIsEmpty(): boolean;
+    print(from: {
+        sourceSpan?: ParseSourceSpan;
+>>>>>>> Stashed changes
     } | null, part: string, newLine?: boolean): void;
     removeEmptyLastLine(): void;
     incIndent(): void;
     decIndent(): void;
     pushClass(clazz: o.ClassStmt): void;
     popClass(): o.ClassStmt;
+<<<<<<< Updated upstream
     readonly currentClass: o.ClassStmt | null;
     toSource(): string;
     toSourceMapGenerator(sourceFilePath: string, genFilePath: string, startsAtLine?: number): SourceMapGenerator;
     setPreambleLineCount(count: number): number;
     spanOf(line: number, column: number): ParseSourceSpan | null;
+=======
+    readonly currentClass: o.ClassStmt;
+    toSource(): string;
+    toSourceMapGenerator(sourceFilePath: string, genFilePath: string, startsAtLine?: number): SourceMapGenerator;
+>>>>>>> Stashed changes
     private readonly sourceLines;
 }
 export declare abstract class AbstractEmitterVisitor implements o.StatementVisitor, o.ExpressionVisitor {
@@ -74,8 +96,13 @@ export declare abstract class AbstractEmitterVisitor implements o.StatementVisit
     visitLiteralArrayExpr(ast: o.LiteralArrayExpr, ctx: EmitterVisitorContext): any;
     visitLiteralMapExpr(ast: o.LiteralMapExpr, ctx: EmitterVisitorContext): any;
     visitCommaExpr(ast: o.CommaExpr, ctx: EmitterVisitorContext): any;
+<<<<<<< Updated upstream
     visitAllExpressions(expressions: o.Expression[], ctx: EmitterVisitorContext, separator: string): void;
     visitAllObjects<T>(handler: (t: T) => void, expressions: T[], ctx: EmitterVisitorContext, separator: string): void;
+=======
+    visitAllExpressions(expressions: o.Expression[], ctx: EmitterVisitorContext, separator: string, newLine?: boolean): void;
+    visitAllObjects<T>(handler: (t: T) => void, expressions: T[], ctx: EmitterVisitorContext, separator: string, newLine?: boolean): void;
+>>>>>>> Stashed changes
     visitAllStatements(statements: o.Statement[], ctx: EmitterVisitorContext): void;
 }
 export declare function escapeIdentifier(input: string, escapeDollar: boolean, alwaysQuote?: boolean): any;

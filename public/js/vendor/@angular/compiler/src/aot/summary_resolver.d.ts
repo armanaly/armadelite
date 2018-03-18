@@ -35,6 +35,9 @@ export declare class AotSummaryResolver implements SummaryResolver<StaticSymbol>
     resolveSummary(staticSymbol: StaticSymbol): Summary<StaticSymbol>;
     getSymbolsOf(filePath: string): StaticSymbol[];
     getImportAs(staticSymbol: StaticSymbol): StaticSymbol;
+<<<<<<< Updated upstream
     addSummary(summary: Summary<StaticSymbol>): void;
+=======
+>>>>>>> Stashed changes
     private _loadSummaryFile(filePath);
 }

@@ -125,7 +125,11 @@ export declare abstract class DomAdapter {
     abstract getGlobalEventTarget(doc: Document, target: string): any;
     abstract getHistory(): History;
     abstract getLocation(): Location;
+<<<<<<< Updated upstream
     abstract getBaseHref(doc: Document): string | null;
+=======
+    abstract getBaseHref(doc: Document): string;
+>>>>>>> Stashed changes
     abstract resetBaseElement(): void;
     abstract getUserAgent(): string;
     abstract setData(element: any, name: string, value: string): any;

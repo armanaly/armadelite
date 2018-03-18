@@ -14,12 +14,23 @@ export { Console as ɵConsole } from './console';
 export { ERROR_COMPONENT_TYPE as ɵERROR_COMPONENT_TYPE } from './errors';
 export { ComponentFactory as ɵComponentFactory } from './linker/component_factory';
 export { CodegenComponentFactoryResolver as ɵCodegenComponentFactoryResolver } from './linker/component_factory_resolver';
+<<<<<<< Updated upstream
 export { ViewMetadata as ɵViewMetadata } from './metadata/view';
 export { ReflectionCapabilities as ɵReflectionCapabilities } from './reflection/reflection_capabilities';
+=======
+export { LIFECYCLE_HOOKS_VALUES as ɵLIFECYCLE_HOOKS_VALUES, LifecycleHooks as ɵLifecycleHooks } from './metadata/lifecycle_hooks';
+export { ViewMetadata as ɵViewMetadata } from './metadata/view';
+export { Reflector as ɵReflector, reflector as ɵreflector } from './reflection/reflection';
+export { ReflectionCapabilities as ɵReflectionCapabilities } from './reflection/reflection_capabilities';
+export { ReflectorReader as ɵReflectorReader } from './reflection/reflector_reader';
+>>>>>>> Stashed changes
 export { GetterFn as ɵGetterFn, MethodFn as ɵMethodFn, SetterFn as ɵSetterFn } from './reflection/types';
 export { DirectRenderer as ɵDirectRenderer, RenderDebugInfo as ɵRenderDebugInfo } from './render/api';
 export { global as ɵglobal, looseIdentical as ɵlooseIdentical, stringify as ɵstringify } from './util';
 export { makeDecorator as ɵmakeDecorator } from './util/decorators';
 export { isObservable as ɵisObservable, isPromise as ɵisPromise } from './util/lang';
+<<<<<<< Updated upstream
 export { clearProviderOverrides as ɵclearProviderOverrides, overrideProvider as ɵoverrideProvider } from './view/index';
+=======
+>>>>>>> Stashed changes
 export { NOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR as ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR } from './view/provider';

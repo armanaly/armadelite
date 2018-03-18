@@ -272,7 +272,11 @@ export declare abstract class AbstractControl {
      * expect(login.valid).toEqual(true);
      * ```
      */
+<<<<<<< Updated upstream
     setErrors(errors: ValidationErrors | null, opts?: {
+=======
+    setErrors(errors: ValidationErrors | null, {emitEvent}?: {
+>>>>>>> Stashed changes
         emitEvent?: boolean;
     }): void;
     /**

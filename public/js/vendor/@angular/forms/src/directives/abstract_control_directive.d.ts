@@ -16,6 +16,7 @@ import { ValidationErrors } from './validators';
  * @stable
  */
 export declare abstract class AbstractControlDirective {
+<<<<<<< Updated upstream
     /**
      * The {@link FormControl}, {@link FormGroup}, or {@link FormArray}
      * that backs this directive. Most properties fall through to that
@@ -116,6 +117,23 @@ export declare abstract class AbstractControlDirective {
      *
      * For more information, see {@link AbstractControl}.
      */
+=======
+    readonly control: AbstractControl;
+    readonly value: any;
+    readonly valid: boolean;
+    readonly invalid: boolean;
+    readonly pending: boolean;
+    readonly errors: ValidationErrors | null;
+    readonly pristine: boolean;
+    readonly dirty: boolean;
+    readonly touched: boolean;
+    readonly untouched: boolean;
+    readonly disabled: boolean;
+    readonly enabled: boolean;
+    readonly statusChanges: Observable<any>;
+    readonly valueChanges: Observable<any>;
+    readonly path: string[];
+>>>>>>> Stashed changes
     reset(value?: any): void;
     /**
      * Returns true if the control with the given path has the error specified. Otherwise

@@ -10,9 +10,15 @@ import { Compiler, Injector, NgModuleFactoryLoader, Type } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { QueryParamsHandling, Routes } from './config';
 import { Event } from './events';
+<<<<<<< Updated upstream
 import { RouteReuseStrategy } from './route_reuse_strategy';
 import { ChildrenOutletContexts } from './router_outlet_context';
 import { ActivatedRoute, RouterState, RouterStateSnapshot } from './router_state';
+=======
+import { DetachedRouteHandle, RouteReuseStrategy } from './route_reuse_strategy';
+import { RouterOutletMap } from './router_outlet_map';
+import { ActivatedRoute, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from './router_state';
+>>>>>>> Stashed changes
 import { Params } from './shared';
 import { UrlHandlingStrategy } from './url_handling_strategy';
 import { UrlSerializer, UrlTree } from './url_tree';
@@ -94,7 +100,11 @@ export interface NavigationExtras {
     * this.router.navigate(['/view'], { queryParams: { page: 2 },  queryParamsHandling: "merge" });
     * ```
     */
+<<<<<<< Updated upstream
     queryParamsHandling?: QueryParamsHandling | null;
+=======
+    queryParamsHandling?: QueryParamsHandling;
+>>>>>>> Stashed changes
     /**
     * Preserves the fragment for the next navigation
     *
@@ -134,6 +144,16 @@ export interface NavigationExtras {
  * @stable
  */
 export declare type ErrorHandler = (error: any) => any;
+/**
+ * Does not detach any subtrees. Reuses routes as long as their route config is the same.
+ */
+export declare class DefaultRouteReuseStrategy implements RouteReuseStrategy {
+    shouldDetach(route: ActivatedRouteSnapshot): boolean;
+    store(route: ActivatedRouteSnapshot, detachedTree: DetachedRouteHandle): void;
+    shouldAttach(route: ActivatedRouteSnapshot): boolean;
+    retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle;
+    shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot): boolean;
+}
 /**
  * @whatItDoes Provides the navigation and url manipulation capabilities.
  *
@@ -251,7 +271,11 @@ export declare class Router {
      * router.createUrlTree(['../../team/44/user/22'], {relativeTo: route});
      * ```
      */
+<<<<<<< Updated upstream
     createUrlTree(commands: any[], navigationExtras?: NavigationExtras): UrlTree;
+=======
+    createUrlTree(commands: any[], {relativeTo, queryParams, fragment, preserveQueryParams, queryParamsHandling, preserveFragment}?: NavigationExtras): UrlTree;
+>>>>>>> Stashed changes
     /**
      * Navigate based on the provided url. This navigation is always absolute.
      *
@@ -315,6 +339,7 @@ export declare class PreActivation {
     private canActivateChecks;
     private canDeactivateChecks;
     constructor(future: RouterStateSnapshot, curr: RouterStateSnapshot, moduleInjector: Injector);
+<<<<<<< Updated upstream
     traverse(parentContexts: ChildrenOutletContexts): void;
     checkGuards(): Observable<boolean>;
     resolveData(): Observable<any>;
@@ -324,6 +349,15 @@ export declare class PreActivation {
     private traverseRoutes(futureNode, currNode, parentContexts, futurePath);
     private shouldRunGuardsAndResolvers(curr, future, mode);
     private deactivateRouteAndItsChildren(route, context);
+=======
+    traverse(parentOutletMap: RouterOutletMap): void;
+    checkGuards(): Observable<boolean>;
+    resolveData(): Observable<any>;
+    private traverseChildRoutes(futureNode, currNode, outletMap, futurePath);
+    private traverseRoutes(futureNode, currNode, parentOutletMap, futurePath);
+    private shouldRunGuardsAndResolvers(curr, future, mode);
+    private deactiveRouteAndItsChildren(route, outlet);
+>>>>>>> Stashed changes
     private runCanDeactivateChecks();
     private runCanActivateChecks();
     private runCanActivate(future);

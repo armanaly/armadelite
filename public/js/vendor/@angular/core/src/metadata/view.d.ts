@@ -59,6 +59,7 @@ export declare enum ViewEncapsulation {
  * {@link Component}
  */
 export declare class ViewMetadata {
+<<<<<<< Updated upstream
     /** {@link Component#templateUrl} */
     templateUrl: string | undefined;
     /** {@link Component#template} */
@@ -74,6 +75,23 @@ export declare class ViewMetadata {
     /** {@link Component#interpolation} */
     interpolation: [string, string] | undefined;
     constructor(opts?: {
+=======
+    /** {@link Component.templateUrl} */
+    templateUrl: string | undefined;
+    /** {@link Component.template} */
+    template: string | undefined;
+    /** {@link Component.stylesUrl} */
+    styleUrls: string[] | undefined;
+    /** {@link Component.styles} */
+    styles: string[] | undefined;
+    /** {@link Component.encapsulation} */
+    encapsulation: ViewEncapsulation | undefined;
+    /** {@link Component.animation} */
+    animations: any[] | undefined;
+    /** {@link Component.interpolation} */
+    interpolation: [string, string] | undefined;
+    constructor({templateUrl, template, encapsulation, styles, styleUrls, animations, interpolation}?: {
+>>>>>>> Stashed changes
         templateUrl?: string;
         template?: string;
         encapsulation?: ViewEncapsulation;

@@ -1,5 +1,9 @@
 /**
+<<<<<<< Updated upstream
  * @license Angular v4.4.6
+=======
+ * @license Angular v4.0.1
+>>>>>>> Stashed changes
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -9,6 +13,7 @@
 	(factory((global.ng = global.ng || {}, global.ng.forms = global.ng.forms || {}),global.ng.core,global.Rx.Observable,global.Rx.Observable,global.Rx.Observable.prototype,global.ng.platformBrowser));
 }(this, (function (exports,_angular_core,rxjs_observable_forkJoin,rxjs_observable_fromPromise,rxjs_operator_map,_angular_platformBrowser) { 'use strict';
 
+<<<<<<< Updated upstream
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -37,6 +42,15 @@ function __extends(d, b) {
 
 /**
  * @license Angular v4.4.6
+=======
+var __extends = (undefined && undefined.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+/**
+ * @license Angular v4.0.1
+>>>>>>> Stashed changes
  * (c) 2010-2017 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -58,6 +72,7 @@ function __extends(d, b) {
 var AbstractControlDirective = (function () {
     function AbstractControlDirective() {
     }
+<<<<<<< Updated upstream
     /**
      * The {\@link FormControl}, {\@link FormGroup}, or {\@link FormArray}
      * that backs this directive. Most properties fall through to that
@@ -301,12 +316,129 @@ var ControlContainer = (function (_super) {
     Object.defineProperty(ControlContainer.prototype, "path", {
         /**
          * Get the path to this container.
+=======
+    Object.defineProperty(AbstractControlDirective.prototype, "control", {
+        /**
+         * @return {?}
+         */
+        get: function () { throw new Error('unimplemented'); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "value", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.value : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "valid", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.valid : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "invalid", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.invalid : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "pending", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.pending : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "errors", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.errors : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "pristine", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.pristine : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "dirty", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.dirty : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "touched", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.touched : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "untouched", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.untouched : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "disabled", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.disabled : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "enabled", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.enabled : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "statusChanges", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.statusChanges : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "valueChanges", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this.control ? this.control.valueChanges : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlDirective.prototype, "path", {
+        /**
+>>>>>>> Stashed changes
          * @return {?}
          */
         get: function () { return null; },
         enumerable: true,
         configurable: true
     });
+<<<<<<< Updated upstream
     return ControlContainer;
 }(AbstractControlDirective));
 /**
@@ -684,15 +816,445 @@ var DefaultValueAccessor = (function () {
      * @param {?} _elementRef
      * @param {?} _compositionMode
      */
+=======
+    /**
+     * @param {?=} value
+     * @return {?}
+     */
+    AbstractControlDirective.prototype.reset = function (value) {
+        if (value === void 0) { value = undefined; }
+        if (this.control)
+            this.control.reset(value);
+    };
+    /**
+     * @param {?} errorCode
+     * @param {?=} path
+     * @return {?}
+     */
+    AbstractControlDirective.prototype.hasError = function (errorCode, path) {
+        if (path === void 0) { path = null; }
+        return this.control ? this.control.hasError(errorCode, path) : false;
+    };
+    /**
+     * @param {?} errorCode
+     * @param {?=} path
+     * @return {?}
+     */
+    AbstractControlDirective.prototype.getError = function (errorCode, path) {
+        if (path === void 0) { path = null; }
+        return this.control ? this.control.getError(errorCode, path) : null;
+    };
+    return AbstractControlDirective;
+}());
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * A directive that contains multiple {\@link NgControl}s.
+ *
+ * Only used by the forms module.
+ *
+ * \@stable
+ */
+var ControlContainer = (function (_super) {
+    __extends(ControlContainer, _super);
+    function ControlContainer() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(ControlContainer.prototype, "formDirective", {
+        /**
+         * Get the form to which this container belongs.
+         * @return {?}
+         */
+        get: function () { return null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ControlContainer.prototype, "path", {
+        /**
+         * Get the path to this container.
+         * @return {?}
+         */
+        get: function () { return null; },
+        enumerable: true,
+        configurable: true
+    });
+    return ControlContainer;
+}(AbstractControlDirective));
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var __assign = (undefined && undefined.__assign) || Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s)
+            if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+    }
+    return t;
+};
+/**
+ * @param {?} value
+ * @return {?}
+ */
+function isEmptyInputValue(value) {
+    // we don't check for string here so it also works with arrays
+    return value == null || value.length === 0;
+}
+/**
+ * Providers for validators to be used for {\@link FormControl}s in a form.
+ *
+ * Provide this using `multi: true` to add validators.
+ *
+ * ### Example
+ *
+ * {\@example core/forms/ts/ng_validators/ng_validators.ts region='ng_validators'}
+ * \@stable
+ */
+var NG_VALIDATORS = new _angular_core.InjectionToken('NgValidators');
+/**
+ * Providers for asynchronous validators to be used for {\@link FormControl}s
+ * in a form.
+ *
+ * Provide this using `multi: true` to add validators.
+ *
+ * See {\@link NG_VALIDATORS} for more details.
+ *
+ * \@stable
+ */
+var NG_ASYNC_VALIDATORS = new _angular_core.InjectionToken('NgAsyncValidators');
+var EMAIL_REGEXP = /^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$/;
+/**
+ * Provides a set of validators used by form controls.
+ *
+ * A validator is a function that processes a {\@link FormControl} or collection of
+ * controls and returns a map of errors. A null map means that validation has passed.
+ *
+ * ### Example
+ *
+ * ```typescript
+ * var loginControl = new FormControl("", Validators.required)
+ * ```
+ *
+ * \@stable
+ */
+var Validators = (function () {
+    function Validators() {
+    }
+    /**
+     * Validator that requires controls to have a non-empty value.
+     * @param {?} control
+     * @return {?}
+     */
+    Validators.required = function (control) {
+        return isEmptyInputValue(control.value) ? { 'required': true } : null;
+    };
+    /**
+     * Validator that requires control value to be true.
+     * @param {?} control
+     * @return {?}
+     */
+    Validators.requiredTrue = function (control) {
+        return control.value === true ? null : { 'required': true };
+    };
+    /**
+     * Validator that performs email validation.
+     * @param {?} control
+     * @return {?}
+     */
+    Validators.email = function (control) {
+        return EMAIL_REGEXP.test(control.value) ? null : { 'email': true };
+    };
+    /**
+     * Validator that requires controls to have a value of a minimum length.
+     * @param {?} minLength
+     * @return {?}
+     */
+    Validators.minLength = function (minLength) {
+        return function (control) {
+            if (isEmptyInputValue(control.value)) {
+                return null; // don't validate empty values to allow optional controls
+            }
+            var /** @type {?} */ length = control.value ? control.value.length : 0;
+            return length < minLength ?
+                { 'minlength': { 'requiredLength': minLength, 'actualLength': length } } :
+                null;
+        };
+    };
+    /**
+     * Validator that requires controls to have a value of a maximum length.
+     * @param {?} maxLength
+     * @return {?}
+     */
+    Validators.maxLength = function (maxLength) {
+        return function (control) {
+            var /** @type {?} */ length = control.value ? control.value.length : 0;
+            return length > maxLength ?
+                { 'maxlength': { 'requiredLength': maxLength, 'actualLength': length } } :
+                null;
+        };
+    };
+    /**
+     * Validator that requires a control to match a regex to its value.
+     * @param {?} pattern
+     * @return {?}
+     */
+    Validators.pattern = function (pattern) {
+        if (!pattern)
+            return Validators.nullValidator;
+        var /** @type {?} */ regex;
+        var /** @type {?} */ regexStr;
+        if (typeof pattern === 'string') {
+            regexStr = "^" + pattern + "$";
+            regex = new RegExp(regexStr);
+        }
+        else {
+            regexStr = pattern.toString();
+            regex = pattern;
+        }
+        return function (control) {
+            if (isEmptyInputValue(control.value)) {
+                return null; // don't validate empty values to allow optional controls
+            }
+            var /** @type {?} */ value = control.value;
+            return regex.test(value) ? null :
+                { 'pattern': { 'requiredPattern': regexStr, 'actualValue': value } };
+        };
+    };
+    /**
+     * No-op validator.
+     * @param {?} c
+     * @return {?}
+     */
+    Validators.nullValidator = function (c) { return null; };
+    /**
+     * Compose multiple validators into a single function that returns the union
+     * of the individual error maps.
+     * @param {?} validators
+     * @return {?}
+     */
+    Validators.compose = function (validators) {
+        if (!validators)
+            return null;
+        var /** @type {?} */ presentValidators = validators.filter(isPresent);
+        if (presentValidators.length == 0)
+            return null;
+        return function (control) {
+            return _mergeErrors(_executeValidators(control, presentValidators));
+        };
+    };
+    /**
+     * @param {?} validators
+     * @return {?}
+     */
+    Validators.composeAsync = function (validators) {
+        if (!validators)
+            return null;
+        var /** @type {?} */ presentValidators = validators.filter(isPresent);
+        if (presentValidators.length == 0)
+            return null;
+        return function (control) {
+            var /** @type {?} */ observables = _executeAsyncValidators(control, presentValidators).map(toObservable);
+            return rxjs_operator_map.map.call(rxjs_observable_forkJoin.forkJoin(observables), _mergeErrors);
+        };
+    };
+    return Validators;
+}());
+/**
+ * @param {?} o
+ * @return {?}
+ */
+function isPresent(o) {
+    return o != null;
+}
+/**
+ * @param {?} r
+ * @return {?}
+ */
+function toObservable(r) {
+    var /** @type {?} */ obs = _angular_core.ɵisPromise(r) ? rxjs_observable_fromPromise.fromPromise(r) : r;
+    if (!(_angular_core.ɵisObservable(obs))) {
+        throw new Error("Expected validator to return Promise or Observable.");
+    }
+    return obs;
+}
+/**
+ * @param {?} control
+ * @param {?} validators
+ * @return {?}
+ */
+function _executeValidators(control, validators) {
+    return validators.map(function (v) { return v(control); });
+}
+/**
+ * @param {?} control
+ * @param {?} validators
+ * @return {?}
+ */
+function _executeAsyncValidators(control, validators) {
+    return validators.map(function (v) { return v(control); });
+}
+/**
+ * @param {?} arrayOfErrors
+ * @return {?}
+ */
+function _mergeErrors(arrayOfErrors) {
+    var /** @type {?} */ res = arrayOfErrors.reduce(function (res, errors) {
+        return errors != null ? __assign({}, res, errors) : res;
+    }, {});
+    return Object.keys(res).length === 0 ? null : res;
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * Used to provide a {\@link ControlValueAccessor} for form controls.
+ *
+ * See {\@link DefaultValueAccessor} for how to implement one.
+ * \@stable
+ */
+var NG_VALUE_ACCESSOR = new _angular_core.InjectionToken('NgValueAccessor');
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var CHECKBOX_VALUE_ACCESSOR = {
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: _angular_core.forwardRef(function () { return CheckboxControlValueAccessor; }),
+    multi: true,
+};
+/**
+ * The accessor for writing a value and listening to changes on a checkbox input element.
+ *
+ *  ### Example
+ *  ```
+ *  <input type="checkbox" name="rememberLogin" ngModel>
+ *  ```
+ *
+ *  \@stable
+ */
+var CheckboxControlValueAccessor = (function () {
+    /**
+     * @param {?} _renderer
+     * @param {?} _elementRef
+     */
+    function CheckboxControlValueAccessor(_renderer, _elementRef) {
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this.onChange = function (_) { };
+        this.onTouched = function () { };
+    }
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    CheckboxControlValueAccessor.prototype.writeValue = function (value) {
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'checked', value);
+    };
+    /**
+     * @param {?} fn
+     * @return {?}
+     */
+    CheckboxControlValueAccessor.prototype.registerOnChange = function (fn) { this.onChange = fn; };
+    /**
+     * @param {?} fn
+     * @return {?}
+     */
+    CheckboxControlValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+    /**
+     * @param {?} isDisabled
+     * @return {?}
+     */
+    CheckboxControlValueAccessor.prototype.setDisabledState = function (isDisabled) {
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    };
+    return CheckboxControlValueAccessor;
+}());
+CheckboxControlValueAccessor.decorators = [
+    { type: _angular_core.Directive, args: [{
+                selector: 'input[type=checkbox][formControlName],input[type=checkbox][formControl],input[type=checkbox][ngModel]',
+                host: { '(change)': 'onChange($event.target.checked)', '(blur)': 'onTouched()' },
+                providers: [CHECKBOX_VALUE_ACCESSOR]
+            },] },
+];
+/**
+ * @nocollapse
+ */
+CheckboxControlValueAccessor.ctorParameters = function () { return [
+    { type: _angular_core.Renderer, },
+    { type: _angular_core.ElementRef, },
+]; };
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var DEFAULT_VALUE_ACCESSOR = {
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: _angular_core.forwardRef(function () { return DefaultValueAccessor; }),
+    multi: true
+};
+/**
+ * We must check whether the agent is Android because composition events
+ * behave differently between iOS and Android.
+ * @return {?}
+ */
+function _isAndroid() {
+    var /** @type {?} */ userAgent = _angular_platformBrowser.ɵgetDOM() ? _angular_platformBrowser.ɵgetDOM().getUserAgent() : '';
+    return /android (\d+)/.test(userAgent.toLowerCase());
+}
+/**
+ * Turn this mode on if you want form directives to buffer IME input until compositionend
+ * \@experimental
+ */
+var COMPOSITION_BUFFER_MODE = new _angular_core.InjectionToken('CompositionEventMode');
+/**
+ * The default accessor for writing a value and listening to changes that is used by the
+ * {\@link NgModel}, {\@link FormControlDirective}, and {\@link FormControlName} directives.
+ *
+ *  ### Example
+ *  ```
+ *  <input type="text" name="searchQuery" ngModel>
+ *  ```
+ *
+ *  \@stable
+ */
+var DefaultValueAccessor = (function () {
+    /**
+     * @param {?} _renderer
+     * @param {?} _elementRef
+     * @param {?} _compositionMode
+     */
+>>>>>>> Stashed changes
     function DefaultValueAccessor(_renderer, _elementRef, _compositionMode) {
         this._renderer = _renderer;
         this._elementRef = _elementRef;
         this._compositionMode = _compositionMode;
         this.onChange = function (_) { };
         this.onTouched = function () { };
+<<<<<<< Updated upstream
         /**
          * Whether the user is creating a composition string (IME events).
          */
+=======
+>>>>>>> Stashed changes
         this._composing = false;
         if (this._compositionMode == null) {
             this._compositionMode = !_isAndroid();
@@ -704,27 +1266,46 @@ var DefaultValueAccessor = (function () {
      */
     DefaultValueAccessor.prototype.writeValue = function (value) {
         var /** @type {?} */ normalizedValue = value == null ? '' : value;
+<<<<<<< Updated upstream
         this._renderer.setProperty(this._elementRef.nativeElement, 'value', normalizedValue);
+=======
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', normalizedValue);
+>>>>>>> Stashed changes
     };
     /**
      * @param {?} fn
      * @return {?}
+<<<<<<< Updated upstream
      */
     DefaultValueAccessor.prototype.registerOnChange = function (fn) { this.onChange = fn; };
     /**
      * @param {?} fn
      * @return {?}
      */
+=======
+     */
+    DefaultValueAccessor.prototype.registerOnChange = function (fn) { this.onChange = fn; };
+    /**
+     * @param {?} fn
+     * @return {?}
+     */
+>>>>>>> Stashed changes
     DefaultValueAccessor.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
     /**
      * @param {?} isDisabled
      * @return {?}
      */
     DefaultValueAccessor.prototype.setDisabledState = function (isDisabled) {
+<<<<<<< Updated upstream
         this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
     };
     /**
      * \@internal
+=======
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    };
+    /**
+>>>>>>> Stashed changes
      * @param {?} value
      * @return {?}
      */
@@ -734,12 +1315,18 @@ var DefaultValueAccessor = (function () {
         }
     };
     /**
+<<<<<<< Updated upstream
      * \@internal
+=======
+>>>>>>> Stashed changes
      * @return {?}
      */
     DefaultValueAccessor.prototype._compositionStart = function () { this._composing = true; };
     /**
+<<<<<<< Updated upstream
      * \@internal
+=======
+>>>>>>> Stashed changes
      * @param {?} value
      * @return {?}
      */
@@ -768,7 +1355,11 @@ DefaultValueAccessor.decorators = [
  * @nocollapse
  */
 DefaultValueAccessor.ctorParameters = function () { return [
+<<<<<<< Updated upstream
     { type: _angular_core.Renderer2, },
+=======
+    { type: _angular_core.Renderer, },
+>>>>>>> Stashed changes
     { type: _angular_core.ElementRef, },
     { type: undefined, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Inject, args: [COMPOSITION_BUFFER_MODE,] },] },
 ]; };
@@ -798,10 +1389,17 @@ function normalizeValidator(validator) {
 function normalizeAsyncValidator(validator) {
     if (((validator)).validate) {
         return function (c) { return ((validator)).validate(c); };
+<<<<<<< Updated upstream
     }
     else {
         return (validator);
     }
+=======
+    }
+    else {
+        return (validator);
+    }
+>>>>>>> Stashed changes
 }
 /**
  * @license
@@ -842,7 +1440,11 @@ var NumberValueAccessor = (function () {
     NumberValueAccessor.prototype.writeValue = function (value) {
         // The value needs to be normalized for IE9, otherwise it is set to 'null' when null
         var /** @type {?} */ normalizedValue = value == null ? '' : value;
+<<<<<<< Updated upstream
         this._renderer.setProperty(this._elementRef.nativeElement, 'value', normalizedValue);
+=======
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', normalizedValue);
+>>>>>>> Stashed changes
     };
     /**
      * @param {?} fn
@@ -861,7 +1463,11 @@ var NumberValueAccessor = (function () {
      * @return {?}
      */
     NumberValueAccessor.prototype.setDisabledState = function (isDisabled) {
+<<<<<<< Updated upstream
         this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+=======
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+>>>>>>> Stashed changes
     };
     return NumberValueAccessor;
 }());
@@ -880,7 +1486,11 @@ NumberValueAccessor.decorators = [
  * @nocollapse
  */
 NumberValueAccessor.ctorParameters = function () { return [
+<<<<<<< Updated upstream
     { type: _angular_core.Renderer2, },
+=======
+    { type: _angular_core.Renderer, },
+>>>>>>> Stashed changes
     { type: _angular_core.ElementRef, },
 ]; };
 /**
@@ -1082,7 +1692,11 @@ var RadioControlValueAccessor = (function () {
      */
     RadioControlValueAccessor.prototype.writeValue = function (value) {
         this._state = value === this.value;
+<<<<<<< Updated upstream
         this._renderer.setProperty(this._elementRef.nativeElement, 'checked', this._state);
+=======
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'checked', this._state);
+>>>>>>> Stashed changes
     };
     /**
      * @param {?} fn
@@ -1111,7 +1725,11 @@ var RadioControlValueAccessor = (function () {
      * @return {?}
      */
     RadioControlValueAccessor.prototype.setDisabledState = function (isDisabled) {
+<<<<<<< Updated upstream
         this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+=======
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+>>>>>>> Stashed changes
     };
     /**
      * @return {?}
@@ -1142,7 +1760,11 @@ RadioControlValueAccessor.decorators = [
  * @nocollapse
  */
 RadioControlValueAccessor.ctorParameters = function () { return [
+<<<<<<< Updated upstream
     { type: _angular_core.Renderer2, },
+=======
+    { type: _angular_core.Renderer, },
+>>>>>>> Stashed changes
     { type: _angular_core.ElementRef, },
     { type: RadioControlRegistry, },
     { type: _angular_core.Injector, },
@@ -1189,7 +1811,11 @@ var RangeValueAccessor = (function () {
      * @return {?}
      */
     RangeValueAccessor.prototype.writeValue = function (value) {
+<<<<<<< Updated upstream
         this._renderer.setProperty(this._elementRef.nativeElement, 'value', parseFloat(value));
+=======
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', parseFloat(value));
+>>>>>>> Stashed changes
     };
     /**
      * @param {?} fn
@@ -1208,7 +1834,11 @@ var RangeValueAccessor = (function () {
      * @return {?}
      */
     RangeValueAccessor.prototype.setDisabledState = function (isDisabled) {
+<<<<<<< Updated upstream
         this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+=======
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+>>>>>>> Stashed changes
     };
     return RangeValueAccessor;
 }());
@@ -1227,7 +1857,11 @@ RangeValueAccessor.decorators = [
  * @nocollapse
  */
 RangeValueAccessor.ctorParameters = function () { return [
+<<<<<<< Updated upstream
     { type: _angular_core.Renderer2, },
+=======
+    { type: _angular_core.Renderer, },
+>>>>>>> Stashed changes
     { type: _angular_core.ElementRef, },
 ]; };
 /**
@@ -1366,10 +2000,17 @@ var SelectControlValueAccessor = (function () {
         this.value = value;
         var /** @type {?} */ id = this._getOptionId(value);
         if (id == null) {
+<<<<<<< Updated upstream
             this._renderer.setProperty(this._elementRef.nativeElement, 'selectedIndex', -1);
         }
         var /** @type {?} */ valueString = _buildValueString(id, value);
         this._renderer.setProperty(this._elementRef.nativeElement, 'value', valueString);
+=======
+            this._renderer.setElementProperty(this._elementRef.nativeElement, 'selectedIndex', -1);
+        }
+        var /** @type {?} */ valueString = _buildValueString(id, value);
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', valueString);
+>>>>>>> Stashed changes
     };
     /**
      * @param {?} fn
@@ -1378,8 +2019,13 @@ var SelectControlValueAccessor = (function () {
     SelectControlValueAccessor.prototype.registerOnChange = function (fn) {
         var _this = this;
         this.onChange = function (valueString) {
+<<<<<<< Updated upstream
             _this.value = _this._getOptionValue(valueString);
             fn(_this.value);
+=======
+            _this.value = valueString;
+            fn(_this._getOptionValue(valueString));
+>>>>>>> Stashed changes
         };
     };
     /**
@@ -1392,6 +2038,7 @@ var SelectControlValueAccessor = (function () {
      * @return {?}
      */
     SelectControlValueAccessor.prototype.setDisabledState = function (isDisabled) {
+<<<<<<< Updated upstream
         this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
     };
     /**
@@ -1404,6 +2051,20 @@ var SelectControlValueAccessor = (function () {
      * @param {?} value
      * @return {?}
      */
+=======
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    };
+    /**
+     * \@internal
+     * @return {?}
+     */
+    SelectControlValueAccessor.prototype._registerOption = function () { return (this._idCounter++).toString(); };
+    /**
+     * \@internal
+     * @param {?} value
+     * @return {?}
+     */
+>>>>>>> Stashed changes
     SelectControlValueAccessor.prototype._getOptionId = function (value) {
         for (var _i = 0, _a = Array.from(this._optionMap.keys()); _i < _a.length; _i++) {
             var id = _a[_i];
@@ -1434,7 +2095,11 @@ SelectControlValueAccessor.decorators = [
  * @nocollapse
  */
 SelectControlValueAccessor.ctorParameters = function () { return [
+<<<<<<< Updated upstream
     { type: _angular_core.Renderer2, },
+=======
+    { type: _angular_core.Renderer, },
+>>>>>>> Stashed changes
     { type: _angular_core.ElementRef, },
 ]; };
 SelectControlValueAccessor.propDecorators = {
@@ -1496,7 +2161,11 @@ var NgSelectOption = (function () {
      * @return {?}
      */
     NgSelectOption.prototype._setElementValue = function (value) {
+<<<<<<< Updated upstream
         this._renderer.setProperty(this._element.nativeElement, 'value', value);
+=======
+        this._renderer.setElementProperty(this._element.nativeElement, 'value', value);
+>>>>>>> Stashed changes
     };
     /**
      * @return {?}
@@ -1517,7 +2186,11 @@ NgSelectOption.decorators = [
  */
 NgSelectOption.ctorParameters = function () { return [
     { type: _angular_core.ElementRef, },
+<<<<<<< Updated upstream
     { type: _angular_core.Renderer2, },
+=======
+    { type: _angular_core.Renderer, },
+>>>>>>> Stashed changes
     { type: SelectControlValueAccessor, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Host },] },
 ]; };
 NgSelectOption.propDecorators = {
@@ -1679,7 +2352,11 @@ var SelectMultipleControlValueAccessor = (function () {
      * @return {?}
      */
     SelectMultipleControlValueAccessor.prototype.setDisabledState = function (isDisabled) {
+<<<<<<< Updated upstream
         this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+=======
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+>>>>>>> Stashed changes
     };
     /**
      * \@internal
@@ -1699,7 +2376,11 @@ var SelectMultipleControlValueAccessor = (function () {
     SelectMultipleControlValueAccessor.prototype._getOptionId = function (value) {
         for (var _i = 0, _a = Array.from(this._optionMap.keys()); _i < _a.length; _i++) {
             var id = _a[_i];
+<<<<<<< Updated upstream
             if (this._compareWith(/** @type {?} */ ((this._optionMap.get(id)))._value, value))
+=======
+            if (this._compareWith(this._optionMap.get(id)._value, value))
+>>>>>>> Stashed changes
                 return id;
         }
         return null;
@@ -1711,7 +2392,11 @@ var SelectMultipleControlValueAccessor = (function () {
      */
     SelectMultipleControlValueAccessor.prototype._getOptionValue = function (valueString) {
         var /** @type {?} */ id = _extractId$1(valueString);
+<<<<<<< Updated upstream
         return this._optionMap.has(id) ? ((this._optionMap.get(id)))._value : valueString;
+=======
+        return this._optionMap.has(id) ? this._optionMap.get(id)._value : valueString;
+>>>>>>> Stashed changes
     };
     return SelectMultipleControlValueAccessor;
 }());
@@ -1726,7 +2411,11 @@ SelectMultipleControlValueAccessor.decorators = [
  * @nocollapse
  */
 SelectMultipleControlValueAccessor.ctorParameters = function () { return [
+<<<<<<< Updated upstream
     { type: _angular_core.Renderer2, },
+=======
+    { type: _angular_core.Renderer, },
+>>>>>>> Stashed changes
     { type: _angular_core.ElementRef, },
 ]; };
 SelectMultipleControlValueAccessor.propDecorators = {
@@ -1796,7 +2485,11 @@ var NgSelectMultipleOption = (function () {
      * @return {?}
      */
     NgSelectMultipleOption.prototype._setElementValue = function (value) {
+<<<<<<< Updated upstream
         this._renderer.setProperty(this._element.nativeElement, 'value', value);
+=======
+        this._renderer.setElementProperty(this._element.nativeElement, 'value', value);
+>>>>>>> Stashed changes
     };
     /**
      * \@internal
@@ -1804,7 +2497,11 @@ var NgSelectMultipleOption = (function () {
      * @return {?}
      */
     NgSelectMultipleOption.prototype._setSelected = function (selected) {
+<<<<<<< Updated upstream
         this._renderer.setProperty(this._element.nativeElement, 'selected', selected);
+=======
+        this._renderer.setElementProperty(this._element.nativeElement, 'selected', selected);
+>>>>>>> Stashed changes
     };
     /**
      * @return {?}
@@ -1825,7 +2522,11 @@ NgSelectMultipleOption.decorators = [
  */
 NgSelectMultipleOption.ctorParameters = function () { return [
     { type: _angular_core.ElementRef, },
+<<<<<<< Updated upstream
     { type: _angular_core.Renderer2, },
+=======
+    { type: _angular_core.Renderer, },
+>>>>>>> Stashed changes
     { type: SelectMultipleControlValueAccessor, decorators: [{ type: _angular_core.Optional }, { type: _angular_core.Host },] },
 ]; };
 NgSelectMultipleOption.propDecorators = {
@@ -1845,7 +2546,11 @@ NgSelectMultipleOption.propDecorators = {
  * @return {?}
  */
 function controlPath(name, parent) {
+<<<<<<< Updated upstream
     return ((parent.path)).concat([name]);
+=======
+    return parent.path.concat([name]);
+>>>>>>> Stashed changes
 }
 /**
  * @param {?} control
@@ -1857,6 +2562,7 @@ function setUpControl(control, dir) {
         _throwError(dir, 'Cannot find control with');
     if (!dir.valueAccessor)
         _throwError(dir, 'No value accessor for form control with');
+<<<<<<< Updated upstream
     control.validator = Validators.compose([/** @type {?} */ ((control.validator)), dir.validator]);
     control.asyncValidator = Validators.composeAsync([/** @type {?} */ ((control.asyncValidator)), dir.asyncValidator]); /** @type {?} */
     ((dir.valueAccessor)).writeValue(control.value); /** @type {?} */
@@ -1874,21 +2580,50 @@ function setUpControl(control, dir) {
         ((
         // control -> view
         dir.valueAccessor)).writeValue(newValue);
+=======
+    control.validator = Validators.compose([control.validator, dir.validator]);
+    control.asyncValidator = Validators.composeAsync([control.asyncValidator, dir.asyncValidator]);
+    dir.valueAccessor.writeValue(control.value);
+    // view -> model
+    dir.valueAccessor.registerOnChange(function (newValue) {
+        dir.viewToModelUpdate(newValue);
+        control.markAsDirty();
+        control.setValue(newValue, { emitModelToViewChange: false });
+    });
+    // touched
+    dir.valueAccessor.registerOnTouched(function () { return control.markAsTouched(); });
+    control.registerOnChange(function (newValue, emitModelEvent) {
+        // control -> view
+        dir.valueAccessor.writeValue(newValue);
+>>>>>>> Stashed changes
         // control -> ngModel
         if (emitModelEvent)
             dir.viewToModelUpdate(newValue);
     });
+<<<<<<< Updated upstream
     if (((dir.valueAccessor)).setDisabledState) {
         control.registerOnDisabledChange(function (isDisabled) { /** @type {?} */ ((((dir.valueAccessor)).setDisabledState))(isDisabled); });
+=======
+    if (dir.valueAccessor.setDisabledState) {
+        control.registerOnDisabledChange(function (isDisabled) { dir.valueAccessor.setDisabledState(isDisabled); });
+>>>>>>> Stashed changes
     }
     // re-run validation when validator binding changes, e.g. minlength=3 -> minlength=4
     dir._rawValidators.forEach(function (validator) {
         if (((validator)).registerOnValidatorChange)
+<<<<<<< Updated upstream
             ((((validator)).registerOnValidatorChange))(function () { return control.updateValueAndValidity(); });
     });
     dir._rawAsyncValidators.forEach(function (validator) {
         if (((validator)).registerOnValidatorChange)
             ((((validator)).registerOnValidatorChange))(function () { return control.updateValueAndValidity(); });
+=======
+            ((validator)).registerOnValidatorChange(function () { return control.updateValueAndValidity(); });
+    });
+    dir._rawAsyncValidators.forEach(function (validator) {
+        if (((validator)).registerOnValidatorChange)
+            ((validator)).registerOnValidatorChange(function () { return control.updateValueAndValidity(); });
+>>>>>>> Stashed changes
     });
 }
 /**
@@ -1897,8 +2632,13 @@ function setUpControl(control, dir) {
  * @return {?}
  */
 function cleanUpControl(control, dir) {
+<<<<<<< Updated upstream
     ((dir.valueAccessor)).registerOnChange(function () { return _noControlError(dir); }); /** @type {?} */
     ((dir.valueAccessor)).registerOnTouched(function () { return _noControlError(dir); });
+=======
+    dir.valueAccessor.registerOnChange(function () { return _noControlError(dir); });
+    dir.valueAccessor.registerOnTouched(function () { return _noControlError(dir); });
+>>>>>>> Stashed changes
     dir._rawValidators.forEach(function (validator) {
         if (validator.registerOnValidatorChange) {
             validator.registerOnValidatorChange(null);
@@ -1937,10 +2677,17 @@ function _noControlError(dir) {
  */
 function _throwError(dir, message) {
     var /** @type {?} */ messageEnd;
+<<<<<<< Updated upstream
     if (((dir.path)).length > 1) {
         messageEnd = "path: '" + ((dir.path)).join(' -> ') + "'";
     }
     else if (((dir.path))[0]) {
+=======
+    if (dir.path.length > 1) {
+        messageEnd = "path: '" + dir.path.join(' -> ') + "'";
+    }
+    else if (dir.path[0]) {
+>>>>>>> Stashed changes
         messageEnd = "name: '" + dir.path + "'";
     }
     else {
@@ -1999,9 +2746,15 @@ function isBuiltInAccessor(valueAccessor) {
 function selectValueAccessor(dir, valueAccessors) {
     if (!valueAccessors)
         return null;
+<<<<<<< Updated upstream
     var /** @type {?} */ defaultAccessor = undefined;
     var /** @type {?} */ builtinAccessor = undefined;
     var /** @type {?} */ customAccessor = undefined;
+=======
+    var /** @type {?} */ defaultAccessor;
+    var /** @type {?} */ builtinAccessor;
+    var /** @type {?} */ customAccessor;
+>>>>>>> Stashed changes
     valueAccessors.forEach(function (v) {
         if (v.constructor === DefaultValueAccessor) {
             defaultAccessor = v;
@@ -2047,8 +2800,13 @@ var AbstractFormGroupDirective = (function (_super) {
      * @return {?}
      */
     AbstractFormGroupDirective.prototype.ngOnInit = function () {
+<<<<<<< Updated upstream
         this._checkParentType(); /** @type {?} */
         ((this.formDirective)).addFormGroup(this);
+=======
+        this._checkParentType();
+        this.formDirective.addFormGroup(this);
+>>>>>>> Stashed changes
     };
     /**
      * @return {?}
@@ -2059,6 +2817,7 @@ var AbstractFormGroupDirective = (function (_super) {
         }
     };
     Object.defineProperty(AbstractFormGroupDirective.prototype, "control", {
+<<<<<<< Updated upstream
         /**
          * Get the {\@link FormGroup} backing this binding.
          * @return {?}
@@ -2176,6 +2935,123 @@ var AbstractControlStatus = (function () {
         /**
          * @return {?}
          */
+=======
+        /**
+         * Get the {\@link FormGroup} backing this binding.
+         * @return {?}
+         */
+        get: function () { return this.formDirective.getFormGroup(this); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractFormGroupDirective.prototype, "path", {
+        /**
+         * Get the path to this control group.
+         * @return {?}
+         */
+        get: function () { return controlPath(this.name, this._parent); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractFormGroupDirective.prototype, "formDirective", {
+        /**
+         * Get the {\@link Form} to which this group belongs.
+         * @return {?}
+         */
+        get: function () { return this._parent ? this._parent.formDirective : null; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractFormGroupDirective.prototype, "validator", {
+        /**
+         * @return {?}
+         */
+        get: function () { return composeValidators(this._validators); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractFormGroupDirective.prototype, "asyncValidator", {
+        /**
+         * @return {?}
+         */
+        get: function () { return composeAsyncValidators(this._asyncValidators); },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * \@internal
+     * @return {?}
+     */
+    AbstractFormGroupDirective.prototype._checkParentType = function () { };
+    return AbstractFormGroupDirective;
+}(ControlContainer));
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var AbstractControlStatus = (function () {
+    /**
+     * @param {?} cd
+     */
+    function AbstractControlStatus(cd) {
+        this._cd = cd;
+    }
+    Object.defineProperty(AbstractControlStatus.prototype, "ngClassUntouched", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this._cd.control ? this._cd.control.untouched : false; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlStatus.prototype, "ngClassTouched", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this._cd.control ? this._cd.control.touched : false; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlStatus.prototype, "ngClassPristine", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this._cd.control ? this._cd.control.pristine : false; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlStatus.prototype, "ngClassDirty", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this._cd.control ? this._cd.control.dirty : false; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlStatus.prototype, "ngClassValid", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this._cd.control ? this._cd.control.valid : false; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlStatus.prototype, "ngClassInvalid", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this._cd.control ? this._cd.control.invalid : false; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AbstractControlStatus.prototype, "ngClassPending", {
+        /**
+         * @return {?}
+         */
+>>>>>>> Stashed changes
         get: function () { return this._cd.control ? this._cd.control.pending : false; },
         enumerable: true,
         configurable: true
@@ -2193,6 +3069,7 @@ var ngControlStatusHost = {
 };
 /**
  * Directive automatically applied to Angular form controls that sets CSS classes
+<<<<<<< Updated upstream
  * based on control status. The following classes are applied as the properties
  * become true:
  *
@@ -2203,6 +3080,9 @@ var ngControlStatusHost = {
  * * ng-dirty
  * * ng-untouched
  * * ng-touched
+=======
+ * based on control status (valid/invalid/dirty/etc).
+>>>>>>> Stashed changes
  *
  * \@stable
  */
@@ -2303,6 +3183,7 @@ function _find(control, path, delimiter) {
     }, control);
 }
 /**
+<<<<<<< Updated upstream
  * @param {?=} validator
  * @return {?}
  */
@@ -2316,6 +3197,20 @@ function coerceToValidator(validator) {
 function coerceToAsyncValidator(asyncValidator) {
     return Array.isArray(asyncValidator) ? composeAsyncValidators(asyncValidator) :
         asyncValidator || null;
+=======
+ * @param {?} validator
+ * @return {?}
+ */
+function coerceToValidator(validator) {
+    return Array.isArray(validator) ? composeValidators(validator) : validator;
+}
+/**
+ * @param {?} asyncValidator
+ * @return {?}
+ */
+function coerceToAsyncValidator(asyncValidator) {
+    return Array.isArray(asyncValidator) ? composeAsyncValidators(asyncValidator) : asyncValidator;
+>>>>>>> Stashed changes
 }
 /**
  * \@whatItDoes This is the base class for {\@link FormControl}, {\@link FormGroup}, and
@@ -2554,6 +3449,7 @@ var AbstractControl = (function () {
      *
      * This will also mark all direct ancestors as `touched` to maintain
      * the model.
+<<<<<<< Updated upstream
      * @param {?=} opts
      * @return {?}
      */
@@ -2562,6 +3458,16 @@ var AbstractControl = (function () {
         this._touched = true;
         if (this._parent && !opts.onlySelf) {
             this._parent.markAsTouched(opts);
+=======
+     * @param {?=} __0
+     * @return {?}
+     */
+    AbstractControl.prototype.markAsTouched = function (_a) {
+        var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+        this._touched = true;
+        if (this._parent && !onlySelf) {
+            this._parent.markAsTouched({ onlySelf: onlySelf });
+>>>>>>> Stashed changes
         }
     };
     /**
@@ -2570,6 +3476,7 @@ var AbstractControl = (function () {
      * If the control has any children, it will also mark all children as `untouched`
      * to maintain the model, and re-calculate the `touched` status of all parent
      * controls.
+<<<<<<< Updated upstream
      * @param {?=} opts
      * @return {?}
      */
@@ -2579,6 +3486,17 @@ var AbstractControl = (function () {
         this._forEachChild(function (control) { control.markAsUntouched({ onlySelf: true }); });
         if (this._parent && !opts.onlySelf) {
             this._parent._updateTouched(opts);
+=======
+     * @param {?=} __0
+     * @return {?}
+     */
+    AbstractControl.prototype.markAsUntouched = function (_a) {
+        var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+        this._touched = false;
+        this._forEachChild(function (control) { control.markAsUntouched({ onlySelf: true }); });
+        if (this._parent && !onlySelf) {
+            this._parent._updateTouched({ onlySelf: onlySelf });
+>>>>>>> Stashed changes
         }
     };
     /**
@@ -2586,6 +3504,7 @@ var AbstractControl = (function () {
      *
      * This will also mark all direct ancestors as `dirty` to maintain
      * the model.
+<<<<<<< Updated upstream
      * @param {?=} opts
      * @return {?}
      */
@@ -2594,6 +3513,16 @@ var AbstractControl = (function () {
         this._pristine = false;
         if (this._parent && !opts.onlySelf) {
             this._parent.markAsDirty(opts);
+=======
+     * @param {?=} __0
+     * @return {?}
+     */
+    AbstractControl.prototype.markAsDirty = function (_a) {
+        var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+        this._pristine = false;
+        if (this._parent && !onlySelf) {
+            this._parent.markAsDirty({ onlySelf: onlySelf });
+>>>>>>> Stashed changes
         }
     };
     /**
@@ -2602,6 +3531,7 @@ var AbstractControl = (function () {
      * If the control has any children, it will also mark all children as `pristine`
      * to maintain the model, and re-calculate the `pristine` status of all parent
      * controls.
+<<<<<<< Updated upstream
      * @param {?=} opts
      * @return {?}
      */
@@ -2611,10 +3541,22 @@ var AbstractControl = (function () {
         this._forEachChild(function (control) { control.markAsPristine({ onlySelf: true }); });
         if (this._parent && !opts.onlySelf) {
             this._parent._updatePristine(opts);
+=======
+     * @param {?=} __0
+     * @return {?}
+     */
+    AbstractControl.prototype.markAsPristine = function (_a) {
+        var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+        this._pristine = true;
+        this._forEachChild(function (control) { control.markAsPristine({ onlySelf: true }); });
+        if (this._parent && !onlySelf) {
+            this._parent._updatePristine({ onlySelf: onlySelf });
+>>>>>>> Stashed changes
         }
     };
     /**
      * Marks the control as `pending`.
+<<<<<<< Updated upstream
      * @param {?=} opts
      * @return {?}
      */
@@ -2623,6 +3565,16 @@ var AbstractControl = (function () {
         this._status = PENDING;
         if (this._parent && !opts.onlySelf) {
             this._parent.markAsPending(opts);
+=======
+     * @param {?=} __0
+     * @return {?}
+     */
+    AbstractControl.prototype.markAsPending = function (_a) {
+        var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+        this._status = PENDING;
+        if (this._parent && !onlySelf) {
+            this._parent.markAsPending({ onlySelf: onlySelf });
+>>>>>>> Stashed changes
         }
     };
     /**
@@ -2630,20 +3582,36 @@ var AbstractControl = (function () {
      * excluded from the aggregate value of any parent. Its status is `DISABLED`.
      *
      * If the control has children, all children will be disabled to maintain the model.
+<<<<<<< Updated upstream
      * @param {?=} opts
      * @return {?}
      */
     AbstractControl.prototype.disable = function (opts) {
         if (opts === void 0) { opts = {}; }
+=======
+     * @param {?=} __0
+     * @return {?}
+     */
+    AbstractControl.prototype.disable = function (_a) {
+        var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+>>>>>>> Stashed changes
         this._status = DISABLED;
         this._errors = null;
         this._forEachChild(function (control) { control.disable({ onlySelf: true }); });
         this._updateValue();
+<<<<<<< Updated upstream
         if (opts.emitEvent !== false) {
             this._valueChanges.emit(this._value);
             this._statusChanges.emit(this._status);
         }
         this._updateAncestors(!!opts.onlySelf);
+=======
+        if (emitEvent !== false) {
+            this._valueChanges.emit(this._value);
+            this._statusChanges.emit(this._status);
+        }
+        this._updateAncestors(onlySelf);
+>>>>>>> Stashed changes
         this._onDisabledChange.forEach(function (changeFn) { return changeFn(true); });
     };
     /**
@@ -2652,6 +3620,7 @@ var AbstractControl = (function () {
      * its validators.
      *
      * If the control has children, all children will be enabled.
+<<<<<<< Updated upstream
      * @param {?=} opts
      * @return {?}
      */
@@ -2661,6 +3630,17 @@ var AbstractControl = (function () {
         this._forEachChild(function (control) { control.enable({ onlySelf: true }); });
         this.updateValueAndValidity({ onlySelf: true, emitEvent: opts.emitEvent });
         this._updateAncestors(!!opts.onlySelf);
+=======
+     * @param {?=} __0
+     * @return {?}
+     */
+    AbstractControl.prototype.enable = function (_a) {
+        var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+        this._status = VALID;
+        this._forEachChild(function (control) { control.enable({ onlySelf: true }); });
+        this.updateValueAndValidity({ onlySelf: true, emitEvent: emitEvent });
+        this._updateAncestors(onlySelf);
+>>>>>>> Stashed changes
         this._onDisabledChange.forEach(function (changeFn) { return changeFn(false); });
     };
     /**
@@ -2707,11 +3687,19 @@ var AbstractControl = (function () {
      * Re-calculates the value and validation status of the control.
      *
      * By default, it will also update the value and validity of its ancestors.
+<<<<<<< Updated upstream
      * @param {?=} opts
      * @return {?}
      */
     AbstractControl.prototype.updateValueAndValidity = function (opts) {
         if (opts === void 0) { opts = {}; }
+=======
+     * @param {?=} __0
+     * @return {?}
+     */
+    AbstractControl.prototype.updateValueAndValidity = function (_a) {
+        var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+>>>>>>> Stashed changes
         this._setInitialStatus();
         this._updateValue();
         if (this.enabled) {
@@ -2719,6 +3707,7 @@ var AbstractControl = (function () {
             this._errors = this._runValidator();
             this._status = this._calculateStatus();
             if (this._status === VALID || this._status === PENDING) {
+<<<<<<< Updated upstream
                 this._runAsyncValidator(opts.emitEvent);
             }
         }
@@ -2728,10 +3717,22 @@ var AbstractControl = (function () {
         }
         if (this._parent && !opts.onlySelf) {
             this._parent.updateValueAndValidity(opts);
+=======
+                this._runAsyncValidator(emitEvent);
+            }
+        }
+        if (emitEvent !== false) {
+            this._valueChanges.emit(this._value);
+            this._statusChanges.emit(this._status);
+        }
+        if (this._parent && !onlySelf) {
+            this._parent.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+>>>>>>> Stashed changes
         }
     };
     /**
      * \@internal
+<<<<<<< Updated upstream
      * @param {?=} opts
      * @return {?}
      */
@@ -2739,6 +3740,15 @@ var AbstractControl = (function () {
         if (opts === void 0) { opts = { emitEvent: true }; }
         this._forEachChild(function (ctrl) { return ctrl._updateTreeValidity(opts); });
         this.updateValueAndValidity({ onlySelf: true, emitEvent: opts.emitEvent });
+=======
+     * @param {?=} __0
+     * @return {?}
+     */
+    AbstractControl.prototype._updateTreeValidity = function (_a) {
+        var emitEvent = (_a === void 0 ? { emitEvent: true } : _a).emitEvent;
+        this._forEachChild(function (ctrl) { return ctrl._updateTreeValidity({ emitEvent: emitEvent }); });
+        this.updateValueAndValidity({ onlySelf: true, emitEvent: emitEvent });
+>>>>>>> Stashed changes
     };
     /**
      * @return {?}
@@ -2751,7 +3761,11 @@ var AbstractControl = (function () {
         return this.validator ? this.validator(this) : null;
     };
     /**
+<<<<<<< Updated upstream
      * @param {?=} emitEvent
+=======
+     * @param {?} emitEvent
+>>>>>>> Stashed changes
      * @return {?}
      */
     AbstractControl.prototype._runAsyncValidator = function (emitEvent) {
@@ -2794,6 +3808,7 @@ var AbstractControl = (function () {
      * expect(login.valid).toEqual(true);
      * ```
      * @param {?} errors
+<<<<<<< Updated upstream
      * @param {?=} opts
      * @return {?}
      */
@@ -2801,6 +3816,15 @@ var AbstractControl = (function () {
         if (opts === void 0) { opts = {}; }
         this._errors = errors;
         this._updateControlsErrors(opts.emitEvent !== false);
+=======
+     * @param {?=} __1
+     * @return {?}
+     */
+    AbstractControl.prototype.setErrors = function (errors, _a) {
+        var emitEvent = (_a === void 0 ? {} : _a).emitEvent;
+        this._errors = errors;
+        this._updateControlsErrors(emitEvent !== false);
+>>>>>>> Stashed changes
     };
     /**
      * Retrieves a child control given the control's name or path.
@@ -2819,7 +3843,11 @@ var AbstractControl = (function () {
      */
     AbstractControl.prototype.get = function (path) { return _find(this, path, '.'); };
     /**
+<<<<<<< Updated upstream
      * Returns error data if the control with the given path has the error specified. Otherwise
+=======
+     * Returns true if the control with the given path has the error specified. Otherwise
+>>>>>>> Stashed changes
      * returns null or undefined.
      *
      * If no path is given, it checks for the error on the present control.
@@ -2828,6 +3856,10 @@ var AbstractControl = (function () {
      * @return {?}
      */
     AbstractControl.prototype.getError = function (errorCode, path) {
+<<<<<<< Updated upstream
+=======
+        if (path === void 0) { path = null; }
+>>>>>>> Stashed changes
         var /** @type {?} */ control = path ? this.get(path) : this;
         return control && control._errors ? control._errors[errorCode] : null;
     };
@@ -2840,7 +3872,14 @@ var AbstractControl = (function () {
      * @param {?=} path
      * @return {?}
      */
+<<<<<<< Updated upstream
     AbstractControl.prototype.hasError = function (errorCode, path) { return !!this.getError(errorCode, path); };
+=======
+    AbstractControl.prototype.hasError = function (errorCode, path) {
+        if (path === void 0) { path = null; }
+        return !!this.getError(errorCode, path);
+    };
+>>>>>>> Stashed changes
     Object.defineProperty(AbstractControl.prototype, "root", {
         /**
          * Retrieves the top-level ancestor of this control.
@@ -2933,6 +3972,7 @@ var AbstractControl = (function () {
     AbstractControl.prototype._anyControlsDirty = function () {
         return this._anyControls(function (control) { return control.dirty; });
     };
+<<<<<<< Updated upstream
     /**
      * \@internal
      * @return {?}
@@ -3044,6 +4084,121 @@ var FormControl = (function (_super) {
         return _this;
     }
     /**
+=======
+    /**
+     * \@internal
+     * @return {?}
+     */
+    AbstractControl.prototype._anyControlsTouched = function () {
+        return this._anyControls(function (control) { return control.touched; });
+    };
+    /**
+     * \@internal
+     * @param {?=} __0
+     * @return {?}
+     */
+    AbstractControl.prototype._updatePristine = function (_a) {
+        var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+        this._pristine = !this._anyControlsDirty();
+        if (this._parent && !onlySelf) {
+            this._parent._updatePristine({ onlySelf: onlySelf });
+        }
+    };
+    /**
+     * \@internal
+     * @param {?=} __0
+     * @return {?}
+     */
+    AbstractControl.prototype._updateTouched = function (_a) {
+        var onlySelf = (_a === void 0 ? {} : _a).onlySelf;
+        this._touched = this._anyControlsTouched();
+        if (this._parent && !onlySelf) {
+            this._parent._updateTouched({ onlySelf: onlySelf });
+        }
+    };
+    /**
+     * \@internal
+     * @param {?} formState
+     * @return {?}
+     */
+    AbstractControl.prototype._isBoxedValue = function (formState) {
+        return typeof formState === 'object' && formState !== null &&
+            Object.keys(formState).length === 2 && 'value' in formState && 'disabled' in formState;
+    };
+    /**
+     * \@internal
+     * @param {?} fn
+     * @return {?}
+     */
+    AbstractControl.prototype._registerOnCollectionChange = function (fn) { this._onCollectionChange = fn; };
+    return AbstractControl;
+}());
+/**
+ * \@whatItDoes Tracks the value and validation status of an individual form control.
+ *
+ * It is one of the three fundamental building blocks of Angular forms, along with
+ * {\@link FormGroup} and {\@link FormArray}.
+ *
+ * \@howToUse
+ *
+ * When instantiating a {\@link FormControl}, you can pass in an initial value as the
+ * first argument. Example:
+ *
+ * ```ts
+ * const ctrl = new FormControl('some value');
+ * console.log(ctrl.value);     // 'some value'
+ * ```
+ *
+ * You can also initialize the control with a form state object on instantiation,
+ * which includes both the value and whether or not the control is disabled.
+ * You can't use the value key without the disabled key; both are required
+ * to use this way of initialization.
+ *
+ * ```ts
+ * const ctrl = new FormControl({value: 'n/a', disabled: true});
+ * console.log(ctrl.value);     // 'n/a'
+ * console.log(ctrl.status);   // 'DISABLED'
+ * ```
+ *
+ * To include a sync validator (or an array of sync validators) with the control,
+ * pass it in as the second argument. Async validators are also supported, but
+ * have to be passed in separately as the third arg.
+ *
+ * ```ts
+ * const ctrl = new FormControl('', Validators.required);
+ * console.log(ctrl.value);     // ''
+ * console.log(ctrl.status);   // 'INVALID'
+ * ```
+ *
+ * See its superclass, {\@link AbstractControl}, for more properties and methods.
+ *
+ * * **npm package**: `\@angular/forms`
+ *
+ * \@stable
+ */
+var FormControl = (function (_super) {
+    __extends(FormControl, _super);
+    /**
+     * @param {?=} formState
+     * @param {?=} validator
+     * @param {?=} asyncValidator
+     */
+    function FormControl(formState, validator, asyncValidator) {
+        if (formState === void 0) { formState = null; }
+        if (validator === void 0) { validator = null; }
+        if (asyncValidator === void 0) { asyncValidator = null; }
+        var _this = _super.call(this, coerceToValidator(validator), coerceToAsyncValidator(asyncValidator)) || this;
+        /**
+         * \@internal
+         */
+        _this._onChange = [];
+        _this._applyFormState(formState);
+        _this.updateValueAndValidity({ onlySelf: true, emitEvent: false });
+        _this._initObservables();
+        return _this;
+    }
+    /**
+>>>>>>> Stashed changes
      * Set the value of the form control to `value`.
      *
      * If `onlySelf` is `true`, this change will only affect the validation of this `FormControl`
@@ -3060,6 +4215,7 @@ var FormControl = (function (_super) {
      * If `emitViewToModelChange` is `true`, an ngModelChange event will be fired to update the
      * model.  This is the default behavior if `emitViewToModelChange` is not specified.
      * @param {?} value
+<<<<<<< Updated upstream
      * @param {?=} options
      * @return {?}
      */
@@ -3071,12 +4227,30 @@ var FormControl = (function (_super) {
             this._onChange.forEach(function (changeFn) { return changeFn(_this._value, options.emitViewToModelChange !== false); });
         }
         this.updateValueAndValidity(options);
+=======
+     * @param {?=} __1
+     * @return {?}
+     */
+    FormControl.prototype.setValue = function (value, _a) {
+        var _this = this;
+        var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent, emitModelToViewChange = _b.emitModelToViewChange, emitViewToModelChange = _b.emitViewToModelChange;
+        this._value = value;
+        if (this._onChange.length && emitModelToViewChange !== false) {
+            this._onChange.forEach(function (changeFn) { return changeFn(_this._value, emitViewToModelChange !== false); });
+        }
+        this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+>>>>>>> Stashed changes
     };
     /**
      * Patches the value of a control.
      *
+<<<<<<< Updated upstream
      * This function is functionally the same as {\@link FormControl#setValue} at this level.
      * It exists for symmetry with {\@link FormGroup#patchValue} on `FormGroups` and `FormArrays`,
+=======
+     * This function is functionally the same as {\@link FormControl.setValue} at this level.
+     * It exists for symmetry with {\@link FormGroup.patchValue} on `FormGroups` and `FormArrays`,
+>>>>>>> Stashed changes
      * where it does behave differently.
      * @param {?} value
      * @param {?=} options
@@ -3114,6 +4288,7 @@ var FormControl = (function (_super) {
      * console.log(this.control.status);  // 'DISABLED'
      * ```
      * @param {?=} formState
+<<<<<<< Updated upstream
      * @param {?=} options
      * @return {?}
      */
@@ -3124,6 +4299,18 @@ var FormControl = (function (_super) {
         this.markAsPristine(options);
         this.markAsUntouched(options);
         this.setValue(this._value, options);
+=======
+     * @param {?=} __1
+     * @return {?}
+     */
+    FormControl.prototype.reset = function (formState, _a) {
+        if (formState === void 0) { formState = null; }
+        var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+        this._applyFormState(formState);
+        this.markAsPristine({ onlySelf: onlySelf });
+        this.markAsUntouched({ onlySelf: onlySelf });
+        this.setValue(this._value, { onlySelf: onlySelf, emitEvent: emitEvent });
+>>>>>>> Stashed changes
     };
     /**
      * \@internal
@@ -3246,7 +4433,13 @@ var FormGroup = (function (_super) {
      * @param {?=} asyncValidator
      */
     function FormGroup(controls, validator, asyncValidator) {
+<<<<<<< Updated upstream
         var _this = _super.call(this, validator || null, asyncValidator || null) || this;
+=======
+        if (validator === void 0) { validator = null; }
+        if (asyncValidator === void 0) { asyncValidator = null; }
+        var _this = _super.call(this, validator, asyncValidator) || this;
+>>>>>>> Stashed changes
         _this.controls = controls;
         _this._initObservables();
         _this._setUpControls();
@@ -3257,7 +4450,11 @@ var FormGroup = (function (_super) {
      * Registers a control with the group's list of controls.
      *
      * This method does not update value or validity of the control, so for
+<<<<<<< Updated upstream
      * most cases you'll want to use {\@link FormGroup#addControl} instead.
+=======
+     * most cases you'll want to use {\@link FormGroup.addControl} instead.
+>>>>>>> Stashed changes
      * @param {?} name
      * @param {?} control
      * @return {?}
@@ -3312,7 +4509,11 @@ var FormGroup = (function (_super) {
      * Check whether there is an enabled control with the given name in the group.
      *
      * It will return false for disabled controls. If you'd like to check for
+<<<<<<< Updated upstream
      * existence in the group only, use {\@link AbstractControl#get} instead.
+=======
+     * existence in the group only, use {\@link AbstractControl.get} instead.
+>>>>>>> Stashed changes
      * @param {?} controlName
      * @return {?}
      */
@@ -3341,6 +4542,7 @@ var FormGroup = (function (_super) {
      *
      *  ```
      * @param {?} value
+<<<<<<< Updated upstream
      * @param {?=} options
      * @return {?}
      */
@@ -3353,6 +4555,20 @@ var FormGroup = (function (_super) {
             _this.controls[name].setValue(value[name], { onlySelf: true, emitEvent: options.emitEvent });
         });
         this.updateValueAndValidity(options);
+=======
+     * @param {?=} __1
+     * @return {?}
+     */
+    FormGroup.prototype.setValue = function (value, _a) {
+        var _this = this;
+        var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+        this._checkAllValuesPresent(value);
+        Object.keys(value).forEach(function (name) {
+            _this._throwIfControlMissing(name);
+            _this.controls[name].setValue(value[name], { onlySelf: true, emitEvent: emitEvent });
+        });
+        this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+>>>>>>> Stashed changes
     };
     /**
      *  Patches the value of the {\@link FormGroup}. It accepts an object with control
@@ -3375,6 +4591,7 @@ var FormGroup = (function (_super) {
      *
      *  ```
      * @param {?} value
+<<<<<<< Updated upstream
      * @param {?=} options
      * @return {?}
      */
@@ -3387,6 +4604,20 @@ var FormGroup = (function (_super) {
             }
         });
         this.updateValueAndValidity(options);
+=======
+     * @param {?=} __1
+     * @return {?}
+     */
+    FormGroup.prototype.patchValue = function (value, _a) {
+        var _this = this;
+        var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+        Object.keys(value).forEach(function (name) {
+            if (_this.controls[name]) {
+                _this.controls[name].patchValue(value[name], { onlySelf: true, emitEvent: emitEvent });
+            }
+        });
+        this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+>>>>>>> Stashed changes
     };
     /**
      * Resets the {\@link FormGroup}. This means by default:
@@ -3420,6 +4651,7 @@ var FormGroup = (function (_super) {
      * console.log(this.form.get('first').status);  // 'DISABLED'
      * ```
      * @param {?=} value
+<<<<<<< Updated upstream
      * @param {?=} options
      * @return {?}
      */
@@ -3432,6 +4664,20 @@ var FormGroup = (function (_super) {
         this.updateValueAndValidity(options);
         this._updatePristine(options);
         this._updateTouched(options);
+=======
+     * @param {?=} __1
+     * @return {?}
+     */
+    FormGroup.prototype.reset = function (value, _a) {
+        if (value === void 0) { value = {}; }
+        var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+        this._forEachChild(function (control, name) {
+            control.reset(value[name], { onlySelf: true, emitEvent: emitEvent });
+        });
+        this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+        this._updatePristine({ onlySelf: onlySelf });
+        this._updateTouched({ onlySelf: onlySelf });
+>>>>>>> Stashed changes
     };
     /**
      * The aggregate value of the {\@link FormGroup}, including any disabled controls.
@@ -3600,7 +4846,13 @@ var FormArray = (function (_super) {
      * @param {?=} asyncValidator
      */
     function FormArray(controls, validator, asyncValidator) {
+<<<<<<< Updated upstream
         var _this = _super.call(this, validator || null, asyncValidator || null) || this;
+=======
+        if (validator === void 0) { validator = null; }
+        if (asyncValidator === void 0) { asyncValidator = null; }
+        var _this = _super.call(this, validator, asyncValidator) || this;
+>>>>>>> Stashed changes
         _this.controls = controls;
         _this._initObservables();
         _this._setUpControls();
@@ -3695,6 +4947,7 @@ var FormArray = (function (_super) {
      *  console.log(arr.value);   // ['Nancy', 'Drew']
      *  ```
      * @param {?} value
+<<<<<<< Updated upstream
      * @param {?=} options
      * @return {?}
      */
@@ -3707,6 +4960,20 @@ var FormArray = (function (_super) {
             _this.at(index).setValue(newValue, { onlySelf: true, emitEvent: options.emitEvent });
         });
         this.updateValueAndValidity(options);
+=======
+     * @param {?=} __1
+     * @return {?}
+     */
+    FormArray.prototype.setValue = function (value, _a) {
+        var _this = this;
+        var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+        this._checkAllValuesPresent(value);
+        value.forEach(function (newValue, index) {
+            _this._throwIfControlMissing(index);
+            _this.at(index).setValue(newValue, { onlySelf: true, emitEvent: emitEvent });
+        });
+        this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+>>>>>>> Stashed changes
     };
     /**
      *  Patches the value of the {\@link FormArray}. It accepts an array that matches the
@@ -3728,6 +4995,7 @@ var FormArray = (function (_super) {
      *  console.log(arr.value);   // ['Nancy', null]
      *  ```
      * @param {?} value
+<<<<<<< Updated upstream
      * @param {?=} options
      * @return {?}
      */
@@ -3740,6 +5008,20 @@ var FormArray = (function (_super) {
             }
         });
         this.updateValueAndValidity(options);
+=======
+     * @param {?=} __1
+     * @return {?}
+     */
+    FormArray.prototype.patchValue = function (value, _a) {
+        var _this = this;
+        var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+        value.forEach(function (newValue, index) {
+            if (_this.at(index)) {
+                _this.at(index).patchValue(newValue, { onlySelf: true, emitEvent: emitEvent });
+            }
+        });
+        this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+>>>>>>> Stashed changes
     };
     /**
      * Resets the {\@link FormArray}. This means by default:
@@ -3772,6 +5054,7 @@ var FormArray = (function (_super) {
      * console.log(this.arr.get(0).status);  // 'DISABLED'
      * ```
      * @param {?=} value
+<<<<<<< Updated upstream
      * @param {?=} options
      * @return {?}
      */
@@ -3784,6 +5067,20 @@ var FormArray = (function (_super) {
         this.updateValueAndValidity(options);
         this._updatePristine(options);
         this._updateTouched(options);
+=======
+     * @param {?=} __1
+     * @return {?}
+     */
+    FormArray.prototype.reset = function (value, _a) {
+        if (value === void 0) { value = []; }
+        var _b = _a === void 0 ? {} : _a, onlySelf = _b.onlySelf, emitEvent = _b.emitEvent;
+        this._forEachChild(function (control, index) {
+            control.reset(value[index], { onlySelf: true, emitEvent: emitEvent });
+        });
+        this.updateValueAndValidity({ onlySelf: onlySelf, emitEvent: emitEvent });
+        this._updatePristine({ onlySelf: onlySelf });
+        this._updateTouched({ onlySelf: onlySelf });
+>>>>>>> Stashed changes
     };
     /**
      * The aggregate value of the array, including any disabled controls.
@@ -3912,6 +5209,7 @@ var resolvedPromise = Promise.resolve(null);
  * triggered a form submission. The `ngSubmit` event will be emitted with the original form
  * submission event.
  *
+<<<<<<< Updated upstream
  * In template driven forms, all `<form>` tags are automatically tagged as `NgForm`.
  * If you want to import the `FormsModule` but skip its usage in some forms,
  * for example, to use native HTML5 validation, you can add `ngNoForm` and the `<form>`
@@ -3919,6 +5217,8 @@ var resolvedPromise = Promise.resolve(null);
  * unnecessary because the `<form>` tags are inert. In that case, you would
  * refrain from using the `formGroup` directive.
  *
+=======
+>>>>>>> Stashed changes
  * {\@example forms/ts/simpleForm/simple_form_example.ts region='Component'}
  *
  * * **npm package**: `\@angular/forms`
@@ -4052,7 +5352,11 @@ var NgForm = (function (_super) {
     NgForm.prototype.updateModel = function (dir, value) {
         var _this = this;
         resolvedPromise.then(function () {
+<<<<<<< Updated upstream
             var /** @type {?} */ ctrl = (_this.form.get(/** @type {?} */ ((dir.path))));
+=======
+            var /** @type {?} */ ctrl = (_this.form.get(dir.path));
+>>>>>>> Stashed changes
             ctrl.setValue(value);
         });
     };
@@ -4278,7 +5582,11 @@ var resolvedPromise$1 = Promise.resolve(null);
  * This directive can be used by itself or as part of a larger form. All you need is the
  * `ngModel` selector to activate it.
  *
+<<<<<<< Updated upstream
  * It accepts a domain model as an optional {\@link Input}. If you have a one-way binding
+=======
+ * It accepts a domain model as an optional {\@link \@Input}. If you have a one-way binding
+>>>>>>> Stashed changes
  * to `ngModel` with `[]` syntax, changing the value of the domain model in the component
  * class will set the value in the view. If you have a two-way binding with `[()]` syntax
  * (also known as 'banana-box syntax'), the value in the UI will always be synced back to
@@ -4431,7 +5739,11 @@ var NgModel = (function (_super) {
      * @return {?}
      */
     NgModel.prototype._isStandalone = function () {
+<<<<<<< Updated upstream
         return !this._parent || !!(this.options && this.options.standalone);
+=======
+        return !this._parent || (this.options && this.options.standalone);
+>>>>>>> Stashed changes
     };
     /**
      * @return {?}
@@ -4604,12 +5916,21 @@ var formControlBinding$1 = {
  * {\@link AbstractControl}.
  *
  * **Set the value**: You can pass in an initial value when instantiating the {\@link FormControl},
+<<<<<<< Updated upstream
  * or you can set it programmatically later using {\@link AbstractControl#setValue setValue} or
  * {\@link AbstractControl#patchValue patchValue}.
  *
  * **Listen to value**: If you want to listen to changes in the value of the control, you can
  * subscribe to the {\@link AbstractControl#valueChanges valueChanges} event.  You can also listen to
  * {\@link AbstractControl#statusChanges statusChanges} to be notified when the validation status is
+=======
+ * or you can set it programmatically later using {\@link AbstractControl.setValue} or
+ * {\@link AbstractControl.patchValue}.
+ *
+ * **Listen to value**: If you want to listen to changes in the value of the control, you can
+ * subscribe to the {\@link AbstractControl.valueChanges} event.  You can also listen to
+ * {\@link AbstractControl.statusChanges} to be notified when the validation status is
+>>>>>>> Stashed changes
  * re-calculated.
  *
  * ### Example
@@ -4653,8 +5974,13 @@ var FormControlDirective = (function (_super) {
     FormControlDirective.prototype.ngOnChanges = function (changes) {
         if (this._isControlChanged(changes)) {
             setUpControl(this.form, this);
+<<<<<<< Updated upstream
             if (this.control.disabled && ((this.valueAccessor)).setDisabledState) {
                 ((((this.valueAccessor)).setDisabledState))(true);
+=======
+            if (this.control.disabled && this.valueAccessor.setDisabledState) {
+                this.valueAccessor.setDisabledState(true);
+>>>>>>> Stashed changes
             }
             this.form.updateValueAndValidity({ emitEvent: false });
         }
@@ -4754,6 +6080,7 @@ var formDirectiveProvider$1 = {
  *
  * **Set value**: You can set the form's initial value when instantiating the
  * {\@link FormGroup}, or you can set it programmatically later using the {\@link FormGroup}'s
+<<<<<<< Updated upstream
  * {\@link AbstractControl#setValue setValue} or {\@link AbstractControl#patchValue patchValue}
  * methods.
  *
@@ -4761,6 +6088,14 @@ var formDirectiveProvider$1 = {
  * to the {\@link FormGroup}'s {\@link AbstractControl#valueChanges valueChanges} event.  You can also
  * listen to its {\@link AbstractControl#statusChanges statusChanges} event to be notified when the
  * validation status is re-calculated.
+=======
+ * {\@link AbstractControl.setValue} or {\@link AbstractControl.patchValue} methods.
+ *
+ * **Listen to value**: If you want to listen to changes in the value of the form, you can subscribe
+ * to the {\@link FormGroup}'s {\@link AbstractControl.valueChanges} event.  You can also listen to
+ * its {\@link AbstractControl.statusChanges} event to be notified when the validation status is
+ * re-calculated.
+>>>>>>> Stashed changes
  *
  * Furthermore, you can listen to the directive's `ngSubmit` event to be notified when the user has
  * triggered a form submission. The `ngSubmit` event will be emitted with the original form
@@ -4790,7 +6125,11 @@ var FormGroupDirective = (function (_super) {
         _this._asyncValidators = _asyncValidators;
         _this._submitted = false;
         _this.directives = [];
+<<<<<<< Updated upstream
         _this.form = ((null));
+=======
+        _this.form = null;
+>>>>>>> Stashed changes
         _this.ngSubmit = new _angular_core.EventEmitter();
         return _this;
     }
@@ -4960,9 +6299,15 @@ var FormGroupDirective = (function (_super) {
      */
     FormGroupDirective.prototype._updateValidators = function () {
         var /** @type {?} */ sync = composeValidators(this._validators);
+<<<<<<< Updated upstream
         this.form.validator = Validators.compose([/** @type {?} */ ((this.form.validator)), /** @type {?} */ ((sync))]);
         var /** @type {?} */ async = composeAsyncValidators(this._asyncValidators);
         this.form.asyncValidator = Validators.composeAsync([/** @type {?} */ ((this.form.asyncValidator)), /** @type {?} */ ((async))]);
+=======
+        this.form.validator = Validators.compose([this.form.validator, sync]);
+        var /** @type {?} */ async = composeAsyncValidators(this._asyncValidators);
+        this.form.asyncValidator = Validators.composeAsync([this.form.asyncValidator, async]);
+>>>>>>> Stashed changes
     };
     /**
      * @return {?}
@@ -5033,7 +6378,11 @@ var formGroupNameProvider = {
  * controls into their own nested object.
  *
  * **Access the group**: You can access the associated {\@link FormGroup} using the
+<<<<<<< Updated upstream
  * {\@link AbstractControl#get} method. Ex: `this.form.get('name')`.
+=======
+ * {\@link AbstractControl.get} method. Ex: `this.form.get('name')`.
+>>>>>>> Stashed changes
  *
  * You can also access individual controls within the group using dot syntax.
  * Ex: `this.form.get('name.first')`
@@ -5043,11 +6392,19 @@ var formGroupNameProvider = {
  *
  * **Set the value**: You can set an initial value for each child control when instantiating
  * the {\@link FormGroup}, or you can set it programmatically later using
+<<<<<<< Updated upstream
  * {\@link AbstractControl#setValue setValue} or {\@link AbstractControl#patchValue patchValue}.
  *
  * **Listen to value**: If you want to listen to changes in the value of the group, you can
  * subscribe to the {\@link AbstractControl#valueChanges valueChanges} event.  You can also listen to
  * {\@link AbstractControl#statusChanges statusChanges} to be notified when the validation status is
+=======
+ * {\@link AbstractControl.setValue} or {\@link AbstractControl.patchValue}.
+ *
+ * **Listen to value**: If you want to listen to changes in the value of the group, you can
+ * subscribe to the {\@link AbstractControl.valueChanges} event.  You can also listen to
+ * {\@link AbstractControl.statusChanges} to be notified when the validation status is
+>>>>>>> Stashed changes
  * re-calculated.
  *
  * ### Example
@@ -5120,7 +6477,11 @@ var formArrayNameProvider = {
  * form controls dynamically.
  *
  * **Access the array**: You can access the associated {\@link FormArray} using the
+<<<<<<< Updated upstream
  * {\@link AbstractControl#get} method on the parent {\@link FormGroup}.
+=======
+ * {\@link AbstractControl.get} method on the parent {\@link FormGroup}.
+>>>>>>> Stashed changes
  * Ex: `this.form.get('cities')`.
  *
  * **Get the value**: the `value` property is always synced and available on the
@@ -5128,6 +6489,7 @@ var formArrayNameProvider = {
  *
  * **Set the value**: You can set an initial value for each child control when instantiating
  * the {\@link FormArray}, or you can set the value programmatically later using the
+<<<<<<< Updated upstream
  * {\@link FormArray}'s {\@link AbstractControl#setValue} or {\@link AbstractControl#patchValue}
  * methods.
  *
@@ -5138,6 +6500,18 @@ var formArrayNameProvider = {
  *
  * **Add new controls**: You can add new controls to the {\@link FormArray} dynamically by
  * calling its {\@link FormArray#push} method.
+=======
+ * {\@link FormArray}'s {\@link AbstractControl.setValue} or {\@link AbstractControl.patchValue}
+ * methods.
+ *
+ * **Listen to value**: If you want to listen to changes in the value of the array, you can
+ * subscribe to the {\@link FormArray}'s {\@link AbstractControl.valueChanges} event.  You can also
+ * listen to its {\@link AbstractControl.statusChanges} event to be notified when the validation
+ * status is re-calculated.
+ *
+ * **Add new controls**: You can add new controls to the {\@link FormArray} dynamically by
+ * calling its {\@link FormArray.push} method.
+>>>>>>> Stashed changes
  *  Ex: `this.form.get('cities').push(new FormControl());`
  *
  * ### Example
@@ -5168,8 +6542,13 @@ var FormArrayName = (function (_super) {
      * @return {?}
      */
     FormArrayName.prototype.ngOnInit = function () {
+<<<<<<< Updated upstream
         this._checkParentType(); /** @type {?} */
         ((this.formDirective)).addFormArray(this);
+=======
+        this._checkParentType();
+        this.formDirective.addFormArray(this);
+>>>>>>> Stashed changes
     };
     /**
      * @return {?}
@@ -5183,7 +6562,11 @@ var FormArrayName = (function (_super) {
         /**
          * @return {?}
          */
+<<<<<<< Updated upstream
         get: function () { return ((this.formDirective)).getFormArray(this); },
+=======
+        get: function () { return this.formDirective.getFormArray(this); },
+>>>>>>> Stashed changes
         enumerable: true,
         configurable: true
     });
@@ -5217,9 +6600,13 @@ var FormArrayName = (function (_super) {
         /**
          * @return {?}
          */
+<<<<<<< Updated upstream
         get: function () {
             return composeAsyncValidators(this._asyncValidators);
         },
+=======
+        get: function () { return composeAsyncValidators(this._asyncValidators); },
+>>>>>>> Stashed changes
         enumerable: true,
         configurable: true
     });
@@ -5285,7 +6672,11 @@ var controlNameBinding = {
  * closest {\@link FormGroup} or {\@link FormArray} above it.
  *
  * **Access the control**: You can access the {\@link FormControl} associated with
+<<<<<<< Updated upstream
  * this directive by using the {\@link AbstractControl#get get} method.
+=======
+ * this directive by using the {\@link AbstractControl.get} method.
+>>>>>>> Stashed changes
  * Ex: `this.form.get('first');`
  *
  * **Get value**: the `value` property is always synced and available on the {\@link FormControl}.
@@ -5293,11 +6684,19 @@ var controlNameBinding = {
  *
  *  **Set value**: You can set an initial value for the control when instantiating the
  *  {\@link FormControl}, or you can set it programmatically later using
+<<<<<<< Updated upstream
  *  {\@link AbstractControl#setValue setValue} or {\@link AbstractControl#patchValue patchValue}.
  *
  * **Listen to value**: If you want to listen to changes in the value of the control, you can
  * subscribe to the {\@link AbstractControl#valueChanges valueChanges} event.  You can also listen to
  * {\@link AbstractControl#statusChanges statusChanges} to be notified when the validation status is
+=======
+ *  {\@link AbstractControl.setValue} or {\@link AbstractControl.patchValue}.
+ *
+ * **Listen to value**: If you want to listen to changes in the value of the control, you can
+ * subscribe to the {\@link AbstractControl.valueChanges} event.  You can also listen to
+ * {\@link AbstractControl.statusChanges} to be notified when the validation status is
+>>>>>>> Stashed changes
  * re-calculated.
  *
  * ### Example
@@ -5376,7 +6775,11 @@ var FormControlName = (function (_super) {
         /**
          * @return {?}
          */
+<<<<<<< Updated upstream
         get: function () { return controlPath(this.name, /** @type {?} */ ((this._parent))); },
+=======
+        get: function () { return controlPath(this.name, this._parent); },
+>>>>>>> Stashed changes
         enumerable: true,
         configurable: true
     });
@@ -5401,7 +6804,11 @@ var FormControlName = (function (_super) {
          * @return {?}
          */
         get: function () {
+<<<<<<< Updated upstream
             return ((composeAsyncValidators(this._rawAsyncValidators)));
+=======
+            return composeAsyncValidators(this._rawAsyncValidators);
+>>>>>>> Stashed changes
         },
         enumerable: true,
         configurable: true
@@ -5433,8 +6840,13 @@ var FormControlName = (function (_super) {
     FormControlName.prototype._setUpControl = function () {
         this._checkParentType();
         this._control = this.formDirective.addControl(this);
+<<<<<<< Updated upstream
         if (this.control.disabled && ((this.valueAccessor)).setDisabledState) {
             ((((this.valueAccessor)).setDisabledState))(true);
+=======
+        if (this.control.disabled && this.valueAccessor.setDisabledState) {
+            this.valueAccessor.setDisabledState(true);
+>>>>>>> Stashed changes
         }
         this._added = true;
     };
@@ -5573,7 +6985,11 @@ CheckboxRequiredValidator.decorators = [
  */
 CheckboxRequiredValidator.ctorParameters = function () { return []; };
 /**
+<<<<<<< Updated upstream
  * Provider which adds {\@link EmailValidator} to {\@link NG_VALIDATORS}.
+=======
+ * Provider which adds {@link EmailValidator} to {@link NG_VALIDATORS}.
+>>>>>>> Stashed changes
  */
 var EMAIL_VALIDATOR = {
     provide: NG_VALIDATORS,
@@ -5638,11 +7054,19 @@ EmailValidator.propDecorators = {
     'email': [{ type: _angular_core.Input },],
 };
 /**
+<<<<<<< Updated upstream
  * Provider which adds {\@link MinLengthValidator} to {\@link NG_VALIDATORS}.
  *
  * ## Example:
  *
  * {\@example common/forms/ts/validators/validators.ts region='min'}
+=======
+ * Provider which adds {@link MinLengthValidator} to {@link NG_VALIDATORS}.
+ *
+ * ## Example:
+ *
+ * {@example common/forms/ts/validators/validators.ts region='min'}
+>>>>>>> Stashed changes
  */
 var MIN_LENGTH_VALIDATOR = {
     provide: NG_VALIDATORS,
@@ -5704,11 +7128,19 @@ MinLengthValidator.propDecorators = {
     'minlength': [{ type: _angular_core.Input },],
 };
 /**
+<<<<<<< Updated upstream
  * Provider which adds {\@link MaxLengthValidator} to {\@link NG_VALIDATORS}.
  *
  * ## Example:
  *
  * {\@example common/forms/ts/validators/validators.ts region='max'}
+=======
+ * Provider which adds {@link MaxLengthValidator} to {@link NG_VALIDATORS}.
+ *
+ * ## Example:
+ *
+ * {@example common/forms/ts/validators/validators.ts region='max'}
+>>>>>>> Stashed changes
  */
 var MAX_LENGTH_VALIDATOR = {
     provide: NG_VALIDATORS,
@@ -5891,6 +7323,11 @@ var FormBuilder = (function () {
      * @return {?}
      */
     FormBuilder.prototype.control = function (formState, validator, asyncValidator) {
+<<<<<<< Updated upstream
+=======
+        if (validator === void 0) { validator = null; }
+        if (asyncValidator === void 0) { asyncValidator = null; }
+>>>>>>> Stashed changes
         return new FormControl(formState, validator, asyncValidator);
     };
     /**
@@ -5903,6 +7340,11 @@ var FormBuilder = (function () {
      */
     FormBuilder.prototype.array = function (controlsConfig, validator, asyncValidator) {
         var _this = this;
+<<<<<<< Updated upstream
+=======
+        if (validator === void 0) { validator = null; }
+        if (asyncValidator === void 0) { asyncValidator = null; }
+>>>>>>> Stashed changes
         var /** @type {?} */ controls = controlsConfig.map(function (c) { return _this._createControl(c); });
         return new FormArray(controls, validator, asyncValidator);
     };
@@ -5963,7 +7405,11 @@ FormBuilder.ctorParameters = function () { return []; };
 /**
  * \@stable
  */
+<<<<<<< Updated upstream
 var VERSION = new _angular_core.Version('4.4.6');
+=======
+var VERSION = new _angular_core.Version('4.0.1');
+>>>>>>> Stashed changes
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.

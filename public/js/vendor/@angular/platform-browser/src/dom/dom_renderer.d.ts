@@ -23,7 +23,11 @@ export declare class DomRendererFactory2 implements RendererFactory2 {
     private rendererByCompId;
     private defaultRenderer;
     constructor(eventManager: EventManager, sharedStylesHost: DomSharedStylesHost);
+<<<<<<< Updated upstream
     createRenderer(element: any, type: RendererType2 | null): Renderer2;
     begin(): void;
     end(): void;
+=======
+    createRenderer(element: any, type: RendererType2): Renderer2;
+>>>>>>> Stashed changes
 }

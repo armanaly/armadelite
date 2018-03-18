@@ -5,10 +5,16 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+<<<<<<< Updated upstream
 import { Directive, InjectionToken, Type, ɵConsole as Console } from '@angular/core';
 import { StaticSymbol, StaticSymbolCache } from './aot/static_symbol';
 import * as cpl from './compile_metadata';
 import { CompileReflector } from './compile_reflector';
+=======
+import { Component, Directive, InjectionToken, Type, ɵConsole as Console, ɵReflectorReader } from '@angular/core';
+import { StaticSymbol, StaticSymbolCache } from './aot/static_symbol';
+import * as cpl from './compile_metadata';
+>>>>>>> Stashed changes
 import { CompilerConfig } from './config';
 import { DirectiveNormalizer } from './directive_normalizer';
 import { DirectiveResolver } from './directive_resolver';
@@ -37,8 +43,12 @@ export declare class CompileMetadataResolver {
     private _pipeCache;
     private _ngModuleCache;
     private _ngModuleOfTypes;
+<<<<<<< Updated upstream
     constructor(_config: CompilerConfig, _ngModuleResolver: NgModuleResolver, _directiveResolver: DirectiveResolver, _pipeResolver: PipeResolver, _summaryResolver: SummaryResolver<any>, _schemaRegistry: ElementSchemaRegistry, _directiveNormalizer: DirectiveNormalizer, _console: Console, _staticSymbolCache: StaticSymbolCache, _reflector: CompileReflector, _errorCollector?: ErrorCollector);
     getReflector(): CompileReflector;
+=======
+    constructor(_config: CompilerConfig, _ngModuleResolver: NgModuleResolver, _directiveResolver: DirectiveResolver, _pipeResolver: PipeResolver, _summaryResolver: SummaryResolver<any>, _schemaRegistry: ElementSchemaRegistry, _directiveNormalizer: DirectiveNormalizer, _console: Console, _staticSymbolCache: StaticSymbolCache, _reflector?: ɵReflectorReader, _errorCollector?: ErrorCollector);
+>>>>>>> Stashed changes
     clearCacheFor(type: Type<any>): void;
     clearCache(): void;
     private _createProxyClass(baseType, name);
@@ -50,7 +60,11 @@ export declare class CompileMetadataResolver {
     private getComponentFactory(selector, dirType, inputs, outputs);
     private initComponentFactory(factory, ngContentSelectors);
     private _loadSummary(type, kind);
+<<<<<<< Updated upstream
     loadDirectiveMetadata(ngModuleType: any, directiveType: any, isSync: boolean): SyncAsync<null>;
+=======
+    private _loadDirectiveMetadata(ngModuleType, directiveType, isSync);
+>>>>>>> Stashed changes
     getNonNormalizedDirectiveMetadata(directiveType: any): {
         annotation: Directive;
         metadata: cpl.CompileDirectiveMetadata;
@@ -69,7 +83,11 @@ export declare class CompileMetadataResolver {
      * Loads the declared directives and pipes of an NgModule.
      */
     loadNgModuleDirectiveAndPipeMetadata(moduleType: any, isSync: boolean, throwIfNotFound?: boolean): Promise<any>;
+<<<<<<< Updated upstream
     getNgModuleMetadata(moduleType: any, throwIfNotFound?: boolean): cpl.CompileNgModuleMetadata | null;
+=======
+    getNgModuleMetadata(moduleType: any, throwIfNotFound?: boolean): cpl.CompileNgModuleMetadata;
+>>>>>>> Stashed changes
     private _checkSelfImport(moduleType, importedModuleType);
     private _getTypeDescriptor(type);
     private _addTypeToModule(type, moduleType);
@@ -100,3 +118,7 @@ export declare class CompileMetadataResolver {
     private _getQueryMetadata(q, propertyName, typeOrFunc);
     private _reportError(error, type?, otherType?);
 }
+<<<<<<< Updated upstream
+=======
+export declare function componentModuleUrl(reflector: ɵReflectorReader, type: Type<any>, cmpMetadata: Component): string;
+>>>>>>> Stashed changes

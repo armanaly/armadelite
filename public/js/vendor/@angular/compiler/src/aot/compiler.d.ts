@@ -32,6 +32,7 @@ export declare class AotCompiler {
     private _summaryResolver;
     private _localeId;
     private _translationFormat;
+<<<<<<< Updated upstream
     private _enableSummariesForJit;
     private _symbolResolver;
     constructor(_config: CompilerConfig, _host: AotCompilerHost, _reflector: StaticReflector, _metadataResolver: CompileMetadataResolver, _templateParser: TemplateParser, _styleCompiler: StyleCompiler, _viewCompiler: ViewCompiler, _ngModuleCompiler: NgModuleCompiler, _outputEmitter: OutputEmitter, _summaryResolver: SummaryResolver<StaticSymbol>, _localeId: string | null, _translationFormat: string | null, _enableSummariesForJit: boolean | null, _symbolResolver: StaticSymbolResolver);
@@ -50,6 +51,20 @@ export declare class AotCompiler {
     private _createOutputContext(genFilePath);
     private _codegenStyles(srcFileUrl, compMeta, stylesheetMetadata, fileSuffix);
     private _codegenSourceModule(srcFileUrl, ctx);
+=======
+    private _genFilePreamble;
+    private _symbolResolver;
+    constructor(_config: CompilerConfig, _host: AotCompilerHost, _metadataResolver: CompileMetadataResolver, _templateParser: TemplateParser, _styleCompiler: StyleCompiler, _viewCompiler: ViewCompiler, _ngModuleCompiler: NgModuleCompiler, _outputEmitter: OutputEmitter, _summaryResolver: SummaryResolver<StaticSymbol>, _localeId: string, _translationFormat: string, _genFilePreamble: string, _symbolResolver: StaticSymbolResolver);
+    clearCache(): void;
+    compileAll(rootFiles: string[]): Promise<GeneratedFile[]>;
+    private _compileSrcFile(srcFileUrl, ngModuleByPipeOrDirective, directives, pipes, ngModules, injectables);
+    private _createSummary(srcFileUrl, directives, pipes, ngModules, injectables, targetStatements, targetExportedVars);
+    private _compileModule(ngModuleType, targetStatements);
+    private _compileComponentFactory(compMeta, ngModule, fileSuffix, targetStatements);
+    private _compileComponent(compMeta, ngModule, directiveIdentifiers, componentStyles, fileSuffix, targetStatements);
+    private _codgenStyles(fileUrl, stylesCompileResult, fileSuffix);
+    private _codegenSourceModule(srcFileUrl, genFileUrl, statements, exportedVars);
+>>>>>>> Stashed changes
 }
 export interface NgAnalyzedModules {
     ngModules: CompileNgModuleMetadata[];

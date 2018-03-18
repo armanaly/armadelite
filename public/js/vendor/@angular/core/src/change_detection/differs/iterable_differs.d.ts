@@ -8,7 +8,11 @@
 import { Provider } from '../../di';
 import { ChangeDetectorRef } from '../change_detector_ref';
 /**
+<<<<<<< Updated upstream
  * A type describing supported iterable types.
+=======
+ * A type describing supported interable types.
+>>>>>>> Stashed changes
  *
  * @stable
  */
