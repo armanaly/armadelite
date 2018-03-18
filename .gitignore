@@ -2,7 +2,8 @@ node_modules/*
 +typings/
 .vscode/
 code/
-/imports
+
+imports
 node_modules/
 static/
 templates/
